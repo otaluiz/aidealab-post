@@ -1,15 +1,17 @@
-# Agente de Análise de Processo — Copilot Studio
+# Agente de Análise de Processo de Gelatina — Copilot Studio
 
 ## Contexto
 
 Existe um agente no Microsoft Copilot Studio, já criado, com MCPs e fontes de
 dados configurados pelo usuário. O objetivo é dotá-lo de skills que o façam
-analisar processos industriais com o rigor de um engenheiro sênior de processo
-com formação em data science.
+analisar o processo de fabricação de gelatina/colágeno com o rigor de um
+engenheiro sênior de processo com formação em data science.
 
-O primeiro processo atendido é uma planta de gelatina/colágeno (atributos:
-rendimento, Bloom, viscosidade, umidade). Mas o conjunto **não pode ser
-específico dessa planta**: precisa receber processos diferentes sem reescrita.
+O escopo é **exclusivamente gelatina**. As skills cobrem as diferentes etapas e
+linhas da fabricação (maceração, extração multi-estágio, filtração, concentração,
+esterilização, gelificação, secagem, moagem/blend; tipos e produtos distintos),
+não outras indústrias. Atributos de interesse: rendimento, Bloom, viscosidade e
+umidade, entre outros que venham a ser adicionados.
 
 Fontes já disponíveis ao agente:
 
@@ -26,52 +28,10 @@ incerteza estatística e recusa explícita quando o dado não sustenta a pergunt
 
 ## Objetivo
 
-Um framework de skills no formato **Agent Skills (`SKILL.md`)**, importáveis
-individualmente no Copilot Studio, dividido em um **núcleo agnóstico de processo**
-e **pacotes de processo** plugáveis. Adicionar uma nova planta significa
-adicionar um pacote — nenhuma alteração no núcleo.
-
-## Princípio de arquitetura: núcleo agnóstico + pacote de processo
-
-Esta é a decisão estruturante. Todo conhecimento que varia entre plantas fica
-isolado em um pacote; tudo que é método fica no núcleo e nunca é editado.
-
-```
-skills/
-  nucleo/                      <- agnóstico, não editar por processo
-    dados-processo/
-    modelo-preditivo/
-    analise-causa-raiz/
-    perfil-processo/
-    alarmes-e-limites/
-    sugestao-setpoint/
-    novo-processo/
-  processos/
-    gelatina/                  <- pacote do 1º processo
-      contexto-processo/
-      analise-rendimento/
-      analise-bloom/
-      analise-viscosidade/
-      analise-umidade/
-    <proximo-processo>/
-      contexto-processo/
-      analise-<atributo>/
-  _gabaritos/
-    contexto-processo.md
-    analise-atributo.md
-```
-
-O que distingue as camadas:
-
-| | Núcleo | Pacote de processo |
-|---|---|---|
-| Contém | método estatístico e de engenharia de dados | vocabulário, etapas, variáveis, atributos, fontes |
-| Muda quando | o método melhora | entra uma planta nova |
-| Editado pelo usuário | não | sim, sempre |
-| Reusado entre plantas | integralmente | nunca |
-
-Uma skill do núcleo jamais cita Bloom, extração ou maceração. Uma skill de
-pacote jamais explica como se faz validação cruzada temporal.
+Um conjunto de skills no formato **Agent Skills (`SKILL.md`)**, importáveis
+individualmente no Copilot Studio, que dão ao agente capacidade de entender o
+processo, construir modelos preditivos validados, identificar perfis de operação,
+derivar alarmes e propor faixas de setpoint.
 
 ## Restrição fundamental: onde a conta roda
 
@@ -87,8 +47,8 @@ agregando cada variável por fase: média, desvio, mínimo, máximo, tempo acima
 limiar, taxa de variação. Alguns milhares de linhas por dezenas de colunas —
 cabe no agente e é o formato que a modelagem exige.
 
-A *unidade de análise* é definida pelo pacote de processo: batelada, campanha,
-lote de secagem, ou janela fixa (hora/turno) em processo contínuo.
+A *unidade de análise* padrão é a **batelada**. Em etapa contínua, é uma janela
+fixa (hora ou turno). A definição fica declarada em `contexto-processo`.
 
 ### Camada 2 — Code interpreter como motor analítico
 
@@ -112,10 +72,10 @@ controle.
 
 ### Aliases de ferramenta
 
-As skills **nunca citam o nome real** de um conector, MCP ou flow. Referenciam
-um alias, e o mapeamento alias → ferramenta real vive num único arquivo do
-pacote de processo (`references/ferramentas.md`). Assim a mesma skill funciona em
-tenants onde as ferramentas têm nomes diferentes, e a manutenção é um arquivo.
+As skills **nunca citam o nome real** de um conector, MCP ou flow. Referenciam um
+alias, e o mapeamento alias → ferramenta real vive num único arquivo
+(`dados-processo/references/ferramentas.md`). Renomear um flow ou trocar de
+conector muda um arquivo, não onze skills.
 
 | Alias | Papel | Realização típica no Copilot Studio |
 |---|---|---|
@@ -137,7 +97,7 @@ flow/MCP próprio. As skills assumem este contrato mínimo, declarado uma vez:
   truncamento.
 
 Se a chamada exceder o limite, a skill instrui a fatiar por período e agregar
-incrementalmente — nunca a silenciosamente analisar dado truncado.
+incrementalmente — nunca a analisar dado truncado em silêncio.
 
 ## Contrato de dados
 
@@ -148,26 +108,31 @@ análise**.
 
 | Grupo | Conteúdo |
 |---|---|
-| Chave | identificador da unidade de análise |
+| Chave | identificador de batelada/lote |
 | Tempo | início e fim de cada fase |
 | Processo | features agregadas por fase, vindas do SEEQ |
-| Qualidade | atributos medidos (definidos pelo pacote de processo) |
-| Metadados | equipamento/linha, matéria-prima, turno, campanha |
+| Qualidade | Bloom, viscosidade, umidade, rendimento e demais medidas de lab |
+| Metadados | linha/equipamento, tipo de produto, matéria-prima, turno, campanha |
+
+Os metadados de **linha e tipo de produto** são o que permite analisar processos
+distintos da mesma planta sem duplicar skill: viram variável de estratificação,
+não cópia de arquivo.
 
 Somente `dados-processo` conhece SEEQ, SharePoint e Power BI. As demais enxergam
 apenas a tabela canônica. Trocar de fonte muda uma skill, não onze.
 
 ### Registro de fontes
 
-O pacote de processo carrega `references/fontes.md`: para cada fonte, nome, alias
-de ferramenta, localização, granularidade, colunas-chave e chave de junção.
-Entregue com estrutura definida e exemplo preenchido; o usuário completa.
+`dados-processo/references/fontes.md`: para cada fonte, nome, alias de
+ferramenta, localização, granularidade, colunas-chave e chave de junção.
+Entregue com estrutura definida e exemplo preenchido; o usuário completa conforme
+estrutura as bases.
 
 ### Declaração por skill
 
 Cada `SKILL.md` traz um bloco **Dados necessários**: colunas mínimas e número
-mínimo de unidades de análise para a análise ser válida. Faltando qualquer um, a
-skill instrui o agente a declarar o que falta em vez de produzir resultado.
+mínimo de bateladas para a análise ser válida. Faltando qualquer um, a skill
+instrui o agente a declarar o que falta em vez de produzir resultado.
 
 ### Código
 
@@ -179,20 +144,38 @@ em qualquer configuração.
 
 ## Catálogo de skills
 
-### Núcleo — infraestrutura
+```
+skills/
+  contexto-processo/
+  dados-processo/
+  modelo-preditivo/
+  analise-causa-raiz/
+  perfil-processo/
+  alarmes-e-limites/
+  sugestao-setpoint/
+  analise-rendimento/
+  analise-bloom/
+  analise-viscosidade/
+  analise-umidade/
+  _gabarito-analise-atributo.md
+```
 
-**`dados-processo`** — Procedimento de extração via aliases, contextualização por
-unidade de análise a partir das conditions, junção laboratório × processo,
-checagens de qualidade (gap, sinal congelado, valor fora de faixa física, unidade
-incompleta) e a regra-mor da redução antes de qualquer modelagem. Lê a definição
-de unidade de análise e o registro de fontes do pacote de processo ativo.
+### Base
 
-**`novo-processo`** — Onboarding de uma planta nova: conduz o preenchimento do
-`contexto-processo` a partir do gabarito, o registro de fontes e ferramentas, e a
-geração de uma skill `analise-<atributo>` por atributo relevante. É o que torna o
-framework operável por quem não participou deste design.
+**`contexto-processo`** — Mapa da planta: etapas da fabricação, variáveis-chave
+por etapa, unidades de medida, faixas típicas, linhas e tipos de produto,
+definição da unidade de análise, e relações causais conhecidas — incluindo o
+trade-off central da extração, em que condição mais agressiva aumenta massa
+extraída e degrada Bloom por hidrólise. Entregue preenchido com o conhecimento
+geral do setor e **marcado como "a validar"**, para o usuário substituir pela
+realidade da planta. É o que impede conclusões fisicamente implausíveis.
 
-### Núcleo — métodos
+**`dados-processo`** — Extração via aliases, contextualização por batelada a
+partir das conditions, junção laboratório × processo, checagens de qualidade
+(gap, sinal congelado, valor fora de faixa física, batelada incompleta) e a
+regra-mor da redução antes de qualquer modelagem.
+
+### Métodos
 
 **`modelo-preditivo`** — Do problema ao modelo validado: definição do alvo,
 feature engineering (agregação por fase, lag por tempo de residência), baseline
@@ -200,62 +183,53 @@ obrigatório (média e modelo trivial), **split temporal — nunca aleatório**,
 métrica em unidade de engenharia, interpretabilidade (importância de variáveis,
 dependência parcial), critério de aceite e o dever de declarar ausência de sinal.
 
-**`analise-causa-raiz`** — Contraste entre unidades boas e ruins, detecção de
+**`analise-causa-raiz`** — Contraste entre bateladas boas e ruins, detecção de
 mudança de regime, timeline de eventos, comparação de distribuições, e a
-disciplina de separar correlação de causa confrontando toda hipótese com o
-`contexto-processo` do pacote ativo. Saída: hipóteses ranqueadas, cada uma com o
-teste que a confirmaria.
+disciplina de separar correlação de causa confrontando toda hipótese com
+`contexto-processo`. Saída: hipóteses ranqueadas, cada uma com o teste que a
+confirmaria.
 
 **`perfil-processo`** — Perfil de referência (golden batch): perfil médio e banda
-de tolerância por fase, alinhamento temporal entre unidades de duração diferente,
-score de desvio de uma unidade contra a referência.
+de tolerância por fase, alinhamento temporal entre bateladas de duração
+diferente, score de desvio de uma batelada contra a referência. Perfis são
+estratificados por linha e tipo de produto.
 
 **`alarmes-e-limites`** — Derivação de limite a partir do histórico, não de
 opinião. Toda proposta acompanha taxa de falso alarme e antecedência média de
 detecção naquele histórico. Entrega como condition/fórmula SEEQ pronta.
 
 **`sugestao-setpoint`** — Otimização sob restrição: envelope operável observado,
-trade-off multi-objetivo, **proibição de extrapolar** para região sem dados,
-saída como **faixa** e não valor único, com impacto esperado e incerteza, sempre
-marcada como recomendação sujeita a validação do engenheiro e às restrições de
-segurança do processo.
+trade-off multi-objetivo (tipicamente Bloom × rendimento), **proibição de
+extrapolar** para região sem dados, saída como **faixa** e não valor único, com
+impacto esperado e incerteza, sempre marcada como recomendação sujeita a
+validação do engenheiro e às restrições de segurança do processo.
 
-### Pacote de processo
+### Atributos
 
-**`contexto-processo`** — Mapa da planta: etapas, variáveis-chave por etapa,
-unidades de medida, faixas típicas, unidade de análise, e relações causais
-conhecidas. Para gelatina, entregue como esqueleto preenchido com conhecimento
-geral do setor e **marcado como "a validar"** — incluindo o trade-off central da
-extração, em que condição mais agressiva aumenta massa extraída e degrada Bloom
-por hidrólise. O usuário substitui pela realidade da planta.
-
-**`analise-<atributo>`** — Uma por atributo. Para o pacote gelatina:
 `analise-rendimento`, `analise-bloom`, `analise-viscosidade`, `analise-umidade`.
-Cada uma carrega apenas o específico do atributo: método de medição e
-**incerteza/repetibilidade do ensaio**, variáveis de processo suspeitas em ordem
-de prioridade, armadilhas conhecidas. Depois delega ao método.
+
+Cada uma carrega apenas o específico do atributo: método de medição de
+laboratório e **incerteza/repetibilidade do ensaio**, variáveis de processo
+suspeitas em ordem de prioridade, armadilhas conhecidas. Depois delega ao método.
 
 A incerteza de medição é decisiva: se a repetibilidade do ensaio de Bloom é da
 ordem de ±15 g, um modelo com RMSE de 12 g está dentro do ruído do próprio
 laboratório e não representa capacidade preditiva. A skill obriga essa comparação.
 
-### Gabaritos
-
-`_gabaritos/contexto-processo.md` e `_gabaritos/analise-atributo.md` são as
-matrizes que `novo-processo` instancia. O pacote gelatina é a primeira
-instanciação e serve de exemplo de referência.
+**`_gabarito-analise-atributo.md`** é a matriz para criar uma skill de atributo
+novo (cor, turbidez, cinzas, pH final) sem reescrever método: preenche-se o
+método de medição, a incerteza, as variáveis suspeitas e as armadilhas.
 
 ## Convenções
 
-Padrões que fazem o conjunto se manter organizado ao crescer:
-
-- **Nomes** em português, kebab-case, verbo ou substantivo de domínio.
+- **Nomes** em português, kebab-case.
 - **Frontmatter** com `name` e `description`. A `description` das skills de
   atributo e de `analise-causa-raiz` é redigida para disparar por fala do
   engenheiro; a das skills de método e de base, para invocação por outra skill.
-  Isso evita competição de trigger e seleção errada.
+  Isso evita competição de trigger e seleção errada pelo agente.
 - **Blocos `<<PREENCHER>>`** explícitos e concentrados no topo do arquivo, nunca
-  diluídos no texto. Só existem em skills de pacote de processo.
+  diluídos no texto. Cobrem estrutura de dados (colunas, fontes, chave de
+  batelada) e descrição do processo.
 - **Autossuficiência:** referência a outra skill é sempre condicional ("se
   disponível"). Importar uma skill sozinha produz comportamento útil, porque o
   usuário exporta e importa uma a uma.
@@ -272,26 +246,12 @@ Padrões que fazem o conjunto se manter organizado ao crescer:
 4. Recomendação de setpoint é faixa, dentro do envelope observado, com incerteza,
    sempre sujeita a validação humana. O agente não atua em controle.
 5. Alarme proposto vem com o trade-off entre falso alarme e detecção.
-6. "O dado não sustenta essa pergunta" é resposta válida e obrigatória quando for
+6. Análise que mistura linhas ou tipos de produto sem estratificar é sinalizada
+   como risco de confundimento.
+7. "O dado não sustenta essa pergunta" é resposta válida e obrigatória quando for
    o caso.
-7. Dado truncado por limite de ferramenta é declarado, nunca analisado em
+8. Dado truncado por limite de ferramenta é declarado, nunca analisado em
    silêncio.
-
-## Onboarding de um novo processo
-
-O procedimento que a skill `novo-processo` executa:
-
-1. Preencher `contexto-processo` a partir do gabarito: etapas, variáveis,
-   unidades, faixas, unidade de análise, relações causais conhecidas.
-2. Preencher `references/ferramentas.md` mapeando os quatro aliases para as
-   ferramentas reais daquele agente.
-3. Preencher `references/fontes.md` com worksheets SEEQ, planilhas e relatórios.
-4. Instanciar uma `analise-<atributo>` por atributo relevante a partir do
-   gabarito, informando método de medição e incerteza.
-5. Validar com uma pergunta real de ponta a ponta antes de liberar aos demais
-   engenheiros.
-
-Nenhum passo toca o núcleo.
 
 ## Fora de escopo
 
@@ -299,4 +259,5 @@ Nenhum passo toca o núcleo.
   dados — já feitos pelo usuário.
 - Implantação de alarmes, modelos ou setpoints em qualquer sistema. O agente
   especifica; o engenheiro implanta.
+- Processos de outras indústrias.
 - Skills para outros públicos (operação, gestão).
