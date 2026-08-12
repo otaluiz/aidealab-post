@@ -18,10 +18,15 @@ Fontes já disponíveis ao agente:
 - **SEEQ** — variáveis de processo do banco SCADA. Extração via `spy.pull` sobre
   worksheets que já contêm sinais e conditions, em grid temporal predefinido. O
   agente pede *worksheet + período*, não nome de tag.
-- **Power BI** — dados agregados.
-- **Excel em SharePoint** — tabelas relacionais de input manual e resultados de
-  laboratório.
-- **SharePoint** — base de conhecimento: relatórios e documentos de processo.
+- **Power BI publicado** — semantic model no Service, múltiplas tabelas
+  relacionais resumidas em páginas de relatório. Fonte primária de dado agregado.
+- **Excel/CSV em SharePoint** — tabelas relacionais de input manual e resultados
+  de laboratório.
+- **SharePoint (documentos + `.pbix`)** — base de conhecimento: relatórios,
+  procedimentos, e os arquivos `.pbix` em si. **`.pbix` é arquivo binário
+  compactado — nenhum conector lê tabela de dentro dele.** É tratado como
+  referência documental, nunca como fonte de dado; o dado consultável é o
+  semantic model publicado no Service ou tabela exportada para Excel/CSV.
 
 Público exclusivo: **engenheiros**. Isso permite linguagem técnica, exposição de
 incerteza estatística e recusa explícita quando o dado não sustenta a pergunta.
@@ -80,9 +85,10 @@ conector muda um arquivo, não onze skills.
 | Alias | Papel | Realização típica no Copilot Studio |
 |---|---|---|
 | `SERIE_PROCESSO` | puxar série temporal contextualizada | ferramenta/flow que executa `spy.pull` sobre worksheet + período |
-| `TABELA_LAB` | ler resultados de laboratório e inputs manuais | Excel em SharePoint via conector de arquivos/Graph |
-| `AGREGADO_BI` | consultar indicadores já calculados | conector Power BI |
-| `DOCUMENTO` | base de conhecimento de processo | SharePoint como knowledge source do agente |
+| `MODELO_BI` | consultar indicadores já calculados | semantic model publicado no Power BI Service, consulta DAX |
+| `TABELA_SHAREPOINT` | ler resultados de laboratório, inputs manuais e tabelas exportadas | Excel/CSV em SharePoint via conector de arquivos/Graph |
+| `DOCUMENTO` | base de conhecimento de processo | SharePoint como knowledge source do agente — inclui `.pbix` como documento, nunca como dado |
+| `ESCRITA_SETPOINT` | **reservado, não implementado nesta fase** | ponto de extensão para uma futura camada de controle |
 
 ### Contrato da ferramenta SEEQ
 
@@ -146,8 +152,13 @@ em qualquer configuração.
 
 ```
 skills/
+  README.md
+  _gabarito-analise-atributo.md
+  _controle-futuro/
+    ROADMAP.md
   contexto-processo/
   dados-processo/
+  consulta-dados/
   modelo-preditivo/
   analise-causa-raiz/
   perfil-processo/
@@ -157,7 +168,6 @@ skills/
   analise-bloom/
   analise-viscosidade/
   analise-umidade/
-  _gabarito-analise-atributo.md
 ```
 
 ### Base
@@ -174,6 +184,14 @@ realidade da planta. É o que impede conclusões fisicamente implausíveis.
 partir das conditions, junção laboratório × processo, checagens de qualidade
 (gap, sinal congelado, valor fora de faixa física, batelada incompleta) e a
 regra-mor da redução antes de qualquer modelagem.
+
+### Consulta
+
+**`consulta-dados`** — Responde pergunta factual ou agregada ("quanto", "quando",
+"qual foi") direto da base relacional (`MODELO_BI`, depois `TABELA_SHAREPOINT`),
+sem acionar modelagem. Não dispara para perguntas de "por quê" — aí escala para
+`analise-causa-raiz` ou a skill de atributo relevante. Nunca responde a partir de
+`.pbix` não publicado.
 
 ### Métodos
 
@@ -203,6 +221,15 @@ trade-off multi-objetivo (tipicamente Bloom × rendimento), **proibição de
 extrapolar** para região sem dados, saída como **faixa** e não valor único, com
 impacto esperado e incerteza, sempre marcada como recomendação sujeita a
 validação do engenheiro e às restrições de segurança do processo.
+
+Já produz, sem implementar controle algum, dois artefatos que preparam uma fase
+futura: o **contrato de recomendação** (formato estruturado — variável, faixa,
+impacto, incerteza, confiança, validade) e o **registro de recomendações**
+(schema de lista SharePoint: emitida, avaliada, aplicada, resultado observado).
+O envelope de segurança usado para restringir a otimização vem de
+`contexto-processo` e é o mesmo campo que uma futura camada de controle
+consumiria. Nada disso aciona o alias `ESCRITA_SETPOINT`, reservado e não
+chamado nesta fase — ver `skills/_controle-futuro/ROADMAP.md`.
 
 ### Atributos
 
@@ -259,5 +286,8 @@ método de medição, a incerteza, as variáveis suspeitas e as armadilhas.
   dados — já feitos pelo usuário.
 - Implantação de alarmes, modelos ou setpoints em qualquer sistema. O agente
   especifica; o engenheiro implanta.
+- Implementação de controle de processo. `sugestao-setpoint` produz os ganchos
+  (contrato de recomendação, envelope de segurança, registro) para uma fase
+  futura, mas não aciona nenhum sistema de controle.
 - Processos de outras indústrias.
 - Skills para outros públicos (operação, gestão).
