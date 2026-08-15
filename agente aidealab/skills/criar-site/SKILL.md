@@ -48,13 +48,16 @@ pelo contexto de marca/negócio em vez de travar ou inventar.
 
 ## Etapa 2 — Direção de design
 
-1. Invoca `taste-skill` com o material coletado na Etapa 1 como brief. A
-   skill produz a "leitura de design" (tipo de página, vibe, público) e os
-   três dials (`DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`).
-2. Invoca `ui-ux-pro-max` (`search.py ... --design-system`), passando os
-   dials da `taste-skill` via `--variance`/`--motion`/`--density`, para obter
-   paleta, tipografia, stack recomendado e padrões de layout concretos —
-   ancorados no banco de dados, não só na inferência do passo anterior.
+1. Invoca a skill `taste-skill` (via a ferramenta Skill) com o material
+   coletado na Etapa 1 como brief. A skill produz a "leitura de design" (tipo
+   de página, vibe, público) e os três dials (`DESIGN_VARIANCE`,
+   `MOTION_INTENSITY`, `VISUAL_DENSITY`).
+2. Invoca a skill `ui-ux-pro-max` (via a ferramenta Skill), pedindo uma
+   direção de design concreta (`--design-system`) com os dials da
+   `taste-skill` como parâmetros do pedido (`--variance`/`--motion`/
+   `--density` — vocabulário da própria `ui-ux-pro-max`), para obter paleta,
+   tipografia, stack recomendado e padrões de layout concretos — ancorados no
+   banco de dados dela, não só na inferência do passo anterior.
 3. Apresenta ao usuário: leitura de design, paleta/tipografia escolhidas,
    stack recomendado.
 
@@ -75,15 +78,16 @@ usuário.
    da Chipa" → `hora-da-chipa`) e cria um repositório git novo em
    `D:\claude\sites\<cliente-normalizado>\` (`git init` local; sem push para
    GitHub — fica fora de escopo por enquanto).
-2. Roda `ui-ux-pro-max` de novo com `--design-system --persist --output-dir`
-   apontando para a raiz do novo repositório, para gravar
+2. Invoca a skill `ui-ux-pro-max` de novo (via a ferramenta Skill), agora
+   pedindo para persistir o design system (`--design-system --persist
+   --output-dir`) apontando para a raiz do novo repositório, para gravar
    `design-system/<projeto>/MASTER.md` com a direção aprovada no Checkpoint
    1 — isso garante consistência entre páginas conforme o site cresce.
 3. Implementa o site seguindo o `MASTER.md` e o plano de conteúdo aprovado,
    usando a stack escolhida na Etapa 2. Quando a stack for Tailwind-based,
-   usa a `ui-styling` (shadcn/ui + Tailwind) como referência de
-   implementação; para outras stacks, usa as buscas `--stack <nome>` da
-   `ui-ux-pro-max` como guia.
+   usa a skill `ui-styling` (shadcn/ui + Tailwind) como referência de
+   implementação; para outras stacks, pede à `ui-ux-pro-max` (via a
+   ferramenta Skill) orientação por stack (`--stack <nome>`) como guia.
 
 **Ponto de extensão**: é aqui — e na Etapa 2 — que futuras skills de
 desenvolvimento de site (a serem adicionadas pelo usuário ao ambiente) podem
