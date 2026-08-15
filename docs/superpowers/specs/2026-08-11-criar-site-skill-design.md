@@ -11,26 +11,48 @@ do cliente.
 `criar-site` é a mais ambiciosa das quatro: não mexe só em estrutura de
 pastas, ela efetivamente gera um site (código) para o cliente, usando as
 referências e a identidade de marca já organizadas no Drive pela
-`criar-cliente`. O objetivo explícito é evitar "site genérico"/AI slop — para
-isso, a skill se apoia em duas skills de design já instaladas no ambiente:
+`criar-cliente`. O objetivo explícito é evitar "site genérico"/AI slop.
 
-- **`taste-skill`** (`design-taste-frontend`) — skill de julgamento estético:
-  lê o brief, declara uma "leitura de design" (tipo de página, vibe,
-  público), define três dials (`DESIGN_VARIANCE`, `MOTION_INTENSITY`,
-  `VISUAL_DENSITY`) e mapeia o brief para o design system/stack certo. É
-  prosa/heurística — não tem banco de dados por trás, só o raciocínio do
-  modelo em cima de um guia de ~1200 linhas.
-- **`ui-ux-pro-max`** — skill orientada a dado: roda um script Python
-  (`search.py`) sobre um banco local (~1.7MB de CSVs: 84 estilos, 192
-  paletas, 74 pares tipográficos, guidelines de UX, regras por stack
-  incluindo performance de React) para transformar uma leitura de design em
-  paleta/tipografia/stack concretos, e **persiste** o resultado em
-  `design-system/<projeto>/MASTER.md` (+ overrides por página) — o que
-  garante consistência visual entre as páginas de um mesmo site.
+**Revisão de arquitetura (segunda rodada, após instalação de mais skills):**
+o desenho original usava `taste-skill` (julgamento) + `ui-ux-pro-max` (dado)
+para a direção de design. Depois da instalação de `impeccable` — um pipeline
+completo de design/build/QA — e da confirmação de que a stack do cliente é
+sempre React + Next.js (Vercel-ready), o desenho foi revisado:
 
-A `frontend-design` (skill padrão do Claude Code) fica fora do fluxo — é
-redundante frente às duas acima, que cobrem tanto o julgamento anti-slop
-(`taste-skill`) quanto o dado concreto de implementação (`ui-ux-pro-max`).
+- **`impeccable`** vira a espinha dorsal das Etapas 2 e 4. É mais completo
+  que `taste-skill` sozinho: além de ler o brief e definir uma direção anti-
+  slop, tem comandos de planejamento (`shape`), crítica (`critique`),
+  auditoria de acessibilidade/performance/responsivo (`audit`), polimento
+  final (`polish`), animação (`animate`), persiste contexto do projeto
+  (`PRODUCT.md`/`DESIGN.md`), e tem um subagente dedicado
+  (`impeccable-finish-reviewer`) para QA do resultado final. Cobre o que
+  `taste-skill` cobria e mais.
+- **`taste-skill` sai do fluxo** — redundante frente ao `impeccable`, que faz
+  o mesmo julgamento anti-slop com um pipeline mais completo por trás.
+- **`ui-ux-pro-max` muda de papel**: deixa de ser o dono da persistência do
+  design system (isso agora é `DESIGN.md`/`PRODUCT.md` do `impeccable`) e
+  passa a ser consultado pontualmente pelo `impeccable` quando este precisa
+  de um dado concreto rápido (ex: opções de paleta ou par tipográfico para
+  uma vibe específica) — o banco de dados dele (192 paletas, 74 pares
+  tipográficos, guidelines por stack) continua útil como referência, só não
+  é mais a fonte de verdade da consistência entre páginas.
+- **Componentes**: dois MCPs de componentes React/shadcn foram conectados —
+  `Shadcn_UI` (registry oficial: componentes, blocos pré-montados, temas) e
+  `21st.dev` (catálogo comunitário mais amplo + geração de componente via IA
+  quando nada no registry oficial serve). `Shadcn_UI` é a primeira parada
+  (componentes/blocos oficiais, testados, acessíveis); `21st.dev` é o
+  complemento quando se precisa de algo mais específico ou de geração.
+- **Animação**: como a stack é sempre React/Next, duas famílias de skills
+  cobrem terrenos diferentes, não redundantes — `gsap-framer-scroll-
+  animation` é a única que cobre Framer Motion (padrão para transições e
+  microinterações de componente, mais idiomático em React), e
+  `gsap-skills` (em especial `gsap-skills:gsap-scrolltrigger` e
+  `gsap-skills:gsap-react`) cobre GSAP com mais profundidade que a skill
+  anterior, reservado para animação de scroll complexa (pin, scroll
+  horizontal, coreografia) onde GSAP é claramente mais forte que Framer
+  Motion.
+- **`frontend-design`** (skill padrão do Claude Code) continua fora do
+  fluxo — redundante frente ao `impeccable`.
 
 O usuário sinalizou que vai continuar adicionando skills de criação de site ao
 ambiente ao longo do tempo. Por isso este desenho evita virar um skill
@@ -43,8 +65,9 @@ entrar sem reescrever o fluxo inteiro.
 Uma skill (`criar-site`) que, dado um cliente já existente (estrutura criada
 por `criar-cliente`), gera um site novo para ele: coleta as referências do
 cliente no Drive, define uma direção de design não genérica, planeja a
-estrutura de páginas/conteúdo, constrói o código do site num repositório git
-próprio, e mostra o resultado rodando localmente antes de finalizar.
+estrutura de páginas/conteúdo, constrói o código do site (React + Next.js)
+num repositório git próprio, e mostra o resultado rodando localmente antes de
+finalizar.
 
 ## Comportamento
 
@@ -73,15 +96,15 @@ pelo contexto de marca/negócio em vez de travar ou inventar.
 
 ### Etapa 2 — Direção de design
 
-1. Invoca `taste-skill` com o material coletado na Etapa 1 como brief. A
-   skill produz a "leitura de design" (tipo de página, vibe, público) e os
-   três dials (`DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`).
-2. Invoca `ui-ux-pro-max` (`search.py ... --design-system`), passando os
-   dials da `taste-skill` via `--variance`/`--motion`/`--density`, para obter
-   paleta, tipografia, stack recomendado e padrões de layout concretos —
-   ancorados no banco de dados, não só na inferência do passo anterior.
-3. Apresenta ao usuário: leitura de design, paleta/tipografia escolhidas,
-   stack recomendado.
+1. Invoca `impeccable` (comando `shape`, ou o fluxo de novo trabalho quando
+   for o primeiro site do cliente) com o material coletado na Etapa 1 como
+   contexto. `impeccable` decide o modo (`Persuade` — site de cliente é
+   página de marketing/vendas) e produz a direção de design anti-slop.
+2. Quando `impeccable` precisar de um dado concreto rápido (ex: opções de
+   paleta ou par tipográfico para a vibe identificada), consulta
+   `ui-ux-pro-max` como referência pontual — não é o dono da persistência.
+3. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
+   geral.
 
 **Checkpoint 1**: aguarda aprovação explícita do usuário antes de seguir. Se
 o usuário pedir ajustes, refina e apresenta de novo.
@@ -99,50 +122,71 @@ usuário.
 1. Normaliza o nome do cliente (minúsculas, espaços viram hífen — ex: "Hora
    da Chipa" → `hora-da-chipa`) e cria um repositório git novo em
    `D:\claude\sites\<cliente-normalizado>\` (`git init` local; sem push para
-   GitHub — fica fora de escopo por enquanto).
-2. Roda `ui-ux-pro-max` de novo com `--design-system --persist --output-dir`
-   apontando para a raiz do novo repositório, para gravar
-   `design-system/<projeto>/MASTER.md` com a direção aprovada no Checkpoint
-   1 — isso garante consistência entre páginas conforme o site cresce.
-3. Implementa o site seguindo o `MASTER.md` e o plano de conteúdo aprovado,
-   usando a stack escolhida na Etapa 2. Quando a stack for Tailwind-based,
-   usa a `ui-styling` (shadcn/ui + Tailwind) como referência de
-   implementação; para outras stacks, usa as buscas `--stack <nome>` da
-   `ui-ux-pro-max` como guia.
-4. **Ponto de extensão**: é aqui que futuras skills de desenvolvimento de
-   site (a serem adicionadas pelo usuário) entram — hoje, a construção é
-   feita seguindo diretamente `MASTER.md` + guidelines de stack.
+   GitHub — fica fora de escopo por enquanto). Stack fixa: React + Next.js
+   (Vercel-ready).
+2. `impeccable` constrói o site seguindo a direção aprovada no Checkpoint 1 e
+   o plano de conteúdo aprovado no Checkpoint 2, persistindo o contexto do
+   projeto em `PRODUCT.md`/`DESIGN.md`.
+3. **Componentes**: busca primeiro no `Shadcn_UI` (registry oficial —
+   componentes, blocos, temas) para primitivas e composições padrão. Quando
+   precisar de algo mais específico que o registry oficial não cobre, busca
+   ou gera no `21st.dev` (catálogo mais amplo + geração via IA).
+4. **Animação**: Framer Motion como padrão (via `gsap-framer-scroll-
+   animation`) para transições e microinterações de componente. GSAP +
+   ScrollTrigger (via `gsap-skills:gsap-scrolltrigger` e
+   `gsap-skills:gsap-react`) especificamente para animação de scroll
+   complexa (pin, scroll horizontal, coreografia).
+5. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` +
+   `impeccable polish` (ou o subagente `impeccable-finish-reviewer`) sobre o
+   site construído.
+6. **Ponto de extensão**: é aqui (e na Etapa 2) que futuras skills de
+   desenvolvimento de site (a serem adicionadas pelo usuário) entram — hoje,
+   a construção segue o pipeline `impeccable` descrito acima.
 
 ### Etapa 5 — Preview
 
-Sobe um servidor local (dev server da stack escolhida) e mostra o site
-rodando para o usuário revisar antes de finalizar.
+Sobe o servidor de dev local do Next.js e mostra o site rodando para o
+usuário revisar antes de finalizar.
 
 ### Etapa 6 — Relatório final
 
-Reporta: caminho do repositório local, stack e design system escolhidos
-(paleta/tipografia), resumo do que foi criado.
+Reporta: caminho do repositório local, direção de design escolhida
+(paleta/tipografia/modo), resumo do que foi criado, e resultado do QA final
+(`impeccable audit`/`polish`).
 
 ## Implementação
 
 Ferramentas usadas:
 - MCP do Google Drive (`search_files`) — Etapa 1 e verificação de
   pré-requisito.
-- Skill `taste-skill` e skill `ui-ux-pro-max` (via `search.py`) — Etapa 2 e 4.
-- Skill `ui-styling` — Etapa 4, quando a stack for Tailwind/shadcn.
-- `git` local e ferramentas de scaffolding da stack escolhida (ex: Vite,
-  Next.js CLI) — Etapa 4.
-- Servidor de dev local da stack escolhida — Etapa 5.
+- Skill `impeccable` (+ subagentes `impeccable-finish-reviewer` e
+  `impeccable-asset-producer` quando aplicável) — Etapa 2 e 4 (direção,
+  construção, QA final).
+- Skill `ui-ux-pro-max` — consulta pontual de dados concretos (paletas,
+  tipografia, guidelines por stack) nas Etapas 2 e 4.
+- Skill `ui-styling` — referência de implementação shadcn/ui + Tailwind na
+  Etapa 4.
+- MCP `Shadcn_UI` — registry oficial de componentes/blocos/temas shadcn —
+  Etapa 4.
+- MCP `21st.dev` — catálogo estendido de componentes + geração via IA —
+  Etapa 4, quando o registry oficial não cobre o necessário.
+- Skill `gsap-framer-scroll-animation` — Framer Motion (animação padrão de
+  componente) — Etapa 4.
+- Skills `gsap-skills:gsap-scrolltrigger` e `gsap-skills:gsap-react` — GSAP
+  para animação de scroll complexa — Etapa 4.
+- `git` local — Etapa 4.
+- Servidor de dev local do Next.js — Etapa 5.
 
 ## Fora de escopo
 
-- Deploy, hospedagem, e compra de domínio.
+- Deploy, hospedagem, e compra de domínio (mesmo a stack sendo Vercel-ready,
+  o deploy em si fica fora — o usuário decide quando publicar).
 - Push para repositório remoto/GitHub — fica só local por enquanto.
 - Gerar copy final sem aprovação do usuário — a skill propõe nos Checkpoints
   1 e 2, usuário aprova antes de construir.
 - Rodar `criar-cliente` automaticamente quando a pasta do cliente não existe
   — a skill apenas avisa e para.
-- Usar a skill `frontend-design` padrão do Claude Code — redundante frente a
-  `taste-skill` + `ui-ux-pro-max` neste fluxo.
-- Definir de antemão uma stack fixa para todo site — a Etapa 2 decide caso a
-  caso, ancorada no `ui-ux-pro-max`.
+- Usar `taste-skill` isolada ou a skill `frontend-design` padrão do Claude
+  Code — ambas redundantes frente ao `impeccable` neste fluxo.
+- Decidir a stack caso a caso — fixa em React + Next.js (Vercel-ready) para
+  todo site, conforme confirmado pelo usuário.
