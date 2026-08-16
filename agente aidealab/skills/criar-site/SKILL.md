@@ -1,6 +1,6 @@
 ---
 name: criar-site
-description: Gera um site novo (React + Next.js) para um cliente da aidealab a partir das referências e identidade de marca já organizadas no Drive pela criar-cliente. Usa impeccable como espinha dorsal de direção de design anti-slop, construção e QA final, consultando ui-ux-pro-max para dados concretos e os MCPs Shadcn_UI/21st.dev para componentes. Dispara com "criar site <cliente>" / "crie o site do cliente <cliente>" / "novo site <cliente>". Para em dois checkpoints de aprovação (direção de design, plano de conteúdo) antes de escrever qualquer código.
+description: Gera um site novo (React + Next.js) para um cliente da aidealab a partir das referências e identidade de marca já organizadas no Drive pela criar-cliente. Usa impeccable como espinha dorsal de direção de design anti-slop, construção e QA final, consultando ui-ux-pro-max para dados concretos, os MCPs Originkit/Shadcn_UI/21st.dev para componentes, e opcionalmente React Three Fiber/GSAP/Lenis para 3D e vídeo scroll-driven quando a direção pedir. Dispara com "criar site <cliente>" / "crie o site do cliente <cliente>" / "novo site <cliente>". Para em dois checkpoints de aprovação (direção de design, plano de conteúdo) antes de escrever qualquer código.
 ---
 
 # Criar site
@@ -67,9 +67,10 @@ o usuário pedir ajustes, refina e apresenta de novo.
 
 ## Etapa 3 — Plano de conteúdo e páginas
 
-Propõe a estrutura de páginas/seções e um esboço de conteúdo (textos-chave,
-CTAs) com base na direção aprovada e no negócio do cliente. Apresenta ao
-usuário.
+Propõe a estrutura de páginas/seções e, usando a skill `marketing:content-
+creation` (via a ferramenta Skill), um esboço de copy de conversão
+(headlines, CTAs, textos-chave) com base na direção aprovada e no negócio do
+cliente — não texto placeholder genérico. Apresenta ao usuário.
 
 **Checkpoint 2**: aguarda aprovação explícita do usuário antes de construir.
 
@@ -84,11 +85,13 @@ usuário.
    seguindo a direção aprovada no Checkpoint 1 e o plano de conteúdo
    aprovado no Checkpoint 2, persistindo o contexto do projeto em
    `PRODUCT.md`/`DESIGN.md`.
-3. **Componentes**: busca primeiro no MCP `Shadcn_UI` (registry oficial —
-   componentes, blocos pré-montados, temas) para primitivas e composições
-   padrão. Quando precisar de algo mais específico que o registry oficial
-   não cobre, busca ou gera no MCP `21st.dev` (catálogo comunitário mais
-   amplo + geração de componente via IA).
+3. **Componentes** (hierarquia de 3 níveis): busca primeiro no MCP
+   `Originkit` (seções de marketing prontas — hero, navbar, pricing, cards,
+   forms — já adaptadas para Next.js/Tailwind/TS, com Framer Motion nativo).
+   Para primitivas que o Originkit não cobre (botões, dialogs, formulários
+   avulsos, tabelas), usa o MCP `Shadcn_UI` (registry oficial). Só recorre
+   ao MCP `21st.dev` (catálogo mais amplo + geração via IA) como fallback
+   final, quando nenhum dos dois anteriores serve.
 4. **Animação**: usa a skill `gsap-framer-scroll-animation` (Framer Motion)
    como padrão para transições e microinterações de componente — mais
    idiomático em React. Usa as skills `gsap-skills:gsap-scrolltrigger` e
@@ -96,7 +99,20 @@ usuário.
    complexa (pin, scroll horizontal, coreografia), onde GSAP é claramente
    mais forte que Framer Motion — as duas famílias cobrem terrenos
    diferentes, não são redundantes entre si.
-5. **QA final**: antes de ir para a Etapa 5, invoca `impeccable audit` +
+5. **3D e vídeo (condicional — só quando a direção aprovada pedir)**: quando
+   — e só quando — a direção aprovada no Checkpoint 1 pedir tratamento 3D ou
+   vídeo scroll-driven, usa React Three Fiber + `@react-three/drei` +
+   `@react-three/postprocessing` como bibliotecas de código para cenas 3D
+   procedurais dentro do Next.js (sem modelos 3D customizados, sem MCP do
+   Blender — avaliado e descartado), e `Lenis` como biblioteca de código
+   para smooth scroll compatível com GSAP ScrollTrigger. Para vídeo: vídeo
+   scroll-scrubbed via técnica nativa do GSAP (`currentTime` do `<video>`
+   controlado pelo ScrollTrigger, sem lib extra); vídeo-textura dentro de
+   cena 3D via `useVideoTexture` do `drei`; vídeo de fundo/hero comum via
+   `<video>` nativo do Next.js seguindo boas práticas de performance — sem
+   CDN/streaming de vídeo por padrão. Em nenhum outro site esse bloco entra
+   em jogo.
+6. **QA final**: antes de ir para a Etapa 5, invoca `impeccable audit` +
    `impeccable polish` (ou o subagente `impeccable-finish-reviewer`, via a
    ferramenta Agent) sobre o site construído.
 
@@ -119,24 +135,34 @@ Reporta: caminho do repositório local, direção de design escolhida
 ## Ferramentas necessárias
 
 - MCP do Google Drive (`search_files`) — verificação do pré-requisito e
-  Etapa 1.
+  Etapa 1. **Somente leitura**: `criar-site` nunca cria, move ou renomeia
+  pasta de cliente no Drive — isso é responsabilidade exclusiva da skill
+  `criar-cliente`.
 - Skill `impeccable` (+ subagentes `impeccable-finish-reviewer` e
   `impeccable-asset-producer` quando aplicável, invocados via as
   ferramentas Skill/Agent, não chamando scripts internos diretamente) —
   Etapa 2 e Etapa 4 (direção, construção, QA final).
 - Skill `ui-ux-pro-max` (via a ferramenta Skill) — consulta pontual de
-  dados concretos (paletas, tipografia, guidelines por stack) nas Etapas 2
-  e 4.
+  dados concretos (paletas, tipografia, guidelines por stack, incluindo
+  `--stack threejs` quando aplicável) nas Etapas 2 e 4.
+- Skill `marketing:content-creation` (via a ferramenta Skill) — copy de
+  conversão (headlines, CTAs, textos-chave) na Etapa 3.
 - Skill `ui-styling` — referência de implementação shadcn/ui + Tailwind na
   Etapa 4.
+- MCP `Originkit` — seções de marketing prontas (hero, navbar, pricing,
+  cards, forms) — Etapa 4, primeira parada para componentes.
 - MCP `Shadcn_UI` — registry oficial de componentes/blocos/temas shadcn —
-  Etapa 4.
+  Etapa 4, para primitivas que o Originkit não cobre.
 - MCP `21st.dev` — catálogo estendido de componentes + geração via IA —
-  Etapa 4, quando o registry oficial não cobre o necessário.
+  Etapa 4, fallback final quando nem Originkit nem Shadcn_UI cobrem.
 - Skill `gsap-framer-scroll-animation` — Framer Motion, animação padrão de
   componente — Etapa 4.
 - Skills `gsap-skills:gsap-scrolltrigger` e `gsap-skills:gsap-react` — GSAP
   para animação de scroll complexa — Etapa 4.
+- React Three Fiber, `@react-three/drei`, `@react-three/postprocessing`,
+  `Lenis` — bibliotecas de código (não skills/MCPs do ambiente, usadas
+  diretamente na implementação) — Etapa 4, só quando a direção aprovada
+  pedir 3D/vídeo scroll-driven.
 - `git` local — Etapa 4.
 - Servidor de dev local do Next.js — Etapa 5.
 
@@ -160,3 +186,9 @@ Reporta: caminho do repositório local, direção de design escolhida
   Code — ambas redundantes frente ao `impeccable` neste fluxo.
 - Decidir a stack caso a caso — fixa em React + Next.js (Vercel-ready) para
   todo site, conforme confirmado pelo usuário.
+- Criar ou gerenciar pastas de cliente no Drive — isso é exclusivo da skill
+  `criar-cliente`, separada; `criar-site` só lê a estrutura já existente.
+- Modelos 3D customizados e o MCP do Blender — avaliado e descartado; 3D
+  fica procedural/gerado em código (React Three Fiber).
+- Hospedagem/CDN/streaming de vídeo (ex: Mux, Cloudinary) — vídeo fica
+  self-hosted no repositório por padrão.
