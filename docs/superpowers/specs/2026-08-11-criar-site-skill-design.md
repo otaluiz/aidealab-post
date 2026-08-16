@@ -118,7 +118,11 @@ mesma convenção do projeto).
 
 ### Etapa 1 — Coleta de referências
 
-Lê, da pasta do cliente no Drive:
+Lê (não só lista) o conteúdo da pasta do cliente no Drive — busca os
+arquivos com `search_files` e depois efetivamente lê o conteúdo deles
+(`read_file_content` para texto; `download_file_content` seguido de leitura
+visual para imagens de referência, que são o grosso do material em
+`01-Referencias`):
 - `00-Identidade-e-Tom` — identidade de marca e tom de voz.
 - `01-Referencias/Site` — referências específicas de site.
 - `01-Referencias/Instagram` — usada como apoio só se `Site` estiver vazia
@@ -130,18 +134,33 @@ pelo contexto de marca/negócio em vez de travar ou inventar.
 
 ### Etapa 2 — Direção de design
 
-1. Invoca `impeccable` (comando `shape`, ou o fluxo de novo trabalho quando
-   for o primeiro site do cliente) com o material coletado na Etapa 1 como
-   contexto. `impeccable` decide o modo (`Persuade` — site de cliente é
-   página de marketing/vendas) e produz a direção de design anti-slop.
-2. Quando `impeccable` precisar de um dado concreto rápido (ex: opções de
+1. Normaliza o nome do cliente (minúsculas, espaços viram hífen — ex: "Hora
+   da Chipa" → `hora-da-chipa`) e cria, desde já, um repositório git **vazio**
+   em `D:\claude\sites\<cliente-normalizado>\` (`git init` local; nenhum
+   arquivo de código ainda — só a pasta e o git). Isso existe para que
+   `impeccable` já rode com o diretório de trabalho (`cwd`) correto desde o
+   início, já que ele exige isso no próprio setup dele e persiste
+   `PRODUCT.md`/`DESIGN.md` relativo a esse `cwd`. Criar uma pasta vazia não
+   viola a garantia de "nenhum código antes dos dois checkpoints" — essa
+   garantia é sobre o **site em si** (código de página, componentes),
+   coberta abaixo.
+2. Invoca `impeccable` (fluxo de novo trabalho — todo site desta skill é o
+   primeiro do cliente, não há caso de re-uso de `impeccable` num projeto
+   existente) com `cwd` no repositório criado no passo 1, e o material
+   coletado na Etapa 1 como contexto. `impeccable` decide o modo (`Persuade`
+   — site de cliente é página de marketing/vendas) e produz a direção de
+   design anti-slop, persistindo `PRODUCT.md`/`DESIGN.md` no repositório.
+3. Quando `impeccable` precisar de um dado concreto rápido (ex: opções de
    paleta ou par tipográfico para a vibe identificada), consulta
    `ui-ux-pro-max` como referência pontual — não é o dono da persistência.
-3. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
+4. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
    geral.
 
 **Checkpoint 1**: aguarda aprovação explícita do usuário antes de seguir. Se
-o usuário pedir ajustes, refina e apresenta de novo.
+o usuário pedir ajustes, refina e apresenta de novo. Nenhum arquivo de
+código do site é escrito antes desta aprovação — só a pasta/git vazios do
+passo 1 e os arquivos de contexto do `impeccable` (`PRODUCT.md`/`DESIGN.md`,
+que são o próprio produto desta etapa, não código do site).
 
 ### Etapa 3 — Plano de conteúdo e páginas
 
@@ -151,17 +170,23 @@ com base na direção aprovada e no negócio do cliente — não texto placehold
 genérico. Apresenta ao usuário.
 
 **Checkpoint 2**: aguarda aprovação explícita do usuário antes de construir.
+Nenhum arquivo de código do site (componentes, páginas) é escrito antes
+desta aprovação.
 
 ### Etapa 4 — Construção
 
-1. Normaliza o nome do cliente (minúsculas, espaços viram hífen — ex: "Hora
-   da Chipa" → `hora-da-chipa`) e cria um repositório git novo em
-   `D:\claude\sites\<cliente-normalizado>\` (`git init` local; sem push para
-   GitHub — fica fora de escopo por enquanto). Stack fixa: React + Next.js
+1. No repositório já criado na Etapa 2 (passo 1), escolhe e roda o comando
+   de scaffolding do Next.js apropriado antes de `impeccable` gerar
+   qualquer página — ex: `create-next-app` apontando para o diretório já
+   existente. Se `D:\claude\sites\<cliente-normalizado>\` já tiver um site
+   de uma execução anterior (re-execução da skill para o mesmo cliente),
+   avisa o usuário e pergunta se quer sobrescrever, ou trata como
+   atualização incremental — não decide isso sozinha. Sem push para GitHub
+   — fica fora de escopo por enquanto. Stack fixa: React + Next.js
    (Vercel-ready).
 2. `impeccable` constrói o site seguindo a direção aprovada no Checkpoint 1 e
-   o plano de conteúdo aprovado no Checkpoint 2, persistindo o contexto do
-   projeto em `PRODUCT.md`/`DESIGN.md`.
+   o plano de conteúdo aprovado no Checkpoint 2, atualizando o contexto do
+   projeto em `PRODUCT.md`/`DESIGN.md` já existentes desde a Etapa 2.
 3. **Componentes** (hierarquia de 3 níveis): busca primeiro no `Originkit`
    (seções de marketing prontas — hero, navbar, pricing, cards, forms — já
    adaptadas para Next.js/Tailwind/TS, com Framer Motion nativo). Para
@@ -169,22 +194,28 @@ genérico. Apresenta ao usuário.
    avulsos, tabelas), usa `Shadcn_UI` (registry oficial). Só recorre ao
    `21st.dev` (catálogo mais amplo + geração via IA) quando nenhum dos dois
    anteriores serve.
-4. **Animação**: Framer Motion como padrão (via `gsap-framer-scroll-
-   animation`) para transições e microinterações de componente. GSAP +
-   ScrollTrigger (via `gsap-skills:gsap-scrolltrigger` e
-   `gsap-skills:gsap-react`) especificamente para animação de scroll
-   complexa (pin, scroll horizontal, coreografia).
+4. **Animação e mouse-following**: Framer Motion como padrão (via
+   `gsap-framer-scroll-animation`) para transições e microinterações de
+   componente, incluindo mouse-following na camada 2D/DOM (cursor
+   magnético, hover). GSAP + ScrollTrigger (via `gsap-skills:gsap-
+   scrolltrigger` e `gsap-skills:gsap-react`) especificamente para animação
+   de scroll complexa (pin, scroll horizontal, coreografia).
 5. **3D e vídeo (condicional — só quando a direção aprovada pedir)**: React
    Three Fiber + `@react-three/drei` + `@react-three/postprocessing` para
    cenas 3D procedurais (sem modelos customizados nem MCP do Blender —
    avaliado e descartado), `Lenis` para smooth scroll compatível com GSAP
-   ScrollTrigger. Vídeo scroll-scrubbed via GSAP nativo (`currentTime` do
-   `<video>`), vídeo-textura 3D via `useVideoTexture` do `drei`, vídeo de
-   fundo comum via `<video>` do Next.js com boas práticas de performance —
-   sem CDN/streaming de vídeo por padrão.
-6. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` +
-   `impeccable polish` (ou o subagente `impeccable-finish-reviewer`) sobre o
-   site construído.
+   ScrollTrigger. Mouse-following dentro de uma cena 3D usa eventos de
+   ponteiro nativos do R3F/Three.js — não precisa de ferramenta adicional.
+   Vídeo scroll-scrubbed via GSAP nativo (`currentTime` do `<video>`),
+   vídeo-textura 3D via `useVideoTexture` do `drei`, vídeo de fundo comum
+   via `<video>` do Next.js com boas práticas de performance — sem
+   CDN/streaming de vídeo por padrão.
+6. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` seguido
+   de `impeccable polish` sobre o site construído — esse é o caminho padrão,
+   sempre o mesmo, para garantir profundidade de QA consistente entre
+   execuções. O subagente `impeccable-finish-reviewer` é usado só como
+   escalonamento, quando `audit`/`polish` sinalizarem algo que exige uma
+   segunda opinião mais profunda — não como alternativa intercambiável.
 7. **Ponto de extensão**: é aqui (e na Etapa 2) que futuras skills de
    desenvolvimento de site (a serem adicionadas pelo usuário) entram — hoje,
    a construção segue o pipeline `impeccable` descrito acima.
@@ -202,21 +233,31 @@ Reporta: caminho do repositório local, direção de design escolhida
 
 ## Implementação
 
+Nomes de skill abaixo são os nomes completos (`plugin:skill`) que a
+ferramenta Skill do Claude Code realmente resolve — não os nomes curtos
+usados em prosa nas seções acima.
+
 Ferramentas usadas:
-- MCP do Google Drive (`search_files`) — Etapa 1 e verificação de
-  pré-requisito. Somente leitura — `criar-site` nunca cria/move/renomeia
-  pasta de cliente no Drive; isso é responsabilidade exclusiva de
-  `criar-cliente` (skill separada).
-- Skill `impeccable` (+ subagentes `impeccable-finish-reviewer` e
-  `impeccable-asset-producer` quando aplicável) — Etapa 2 e 4 (direção,
+- MCP do Google Drive (`search_files` para localizar, `read_file_content`/
+  `download_file_content` para efetivamente ler o conteúdo) — Etapa 1 e
+  verificação de pré-requisito. Somente leitura — `criar-site` nunca
+  cria/move/renomeia pasta de cliente no Drive; isso é responsabilidade
+  exclusiva de `criar-cliente` (skill separada).
+- Skill `impeccable:impeccable` (+ subagentes `impeccable:impeccable-
+  finish-reviewer`, usado como escalonamento de QA, e `impeccable:
+  impeccable-asset-producer` quando aplicável) — Etapa 2 e 4 (direção,
   construção, QA final).
-- Skill `ui-ux-pro-max` — consulta pontual de dados concretos (paletas,
-  tipografia, guidelines por stack, incluindo `--stack threejs` quando
-  aplicável) nas Etapas 2 e 4.
+- Skill `ui-ux-pro-max:ui-ux-pro-max` — consulta pontual de dados concretos
+  (paletas, tipografia, guidelines por stack, incluindo `--stack threejs`
+  quando aplicável) nas Etapas 2 e 4.
 - Skill `marketing:content-creation` — copy de conversão (headlines, CTAs)
   na Etapa 3.
-- Skill `ui-styling` — referência de implementação shadcn/ui + Tailwind na
-  Etapa 4.
+- Skill `ui-ux-pro-max:ui-styling` — referência de implementação shadcn/ui +
+  Tailwind na Etapa 4 (parte do mesmo plugin do `ui-ux-pro-max`, não uma
+  skill à parte).
+- Comando de scaffolding do Next.js (ex: `create-next-app`) — Etapa 4,
+  passo 1, para inicializar o projeto dentro do repositório já criado na
+  Etapa 2.
 - MCP `Originkit` — seções de marketing prontas (hero, navbar, pricing,
   cards, forms) — Etapa 4, primeira parada para componentes.
 - MCP `Shadcn_UI` — registry oficial de componentes/blocos/temas shadcn —
@@ -230,7 +271,7 @@ Ferramentas usadas:
 - React Three Fiber, `@react-three/drei`, `@react-three/postprocessing`,
   `Lenis` — Etapa 4, só quando a direção aprovada pedir 3D/scroll cinemático
   (bibliotecas de código, não skills/MCPs do ambiente).
-- `git` local — Etapa 4.
+- `git` local — Etapa 2, passo 1 (`git init` do repositório vazio).
 - Servidor de dev local do Next.js — Etapa 5.
 
 ## Fora de escopo
