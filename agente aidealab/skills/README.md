@@ -10,11 +10,11 @@ desenhadas).
 | Skill | Dispara por fala? | Papel |
 |---|---|---|
 | `criar-cliente` | sim | garante a estrutura padrão de pastas do cliente no Drive |
+| `criar-site` | sim | gera o site do cliente (React + Next.js, com 3D/vídeo condicional) a partir das referências do Drive, usando impeccable como espinha dorsal de direção/construção/QA |
 
 Planejadas, cada uma com spec própria em `docs/superpowers/specs/` antes de
-virar skill (ainda não criadas): **criar carrossel**, **postar no Instagram**,
-**criar site**. Todas dependem de `criar-cliente` para localizar a pasta certa
-do cliente.
+virar skill (ainda não criadas): **criar carrossel** e **postar no Instagram**.
+Todas dependem de `criar-cliente` para localizar a pasta certa do cliente.
 
 ## Convenções
 
