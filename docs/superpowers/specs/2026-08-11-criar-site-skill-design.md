@@ -54,6 +54,40 @@ sempre React + Next.js (Vercel-ready), o desenho foi revisado:
 - **`frontend-design`** (skill padrão do Claude Code) continua fora do
   fluxo — redundante frente ao `impeccable`.
 
+**Revisão de arquitetura (terceira rodada):** mais um MCP de componentes
+(`Originkit`) foi conectado, e o usuário pediu suporte a sites com animação
+3D, vídeo scroll-driven e mouse-following. Ambos entram como extensões
+condicionais — só ativam quando a direção aprovada na Etapa 2 pedir esse
+tratamento, não em todo site:
+
+- **Componentes viram hierarquia de 3 níveis**: `Originkit` primeiro (seções
+  de marketing prontas — hero, navbar, pricing, cards, forms — já adaptadas
+  para Next.js/Tailwind/TS, com código Framer Motion nativo); `Shadcn_UI`
+  para primitivas que o Originkit não cobre (botões, dialogs, formulários
+  avulsos, tabelas); `21st.dev` como fallback final (catálogo mais amplo +
+  geração via IA) quando nenhum dos dois anteriores serve.
+- **3D condicional**: quando a direção aprovada pedir elementos 3D, usa
+  React Three Fiber + `@react-three/drei` + `@react-three/postprocessing`
+  para renderização declarativa dentro do Next.js, `Lenis` para smooth
+  scroll (necessário para o scroll nativo não "quebrar" com cenas 3D
+  pesadas), e GSAP ScrollTrigger (já no fluxo) para sincronizar câmera/
+  objetos 3D com o scroll. É procedural/gerado em código — não depende de
+  modelos 3D customizados nem do MCP do Blender (avaliado e descartado: não
+  é necessário para o padrão de sites da aidealab). `ui-ux-pro-max` tem
+  `--stack threejs` no banco dele, usado como referência pontual do mesmo
+  jeito que as outras stacks.
+- **Vídeo condicional**: vídeo scroll-scrubbed (currentTime do `<video>`
+  controlado pelo GSAP ScrollTrigger — técnica nativa do próprio GSAP, sem
+  lib extra); vídeo como textura dentro de cena 3D via `useVideoTexture` do
+  `@react-three/drei`; vídeo de fundo/hero comum via `<video>` nativo do
+  Next.js seguindo as guidelines de performance que o `ui-ux-pro-max` já
+  cobre (lazy load, evitar CLS). Hospedagem/CDN de vídeo (ex: Mux,
+  Cloudinary) fica fora de escopo por padrão — mesma lógica do resto do
+  projeto (hospedagem é decisão do usuário depois).
+- **Mouse-following**: na camada 2D/DOM, via Framer Motion (já no fluxo).
+  Dentro de uma cena 3D, via eventos de ponteiro nativos do R3F/Three.js —
+  não precisa de ferramenta adicional.
+
 O usuário sinalizou que vai continuar adicionando skills de criação de site ao
 ambiente ao longo do tempo. Por isso este desenho evita virar um skill
 monolítico: as etapas 2 (direção de design) e 4 (construção) são pontos de
@@ -111,9 +145,10 @@ o usuário pedir ajustes, refina e apresenta de novo.
 
 ### Etapa 3 — Plano de conteúdo e páginas
 
-Propõe a estrutura de páginas/seções e um esboço de conteúdo (textos-chave,
-CTAs) com base na direção aprovada e no negócio do cliente. Apresenta ao
-usuário.
+Propõe a estrutura de páginas/seções e, usando a skill `marketing:content-
+creation`, um esboço de copy de conversão (headlines, CTAs, textos-chave)
+com base na direção aprovada e no negócio do cliente — não texto placeholder
+genérico. Apresenta ao usuário.
 
 **Checkpoint 2**: aguarda aprovação explícita do usuário antes de construir.
 
@@ -127,19 +162,30 @@ usuário.
 2. `impeccable` constrói o site seguindo a direção aprovada no Checkpoint 1 e
    o plano de conteúdo aprovado no Checkpoint 2, persistindo o contexto do
    projeto em `PRODUCT.md`/`DESIGN.md`.
-3. **Componentes**: busca primeiro no `Shadcn_UI` (registry oficial —
-   componentes, blocos, temas) para primitivas e composições padrão. Quando
-   precisar de algo mais específico que o registry oficial não cobre, busca
-   ou gera no `21st.dev` (catálogo mais amplo + geração via IA).
+3. **Componentes** (hierarquia de 3 níveis): busca primeiro no `Originkit`
+   (seções de marketing prontas — hero, navbar, pricing, cards, forms — já
+   adaptadas para Next.js/Tailwind/TS, com Framer Motion nativo). Para
+   primitivas que o Originkit não cobre (botões, dialogs, formulários
+   avulsos, tabelas), usa `Shadcn_UI` (registry oficial). Só recorre ao
+   `21st.dev` (catálogo mais amplo + geração via IA) quando nenhum dos dois
+   anteriores serve.
 4. **Animação**: Framer Motion como padrão (via `gsap-framer-scroll-
    animation`) para transições e microinterações de componente. GSAP +
    ScrollTrigger (via `gsap-skills:gsap-scrolltrigger` e
    `gsap-skills:gsap-react`) especificamente para animação de scroll
    complexa (pin, scroll horizontal, coreografia).
-5. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` +
+5. **3D e vídeo (condicional — só quando a direção aprovada pedir)**: React
+   Three Fiber + `@react-three/drei` + `@react-three/postprocessing` para
+   cenas 3D procedurais (sem modelos customizados nem MCP do Blender —
+   avaliado e descartado), `Lenis` para smooth scroll compatível com GSAP
+   ScrollTrigger. Vídeo scroll-scrubbed via GSAP nativo (`currentTime` do
+   `<video>`), vídeo-textura 3D via `useVideoTexture` do `drei`, vídeo de
+   fundo comum via `<video>` do Next.js com boas práticas de performance —
+   sem CDN/streaming de vídeo por padrão.
+6. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` +
    `impeccable polish` (ou o subagente `impeccable-finish-reviewer`) sobre o
    site construído.
-6. **Ponto de extensão**: é aqui (e na Etapa 2) que futuras skills de
+7. **Ponto de extensão**: é aqui (e na Etapa 2) que futuras skills de
    desenvolvimento de site (a serem adicionadas pelo usuário) entram — hoje,
    a construção segue o pipeline `impeccable` descrito acima.
 
@@ -158,22 +204,32 @@ Reporta: caminho do repositório local, direção de design escolhida
 
 Ferramentas usadas:
 - MCP do Google Drive (`search_files`) — Etapa 1 e verificação de
-  pré-requisito.
+  pré-requisito. Somente leitura — `criar-site` nunca cria/move/renomeia
+  pasta de cliente no Drive; isso é responsabilidade exclusiva de
+  `criar-cliente` (skill separada).
 - Skill `impeccable` (+ subagentes `impeccable-finish-reviewer` e
   `impeccable-asset-producer` quando aplicável) — Etapa 2 e 4 (direção,
   construção, QA final).
 - Skill `ui-ux-pro-max` — consulta pontual de dados concretos (paletas,
-  tipografia, guidelines por stack) nas Etapas 2 e 4.
+  tipografia, guidelines por stack, incluindo `--stack threejs` quando
+  aplicável) nas Etapas 2 e 4.
+- Skill `marketing:content-creation` — copy de conversão (headlines, CTAs)
+  na Etapa 3.
 - Skill `ui-styling` — referência de implementação shadcn/ui + Tailwind na
   Etapa 4.
+- MCP `Originkit` — seções de marketing prontas (hero, navbar, pricing,
+  cards, forms) — Etapa 4, primeira parada para componentes.
 - MCP `Shadcn_UI` — registry oficial de componentes/blocos/temas shadcn —
-  Etapa 4.
+  Etapa 4, para primitivas que o Originkit não cobre.
 - MCP `21st.dev` — catálogo estendido de componentes + geração via IA —
-  Etapa 4, quando o registry oficial não cobre o necessário.
+  Etapa 4, fallback final quando nem Originkit nem Shadcn_UI cobrem.
 - Skill `gsap-framer-scroll-animation` — Framer Motion (animação padrão de
   componente) — Etapa 4.
 - Skills `gsap-skills:gsap-scrolltrigger` e `gsap-skills:gsap-react` — GSAP
   para animação de scroll complexa — Etapa 4.
+- React Three Fiber, `@react-three/drei`, `@react-three/postprocessing`,
+  `Lenis` — Etapa 4, só quando a direção aprovada pedir 3D/scroll cinemático
+  (bibliotecas de código, não skills/MCPs do ambiente).
 - `git` local — Etapa 4.
 - Servidor de dev local do Next.js — Etapa 5.
 
@@ -190,3 +246,9 @@ Ferramentas usadas:
   Code — ambas redundantes frente ao `impeccable` neste fluxo.
 - Decidir a stack caso a caso — fixa em React + Next.js (Vercel-ready) para
   todo site, conforme confirmado pelo usuário.
+- Criar ou gerenciar pastas de cliente no Drive — isso é exclusivo da skill
+  `criar-cliente`, separada; `criar-site` só lê a estrutura já existente.
+- Modelos 3D customizados e o MCP do Blender — avaliado e descartado; 3D
+  fica procedural/gerado em código (React Three Fiber).
+- Hospedagem/CDN/streaming de vídeo (ex: Mux, Cloudinary) — vídeo fica
+  self-hosted no repositório por padrão.
