@@ -222,8 +222,15 @@ desta aprovação.
 
 ### Etapa 5 — Preview
 
-Sobe o servidor de dev local do Next.js e mostra o site rodando para o
-usuário revisar antes de finalizar.
+Sobe o servidor de dev local do Next.js. Antes de apresentar ao usuário,
+testa o site rodando com a skill `agent-browser` (já conectada no
+ambiente) — navega pelas páginas geradas, tira screenshots em pelo menos
+dois viewports (desktop e mobile), confirma que não há erro no console, e
+verifica que elementos interativos (animações, cena 3D quando presente)
+carregam sem quebrar. Só depois mostra o resultado (screenshots e/ou o
+servidor rodando) para o usuário revisar antes de finalizar. Se o teste
+encontrar erro, corrige antes de apresentar — não entrega site quebrado
+para revisão.
 
 ### Etapa 6 — Relatório final
 
@@ -273,6 +280,9 @@ Ferramentas usadas:
   (bibliotecas de código, não skills/MCPs do ambiente).
 - `git` local — Etapa 2, passo 1 (`git init` do repositório vazio).
 - Servidor de dev local do Next.js — Etapa 5.
+- Skill `agent-browser` — Etapa 5, para testar o site rodando (navegação,
+  screenshots desktop/mobile, checagem de erro de console) antes de
+  apresentar ao usuário.
 
 ## Fora de escopo
 
