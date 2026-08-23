@@ -1,6 +1,6 @@
 ---
 name: criar-site
-description: Gera um site novo (React + Next.js) para um cliente da aidealab a partir das referências e identidade de marca já organizadas no Drive pela criar-cliente. Usa impeccable como espinha dorsal de direção de design anti-slop, construção e QA final, consultando ui-ux-pro-max para dados concretos, os MCPs Originkit/Shadcn_UI/21st.dev para componentes, e opcionalmente React Three Fiber/GSAP/Lenis para 3D e vídeo scroll-driven quando a direção pedir. Dispara com "criar site <cliente>" / "crie o site do cliente <cliente>" / "novo site <cliente>". Para em dois checkpoints de aprovação (direção de design, plano de conteúdo) antes de escrever qualquer código.
+description: Gera um site novo (React + Next.js) para um cliente da aidealab a partir das referências e identidade de marca já organizadas no Drive pela criar-cliente. Usa impeccable como espinha dorsal de direção de design anti-slop, construção e QA final, os MCPs Originkit/Shadcn_UI/21st.dev para componentes, e opcionalmente React Three Fiber/GSAP/Lenis para 3D e vídeo scroll-driven quando a direção pedir. Dispara com "criar site <cliente>" / "crie o site do cliente <cliente>" / "novo site <cliente>". Para em dois checkpoints de aprovação (direção de design, plano de conteúdo) antes de escrever qualquer código.
 ---
 
 # Criar site
@@ -11,9 +11,7 @@ partir das referências e da identidade de marca já organizadas no Drive pela
 design e a construção passam por `impeccable`, um pipeline completo de
 design/build/QA (planejamento com `shape`, crítica, auditoria de
 acessibilidade/performance/responsivo, polimento final, animação, e um
-subagente dedicado de revisão — `impeccable-finish-reviewer`) que consulta a
-skill `ui-ux-pro-max` pontualmente quando precisa de um dado concreto (ex:
-opções de paleta ou par tipográfico para uma vibe específica).
+subagente dedicado de revisão — `impeccable-finish-reviewer`).
 
 A skill `taste-skill` saiu do fluxo — redundante frente ao `impeccable`, que
 cobre o mesmo julgamento anti-slop com um pipeline mais completo por trás. A
@@ -68,12 +66,7 @@ pelo contexto de marca/negócio em vez de travar ou inventar.
    Etapa 1 como contexto. `impeccable:impeccable` decide o modo (`Persuade` — site de
    cliente é página de marketing/vendas) e produz a direção de design
    anti-slop, persistindo `PRODUCT.md`/`DESIGN.md` nesse repositório.
-3. Quando `impeccable:impeccable` precisar de um dado concreto rápido (ex:
-   opções de paleta ou par tipográfico para a vibe identificada), consulta a
-   skill `ui-ux-pro-max:ui-ux-pro-max` (via a ferramenta Skill) como
-   referência pontual — ela não é a dona da persistência do design system,
-   só um banco de dados de apoio.
-4. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
+3. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
    geral.
 
 **Checkpoint 1**: aguarda aprovação explícita do usuário antes de seguir. Se
@@ -189,13 +182,9 @@ usados em prosa em outras seções deste documento.
   e `impeccable:impeccable-asset-producer` quando aplicável, ambos via a
   ferramenta Agent — nunca chamando scripts internos diretamente) — Etapa 2
   e Etapa 4 (direção, construção, QA final).
-- Skill `ui-ux-pro-max:ui-ux-pro-max` (via a ferramenta Skill) — consulta
-  pontual de dados concretos (paletas, tipografia, guidelines por stack,
-  incluindo `--stack threejs` quando aplicável) nas Etapas 2 e 4.
 - Skill `marketing:content-creation` (via a ferramenta Skill) — copy de
   conversão (headlines, CTAs, textos-chave) na Etapa 3.
-- Skill `ui-ux-pro-max:ui-styling` (via a ferramenta Skill; parte do mesmo
-  plugin do `ui-ux-pro-max`, não uma skill à parte) — referência de
+- Skill `ui-ux-pro-max:ui-styling` (via a ferramenta Skill) — referência de
   implementação shadcn/ui + Tailwind na Etapa 4.
 - Comando de scaffolding do Next.js (ex: `create-next-app`) — Etapa 4,
   passo 1, para inicializar o projeto dentro do repositório já criado na
@@ -236,8 +225,9 @@ usados em prosa em outras seções deste documento.
   1 e 2, usuário aprova antes de construir.
 - Rodar `criar-cliente` automaticamente quando a pasta do cliente não existe
   — a skill apenas avisa e para.
-- Usar `taste-skill` isolada ou a skill `frontend-design` padrão do Claude
-  Code — ambas redundantes frente ao `impeccable` neste fluxo.
+- Usar `taste-skill` isolada, a skill `frontend-design` padrão do Claude
+  Code, ou `ui-ux-pro-max:ui-ux-pro-max` como consulta pontual de dados —
+  todas redundantes/desnecessárias frente ao `impeccable` neste fluxo.
 - Decidir a stack caso a caso — fixa em React + Next.js (Vercel-ready) para
   todo site, conforme confirmado pelo usuário.
 - Criar ou gerenciar pastas de cliente no Drive — isso é exclusivo da skill

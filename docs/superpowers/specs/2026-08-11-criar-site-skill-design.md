@@ -73,20 +73,27 @@ tratamento, não em todo site:
   pesadas), e GSAP ScrollTrigger (já no fluxo) para sincronizar câmera/
   objetos 3D com o scroll. É procedural/gerado em código — não depende de
   modelos 3D customizados nem do MCP do Blender (avaliado e descartado: não
-  é necessário para o padrão de sites da aidealab). `ui-ux-pro-max` tem
-  `--stack threejs` no banco dele, usado como referência pontual do mesmo
-  jeito que as outras stacks.
+  é necessário para o padrão de sites da aidealab).
 - **Vídeo condicional**: vídeo scroll-scrubbed (currentTime do `<video>`
   controlado pelo GSAP ScrollTrigger — técnica nativa do próprio GSAP, sem
   lib extra); vídeo como textura dentro de cena 3D via `useVideoTexture` do
   `@react-three/drei`; vídeo de fundo/hero comum via `<video>` nativo do
-  Next.js seguindo as guidelines de performance que o `ui-ux-pro-max` já
-  cobre (lazy load, evitar CLS). Hospedagem/CDN de vídeo (ex: Mux,
+  Next.js seguindo boas práticas de performance (lazy load, evitar CLS).
+  Hospedagem/CDN de vídeo (ex: Mux,
   Cloudinary) fica fora de escopo por padrão — mesma lógica do resto do
   projeto (hospedagem é decisão do usuário depois).
 - **Mouse-following**: na camada 2D/DOM, via Framer Motion (já no fluxo).
   Dentro de uma cena 3D, via eventos de ponteiro nativos do R3F/Three.js —
   não precisa de ferramenta adicional.
+
+**Revisão de arquitetura (quarta rodada):** o usuário pediu para remover a
+consulta pontual a `ui-ux-pro-max:ui-ux-pro-max` (paletas/tipografia/
+guidelines de stack) do fluxo — `impeccable` sozinho já cobre a direção de
+design sem precisar dessa consulta auxiliar. A skill `ui-ux-pro-max:ui-
+styling` (referência de implementação shadcn/ui + Tailwind na Etapa 4) é uma
+skill distinta dentro do mesmo plugin e continua no fluxo — não foi pedida a
+remoção dela, e ela cobre uma necessidade diferente (implementação, não
+consulta de dados de design).
 
 O usuário sinalizou que vai continuar adicionando skills de criação de site ao
 ambiente ao longo do tempo. Por isso este desenho evita virar um skill
@@ -150,10 +157,7 @@ pelo contexto de marca/negócio em vez de travar ou inventar.
    coletado na Etapa 1 como contexto. `impeccable` decide o modo (`Persuade`
    — site de cliente é página de marketing/vendas) e produz a direção de
    design anti-slop, persistindo `PRODUCT.md`/`DESIGN.md` no repositório.
-3. Quando `impeccable` precisar de um dado concreto rápido (ex: opções de
-   paleta ou par tipográfico para a vibe identificada), consulta
-   `ui-ux-pro-max` como referência pontual — não é o dono da persistência.
-4. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
+3. Apresenta ao usuário: modo escolhido, paleta/tipografia, direção visual
    geral.
 
 **Checkpoint 1**: aguarda aprovação explícita do usuário antes de seguir. Se
@@ -254,14 +258,10 @@ Ferramentas usadas:
   finish-reviewer`, usado como escalonamento de QA, e `impeccable:
   impeccable-asset-producer` quando aplicável) — Etapa 2 e 4 (direção,
   construção, QA final).
-- Skill `ui-ux-pro-max:ui-ux-pro-max` — consulta pontual de dados concretos
-  (paletas, tipografia, guidelines por stack, incluindo `--stack threejs`
-  quando aplicável) nas Etapas 2 e 4.
 - Skill `marketing:content-creation` — copy de conversão (headlines, CTAs)
   na Etapa 3.
 - Skill `ui-ux-pro-max:ui-styling` — referência de implementação shadcn/ui +
-  Tailwind na Etapa 4 (parte do mesmo plugin do `ui-ux-pro-max`, não uma
-  skill à parte).
+  Tailwind na Etapa 4.
 - Comando de scaffolding do Next.js (ex: `create-next-app`) — Etapa 4,
   passo 1, para inicializar o projeto dentro do repositório já criado na
   Etapa 2.
@@ -293,8 +293,9 @@ Ferramentas usadas:
   1 e 2, usuário aprova antes de construir.
 - Rodar `criar-cliente` automaticamente quando a pasta do cliente não existe
   — a skill apenas avisa e para.
-- Usar `taste-skill` isolada ou a skill `frontend-design` padrão do Claude
-  Code — ambas redundantes frente ao `impeccable` neste fluxo.
+- Usar `taste-skill` isolada, a skill `frontend-design` padrão do Claude
+  Code, ou `ui-ux-pro-max:ui-ux-pro-max` como consulta pontual de dados —
+  todas redundantes/desnecessárias frente ao `impeccable` neste fluxo.
 - Decidir a stack caso a caso — fixa em React + Next.js (Vercel-ready) para
   todo site, conforme confirmado pelo usuário.
 - Criar ou gerenciar pastas de cliente no Drive — isso é exclusivo da skill
