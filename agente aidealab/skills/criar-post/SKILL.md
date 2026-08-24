@@ -205,6 +205,31 @@ gerado antes disso.
    - `wait_for_job`/`get_output` para colher o resultado, independente do
      caminho escolhido acima.
 
+   **Harmonia de cor entre as imagens do carrossel:** todo o banco de imagens
+   usado num mesmo carrossel — geradas ou de referência (`img-ref`) — precisa
+   soar da mesma paleta (mesma família de cor do design system do cliente,
+   ex.: azul+dourado). Antes de finalizar a seleção, descarta ou substitui
+   qualquer imagem cuja cor dominante destoe das demais (ex.: uma imagem
+   magenta/laranja quente isolada num set azul+dourado), mesmo que a imagem
+   em si seja boa — a coerência do conjunto vem antes da imagem individual.
+
+   **Fundos-textura (`bg-gradient`) só nas explicações, nunca no hook/CTA.**
+   Texturas abstratas de gradiente (pasta `bg-gradient` do cliente) só entram
+   nos slides de explicação/conteúdo do meio do carrossel — nunca na capa
+   (hook) nem no slide de CTA, que sempre usam imagem de referência (`img-ref`)
+   ou gerada com sujeito/composição mais forte. Dentro das explicações,
+   alterna entre `bg-gradient` e outras imagens de referência — nunca usa
+   `bg-gradient` em todos os slides de explicação do mesmo carrossel.
+
+   **Moldura (card/frame com blur atrás do texto) é exceção, não padrão.**
+   Não usa moldura em todo carrossel por padrão — só quando é realmente
+   necessária: sobre um fundo `bg-gradient` (contraste com a textura) ou
+   quando o slide precisa isolar uma referência/imagem específica dentro da
+   composição. **Nunca usa moldura no hook (capa).** No hook, o texto vai
+   direto sobre a imagem, sem card — grande, com destaque forte (a maior
+   escala tipográfica do carrossel) e disposto pra parar o scroll, não
+   contido numa caixa.
+
 ## Etapa 5 — Preview e QA
 
 Antes de apresentar, testa os slides renderizados com a skill `agent-browser`
