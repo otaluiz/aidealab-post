@@ -221,14 +221,75 @@ gerado antes disso.
    alterna entre `bg-gradient` e outras imagens de referência — nunca usa
    `bg-gradient` em todos os slides de explicação do mesmo carrossel.
 
-   **Moldura (card/frame com blur atrás do texto) é exceção, não padrão.**
-   Não usa moldura em todo carrossel por padrão — só quando é realmente
-   necessária: sobre um fundo `bg-gradient` (contraste com a textura) ou
-   quando o slide precisa isolar uma referência/imagem específica dentro da
-   composição. **Nunca usa moldura no hook (capa).** No hook, o texto vai
-   direto sobre a imagem, sem card — grande, com destaque forte (a maior
-   escala tipográfica do carrossel) e disposto pra parar o scroll, não
-   contido numa caixa.
+   **Moldura (card/frame com blur atrás do texto) só quando o fundo é
+   `bg-gradient`.** Regra fechada, não uma preferência: moldura entra
+   **somente** nos slides cujo fundo é uma textura `bg-gradient` (ela existe
+   pra dar contraste contra a textura). Em qualquer slide com imagem de
+   referência (`img-ref`) ou gerada, o texto vai direto sobre a imagem — com
+   `scrim`/gradiente escuro por trás pra legibilidade, nunca dentro de um
+   card. **Nunca usa moldura no hook (capa) nem no CTA**, mesmo que algum
+   deles use `bg-gradient` — hook e CTA sempre usam `img-ref`/gerada (ver
+   regra de fundos acima), então a questão nem chega a se colocar. No hook,
+   o texto vai direto sobre a imagem, sem card — grande, com destaque forte
+   (a maior escala tipográfica do carrossel, incluindo gradiente de cor na
+   palavra-chave quando fizer sentido) e disposto pra parar o scroll.
+
+   **Header/rodapé sempre em branco sólido com sombra, nunca some contra a
+   imagem.** O lockup do topo (`AIDEA LAB` / categoria) e o rodapé (`@handle`
+   + dots) usam branco puro com text-shadow forte (nunca a cor cream/dim do
+   corpo de texto) — precisam ficar legíveis em qualquer ponto de qualquer
+   imagem de fundo, clara ou escura, sem depender de moldura.
+
+   **Nunca deixa texto encostar ou sobrepor o header/rodapé.** No hook e no
+   CTA — onde o texto fica solto sobre a imagem, sem moldura — garante
+   margem de respiro clara entre a última linha de texto e a faixa do
+   rodapé (`@handle`/dots) antes de aceitar o slide; overlap de texto é
+   defeito bloqueante, não detalhe estético.
+
+   **Toda palavra-chave/serifada em destaque leva UMA cor sólida do design
+   system — nunca gradiente de duas cores no texto.** Testado e revertido:
+   gradiente (ex.: azul→magenta) na palavra em si deixa o texto com aparência
+   irregular/desbotada, principalmente em caixa alta. Cada slide escolhe
+   **uma** cor de acento (normalmente a cor de acento do design system, ex.:
+   amber) e aplica ela consistente em toda palavra/linha de destaque daquele
+   carrossel — capa, explicações e CTA. Nunca mistura cor sólida num slide e
+   gradiente noutro do mesmo post. Gradiente de texto não é uma técnica do
+   sistema por padrão — só reconsiderar se o cliente pedir explicitamente.
+
+   **Cuidado com cascata CSS ao combinar `.amber` (ou similar) com outras
+   classes de mesma especificidade.** Se a classe base (`.line`,
+   `.headline-sans` etc.) e a classe de cor (`.amber`) têm a mesma
+   especificidade, quem vem depois no stylesheet vence — não a ordem das
+   classes no HTML. Isso já causou texto "amber" renderizando branco por
+   engano. Pra eliminar a ambiguidade, aplica a cor de destaque via
+   `style="color:var(--amber)"` inline no elemento, em vez de confiar só na
+   ordem das classes.
+
+   **Chip de destaque (fundo em cor sólida ou gradiente atrás de uma palavra
+   curta) como técnica extra, usada em alguns momentos — não em todo
+   slide.** Inspirado nas referências de design salvas em
+   `01-Referencias/Instagram` do cliente (ex.: os posts estilo "Design
+   Trends" com labels tipo `VISION 2030` e `key idea` em blocos de cor
+   sólida): aplica um fundo (cor sólida do design system, ou gradiente se
+   fizer sentido ali especificamente) com cantos arredondados e **texto
+   branco por cima (nunca escuro)** — o contraste do texto branco chapado
+   é maior que o de texto escuro sobre a cor de acento, mesmo em cores
+   claras como amber/dourado; usa um `text-shadow` leve se precisar de
+   reforço — atrás de uma palavra ou frase curta — normalmente o
+   eyebrow/label de um slide com moldura, ou uma chamada de ação isolada
+   (ex.: "Comenta 'PALAVRA'" no CTA). Não é pra virar padrão fixo repetido
+   em todo slide — é uma variação pontual pra dar contraste extra e puxar o
+   olho pra 1-2 pontos específicos do carrossel. Essa é uma técnica
+   separada do destaque de palavra-chave em texto corrido (que usa cor
+   sólida, não fundo).
+
+   **Sempre revisita as referências de design do cliente antes de montar um
+   carrossel novo.** A pasta `01-Referencias/Instagram` (Drive, estrutura da
+   `criar-cliente`) guarda prints/posts que o cliente ou eu já separamos como
+   inspiração de tratamento visual (tipografia, chips, composição) — consulta
+   essa pasta como parte da Etapa 2/4, não só a paleta e os tokens já
+   fixados; ela é onde novas técnicas de destaque (como o chip acima) devem
+   ser garimpadas antes de inventar do zero.
 
 ## Etapa 5 — Preview e QA
 
