@@ -166,6 +166,17 @@ gerado antes disso.
 
 ## Etapa 4 — Construção (render híbrido)
 
+0. **Antes de desenhar um slide do zero, confere os dois templates editáveis
+   do design system da aidealab** — canvas ao vivo, referência oficial pro
+   lettering, cor e layout desta etapa, documentados também na página
+   "Sistema de Carrosséis":
+   - **Template Carrossel** (modo sem referência — hook/CTA/explicações
+     padrão): https://claude.ai/code/artifact/ffa5c39a-725c-4cfa-8209-75c647d7b9b7
+   - **Template Post com Referência** (modo com referência — troca uma
+     explicação pela moldura de citação): https://claude.ai/code/artifact/e418a430-2922-407b-90c7-4a17a9660d63
+   - **Sistema de Carrosséis** (doc de cor/tipografia/regras, linka os dois
+     acima): https://claude.ai/code/artifact/5bc39ef8-aeaa-41c2-a674-2015ffc258f8
+
 1. **Tipografia e layout** (texto sempre nítido, na fonte da marca):
    `anthropic-skills:canvas-design` (via a ferramenta Skill) compõe cada slide
    como arte estática seguindo o template escolhido e os tokens do design
@@ -229,10 +240,61 @@ gerado antes disso.
    `scrim`/gradiente escuro por trás pra legibilidade, nunca dentro de um
    card. **Nunca usa moldura no hook (capa) nem no CTA**, mesmo que algum
    deles use `bg-gradient` — hook e CTA sempre usam `img-ref`/gerada (ver
-   regra de fundos acima), então a questão nem chega a se colocar. No hook,
-   o texto vai direto sobre a imagem, sem card — grande, com destaque forte
-   (a maior escala tipográfica do carrossel, incluindo gradiente de cor na
-   palavra-chave quando fizer sentido) e disposto pra parar o scroll.
+   regra de fundos acima), então a questão nem chega a se colocar.
+
+   **Lettering do hook e do CTA: escala editorial grande, não texto
+   pequeno espremido no rodapé.** No hook e no CTA — sempre sem moldura,
+   texto direto sobre a imagem — a composição usa a MAIOR escala
+   tipográfica do carrossel e fica posicionada com respiro (nem colada no
+   topo/rodapé, nem espremida numa faixa fina): condensada (Anton) na
+   casa de 200–230px pra linha principal do hook (130–140px no CTA).
+
+   **Linha 2 é texto corrido normal — só a palavra-chave dentro dela troca
+   pra serifada + cor de destaque, nunca a linha inteira, nunca rotacionada.**
+   O hook/CTA tem duas linhas: linha 1 é a condensada grande (Anton), a
+   clause de abertura (ex.: "5 SITES", "Salva os 5."); linha 2, logo abaixo,
+   é a clause de fecho como texto corrido comum — condensada, escala bem
+   menor (texto, não display) — e dentro dela **só a(s) palavra(s)-chave**
+   (ex.: "inspiram", "precisar") troca de fonte pra serifada (Playfair 900,
+   ~1.3–1.4× o tamanho das palavras ao redor) e cor pro accent do carrossel;
+   o resto da linha ("que", "de verdade.", "Vai") continua em condensada/
+   cream, no mesmo fluxo de texto, mesma baseline. Nunca: (a) a clause de
+   fecho inteira em serifada, (b) uma linha flex separada com escalas muito
+   diferentes por palavra, (c) `transform: rotate(...)` em qualquer parte.
+   No hook a palavra-chave fica sem itálico (`font-style: normal`), no CTA
+   em itálico.
+
+   **Linha 2 fica "tucked" por baixo da linha 1 — colada, sobrepondo
+   levemente a cauda das letras, nunca com respiro/gap embaixo do headline.**
+   `margin-top` da linha 2 é NEGATIVO (não positivo): ~-26px no hook
+   (headline 210px), ~-18px no CTA (headline 130–140px) — a proporção é
+   ~12–16% negativo do tamanho da linha 1. É esse encaixe apertado, quase
+   um leve overlap, que dá o efeito "serifada por baixo do texto da
+   frente" que o cliente aprovou — linha 2 solta com espaço embaixo do
+   headline (gap positivo) já foi tentado e rejeitado.
+
+   Este é o template oficial validado pelo cliente, replicado nos canvas
+   editáveis "Template Carrossel" e "Template Post com Referência" (ver
+   links abaixo) — sempre confira esses canvas antes de desenhar um
+   hook/CTA novo, em vez de reinventar a composição. Esses dois canvas são
+   editados diretamente pelo cliente na UI do Claude Design de tempos em
+   tempos — se um deles mudar, refaça o fetch (`WebFetch` na URL) antes de
+   assumir que a composição documentada aqui ainda é a mais recente.
+
+   **Moldura de referência (janela de navegador) sempre que o post citar
+   uma fonte/site externo — independe da regra de moldura acima.** Quando
+   o conteúdo do slide referencia algo específico e nomeável (um site, uma
+   ferramenta, uma fonte externa), mostra essa referência dentro de uma
+   janela de navegador estilizada: barra superior com os 3 pontos
+   (vermelho/amarelo/verde) + pill com a URL, e dentro dela o **print
+   real da página inicial** do que está sendo citado — nunca só o nome em
+   texto grande. Busca o print via a imagem oficial de preview (`og:image`
+   da página, feita pra redistribuição externa — mais confiável que
+   screenshot ao vivo) ou, se a fonte bloquear acesso automatizado, troca
+   por outra referência equivalente em vez de forçar. Essa moldura de
+   referência aparece em QUALQUER tipo de fundo (bg-gradient ou img-ref) —
+   ela não segue a regra "moldura só com bg-gradient" acima, porque é uma
+   peça de citação, não um card de legibilidade de texto.
 
    **Header/rodapé sempre em branco sólido com sombra, nunca some contra a
    imagem.** O lockup do topo (`AIDEA LAB` / categoria) e o rodapé (`@handle`
@@ -249,12 +311,20 @@ gerado antes disso.
    **Toda palavra-chave/serifada em destaque leva UMA cor sólida do design
    system — nunca gradiente de duas cores no texto.** Testado e revertido:
    gradiente (ex.: azul→magenta) na palavra em si deixa o texto com aparência
-   irregular/desbotada, principalmente em caixa alta. Cada slide escolhe
-   **uma** cor de acento (normalmente a cor de acento do design system, ex.:
-   amber) e aplica ela consistente em toda palavra/linha de destaque daquele
-   carrossel — capa, explicações e CTA. Nunca mistura cor sólida num slide e
-   gradiente noutro do mesmo post. Gradiente de texto não é uma técnica do
-   sistema por padrão — só reconsiderar se o cliente pedir explicitamente.
+   irregular/desbotada, principalmente em caixa alta. O sistema tem 3
+   **famílias** de acento possíveis — cada uma com 3 tons (Tint/Base/Shade):
+   - **Amber** — tint `#F6E3AE`, base `#E9BA4B`, shade `#B3833A`
+   - **Magenta** — tint `#F7C1D9`, base `#E94B91`, shade `#A82F63`
+   - **Azul** — tint `#B7CBFA`, base `#4C7EF0`, shade `#2E52B8`
+
+   Cada carrossel escolhe **uma família** e usa a **Base** — sólida, nunca
+   gradiente — em toda palavra-chave, chip e detalhe de cor do carrossel
+   (capa, explicações, CTA). O **Tint** é só pra fundo suave/hover (ex.:
+   fundo de um chip secundário); o **Shade**, só pra borda ou estado
+   pressionado quando precisar de mais contraste — nenhum dos dois entra em
+   texto corrido. Nunca mistura duas famílias no mesmo carrossel, nem cor
+   sólida num slide e gradiente noutro. Gradiente de texto não é uma técnica
+   do sistema por padrão — só reconsiderar se o cliente pedir explicitamente.
 
    **Cuidado com cascata CSS ao combinar `.amber` (ou similar) com outras
    classes de mesma especificidade.** Se a classe base (`.line`,
