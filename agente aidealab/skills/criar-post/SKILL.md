@@ -309,7 +309,16 @@ gerado antes disso.
    texto grande. Busca o print via a imagem oficial de preview (`og:image`
    da página, feita pra redistribuição externa — mais confiável que
    screenshot ao vivo) ou, se a fonte bloquear acesso automatizado, troca
-   por outra referência equivalente em vez de forçar. Essa moldura de
+   por outra referência equivalente em vez de forçar.
+
+   CSS/HTML pronto pra colar: `templates/ref-frame.html` (nesta pasta da
+   skill) — `.ref-frame`/`.ref-topbar`/`.ref-dots`/`.ref-url`/`.ref-shot`/
+   `.ref-body`/`.ref-name`/`.ref-tagline` pra citação, `.content-card` pro
+   slide de explicação padrão com fundo `bg-gradient`. Validado nos
+   carrosséis "importância do branding" (ref: logodesignlove.com) e
+   "importância do design" (ref: lawsofux.com).
+
+   Essa moldura de
    referência aparece em QUALQUER tipo de fundo (bg-gradient ou img-ref) —
    ela não segue a regra "moldura só com bg-gradient" acima, porque é uma
    peça de citação, não um card de legibilidade de texto.
