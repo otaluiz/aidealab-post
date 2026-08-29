@@ -242,6 +242,24 @@ gerado antes disso.
    deles use `bg-gradient` — hook e CTA sempre usam `img-ref`/gerada (ver
    regra de fundos acima), então a questão nem chega a se colocar.
 
+   **Erro recorrente a evitar: reaproveitar o layout full-bleed do hook/CTA
+   (texto solto + `scrim`, sem card) num slide de explicação com fundo
+   `bg-gradient`.** Já aconteceu de montar um carrossel inteiro (todas as
+   explicações) copiando o padrão do hook/CTA — texto direto sobre a
+   textura, eyebrow-chip e bloco de texto como dois elementos `absolute`
+   soltos e distantes um do outro. Resultado: fundo parece vazio/genérico
+   (a textura sozinha não sustenta a composição como uma imagem-sujeito
+   sustenta) e o eyebrow fica visualmente desconectado do texto, com um
+   vão morto no meio do slide. **Sempre que o fundo for `bg-gradient`,
+   agrupa eyebrow + heading + body dentro de UM único card** (mesmo
+   tratamento visual do `.ref-frame`: fundo translúcido escuro
+   `rgba(8,11,20,0.72)`, `backdrop-filter: blur(12–14px)`, borda
+   `1px solid rgba(245,237,231,0.16)`, `border-radius: ~20–24px`,
+   `box-shadow` suave) — nunca como blocos `absolute` separados flutuando
+   sobre a textura. Antes de gerar os PNGs finais, checa visualmente que
+   nenhum slide de explicação ficou com esse vão vazio; se ficou, é o
+   sintoma de ter pulado o card.
+
    **Lettering do hook e do CTA: escala editorial grande, não texto
    pequeno espremido no rodapé.** No hook e no CTA — sempre sem moldura,
    texto direto sobre a imagem — a composição usa a MAIOR escala
