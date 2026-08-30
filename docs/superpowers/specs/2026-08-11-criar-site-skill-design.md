@@ -213,7 +213,15 @@ desta aprovação.
    Vídeo scroll-scrubbed via GSAP nativo (`currentTime` do `<video>`),
    vídeo-textura 3D via `useVideoTexture` do `drei`, vídeo de fundo comum
    via `<video>` do Next.js com boas práticas de performance — sem
-   CDN/streaming de vídeo por padrão.
+   CDN/streaming de vídeo por padrão. Quando este bloco ativa, o processo
+   segue `references/3d-web/` — framework de 15 módulos (discovery,
+   architecture, assets, scene, camera-lighting, interaction, animation,
+   ui-ux, performance, accessibility, engineering, testing, deployment,
+   debugging, quality-gate) importado para cobrir o que as bibliotecas
+   sozinhas não cobrem: otimização de assets GLTF/GLB, orçamento de
+   performance mensurável, acessibilidade 3D-específica (teclado,
+   `prefers-reduced-motion`, fallback sem WebGL), e um quality gate 3D
+   antes da Etapa 5.
 6. **QA final**: antes de ir para a Etapa 5, roda `impeccable audit` seguido
    de `impeccable polish` sobre o site construído — esse é o caminho padrão,
    sempre o mesmo, para garantir profundidade de QA consistente entre
@@ -278,6 +286,8 @@ Ferramentas usadas:
 - React Three Fiber, `@react-three/drei`, `@react-three/postprocessing`,
   `Lenis` — Etapa 4, só quando a direção aprovada pedir 3D/scroll cinemático
   (bibliotecas de código, não skills/MCPs do ambiente).
+- `references/3d-web/` — framework de 15 módulos, material de referência
+  (não skill/MCP invocável) consultado quando o bloco 3D condicional ativa.
 - `git` local — Etapa 2, passo 1 (`git init` do repositório vazio).
 - Servidor de dev local do Next.js — Etapa 5.
 - Skill `agent-browser` — Etapa 5, para testar o site rodando (navegação,

@@ -134,6 +134,19 @@ desta aprovação.
    `<video>` nativo do Next.js seguindo boas práticas de performance — sem
    CDN/streaming de vídeo por padrão. Em nenhum outro site esse bloco entra
    em jogo.
+
+   Quando este bloco ativa, segue o processo documentado em
+   `references/3d-web/` (framework de 15 módulos: discovery, architecture,
+   assets, scene, camera-lighting, interaction, animation, ui-ux,
+   performance, accessibility, engineering, testing, deployment, debugging,
+   quality-gate — ler `references/3d-web/SKILL.md` primeiro, é o
+   orquestrador que define a ordem). Cobre o que as bibliotecas sozinhas não
+   cobrem: otimização de assets GLTF/GLB (Draco/Meshopt/KTX2, contagem de
+   triângulos), orçamento de performance mensurável (payload inicial, draw
+   calls, FPS alvo, tier mobile), acessibilidade específica de 3D (navegação
+   por teclado, `prefers-reduced-motion`, fallback quando WebGL não é
+   suportado — não entregar cena 3D que quebra sem alternativa), e um
+   quality gate 3D-específico antes de ir para a Etapa 5.
 6. **QA final**: antes de ir para a Etapa 5, roda `impeccable:impeccable`
    `audit` seguido de `impeccable:impeccable` `polish` sobre o site
    construído — esse é o caminho padrão, sempre o mesmo, para garantir
@@ -203,6 +216,10 @@ usados em prosa em outras seções deste documento.
   `Lenis` — bibliotecas de código (não skills/MCPs do ambiente, usadas
   diretamente na implementação) — Etapa 4, só quando a direção aprovada
   pedir 3D/vídeo scroll-driven.
+- `references/3d-web/` — framework de 15 módulos (discovery → quality-gate)
+  consultado como documentação de processo quando o bloco 3D condicional da
+  Etapa 4 ativa — não é skill/MCP invocável, é material de referência lido
+  diretamente do repositório.
 - `git` local — Etapa 2, passo 1 (`git init` do repositório vazio).
 - Servidor de dev local do Next.js — Etapa 5.
 - Skill `agent-browser` — Etapa 5, para testar o site rodando (navegação,
