@@ -180,9 +180,11 @@ gerado antes disso.
 1. **Tipografia e layout** (texto sempre nítido, na fonte da marca):
    `anthropic-skills:canvas-design` (via a ferramenta Skill) compõe cada slide
    como arte estática seguindo o template escolhido e os tokens do design
-   system, no tamanho exato do Instagram — **1080×1350** (retrato) por padrão;
-   1080×1080 (quadrado) como opção. Saída em PNG. O texto **nunca** é gerado por
-   IA de imagem.
+   system, no tamanho exato do Instagram — **1080×1440** (retrato, 3:4) por
+   padrão. O Instagram feed corta acima de 4:5 (1080×1350); 1080×1440 fica
+   fora desse limite e é exibido cropado no feed — formato escolhido
+   explicitamente pelo cliente mesmo assim, ciente do corte. Saída em PNG.
+   O texto **nunca** é gerado por IA de imagem.
 2. **Camada de imagem** (fundos/ilustrações on-brand, quando o template pedir):
    gera via **Comfy Cloud MCP**, guiada pela skill `marketing-skills:image`
    (prompt e otimização). A imagem entra na composição do `canvas-design` —
@@ -267,8 +269,80 @@ gerado antes disso.
    topo/rodapé, nem espremida numa faixa fina): condensada (Anton) na
    casa de 200–230px pra linha principal do hook (130–140px no CTA).
 
+   **Hook: template de oclusão (objeto na frente do texto) sempre que a
+   imagem der um recorte limpo.** O hook padrão não é foto full-bleed com
+   scrim — é o "poster editorial": ground de cor da marca em gradiente
+   (`linear-gradient(180deg, <cor> 0%, #000 100%)`), monumento em Inter 900
+   atrás (z-index 3), sujeito recortado com alpha real por cima (z-index 5,
+   `bottom: 0`, centralizado) cobrindo só a **faixa inferior** do monumento, e
+   a script Tempting acima (z-index 6). Header e rodapé sobem para z-index 10,
+   senão o sujeito passa por cima deles.
+
+   **Antes de aplicar, testa o recorte — nem toda imagem serve.** Roda o rembg
+   e avalia: precisa ser figura única e coerente, com silhueta fechada. Se a
+   imagem for cena abstrata (gradiente, onda, textura) o rembg não tem sujeito
+   pra separar e o hook fica full-bleed mesmo; se o recorte sair parcial
+   (membro cortado, borda esfarrapada, fragmento solto), também fica
+   full-bleed. Vale medir: fração de foreground entre ~5% e ~65%, preenchimento
+   da bounding box acima de ~35%, e no máximo 1–2 blobs grandes — mas a decisão
+   final é olhar o PNG recortado, porque a métrica não vê borda feia.
+
+   **Base do sujeito SEMPRE dissolvida no fundo.** Recorte que termina em
+   corte reto contra o gradiente lê como adesivo colado — foi exatamente o que
+   o cliente reprovou. Aplica
+   `mask-image: linear-gradient(180deg,#000 0%,#000 72%,rgba(0,0,0,0) 100%)`
+   no sujeito. Sujeito escuro sobre a parte preta do ground disfarça sozinho e
+   engana na revisão; sujeito claro denuncia na hora — por isso a máscara é
+   regra fixa, não caso a caso.
+
+   **Escala do sujeito: topo em ~438px de 1440 (altura ≈ 1002px), preservando
+   o aspect do recorte.** Menor que isso o sujeito não encosta no monumento e
+   sobra vão morto até o rodapé; maior, ele tapa o miolo da palavra e o
+   monumento deixa de ser legível.
+
+   **Par tipográfico do hook e do CTA: Inter 900 (monumento) + Tempting
+   (script).** O lockup é: palavra-script em Tempting por cima, monumento em
+   Inter 900 logo abaixo, e uma linha de apoio menor embaixo. O monumento é
+   uma palavra só, em caixa alta, e leva um auto-ajuste de corpo por
+   largura-alvo (mede o `<span>` interno, não o bloco — o bloco é full-width e
+   o laço encolheria a palavra até zero); sem isso, trocar a copy estoura ou
+   afunda o corpo, porque a contagem de caracteres muda a largura.
+
+   **Tempting não tem NENHUM glifo acentuado — verificado lendo o `cmap` da
+   fonte: cobre A-Z, a-z e 0-9 e mais nada.** Logo a palavra-script é SEMPRE
+   caixa mista e sem acento (nem `ç`, nem `ã`, nem `ê`); quem carrega acento é
+   o monumento, em Inter 900, que tem acentuação completa. Frase-script
+   acentuada não dá erro: o glifo cai silenciosamente na fonte de fallback e
+   quebra o lockup sem avisar — então valida a string antes de usar.
+
+   **O encaixe da script no monumento é CALCULADO em runtime, nunca por `top`
+   ou `margin` fixos.** A regra visual é: a **baseline da script cai no topo
+   das caixas altas do monumento** — os swashes da Tempting descem por cima
+   das letras, sem respiro entre os dois blocos. Valor fixo não entrega isso
+   porque o auto-ajuste muda o corpo do monumento conforme o número de
+   caracteres (AUTOMAÇÃO cai pra ~147px, DESIGN sobe pra ~251px) e a distância
+   entre o topo da caixa de linha e o topo das caixas altas é proporcional ao
+   corpo — o mesmo `top` produz encaixe colado num slide e um vão de 30px no
+   outro. Foi exatamente esse o defeito reprovado.
+
+   Depois de ajustar a largura do monumento, mede e reposiciona:
+   - baseline dentro da caixa = `(line-height − (ascent + descent)) / 2 + ascent`,
+     com `ascent`/`descent` de `TextMetrics.fontBoundingBox*`;
+   - altura de caixa alta = `actualBoundingBoxAscent` sondando **"H"** — nunca
+     a palavra inteira, porque til e cedilha (AUTOMAÇÃO) inflam a medida e o
+     encaixe sai diferente de uma palavra sem acento;
+   - hook (script e monumento absolutos): `script.top = capTopDoMonumento −
+     baselineDaScriptNaCaixa`;
+   - CTA (os dois no fluxo): `script.marginBottom = baselineScript −
+     lineHeightScript − baselineMonumento + capHeightMonumento`.
+
+   Com o encaixe calculado, diacrítico maiúsculo deixa de ser caso especial —
+   o `Ê` de CONSISTÊNCIA se acomoda sozinho, sem margem manual.
+
    **Linha 2 é texto corrido normal — só a palavra-chave dentro dela troca
    pra serifada + cor de destaque, nunca a linha inteira, nunca rotacionada.**
+   (Regra do sistema antigo Anton + Playfair, mantida para slides de conteúdo;
+   hook e CTA seguem o par Inter + Tempting acima.)
    O hook/CTA tem duas linhas: linha 1 é a condensada grande (Anton), a
    clause de abertura (ex.: "5 SITES", "Salva os 5."); linha 2, logo abaixo,
    é a clause de fecho como texto corrido comum — condensada, escala bem
@@ -396,6 +470,60 @@ texto, que o grid do feed fica coerente entre os slides, e que nenhuma
 composição quebrou. Se encontrar problema, corrige antes de apresentar — não
 entrega post quebrado para revisão. Depois mostra os PNGs (screenshots) para o
 usuário revisar.
+
+**Renderiza via CDP com métricas explícitas, nunca por `--window-size`.**
+`--window-size=L,A` dimensiona a *janela*, não o viewport: a 1080×1440 o Chrome
+diagramou a página em 1064×1345 e devolveu um PNG 1080×1440 com o resto
+preenchido pelo fundo do próprio `.slide` — 16px de faixa à direita e 95px
+embaixo, que na tela parecem "um fundo por cima do outro". `--hide-scrollbars`
+e `--headless=old` não resolvem (o segundo nem existe mais). O caminho correto
+é abrir o Chrome com `--remote-debugging-port`, chamar
+`Emulation.setDeviceMetricsOverride` com a largura/altura exatas e capturar com
+`Page.captureScreenshot` + `clip`. Antes de cada shot, espera
+`document.fonts.ready` e confirma via `Runtime.evaluate` que `innerWidth`/
+`innerHeight` e o `.slide` batem com o alvo — se não baterem, falha alto em vez
+de gravar um PNG errado.
+
+**Valida nos pixels entregues, não no DOM.** Medir o DOM dentro de um iframe
+de 1080×1440 é inútil: o iframe força o tamanho, o slide sempre reporta certo e
+o teste passa enquanto os PNGs saem cortados — foi exatamente assim que um lote
+de 25 slides quebrados passou num QA "25/25 OK". Abre o PNG final e afirma
+sobre os pixels.
+
+**Faixa uniforme na borda direita é a assinatura do corte; faixa embaixo não
+prova nada.** Muitos slides terminam num scrim escuro chapado mais a margem
+inferior do rodapé (~130px), então procurar "linha uniforme embaixo" reprova
+render bom. Já uma coluna uniforme na borda direita nunca é design — é déficit
+de viewport. Usa a borda direita como porta de entrada, e o tamanho exato do
+arquivo como segunda checagem.
+
+**Mede a geometria, não confia no olho.** Sobreposição de texto com
+header/rodapé é defeito bloqueante e passa despercebido numa revisão visual de
+20+ slides. Afirma por código, pra cada slide, que nenhum bloco de conteúdo
+(`.lockup`, `.ref-frame`, `.content-card`, `.eyebrow-chip`, `.cta-sub2`) passa
+do topo do rodapé nem invade o header. Reporta a folga em px de cada slide —
+folga negativa reprova o lote.
+
+**Ancoragem: rodapé e blocos de base SEMPRE ancorados por `bottom`, nunca por
+`top` em pixel absoluto.** Rodapé preso em `top: 1200px` funciona no formato em
+que foi calibrado e quebra silenciosamente quando a altura da arte muda — o
+rodapé fica parado enquanto todo o resto desce, e o conteúdo passa por cima
+dele. Mesmo vale ao mudar de formato: bloco ancorado por `bottom` se reposiciona
+sozinho; bloco ancorado por `top` com altura automática (a moldura de
+referência é o caso clássico) mantém o topo e joga a diferença toda como vão
+morto antes do rodapé — aí o ajuste é na altura do conteúdo interno
+(`.ref-shot`), não na posição.
+
+**Confere se a contagem que a copy promete bate com o número de slides.** Um
+carrossel com 3 referências anunciava "5 SITES" no hook e no CTA. Antes de
+renderizar, cruza todo número citado na copy (hook, CTA, legenda) com a
+quantidade real de slides de conteúdo.
+
+**Nenhuma imagem se repete entre carrosséis.** Antes de fechar a seleção,
+compara o hash do conteúdo das imagens de todos os carrosséis do cliente, não
+o nome do arquivo — cópias com nomes diferentes (`hook.b64` vs `hook_new.b64`)
+escondem a repetição. Já aconteceu de um carrossel sair com hook e CTA
+reciclados de dois outros posts do mesmo feed.
 
 ## Etapa 6 — Entrega
 
