@@ -287,6 +287,128 @@ gerado antes disso.
    da bounding box acima de ~35%, e no máximo 1–2 blobs grandes — mas a decisão
    final é olhar o PNG recortado, porque a métrica não vê borda feia.
 
+   **Fundo em gradiente (ground) só entra quando o sujeito for GERADO com
+   recorte nativo — nunca com rembg sobre foto de banco.** Já aconteceu de
+   aplicar oclusão em fotos de banco (rembg): mesmo passando nos números da
+   avaliação acima, saiu com borda visivelmente cortada/colada — reprovado
+   pelo cliente em três hooks ao mesmo tempo. rembg sobre foto que não foi
+   pensada pra virar cutout produz silhueta imprecisa; gerar direto com
+   `background: transparent` (OpenAI) ou remover fundo com o
+   background-remover nativo do próprio gerador (Higgsfield
+   `remove_background`, não rembg) dá alpha limpo desde a origem. Regra
+   prática: se o sujeito veio de `img-ref`/banco existente → hook fica
+   **full-bleed** (foto inteira, sem recorte, `scrim` + `.lockup`); se o
+   sujeito foi gerado agora com recorte nativo → hook pode usar o template de
+   oclusão (`.hook-ground` + `.hook-mon` + `.hook-script` + `.hook-subject`).
+
+   **Quatro famílias de hook/CTA — alterna entre elas de carrossel pra
+   carrossel, nunca repete a mesma em dois carrosséis seguidos de uma
+   série.** O lockup tipográfico (Inter 900 + Tempting, ver acima) é fixo
+   nas quatro; o que muda é o que está atrás e na frente do texto:
+
+   - **A · Foto plena** — `img-ref`/banco existente, inteira, sem recorte,
+     `scrim` escuro na base + `.lockup` por cima. Zero geração, custo 0.
+     Usa quando já existe uma foto forte na pasta de referências do cliente.
+   - **B · Ground de cor + sujeito** — o template de oclusão documentado
+     acima: ground liso em gradiente da família (`Shade → #000`), sujeito
+     GERADO com recorte nativo, base dissolvida com `mask-image` (ver
+     regra abaixo). Usa quando o carrossel pede um objeto/figura isolada,
+     sem cenário.
+   - **C · Cenário + texto + sujeito** — cinematográfico: a cena INTEIRA
+     (ambiente, luz, profundidade) fica no fundo, não um gradiente chapado.
+     Documentado dois blocos abaixo.
+   - **D · Banco `img-ref` do cliente** — a opção mais barata: pega uma foto
+     do banco do próprio cliente, sem gerar nada. Documentada no próximo
+     bloco.
+
+   **Template D — banco `img-ref` do cliente, com upscale.** A pasta é
+   local, sincronizada pelo Google Drive desktop — lê direto do disco, não
+   pelo MCP do Drive (baixar por MCP devolve base64 no resultado da
+   ferramenta e queima contexto à toa):
+   `C:\Users\luizr\Meu Drive (aidealabbr@gmail.com)\Clientes\<cliente>\02-Materiais-Brutos\img-ref`.
+   Regras:
+   - **Nunca reusa a mesma imagem** — nem entre carrosséis, nem entre hook e
+     CTA. Antes de escolher, confere quais já foram publicadas (compara com
+     os PNGs finais dos carrosséis anteriores; hash perceptual resolve).
+   - **Monta um contact sheet antes de escolher** (grade de miniaturas num
+     único JPEG) em vez de abrir 18 imagens uma a uma — uma leitura em vez
+     de dezoito.
+   - **Escolhe pela ÁREA VAZIA, não só pela beleza:** o template não tem
+     recorte, então o texto precisa de um céu/campo escuro amplo onde pousar.
+     Cena com sujeito pequeno e horizonte baixo é ideal; imagem-textura sem
+     sujeito (gradiente, padrão, mancha) não serve pra hook.
+   - **O banco costuma ser de thumbs de 736px — sempre confere a resolução.**
+     Abaixo de 1080×1440 passa no `upscale_image` do Higgsfield
+     (provider `bytedance`, `resolution: "2k"` já basta; 4k é desperdício).
+     Fluxo: `media_upload` (pega a `upload_url` presignada) → PUT dos bytes →
+     `media_confirm` → `upscale_image` com `width`/`height` da origem.
+   - Depois do upscale, corta pra 3:4 escolhendo a âncora vertical com
+     critério: imagem 9:16 ancorada no TOPO preserva céu e sujeito; cortar
+     pelo centro decapita a composição.
+   - `scrim` em DUAS peças (`.scrim-top` e `.scrim-bottom`), não um só: a
+     foto de banco não foi feita pra carregar tipografia, e escurecer o
+     quadro inteiro mata a imagem. Escurece só onde o texto pousa.
+
+   **Template C — cenário completo, o recorte é a MESMA geração, não uma
+   segunda camada.** Gera uma cena única no gerador de imagem (Higgsfield
+   `soul_2`, 3:4, pessoa/objeto de costas ou à distância dentro de um
+   ambiente amplo — deserto, cordilheira, campo, horizonte) e roda o
+   `remove_background` nativo **sobre essa mesma imagem**. A página empilha
+   três camadas com o MESMO `object-fit: cover` e o mesmo enquadramento nas
+   duas imagens (cena inteira e recorte):
+   ```
+   .scene         { position:absolute; inset:0; object-fit:cover; z-index:0; }  /* cena completa */
+   .monument/.script                                            z-index:3      /* texto */
+   .subject-scene { position:absolute; inset:0; object-fit:cover; z-index:5; }  /* recorte da MESMA cena */
+   ```
+   Como as duas imagens são a mesma geração no mesmo frame, o recorte cai
+   exatamente sobre si mesmo — nenhum reposicionamento manual, nenhuma
+   máscara de dissolução de base (ela seria supérflua aqui: a base do
+   recorte já encosta na própria cena de origem, então não existe corte
+   reto contra fundo estranho; aplicar a máscara do template B por hábito
+   só duplicaria o sujeito como um fantasma). O andaime do pôster
+   (2026/AIDEA LAB/crosshairs/régua/rodapé/dots) e a cor do monumento e da
+   script se adaptam ao tom do céu da cena: céu claro → `.on-light`
+   (monumento em tinta escura, andaime em tinta); céu escuro → `.on-dark`
+   (monumento em creme, andaime em creme); a script leva sempre
+   `text-shadow` porque cruza os dois tons na mesma composição.
+   Validado no carrossel "Estilos Gráficos" parte 2 (hook "O luxo do
+   EXCESSO", CTA "Ainda faltam 5 ESTILOS").
+
+   **Custo Higgsfield por hook/CTA — preços conferidos na conta.** Por
+   operação: `soul_2` (2k, 3:4) = **0,12 crédito**;
+   `image_background_remover` = **1 crédito**; `bytedance_image_upscale`
+   (2k ou 4k, preço plano) = **2 créditos**. Por peça:
+
+   | Template | Operações | Crédito/peça | Par hook+CTA |
+   |---|---|---|---|
+   | A · Foto plena (já em 1080×1440) | nenhuma | 0 | 0 |
+   | B · Ground + sujeito | 1 geração + 1 recorte | 1,12 | 2,24 |
+   | C · Cenário + sujeito | 1 geração + 1 recorte | 1,12 | 2,24 |
+   | D · Banco `img-ref` + upscale | 1 upscale | 2,00 | 4,00 |
+
+   Dois pontos contra a intuição, os dois medidos e não estimados:
+   - **B e C custam exatamente o mesmo.** A diferença entre os dois é só
+     composição CSS (ground chapado vs. cena inteira atrás), não geração.
+     Escolhe pelo resultado visual, nunca por orçamento.
+   - **D (banco) é o MAIS CARO quando a imagem precisa de upscale** — 2
+     créditos contra 1,12 de gerar do zero, porque o upscale tem preço plano
+     e alto. "Usar o banco pra economizar" só economiza de fato se a imagem
+     já estiver em 1080×1440 ou mais (aí é template A, custo 0). Diz isso ao
+     cliente antes de assumir que reaproveitar sai mais barato.
+
+   Confirma o preço atual com `get_cost:true` antes de gerar em lote — o
+   catálogo e os preços do Higgsfield mudam.
+
+   **Recorte harmonizado com a família de cor do carrossel.** Ao gerar um
+   sujeito pra oclusão, a paleta do próprio sujeito (tecido, reflexo, luz de
+   contorno) deve casar com o `--g-base` do ground — nunca uma cor
+   competindo com a outra. Pede geração minimalista: um único realce de cor
+   (o tom do ground) sobre superfície neutra (cinza, prata, grafite), não um
+   objeto multicolorido/iridescente aleatório — isso também evita o efeito
+   "colado" que reflexos caóticos de várias cores produzem contra um
+   gradiente de cor única.
+
    **Base do sujeito SEMPRE dissolvida no fundo.** Recorte que termina em
    corte reto contra o gradiente lê como adesivo colado — foi exatamente o que
    o cliente reprovou. Aplica
@@ -391,6 +513,11 @@ gerado antes disso.
    slide de explicação padrão com fundo `bg-gradient`. Validado nos
    carrosséis "importância do branding" (ref: logodesignlove.com) e
    "importância do design" (ref: lawsofux.com).
+
+   **O `.eyebrow-chip` desse slide sempre diz "Referência" — nunca "Pra
+   estudar" nem variação.** Nomenclatura fixa, corrigida depois de sair
+   errada em produção; reaplica em qualquer carrossel futuro que tenha slide
+   de citação.
 
    Essa moldura de
    referência aparece em QUALQUER tipo de fundo (bg-gradient ou img-ref) —
