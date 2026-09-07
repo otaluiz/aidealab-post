@@ -1,6 +1,6 @@
 ---
 name: criar-post
-description: Cria um post de Instagram (carrossel ou imagem única) on-brand para um cliente da aidealab, a partir da identidade e referências já organizadas no Drive pela criar-cliente. Segue um "post design system" de 3 estruturas (cor, tipografia, layout) e storytelling de copywriting (hook, problema, explicação, solução, CTA). Renderização híbrida — tipografia/layout como arte estática nítida via canvas-design, imagem via ComfyUI local, Comfy Cloud MCP ou Higgsfield (escolha por disponibilidade e tipo de imagem). Dispara com "criar post <cliente>" / "novo post <cliente>" / "criar carrossel <cliente>". Para em dois checkpoints (design system, copy) antes de renderizar. Não publica no Instagram.
+description: Cria um post de Instagram (carrossel ou imagem única) on-brand para um cliente da aidealab, a partir da identidade e referências já organizadas no Drive pela criar-cliente. Segue um "post design system" de 3 estruturas (cor, tipografia, layout) e storytelling de copywriting (hook, problema, explicação, solução, CTA). Renderização híbrida — tipografia/layout como arte estática nítida via canvas-design, imagem via ComfyUI local (padrão, grátis) ou Higgsfield (fallback/foto realista/personagem). Dispara com "criar post <cliente>" / "novo post <cliente>" / "criar carrossel <cliente>". Para em dois checkpoints (design system, copy) antes de renderizar. Não publica no Instagram.
 ---
 
 # Criar post
@@ -121,7 +121,7 @@ Só roda se o cliente ainda não tem `D:\claude\posts\<cliente-normalizado>\desi
    dogfooding com a aidealab: são pipelines de produção completos próprios
    (scripts Python/Node, pesquisa no Pinterest, geração via Gemini,
    screenshot via chrome-devtools) que divergem da arquitetura desta skill
-   (canvas-design + Comfy Cloud + agent-browser) — não invocar esperando uma
+   (canvas-design + ComfyUI/Higgsfield + agent-browser) — não invocar esperando uma
    resposta pontual; as decisões de cor/fonte/layout ficam com a skill
    mesmo, a partir das fontes acima.
 4. Persiste tudo no repo do cliente (tokens + specs dos templates +
@@ -197,57 +197,32 @@ gerado antes disso.
    explicitamente pelo cliente mesmo assim, ciente do corte. Saída em PNG.
    O texto **nunca** é gerado por IA de imagem.
 2. **Camada de imagem** (fundos/ilustrações on-brand, quando o template pedir):
-   gera via **ComfyUI local, Comfy Cloud MCP ou Higgsfield**, guiada pela
-   skill `marketing-skills:image` (prompt e otimização). A imagem entra na
+   gera via **ComfyUI local ou Higgsfield**, guiada pela skill
+   `marketing-skills:image` (prompt e otimização). A imagem entra na
    composição do `canvas-design` — nunca carrega o texto.
 
-   **Escolha de motor — ComfyUI local × Comfy Cloud × Higgsfield.** Antes de
-   escolher modelo, escolhe onde rodar:
+   **Escolha de motor — ComfyUI local × Higgsfield.**
    - **ComfyUI local (Desktop, MCP `comfyui`)** — zero custo, primeira escolha
-     quando o app **ComfyUI Desktop já está aberto** (checa com
-     `get_system_stats`; sem resposta, não sobe o app sozinho — avisa o
-     usuário e cai pro próximo motor). Bom pra fundo abstrato/textura/glow com
-     os modelos já baixados localmente (ver `list_local_models`); mais lento
-     numa GPU modesta, sem custo por imagem.
-   - **Comfy Cloud MCP** — sem depender do app local, catálogo maior
-     (parceiros + OSS), consome crédito da conta Comfy Cloud. Fallback padrão
-     quando o Desktop não está aberto, ou quando o tipo de imagem pede modelo
-     que só existe lá (parceiro fotorealista, vetor).
-   - **Higgsfield** — quando a peça precisa do personagem da casa (Soul
-     treinado) ou de um acabamento que só o catálogo Higgsfield cobre; mesma
-     regra de custo e alternância de `criar-flyer` (ver aquela skill).
-   - Imagem gerada localmente sai em
+     sempre. Checa com `get_system_stats` se o app **ComfyUI Desktop** está
+     aberto; sem resposta, não sobe o app sozinho — avisa o usuário e cai pro
+     Higgsfield. Confere `list_local_models` para saber o que está baixado
+     antes de montar o workflow (`generate_image`/`enqueue_workflow`) — não
+     assume nome de modelo fixo de execuções anteriores. Bom pra fundo
+     abstrato/textura/glow e ilustração; mais lento numa GPU modesta, sem
+     custo por imagem. Imagem sai em
      `D:\ComfyUI-Outputs\aidealab\<cliente>\` antes de entrar na composição —
      mesma função do `output/` do repo pras demais camadas, só que fora do
      versionamento (arquivo binário grande).
-
-   **Escolha e alternância de modelo — não fixa um único modelo para todo o
-   post** (dentro do motor escolhido acima). Antes de gerar, classifica a
-   necessidade daquela imagem específica e escolhe o caminho conforme o tipo:
-   - **Fundo abstrato / textura / glow / padrão geométrico** (a maioria dos
-     fundos de carrossel — ex: o design system da aidealab em
-     `D:\claude\posts\aidealab\design-system\tokens.json`, estética "neon
-     tech"): `run_template` ou `submit_workflow` no Comfy Cloud com pipeline
-     OSS — "melhores modelos gratuitos", mais rápido e mais barato; primeira
-     escolha por padrão.
-   - **Foto realista** (produto, ambiente, pessoa, cena): `partner_generate`
-     com provedor parceiro (Flux, Ideogram, ou `google/*` via Gemini como
-     alternativa) — maior fidelidade fotográfica que os pipelines OSS
-     cobrem.
-   - **Ilustração estilizada/vetorial** (ícone, mascote, elemento gráfico):
-     `run_template` com modelo vocacionado a vetor (ex: Recraft) quando o
-     Comfy servir esse tipo; senão `partner_generate`.
-   - Antes de cada geração, consulta `search_models` e/ou
-     `get_prompting_guide` no Comfy Cloud para confirmar o que está
-     disponível **agora** — o catálogo de modelos muda, não assume nome de
-     modelo fixo de execuções anteriores.
+   - **Higgsfield** — quando o Desktop não está aberto, quando a peça precisa
+     de foto realista com fidelidade que os modelos locais não cobrem, ou do
+     personagem da casa (Soul treinado); mesma regra de custo e alternância
+     de `criar-flyer` (ver aquela skill).
    - Se o resultado não atender (texto ilegível aparecendo na imagem, cor
      fora da paleta do cliente, artefato visual, composição errada) —
-     **alterna para outro modelo/provedor da mesma categoria** antes de
-     aceitar; não insiste indefinidamente no mesmo modelo nem aceita
-     resultado abaixo do padrão.
-   - `wait_for_job`/`get_output` para colher o resultado, independente do
-     caminho escolhido acima.
+     **troca de modelo local antes de trocar de motor**; só sobe pro
+     Higgsfield se o local não resolver ou não estiver disponível. Não
+     insiste indefinidamente no mesmo modelo nem aceita resultado abaixo do
+     padrão.
 
    **Harmonia de cor entre as imagens do carrossel:** todo o banco de imagens
    usado num mesmo carrossel — geradas ou de referência (`img-ref`) — precisa
@@ -725,16 +700,11 @@ Skill do Claude Code resolve.
 - MCP `comfyui` (ComfyUI Desktop local — `get_system_stats`,
   `list_local_models`, `generate_image`, `enqueue_workflow`, `get_history`,
   `get_image`) — geração local sem custo, requer o app **ComfyUI Desktop
-  aberto**; primeira escolha de motor quando disponível (Etapa 4).
-- Comfy Cloud MCP (`partner_generate`, `run_template`, `submit_workflow`,
-  `search_models`, `get_prompting_guide`, `wait_for_job`, `get_output`) —
-  fallback de motor quando o Desktop local não está aberto, ou quando o tipo
-  de necessidade pede modelo exclusivo da nuvem; escolha/alternância de
-  modelo conforme o tipo de imagem (Etapa 4). Gemini via `gemini-api-dev` /
-  `partner_generate google/*` como opção dentro dessa escolha.
-- Higgsfield (`generate_image`, `show_characters`) — terceiro motor, quando a
-  peça precisa do personagem da casa (Soul treinado) ou de acabamento
-  exclusivo do catálogo Higgsfield (Etapa 4).
+  aberto**; motor padrão da camada de imagem (Etapa 4).
+- Higgsfield (`generate_image`, `show_characters`) — fallback quando o
+  Desktop local não está aberto, quando a peça precisa de foto realista com
+  fidelidade que os modelos locais não cobrem, ou do personagem da casa
+  (Soul treinado) (Etapa 4).
 - **Não usar** `ui-ux-pro-max:banner-design`/`design-system` como consulta de
   design — são pipelines de produção completos com toolchain própria
   (Python/Node/Pinterest/Gemini/chrome-devtools), divergentes desta skill;
