@@ -1,6 +1,6 @@
 ---
 name: criar-post
-description: Cria um post de Instagram (carrossel ou imagem única) on-brand para um cliente da aidealab, a partir da identidade e referências já organizadas no Drive pela criar-cliente. Segue um "post design system" de 3 estruturas (cor, tipografia, layout) e storytelling de copywriting (hook, problema, explicação, solução, CTA). Renderização híbrida — tipografia/layout como arte estática nítida via canvas-design, imagem só via Comfy Cloud MCP. Dispara com "criar post <cliente>" / "novo post <cliente>" / "criar carrossel <cliente>". Para em dois checkpoints (design system, copy) antes de renderizar. Não publica no Instagram.
+description: Cria um post de Instagram (carrossel ou imagem única) on-brand para um cliente da aidealab, a partir da identidade e referências já organizadas no Drive pela criar-cliente. Segue um "post design system" de 3 estruturas (cor, tipografia, layout) e storytelling de copywriting (hook, problema, explicação, solução, CTA). Renderização híbrida — tipografia/layout como arte estática nítida via canvas-design, imagem via ComfyUI local, Comfy Cloud MCP ou Higgsfield (escolha por disponibilidade e tipo de imagem). Dispara com "criar post <cliente>" / "novo post <cliente>" / "criar carrossel <cliente>". Para em dois checkpoints (design system, copy) antes de renderizar. Não publica no Instagram.
 ---
 
 # Criar post
@@ -137,6 +137,17 @@ reapresenta se o usuário pedir ajustes.
 
 ## Etapa 3 — Conteúdo e copy
 
+**A espinha de palavras.** Antes de escrever os cards, escolhe UMA palavra por
+slide — a que vai atrás do sujeito. Lidas em sequência elas têm que formar a
+narrativa do carrossel sozinhas, porque é isso que o leitor pega ao arrastar
+rápido: `SOME · VISITA · VOLTA · DECIDE · CAMINHO`. Se a sequência não conta a
+história sem os cards, a copy ainda não está pronta.
+
+**Nunca use numeral 01/02/03 como o tipo grande.** Regra do cliente: os dots do
+rodapé já numeram o slide, então o numeral gasta o lugar mais nobre da peça
+repetindo o que o rodapé diz. Vale também para o chip do card — rótulo verbal
+("A primeira vez", "O retorno", "A decisão"), nunca "Etapa 01".
+
 1. Recebe o tema/objetivo do post do usuário.
 2. Escreve a copy com o arco **hook → problema → explicação → solução → CTA**
    distribuído nos slides (no formato imagem única, colapsa num único frame
@@ -186,13 +197,33 @@ gerado antes disso.
    explicitamente pelo cliente mesmo assim, ciente do corte. Saída em PNG.
    O texto **nunca** é gerado por IA de imagem.
 2. **Camada de imagem** (fundos/ilustrações on-brand, quando o template pedir):
-   gera via **Comfy Cloud MCP**, guiada pela skill `marketing-skills:image`
-   (prompt e otimização). A imagem entra na composição do `canvas-design` —
-   nunca carrega o texto.
+   gera via **ComfyUI local, Comfy Cloud MCP ou Higgsfield**, guiada pela
+   skill `marketing-skills:image` (prompt e otimização). A imagem entra na
+   composição do `canvas-design` — nunca carrega o texto.
+
+   **Escolha de motor — ComfyUI local × Comfy Cloud × Higgsfield.** Antes de
+   escolher modelo, escolhe onde rodar:
+   - **ComfyUI local (Desktop, MCP `comfyui`)** — zero custo, primeira escolha
+     quando o app **ComfyUI Desktop já está aberto** (checa com
+     `get_system_stats`; sem resposta, não sobe o app sozinho — avisa o
+     usuário e cai pro próximo motor). Bom pra fundo abstrato/textura/glow com
+     os modelos já baixados localmente (ver `list_local_models`); mais lento
+     numa GPU modesta, sem custo por imagem.
+   - **Comfy Cloud MCP** — sem depender do app local, catálogo maior
+     (parceiros + OSS), consome crédito da conta Comfy Cloud. Fallback padrão
+     quando o Desktop não está aberto, ou quando o tipo de imagem pede modelo
+     que só existe lá (parceiro fotorealista, vetor).
+   - **Higgsfield** — quando a peça precisa do personagem da casa (Soul
+     treinado) ou de um acabamento que só o catálogo Higgsfield cobre; mesma
+     regra de custo e alternância de `criar-flyer` (ver aquela skill).
+   - Imagem gerada localmente sai em
+     `D:\ComfyUI-Outputs\aidealab\<cliente>\` antes de entrar na composição —
+     mesma função do `output/` do repo pras demais camadas, só que fora do
+     versionamento (arquivo binário grande).
 
    **Escolha e alternância de modelo — não fixa um único modelo para todo o
-   post.** Antes de gerar, classifica a necessidade daquela imagem específica
-   e escolhe o caminho conforme o tipo:
+   post** (dentro do motor escolhido acima). Antes de gerar, classifica a
+   necessidade daquela imagem específica e escolhe o caminho conforme o tipo:
    - **Fundo abstrato / textura / glow / padrão geométrico** (a maioria dos
      fundos de carrossel — ex: o design system da aidealab em
      `D:\claude\posts\aidealab\design-system\tokens.json`, estética "neon
@@ -338,10 +369,11 @@ gerado antes disso.
      Cena com sujeito pequeno e horizonte baixo é ideal; imagem-textura sem
      sujeito (gradiente, padrão, mancha) não serve pra hook.
    - **O banco costuma ser de thumbs de 736px — sempre confere a resolução.**
-     Abaixo de 1080×1440 passa no `upscale_image` do Higgsfield
-     (provider `bytedance`, `resolution: "2k"` já basta; 4k é desperdício).
-     Fluxo: `media_upload` (pega a `upload_url` presignada) → PUT dos bytes →
-     `media_confirm` → `upscale_image` com `width`/`height` da origem.
+     Abaixo de 1080×1440, amplia **localmente e de graça** com Lanczos 2× +
+     unsharp (Pillow). **Não gasta crédito com `upscale_image`** — regra
+     fechada pelo cliente; ver a receita e o porquê na skill `criar-flyer`.
+     Ampliar antes de recortar ainda melhora o `rembg`: mais pixel na borda,
+     alpha menos serrilhado.
    - Depois do upscale, corta pra 3:4 escolhendo a âncora vertical com
      critério: imagem 9:16 ancorada no TOPO preserva céu e sujeito; cortar
      pelo centro decapita a composição.
@@ -377,25 +409,29 @@ gerado antes disso.
 
    **Custo Higgsfield por hook/CTA — preços conferidos na conta.** Por
    operação: `soul_2` (2k, 3:4) = **0,12 crédito**;
-   `image_background_remover` = **1 crédito**; `bytedance_image_upscale`
-   (2k ou 4k, preço plano) = **2 créditos**. Por peça:
+   `image_background_remover` = **1 crédito**. O upscale
+   (`bytedance_image_upscale`, **2 créditos**, preço plano) está **fora do
+   pipeline** — ampliação é local e grátis. Por peça:
 
    | Template | Operações | Crédito/peça | Par hook+CTA |
    |---|---|---|---|
    | A · Foto plena (já em 1080×1440) | nenhuma | 0 | 0 |
    | B · Ground + sujeito | 1 geração + 1 recorte | 1,12 | 2,24 |
    | C · Cenário + sujeito | 1 geração + 1 recorte | 1,12 | 2,24 |
-   | D · Banco `img-ref` + upscale | 1 upscale | 2,00 | 4,00 |
+   | D · Banco `img-ref` + Lanczos local | nenhuma paga | 0 | 0 |
 
-   Dois pontos contra a intuição, os dois medidos e não estimados:
+   Três pontos contra a intuição, os três medidos e não estimados:
    - **B e C custam exatamente o mesmo.** A diferença entre os dois é só
      composição CSS (ground chapado vs. cena inteira atrás), não geração.
      Escolhe pelo resultado visual, nunca por orçamento.
-   - **D (banco) é o MAIS CARO quando a imagem precisa de upscale** — 2
-     créditos contra 1,12 de gerar do zero, porque o upscale tem preço plano
-     e alto. "Usar o banco pra economizar" só economiza de fato se a imagem
-     já estiver em 1080×1440 ou mais (aí é template A, custo 0). Diz isso ao
-     cliente antes de assumir que reaproveitar sai mais barato.
+   - **D é o template mais barato, não o mais caro.** Isso mudou: enquanto o
+     upscale era pago, thumb de 736px custava 2 créditos e reaproveitar o
+     banco saía mais caro que gerar do zero. Com Lanczos local o banco voltou
+     a custar zero. Validado no carrossel GEO, feito inteiro de thumbs de
+     736px e aprovado sem ressalva.
+   - **Se um dia precisar mesmo de detalhe reconstruído, gera — não amplia.**
+     0,12 de uma `soul_2` nova contra 2,00 de upscale: gerar do zero é 16×
+     mais barato que ampliar.
 
    Confirma o preço atual com `get_cost:true` antes de gerar em lote — o
    catálogo e os preços do Higgsfield mudam.
@@ -686,11 +722,19 @@ Skill do Claude Code resolve.
   legenda de Instagram (hook/corpo/CTA) e boas práticas de hashtag na Etapa 3.
   Plugin `marketing` — distinto do `marketing-skills@marketingskills` (Corey
   Haines) usado acima; os dois coexistem, papéis diferentes.
+- MCP `comfyui` (ComfyUI Desktop local — `get_system_stats`,
+  `list_local_models`, `generate_image`, `enqueue_workflow`, `get_history`,
+  `get_image`) — geração local sem custo, requer o app **ComfyUI Desktop
+  aberto**; primeira escolha de motor quando disponível (Etapa 4).
 - Comfy Cloud MCP (`partner_generate`, `run_template`, `submit_workflow`,
   `search_models`, `get_prompting_guide`, `wait_for_job`, `get_output`) —
-  geração da camada de imagem com escolha/alternância de modelo conforme o
-  tipo de necessidade (Etapa 4). Gemini via `gemini-api-dev` /
+  fallback de motor quando o Desktop local não está aberto, ou quando o tipo
+  de necessidade pede modelo exclusivo da nuvem; escolha/alternância de
+  modelo conforme o tipo de imagem (Etapa 4). Gemini via `gemini-api-dev` /
   `partner_generate google/*` como opção dentro dessa escolha.
+- Higgsfield (`generate_image`, `show_characters`) — terceiro motor, quando a
+  peça precisa do personagem da casa (Soul treinado) ou de acabamento
+  exclusivo do catálogo Higgsfield (Etapa 4).
 - **Não usar** `ui-ux-pro-max:banner-design`/`design-system` como consulta de
   design — são pipelines de produção completos com toolchain própria
   (Python/Node/Pinterest/Gemini/chrome-devtools), divergentes desta skill;
