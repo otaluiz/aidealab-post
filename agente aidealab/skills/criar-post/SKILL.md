@@ -315,6 +315,23 @@ limpar, com 16px de folga. Roda DEPOIS do fit de largura -- e o tamanho final da
 palavra que decide onde o acento chega. Inline o arquivo num `<script>` antes do
 FIT e chame `window.__anticolisao(16)` no fim dele.
 
+**1b. O toque certo é leve: a script DEITA no topo do bold, não invade.**
+Baseline colada no `capTop` da palavra (o que a cola de baseline faz sozinha)
+joga toda a descida da Tempting DENTRO das letras e cobre a metade de cima
+delas — foi o que o cliente recusou em ESTRATÉGIA, FERRAMENTA, PROCESSO, BUSCA
+e RESPOSTA. A referência da casa é `Concorrente-Comunica-Melhor` e
+`Testa-uma-DUPLA`: só a ponta da descida encosta no topo do bold, as letras
+seguem legíveis inteiras.
+
+Como acertar: `data-lift` no elemento `.script`, ~0,3em do corpo da script
+(82px → 78; 88px → 74; 96px → 30 quando a palavra é curta e a descida cai fora
+dela; 104px → 30). Não existe número único — renderize e confira o crop 1:1 da
+faixa do lockup, nunca o contact sheet: a diferença some em miniatura.
+
+**Palavra-chave serifada: colore UMA palavra, não a linha toda.** A linha
+script fica em `--paper`; só a palavra que carrega o sentido entra em
+`--accent`, via `<span class="kw">`. Linha inteira colorida foi recusada.
+
 **2. Na oclusao, a palavra tem que ser ~1,5x mais larga que o sujeito.** Medido
 na faixa vertical onde ela cai, lendo o alpha do recorte. Abaixo disso a palavra
 some inteira atras da pessoa: "COMPLETO?" desapareceu com 840px de palavra
