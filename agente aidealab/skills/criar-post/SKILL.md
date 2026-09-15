@@ -155,11 +155,13 @@ rejeitado — *"cadê as imagens que chamam atenção?"*. Gradiente é fundo de
 apresentação; peça de feed pede cena.
 
 **Numeral grande (`.numeral`) é a mesma peça que o monumento de palavra —
-segue a regra idêntica.** `01`, `02`, `03` atrás do sujeito no miolo é o
-mesmo barulho que a palavra gigante; carrossel GEO-Busca-com-IA saiu com
-numeral nos dois slides de explicação e voltou pra correção. Miolo fica só
-com content-card; numeral (quando fizer sentido) é elemento do slide de
-referência, nunca do slide de explicação.
+segue a regra idêntica, em QUALQUER slide, inclusive o de referência.**
+`01`, `02`, `03` atrás do sujeito ou da moldura é o mesmo barulho que a
+palavra gigante. GEO-Busca-com-IA e Estratégia-no-Marketing saíram com
+numeral nos slides de explicação **e** no de referência — os três slides
+voltaram pra correção. O slide de referência já tem "Passo 0X" escrito no
+corpo do texto; não precisa do dígito gigante repetindo a mesma informação
+por cima da cena.
 
 **Moldura de referência: não force reposicionamento sem espaço livre real.**
 Se a figura do slide de referência está confinada numa faixa estreita e o
