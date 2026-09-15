@@ -135,6 +135,327 @@ Só roda se o cliente ainda não tem `D:\claude\posts\<cliente-normalizado>\desi
 preview) e aguarda aprovação explícita antes de produzir qualquer post. Refina e
 reapresenta se o usuário pedir ajustes.
 
+## Onde o tipo grande entra — e onde não entra
+
+**Caixa alta só no hook e no CTA.** Os slides de explicação não levam a palavra
+grande de fundo: neles a cena fala sozinha e o content-card carrega a leitura.
+Regra do cliente, depois de ver a série com palavra em todos os seis — o miolo
+ficava barulhento e a espinha competia com o card.
+
+Sem monumento, o recorte seria pixel idêntico à cena: **retira a camada
+também**, em vez de deixá-la inerte.
+
+**O personagem (@luizota / @wel) aparece só no hook OU só no CTA**, nunca no
+miolo — é uma das variações de abertura, não o padrão da série. Os slides de
+explicação levam cena com figura anônima e pequena, que é o registro do banco
+`img-ref` e dos carrosséis aprovados.
+
+**Toda peça tem imagem forte.** Fundo de gradiente sozinho no miolo foi
+rejeitado — *"cadê as imagens que chamam atenção?"*. Gradiente é fundo de
+apresentação; peça de feed pede cena.
+
+**Numeral grande (`.numeral`) é a mesma peça que o monumento de palavra —
+segue a regra idêntica.** `01`, `02`, `03` atrás do sujeito no miolo é o
+mesmo barulho que a palavra gigante; carrossel GEO-Busca-com-IA saiu com
+numeral nos dois slides de explicação e voltou pra correção. Miolo fica só
+com content-card; numeral (quando fizer sentido) é elemento do slide de
+referência, nunca do slide de explicação.
+
+**Moldura de referência: não force reposicionamento sem espaço livre real.**
+Se a figura do slide de referência está confinada numa faixa estreita e o
+topo da peça (regnum + assinatura) já ocupa a margem superior, mover a
+moldura pra "abrir espaço" costuma esbarrar no cabeçalho antes de resolver o
+problema. Prioridade: (1) mede se há espaço vertical livre de verdade acima
+ou abaixo do sujeito respeitando as margens do cabeçalho e do rodapé; (2) se
+houver, reposiciona a moldura; (3) se não houver, mantém a moldura na
+posição padrão — não redimensiona nem recorta o conteúdo da moldura só pra
+forçar caber.
+
+### Onde o recorte é fraco, não se coloca tipo
+
+Cabelo escuro contra fundo escuro derrota todos os modelos de recorte —
+testados `u2net_human_seg`, `u2net`, `isnet-general-use` e alpha matting: o
+topo do crânio some, a palavra passa por cima e o personagem fica **careca**.
+
+A saída não é caçar um recorte melhor. É **ancorar a palavra onde a silhueta é
+sólida** — no tronco, nunca na cabeça. Mede o perfil de largura por linha e
+escolhe a faixa; o defeito do topo deixa de importar porque nada é desenhado
+ali.
+
+## Arquitetura de pastas do cliente (ler ANTES de gerar qualquer coisa)
+
+Duas famílias de pasta, e elas NAO servem para a mesma coisa:
+
+**`02-Materiais-Brutos` — entra direto na arte, custo zero.**
+
+| pasta | o que e | como usar |
+|---|---|---|
+| `bg-ref` | gradientes e texturas abstratas | chao da peca, com moldura por cima |
+| `img-ref` | cenas surreais prontas | imagem do miolo, uso direto |
+| `hook-cta-ref` | personagens ja fotografados/gerados | hook e CTA, uso direto |
+
+**`01-Referencias/Instagram` — nao entra na arte, e modelo para GERAR.**
+
+| pasta | o que e | como usar |
+|---|---|---|
+| `hook-ref` | layout e design de capa | recriar o layout com o personagem |
+| `soul-ref` | cena/pose de uma pessoa so | `soul_2` + `soul_id` + a referencia |
+| `dupla-ref` | cena com duas pessoas | base para peca com os dois fundadores |
+
+Consequencia pratica: **antes de gastar credito, olhe `02-Materiais-Brutos`.**
+Um carrossel inteiro pode sair de la sem gerar nada. O cliente vai apagando da
+pasta o que ja foi usado, entao o que estiver la e material livre -- e o que
+sumiu ja saiu em peca e nao se repete.
+
+## O sistema de carrossel: dois eixos
+
+Sintese do que esta aprovado em `04-Carrosseis`. Sao **dois eixos independentes**:
+o miolo (variacao de carrossel) e a capa (variacao de hook). Um carrossel escolhe
+UMA de cada e combina livremente. Nao confunda os dois -- "ground de cor" e uma
+capa, nao um sistema de miolo.
+
+### Eixo 1 -- variacoes de carrossel (o miolo)
+
+**1. Cartao de vidro sobre imagem** -- Branding, Consistencia, Design, Sites que
+inspiram, Tarefas para a IA.
+Fundo SEMPRE imagem (cena gerada ou textura do `bg-ref`); leitura num cartao
+translucido com chip de etapa, titulo e uma linha em italico no acento. Aceita um
+slide de referencia com print dentro de cartao claro.
+
+**2. Cartao escuro sobre foto** -- Servicos (3), Estrategia, GEO, Jornada,
+Parece Barato.
+Foto sangrando na peca inteira, cartao escuro com blur no rodape. Palavra grande
+atras do sujeito quando a silhueta e solida (mordida de 15-45% da largura).
+
+**3. Moldura de papel** -- O Processo, O Que Postar.
+Moldura creme com a foto dentro e etiqueta no rodape da moldura, cartao creme com
+tipo escuro, sobre gradiente calmo da paleta -- o MESMO fundo em todos os slides.
+
+### Eixo 2 -- variacoes de hook (so a capa)
+
+**A. Ground de cor, sujeito na frente** -- Branding, Fontes, Consistencia, Design.
+Chao de cor da familia, palavra TOM SOBRE TOM no lado claro (contraste medido,
+2,8 a 3,2:1 -- escurecer contra ground escuro nao passa de 1,9:1 e some), sujeito
+recortado NA FRENTE do tipo com a base dissolvida por `mask-image`, linha de apoio
+em serifa script. Custo: 1 geracao + 1 recorte. O recorte funciona aqui porque o
+sujeito esta na frente de tudo: erro de mascara some contra o ground liso.
+
+**B. Cena gerada, sem personagem** -- Ferramenta vs Processo, GEO, Economia da
+Atencao. Cena conceitual (objeto gigante, campo vazio, figura anonima pequena) com
+a palavra por cima. De graca vindo de `img-ref`, ou 0,12 gerando.
+
+**C. Personagem em foto sangrando** -- Servicos, Parece Barato, O Que Postar.
+Foto do @luizota ou do @wel ocupando a peca, palavra atras dele quando a silhueta
+e solida, embaixo do rosto quando nao e. `hook-cta-ref` de graca ou soul + `soul-ref`.
+
+### Referencias: uma vez usada, nunca mais
+
+Referencia da `soul-ref` / `dupla-ref` **se gasta**. Usou numa peca, nao usa de
+novo -- senao a serie repete a mesma criacao com outro texto. Anote qual foi
+usada em cada peca antes de subir a proxima.
+
+**`dupla-ref` gera DUAS pessoas** mesmo com "alone" escrito no prompt: o soul
+copia a composicao da referencia, e a segunda pessoa sai um desconhecido. Peca
+de um personagem so exige referencia da `soul-ref`. Se ja gerou e veio a dupla,
+da para salvar cortando so o fundador -- foi o que funcionou na capa do elevador.
+
+### Nem todo carrossel precisa de personagem
+
+Um bloco de tres pode ter um carrossel inteiro **so de cena cinematografica**,
+sem rosto nenhum -- capa e CTA incluidos. Isso descansa o feed, sai mais barato
+e ainda amarra pelo color grading.
+
+### Color grading: so no prompt, NUNCA no pos
+
+No prompt, fixo em toda geracao: *cold cinematic color grade, deep blue-black
+shadows, desaturated cyan midtones, one warm amber rim light, soft haze, 35mm
+film look* -- mais *anamorphic lens, fine film grain* quando o registro e
+cinematografico. E aqui que a paleta se resolve.
+
+**A curva de pos esta DESLIGADA** (decisao do cliente, 13/09/2026). A imagem
+entra na peca nativa: so recorte 3:4, nada de curva de cor. "As imagens nao
+precisam, manter aspecto da imagem."
+
+Historico, para nao repetir o caminho: existiram duas curvas de pos e as duas
+foram reprovadas. A primeira (sombra azul-petroleo + alta luz ambar, contraste
++6%, saturacao -6%) achatava foto que ja estava boa. A segunda, azul + fuchsia
+neon por rampa de luminancia, foi pedida, testada em quatro origens e reprovada
+na mesma sessao. Os dois scripts seguem em `carrossel-v3/grade.py` e
+`carrossel-v3/grade2.py` **sem uso** -- nao reintroduza nenhum dos dois sem
+pedido explicito.
+
+Consequencia pratica: a harmonia da serie passa a depender inteiramente da
+escolha das imagens. Antes de montar, ponha as 6 lado a lado num contact sheet;
+se uma nao pertence a familia das outras, troque a imagem, nao a curva.
+
+### Regras que nao mudam
+
+- **Slide de explicacao NUNCA tem fundo de gradiente liso.** E imagem gerada,
+  textura do `bg-ref` ou foto. Gradiente liso so como ground de capa.
+- **Tres posts seguidos na mesma variacao de miolo** antes de trocar. Um carrossel
+  isolado nao constroi identidade; o bloco de tres constroi.
+- Quando o fundo vem do `bg-ref`, e o mesmo fundo em todos os slides.
+- Uma variacao de miolo por carrossel. Moldura e para FOTO -- gradiente dentro de
+  moldura nao vale.
+- Caixa alta so na capa e no CTA. Personagem so na capa ou no CTA, nunca no miolo.
+
+### Lettering: duas verificacoes obrigatorias
+
+**1. Script x palavra grande nao podem se tocar.** Tempting tem descida longa e
+com laco; Inter 900 com `line-height: .84` deixa o acento subir ALEM da caixa do
+texto. As duas tintas vazam para fora das suas caixas e se encontram -- foi o
+que sujou "Mesmo com Instagram, / INVISIVEL" e "Bora ficar / VISIVEL".
+
+Vao fixo nao resolve, porque cada palavra tem altura de tinta diferente (com
+acento ou sem, com descida ou sem). `carrossel-v3/anticolisao.js` mede a tinta
+real pelo `actualBoundingBoxAscent/Descent` do canvas e sobe a linha script ate
+limpar, com 16px de folga. Roda DEPOIS do fit de largura -- e o tamanho final da
+palavra que decide onde o acento chega. Inline o arquivo num `<script>` antes do
+FIT e chame `window.__anticolisao(16)` no fim dele.
+
+**2. Na oclusao, a palavra tem que ser ~1,5x mais larga que o sujeito.** Medido
+na faixa vertical onde ela cai, lendo o alpha do recorte. Abaixo disso a palavra
+some inteira atras da pessoa: "COMPLETO?" desapareceu com 840px de palavra
+contra 859px de sujeito. Sujeito que preenche o quadro (cobertura acima de ~70%
+em todas as faixas) nao serve para oclusao -- troque a imagem ou baixe a palavra
+para a faixa mais estreita.
+
+### Tipografia da casa: INTER + TEMPTING
+Duas familias, so -- equivalente moderno de **Helvetica + Shelley**; se trocar,
+troca em par.
+- **Inter** -- display (900), titulo de cartao, corpo e rotulos. NUNCA serifada.
+- **Tempting** -- a linha de apoio acima da palavra grande. UNICO lugar com serifa.
+
+Nao entra terceira familia. Manrope aparece nos carrosseis antigos por inercia;
+em peca nova, corpo e Inter.
+
+## Referências do cliente: hook-ref e carousel-design
+
+Duas pastas mandam no visual, e são lidas do disco antes de desenhar:
+
+```
+C:\Users\luizr\Meu Drive (aidealabbr@gmail.com)\Clientes\<cliente>\01-Referencias\Instagram\hook-ref
+```
+mais a irmã `carousel-design`. (`flyer-desing` serve à `criar-flyer`.)
+
+**Recriar uma referência COM o personagem (a via mais fiel).** O `soul_2`
+aceita `soul_id` **e** uma imagem de referência ao mesmo tempo (`medias`, role
+`image`, máximo 1). Então dá para pegar um pôster da `hook-ref`, mandá-lo como
+media e gerar a mesma composição com o rosto do @luizota ou do @wel — em vez de
+só descrever a cena por escrito e torcer. Custo igual ao de qualquer `soul_2`:
+0,12.
+
+Fluxo: `media_upload` (devolve a `upload_url` presignada) → PUT dos bytes →
+`media_confirm` → `generate_image` com `soul_id` + `medias`. Nesta máquina o
+PUT precisa forçar IPv4: o `fetch` do Node e o `curl` estouram timeout no
+endpoint da AWS, e `urllib` com `getaddrinfo` fixado em `AF_INET` passa.
+
+**O `soul_2` carimba tipografia falsa.** Pedir cena "editorial" ou "advertising
+photography" faz o modelo desenhar um título de pôster inventado — saíram
+`GOARANG`, `MDYSUNOROR`, legendas laterais. Repetir "no text, no letters" no
+prompt **não resolve**: ele já está lá e o carimbo veio assim mesmo.
+
+O que resolve é enquadramento: o carimbo cai quase sempre numa faixa alta e
+isolada, então **corta abaixo dele** no preparo (`crop` antes do cover) em vez
+de regerar às cegas. Confere sempre o render antes de fechar — em miniatura o
+texto falso passa despercebido.
+
+**A referência tem que ser FOTO PURA, nunca pôster.** É a causa raiz do carimbo.
+Mandar como media uma peça já diagramada (título, legenda lateral, código no
+canto) faz o `soul_2` reproduzir a diagramação junto com a composição: saíram
+`VIRLIZZAR A QULQWEE`, balões de conversa em língua nenhuma e um cabeçalho de
+crédito inteiro. A referência que funcionou de primeira era o único arquivo da
+pasta que é fotografia crua. Então, antes do `media_upload`: **corta a faixa de
+tipografia do pôster** e manda só a fotografia. Três gerações queimadas (~0,36)
+até isolar isso.
+
+**REGRA DO CLIENTE: geração com referência JAMAIS pode sair com texto.** Vale
+para qualquer letra — título de pôster, legenda, código no canto e também
+**escrita à mão**. Uma referência de post-its com recadinhos manuscritos faz o
+modelo escrever rabisco ilegível em cada bloquinho, e isso reprova a peça do
+mesmo jeito que um título falso.
+
+A correção é **na referência, não na saída**. Limpar a arte final é caro e
+estraga o rosto (mediana forte achata pele e terno; máscara apertada limpa só
+metade dos bloquinhos). Limpar a REFERÊNCIA é barato porque ali qualidade não
+importa — ela só guia composição:
+
+```python
+note = (s > 55) & (v > 60)                       # papel saturado
+note = close(note, 21) ; note = open(note, 5)    # engole a escrita
+saida = onde(note, medianBlur(img, 21), img)     # bloquinho vira chapado
+```
+
+Sobe a referência limpa, gera de novo, e o modelo copia bloquinho em branco.
+Custou 0,24 aprender: o par gerado com a referência escrita foi inteiro para o
+lixo.
+
+**Fundo sujo? Troca o fundo inteiro, não remenda.** Quando sobra rabisco ou
+tipo falso na parede da cena, apagar mancha por mancha (`inpaint`) come tempo e
+deixa borrão — e ainda foi por ali que o rosto do personagem quase virou
+mingau. O movimento certo é usar a máscara do recorte como alpha e **repintar
+todo o fundo** com uma parede sintética (gradiente + vinheta + ruído) no tom da
+série. Um passo só, e ele resolve DUAS coisas: mata o texto falso e conserta a
+paleta — a referência vinha de estúdio claro e os outros slides do carrossel
+são escuros, o que quebrava a harmonia do carrossel.
+
+Dois cuidados: endurecer a alpha (`clip((a-0.22)/0.20)`) antes de compor, senão
+objeto de borda clara — um celular na mão — fica fantasma; e, onde a máscara
+não é confiável, forçar alpha 1 numa faixa (`maximum(alpha, guard)`) para
+preservar o trecho original da foto.
+
+**Quando a cena é cheia, o tipo vai NA FRENTE.** A oclusão é a assinatura, mas
+não é obrigação: se o sujeito ocupa mais de ~60% da largura em toda a altura
+(caso do rosto embalado na bandeja), a palavra atrás sobra só nas pontas e vira
+ruído. Aí o caminho é **lettering aplicado por cima** — fill, contorno de tinta
+e duas sombras duras deslocadas, a de cor antes da de tinta. Lê como rótulo
+impresso e combina com cena de embalagem e vitrine.
+
+**O que `hook-ref` ensina.** As capas ali NÃO são retrato de estúdio: são
+**cena conceitual — a pessoa dentro de uma metáfora exagerada**. Alguém coberto
+de post-its, cercado de celulares que mostram o próprio rosto, com o rosto
+embalado numa bandeja de supermercado, num escritório com papéis voando. Por
+cima, uma pergunta curta em duas alturas (linha pequena + palavra gigante
+colorida) e uma trilha de rótulos no topo.
+
+Então o hook se gera assim: **descreve a cena-metáfora, não a pose**. "Homem em
+pé enquanto dezenas de panfletos voam ao redor" rende capa; "homem de braços
+cruzados com luz de recorte" rende banco de imagem.
+
+**O CTA nao precisa repetir sempre a mesma receita.** Script + monumento +
+chip e UMA das formas, nao a forma. Regra do cliente: variar. Tres que ja
+funcionaram:
+
+- **tipo no chao** — o tipo desce para a faixa vazia embaixo do sujeito e o chip
+  fecha (cena de imprensa fotografando o @wel sentado);
+- **fechar o arco da capa** — o CTA usa OUTRO angulo da mesma serie de fotos do
+  hook, mostrando o depois (na capa os dois estao cobertos de post-it; no CTA
+  estao arrancando os bloquinhos);
+- **monumento atras do sujeito**, que e o padrao antigo.
+
+O que nao muda: chip de acao visivel, uma linha de tipo grande no maximo, e
+caixa alta permitida (hook e CTA sao os dois unicos lugares).
+
+**Dois fundadores na mesma capa.** Um `soul_id` por geração, então os dois nunca
+saem juntos. A receita que funcionou:
+
+1. gera **cada um no MESMO enquadramento** — mesmo prompt, mesma pose, fundo
+   neutro, luz chapada ("de braços cruzados, fundo claro liso, luz suave, da
+   cintura para cima"). Enquadramento igual é o que faz os dois parecerem da
+   mesma foto;
+2. gera o **fundo à parte**, sem personagem e sem texto (aqui: parede coberta de
+   post-its em branco — a metáfora da `hook-ref` virou cenário em vez de pose);
+3. recorta os dois com a máscara dupla, aplica a MESMA escala aos dois (não
+   iguala a altura: quem é mais alto continua mais alto) e assenta no rodapé do
+   quadro;
+4. escurece os recortes ~12% e joga uma **sombra projetada borrada** atrás de
+   cada um — sem isso os dois flutuam sobre a parede;
+5. corta a faixa inferior da foto de origem antes de recortar: legenda falsa no
+   pé da geração entra no recorte junto com o corpo.
+
+Com os dois ocupando a metade de baixo não sobra faixa de mordida (a cobertura
+passa de 80%), então o tipo aqui vai **na frente, acima das cabeças**.
+
 ## Etapa 3 — Conteúdo e copy
 
 **A espinha de palavras.** Antes de escrever os cards, escolhe UMA palavra por
@@ -667,9 +988,72 @@ reciclados de dois outros posts do mesmo feed.
 
 Salva os PNGs finais no Drive via `create_file`: em `04-Carrosseis` (o material
 de trabalho) e/ou `06-Aprovados-para-Postar` (quando o usuário aprovar para
-postar). Junto, salva a **legenda + hashtags** (Etapa 3) como um arquivo de
-texto na mesma pasta (ex: `legenda.txt`) — a `post-instagram` futura vai
-precisar desse texto tanto quanto dos PNGs. Se o MCP do Drive conectado não
+postar). Junto, **todo post fecha com um `metadata.json` na própria pasta** —
+é ele que a `post-instagram` futura vai ler, e sem ele o carrossel não passa de
+uma pasta de imagens.
+
+### `metadata.json` — o que tem que estar lá
+
+```json
+{
+  "carousel_id": "<nome-da-pasta>",
+  "cliente": "aidealab",
+  "data_criacao": "AAAA-MM-DD",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "<uma linha>",
+  "pilar": "educacional | oferta | bastidor | prova",
+  "familia_cor": "azul | roxo | amber",
+  "template": "<papéis dos slides em sequência>",
+  "formato": "1080x1440",
+  "geracao_imagem": "<engine, referência e custo em créditos>",
+  "slides": [
+    { "ordem": 1, "arquivo": "01_....png", "papel": "hook",
+      "layout": "<variação de miolo/capa usada>",
+      "texto": "<o que está escrito no slide>",
+      "alt": "<descrição da imagem para leitor de tela>" }
+  ],
+  "legenda": "...",
+  "primeiro_comentario": "...",
+  "hashtags": ["#..."],
+  "handle": "@aidealab7",
+  "cta": { "tipo": "direct | salvar | palavra-chave",
+           "palavra_chave": "PROMPT", "texto": "digite PROMPT na DM" },
+  "publicacao": { "rede": "instagram", "formato": "carrossel",
+                  "proporcao": "4:5", "slides_total": 6,
+                  "ordem_arquivos": ["01_....png", "..."] }
+}
+```
+
+Três campos existem por motivo prático e costumam ser esquecidos:
+
+- **`alt`** por slide. Instagram aceita texto alternativo e quase ninguém
+  preenche. Descreva a cena, não o conceito.
+- **`ordem_arquivos`**. O upload automático publica na ordem que recebe; nome de
+  arquivo com prefixo numérico (`01_`, `02_`) é o que garante a sequência.
+- **`cta.palavra_chave`**. Uma palavra, sem acento e sem espaço. É ela que a
+  automação de DM escuta, e acento quebra o filtro.
+
+**Confira antes de fechar**: `ordem_arquivos` bate com os PNGs que existem na
+pasta, e cada `slides[].arquivo` existe de fato. Metadado que aponta para
+arquivo renomeado publica o carrossel fora de ordem.
+
+### A legenda
+
+Escrita com `humanizer` + `marketing-skills:copywriting` + `marketing-skills:social`.
+O que isso significa na prática, para este cliente:
+
+- **Primeira linha carrega o post sozinha.** É o único pedaço visível antes do
+  "mais" e vale mais que o resto da legenda junto.
+- **Sem travessão.** A casa usa vírgula, ponto e parênteses. Travessão em série
+  é o tique de texto de robô mais fácil de reconhecer.
+- **Sem "não é X, é Y"**, sem tríade decorativa, sem frase de efeito sozinha
+  num parágrafo para dar peso.
+- **CTA diferente em cada post.** Fechar todos com a mesma frase ("salva esse
+  post e segue @aidealab7") transforma o perfil num carimbo. O convite muda com
+  o assunto.
+- **`primeiro_comentario` é pergunta ou link**, nunca repetição da legenda: é
+  ele que abre conversa e tira link do corpo do post. Se o MCP do Drive conectado não
 subir binário de imagem, salva os PNGs localmente no `output/` do repo e
 reporta o caminho para o usuário subir. **Não publica no Instagram.**
 

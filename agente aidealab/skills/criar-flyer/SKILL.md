@@ -14,6 +14,56 @@ narrativa multi-slide, dois checkpoints, arco de copy. Flyer é peça única, co
 pipeline próprio (recorte + oclusão) e um catálogo de estilos gráficos como
 eixo de variação. Uma responsabilidade por skill é a convenção do repo.
 
+## 1080×1440. Sempre.
+
+**Toda peça sai 1080×1440, sem exceção.** Nenhum briefing, documento ou
+referência sobrepõe isso — nem quando o próprio cliente escreve outro formato
+no roteiro. O documento `AIDEA_LAB_30_Flyers_Prompts.md` pede 4:5 (1080×1350) na
+direção de arte global; **ignore essa linha e entregue 1080×1440.** Do resto do
+briefing (identidade, headline, CTA, prompt de imagem) siga tudo.
+
+## Briefing de série: 03-Roteiros
+
+Quando existir um `.md` de roteiro na pasta do cliente, ele é a fila de
+trabalho — não invente tema nem reescreva copy:
+
+```
+C:\Users\luizr\Meu Drive (aidealabbr@gmail.com)\Clientes\<cliente>\03-Roteiros
+```
+
+`AIDEA_LAB_30_Flyers_Prompts.md` traz 30 peças, cada uma com **Serviço**,
+**Headline**, **Direção de arte**, **Prompt de imagem** e **CTA sugerido**.
+
+**Do documento vem só a IDEIA — nunca o prompt de imagem.** Usa o tema, a
+headline, o serviço e o CTA como estão. O bloco "Prompt para gerar a imagem" é
+descartado: a arte é decidida aqui, olhando as referências da pasta. Regra do
+cliente, dada depois de ver uma peça feita ao pé da letra do prompt: seguir o
+prompt entrega ilustração genérica de banco, não design.
+
+A direção global do documento (dark tech premium — grafite/preto, roxo
+elétrico, azul/ciano, fúcsia de acento) **substitui** a paleta creme/tinta nas
+peças dessa série. A headline entra na composição, nunca na geração.
+
+### Fundo construído vale mais que foto gerada
+
+Na peça 01 a foto de cenário saiu genérica e quase invisível sob o scrim. O que
+funcionou foi **construir o fundo em CSS**: uma malha de "posts" genéricos
+inclinada, esmaecendo no centro por `mask-image` radial, com um facho abrindo
+espaço para os sujeitos. Três ganhos que a foto não dá:
+
+- **diz a tese** — o fundo é o ruído do feed onde a marca some, não decoração;
+- **custa zero** e sai nítido em qualquer escala;
+- **é reaproveitável** — a mesma malha serve as outras 29 com outra cor e outro
+  ângulo.
+
+Gera imagem quando a peça precisa de gente ou de um objeto real. Para
+textura, atmosfera e metáfora abstrata, desenha.
+
+**Dois fundadores numa peça só.** `soul_2` aceita um `soul_id` por geração,
+então @luizota e @wel saem de **duas gerações separadas** e entram como
+colagem — recorte com `u2net_human_seg` e composição lado a lado. Custa 0,12
+cada, e dá controle independente de pose e iluminação.
+
 ## Etapa 0 — a pasta de referências manda no design
 
 **Antes de desenhar qualquer coisa, lê a pasta de referências do cliente.** É
@@ -78,6 +128,26 @@ sujeito como um fantasma.
 - **script (Tempting) fica NA FRENTE do sujeito (z6)**, só o monumento vai
   atrás. Com a script atrás, a cabeça do sujeito come metade da palavra.
 - Texto de leitura obrigatória (chip, card, moldura, rodapé) sempre em z10+.
+
+### Quando a cena tem objeto E pessoa: une duas máscaras
+
+O `rembg` com `u2net` devolve **o sujeito mais saliente**, não tudo que precisa
+ficar na frente. Numa cena monocromática com um objeto colorido, ele leva o
+objeto e **descarta as pessoas** — e aí o tipo grande passa por cima de um
+rosto, que é defeito, não estilo.
+
+Confere sempre o recorte antes de montar (composita sobre magenta e olha). Se
+faltar gente, une as duas máscaras pelo máximo do alpha:
+
+```python
+obj = remove(im, session=new_session('u2net'))            # o objeto saliente
+hum = remove(im, session=new_session('u2net_human_seg'))  # as pessoas
+alpha = np.maximum(np.array(obj.getchannel('A')),
+                   np.array(hum.getchannel('A')))
+```
+
+`u2net_human_seg` são 176 MB baixados na primeira vez — roda em background,
+não em foreground com timeout curto.
 
 ## Escolha da faixa de mordida — medida, nunca no olho
 
