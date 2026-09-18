@@ -1,0 +1,88 @@
+<!--
+  Template: moldura de referência (janela de navegador) + content-card.
+  Ver SKILL.md > "Moldura de referência (janela de navegador)..." e
+  "Erro recorrente a evitar: reaproveitar o layout full-bleed...".
+
+  Uso: slide de citação de fonte externa (site/ferramenta/blog). Cola o
+  ".ref-frame" + markup abaixo dentro do slide 1080x1440 já com
+  --bg/--cream/--accent, fontes (Anton/Playfair Display/Inter/Manrope) e
+  bg-gradient definidos pelo carrossel. Troca refImg pelo og:image real da
+  fonte citada (nunca texto só). ".content-card" é o mesmo tratamento visual
+  usado em qualquer slide de explicação com fundo bg-gradient (agrupa
+  eyebrow+heading+body — nunca blocos absolute soltos).
+-->
+<style>
+.bg-gradient { position: absolute; inset: 0; background: linear-gradient(150deg,#141d33 0%,#0A0F18 70%); }
+
+.eyebrow-chip { position: absolute; left: 80px; top: 170px; z-index: 2; }
+.chip { display: inline-block; background: var(--accent); color: #FFFFFF;
+  padding: 8px 20px 10px; border-radius: 10px; font-weight: 700;
+  font-family: var(--font-label); font-size: 24px; letter-spacing: 0.08em; text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+
+.ref-frame { position: absolute; left: 80px; right: 80px; top: 250px; background: rgba(8,11,20,0.72);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(245,237,231,0.16);
+  border-radius: 20px; overflow: hidden; z-index: 2; box-shadow: 0 24px 70px rgba(0,0,0,0.5); }
+.ref-topbar { display: flex; align-items: center; gap: 20px; padding: 20px 26px;
+  background: rgba(245,237,231,0.06); border-bottom: 1px solid rgba(245,237,231,0.1); }
+.ref-dots { display: flex; gap: 8px; }
+.ref-dots span { width: 13px; height: 13px; border-radius: 50%; display: inline-block; }
+.ref-dots span:nth-child(1) { background: #E9727A; }
+.ref-dots span:nth-child(2) { background: #E9C24B; }
+.ref-dots span:nth-child(3) { background: #6FC796; }
+.ref-url { font-family: var(--font-label); font-size: 22px; color: #F5EDE7; opacity: 0.7;
+  background: rgba(0,0,0,0.25); padding: 6px 20px; border-radius: 100px; }
+.ref-shot { width: 100%; height: 460px; object-fit: cover; object-position: top center; display: block; }
+.ref-body { padding: 32px 44px 40px; }
+.ref-name { font-family: var(--font-condensed); font-size: 56px; line-height: 0.94; color: var(--cream); }
+.ref-tagline { font-family: var(--font-body); font-size: 25px; color: var(--cream); margin-top: 14px;
+  line-height: 1.42; opacity: 0.88; }
+
+/* content-card: mesmo tratamento visual do .ref-frame, pra slide de
+   explicação normal (heading + body) em vez de citação externa. */
+.content-card { position: absolute; left: 74px; right: 74px; top: 300px; bottom: 300px; z-index: 2;
+  background: rgba(8,11,20,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245,237,231,0.16); border-radius: 24px; box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+  padding: 44px 46px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.content-card .chip { margin-bottom: 24px; align-self: flex-start; }
+.exp-head { font-family: var(--font-condensed); font-size: 60px; line-height: 0.96; color: var(--cream); }
+.exp-accent { font-family: var(--font-serif); font-style: italic; font-weight: 900; font-size: 58px;
+  line-height: 1.05; color: var(--accent); }
+.exp-body { font-family: var(--font-body); font-size: 27px; color: var(--cream); margin-top: 24px; line-height: 1.45; opacity: 0.9; }
+</style>
+
+<!-- Slide de citação (fundo = .bg-gradient OU img-ref, moldura funciona nos dois) -->
+<div class="slide">
+  <div class="bg-gradient"></div>
+  <div class="kicker-left">AIDEA LAB</div><div class="kicker-right">CATEGORIA</div>
+
+  <div class="eyebrow-chip"><span class="chip">Pra estudar</span></div>
+  <div class="ref-frame">
+    <div class="ref-topbar">
+      <div class="ref-dots"><span></span><span></span><span></span></div>
+      <div class="ref-url">exemplo.com</div>
+    </div>
+    <img class="ref-shot" src="data:image/png;base64,PASTE_OG_IMAGE_BASE64_AQUI">
+    <div class="ref-body">
+      <div class="ref-name">Nome da Fonte</div>
+      <div class="ref-tagline">Uma frase curta explicando por que essa fonte é relevante pro tema do carrossel.</div>
+    </div>
+  </div>
+
+  <div class="footer-handle">@aidealab7</div>
+  <div class="footer-dots"><!-- dots(activeIdx, TOTAL) --></div>
+</div>
+
+<!-- Slide de explicação normal com content-card (fundo bg-gradient) -->
+<div class="slide">
+  <div class="bg-gradient"></div>
+  <div class="kicker-left">AIDEA LAB</div><div class="kicker-right">CATEGORIA</div>
+  <div class="content-card">
+    <span class="chip">Realidade N</span>
+    <div class="exp-head">Linha de impacto</div>
+    <div class="exp-accent">complemento em destaque.</div>
+    <div class="exp-body">Corpo do texto explicando o ponto, curto e direto.</div>
+  </div>
+  <div class="footer-handle">@aidealab7</div>
+  <div class="footer-dots"><!-- dots(activeIdx, TOTAL) --></div>
+</div>

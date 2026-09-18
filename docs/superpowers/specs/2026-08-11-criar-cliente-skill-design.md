@@ -82,9 +82,34 @@ Não há ferramenta de renomear/mover/deletar disponível no Drive MCP conectado
 qualquer correção desse tipo (como remover a pasta antiga
 `01-Referencias-Instagram`) fica a cargo do usuário, manualmente.
 
+## Adendo (2026-08-18) — `identidade-e-tom.md`
+
+Quando o usuário fornece site e/ou Instagram do cliente, a skill passou a
+gerar `00-Identidade-e-Tom/identidade-e-tom.md`: um documento Markdown real
+(frontmatter YAML + seções em prosa) com o primeiro conhecimento de marca —
+tom de voz, público, cores e tipografia (lidas dos tokens CSS reais do site
+quando possível, não estimadas visualmente), serviços, diferenciais, prova
+social. É o documento que `criar-post` e `criar-site` leem primeiro. Gerado
+uma vez por cliente; não é sobrescrito automaticamente em execuções
+seguintes — só com pedido explícito de atualização. Se nenhum link for
+fornecido, o passo é pulado sem bloquear a estrutura de pastas. Formato fixo
+documentado no `SKILL.md` da `criar-cliente`.
+
+Validado com o cliente `aidealab` (dogfooding): site é uma SPA React/Next.js
+— precisou de leitura via navegador (`get_page_text` + `getComputedStyle`
+para tokens de cor/fonte reais) em vez de WebFetch simples, que só via HTML
+estático. Conteúdo visual de posts do Instagram de terceiros (referências que
+o usuário queira usar) fica bloqueado por login do Instagram — nesses casos a
+skill pede a imagem direto no chat.
+
 ## Fora de escopo
 
 - Copiar arquivos/templates para dentro das subpastas (hoje todas estão vazias
-  na pasta modelo — só a estrutura de pastas é replicada, não conteúdo).
+  na pasta modelo — só a estrutura de pastas é replicada, não conteúdo, exceto
+  `identidade-e-tom.md` quando gerado).
 - Renomear, mover ou deletar pastas de clientes existentes.
-- As outras 3 skills da agência (carrossel, postagem, site) — specs separadas.
+- Sobrescrever `identidade-e-tom.md` existente sem pedido explícito.
+- Baixar a logo do cliente automaticamente (raspando o site) — só sobe se o
+  usuário enviar a imagem no chat.
+- A skill `post-instagram` — spec própria, ainda não criada. `criar-post` e
+  `criar-site` já existem, cada uma com sua própria spec.
