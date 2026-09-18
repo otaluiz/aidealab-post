@@ -203,11 +203,28 @@ Duas famílias de pasta, e elas NAO servem para a mesma coisa:
 | `hook-ref` | layout e design de capa | recriar o layout com o personagem |
 | `soul-ref` | cena/pose de uma pessoa so | `soul_2` + `soul_id` + a referencia |
 | `dupla-ref` | cena com duas pessoas | base para peca com os dois fundadores |
+| `img-ref` | cenas do banco que JA sairam em peca | referencia de estilo para gerar cena nova |
 
 Consequencia pratica: **antes de gastar credito, olhe `02-Materiais-Brutos`.**
-Um carrossel inteiro pode sair de la sem gerar nada. O cliente vai apagando da
-pasta o que ja foi usado, entao o que estiver la e material livre -- e o que
-sumiu ja saiu em peca e nao se repete.
+Um carrossel inteiro pode sair de la sem gerar nada. O que estiver no banco e
+material livre -- e o que sumiu ja saiu em peca e nao se repete.
+
+### Imagem do banco usada vai para `01-Referencias`, nao para o lixo
+
+Ao entregar a peca, **mova** (nao apague, nao copie) cada imagem usada de
+`02-Materiais-Brutos/img-ref` para `01-Referencias/Instagram/img-ref`. Mover
+tira do banco (nao repete em outra peca) e guarda o que ja foi aprovado em
+arte como referencia viva do estilo da marca. Use `mv -n` e confira colisao
+de nome antes: nunca sobrescreva arquivo que ja esta na pasta de referencia.
+
+Quando o banco nao tiver cena que sirva, **gere a partir dessa pasta**: abra as
+referencias, descreva o que se repete nelas (materia cromada/espelhada,
+figura pequena em paisagem imensa, surrealismo de escala, ceu azul profundo,
+luz volumetrica) e escreva o prompt a partir disso -- sem copiar a composicao
+de uma imagem so. Com `image_references`, passe a referencia so para clima e
+paleta; ela nunca pode trazer texto para a arte (limpe antes, ver regra de
+referencia sem texto). Registre no `metadata.json` quais referencias guiaram a
+geracao.
 
 ## O sistema de carrossel: dois eixos
 
@@ -315,18 +332,42 @@ limpar, com 16px de folga. Roda DEPOIS do fit de largura -- e o tamanho final da
 palavra que decide onde o acento chega. Inline o arquivo num `<script>` antes do
 FIT e chame `window.__anticolisao(16)` no fim dele.
 
-**1b. O toque certo é leve: a script DEITA no topo do bold, não invade.**
-Baseline colada no `capTop` da palavra (o que a cola de baseline faz sozinha)
-joga toda a descida da Tempting DENTRO das letras e cobre a metade de cima
-delas — foi o que o cliente recusou em ESTRATÉGIA, FERRAMENTA, PROCESSO, BUSCA
-e RESPOSTA. A referência da casa é `Concorrente-Comunica-Melhor` e
-`Testa-uma-DUPLA`: só a ponta da descida encosta no topo do bold, as letras
-seguem legíveis inteiras.
+**Captura tem que esperar `document.fonts.ready` E a execução do anticolisao —
+senão publica o vão sem querer.** Aconteceu em `Bloco1-Views-Que-Nao-Vendem`
+(hook e CTA): o HTML fonte já tinha o `.script` corrigido, mas o PNG aprovado
+em `06-Aprovados-para-Postar` veio de uma captura feita antes da fonte
+carregar e do `window.__anticolisao` rodar — sobrou o `top` cru do markup,
+script boiando longe do bold. Ao renderizar de novo (Playwright, aguardando
+`document.fonts.ready` e o `<script>` de anticolisao já ter executado) o
+mesmo HTML, sem editar nada, já saiu encostado. Antes de mexer em
+`data-lift`/`top` achando que é bug de cálculo: primeiro tira um screenshot
+fresco do HTML como está e compara com o PNG publicado — se a fonte já
+resolve sozinha, o problema é só re-renderizar e trocar o arquivo.
 
-Como acertar: `data-lift` no elemento `.script`, ~0,3em do corpo da script
-(82px → 78; 88px → 74; 96px → 30 quando a palavra é curta e a descida cai fora
-dela; 104px → 30). Não existe número único — renderize e confira o crop 1:1 da
-faixa do lockup, nunca o contact sheet: a diferença some em miniatura.
+**1b. O toque certo é leve: a script DEITA no topo do bold, não invade — e o
+default é `data-lift="0"`.** A fórmula precisa (baseline da script cai
+exatamente no `capTop` do monumento, ver "O encaixe da script no monumento é
+CALCULADO em runtime" abaixo) já ENTREGA o toque leve sozinha: é a ponta dos
+descendentes (o "p" de "problema", o laço de um "f") que dita no topo do bold,
+o corpo da palavra (sem descendente) fica encostado sem cobrir letra
+nenhuma. `data-lift` é escape hatch, não passo obrigatório — só sobe de 0
+quando a fórmula pura colide de verdade (rule 1: acento empurrando a tinta
+pra fora da caixa, ou script com descendente muito longo estourando sobre uma
+letra específica do bold). Confirmar com `getBoundingClientRect` depois do
+fit de largura: `monumento.querySelector('.mword').rect.top -
+script.rect.bottom` fica em torno de **-15 a -25px** com `data-lift="0"` — é
+esse leve mergulho da ponta do descendente que casa com a referência da casa
+(`Concorrente-Comunica-Melhor`, `Testa-uma-DUPLA`).
+
+**Ferramenta-vs-Processo saiu publicado duas vezes errado antes de acertar
+nisso** — histórico pra não repetir: (1) `data-lift="78"`/`"74"` (herdado de
+copy-paste) deu vão de ~50-55px, script boiando sem tocar o bold; tentando
+corrigir por medida de bounding-box "zero-crossing" (que soma a ponta do
+descendente mais profundo, não o corpo da palavra) saiu um meio-termo
+(`data-lift="20"`/`"24"`) que ainda deixava vão visível comparado à
+referência. Só bateu com a referência voltando a `data-lift="0"` — a fórmula
+precisa sem NENHUM fudge manual. Não copia nenhum desses três números pra um
+post novo: começa em `0`, só sobe se colidir.
 
 **Palavra-chave serifada: colore UMA palavra, não a linha toda.** A linha
 script fica em `--paper`; só a palavra que carrega o sentido entra em
@@ -788,6 +829,23 @@ gerado antes disso.
    acentuada não dá erro: o glifo cai silenciosamente na fonte de fallback e
    quebra o lockup sem avisar — então valida a string antes de usar.
 
+   **Se a copy do hook/CTA exigir acento na linha-script (não dá pra reescrever
+   sem o acento), troca o par inteiro para Helvetica Bold + Shelley Script —
+   nunca só um dos dois.** `--mon: 'Helvetica Neue', Helvetica, Arial,
+   sans-serif` e `--script: 'Shelley Script', 'Brush Script MT', 'Segoe
+   Script', 'Playfair Display', Georgia, serif` (Playfair Display Italic 900 —
+   já embutido no pipeline — é a rede de segurança final quando nem Shelley
+   Script nem Brush Script MT estão instalados na máquina que renderiza; ele
+   cobre acento completo, então nunca quebra silenciosamente como a Tempting).
+   Como Helvetica e Shelley Script são comerciais, o par aqui é referenciado
+   por nome (fonte do sistema), nunca embutido via `@font-face` com arquivo
+   próprio — evita a questão de licença por não empacotar o binário. Troca em
+   par: nunca Helvetica Bold sozinho com Tempting, nem Inter com Shelley —
+   mistura os dois sistemas tipográficos. Depois da troca, **refaz a medição do
+   encaixe** (próxima regra): a métrica de `Helvetica Neue`/fallback e de
+   `Shelley Script`/fallback é diferente da Tempting/Inter, então o mesmo
+   `data-lift` não serve.
+
    **O encaixe da script no monumento é CALCULADO em runtime, nunca por `top`
    ou `margin` fixos.** A regra visual é: a **baseline da script cai no topo
    das caixas altas do monumento** — os swashes da Tempting descem por cima
@@ -1010,6 +1068,11 @@ de trabalho) e/ou `06-Aprovados-para-Postar` (quando o usuário aprovar para
 postar). Junto, **todo post fecha com um `metadata.json` na própria pasta** —
 é ele que a `post-instagram` futura vai ler, e sem ele o carrossel não passa de
 uma pasta de imagens.
+
+Por último, move as imagens do banco que a peça usou de
+`02-Materiais-Brutos/img-ref` para `01-Referencias/Instagram/img-ref` (ver
+"Imagem do banco usada vai para `01-Referencias`"). Entrega sem esse passo deixa
+a imagem no banco e ela reaparece no próximo carrossel.
 
 ### `metadata.json` — o que tem que estar lá
 
