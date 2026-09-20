@@ -11,9 +11,12 @@ desenhadas).
 |---|---|---|
 | `criar-cliente` | sim | garante a estrutura padrão de pastas do cliente no Drive |
 | `criar-site` | sim | gera o site do cliente (React + Next.js, com 3D/vídeo condicional) a partir das referências do Drive, usando impeccable como espinha dorsal de direção/construção/QA |
+| `post-instagram` | sim / cron | publica no Instagram (@aidealab7) o próximo conteúdo aprovado em `06-Aprovados-para-Postar`, via Graph API — não gera conteúdo, só publica o que já está aprovado |
 
-Planejadas, cada uma com spec própria em `docs/superpowers/specs/` antes de
-virar skill (ainda não criadas): **criar carrossel** e **postar no Instagram**.
+Planejada, com spec própria em `docs/superpowers/specs/` antes de virar
+skill (ainda não criada, ainda não mesclada neste branch): **criar
+carrossel** (`criar-post`) — é ela quem alimenta `06-Aprovados-para-Postar`
+que o `post-instagram` consome.
 Todas dependem de `criar-cliente` para localizar a pasta certa do cliente.
 
 ## Convenções
