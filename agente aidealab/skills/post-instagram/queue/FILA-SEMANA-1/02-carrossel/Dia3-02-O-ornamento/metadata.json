@@ -1,0 +1,58 @@
+{
+  "carousel_id": "02-O-ornamento",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-22",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "estilos graficos parte 2 de 4 - art deco, pop art, psicodelico",
+  "serie": "Estilos Graficos",
+  "parte_serie": 2,
+  "total_partes_serie": 4,
+  "familia_cor": "magenta-roxo",
+  "template": "hook-conteudo-cta",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "1-hook.png",
+      "papel": "hook",
+      "texto": "O luxo do EXCESSO â€” ainda faltam 5 estilos."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "2-art-deco.png",
+      "papel": "explicacao",
+      "site": "Art Déco (1920-1939)",
+      "texto": "Simetria que brilha. Preto e ouro, leque radiante, letra fininha esticada â€” luxo antes da DepressÃ£o engolir a festa."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "3-pop-art.png",
+      "papel": "explicacao",
+      "site": "Pop Art (1955-1970)",
+      "texto": "Repete até virar ícone. Warhol imprimiu a mesma lata quatro vezes e a arte nunca mais tratou repetição como preguiça."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "4-psicodelico.png",
+      "papel": "explicacao",
+      "site": "Psicodélico (1965-1972)",
+      "texto": "Cor que agride de propÃ³sito. O Ãºnico estilo dos onze em que o choque de cor nÃ£o Ã© defeito â€” Ã© o efeito que vocÃª veio ver."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "5-cta.png",
+      "papel": "cta",
+      "texto": "Ainda faltam 5 ESTILOS. Me segue pra parte 3."
+    }
+  ],
+  "legenda": "Depois da funÃ§Ã£o vem o exagero. TrÃªs estilos que provam que repetiÃ§Ã£o, brilho e cor gritada tambÃ©m sÃ£o estratÃ©gia â€” nÃ£o sÃ³ enfeite.\n\nParte 2 de 4. Segue a sÃ©rie atÃ© o fim.",
+  "hashtags": [
+    "#aidealab",
+    "#artdeco",
+    "#popart",
+    "#design",
+    "#branding"
+  ],
+  "handle": "@aidealab7"
+}

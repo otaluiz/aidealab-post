@@ -1,0 +1,51 @@
+{
+  "carousel_id": "04-A-tela",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-25",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "estilos graficos parte 4 de 4 (final) - flat design, contemporaneo",
+  "serie": "Estilos Graficos",
+  "parte_serie": 4,
+  "total_partes_serie": 4,
+  "familia_cor": "azul-rosa",
+  "template": "hook-conteudo-cta",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "1-hook.png",
+      "papel": "hook",
+      "texto": "Tudo virou TELA."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "2-flat.png",
+      "papel": "explicacao",
+      "site": "Flat Design (2010-hoje)",
+      "texto": "Função na frente. Cor chapada, zero sombra. Nasceu da tela pequena e do carregamento rápido, não da estética."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "3-contemporaneo.png",
+      "papel": "explicacao",
+      "site": "Contemporâneo (agora)",
+      "texto": "O tipo é a imagem. Tipo enorme, cortado pela borda, contraste duro. O mais fácil de datar daqui a dez anos."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "4-cta.png",
+      "papel": "cta",
+      "texto": "Onze estilos, UMA MARCA. Salva a série toda."
+    }
+  ],
+  "legenda": "Chegamos no fim: flat design e o estilo de agora, tipo grande cortado na borda. Onze estilos, uma linha do tempo, uma marca que sabe transitar por todos eles.\n\nSérie completa. Qual estilo combina mais com a sua marca? Comenta aqui embaixo.",
+  "hashtags": [
+    "#aidealab",
+    "#flatdesign",
+    "#designgrafico",
+    "#branding",
+    "#marketing"
+  ],
+  "handle": "@aidealab7"
+}

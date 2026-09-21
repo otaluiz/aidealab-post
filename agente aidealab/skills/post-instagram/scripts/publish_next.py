@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-Publica o próximo conteúdo aprovado de 06-Aprovados-para-Postar no Instagram.
-Roda local, contra a pasta do Google Drive sincronizada nesta máquina.
-Lê credenciais de variáveis de ambiente (ou de um .env.local ao lado do script).
+Publica o próximo conteúdo aprovado no Instagram.
+Fila vive versionada no repo (skills/post-instagram/queue/), commitada pelo
+fluxo de aprovação -- assim local e GitHub Actions leem a mesma fonte, sem
+depender do Google Drive sincronizado (que só existe nesta máquina).
+Lê credenciais de variáveis de ambiente (ou de um .env.local ao lado do script,
+pra rodar local sem precisar setar env var na mão).
 Fila mistura dois formatos, na mesma ordem Dia1, Dia2, Dia3...:
   - 01-Imagem/DiaN-slug.png + DiaN-slug.metadata.json (sidecar, imagem única)
   - 02-carrossel/DiaN-slug/metadata.json + slides (pasta, carrossel)
@@ -22,9 +25,7 @@ import requests
 SCRIPT_DIR = Path(__file__).resolve().parent
 ENV_FILE = SCRIPT_DIR.parent.parent.parent / "automation" / ".env.local"
 
-DRIVE_ROOT = Path(
-    r"C:\Users\luizr\Meu Drive (aidealabbr@gmail.com)\Clientes\aidealab\06-Aprovados-para-Postar"
-)
+QUEUE_ROOT = SCRIPT_DIR.parent / "queue"
 
 GRAPH_API_VERSION = "v22.0"
 GRAPH_API_HOST = "https://graph.facebook.com"
@@ -98,7 +99,7 @@ def test_access() -> bool:
 def load_queue() -> List[Dict[str, Any]]:
     """Escaneia 01-Imagem (sidecar) e 02-carrossel (pasta) de todas as FILA-SEMANA-*."""
     items = []
-    for fila in sorted(DRIVE_ROOT.glob("FILA-SEMANA-*")):
+    for fila in sorted(QUEUE_ROOT.glob("FILA-SEMANA-*")):
         imagem_dir = fila / "01-Imagem"
         if imagem_dir.exists():
             for meta_file in imagem_dir.glob("*.metadata.json"):

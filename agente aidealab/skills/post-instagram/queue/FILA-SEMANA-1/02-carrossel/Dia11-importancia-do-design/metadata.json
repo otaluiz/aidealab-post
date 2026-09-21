@@ -1,0 +1,47 @@
+{
+  "carousel_id": "2026-08-28_importancia-do-design",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-26",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "importancia do design para negocios",
+  "familia_cor": "azul",
+  "template": "hook-explicacao-referencia-cta",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_capa.png",
+      "papel": "hook",
+      "texto": "O peso do DESIGN â€” a diferenÃ§a entre entender seu produto em 3 segundos ou desistir."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_realidade1.png",
+      "papel": "explicacao",
+      "texto": "Feio funciona, mas afasta. Design ruim nÃ£o quebra a funÃ§Ã£o â€” quebra a confianÃ§a antes mesmo de testar."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_ref_lawsofux.png",
+      "papel": "referencia",
+      "site": "lawsofux.com",
+      "texto": "Laws of UX â€” princÃ­pios de psicologia aplicados a interface: hierarquia, Gestalt, viÃ©s cognitivo, tudo num sÃ³ lugar."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_realidade3.png",
+      "papel": "explicacao",
+      "texto": "Detalhe Ã© o que separa o Ã³timo. EspaÃ§amento, alinhamento, contraste â€” ninguÃ©m percebe consciente, mas todo mundo sente."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_cta.png",
+      "papel": "cta",
+      "texto": "Vale cada DETALHE. Salva esse post."
+    }
+  ],
+  "legenda": "Design não é enfeite. Três segundos pra entender, ou a pessoa fecha. Só isso.\n\nSalva e segue a gente.",
+  "hashtags": "#design #uxui #conversao #primeira_impressao #aidealab",
+  "handle": "@aidealab7"
+}

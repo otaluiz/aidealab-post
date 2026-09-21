@@ -1,0 +1,46 @@
+name: post-instagram-daily
+
+on:
+  schedule:
+    # 12:06 UTC = 8:06 America/Cuiaba (UTC-4)
+    - cron: "6 12 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no real publish)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r "agente aidealab/skills/post-instagram/scripts/requirements.txt"
+
+      - name: Publish next queue item
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS
+
+      - name: Commit updated queue state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "agente aidealab/skills/post-instagram/queue"
+          git diff --cached --quiet || git commit -m "chore(post-instagram): mark item as posted [skip ci]"
+          git push

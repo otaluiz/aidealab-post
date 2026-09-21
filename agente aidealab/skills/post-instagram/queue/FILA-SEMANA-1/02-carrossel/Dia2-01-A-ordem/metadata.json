@@ -1,0 +1,64 @@
+{
+  "carousel_id": "01-A-ordem",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-21",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "estilos graficos parte 1 de 4 - modernismo, bauhaus, minimalismo",
+  "serie": "Estilos Graficos",
+  "parte_serie": 1,
+  "total_partes_serie": 4,
+  "familia_cor": "azul",
+  "template": "hook-conteudo-cta",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "1-hook.png",
+      "papel": "hook",
+      "texto": "A forma virou SISTEMA — ainda vem mais 8 estilos.",
+      "image_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/20260920/1-hook_235426.png"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "2-modernismo.png",
+      "papel": "explicacao",
+      "site": "Modernismo (1910-1950)",
+      "texto": "Forma segue função. Cortaram o ornamento e sobrou a grade — quase todo layout de hoje desce dessa poda.",
+      "image_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/20260920/2-modernismo_235428.png"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "3-bauhaus.png",
+      "papel": "explicacao",
+      "site": "Bauhaus (1919-1933)",
+      "texto": "Arte casada com indústria. Círculo, quadrado, triângulo e três primárias: uma escola de 14 anos que ainda dá a aula.",
+      "image_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/20260920/3-bauhaus_235431.png"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "4-minimalismo.png",
+      "papel": "explicacao",
+      "site": "Minimalismo",
+      "texto": "Tira até doer. O que sobra tem que aguentar o peso sozinho — é o mais difícil dos onze de fazer bem.",
+      "image_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/20260920/4-minimalismo_235433.png"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "5-cta.png",
+      "papel": "cta",
+      "texto": "Ainda vem MAIS 8 ESTILOS. Salva pra parte 2.",
+      "image_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/20260920/5-cta_235434.png"
+    }
+  ],
+  "legenda": "Todo layout que você usa hoje descende de alguma dessas três escolas. A gente abriu os onze estilos que sustentam o design gráfico moderno — começando pelos que tiraram o ornamento e deixaram só o que funciona.\n\nParte 1 de 4. Salva pra não perder as próximas.",
+  "hashtags": [
+    "#aidealab",
+    "#designgrafico",
+    "#modernismo",
+    "#bauhaus",
+    "#marketing"
+  ],
+  "handle": "@aidealab7",
+  "folder_id": "Dia2-01-A-ordem"
+}

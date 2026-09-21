@@ -1,0 +1,58 @@
+{
+  "carousel_id": "03-A-regra-e-a-quebra",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-23",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "estilos graficos parte 3 de 4 - estilo suico, pos-modernismo, brutalismo",
+  "serie": "Estilos Graficos",
+  "parte_serie": 3,
+  "total_partes_serie": 4,
+  "familia_cor": "ambar-marrom",
+  "template": "hook-conteudo-cta",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "1-hook.png",
+      "papel": "hook",
+      "texto": "A regra e a QUEBRA."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "2-estilo-suico.png",
+      "papel": "explicacao",
+      "site": "Estilo Suíço (1950-1970)",
+      "texto": "A grade como programa. Seis colunas, uma famÃ­lia, zero ornamento. A objetividade virou mÃ©todo â€” e o mÃ©todo virou escola."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "3-pos-modernismo.png",
+      "papel": "explicacao",
+      "site": "Pós-modernismo (1978-1995)",
+      "texto": "Quebrou tudo de propósito. Memphis pegou a grade suíça e torceu: cor gritada, forma solta, tipo inclinado. Rebeldia com endereço."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "4-brutalismo.png",
+      "papel": "explicacao",
+      "site": "Brutalismo (1990 em diante)",
+      "texto": "Mostra a estrutura crua. Sem sombra, sem canto arredondado, sem enfeite. O que vocÃª vÃª Ã© o esqueleto â€” cru por escolha."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "5-cta.png",
+      "papel": "cta",
+      "texto": "Chegamos na RETA FINAL. Salva pra parte 4."
+    }
+  ],
+  "legenda": "Tem estilo que cria regra e estilo que existe sÃ³ pra quebrar ela. SuÃ­Ã§o, pÃ³s-modernismo e brutalismo â€” a grade, a rebeldia e a estrutura crua, lado a lado.\n\nParte 3 de 4.",
+  "hashtags": [
+    "#aidealab",
+    "#brutalism",
+    "#swissdesign",
+    "#tipografia",
+    "#design"
+  ],
+  "handle": "@aidealab7"
+}
