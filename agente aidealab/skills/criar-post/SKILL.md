@@ -405,6 +405,27 @@ post novo: começa em `0`, só sobe se colidir.
 script fica em `--paper`; só a palavra que carrega o sentido entra em
 `--accent`, via `<span class="kw">`. Linha inteira colorida foi recusada.
 
+**"IA" sempre ganha cor de acento quando aparecer no hook/CTA.** Regra
+validada em 2026-09-21 (`TESTE-ia-sem-contexto-marca`): se a palavra "IA"
+está na linha script, ela é a `<span class="kw">` daquela linha (não outra
+palavra concorrente) — e o monumento ganha um `<span class="accent">` numa
+segunda palavra pra manter o contraste dos dois lados do lockup (ex.: script
+`A <span class="kw">IA</span> nunca trava.` + monumento `você <span
+class="accent">trava</span>`). Uma palavra serifada, outra bold, as duas na
+cor de acento da família — nunca as duas juntas na mesma linha.
+
+**Título dos slides de conteúdo (`.t-card-head`) também leva palavra-chave
+colorida — não só o `.t-card-body`.** Até 2026-09-21 só o corpo do texto
+tinha `.kw` (`.t-card-body .kw{color:var(--amber-base)}`); o título nunca
+tinha a regra de CSS, mesmo já vindo com a palavra-chave em CAIXA ALTA
+(convenção existente pra marcar qual é a palavra — só faltava a cor). Fix:
+adiciona `.t-card-head .kw{color:var(--amber-base);}` no `slide.css` (mesma
+variável do corpo, ela já é redefinida por família — magenta/amber/azul) e
+envolve a palavra em CAIXA ALTA do título com `<span class="kw">`. Não
+inventa palavra nova: a peça já decide qual é a palavra-chave ao deixá-la em
+caixa alta na hora de escrever a copy — o `<span>` só acompanha o que já foi
+escolhido.
+
 **Checagem obrigatória, bloqueante, antes de aceitar QUALQUER hook/CTA — dois
 bugs que já se repetiram em builds independentes feitos do zero (não é
 hipotético, é o padrão de falha real):**

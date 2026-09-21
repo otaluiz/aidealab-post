@@ -43,6 +43,10 @@ def capture(url, out_path, width=1080, height=1440):
 
         page.wait_for_function("document.fonts.status === 'loaded'", timeout=10000)
 
+        has_lockup = page.evaluate(
+            "() => !!(document.querySelector('.script') && document.querySelector('.mono'))"
+        )
+
         t0 = time.time()
         title = page.title()
         while not title.startswith("READY:") and time.time() - t0 < 8:
@@ -50,17 +54,23 @@ def capture(url, out_path, width=1080, height=1440):
             title = page.title()
         print("title:", title, file=sys.stderr)
         if not title.startswith("READY:"):
-            browser.close()
-            raise RenderCheckFailed(
-                f"{url}: pagina nunca setou document.title = 'READY:...' -- "
-                "o fit/anticolisao engine nao terminou (ou travou). Nao vou salvar PNG ruim."
-            )
+            if has_lockup:
+                browser.close()
+                raise RenderCheckFailed(
+                    f"{url}: pagina nunca setou document.title = 'READY:...' -- "
+                    "o fit/anticolisao engine nao terminou (ou travou). Nao vou salvar PNG ruim."
+                )
+            # Sem .script/.mono no lockup: peca nao usa esse contrato (ex: slide de
+            # card/conteudo), READY e opcional aqui -- so aguarda fonts.ready mesmo.
+            print("INFO: sem .script/.mono e sem READY -- peca fora do contrato de "
+                  "lockup, seguindo sem a checagem bloqueante.", file=sys.stderr)
 
         report = {}
-        try:
-            report = json.loads(title[len("READY:"):])
-        except (ValueError, IndexError):
-            print(f"WARNING: nao consegui decodificar o JSON do title: {title!r}", file=sys.stderr)
+        if title.startswith("READY:"):
+            try:
+                report = json.loads(title[len("READY:"):])
+            except (ValueError, IndexError):
+                print(f"WARNING: nao consegui decodificar o JSON do title: {title!r}", file=sys.stderr)
 
         dims = page.evaluate(
             "() => ({w: window.innerWidth, h: window.innerHeight, "
@@ -69,9 +79,6 @@ def capture(url, out_path, width=1080, height=1440):
         )
         print("dims check:", dims, file=sys.stderr)
 
-        has_lockup = page.evaluate(
-            "() => !!(document.querySelector('.script') && document.querySelector('.mono'))"
-        )
         if has_lockup:
             anticolisao = report.get("anticolisao")
             if not isinstance(anticolisao, dict) or "residual" not in anticolisao:
