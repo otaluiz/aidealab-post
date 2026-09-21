@@ -290,8 +290,12 @@ def main():
     if nxt["kind"] == "imagem":
         image_path = nxt["folder"] / meta["arquivo"]
         if not image_path.exists():
-            print(f"[ERROR] Arquivo não encontrado: {image_path}")
-            sys.exit(1)
+            prefixed = nxt["folder"] / f"{nxt['label']}.png"
+            if prefixed.exists():
+                image_path = prefixed
+            else:
+                print(f"[ERROR] Arquivo não encontrado: {image_path} (nem {prefixed})")
+                sys.exit(1)
         image_url = upload_to_supabase(image_path)
         if not image_url:
             sys.exit(1)
