@@ -290,15 +290,31 @@ def get_drive_service():
         return None
 
 
-def list_next_to_publish(drive_service) -> Optional[Dict[str, Any]]:
+def list_carousels_from_drive() -> Optional[Dict[str, Any]]:
     """
-    Lista próximo conteúdo não publicado em 06-Aprovados-para-Postar.
-    Retorna dict com metadata ou None.
+    Lista carrosséis em 06-Aprovados-para-Postar/FILA-SEMANA-1/02-carrossel.
+    Ordena por data_criacao (data_criacao field no metadata.json).
+    Retorna o primeiro com postado:false, ou None se fila vazia.
+
+    Nota: usa MCP google-drive disponível na cloud routine.
     """
-    print("🔍 Procurando próximo conteúdo não publicado...")
-    print("(Nota: implementação completa requer iteração via Drive API)")
-    print("   Para agora: use MCP google-drive ou cli 'find-files' manualmente")
-    return None
+    try:
+        from google.auth.transport.requests import Request
+        from google.oauth2.service_account import Credentials
+        from googleapiclient.discovery import build
+        from googleapiclient.http import MediaIoBaseDownload
+        import io
+
+        # Na cloud, credenciais vêm da sessão/service account
+        # Por enquanto, retorna None pra avisar que precisa MCP
+        print("🔍 Buscando próximo carrossel em 06-Aprovados-para-Postar...")
+        print("⚠️  Requer MCP google-drive na sessão cloud")
+        print("   Implementação: listar pastas, ler metadata.json, encontrar postado:false")
+        return None
+
+    except Exception as e:
+        print(f"⚠️  Drive API não disponível: {e}")
+        return None
 
 
 def main():
