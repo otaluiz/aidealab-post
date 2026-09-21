@@ -414,6 +414,34 @@ segunda palavra pra manter o contraste dos dois lados do lockup (ex.: script
 class="accent">trava</span>`). Uma palavra serifada, outra bold, as duas na
 cor de acento da família — nunca as duas juntas na mesma linha.
 
+**Palavra-chave da script só ganha cor quando a linha tem 3+ palavras.**
+Regra validada em 2026-09-21: linha script de até 2 palavras (ex.: "Seu
+visitante") fica toda em `--cream`/`--paper`, sem `<span class="kw">` — colorir
+uma palavra de duas fica contraste excessivo pro tamanho da linha. A partir de
+3 palavras (ex.: "Enquanto você dorme", "Antes de postar, a gente decide"),
+uma palavra vira `<span class="kw">`. Isso é só sobre a COR — a regra de
+z-index abaixo (script sempre na frente do monumento) vale sempre, com ou sem
+`kw`.
+
+**`.script` tem que ter `z-index` maior que `.mono`/`.monument` — a serifa
+sempre por CIMA do bold, nunca atrás.** Bug encontrado em 2026-09-21 nos 6
+carrosséis gerados naquele dia: `.script` e `.mono` estavam `position:absolute`
+sem `z-index` explícito, então a ordem no DOM (mono depois de script)
+desenhava o bold por cima, escondendo o mergulho da script exatamente onde
+ela toca o monumento. Fix no `templates/render-engine/slide-base.css`:
+`.script{z-index:2}` / `.mono{z-index:1}`. Qualquer `slide.css` que reimplemente
+esse contrato do zero (ver "causa raiz" abaixo) tem que copiar esses dois
+z-index, não só o posicionamento.
+
+**Se a cena do hook/CTA tem um sujeito (pessoa/figura) em pé, o lockup
+inteiro (script + monumento) tem que pousar numa faixa vazia da imagem — acima
+da cabeça, no céu/fundo — não sobre o rosto/cabeça.** Não é auto-detecção de
+posição do sujeito: é escolher o `top` do `.t-lockup` olhando o preview da cena
+gerada, do mesmo jeito que já se evita colidir com elementos de composição
+importantes. Referência aprovada: `porta-de-entrada-do-site` hook ("Seu
+visitante" / "APARECE."), lockup inteiro no terço superior, cabeça do sujeito
+livre abaixo dele.
+
 **Título dos slides de conteúdo é DUAS linhas, não uma string só —
 `.t-card-head` (setup, sans bold, cream) + `.t-card-accent` (payoff, serifa
 itálica, cor de acento).** Padrão de referência (`estrategia/estrat_2_passo1`,
@@ -456,6 +484,10 @@ hipotético, é o padrão de falha real):**
    Não confiar em top/height escolhidos "de olho", nem em thumbnail pequena.
    `bussola-de-dados` (CTA "RUMO.") e `Testa-uma-DUPLA`/`Concorrente-Comunica-Melhor`
    são a referência de como deve ficar.
+3. **`.script` por cima do `.mono` (`z-index` maior), nunca escondida atrás
+   do bold.** `capture.py` não checa isso sozinho (é CSS estático, não runtime) —
+   inspecionar `slide.css` visualmente: `.script{z-index:2}` (ou maior) e
+   `.mono{z-index:1}` (ou menor). Ver regra completa acima.
 
 **Causa raiz dos dois: reimplementar `slide.css`/posicionamento do zero em
 vez de copiar `anticolisao.js` + `fit.js` + o contrato `.script`/`.mono`/
