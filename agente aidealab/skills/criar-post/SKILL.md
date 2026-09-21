@@ -278,6 +278,21 @@ copia a composicao da referencia, e a segunda pessoa sai um desconhecido. Peca
 de um personagem so exige referencia da `soul-ref`. Se ja gerou e veio a dupla,
 da para salvar cortando so o fundador -- foi o que funcionou na capa do elevador.
 
+**Dois personagens reais (ex. dois fundadores) na MESMA peca: soul_2 aceita 1
+soul_id por geracao, nao tem como pedir os dois rostos numa chamada só**
+(testado e confirmado -- `dupla-ref` + um soul_id só clona o mesmo rosto nos
+dois corpos). O jeito certo: gerar cada personagem **separadamente com o
+MESMO prompt de ambiente/luz/pose** (soul_2 + soul_id de cada um), recortar
+com `rembg` LOCAL (`isnet-general-use`, grátis -- nunca o
+`remove_background` pago do Higgsfield pra esse caso) e compor as duas fotos
+no mesmo cenário (resize com alpha premultiplicado, nunca resize RGBA
+ingênuo -- sangra a cor do fundo original nas bordas; feather leve no alpha,
+sombra de contato nos pés). Isso dá a leitura de "um cenário só" mesmo sendo
+duas gerações. **Só gera os personagens em cenários diferentes/isolados
+quando o pedido for posts separados/alternados** (um post com um fundador,
+outro post depois com o outro) -- nunca quando os dois aparecem juntos na
+mesma peça.
+
 ### Nem todo carrossel precisa de personagem
 
 Um bloco de tres pode ter um carrossel inteiro **so de cena cinematografica**,
@@ -372,6 +387,32 @@ post novo: começa em `0`, só sobe se colidir.
 **Palavra-chave serifada: colore UMA palavra, não a linha toda.** A linha
 script fica em `--paper`; só a palavra que carrega o sentido entra em
 `--accent`, via `<span class="kw">`. Linha inteira colorida foi recusada.
+
+**Checagem obrigatória, bloqueante, antes de aceitar QUALQUER hook/CTA — dois
+bugs que já se repetiram em builds independentes feitos do zero (não é
+hipotético, é o padrão de falha real):**
+1. **A palavra-chave do MONUMENTO (não só da script) sai na cor de acento
+   (Base da família escolhida), nunca cream/branco.** Já aconteceu de um build
+   próprio (CSS reimplementado do zero em vez de reusar o contrato
+   `.mword.accent`) deixar `.mono.capa{color:var(--paper)}` hardcoded,
+   publicando a palavra-título inteira em branco -- sem span de acento nenhum
+   no monumento, só na script. Verificar amostrando o pixel central de uma
+   letra do monumento (não confiar em leitura visual de thumbnail pequena) e
+   confirmar que bate com o hex Base da família do carrossel.
+2. **Script encostada no monumento (gap real entre -15 e -35px), nunca
+   flutuando solta.** Medir com `getBoundingClientRect` real
+   (`mword.top - script.bottom`) depois de `document.fonts.ready`, não
+   confiar em top/height escolhidos "de olho". `bussola-de-dados` (CTA
+   "RUMO.") e `Testa-uma-DUPLA`/`Concorrente-Comunica-Melhor` são a
+   referência de como deve ficar.
+
+**Causa raiz dos dois: reimplementar `slide.css`/posicionamento do zero em
+vez de copiar `anticolisao.js` + `fit.js` + o contrato `.script`/`.mono`/
+`.mword.accent` de um build aprovado.** Builds que copiam o engine literal
+(cópia de arquivo, não reescrita) não repetem esses bugs; builds que
+reescrevem a própria lógica de posicionamento/cor repetem os dois quase
+sempre. Copiar os `.js` e o contrato de classes verbatim de um carrossel
+aprovado é mais barato e mais confiável do que rederivar a fórmula.
 
 **2. Na oclusao, a palavra tem que ser ~1,5x mais larga que o sujeito.** Medido
 na faixa vertical onde ela cai, lendo o alpha do recorte. Abaixo disso a palavra
@@ -723,7 +764,15 @@ gerado antes disso.
    - **Escolhe pela ÁREA VAZIA, não só pela beleza:** o template não tem
      recorte, então o texto precisa de um céu/campo escuro amplo onde pousar.
      Cena com sujeito pequeno e horizonte baixo é ideal; imagem-textura sem
-     sujeito (gradiente, padrão, mancha) não serve pra hook.
+     sujeito (gradiente, padrão, mancha) não serve pra hook. **Isso inclui
+     wallpaper abstrato com textura repetitiva (crosshatch, tecido, ruído
+     geométrico) mesmo quando a cor bate com a família** -- já aconteceu de um
+     build usar a mesma imagem "Home _ X" (fundo xadrez/crosshatch azul) no
+     hook E no slide de causa por bater a paleta, e o resultado leu como
+     genérico/baixo-impacto em vez de fotográfico. Prefere sempre a foto com
+     sujeito/cena real (retrato, objeto, paisagem, arquitetura) às imagens de
+     textura/padrão do mesmo banco, mesmo que a textura seja mais rápida de
+     encontrar.
    - **O banco costuma ser de thumbs de 736px — sempre confere a resolução.**
      Abaixo de 1080×1440, amplia **localmente e de graça** com Lanczos 2× +
      unsharp (Pillow). **Não gasta crédito com `upscale_image`** — regra
