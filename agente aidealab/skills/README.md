@@ -11,14 +11,12 @@ desenhadas).
 |---|---|---|
 | `criar-cliente` | sim | garante a estrutura padrão de pastas do cliente no Drive |
 | `criar-site` | sim | gera o site do cliente (React + Next.js, com 3D/vídeo condicional) a partir das referências do Drive, usando impeccable como espinha dorsal de direção/construção/QA |
-| `criar-post` | sim | cria post de Instagram (carrossel ou imagem única) on-brand a partir das referências do Drive, seguindo um "post design system" (3 cores, 2 fontes, 2–3 templates) e storytelling; render híbrido — tipografia via canvas-design, imagem via Comfy Cloud MCP. Não publica |
+| `criar-post` | sim / cron | cria post de Instagram (carrossel ou imagem única) on-brand a partir das referências do Drive, seguindo um "post design system" (3 cores, 2 fontes, 2–3 templates) e storytelling; render híbrido — tipografia via canvas-design, imagem via Higgsfield MCP. Alimenta `06-Aprovados-para-Postar`. Não publica |
 | `post-dm` | sim | cria a isca de DM: carrossel que alterna peça pronta e receita inteira (prompt, fluxo, processo), fecha com "digite \<PALAVRA\> na DM" e já entrega o PDF on-brand + a legenda e a resposta de DM. Herda o sistema visual da `criar-post`. Não publica e não manda DM |
 | `criar-flyer` | sim | cria criativo de imagem única (1080×1440) com a assinatura de texto atrás do sujeito — foto do banco `criativo-ref` recortada por rembg no mesmo enquadramento, tipo grande ocluído pela figura, e um dos 11 estilos gráficos por peça. Não publica |
+| `post-instagram` | sim / cron | publica no Instagram (@aidealab7) o próximo conteúdo aprovado em `06-Aprovados-para-Postar`, via Graph API — consome o que a `criar-post` produziu, não gera conteúdo |
 
-Planejada, com spec própria em `docs/superpowers/specs/` antes de virar skill
-(ainda não criada): **postar no Instagram** (`post-instagram`) — pega o post
-aprovado pela `criar-post` e publica. Todas dependem de `criar-cliente` para
-localizar a pasta certa do cliente.
+Todas dependem de `criar-cliente` para localizar a pasta certa do cliente.
 
 ## Convenções
 
