@@ -414,17 +414,29 @@ segunda palavra pra manter o contraste dos dois lados do lockup (ex.: script
 class="accent">trava</span>`). Uma palavra serifada, outra bold, as duas na
 cor de acento da família — nunca as duas juntas na mesma linha.
 
-**Título dos slides de conteúdo (`.t-card-head`) também leva palavra-chave
-colorida — não só o `.t-card-body`.** Até 2026-09-21 só o corpo do texto
-tinha `.kw` (`.t-card-body .kw{color:var(--amber-base)}`); o título nunca
-tinha a regra de CSS, mesmo já vindo com a palavra-chave em CAIXA ALTA
-(convenção existente pra marcar qual é a palavra — só faltava a cor). Fix:
-adiciona `.t-card-head .kw{color:var(--amber-base);}` no `slide.css` (mesma
-variável do corpo, ela já é redefinida por família — magenta/amber/azul) e
-envolve a palavra em CAIXA ALTA do título com `<span class="kw">`. Não
-inventa palavra nova: a peça já decide qual é a palavra-chave ao deixá-la em
-caixa alta na hora de escrever a copy — o `<span>` só acompanha o que já foi
-escolhido.
+**Título dos slides de conteúdo é DUAS linhas, não uma string só —
+`.t-card-head` (setup, sans bold, cream) + `.t-card-accent` (payoff, serifa
+itálica, cor de acento).** Padrão de referência (`estrategia/estrat_2_passo1`,
+`estrat_4_passo3`, aprovados): `<div class="t-card-head">Escolha quem
+você</div><div class="t-card-accent">não vai atender.</div>`. CSS:
+```
+.t-card-head{font-family:var(--font-mon);font-weight:900;font-size:50px;line-height:1.1;color:var(--cream);}
+.t-card-accent{font-family:var(--font-serif);font-style:italic;font-weight:900;font-size:46px;line-height:1.08;color:var(--amber-base);margin-top:2px;}
+```
+`--font-serif:'Playfair Display',Georgia,serif;` (carrega
+`family=Playfair+Display:ital,wght@1,900` no link do Google Fonts — é
+diferente da `--font-script` do hook/CTA, que é Tempting/cursiva; conteúdo
+usa Playfair, hook/CTA usa Tempting, nunca troca os dois). `--amber-base` é a
+mesma variável do corpo (`--amber-base`), redefinida por família
+(magenta/amber/azul) — head e accent do título puxam a cor certa sozinhos.
+
+Corte o texto em duas frases no ponto de vírgula/ponto natural: a primeira
+(setup) fica no `.t-card-head` em caixa normal; a segunda (o giro/consequência)
+vira `.t-card-accent`, também em caixa normal — **nunca CAIXA ALTA na accent**,
+a cor + itálico já fazem o destaque sozinhos. Versão descartada (usada até
+2026-09-21): só uma palavra em CAIXA ALTA ganhando `<span class="kw">` dentro
+de uma única linha — funciona mas é mais fraco que a linha inteira em serifa
+colorida; a referência real usa a linha toda.
 
 **Checagem obrigatória, bloqueante, antes de aceitar QUALQUER hook/CTA — dois
 bugs que já se repetiram em builds independentes feitos do zero (não é
