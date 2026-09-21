@@ -4,6 +4,15 @@ Use a skill `criar-post` (em skills/criar-post/SKILL.md) para gerar 3 carrosséi
 Instagram novos, um de cada vez, do início ao fim, cada um com tema/pilar diferente
 (a escolha do tema é sua — varie entre educacional, bastidor, prova e oferta).
 
+Regra de backlog (decida sozinho, não pergunte — não há humano pra responder):
+- Antes de gerar qualquer coisa, conte quantas pastas com `status: rascunho` já
+  existem em `04-Carrosseis/`. Se forem 6 ou mais, NÃO gere nada nesta rodada:
+  escreva só o resumo final dizendo "backlog cheio (N rascunhos), pulei a geração
+  de hoje" e pare — não é erro, é comportamento esperado enquanto o humano não
+  revisa e aprova o que já existe.
+- Se forem menos de 6, gere carrosséis suficientes pra chegar a 3 rascunhos NOVOS
+  nesta rodada ou até o backlog total bater 6, o que vier primeiro.
+
 Regras obrigatórias desta rodada:
 - Antes de gerar imagem nova, confira `02-Materiais-Brutos/img-ref` por imagens do
   banco ainda não usadas; use as que houver, intercalando com geração nova via
