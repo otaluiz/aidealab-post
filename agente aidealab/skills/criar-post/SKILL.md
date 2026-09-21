@@ -1112,11 +1112,16 @@ reciclados de dois outros posts do mesmo feed.
 
 ## Etapa 6 — Entrega
 
-Salva os PNGs finais no Drive via `create_file`: em `04-Carrosseis` (o material
-de trabalho) e/ou `06-Aprovados-para-Postar` (quando o usuário aprovar para
-postar). Junto, **todo post fecha com um `metadata.json` na própria pasta** —
-é ele que a `post-instagram` futura vai ler, e sem ele o carrossel não passa de
-uma pasta de imagens.
+Salva os PNGs finais no Drive via `create_file`: em `04-Carrosseis/<slug-do-tema>/`
+(o material de trabalho, sempre) e, quando o usuário aprovar pra postar, TAMBÉM
+em `06-Aprovados-para-Postar/RASCUNHOS/<slug-do-tema>/` — **direto dentro de
+RASCUNHOS, sem nenhum nível de pasta entre `06-Aprovados-para-Postar` e
+`RASCUNHOS`** (não criar `02-carrossel/RASCUNHOS` nem qualquer outra
+subpasta — erro já cometido numa rodada de teste e corrigido depois). No
+`metadata.json` da peça aprovada, marca `status: aprovado` +
+`data_aprovacao`. Junto, **todo post fecha com um `metadata.json` na própria
+pasta** — é ele que a `post-instagram` futura vai ler, e sem ele o carrossel
+não passa de uma pasta de imagens.
 
 Por último, move as imagens do banco que a peça usou de
 `02-Materiais-Brutos/img-ref` para `01-Referencias/Instagram/img-ref` (ver
