@@ -341,11 +341,28 @@ texto. As duas tintas vazam para fora das suas caixas e se encontram -- foi o
 que sujou "Mesmo com Instagram, / INVISIVEL" e "Bora ficar / VISIVEL".
 
 Vao fixo nao resolve, porque cada palavra tem altura de tinta diferente (com
-acento ou sem, com descida ou sem). `carrossel-v3/anticolisao.js` mede a tinta
-real pelo `actualBoundingBoxAscent/Descent` do canvas e sobe a linha script ate
-limpar, com 16px de folga. Roda DEPOIS do fit de largura -- e o tamanho final da
-palavra que decide onde o acento chega. Inline o arquivo num `<script>` antes do
-FIT e chame `window.__anticolisao(16)` no fim dele.
+acento ou sem, com descida ou sem). `templates/render-engine/anticolisao.js`
+mede a BASELINE da script e o CAPTOP do monumento (sondando sempre a letra
+"H", nunca a palavra inteira -- acento infla e supercorrige) e move a script
+pra baseline cair EM CIMA do capTop, diferenca zero. Roda DEPOIS do fit de
+largura -- e o tamanho final da palavra que decide onde o encaixe cai. Inline
+o arquivo num `<script>` antes do FIT e chame `window.__anticolisao({lift:0})`
+no fim dele (chamada legada `__anticolisao(16)` ainda funciona, o numero e so
+ignorado com aviso no console).
+
+**Historico: a formula de uma via so nunca funcionou, mesmo copiada
+verbatim.** Ate 2026-09-21 este arquivo era um "grampo" que so subia a script
+quando a tinta dela invadia uma folga de 16px acima do monumento
+(`sobra = scriptBottom + 16 - monumentoTop; if (sobra>0) sobe`). Rodando o
+build real (`teste-referencia-automacao-com-criterio`) ficou provado que isso
+quase sempre dava `sobra <= 0` -- ou seja NO-OP -- porque exigir 16px de folga
+positiva e o oposto de "encostar": o resultado publicado ficava 30-34px longe
+do bold, e nem "copiar o arquivo verbatim de um build aprovado" evitava, IA a
+peca de origem tambem nunca tinha encostado de verdade. `Trafego-Pago-Oferta-Ruim`,
+`GEO-Busca-com-IA` e `TESTE-ia-sem-contexto-marca` saíram assim no mesmo dia.
+A formula atual e bidirecional (sobe OU desce ate a baseline bater no capTop),
+sonda sempre "H" pro capTop do monumento (nao a palavra acentuada) e lanca
+erro se `.script`/`.mono` faltar, em vez de retornar `null` calado.
 
 **Captura tem que esperar `document.fonts.ready` E a execução do anticolisao —
 senão publica o vão sem querer.** Aconteceu em `Bloco1-Views-Que-Nao-Vendem`
@@ -365,14 +382,14 @@ exatamente no `capTop` do monumento, ver "O encaixe da script no monumento é
 CALCULADO em runtime" abaixo) já ENTREGA o toque leve sozinha: é a ponta dos
 descendentes (o "p" de "problema", o laço de um "f") que dita no topo do bold,
 o corpo da palavra (sem descendente) fica encostado sem cobrir letra
-nenhuma. `data-lift` é escape hatch, não passo obrigatório — só sobe de 0
-quando a fórmula pura colide de verdade (rule 1: acento empurrando a tinta
-pra fora da caixa, ou script com descendente muito longo estourando sobre uma
-letra específica do bold). Confirmar com `getBoundingClientRect` depois do
-fit de largura: `monumento.querySelector('.mword').rect.top -
-script.rect.bottom` fica em torno de **-15 a -25px** com `data-lift="0"` — é
-esse leve mergulho da ponta do descendente que casa com a referência da casa
-(`Concorrente-Comunica-Melhor`, `Testa-uma-DUPLA`).
+nenhuma. `lift` (parâmetro do `window.__anticolisao({lift:N})`, default 0) é
+escape hatch, não passo obrigatório — só sobe de 0 quando a fórmula pura
+colide de verdade (rule 1: acento empurrando a tinta pra fora da caixa, ou
+script com descendente muito longo estourando sobre uma letra específica do
+bold). Confirmar pelo `residual` que a própria função devolve (baseline da
+script menos capTop do monumento): tem que ficar em **0 ± 4px** com `lift: 0`
+— referência real medida em peça aprovada: `Concorrente-Comunica-Melhor`
+(-2px), `2026-08-27_3-sites-fontes-vinho` (-1px).
 
 **Ferramenta-vs-Processo saiu publicado duas vezes errado antes de acertar
 nisso** — histórico pra não repetir: (1) `data-lift="78"`/`"74"` (herdado de
@@ -399,12 +416,13 @@ hipotético, é o padrão de falha real):**
    no monumento, só na script. Verificar amostrando o pixel central de uma
    letra do monumento (não confiar em leitura visual de thumbnail pequena) e
    confirmar que bate com o hex Base da família do carrossel.
-2. **Script encostada no monumento (gap real entre -15 e -35px), nunca
-   flutuando solta.** Medir com `getBoundingClientRect` real
-   (`mword.top - script.bottom`) depois de `document.fonts.ready`, não
-   confiar em top/height escolhidos "de olho". `bussola-de-dados` (CTA
-   "RUMO.") e `Testa-uma-DUPLA`/`Concorrente-Comunica-Melhor` são a
-   referência de como deve ficar.
+2. **Script encostada no monumento (`residual` de `window.__anticolisao` em
+   0 ± 4px), nunca flutuando solta.** `capture.py` já bloqueia isso sozinho —
+   lê `window.__fitReport.anticolisao.residual` do `document.title` e lança
+   erro (não salva o PNG) se a chave faltar ou o residual sair da tolerância.
+   Não confiar em top/height escolhidos "de olho", nem em thumbnail pequena.
+   `bussola-de-dados` (CTA "RUMO.") e `Testa-uma-DUPLA`/`Concorrente-Comunica-Melhor`
+   são a referência de como deve ficar.
 
 **Causa raiz dos dois: reimplementar `slide.css`/posicionamento do zero em
 vez de copiar `anticolisao.js` + `fit.js` + o contrato `.script`/`.mono`/

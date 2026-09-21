@@ -13,10 +13,26 @@ to finish (the HTML templates set document.title to 'READY:...json...' when
 done -- see templates/*.html in this skill). Never use device_scale_factor
 other than 1, and never rely on a page's own devicePixelRatio: both have
 caused letterbox/wrong-resolution renders in the past (see SKILL.md).
+
+Checagem bloqueante (script/monumento): se a peca tem `.script`/`.mono`, o
+`window.__fitReport.anticolisao` (embutido no title READY:...) precisa trazer
+um `residual` de no maximo 4px de baseline ate o capTop do monumento -- ver
+anticolisao.js. Fora disso, ou se a chave nem existir (a chamada travou/nunca
+rodou), esta funcao levanta erro em vez de salvar o PNG errado: essa checagem
+so existir como aviso foi exatamente como as pecas ruins de 2026-09-21
+(Trafego-Pago-Oferta-Ruim, GEO-Busca-com-IA, TESTE-ia-sem-contexto-marca)
+saíram com a script boiando longe do bold.
 """
+import json
 import sys
 import time
 from playwright.sync_api import sync_playwright
+
+RESIDUAL_TOLERANCE_PX = 4
+
+
+class RenderCheckFailed(Exception):
+    pass
 
 
 def capture(url, out_path, width=1080, height=1440):
@@ -32,11 +48,19 @@ def capture(url, out_path, width=1080, height=1440):
         while not title.startswith("READY:") and time.time() - t0 < 8:
             time.sleep(0.25)
             title = page.title()
-        if not title.startswith("READY:"):
-            print("WARNING: page never set document.title to READY:... -- "
-                  "anticolisao/fit engine may not have run. Continuing anyway.",
-                  file=sys.stderr)
         print("title:", title, file=sys.stderr)
+        if not title.startswith("READY:"):
+            browser.close()
+            raise RenderCheckFailed(
+                f"{url}: pagina nunca setou document.title = 'READY:...' -- "
+                "o fit/anticolisao engine nao terminou (ou travou). Nao vou salvar PNG ruim."
+            )
+
+        report = {}
+        try:
+            report = json.loads(title[len("READY:"):])
+        except (ValueError, IndexError):
+            print(f"WARNING: nao consegui decodificar o JSON do title: {title!r}", file=sys.stderr)
 
         dims = page.evaluate(
             "() => ({w: window.innerWidth, h: window.innerHeight, "
@@ -45,20 +69,28 @@ def capture(url, out_path, width=1080, height=1440):
         )
         print("dims check:", dims, file=sys.stderr)
 
-        geom = page.evaluate(
-            "() => { const m = document.querySelector('.mword'), s = document.querySelector('.script'); "
-            "if (!m || !s) return null; "
-            "const mr = m.getBoundingClientRect(), sr = s.getBoundingClientRect(); "
-            "return {mword_top: Math.round(mr.top), mword_bottom: Math.round(mr.bottom), "
-            "mword_left: Math.round(mr.left), mword_right: Math.round(mr.right), "
-            "mword_width: Math.round(mr.width), script_top: Math.round(sr.top), "
-            "script_bottom: Math.round(sr.bottom), gap: Math.round(mr.top - sr.bottom)}; }"
+        has_lockup = page.evaluate(
+            "() => !!(document.querySelector('.script') && document.querySelector('.mono'))"
         )
-        print("geom:", geom, file=sys.stderr)
-        if geom is not None and not (-35 <= geom["gap"] <= -10):
-            print(f"WARNING: script/monumento gap = {geom['gap']}px, fora da faixa "
-                  f"documentada (-15 a -35px). Ver SKILL.md, checagem bloqueante.",
+        if has_lockup:
+            anticolisao = report.get("anticolisao")
+            if not isinstance(anticolisao, dict) or "residual" not in anticolisao:
+                browser.close()
+                raise RenderCheckFailed(
+                    f"{url}: peca tem .script/.mono mas window.__fitReport.anticolisao "
+                    f"nao trouxe 'residual' (relatorio: {anticolisao!r}). A chamada pode "
+                    "ter lancado erro antes de terminar -- ver console da pagina."
+                )
+            residual = anticolisao["residual"]
+            print(f"anticolisao residual: {residual}px (tolerancia +-{RESIDUAL_TOLERANCE_PX}px)",
                   file=sys.stderr)
+            if abs(residual) > RESIDUAL_TOLERANCE_PX:
+                browser.close()
+                raise RenderCheckFailed(
+                    f"{url}: script/monumento residual = {residual}px, fora da tolerancia "
+                    f"+-{RESIDUAL_TOLERANCE_PX}px. A script nao esta encostando no monumento "
+                    "(ver SKILL.md, checagem bloqueante)."
+                )
 
         page.screenshot(path=out_path, clip={"x": 0, "y": 0, "width": width, "height": height})
         browser.close()
