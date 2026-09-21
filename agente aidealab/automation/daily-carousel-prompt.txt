@@ -1,0 +1,40 @@
+Rotina diária automática (sem supervisão humana). Cliente: aidealab.
+
+Use a skill `criar-post` (em skills/criar-post/SKILL.md) para gerar 3 carrosséis de
+Instagram novos, um de cada vez, do início ao fim, cada um com tema/pilar diferente
+(a escolha do tema é sua — varie entre educacional, bastidor, prova e oferta).
+
+Regras obrigatórias desta rodada:
+- Antes de gerar imagem nova, confira `02-Materiais-Brutos/img-ref` por imagens do
+  banco ainda não usadas; use as que houver, intercalando com geração nova via
+  Higgsfield (soul_2 por padrão) quando o banco não cobrir o tema.
+- Miolo do carrossel SEMPRE com imagem real (banco ou Higgsfield) — nunca gradiente
+  liso/procedural como fundo sozinho. Se a geração de imagem falhar ou travar,
+  pare esse carrossel e siga pro próximo; não substitua por gradiente.
+- Dupla de personagens: gera cada um com o MESMO prompt de ambiente, recorta com
+  rembg local (nunca remove_background pago do Higgsfield), compõe localmente.
+- Render local do texto: use o motor em `skills/criar-post/templates/render-engine/`
+  (capture.py via Playwright) — confere cor por pixel-sample e o gap
+  `.mword`/`.script` (-10 a -35px) antes de aceitar o slide.
+- Entrega: esta máquina TEM o Google Drive sincronizado localmente em
+  `C:\Users\luizr\Meu Drive (aidealabbr@gmail.com)\Clientes\aidealab\`. Salve os
+  PNGs finais e o metadata.json ali com Write/Bash comuns (cópia de arquivo),
+  NÃO tente usar nenhuma ferramenta MCP do Google Drive — é desnecessário e mais
+  lento aqui.
+- Destino: SOMENTE `04-Carrosseis/<slug-do-tema>/` (material de trabalho). NÃO
+  copie para `06-Aprovados-para-Postar/RASCUNHOS` — essa pasta é portão humano,
+  a aprovação é manual, feita depois por um humano revisando o resultado.
+- Ao terminar (ou travar) cada carrossel, mova as imagens do banco que ele usou de
+  `02-Materiais-Brutos/img-ref` para `01-Referencias/Instagram/img-ref`.
+- Nenhuma imagem pode se repetir entre os 3 carrosséis desta rodada nem com
+  carrosséis já existentes em `04-Carrosseis` ou `06-Aprovados-para-Postar`
+  (compare hash de conteúdo, não nome de arquivo).
+
+Se algo travar de verdade (ferramenta indisponível, geração falha muitas vezes),
+pare aquele carrossel específico, documente o bloqueio no metadata.json dele com
+`status: "bloqueado"` e o motivo, e siga para o próximo carrossel — não invente
+workaround arriscado (ex.: procedural gradient no lugar de imagem real).
+
+Ao final dos 3, escreva um resumo curto (texto puro) do que foi feito: quais 3
+temas, quais imagens usadas (banco vs Higgsfield), quais checagens passaram,
+e qualquer bloqueio.
