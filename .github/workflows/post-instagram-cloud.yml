@@ -1,0 +1,62 @@
+name: post-instagram-cloud
+
+on:
+  # Roda a cada 30 minutos (sem PC precisando estar ligado)
+  schedule:
+    - cron: "*/30 * * * *"
+
+  # Permite disparo manual
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: "Force publish even if published today"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r "agente aidealab/skills/post-instagram/scripts/requirements.txt"
+
+      - name: Publish next queue item (cloud-native)
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.force_publish }}" = "true" ]; then
+            ARGS="--force"
+          fi
+          python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS || echo "Publish failed or queue empty"
+
+      - name: Commit updated queue state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "agente aidealab/skills/post-instagram/queue" || true
+          git diff --cached --quiet || git commit -m "chore(post-instagram): queue state update [skip ci]"
+          git push || true
+
+      - name: Notify Supabase (trigger edge function)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          curl -X POST \
+            "${{ secrets.SUPABASE_URL }}/functions/v1/publish-instagram" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"repo":"otaluiz/aidealab-post","branch":"main"}' \
+            || echo "Edge function call optional"
