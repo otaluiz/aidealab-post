@@ -277,6 +277,20 @@ def build_caption(meta: Dict[str, Any]) -> str:
     return caption
 
 
+def list_recent_media(limit: int = 5) -> None:
+    """Diagnóstico: lista os últimos posts reais da conta (id, timestamp, início da legenda)."""
+    url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{INSTAGRAM_BUSINESS_ACCOUNT_ID}/media"
+    resp = requests.get(
+        url,
+        params={"fields": "id,caption,timestamp,permalink", "limit": limit, "access_token": INSTAGRAM_ACCESS_TOKEN},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    for item in resp.json().get("data", []):
+        caption = (item.get("caption") or "").replace("\n", " ")[:80]
+        print(f"[RECENT] {item.get('timestamp')}  id={item.get('id')}  {item.get('permalink')}  \"{caption}\"")
+
+
 def main():
     dry_run = "--dry-run" in sys.argv
     force = "--force" in sys.argv
@@ -286,6 +300,12 @@ def main():
     print("=" * 60)
 
     check_credentials()
+
+    if "--list-recent" in sys.argv:
+        if not test_access():
+            sys.exit(1)
+        list_recent_media()
+        return
 
     items = load_queue()
     if not items:

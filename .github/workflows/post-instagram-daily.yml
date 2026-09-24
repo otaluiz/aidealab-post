@@ -10,6 +10,10 @@ on:
         description: "Dry run (no real publish)"
         type: boolean
         default: false
+      list_recent:
+        description: "Só listar os posts recentes da conta (diagnóstico, não publica)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -35,6 +39,7 @@ jobs:
         run: |
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          if [ "${{ inputs.list_recent }}" = "true" ]; then ARGS="--list-recent"; fi
           python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS
 
       - name: Commit updated queue state
