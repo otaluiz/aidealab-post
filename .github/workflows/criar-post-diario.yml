@@ -1,0 +1,84 @@
+name: aidealab - criar-post diário (nuvem)
+
+# Roda 3 carrosséis novos por dia, direto de um runner do GitHub Actions --
+# não depende do computador local (Windows) estar ligado, ao contrário da
+# rotina antiga (agente aidealab/automation/run-daily-carousel.ps1, que
+# continua existindo pra quem quiser rodar local também).
+#
+# Modelo Haiku por padrão (economia de custo/token -- ver
+# agente aidealab/automation/cloud/README.md). Saída vai SÓ para
+# `04-Carrosseis/<slug>/` no Drive -- a aprovação pra `06-Aprovados-para-
+# Postar/RASCUNHOS` continua manual, feita por um humano depois.
+#
+# Pré-requisito: só dispara em cron/workflow_dispatch depois que este
+# arquivo estiver na branch padrão (main) -- GitHub Actions não agenda
+# workflows que só existem numa branch de feature.
+
+on:
+  schedule:
+    # 08:00 America/Sao_Paulo (UTC-3, sem horário de verão desde 2019) = 11:00 UTC
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: aidealab-criar-post
+  cancel-in-progress: false
+
+jobs:
+  gerar-carrosseis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências Python (Drive, render-engine)
+        run: |
+          pip install -r "agente aidealab/automation/cloud/requirements.txt"
+          pip install -r "agente aidealab/skills/criar-post/templates/render-engine/requirements.txt"
+
+      - name: Instalar Chromium do Playwright
+        run: playwright install chromium --with-deps
+
+      - name: Instalar pngquant/optipng (otimização de PNG antes do upload)
+        run: sudo apt-get update && sudo apt-get install -y pngquant optipng
+
+      - name: Instalar Claude Code CLI
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: Rodar rotina (criar-post, 3 carrosséis, modelo Haiku)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          claude --bare -p "$(cat 'agente aidealab/automation/cloud/daily-carousel-prompt-cloud.txt')" \
+            --model claude-haiku-4-5-20251001 \
+            --permission-mode dontAsk \
+            --permission-prompts none \
+            --allowedTools "Read,Write,Edit,Bash,Glob,Grep" \
+            2>&1 | tee "agente aidealab/automation/cloud/_run_log.txt"
+          # Nota: se `--permission-mode`/`--permission-prompts` não existirem
+          # na versão do CLI instalada por install.sh (flags relativamente
+          # novas), troque as 3 linhas de permissão acima por
+          # `--dangerously-skip-permissions` -- é o que a rotina local
+          # (run-daily-carousel.ps1) usa hoje, testado e funcional.
+
+      - name: Upload de segurança (PNGs + log, mesmo se algo falhar)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: criar-post-diario-${{ github.run_id }}
+          path: |
+            agente aidealab/automation/cloud/_run/
+            agente aidealab/automation/cloud/_run_log.txt
+          retention-days: 14
+          if-no-files-found: ignore
