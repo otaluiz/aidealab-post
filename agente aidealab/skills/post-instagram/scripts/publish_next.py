@@ -16,6 +16,7 @@ import os
 import re
 import sys
 import json
+import time
 from datetime import datetime, date
 from pathlib import Path
 from typing import Optional, Dict, Any, List
@@ -201,6 +202,35 @@ def upload_to_supabase(image_path: Path) -> Optional[str]:
         return None
 
 
+def raise_checked(resp: requests.Response) -> None:
+    """Como resp.raise_for_status(), mas loga o corpo (a Graph API só explica o erro ali)."""
+    if resp.ok:
+        return
+    print(f"[ERROR] {resp.status_code} {resp.request.method} {resp.url}: {resp.text[:500]}")
+    resp.raise_for_status()
+
+
+def wait_for_container_ready(container_id: str, timeout_s: int = 90, poll_s: int = 3) -> bool:
+    """Espera um media container chegar em status_code=FINISHED antes do media_publish
+    -- a Graph API rejeita a publicação com 400 se o container ainda está processando."""
+    url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{container_id}"
+    deadline = time.monotonic() + timeout_s
+    while time.monotonic() < deadline:
+        resp = requests.get(
+            url, params={"fields": "status_code", "access_token": INSTAGRAM_ACCESS_TOKEN}, timeout=30
+        )
+        raise_checked(resp)
+        status = resp.json().get("status_code")
+        if status == "FINISHED":
+            return True
+        if status in ("ERROR", "EXPIRED"):
+            print(f"[ERROR] Container {container_id} status={status}")
+            return False
+        time.sleep(poll_s)
+    print(f"[ERROR] Container {container_id} não ficou pronto em {timeout_s}s")
+    return False
+
+
 def publish_image(image_url: str, caption: str, ig_account_id: str) -> Optional[str]:
     media_url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media"
     resp = requests.post(
@@ -208,10 +238,13 @@ def publish_image(image_url: str, caption: str, ig_account_id: str) -> Optional[
         json={"image_url": image_url, "caption": caption, "access_token": INSTAGRAM_ACCESS_TOKEN},
         timeout=30,
     )
-    resp.raise_for_status()
+    raise_checked(resp)
     media_id = resp.json().get("id")
     if not media_id:
         print(f"[ERROR] Sem media_id: {resp.json()}")
+        return None
+
+    if not wait_for_container_ready(media_id):
         return None
 
     publish_url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish"
@@ -220,7 +253,7 @@ def publish_image(image_url: str, caption: str, ig_account_id: str) -> Optional[
         json={"creation_id": media_id, "access_token": INSTAGRAM_ACCESS_TOKEN},
         timeout=30,
     )
-    resp.raise_for_status()
+    raise_checked(resp)
     return resp.json().get("id")
 
 
@@ -233,13 +266,17 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
             json={"image_url": url, "is_carousel_item": True, "access_token": INSTAGRAM_ACCESS_TOKEN},
             timeout=30,
         )
-        resp.raise_for_status()
+        raise_checked(resp)
         media_id = resp.json().get("id")
         if not media_id:
             print(f"[ERROR] Slide sem media_id: {resp.json()}")
             return None
         child_ids.append(media_id)
         print(f"  [OK] slide -> {media_id}")
+
+    for media_id in child_ids:
+        if not wait_for_container_ready(media_id):
+            return None
 
     resp = requests.post(
         media_url,
@@ -251,10 +288,13 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
         },
         timeout=30,
     )
-    resp.raise_for_status()
+    raise_checked(resp)
     carousel_id = resp.json().get("id")
     if not carousel_id:
         print(f"[ERROR] Sem carousel_id: {resp.json()}")
+        return None
+
+    if not wait_for_container_ready(carousel_id):
         return None
 
     publish_url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish"
@@ -263,7 +303,7 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
         json={"creation_id": carousel_id, "access_token": INSTAGRAM_ACCESS_TOKEN},
         timeout=30,
     )
-    resp.raise_for_status()
+    raise_checked(resp)
     return resp.json().get("id")
 
 
