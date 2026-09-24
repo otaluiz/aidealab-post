@@ -42,9 +42,11 @@ Thumbs.db
 # Testing
 coverage/
 
-# Python
-__pycache__/
-*.pyc
-
 # Misc
 *.local
+
+# Rotina de automação em nuvem (GitHub Actions) -- arquivos temporários de
+# cada execução (HTML/PNG intermediários), nunca versionados
+agente aidealab/automation/cloud/_run/
+agente aidealab/automation/cloud/client_secret.json
+agente aidealab/automation/cloud/drive_token_output.json

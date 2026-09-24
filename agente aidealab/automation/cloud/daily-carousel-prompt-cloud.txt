@@ -1,0 +1,138 @@
+Rotina diária automática em nuvem (GitHub Actions, sem supervisão humana, sem
+computador local ligado). Cliente: aidealab. Modelo: Haiku -- rodada
+econômica, siga as instruções ao pé da letra em vez de reinterpretar; se
+alguma instrução parecer ambígua, escolha a leitura mais conservadora (a que
+bloqueia e documenta) em vez de inventar solução.
+
+Use a skill `criar-post` (em `agente aidealab/skills/criar-post/SKILL.md`) para
+gerar 3 carrosséis de Instagram novos, um de cada vez, do início ao fim, cada
+um com tema/pilar diferente (varie entre educacional, bastidor, prova e
+oferta). Renderização: `agente aidealab/skills/criar-post/templates/render-engine/`
+(capture.py via Playwright, já instalado neste runner pelo workflow).
+
+## Diferença central para a rotina local: acesso ao Google Drive
+
+Esta máquina (runner do GitHub Actions) NÃO tem o Google Drive sincronizado
+localmente -- não existe `C:\Users\...\Meu Drive`. Todo acesso ao Drive é via
+o script `agente aidealab/automation/cloud/drive_helper.py`, chamado por
+Bash. NÃO use nenhuma ferramenta MCP do Google Drive mesmo que apareça
+disponível -- o MCP devolve conteúdo binário como base64 no resultado da
+ferramenta e isso queima o contexto/orçamento de token à toa (~1 token por
+caractere de base64, medido em produção). Exemplos de uso:
+
+```bash
+# localizar uma pasta pelo nome dentro de outra
+python "agente aidealab/automation/cloud/drive_helper.py" find-folder --name "02-Materiais-Brutos" --parent-id "$AIDEALAB_FOLDER_ID"
+
+# listar arquivos de uma pasta
+python "agente aidealab/automation/cloud/drive_helper.py" list --parent-id "<id>"
+
+# baixar um arquivo do banco pra um caminho local
+python "agente aidealab/automation/cloud/drive_helper.py" download --file-id "<id>" --out "agente aidealab/automation/cloud/_run/img/hook.png"
+
+# ler um metadata.json como texto (pra checar temas recentes)
+python "agente aidealab/automation/cloud/drive_helper.py" read-text --file-id "<id>"
+
+# criar a pasta de destino do carrossel
+python "agente aidealab/automation/cloud/drive_helper.py" mkdir --parent-id "<id-04-Carrosseis>" --title "<slug-do-tema>"
+
+# subir um PNG final ou o metadata.json (upload por CAMINHO de arquivo, nunca por texto/base64)
+python "agente aidealab/automation/cloud/drive_helper.py" upload --parent-id "<id-da-pasta-nova>" --file "agente aidealab/automation/cloud/_run/final/01_hook.png"
+
+# mover a imagem do banco usada pro arquivo, depois de usar
+python "agente aidealab/automation/cloud/drive_helper.py" move --file-id "<id>" --new-parent-id "<id-01-Referencias-Instagram-img-ref>"
+```
+
+`$AIDEALAB_FOLDER_ID` (pasta `Clientes/aidealab` no Drive) vem como variável
+de ambiente já setada pelo workflow. Localize as subpastas (`02-Materiais-Brutos`,
+`04-Carrosseis`, `01-Referencias/Instagram/img-ref`) com `find-folder`
+encadeado a partir dela -- os IDs não são fixos aqui de propósito, confira
+sempre.
+
+Trabalhe dentro de `agente aidealab/automation/cloud/_run/` (crie com
+`mkdir -p`) para os arquivos temporários de cada rodada -- HTML, PNGs
+intermediários e finais. Essa pasta está no `.gitignore` (nunca vira commit),
+mas o workflow do GitHub Actions sobe o conteúdo dela como *artifact* da
+Action ao final do job, mesmo se algo falhar -- é uma rede de segurança pra
+recuperar os PNGs manualmente caso o upload pro Drive dê problema.
+
+## Regras obrigatórias desta rodada
+
+- **Antes de gerar imagem nova, confira `02-Materiais-Brutos/img-ref`** por
+  imagens do banco ainda não usadas (baixe candidatas com `download` pra
+  `/tmp` e inspecione o PNG salvo -- nunca decida só pelo nome do arquivo).
+  **Geração via Higgsfield NÃO está disponível nesta rotina por padrão** --
+  diferente da sessão interativa, aqui não há MCP do Higgsfield conectado, e
+  o caminho alternativo (API REST própria, `api.higgsfield.ai`, autenticação
+  por API key separada do app) não está implementado ainda porque o endpoint
+  exato do modelo `soul_2` e a existência de um equivalente a
+  `remove_background` nessa API não foram confirmados na documentação oficial
+  no momento em que esta rotina foi configurada (ver README.md desta pasta).
+  Rode 100% a partir do banco `img-ref` -- é o que toda execução recente
+  bem-sucedida desta skill já faz de qualquer forma.
+  **Checagem de conteúdo obrigatória, em resolução real (não thumbnail):**
+  rejeite qualquer imagem com nudez ou insinuação sexual, texto/código/
+  legenda falsa incrustada na própria imagem (defeito recorrente de bancos de
+  imagem geradas por IA), ou logo/personagem de marca de terceiros (ex.:
+  grifes, Apple, super-heróis licenciados). Documente cada rejeição e o
+  motivo no `metadata.json` da peça (campo `checagem_conteudo_sensivel`) --
+  isso evita que a próxima rodada baixe a mesma imagem ruim de novo.
+- Miolo do carrossel SEMPRE com imagem real do banco -- **nunca gradiente
+  liso/procedural como fundo sozinho**. Se o banco não cobrir o tema (imagens
+  insuficientes, ou todas rejeitadas na checagem de conteúdo), **pare esse
+  carrossel específico, marque `status: "bloqueado"` no metadata.json com o
+  motivo, e siga pro próximo tema** -- não substitua por fundo procedural. (Isto é mais
+  rígido que uma execução anterior desta mesma automação, que usou fundo
+  procedural como fallback documentado; a partir de agora isso não é mais
+  aceito -- bloquear e reportar é o caminho certo.)
+- Render local do texto: motor em `skills/criar-post/templates/render-engine/`
+  (capture.py via Playwright -- o Chromium já vem instalado pelo workflow via
+  `playwright install chromium --with-deps`, não precisa reinstalar).
+  Confere cor por pixel-sample (a palavra-chave do monumento tem que sair no
+  hex exato da família de acento escolhida, nunca cream/branco) e o gap
+  `.mword`/`.script` (-10 a -35px) antes de aceitar o slide -- é checagem
+  bloqueante, ver SKILL.md.
+- Otimize cada PNG final com `pngquant --quality=65-90 --strip` +
+  `optipng -o2` (ambos já instalados pelo workflow) antes de subir pro Drive
+  -- reduz ~70% do tamanho sem perda visível e o upload por `drive_helper.py`
+  é rápido de qualquer forma (upload por arquivo local, não por base64).
+- **Destino: SOMENTE `04-Carrosseis/<slug-do-tema>/`** (material de trabalho).
+  **NÃO copie nem crie nada em `06-Aprovados-para-Postar/RASCUNHOS`** --
+  essa pasta é portão humano, a aprovação pra postar é manual, feita depois
+  por um humano revisando o resultado. `status` no metadata.json desta rodada
+  é sempre `"rascunho"` (ou `"bloqueado"` se travou), nunca `"aprovado"`.
+- Ao terminar (ou travar) cada carrossel, mova (`drive_helper.py move`) as
+  imagens do banco que ele usou de `02-Materiais-Brutos/img-ref` para
+  `01-Referencias/Instagram/img-ref`.
+- Nenhuma imagem pode se repetir entre os 3 carrosséis desta rodada nem com
+  carrosséis já existentes em `04-Carrosseis` ou `06-Aprovados-para-Postar`
+  -- confira por hash perceptual (`imagehash`, já no requirements.txt) contra
+  os PNGs finais de carrosséis recentes, baixando só uma amostra pequena
+  (últimos 4-5) pra não gastar tempo/token à toa, e por localização no banco
+  (se a imagem ainda está em `02-Materiais-Brutos/img-ref`, ainda não foi
+  usada -- é a convenção que a própria skill mantém).
+- Skills de conteúdo (`marketing-skills:*`, `marketing:content-creation`,
+  `humanizer`) podem não estar instaladas neste ambiente de CI -- se a
+  ferramenta Skill não encontrar alguma, **siga sem ela** (a orientação delas
+  já está resumida no SKILL.md da `criar-post`), não trave a rotina por causa
+  disso.
+- Fontes: Tempting normalmente não está disponível neste runner. Use Google
+  Fonts (`fonts.googleapis.com`/`fonts.gstatic.com`, com acesso de rede
+  normal aqui, ao contrário de sandbox restrito) -- Inter 900 + Manrope
+  sempre. Para o script do lockup, tente `Tempting` primeiro (caso o
+  workflow tenha instalado o arquivo da fonte -- confira
+  `agente aidealab/automation/cloud/fonts/`); se não existir, use o par
+  alternativo **Helvetica Neue + Shelley Script/Playfair Display Italic 900**
+  documentado no SKILL.md como rede de segurança -- troque o PAR inteiro,
+  nunca só metade.
+
+Se algo travar de verdade (ferramenta indisponível, geração falha muitas
+vezes, credencial faltando), pare aquele carrossel específico, documente o
+bloqueio no metadata.json dele com `status: "bloqueado"` e o motivo, e siga
+para o próximo carrossel -- não invente workaround arriscado.
+
+Ao final dos 3 (ou menos, se algum bloqueou), escreva um resumo curto (texto
+puro) do que foi feito: quais temas, quais imagens usadas (banco vs
+Higgsfield), quais checagens passaram, e qualquer bloqueio -- esse texto vira
+o log da Action, é a única forma de alguém acompanhar essa rodada sem abrir o
+Drive.
