@@ -38,6 +38,10 @@ Thumbs.db
 .parcel-cache/
 .next/
 .nuxt/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
 
 # Testing
 coverage/
