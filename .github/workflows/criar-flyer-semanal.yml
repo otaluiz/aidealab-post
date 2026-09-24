@@ -44,19 +44,20 @@ jobs:
 
       - name: Rodar rotina (criar-flyer, 1 peça, modelo Haiku)
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
           GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
           GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          claude --bare -p "$(cat 'agente aidealab/automation/cloud/weekly-flyer-prompt-cloud.txt')" \
+          claude -p "$(cat 'agente aidealab/automation/cloud/weekly-flyer-prompt-cloud.txt')" \
             --model claude-haiku-4-5-20251001 \
             --permission-mode dontAsk \
             --permission-prompts none \
             --allowedTools "Read,Write,Edit,Bash,Glob,Grep" \
             2>&1 | tee "agente aidealab/automation/cloud/_run_log.txt"
+          # Sem --bare (só aceita ANTHROPIC_API_KEY, não CLAUDE_CODE_OAUTH_TOKEN).
           # Mesma nota do workflow de carrossel: se as flags de permissão
           # novas derem problema, troque por --dangerously-skip-permissions.
 

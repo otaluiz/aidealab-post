@@ -45,18 +45,18 @@ jobs:
           export PATH="$HOME/.local/bin:$PATH"
           claude --version
 
-      - name: "[claude-cli] Testar auth + --bare + modelo Haiku + flags de permissão"
+      - name: "[claude-cli] Testar auth (assinatura) + modelo Haiku + flags de permissão"
         if: inputs.test_claude_cli
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          if [ -z "$ANTHROPIC_API_KEY" ]; then
-            echo "::error::Secret ANTHROPIC_API_KEY não configurado -- veja agente aidealab/automation/cloud/README.md"
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN não configurado -- rode 'claude setup-token' localmente e cole o valor (veja agente aidealab/automation/cloud/README.md)"
             exit 1
           fi
           set +e
-          claude --bare -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
+          claude -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
             --model claude-haiku-4-5-20251001 \
             --permission-mode dontAsk \
             --permission-prompts none \
@@ -67,12 +67,12 @@ jobs:
           if [ $STATUS -ne 0 ]; then
             echo "::warning::Flags novas (--permission-mode/--permission-prompts) falharam (exit $STATUS)."
             echo "Tentando fallback com --dangerously-skip-permissions..."
-            claude --bare -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
+            claude -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
               --model claude-haiku-4-5-20251001 \
               --dangerously-skip-permissions
             echo "::notice::Fallback funcionou -- troque as flags de permissão nos workflows criar-post-diario.yml e criar-flyer-semanal.yml por --dangerously-skip-permissions."
           else
-            echo "::notice::Flags de permissão novas (dontAsk/none) funcionaram normalmente, nada a trocar."
+            echo "::notice::Flags de permissão novas (dontAsk/none) funcionaram normalmente, nada a trocar. Auth via assinatura (CLAUDE_CODE_OAUTH_TOKEN) confirmada."
           fi
 
       - name: "[drive] Instalar dependências do drive_helper"
