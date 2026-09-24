@@ -1,0 +1,97 @@
+Rotina semanal automática em nuvem (GitHub Actions, sem supervisão humana,
+sem computador local ligado). Cliente: aidealab. Modelo: Haiku -- rodada
+econômica, siga as instruções ao pé da letra em vez de reinterpretar; na
+dúvida, prefira a leitura conservadora (bloquear e documentar) a inventar.
+
+Comece lendo por inteiro, com a ferramenta Read, o arquivo
+`agente aidealab/skills/criar-flyer/SKILL.md` e siga as instruções dele do
+início ao fim para gerar **1 flyer novo** (peça de imagem única, 1080x1440).
+Não peça confirmação de formato -- flyer é sempre imagem única, nunca
+carrossel (isso é a `criar-post`, skill diferente).
+
+## Acesso ao Google Drive nesta rodada
+
+Igual à rotina de carrossel: não há Drive sincronizado localmente neste
+runner. Use exclusivamente `agente aidealab/automation/cloud/drive_helper.py`
+via Bash (`find-folder`, `list`, `download`, `read-text`, `upload`, `mkdir`,
+`move`) -- nunca uma ferramenta MCP do Google Drive, pelo mesmo motivo de
+custo de token documentado no prompt do carrossel. `$AIDEALAB_FOLDER_ID` (a
+pasta `Clientes/aidealab`) vem pronta como variável de ambiente; localize
+`02-Materiais-Brutos/criativo-ref`, `01-Referencias/Instagram/flyer-desing`,
+`03-Roteiros` e `07-Flyer` a partir dela com `find-folder`.
+
+Trabalhe dentro de `agente aidealab/automation/cloud/_run/` (crie com
+`mkdir -p`) para os arquivos temporários -- está no `.gitignore` e o workflow
+sobe o conteúdo como *artifact* da Action ao final do job (rede de segurança
+se o upload pro Drive falhar).
+
+## Escolha do briefing
+
+1. Confira `03-Roteiros` por um `.md` de roteiro (ex.:
+   `AIDEA_LAB_30_Flyers_Prompts.md`) via `read-text`. Se existir e tiver
+   peças ainda não feitas (compare com o que já está em `07-Flyer`), a fila
+   dele manda: tema, headline, serviço e CTA vêm de lá -- **nunca o prompt de
+   imagem do documento**, a direção de arte é decidida olhando as
+   referências reais (ver abaixo).
+2. Se não houver roteiro pendente, escolha você mesma um tema de serviço da
+   aidealab (marketing/IA/automação pra pequeno negócio) coerente com o que
+   já existe em `07-Flyer` (liste e leia 2-3 `metadata.json` recentes antes,
+   pra não repetir).
+
+## Origem da imagem (ordem de preferência, custo crescente)
+
+1. **Banco `02-Materiais-Brutos/criativo-ref`** -- baixe candidatas, inspecione
+   em resolução real (mesma checagem de conteúdo sensível do prompt de
+   carrossel: nudez, texto/código falso embutido, logo de terceiros --
+   rejeite e documente). Já vêm em 3:4 e >=1080px, não precisam de upscale.
+2. **Geração Higgsfield NÃO está disponível nesta rotina por padrão** -- não
+   há MCP do Higgsfield conectado neste runner, e o caminho alternativo (API
+   REST própria em `api.higgsfield.ai`, autenticação por API key separada do
+   app) não está implementado ainda: o endpoint exato do modelo `soul_2` e a
+   existência de um equivalente a `remove_background` nessa API não foram
+   confirmados na documentação oficial no momento em que esta rotina foi
+   configurada (ver README.md da pasta `automation/cloud`). Se o banco não
+   cobrir o tema, vá direto pro bloqueio abaixo.
+3. Nunca gere via ComfyUI local (não existe nesse runner) e nunca substitua
+   por fundo procedural -- se nem banco nem Higgsfield renderem uma imagem
+   utilizável, **pare, marque `status: "bloqueado"` no metadata.json com o
+   motivo, e encerre** (não há "próximo flyer" nesta rotina, é só 1 por
+   rodada).
+
+Recorte com `rembg` local (`pip install rembg`, já no requirements.txt desta
+pasta) -- nunca `remove_background` pago do Higgsfield pra este caso. Upscale
+sempre local (Lanczos + unsharp, Pillow), nunca `bytedance_image_upscale`.
+
+## Tipografia -- atenção, é diferente do carrossel
+
+`criar-flyer` proíbe serifada em qualquer lugar (o cliente rejeitou
+Playfair Display explicitamente para peças de flyer, mesmo como
+substituto de emergência do script). Par fixo: **Inter 900 + Tempting**.
+Se o arquivo da fonte Tempting não estiver disponível neste runner (confira
+`agente aidealab/automation/cloud/fonts/`), a rede de segurança aqui é
+**Inter 900 sozinho** para o lockup inteiro (sem trocar por uma família
+serifada) -- documente essa substituição no metadata.json. Corpo sempre
+Manrope.
+
+## Render e QA
+
+Mesmo motor: `agente aidealab/skills/criar-post/templates/render-engine/`
+(capture.py via Playwright, Chromium já instalado pelo workflow). Gate
+obrigatório: PNG exatamente 1080x1440, coluna uniforme na borda direita tem
+que ser 0px (assinatura de render cortado -- ver SKILL.md `criar-flyer`,
+seção "Render e QA"). Depois do gate, confira visualmente palavra estourando
+o quadro, acento comido pela script, sujeito engolindo a palavra. Otimize o
+PNG final com `pngquant --quality=65-90 --strip` + `optipng -o2` antes de
+subir.
+
+## Entrega
+
+Salva o PNG final + `metadata.json` (schema equivalente ao do carrossel, mas
+`slides` tem 1 item só) em **`07-Flyer/<slug-do-tema>/`** via
+`drive_helper.py upload` -- nunca em `04-Carrosseis` (é da `criar-post`) nem
+em `06-Aprovados-para-Postar` (portão humano, aprovação manual). `status`
+sempre `"rascunho"` ou `"bloqueado"`, nunca `"aprovado"`.
+
+Ao final, escreva um resumo curto (texto puro): tema escolhido, origem da
+imagem (banco/Higgsfield), estilo gráfico usado, créditos Higgsfield gastos
+(se houver), e qualquer bloqueio -- isso vira o log da Action.
