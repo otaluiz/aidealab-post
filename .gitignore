@@ -42,5 +42,9 @@ Thumbs.db
 # Testing
 coverage/
 
+# Python
+__pycache__/
+*.pyc
+
 # Misc
 *.local

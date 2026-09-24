@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """
 Testa a rotina cloud manualmente.
-Simula google-drive MCP com dados locais.
-Objetivo: confirmar que tudo funciona "como se o PC não estivesse ligado".
+Tenta o Google Drive local primeiro (LOCAL_DRIVE_PATH, só existe no PC do
+Windows); se a pasta não existir -- como em qualquer ambiente que não seja
+esse PC específico -- cai pra fila versionada no repo (mesma fonte que
+publish_next.py e o cron do GitHub Actions usam), via load_queue().
+
+IMPORTANTE: mesmo com o fallback, este script só publica de verdade num
+ambiente com saída de rede liberada pra graph.facebook.com e supabase.co.
+Uma sessão de nuvem Claude Code roda atrás de um proxy que bloqueia os dois
+por política da organização -- o teste de acesso abaixo vai falhar aí com
+connect_rejected, não por bug de código. O publicador autônomo real é o
+cron `.github/workflows/post-instagram-daily.yml` (runner do GitHub Actions
+tem saída de rede normal); use este script só pra depuração local.
 """
 
 import os
@@ -11,6 +21,10 @@ import sys
 from pathlib import Path
 from datetime import datetime
 import requests
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+import publish_next as pn  # reaproveita load_queue/build_caption/repair_mojibake já testados
 
 # Credenciais (mesmo do .env.local)
 INSTAGRAM_ACCESS_TOKEN = os.getenv("INSTAGRAM_ACCESS_TOKEN")
@@ -56,13 +70,36 @@ def test_access() -> bool:
         return False
 
 
+def find_next_carousel_from_repo_queue() -> dict:
+    """Fallback: usa a fila versionada no repo (skills/post-instagram/queue/),
+    a mesma fonte que publish_next.py e o GitHub Actions leem."""
+    print(f"[SEARCH] Local Drive path unavailable -- falling back to repo queue ({pn.QUEUE_ROOT})...")
+
+    items = [it for it in pn.load_queue() if it["kind"] == "carrossel"]
+    if pn.already_posted_today(items):
+        print("[STOP] 1-post-per-day guard active.")
+        return None
+
+    nxt = next((it for it in items if not it["metadata"].get("postado", False)), None)
+    if not nxt:
+        print("[INFO] Queue empty")
+        return None
+
+    meta = dict(nxt["metadata"])
+    meta["folder_path"] = str(nxt["folder"])
+    meta["folder_id"] = nxt["label"]
+    meta["_meta_path"] = str(nxt["meta_path"])
+    print(f"[OK] Next: {meta.get('carousel_id', 'no-id')} ({meta['folder_id']})")
+    return meta
+
+
 def find_next_carousel() -> dict:
     """Busca proximo carrossel com postado:false."""
     print(f"[SEARCH] Looking for next carousel...")
 
     if not LOCAL_DRIVE_PATH.exists():
         print(f"[ERROR] Folder not found: {LOCAL_DRIVE_PATH}")
-        return None
+        return find_next_carousel_from_repo_queue()
 
     candidates = []
     for folder in sorted(LOCAL_DRIVE_PATH.iterdir()):
@@ -225,7 +262,7 @@ def main():
     slides = next_carousel.get("slides", [])
 
     for slide in sorted(slides, key=lambda s: s.get("ordem", 999)):
-        arquivo = slide.get("arquivo")
+        arquivo = slide.get("arquivo") or slide.get("nome")
         image_path = str(Path(folder_path) / arquivo)
 
         if not Path(image_path).exists():
@@ -240,9 +277,11 @@ def main():
 
     # Publicar
     print("\n[STAGE 3] Publish to Instagram...")
-    caption = next_carousel.get("legenda", "") + "\n\n" + " ".join(
-        next_carousel.get("hashtags", [])
-    )
+    try:
+        caption = pn.build_caption(next_carousel)
+    except ValueError as e:
+        print(f"[ERROR] {e}")
+        sys.exit(1)
     post_id = publish_carousel(slides, caption)
 
     if not post_id:

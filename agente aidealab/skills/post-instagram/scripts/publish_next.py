@@ -36,6 +36,28 @@ SUPABASE_BUCKET = "ig-publish"
 DIA_RE = re.compile(r"Dia(\d+)([a-z]?)", re.IGNORECASE)
 
 
+def repair_mojibake(s: str) -> str:
+    """Undoes a cp1252<->utf-8 double-encoding round trip (e.g. 'nÃ£o' -> 'não').
+    Clean text fails the round trip and is returned unchanged."""
+    cur = s
+    for _ in range(3):
+        try:
+            nxt = cur.encode("cp1252").decode("utf-8")
+        except (UnicodeDecodeError, UnicodeEncodeError):
+            break
+        if nxt == cur:
+            break
+        cur = nxt
+    return cur
+
+
+MOJIBAKE_MARKERS = ("Ã", "â€", "Â")
+
+
+def has_mojibake(s: str) -> bool:
+    return any(m in s for m in MOJIBAKE_MARKERS)
+
+
 def load_env_file(path: Path) -> None:
     """Carrega KEY=VALUE de um .env.local pras env vars do processo, se ainda não setadas."""
     if not path.exists():
@@ -246,9 +268,13 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
 
 
 def build_caption(meta: Dict[str, Any]) -> str:
-    legenda = meta.get("legenda", "")
-    hashtags = " ".join(meta.get("hashtags", []))
-    return f"{legenda}\n\n{hashtags}".strip()
+    legenda = repair_mojibake(meta.get("legenda", ""))
+    tags = meta.get("hashtags", [])
+    hashtags = repair_mojibake(tags) if isinstance(tags, str) else " ".join(repair_mojibake(t) for t in tags)
+    caption = f"{legenda}\n\n{hashtags}".strip()
+    if has_mojibake(caption):
+        raise ValueError(f"Legenda ainda com caracteres corrompidos após reparo: {caption[:200]!r}")
+    return caption
 
 
 def main():
@@ -282,7 +308,11 @@ def main():
     ig_account_id = INSTAGRAM_BUSINESS_ACCOUNT_ID
 
     meta = nxt["metadata"]
-    caption = build_caption(meta)
+    try:
+        caption = build_caption(meta)
+    except ValueError as e:
+        print(f"[ERROR] {e}")
+        sys.exit(1)
 
     if dry_run:
         print(f"[DRY-RUN] Publicaria {nxt['kind']} '{nxt['label']}' com legenda:\n{caption}")
@@ -305,7 +335,11 @@ def main():
         slides = sorted(meta.get("slides", []), key=lambda s: s.get("ordem", 999))
         child_urls = []
         for slide in slides:
-            image_path = nxt["folder"] / slide["arquivo"]
+            arquivo = slide.get("arquivo") or slide.get("nome")
+            if not arquivo:
+                print(f"[ERROR] Slide sem 'arquivo'/'nome': {slide}")
+                sys.exit(1)
+            image_path = nxt["folder"] / arquivo
             if not image_path.exists():
                 print(f"[ERROR] Slide não encontrado: {image_path}")
                 sys.exit(1)

@@ -1,21 +1,21 @@
-﻿{
-    "post_id":  "auto_flyer",
-    "cliente":  "aidealab",
-    "tipo":  "imagem_unica",
-    "arquivo":  "auto_flyer.png",
-    "status":  "aprovado",
-    "postado":  false,
-    "tema":  "automacoes e IA - chatbots, leads, dashboards",
-    "familia_cor":  "escuro-creme",
-    "formato":  "1080x1440",
-    "texto":  "AUTOMAÃ‡ÃƒO. Sem ornamento, sem canto arredondado â€” a automaÃ§Ã£o que a gente entrega mostra a estrutura: vocÃª vÃª o que roda, e por quÃª.",
-    "legenda":  "Entra: processo manual, planilha, WhatsApp sem resposta.\nSai: fluxo que roda sozinho e relatÃ³rio que vocÃª confere.\n\nChatbot, captaÃ§Ã£o de lead, dado preditivo, dashboard ao vivo â€” automaÃ§Ã£o que nÃ£o vira caixa-preta.",
-    "hashtags":  [
-                     "#aidealab",
-                     "#automacao",
-                     "#ia",
-                     "#chatbot",
-                     "#tecnologia"
-                 ],
-    "handle":  "@aidealab7"
+{
+  "post_id": "auto_flyer",
+  "cliente": "aidealab",
+  "tipo": "imagem_unica",
+  "arquivo": "auto_flyer.png",
+  "status": "aprovado",
+  "postado": false,
+  "tema": "automacoes e IA - chatbots, leads, dashboards",
+  "familia_cor": "escuro-creme",
+  "formato": "1080x1440",
+  "texto": "AUTOMAÇÃO. Sem ornamento, sem canto arredondado — a automação que a gente entrega mostra a estrutura: você vê o que roda, e por quê.",
+  "legenda": "Entra: processo manual, planilha, WhatsApp sem resposta.\nSai: fluxo que roda sozinho e relatório que você confere.\n\nChatbot, captação de lead, dado preditivo, dashboard ao vivo — automação que não vira caixa-preta.",
+  "hashtags": [
+    "#aidealab",
+    "#automacao",
+    "#ia",
+    "#chatbot",
+    "#tecnologia"
+  ],
+  "handle": "@aidealab7"
 }
