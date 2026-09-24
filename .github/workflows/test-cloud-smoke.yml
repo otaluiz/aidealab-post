@@ -1,0 +1,95 @@
+name: aidealab - smoke test (nuvem)
+
+# Teste manual, leve e barato, pra validar as duas partes mais incertas da
+# automação de criar-post/criar-flyer ANTES de rodar o fluxo completo de
+# verdade (que leva ~90min e gera conteúdo real): (1) o Claude Code CLI
+# headless com as flags novas de permissão + modelo Haiku, e (2) o
+# drive_helper.py conseguindo autenticar e listar uma pasta real do Drive.
+# Não toca em nada do post-instagram (automação separada, já validada).
+#
+# Rodar via Actions -> "aidealab - smoke test (nuvem)" -> Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_claude_cli:
+        description: "Testar instalação + auth + flags do Claude Code CLI"
+        type: boolean
+        default: true
+      test_drive:
+        description: "Testar drive_helper.py (precisa dos secrets do Drive já configurados)"
+        type: boolean
+        default: false
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        if: inputs.test_drive
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: "[claude-cli] Instalar Claude Code CLI"
+        if: inputs.test_claude_cli
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: "[claude-cli] Testar versão instalada"
+        if: inputs.test_claude_cli
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          claude --version
+
+      - name: "[claude-cli] Testar auth + --bare + modelo Haiku + flags de permissão"
+        if: inputs.test_claude_cli
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Secret ANTHROPIC_API_KEY não configurado -- veja agente aidealab/automation/cloud/README.md"
+            exit 1
+          fi
+          set +e
+          claude --bare -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
+            --model claude-haiku-4-5-20251001 \
+            --permission-mode dontAsk \
+            --permission-prompts none \
+            --allowedTools "" \
+            > /tmp/claude_out.txt 2>&1
+          STATUS=$?
+          cat /tmp/claude_out.txt
+          if [ $STATUS -ne 0 ]; then
+            echo "::warning::Flags novas (--permission-mode/--permission-prompts) falharam (exit $STATUS)."
+            echo "Tentando fallback com --dangerously-skip-permissions..."
+            claude --bare -p "Responda em uma linha, só o texto, nada mais: qual é 2+2?" \
+              --model claude-haiku-4-5-20251001 \
+              --dangerously-skip-permissions
+            echo "::notice::Fallback funcionou -- troque as flags de permissão nos workflows criar-post-diario.yml e criar-flyer-semanal.yml por --dangerously-skip-permissions."
+          else
+            echo "::notice::Flags de permissão novas (dontAsk/none) funcionaram normalmente, nada a trocar."
+          fi
+
+      - name: "[drive] Instalar dependências do drive_helper"
+        if: inputs.test_drive
+        run: pip install -r "agente aidealab/automation/cloud/requirements.txt"
+
+      - name: "[drive] Testar autenticação + listar Clientes/aidealab"
+        if: inputs.test_drive
+        env:
+          AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: |
+          if [ -z "$AIDEALAB_FOLDER_ID" ] || [ -z "$GOOGLE_DRIVE_REFRESH_TOKEN" ]; then
+            echo "::error::Secrets do Drive não configurados -- veja agente aidealab/automation/cloud/README.md seção 3"
+            exit 1
+          fi
+          python "agente aidealab/automation/cloud/drive_helper.py" list --parent-id "$AIDEALAB_FOLDER_ID" --folders-only
+          echo "::notice::Se a linha acima listou pastas tipo 02-Materiais-Brutos/04-Carrosseis/07-Flyer, o drive_helper.py está funcionando."
