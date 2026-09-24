@@ -16,11 +16,32 @@ respectivo `.yml`, antes de mexer nos prompts.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
-### 1. Secret `ANTHROPIC_API_KEY`
+### 1. Secret `CLAUDE_CODE_OAUTH_TOKEN` (usa sua assinatura, não API paga)
 
-Gere uma API key em [console.anthropic.com](https://console.anthropic.com)
-(Settings → API Keys). Essa key é cobrada por uso — é uma conta separada da
-assinatura Claude/Claude Code que você já usa interativamente.
+Não precisa criar conta de API nova nem pagar por token separadamente — os
+workflows autenticam com a **mesma assinatura Claude/Claude Code** que você já
+usa localmente (Pro/Max/Team), via um token OAuth de longa duração (1 ano).
+
+Na sua máquina, onde você já está logado no Claude Code:
+```bash
+claude setup-token
+```
+Isso abre o navegador pra você aprovar (mesmo fluxo do `/login`) e imprime o
+token no terminal **uma única vez** — copie na hora, ele não fica salvo em
+arquivo local. Cole esse valor como secret `CLAUDE_CODE_OAUTH_TOKEN`
+(Settings → Secrets and variables → Actions → New repository secret).
+
+**Atenção a duas coisas:**
+- Esse token expira em **1 ano** — sem aviso automático em CI, então marque
+  um lembrete pra gerar um novo antes disso (`claude setup-token` de novo,
+  atualiza o secret).
+- As chamadas da automação **consomem a mesma janela de uso de 5 horas da
+  sua assinatura** que o uso interativo normal (não é uma cota separada tipo
+  API paga). Com Haiku e só 3 carrosséis/dia + 1 flyer/semana o consumo deve
+  ser baixo, mas se você usar o Claude Code pesado no mesmo horário do cron
+  (8h BRT), pode competir pela mesma janela. Se notar isso, o ajuste é mudar
+  o horário do cron nos `.yml` (`cron: "0 11 * * *"`) pra um horário que você
+  não usa.
 
 ### 2. Secret `AIDEALAB_DRIVE_FOLDER_ID`
 
