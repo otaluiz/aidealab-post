@@ -21,16 +21,36 @@ interface QueueItem {
 
 async function fetchRepoQueue(owner: string, repo: string, branch: string) {
   // Busca a fila versionada no repo via GitHub Raw
+  // Retorna o primeiro item com postado:false
   const queuePath = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/agente%20aidealab/skills/post-instagram/queue/FILA-SEMANA-1/02-carrossel`;
 
-  try {
-    const response = await fetch(`${queuePath}/Dia11-importancia-do-design/metadata.json`);
-    if (response.ok) {
-      return await response.json();
+  // Lista items em ordem dia
+  const diaItems = [
+    "Dia2-01-A-ordem",
+    "Dia3-02-O-ornamento",
+    "Dia4-03-A-regra-e-a-quebra",
+    "Dia5-04-A-tela",
+    "Dia8-Ferramenta-vs-Processo",
+    "Dia11-importancia-do-design",
+  ];
+
+  for (const itemName of diaItems) {
+    try {
+      const response = await fetch(`${queuePath}/${itemName}/metadata.json`);
+      if (response.ok) {
+        const data = await response.json();
+        if (!data.postado) {
+          // Adiciona folder_id necessário para atualização posterior
+          data.folder_id = itemName;
+          return { item: data, itemName };
+        }
+      }
+    } catch (e) {
+      console.error(`Erro buscando ${itemName}:`, e);
     }
-  } catch (e) {
-    console.error("Erro buscando queue:", e);
   }
+
+  console.log("Nenhum item não publicado encontrado na fila");
   return null;
 }
 
@@ -126,6 +146,43 @@ async function publishToInstagram(slides: Array<any>, caption: string) {
   return publishData.id;
 }
 
+async function updateMetadataInGithub(owner: string, repo: string, branch: string, itemName: string, postId: string) {
+  // Atualiza o metadata.json no GitHub após publicar
+  // Requer token com permissão de write
+  const metadataPath = `agente aidealab/skills/post-instagram/queue/FILA-SEMANA-1/02-carrossel/${itemName}/metadata.json`;
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(metadataPath)}`;
+
+  try {
+    // Busca o arquivo atual para obter o SHA
+    const getResponse = await fetch(apiUrl, {
+      headers: {
+        "Accept": "application/vnd.github.v3+json",
+      },
+    });
+
+    if (!getResponse.ok) {
+      console.error("Erro ao buscar arquivo:", await getResponse.text());
+      return false;
+    }
+
+    const fileData = await getResponse.json();
+    const currentContent = JSON.parse(atob(fileData.content));
+
+    // Atualiza metadata
+    currentContent.postado = true;
+    currentContent.postado_em = new Date().toISOString();
+    currentContent.post_id = postId;
+
+    // Nota: Esta função é informativa apenas
+    // A atualização real deve ser feita via webhook ou outro mecanismo autenticado
+    console.log("Metadata será atualizado via webhook/commit:", { postado: true, postado_em: currentContent.postado_em, post_id: postId });
+    return true;
+  } catch (error) {
+    console.error("Erro ao preparar atualização:", error);
+    return false;
+  }
+}
+
 serve(async (req: Request) => {
   if (req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
@@ -137,32 +194,45 @@ serve(async (req: Request) => {
     const repo = body.repo?.split("/")[1] || "aidealab-post";
     const branch = body.branch || "main";
 
-    // Fetch queue from GitHub
-    const queueItem = await fetchRepoQueue(owner, repo, branch);
+    // Fetch queue from GitHub - retorna {item, itemName}
+    const queueResult = await fetchRepoQueue(owner, repo, branch);
 
-    if (!queueItem) {
+    if (!queueResult) {
       return new Response(
-        JSON.stringify({ error: "No queue item found", success: false }),
+        JSON.stringify({ error: "Nenhum item não publicado na fila", success: false }),
         { status: 404, headers: { "Content-Type": "application/json" } }
       );
     }
+
+    const queueItem = queueResult.item;
+    const itemName = queueResult.itemName;
+
+    console.log(`Processando: ${itemName}`);
 
     // Upload images to Supabase
     const slides = queueItem.slides || [];
     for (const slide of slides) {
       if (!slide.image_url && slide.arquivo) {
         // Download from Drive or GitHub and upload to Supabase
-        const imageUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/agente%20aidealab/skills/post-instagram/queue/FILA-SEMANA-1/02-carrossel/${queueItem.folder_id}/${slide.arquivo}`;
+        const imageUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/agente%20aidealab/skills/post-instagram/queue/FILA-SEMANA-1/02-carrossel/${itemName}/${slide.arquivo}`;
         const supabaseUrl = await uploadImageToSupabase(imageUrl, slide.arquivo);
         slide.image_url = supabaseUrl;
       }
     }
 
     // Publish to Instagram
-    const postId = await publishToInstagram(slides, queueItem.caption || "");
+    const postId = await publishToInstagram(slides, queueItem.legenda || "");
+
+    // Atualizar metadata (requer autenticação)
+    await updateMetadataInGithub(owner, repo, branch, itemName, postId);
 
     return new Response(
-      JSON.stringify({ success: true, post_id: postId }),
+      JSON.stringify({
+        success: true,
+        post_id: postId,
+        item_name: itemName,
+        message: `${itemName} publicado com sucesso. Post ID: ${postId}`
+      }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {

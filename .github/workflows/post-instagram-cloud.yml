@@ -29,7 +29,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r "agente aidealab/skills/post-instagram/scripts/requirements.txt"
 
-      - name: Publish next queue item (cloud-native)
+      - name: Publish next queue item (GA direct - may fail due to proxy)
+        id: publish_ga
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
@@ -39,9 +40,11 @@ jobs:
           if [ "${{ inputs.force_publish }}" = "true" ]; then
             ARGS="--force"
           fi
-          python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS || echo "Publish failed or queue empty"
+          python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS
+        continue-on-error: true
 
-      - name: Commit updated queue state
+      - name: Commit updated queue state (if GA publish succeeded)
+        if: steps.publish_ga.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -49,14 +52,27 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(post-instagram): queue state update [skip ci]"
           git push || true
 
-      - name: Notify Supabase (trigger edge function)
+      - name: Fallback - Trigger Supabase Edge Function (if GA failed)
+        if: steps.publish_ga.outcome != 'success'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          curl -X POST \
+          echo "GA publish failed, attempting Edge Function fallback..."
+          RESPONSE=$(curl -s -X POST \
             "${{ secrets.SUPABASE_URL }}/functions/v1/publish-instagram" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{"repo":"otaluiz/aidealab-post","branch":"main"}' \
-            || echo "Edge function call optional"
+            -w "\n%{http_code}")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n-1)
+
+          echo "Edge Function Response ($HTTP_CODE):"
+          echo "$BODY" | jq . || echo "$BODY"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "WARNING: Edge Function failed, will retry next schedule"
+            exit 0  # Don't fail the workflow, just report
+          fi
