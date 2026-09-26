@@ -7,12 +7,14 @@ Windows Task Scheduler, continua funcionando à parte se você quiser manter
 as duas).
 
 Workflows: `.github/workflows/criar-post-diario.yml` (1 carrossel/execução, 8h
-BRT) e `.github/workflows/criar-flyer-semanal.yml` (1 flyer/semana, segunda
-8h BRT). Os dois usam o modelo **Haiku** por padrão — decisão explícita de
-custo, não é a mesma coisa que a rotina local (que usa Sonnet). Se algum
-carrossel sair com qualidade abaixo do esperado, o primeiro ajuste a tentar é
-trocar `--model claude-haiku-4-5-20251001` por `--model claude-sonnet-5` no
-respectivo `.yml`, antes de mexer nos prompts.
+BRT, modelo **Sonnet**) e `.github/workflows/criar-flyer-semanal.yml` (1
+flyer/semana, segunda 8h BRT, modelo **Haiku**). O carrossel foi trocado de
+Haiku pra Sonnet depois de um teste real em produção: com Haiku a parte
+visual saiu ruim (baixou 1 imagem só e reusou nos 3 slides do miolo, hook/CTA
+ficaram só com texto — viola regras do SKILL.md da `criar-post`). Se o flyer
+também sair com qualidade abaixo do esperado, o mesmo ajuste vale lá: trocar
+`--model claude-haiku-4-5-20251001` por `--model claude-sonnet-5` no
+`criar-flyer-semanal.yml`.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 

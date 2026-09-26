@@ -5,7 +5,9 @@ name: aidealab - criar-post diário (nuvem)
 # rotina antiga (agente aidealab/automation/run-daily-carousel.ps1, que
 # continua existindo pra quem quiser rodar local também).
 #
-# Modelo Haiku por padrão (economia de custo/token -- ver
+# Modelo Sonnet (trocado do Haiku -- em teste real o Haiku cortou caminho na
+# parte visual: baixou 1 imagem só e reusou nos 3 slides do miolo, hook/CTA
+# saíram só com texto, violando regras do SKILL.md da criar-post. Ver
 # agente aidealab/automation/cloud/README.md). Saída vai SÓ para
 # `04-Carrosseis/<slug>/` no Drive -- a aprovação pra `06-Aprovados-para-
 # Postar/RASCUNHOS` continua manual, feita por um humano depois.
@@ -54,7 +56,7 @@ jobs:
       - name: Instalar Claude Code CLI
         run: curl -fsSL https://claude.ai/install.sh | bash
 
-      - name: Rodar rotina (criar-post, 1 carrossel, modelo Haiku)
+      - name: Rodar rotina (criar-post, 1 carrossel, modelo Sonnet)
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
@@ -64,7 +66,7 @@ jobs:
         run: |
           export PATH="$HOME/.local/bin:$PATH"
           claude -p "$(cat 'agente aidealab/automation/cloud/daily-carousel-prompt-cloud.txt')" \
-            --model claude-haiku-4-5-20251001 \
+            --model claude-sonnet-5 \
             --permission-mode dontAsk \
             --permission-prompts none \
             --allowedTools "Read,Write,Edit,Bash,Glob,Grep" \

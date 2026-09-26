@@ -1,8 +1,8 @@
 Rotina diária automática em nuvem (GitHub Actions, sem supervisão humana, sem
-computador local ligado). Cliente: aidealab. Modelo: Haiku -- rodada
-econômica, siga as instruções ao pé da letra em vez de reinterpretar; se
-alguma instrução parecer ambígua, escolha a leitura mais conservadora (a que
-bloqueia e documenta) em vez de inventar solução.
+computador local ligado). Cliente: aidealab. Modelo: Sonnet -- siga as
+instruções ao pé da letra em vez de reinterpretar; se alguma instrução
+parecer ambígua, escolha a leitura mais conservadora (a que bloqueia e
+documenta) em vez de inventar solução.
 
 Use a skill `criar-post` (em `agente aidealab/skills/criar-post/SKILL.md`) para
 gerar 1 carrossel de Instagram novo, do início ao fim (escolha um
@@ -76,6 +76,13 @@ recuperar os PNGs manualmente caso o upload pro Drive dê problema.
   grifes, Apple, super-heróis licenciados). Documente cada rejeição e o
   motivo no `metadata.json` da peça (campo `checagem_conteudo_sensivel`) --
   isso evita que a próxima rodada baixe a mesma imagem ruim de novo.
+- **Baixe uma imagem DISTINTA do banco para cada slide com papel de imagem**
+  (hook, cada slide do miolo, CTA) -- nunca baixe uma imagem só e reuse ela
+  em vários slides. **Hook e CTA sempre levam imagem própria, nunca saem só
+  com texto/moldura** (regra do SKILL.md da `criar-post`, seção hook/CTA --
+  já aconteceu desta rotina pular a imagem do hook/CTA e reusar a mesma
+  imagem em 3 slides do miolo pra economizar chamadas; isso é o oposto do
+  esperado, mesmo sob pressão de tempo/orçamento).
 - Miolo do carrossel SEMPRE com imagem real do banco -- **nunca gradiente
   liso/procedural como fundo sozinho**. Se o banco não cobrir o tema (imagens
   insuficientes, ou todas rejeitadas na checagem de conteúdo), **pare esse
