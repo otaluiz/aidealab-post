@@ -24,11 +24,18 @@ so existir como aviso foi exatamente como as pecas ruins de 2026-09-21
 saíram com a script boiando longe do bold.
 """
 import json
+import os
 import sys
 import time
 from playwright.sync_api import sync_playwright
 
 RESIDUAL_TOLERANCE_PX = 4
+
+# Sandboxes that pre-install Chromium outside Playwright's own cache (see this
+# repo's environment docs) expose it at this fixed path instead of the
+# version-pinned one Playwright looks for by default -- use it when present,
+# fall back to Playwright's own resolution otherwise (keeps this portable).
+_SANDBOX_CHROMIUM = "/opt/pw-browsers/chromium"
 
 
 class RenderCheckFailed(Exception):
@@ -37,8 +44,12 @@ class RenderCheckFailed(Exception):
 
 def capture(url, out_path, width=1080, height=1440):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
+        launch_kwargs = {"headless": True}
+        if os.path.exists(_SANDBOX_CHROMIUM):
+            launch_kwargs["executable_path"] = _SANDBOX_CHROMIUM
+        browser = p.chromium.launch(**launch_kwargs)
+        page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1,
+                                 ignore_https_errors=True)
         page.goto(url, wait_until="load", timeout=20000)
 
         page.wait_for_function("document.fonts.status === 'loaded'", timeout=10000)
