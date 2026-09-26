@@ -1,6 +1,6 @@
 name: aidealab - criar-post diário (nuvem)
 
-# Roda 3 carrosséis novos por dia, direto de um runner do GitHub Actions --
+# Roda 1 carrossel novo por execução, direto de um runner do GitHub Actions --
 # não depende do computador local (Windows) estar ligado, ao contrário da
 # rotina antiga (agente aidealab/automation/run-daily-carousel.ps1, que
 # continua existindo pra quem quiser rodar local também).
@@ -54,7 +54,7 @@ jobs:
       - name: Instalar Claude Code CLI
         run: curl -fsSL https://claude.ai/install.sh | bash
 
-      - name: Rodar rotina (criar-post, 3 carrosséis, modelo Haiku)
+      - name: Rodar rotina (criar-post, 1 carrossel, modelo Haiku)
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
