@@ -1,7 +1,7 @@
 Rotina semanal automática em nuvem (GitHub Actions, sem supervisão humana,
-sem computador local ligado). Cliente: aidealab. Modelo: Haiku -- rodada
-econômica, siga as instruções ao pé da letra em vez de reinterpretar; na
-dúvida, prefira a leitura conservadora (bloquear e documentar) a inventar.
+sem computador local ligado). Cliente: aidealab. Modelo: Sonnet -- siga as
+instruções ao pé da letra em vez de reinterpretar; na dúvida, prefira a
+leitura conservadora (bloquear e documentar) a inventar.
 
 Comece lendo por inteiro, com a ferramenta Read, o arquivo
 `agente aidealab/skills/criar-flyer/SKILL.md` e siga as instruções dele do
@@ -83,6 +83,19 @@ seção "Render e QA"). Depois do gate, confira visualmente palavra estourando
 o quadro, acento comido pela script, sujeito engolindo a palavra. Otimize o
 PNG final com `pngquant --quality=65-90 --strip` + `optipng -o2` antes de
 subir.
+
+## Não declare sucesso sem render+upload real
+
+Já aconteceu (na rotina irmã de carrossel, mesmo runner) de o modelo escrever
+um resumo de "sucesso" e um `metadata.json` de planejamento sem ter de fato
+rodado o `capture.py` nem subido o PNG pro Drive -- o job termina com exit 0
+e a pasta `07-Flyer/<slug>/` fica sem nenhum arquivo. Antes de escrever o
+resumo final, confirme que (1) o PNG existe em disco com exatamente
+1080x1440 (`PIL Image.size`), (2) `drive_helper.py upload` retornou um `id`
+de arquivo real pro PNG e pro metadata.json, e (3) o `metadata.json` subido
+tem o schema completo (handle, cta, checagens), não um stub. Se qualquer um
+desses três faltar, o resumo final tem que dizer isso explicitamente e
+`status` é `"bloqueado"`, nunca declarar sucesso.
 
 ## Entrega
 

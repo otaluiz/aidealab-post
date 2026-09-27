@@ -81,7 +81,7 @@ usa como está, não renomeia a pasta do cliente. A irmã `carousel-design` serv
 e reescrever com a marca. Antes de montar, escreve para si mesmo duas listas —
 o que vem da referência (grade, camadas, ornamento, ritmo tipográfico, gesto de
 colagem) e o que é inegociável da casa (1080×1440, Inter + Manrope, paleta,
-rodapé `@aidealab7` + `aidealab.com.br`, grão, e a oclusão). Se a referência
+rodapé `@idea_lab7` + `aidealab.com.br`, grão, e a oclusão). Se a referência
 tiver a cor de outra marca, traduz para o parente mais próximo dentro da
 paleta — foi assim que o vermelho do pôster Project 34 virou Magenta.
 
@@ -303,7 +303,7 @@ Psicodélico, Pós-modernismo, Brutalismo, Flat, Contemporâneo.
 
 O que o estilo governa: **grade, cor, ornamento e a família de apoio**.
 O que o estilo NÃO governa: formato 1080×1440, a assinatura de oclusão, o
-rodapé `@aidealab7` + `aidealab.com.br`, e o grão.
+rodapé `@idea_lab7` + `aidealab.com.br`, e o grão.
 
 Validados em produção:
 - **Estilo Suíço** — grade de 6 colunas visível, tudo alinhado à esquerda, uma

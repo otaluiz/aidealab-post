@@ -2,7 +2,9 @@ name: aidealab - criar-flyer semanal (nuvem)
 
 # Gera 1 flyer novo por semana num runner do GitHub Actions. Mesmo desenho
 # da rotina de carrossel (ver criar-post-diario.yml e
-# agente aidealab/automation/cloud/README.md) -- Haiku por padrão, saída só
+# agente aidealab/automation/cloud/README.md) -- modelo Sonnet (trocado do
+# Haiku pelo mesmo motivo do carrossel: Haiku cortava caminho na parte
+# visual e às vezes reportava sucesso sem render/upload real), saída só
 # em `07-Flyer/<slug>/` no Drive, aprovação continua manual.
 
 on:
@@ -45,7 +47,7 @@ jobs:
       - name: Instalar Claude Code CLI
         run: curl -fsSL https://claude.ai/install.sh | bash
 
-      - name: Rodar rotina (criar-flyer, 1 peça, modelo Haiku)
+      - name: Rodar rotina (criar-flyer, 1 peça, modelo Sonnet)
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
@@ -55,7 +57,7 @@ jobs:
         run: |
           export PATH="$HOME/.local/bin:$PATH"
           claude -p "$(cat 'agente aidealab/automation/cloud/weekly-flyer-prompt-cloud.txt')" \
-            --model claude-haiku-4-5-20251001 \
+            --model claude-sonnet-5 \
             --permission-mode dontAsk \
             --permission-prompts none \
             --allowedTools "Read,Write,Edit,Bash,Glob,Grep" \

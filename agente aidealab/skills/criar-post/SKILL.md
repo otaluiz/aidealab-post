@@ -1235,7 +1235,7 @@ a imagem no banco e ela reaparece no próximo carrossel.
   "legenda": "...",
   "primeiro_comentario": "...",
   "hashtags": ["#..."],
-  "handle": "@aidealab7",
+  "handle": "@idea_lab7",
   "cta": { "tipo": "direct | salvar | palavra-chave",
            "palavra_chave": "PROMPT", "texto": "digite PROMPT na DM" },
   "publicacao": { "rede": "instagram", "formato": "carrossel",
@@ -1269,7 +1269,7 @@ O que isso significa na prática, para este cliente:
 - **Sem "não é X, é Y"**, sem tríade decorativa, sem frase de efeito sozinha
   num parágrafo para dar peso.
 - **CTA diferente em cada post.** Fechar todos com a mesma frase ("salva esse
-  post e segue @aidealab7") transforma o perfil num carimbo. O convite muda com
+  post e segue @idea_lab7") transforma o perfil num carimbo. O convite muda com
   o assunto.
 - **`primeiro_comentario` é pergunta ou link**, nunca repetição da legenda: é
   ele que abre conversa e tira link do corpo do post. Se o MCP do Drive conectado não

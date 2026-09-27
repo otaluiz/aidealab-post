@@ -6,13 +6,15 @@ rotina antiga, `agente aidealab/automation/run-daily-carousel.ps1` +
 Windows Task Scheduler, continua funcionando à parte se você quiser manter
 as duas).
 
-Workflows: `.github/workflows/criar-post-diario.yml` (3 carrosséis/dia, 8h
-BRT) e `.github/workflows/criar-flyer-semanal.yml` (1 flyer/semana, segunda
-8h BRT). Os dois usam o modelo **Haiku** por padrão — decisão explícita de
-custo, não é a mesma coisa que a rotina local (que usa Sonnet). Se algum
-carrossel sair com qualidade abaixo do esperado, o primeiro ajuste a tentar é
-trocar `--model claude-haiku-4-5-20251001` por `--model claude-sonnet-5` no
-respectivo `.yml`, antes de mexer nos prompts.
+Workflows: `.github/workflows/criar-post-diario.yml` (1 carrossel/execução, 8h
+BRT, modelo **Sonnet**) e `.github/workflows/criar-flyer-semanal.yml` (1
+flyer/semana, segunda 8h BRT, modelo **Haiku**). O carrossel foi trocado de
+Haiku pra Sonnet depois de um teste real em produção: com Haiku a parte
+visual saiu ruim (baixou 1 imagem só e reusou nos 3 slides do miolo, hook/CTA
+ficaram só com texto — viola regras do SKILL.md da `criar-post`). Se o flyer
+também sair com qualidade abaixo do esperado, o mesmo ajuste vale lá: trocar
+`--model claude-haiku-4-5-20251001` por `--model claude-sonnet-5` no
+`criar-flyer-semanal.yml`.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
@@ -37,7 +39,7 @@ arquivo local. Cole esse valor como secret `CLAUDE_CODE_OAUTH_TOKEN`
   atualiza o secret).
 - As chamadas da automação **consomem a mesma janela de uso de 5 horas da
   sua assinatura** que o uso interativo normal (não é uma cota separada tipo
-  API paga). Com Haiku e só 3 carrosséis/dia + 1 flyer/semana o consumo deve
+  API paga). Com Haiku e só 1 carrossel/execução + 1 flyer/semana o consumo deve
   ser baixo, mas se você usar o Claude Code pesado no mesmo horário do cron
   (8h BRT), pode competir pela mesma janela. Se notar isso, o ajuste é mudar
   o horário do cron nos `.yml` (`cron: "0 11 * * *"`) pra um horário que você
@@ -134,7 +136,10 @@ estando numa branch de feature.
   novas — se o job falhar logo no início com erro de flag desconhecida, troque
   por `--dangerously-skip-permissions` nos dois `.yml` (é o que a rotina
   local já usa, comprovadamente funcional).
-- **Sem planner/paralelismo**: os 3 carrosséis do dia rodam em sequência,
-  numa `claude -p` só, de propósito — o banco `img-ref` é estado compartilhado
-  e rodar em paralelo (matrix job) sem um planner que reserve imagens
-  distintas primeiro faria dois carrosséis brigarem pela mesma imagem.
+- **1 carrossel por execução** (reduzido de 3, que estourava o orçamento de
+  turnos/tempo de uma `claude -p` só no Haiku antes de terminar o pipeline
+  completo). Pra gerar mais de um por dia, rode o workflow mais de uma vez
+  (`workflow_dispatch` manual, ou vários `cron` no mesmo `.yml`) — a
+  `concurrency: group: aidealab-criar-post` já serializa as execuções pra
+  evitar duas rodadas brigando pela mesma imagem do banco `img-ref` ao mesmo
+  tempo.

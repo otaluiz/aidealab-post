@@ -1,6 +1,6 @@
 ---
 name: post-instagram
-description: Publica no Instagram (@aidealab7) o próximo conteúdo aprovado da pasta `Clientes/aidealab/06-Aprovados-para-Postar` no Drive — imagem única ou carrossel, lendo legenda/hashtags/ordem do `metadata.json` de cada peça. Dispara com "postar próximo", "postar <nome-do-post>", ou sozinha via cron (rotina agendada). Respeita o portão humano da pasta — só publica o que já está aprovado ali, nunca gera conteúdo novo (isso é `criar-post`). Idempotente: pula qualquer peça com `postado:true`.
+description: Publica no Instagram (@idea_lab7) o próximo conteúdo aprovado da pasta `Clientes/aidealab/06-Aprovados-para-Postar` no Drive — imagem única ou carrossel, lendo legenda/hashtags/ordem do `metadata.json` de cada peça. Dispara com "postar próximo", "postar <nome-do-post>", ou sozinha via cron (rotina agendada). Respeita o portão humano da pasta — só publica o que já está aprovado ali, nunca gera conteúdo novo (isso é `criar-post`). Idempotente: pula qualquer peça com `postado:true`.
 ---
 
 # Postar no Instagram

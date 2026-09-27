@@ -24,7 +24,7 @@ com os campos de estado de postagem que esta skill grava de volta.
   ],
   "legenda": "texto da legenda, separado do texto dos slides",
   "hashtags": ["#tag1", "#tag2"],
-  "handle": "@aidealab7"
+  "handle": "@idea_lab7"
 }
 ```
 
@@ -54,7 +54,7 @@ pra pasta inteira porque cada imagem é um post independente.
   "texto": "texto visível na peça (referência, não vai pro Instagram)",
   "legenda": "legenda do post",
   "hashtags": ["#tag1", "#tag2"],
-  "handle": "@aidealab7"
+  "handle": "@idea_lab7"
 }
 ```
 
