@@ -8,12 +8,13 @@ name: aidealab - criar-flyer semanal (nuvem)
 # em `07-Flyer/<slug>/` no Drive, aprovação continua manual.
 
 on:
-  # schedule DESATIVADO de propósito até validar a automação de ponta a
-  # ponta via workflow_dispatch manual. Reativa descomentando o bloco
-  # abaixo depois que um run manual completar sem erro.
-  # schedule:
-  #   # 08:00 America/Sao_Paulo (UTC-3) toda segunda-feira = 11:00 UTC
-  #   - cron: "0 11 * * 1"
+  # schedule REATIVADO em 2026-09-27 -- validado de ponta a ponta via
+  # workflow_dispatch manual (run 36355284451, main@3143f3a): flyer completo,
+  # checagens de QA passando, upload real confirmado em 07-Flyer. Se precisar
+  # pausar de novo, comente o bloco `schedule`.
+  schedule:
+    # 08:00 America/Sao_Paulo (UTC-3) toda segunda-feira = 11:00 UTC
+    - cron: "0 11 * * 1"
   workflow_dispatch: {}
 
 concurrency:

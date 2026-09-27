@@ -17,12 +17,13 @@ name: aidealab - criar-post diário (nuvem)
 # workflows que só existem numa branch de feature.
 
 on:
-  # schedule DESATIVADO de propósito até validar a automação de ponta a
-  # ponta via workflow_dispatch manual. Reativa descomentando o bloco
-  # abaixo depois que um run manual completar sem erro.
-  # schedule:
-  #   # 08:00 America/Sao_Paulo (UTC-3, sem horário de verão desde 2019) = 11:00 UTC
-  #   - cron: "0 11 * * *"
+  # schedule REATIVADO em 2026-09-27 -- validado de ponta a ponta via
+  # workflow_dispatch manual (run 36355282768, main@3143f3a): 6 slides
+  # completos, checagens bloqueantes passando, upload real confirmado em
+  # 04-Carrosseis. Se precisar pausar de novo, comente o bloco `schedule`.
+  schedule:
+    # 08:00 America/Sao_Paulo (UTC-3, sem horário de verão desde 2019) = 11:00 UTC
+    - cron: "0 11 * * *"
   workflow_dispatch: {}
 
 concurrency:
