@@ -1,10 +1,10 @@
 {
-  "post_id": "aidealab_quebrar_a_cabeca",
+  "post_id": "18078546428709088",
   "cliente": "aidealab",
   "tipo": "imagem_unica",
   "arquivo": "aidealab_quebrar_a_cabeca.png",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "tema": "terceirizar a estrategia - foco no negocio, nao no quebra-cabeca",
   "familia_cor": "preto-e-branco",
   "formato": "1080x1440",
@@ -17,5 +17,6 @@
     "#marketing",
     "#negocios"
   ],
-  "handle": "@aidealab7"
+  "handle": "@aidealab7",
+  "postado_em": "2026-09-27T16:12:42.213902"
 }
