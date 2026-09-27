@@ -1,9 +1,9 @@
 {
   "carousel_id": "04-A-tela",
   "cliente": "aidealab",
-  "data_criacao": "2026-09-25",
+  "data_criacao": "2026-09-20",
   "status": "aprovado",
-  "postado": true,
+  "postado": false,
   "tema": "estilos graficos parte 4 de 4 (final) - flat design, contemporaneo",
   "serie": "Estilos Graficos",
   "parte_serie": 4,
@@ -47,7 +47,5 @@
     "#branding",
     "#marketing"
   ],
-  "handle": "@aidealab7",
-  "postado_em": "2026-09-25T16:19:40.500225",
-  "post_id": "18418582507152609"
+  "handle": "@aidealab7"
 }
