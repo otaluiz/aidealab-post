@@ -2,8 +2,8 @@ name: post-instagram-daily
 
 on:
   schedule:
-    # 12:06 UTC = 8:06 America/Cuiaba (UTC-4)
-    - cron: "6 12 * * *"
+    # 11:00 UTC = 7:00 America/Cuiaba (UTC-4)
+    - cron: "0 11 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
