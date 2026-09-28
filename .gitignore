@@ -54,3 +54,8 @@ coverage/
 agente aidealab/automation/cloud/_run/
 agente aidealab/automation/cloud/client_secret.json
 agente aidealab/automation/cloud/drive_token_output.json
+
+# Peças pendentes de upload manual via upload-pending-carousel.yml -- fica
+# comitado só durante o próprio upload, nunca permanentemente (use `git add
+# -f` pra forçar o commit temporário quando for usar o workflow de novo).
+agente aidealab/automation/cloud/_pending_upload/
