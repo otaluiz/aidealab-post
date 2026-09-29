@@ -24,6 +24,7 @@ so existir como aviso foi exatamente como as pecas ruins de 2026-09-21
 saíram com a script boiando longe do bold.
 """
 import json
+import os
 import sys
 import time
 from playwright.sync_api import sync_playwright
@@ -35,9 +36,41 @@ class RenderCheckFailed(Exception):
     pass
 
 
+def platform_fonts(page, selector):
+    """Familias que o Chromium REALMENTE usou para desenhar o elemento
+    (CDP CSS.getPlatformFontsForNode) -- pega fallback silencioso que
+    document.fonts.check nao pega."""
+    cdp = page.context.new_cdp_session(page)
+    cdp.send("DOM.enable")
+    cdp.send("CSS.enable")
+    root = cdp.send("DOM.getDocument", {"depth": 0})["root"]["nodeId"]
+    node = cdp.send("DOM.querySelector", {"nodeId": root, "selector": selector})["nodeId"]
+    if not node:
+        return None
+    res = cdp.send("CSS.getPlatformFontsForNode", {"nodeId": node})
+    return [f["familyName"] for f in res["fonts"]]
+
+
+def check_brand_fonts(page):
+    """Gate do padrao da casa (REQUIRE_BRAND_FONTS=1): script=Tempting,
+    monumento/titulo=Inter. Sem substituta silenciosa."""
+    want = [(".script", "Tempting"), (".mono", "Inter"), (".t-card-head", "Inter")]
+    for sel, fam in want:
+        got = platform_fonts(page, sel)
+        if got is None:
+            continue
+        print(f"fonts {sel}: {got}", file=sys.stderr)
+        if fam not in got:
+            raise RenderCheckFailed(
+                f"{sel} renderizou com {got}, esperado {fam}. Padrao da casa = Inter 900 + "
+                "Tempting (+ Manrope no corpo); fallback proibido. Rode install_fonts.sh.")
+
+
 def capture(url, out_path, width=1080, height=1440):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(
+            headless=True,
+            executable_path=os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE") or None)
         page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
         page.goto(url, wait_until="load", timeout=20000)
 
@@ -98,6 +131,13 @@ def capture(url, out_path, width=1080, height=1440):
                     f"+-{RESIDUAL_TOLERANCE_PX}px. A script nao esta encostando no monumento "
                     "(ver SKILL.md, checagem bloqueante)."
                 )
+
+        if os.environ.get("REQUIRE_BRAND_FONTS") == "1":
+            try:
+                check_brand_fonts(page)
+            except RenderCheckFailed:
+                browser.close()
+                raise
 
         page.screenshot(path=out_path, clip={"x": 0, "y": 0, "width": width, "height": height})
         browser.close()

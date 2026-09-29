@@ -122,15 +122,15 @@ recuperar os PNGs manualmente caso o upload pro Drive dê problema.
   ferramenta Skill não encontrar alguma, **siga sem ela** (a orientação delas
   já está resumida no SKILL.md da `criar-post`), não trave a rotina por causa
   disso.
-- Fontes: Tempting normalmente não está disponível neste runner. Use Google
-  Fonts (`fonts.googleapis.com`/`fonts.gstatic.com`, com acesso de rede
-  normal aqui, ao contrário de sandbox restrito) -- Inter 900 + Manrope
-  sempre. Para o script do lockup, tente `Tempting` primeiro (caso o
-  workflow tenha instalado o arquivo da fonte -- confira
-  `agente aidealab/automation/cloud/fonts/`); se não existir, use o par
-  alternativo **Helvetica Neue + Shelley Script/Playfair Display Italic 900**
-  documentado no SKILL.md como rede de segurança -- troque o PAR inteiro,
-  nunca só metade.
+- Fontes (padrão da casa, SEM fallback): o workflow já instalou Inter,
+  Manrope e Tempting no runner (`install_fonts.sh`) e validou no Chromium
+  (`check_fonts.py`). Lockup = Inter 900 (monumento) + Tempting (script);
+  corpo = Manrope. Não carregue Playfair/Helvetica/Shelley nem troque o par.
+  `capture.py` roda com `REQUIRE_BRAND_FONTS=1` e RECUSA o PNG se `.script`
+  não renderizar em Tempting ou `.mono`/`.t-card-head` em Inter. Tempting não
+  tem glifo acentuado: escreva a linha-script sem acento (o acento fica no
+  monumento, em Inter). Se o gate de fontes falhar, `status: "bloqueado"`
+  com o motivo -- nunca contorne com outra fonte.
 
 Se algo travar de verdade (ferramenta indisponível, geração falha muitas
 vezes, credencial faltando), documente o bloqueio no metadata.json com

@@ -67,11 +67,10 @@ sempre local (Lanczos + unsharp, Pillow), nunca `bytedance_image_upscale`.
 `criar-flyer` proíbe serifada em qualquer lugar (o cliente rejeitou
 Playfair Display explicitamente para peças de flyer, mesmo como
 substituto de emergência do script). Par fixo: **Inter 900 + Tempting**.
-Se o arquivo da fonte Tempting não estiver disponível neste runner (confira
-`agente aidealab/automation/cloud/fonts/`), a rede de segurança aqui é
-**Inter 900 sozinho** para o lockup inteiro (sem trocar por uma família
-serifada) -- documente essa substituição no metadata.json. Corpo sempre
-Manrope.
+O workflow já instalou Inter, Manrope e Tempting (`install_fonts.sh`) e o
+`capture.py` roda com `REQUIRE_BRAND_FONTS=1` (recusa o PNG se o lockup não
+renderizar em Inter + Tempting). Sem substituta: se o gate falhar,
+`status: "bloqueado"`. Corpo sempre Manrope.
 
 ## Render e QA
 

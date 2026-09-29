@@ -126,11 +126,15 @@ estando numa branch de feature.
   geração paga depois, confirme o endpoint em docs.higgsfield.ai e escreva um
   `higgsfield_helper.py` no mesmo espírito do `drive_helper.py` (chamada HTTP
   direta com a API key como secret, nunca MCP).
-- **Fonte Tempting não vem instalada no runner.** Ver a nota de fontes dentro
-  de cada prompt (`daily-carousel-prompt-cloud.txt` /
-  `weekly-flyer-prompt-cloud.txt`) — o carrossel tem uma rede de segurança
-  documentada (Playfair Display Italic 900), o flyer NÃO aceita serifada de
-  jeito nenhum (regra explícita do cliente) e cai pra Inter sozinho.
+- **Fontes da marca (Inter 900 + Tempting + Manrope) são instaladas em todo
+  job** por `install_fonts.sh` e validadas no Chromium por `check_fonts.py`
+  (workflows `criar-post-diario`/`criar-flyer-semanal`; teste isolado:
+  smoke test → `test_fonts`). O `capture.py` roda com `REQUIRE_BRAND_FONTS=1`
+  e recusa o PNG se o lockup cair em fallback. **A Tempting não está no
+  repositório** (é o arquivo da sua máquina): ou commite em
+  `agente aidealab/automation/cloud/fonts/Tempting.ttf` (confira a licença),
+  ou crie o secret `TEMPTING_FONT_B64` (`base64 -w0 Tempting.ttf`). Sem ela o
+  job falha de propósito, em vez de publicar com Playfair.
 - **`--permission-mode dontAsk --permission-prompts none`** são as flags
   recomendadas hoje pra automação não-supervisionada, mas são relativamente
   novas — se o job falhar logo no início com erro de flag desconhecida, troque

@@ -21,6 +21,11 @@ on:
         type: boolean
         default: false
 
+      test_fonts:
+        description: "Testar instalacao das fontes da marca (Inter/Manrope/Tempting) + render no Chromium"
+        type: boolean
+        default: false
+
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
@@ -30,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Python
-        if: inputs.test_drive
+        if: inputs.test_drive || inputs.test_fonts
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -93,3 +98,13 @@ jobs:
           fi
           python "agente aidealab/automation/cloud/drive_helper.py" list --parent-id "$AIDEALAB_FOLDER_ID" --folders-only
           echo "::notice::Se a linha acima listou pastas tipo 02-Materiais-Brutos/04-Carrosseis/07-Flyer, o drive_helper.py está funcionando."
+
+      - name: "[fonts] Instalar Playwright + fontes da marca e validar render"
+        if: inputs.test_fonts
+        env:
+          TEMPTING_FONT_B64: ${{ secrets.TEMPTING_FONT_B64 }}
+        run: |
+          pip install -r "agente aidealab/skills/criar-post/templates/render-engine/requirements.txt"
+          playwright install chromium --with-deps
+          bash "agente aidealab/automation/cloud/install_fonts.sh"
+          python "agente aidealab/automation/cloud/check_fonts.py"

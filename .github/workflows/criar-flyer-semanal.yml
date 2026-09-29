@@ -45,6 +45,13 @@ jobs:
       - name: Instalar pngquant/optipng
         run: sudo apt-get update && sudo apt-get install -y pngquant optipng
 
+      - name: Instalar fontes da marca (Inter, Manrope, Tempting) e validar
+        env:
+          TEMPTING_FONT_B64: ${{ secrets.TEMPTING_FONT_B64 }}
+        run: |
+          bash "agente aidealab/automation/cloud/install_fonts.sh"
+          python "agente aidealab/automation/cloud/check_fonts.py"
+
       - name: Instalar Claude Code CLI
         run: curl -fsSL https://claude.ai/install.sh | bash
 
@@ -55,6 +62,7 @@ jobs:
           GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
           GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+          REQUIRE_BRAND_FONTS: "1"
         run: |
           export PATH="$HOME/.local/bin:$PATH"
           claude -p "$(cat 'agente aidealab/automation/cloud/weekly-flyer-prompt-cloud.txt')" \
