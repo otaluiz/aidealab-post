@@ -1,20 +1,31 @@
 name: post-instagram-cloud
 
+# Única rotina de publicação no Instagram.
 on:
-  # Roda 1x por dia (8h da manhã em Brasília = 12:00 UTC)
   schedule:
+    # 12:00 UTC = 8:00 America/Cuiaba (UTC-4)
     - cron: "0 12 * * *"
-
-  # Permite disparo manual
   workflow_dispatch:
     inputs:
       force_publish:
-        description: "Force publish even if published today"
+        description: "Ignorar guarda de 1 post por dia"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Dry run (não publica)"
+        type: boolean
+        default: false
+      list_recent:
+        description: "Só listar posts recentes (diagnóstico)"
         type: boolean
         default: false
 
 permissions:
   contents: write
+
+concurrency:
+  group: post-instagram
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -29,83 +40,32 @@ jobs:
       - name: Install dependencies
         run: pip install -r "agente aidealab/skills/post-instagram/scripts/requirements.txt"
 
-      - name: Publish next queue item (GA direct with retry)
-        id: publish_ga
+      - name: Publish next queue item
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           ARGS=""
-          if [ "${{ inputs.force_publish }}" = "true" ]; then
-            ARGS="--force"
-          fi
+          if [ "${{ inputs.force_publish }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ "${{ inputs.list_recent }}" = "true" ]; then ARGS="--list-recent"; fi
 
-          # Retry logic: 4 tentativas com delay exponencial
-          for attempt in 1 2 3 4; do
-            echo "[Attempt $attempt/4] Publishing..."
+          for attempt in 1 2 3; do
+            echo "[Attempt $attempt/3]"
             if python "agente aidealab/skills/post-instagram/scripts/publish_next.py" $ARGS; then
-              echo "✓ Publish succeeded on attempt $attempt"
-              echo "status=success" >> $GITHUB_OUTPUT
               exit 0
             fi
-
-            if [ $attempt -lt 4 ]; then
-              DELAY=$((15 * attempt))
-              echo "✗ Attempt $attempt failed. Waiting ${DELAY}s before retry..."
-              sleep $DELAY
-            fi
+            [ $attempt -lt 3 ] && sleep $((30 * attempt))
           done
-
-          echo "✗ All 4 attempts failed"
-          echo "status=failed" >> $GITHUB_OUTPUT
+          echo "Todas as tentativas falharam"
           exit 1
-        continue-on-error: true
 
-      - name: Commit updated queue state (if GA publish succeeded)
-        if: steps.publish_ga.outcome == 'success'
+      - name: Commit updated queue state
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "agente aidealab/skills/post-instagram/queue" || true
-          git diff --cached --quiet || git commit -m "chore(post-instagram): queue state update [skip ci]"
-          git push || true
-
-      - name: Fallback - Trigger Supabase Edge Function (if GA failed)
-        if: steps.publish_ga.outcome != 'success'
-        id: edge_fallback
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: |
-          echo "❌ GA publish failed after 4 retries. Attempting Supabase Edge Function fallback..."
-
-          RESPONSE=$(curl -s -X POST \
-            "${{ secrets.SUPABASE_URL }}/functions/v1/publish-instagram" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d '{"repo":"otaluiz/aidealab-post","branch":"main"}' \
-            -w "\n%{http_code}")
-
-          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
-          BODY=$(echo "$RESPONSE" | head -n-1)
-
-          echo "Edge Function Response ($HTTP_CODE):"
-          echo "$BODY" | jq . 2>/dev/null || echo "$BODY"
-
-          if [ "$HTTP_CODE" = "200" ]; then
-            echo "✓ Edge Function succeeded"
-            echo "status=fallback_success" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "⚠️  Edge Function also failed ($HTTP_CODE)"
-            echo "status=fallback_failed" >> $GITHUB_OUTPUT
-            exit 0  # Don't fail, will retry next schedule
-          fi
-
-      - name: Notify if all publish methods failed
-        if: steps.publish_ga.outcome != 'success' && steps.edge_fallback.outcome == 'failure'
-        run: |
-          echo "⚠️  WARNING: Both direct GA publish and Supabase Edge Function fallback failed"
-          echo "Next scheduled run: tomorrow at 12:00 UTC (8:00 BRT)"
-          echo "Manual trigger available: workflow_dispatch in Actions tab"
+          git add "agente aidealab/skills/post-instagram/queue"
+          git diff --cached --quiet || git commit -m "chore(post-instagram): mark item as posted [skip ci]"
+          git push

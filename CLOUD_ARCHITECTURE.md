@@ -10,19 +10,11 @@ Arquitetura cloud-nativa que funciona 100% sem depender do PC, com múltiplas ca
 
 ### 1. GitHub Actions Workflows
 
-#### `post-instagram-cloud.yml` (NOVO - Principal)
-- **Trigger**: A cada 30 minutos (sem PC ligado)
-- **Job**: Executa `publish_next.py`
-- **Fallback**: Se falhar, continua no próximo ciclo
-- **Features**:
-  - Roda a cada 30 min (não apenas 1x ao dia)
-  - `workflow_dispatch` para publicação manual
-  - `--force` flag para ignorar guarda de 1-post-per-dia
-  - Notifica Supabase Edge Function como backup
-
-#### `post-instagram-daily.yml` (Mantém compatibilidade)
-- Original, roda 1x ao dia em horário fixo
-- Útil como redundância
+#### `post-instagram-cloud.yml` (única rotina de publicação)
+- **Trigger**: 1x ao dia, 12:00 UTC (8:00 Cuiabá), mais disparo manual
+- **Job**: Executa `publish_next.py` (3 tentativas); falha em vermelho se não postar
+- **Inputs manuais**: `force_publish`, `dry_run`, `list_recent`
+- A Edge Function abaixo NÃO é chamada pelo workflow (evita post duplicado)
 
 ### 2. Supabase Edge Function (Serverless)
 

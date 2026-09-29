@@ -44,8 +44,7 @@ fi
 echo ""
 echo "3️⃣  Configurando workflows..."
 echo "Workflows automáticos habilitados:"
-echo "  ✓ post-instagram-cloud.yml (a cada 30 min)"
-echo "  ✓ post-instagram-daily.yml (diário)"
+echo "  ✓ post-instagram-cloud.yml (diário, 12:00 UTC)"
 
 echo ""
 echo "✅ Setup completo!"
