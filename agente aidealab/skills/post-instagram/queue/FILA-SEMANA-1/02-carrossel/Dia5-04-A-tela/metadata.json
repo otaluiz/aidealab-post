@@ -3,7 +3,7 @@
   "cliente": "aidealab",
   "data_criacao": "2026-09-25",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "tema": "estilos graficos parte 4 de 4 (final) - flat design, contemporaneo",
   "serie": "Estilos Graficos",
   "parte_serie": 4,
@@ -48,5 +48,7 @@
     "#marketing"
   ],
   "handle": "@aidealab7",
-  "post_id_anterior": "18418582507152609"
+  "post_id_anterior": "18418582507152609",
+  "postado_em": "2026-09-29T14:09:58.950661",
+  "post_id": "18442482310126927"
 }
