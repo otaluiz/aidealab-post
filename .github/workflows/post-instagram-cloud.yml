@@ -5,6 +5,13 @@ on:
   schedule:
     # 12:00 UTC = 8:00 America/Cuiaba (UTC-4)
     - cron: "0 12 * * *"
+    # Reservas: o agendador do GitHub atrasa/pula execuções; a guarda de
+    # 1 post/dia do publish_next.py torna as repetições inofensivas.
+    - cron: "30 12 * * *"
+    - cron: "0 13 * * *"
+    - cron: "30 13 * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       force_publish:
