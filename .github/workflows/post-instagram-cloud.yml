@@ -3,8 +3,15 @@ name: post-instagram-cloud
 # Única rotina de publicação no Instagram.
 on:
   schedule:
-    # 12:00 UTC = 8:00 America/Cuiaba (UTC-4)
+    # 10:00 UTC = 6:00 America/Cuiaba (UTC-4)
+    - cron: "0 10 * * *"
+    # Reservas: o agendador do GitHub atrasa/pula execuções; a guarda de
+    # 1 post/dia do publish_next.py torna as repetições inofensivas.
+    - cron: "30 10 * * *"
+    - cron: "0 11 * * *"
+    - cron: "30 11 * * *"
     - cron: "0 12 * * *"
+    - cron: "0 14 * * *"
   workflow_dispatch:
     inputs:
       force_publish:
