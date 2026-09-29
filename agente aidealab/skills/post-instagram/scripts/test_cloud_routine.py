@@ -11,7 +11,7 @@ ambiente com saída de rede liberada pra graph.facebook.com e supabase.co.
 Uma sessão de nuvem Claude Code roda atrás de um proxy que bloqueia os dois
 por política da organização -- o teste de acesso abaixo vai falhar aí com
 connect_rejected, não por bug de código. O publicador autônomo real é o
-cron `.github/workflows/post-instagram-daily.yml` (runner do GitHub Actions
+cron `.github/workflows/post-instagram-cloud.yml` (runner do GitHub Actions
 tem saída de rede normal); use este script só pra depuração local.
 """
 
