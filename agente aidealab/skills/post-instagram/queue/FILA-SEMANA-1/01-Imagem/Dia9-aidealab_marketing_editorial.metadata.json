@@ -1,10 +1,10 @@
 {
-  "post_id": "aidealab_marketing_editorial",
+  "post_id": "17899023366389620",
   "cliente": "aidealab",
   "tipo": "imagem_unica",
   "arquivo": "aidealab_marketing_editorial.png",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "tema": "posicionamento aidealab - marketing editorial, marca fora do generico",
   "familia_cor": "rosa-preto",
   "formato": "1080x1440",
@@ -17,5 +17,6 @@
     "#designgrafico",
     "#posicionamento"
   ],
-  "handle": "@aidealab7"
+  "handle": "@aidealab7",
+  "postado_em": "2026-09-30T12:16:52.159646"
 }
