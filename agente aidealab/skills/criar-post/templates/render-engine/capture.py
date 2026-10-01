@@ -24,9 +24,14 @@ so existir como aviso foi exatamente como as pecas ruins de 2026-09-21
 saíram com a script boiando longe do bold.
 """
 import json
+import os
 import sys
 import time
 from playwright.sync_api import sync_playwright
+
+# Optional override for environments where the pip playwright version's expected
+# bundled-browser revision doesn't match what's pre-installed on disk (sandbox).
+_CHROMIUM_PATH = os.environ.get("CAPTURE_CHROMIUM_PATH")
 
 RESIDUAL_TOLERANCE_PX = 4
 
@@ -37,7 +42,10 @@ class RenderCheckFailed(Exception):
 
 def capture(url, out_path, width=1080, height=1440):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        launch_kwargs = {"headless": True}
+        if _CHROMIUM_PATH:
+            launch_kwargs["executable_path"] = _CHROMIUM_PATH
+        browser = p.chromium.launch(**launch_kwargs)
         page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
         page.goto(url, wait_until="load", timeout=20000)
 

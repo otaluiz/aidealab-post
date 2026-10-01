@@ -1,0 +1,96 @@
+{
+  "carousel_id": "lead-que-esfria",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-01",
+  "status": "aprovado",
+  "data_aprovacao": "2026-10-01",
+  "postado": false,
+  "tema": "Pequeno negócio não perde venda por falta de interesse do cliente. Perde porque ninguém retoma a conversa depois do \"vou ver com calma\" — o lead esfria sozinho, esquecido, enquanto o dono segue ocupado respondendo quem acabou de chegar. A IA pode guardar essa conversa parada e mandar a retomada certa, no momento certo, sem parecer forçada.",
+  "pilar": "educacional",
+  "familia_cor": "magenta",
+  "familia_cor_nota": "As duas peças mais recentes com registro real de entrega (prova-nao-e-elogio 2026-09-30, do-caos-ao-caminho 2026-09-29) usaram azul; antes delas, mitos-de-ia-pequeno-negocio usou amber. Magenta não aparece em nenhuma peça efetivamente entregue recente e contrasta bem com o lote de imagens (cromado/azul-frio predominante) escolhido nesta rodada — pop quente contra fundo frio, sem repetir a família mais usada.",
+  "espinha_de_palavras": ["ESQUECE", "PARA", "ESFRIA", "LEMBRA", "RETOMA", "VENDE"],
+  "espinha_de_palavras_nota": "Só hook e CTA levam a palavra no monumento (Template A, lockup Inter900+Playfair). O miolo usa 'cartão escuro sobre foto, SEM monumento' (ver template_miolo_nota) — a espinha ali é só o critério de escolha de palavra-chave do t-card-accent, não tipo grande sobre a cena.",
+  "template": "hook(Template A -- banco img-ref, foto plena 1080x1440 nativa, sem recorte, scrim-top+scrim-bottom + lockup) - problema(cartão escuro sobre foto, sem monumento, card ancorado no rodapé) - causa(cartão escuro, idem) - solução(cartão escuro, idem) - resultado(cartão escuro, idem) - cta(Template A -- banco img-ref, foto plena, scrim + lockup + chip)",
+  "template_miolo_nota": "Cartão escuro sobre foto (Eixo 1, var.2). A peça mais recente com entrega real registrada (prova-nao-e-elogio, 2026-09-30) fechou em 'cartão de vidro sobre imagem' (1 peça, rompendo uma sequência de 2 em cartão escuro). Esta peça volta para cartão escuro -- não há 3 peças seguidas na mesma variação a evitar (vidro teve só 1), decisão de variedade dentro da regra, não obrigação.",
+  "template_decisao_sem_monumento_no_miolo": "Pipeline 100% Template D/A (banco img-ref, sem rembg/recorte) -- não existe alpha real de sujeito pra ancorar uma palavra grande atrás dele nos 4 slides de miolo. Rodar um monumento solto sobre a foto sem recorte repetiria o defeito documentado no SKILL.md ('sem monumento, o recorte seria pixel idêntico à cena -- retira a camada também'; 'onde o recorte é fraco, não se coloca tipo'). O efeito de cartão escuro vem só da foto full-bleed + .t-card opaco ancorado no rodapé (bottom:176px fixo), sem monumento competindo com o card -- mesma decisão de prova-que-vende.",
+  "template_hook_cta_nota": "Template A (banco img-ref, já nativo 1080x1440, sem upscale) nos dois. Higgsfield não foi tentado nesta sessão: duas execuções irmãs recentes desta mesma rotina (nao-precisa-virar-robo, preco-certo-cliente-certo) documentaram bloqueio confirmado de egress do agent-proxy no download das imagens geradas (host d8j0ntlcm91z4.cloudfront.net, 403), então a regra 'banco antes de gerar' + o blocker já documentado tornam Template A/D a escolha de custo e risco mais baixos. Variedade real do feed preservada mesmo repetindo o rótulo de template: motivo visual (cavaleiro cromado/dark-fantasy + mãos líquidas + floresta mística + cavalos termais) inteiramente novo, nenhuma imagem usada em peça anterior.",
+  "formato": "1080x1440",
+  "geracao_imagem": "100% banco 02-Materiais-Brutos/img-ref do cliente (Higgsfield indisponível nesta sessão interativa -- ver template_hook_cta_nota). 6 imagens distintas, nunca usadas em peça anterior, todas já nativas 1080x1440 (Pillow Image.size confirmado, sem necessidade de upscale Lanczos). Custo: 0 crédito Higgsfield.",
+  "checagem_ineditismo_e_conteudo": {
+    "metodo": "Levantamento de ~50 arquivos de 02-Materiais-Brutos/img-ref via mcp Google-Drive search_files (parentId, 2 páginas, conjunto estável). Cruzamento com os 4 metadata.json mais recentes (prova-nao-e-elogio, nao-precisa-virar-robo, do-caos-ao-caminho, prova-que-vende) para excluir por nome tudo já usado/rejeitado/em família já saturada (liquid_chrome_surreal_abstract_digital_art_*, cinematic_astral_projections_surreal_digital_*, chrome_hand_orb_3d_render_* -- já migradas para 01-Referencias por sessões anteriores). Download real (mcp download_file_content, conteúdo grande redirecionado a disco pela própria ferramenta, decodificado localmente via Python/base64 -- sem custo de contexto) e inspeção visual em resolução nativa de 10 candidatas novas não vetadas por nenhuma sessão anterior: dreamcore_surrealism_moody_atmospheric (REJEITADA -- tela de TV com texto incrustado legível 'You're Dreaming'), 3x neon_knight_dark_fantasy_ethereal_wallpaper (3 aprovadas, sem texto/marca/IP), download (14).png (REJEITADA -- páginas de livro com texto impresso visível aos pés da figura), download (23).png (aprovada -- mãos cromadas, sem texto), download (25).png (REJEITADA -- tela com texto garbled legível + cabeça glitter), download (26).png (REJEITADA -- carro vintage com placa de texto legível, fora do registro cinematográfico da marca), img2.png (aprovada -- cavalos em visão termal, sem texto/pessoas), __Miscellaneous_Pins_13__ (REJEITADA -- rosto cyborg com código de barras + tela de texto garbled + assinatura 'V.SIGMA' incrustada), The_Glimmer_in_the_Deepwood (aprovada -- floresta mística, sem texto/pessoas, filename já indica 'AI 4K Wallpaper', risco de proveniência de foto real descartado). Hash perceptual formal não pôde ser calculado nas peças publicadas mais antigas por falta de acesso de baixo custo aos PNGs finais pré-2026-09-26 nesta sessão (ver nota de limitação de ambiente); dedup garantida por proveniência de nome de arquivo/lote contra os 4 metadata.json mais recentes + inspeção visual direta das 6 escolhidas (nenhuma se repete entre si nem lembra composição de nenhuma peça recém-descrita nos alt-texts lidos).",
+    "aprovadas_usadas": "As 6 listadas em slides[] abaixo -- nenhuma nudez, nenhum texto/legenda/código/placa incrustado na própria imagem, nenhum logo ou personagem de marca de terceiro identificável, nenhuma pessoa real reconhecível."
+  },
+  "checagem_cor_pixel_monumento": {
+    "metodo": "Playwright (chromium local, executable_path fixo por incompatibilidade de revisão entre o pacote pip e o browser pré-instalado no sandbox) -- getBoundingClientRect real de .mword.accent/.kw/.t-card-accent, amostragem em grade 5x5 dentro do bbox de cada elemento, lida diretamente no PNG final (pós pngquant+optipng) via PIL, tolerância ±14 por canal contra #E94B91 (233,75,145). Pontos de controle manuais confirmaram pixel exato (233,75,145) em múltiplos slides.",
+    "hook_mono_accent": {"amostras_batendo": "7/25 (28.0%)", "hex_esperado": "#E94B91", "bate": true},
+    "cta_mono_accent": {"amostras_batendo": "7/25 (28.0%)", "hex_esperado": "#E94B91", "bate": true},
+    "kw_script": {"hook": "7/25 (28.0%)", "cta": "1/25 (4.0%, baixo por antialiasing do itálico fino -- controle manual confirmou hex exato dentro do bbox)"},
+    "t_card_accent": {"problema": "2/25", "causa": "4/25", "solucao": "4/25", "resultado": "1/25", "nota": "bbox do .t-card-accent cobre a caixa inteira do bloco multi-linha (muito espaço vazio entre glifos do itálico); todas as 4 tiveram pelo menos 1 amostra batendo o hex exato, consistente com o padrão de peças aprovadas anteriores (ex. prova-nao-e-elogio kw_cards 1/25-7/25)."}
+  },
+  "checagem_anticolisao_script_monumento": {
+    "metodo": "window.__fitReport.anticolisao (anticolisao.js verbatim, copiado sem alteração de templates/render-engine/), capture.py bloqueia e não salva o PNG se o residual sair de 0±4px -- confirmado funcionando (nenhum slide falhou essa checagem).",
+    "hook_residual_px": 0,
+    "cta_residual_px": 0
+  },
+  "checagem_zindex_script_sobre_mono": ".script{z-index:2} / .mono{z-index:1} -- confirmado por grep direto no slide.css final.",
+  "checagem_geometria_clearance": {
+    "metodo": "Playwright getBoundingClientRect de .t-lockup/.t-block/.t-card/.t-chip/.t-cta-chip/.t-sub em todos os 6 slides, comparado contra header_bottom (~90px, base do kicker) e footer_top (~1354px, topo do @handle).",
+    "resultado": "Nenhum bloco de conteúdo ultrapassa footer_top nem fica acima de header_bottom em nenhum dos 6 slides -- overlap_footer=false em todos. Menor folga até o rodapé: 90px (cartão dos slides de miolo, ancorado em bottom:176px fixo). Bug real encontrado e corrigido nesta rodada: o chip do CTA ('Comenta RETOMA') colidia com o monumento RETOMA. na posição inicial (top:560px) -- corrigido para top:760px, re-renderizado, clearance final 514px."
+  },
+  "checagem_dimensoes": "1080x1440 exato nos 6 PNGs finais, confirmado via dims check (innerWidth/innerHeight/.slide) do capture.py em cada render e via PIL Image.size após pngquant+optipng.",
+  "checagem_promessa_vs_slides": "Nenhum número de contagem citado na copy (hook/CTA/legenda) que precise bater com quantidade de slides.",
+  "fonte_script_nota": "Tempting não está disponível nesta sessão (não é Google Font, sem arquivo local, fc-list confirmou ausência) -- usado o par de emergência documentado no SKILL.md: Inter 900 (monumento) + Playfair Display Italic 900 (script), via Google Fonts (fonts.googleapis.com acessível, 200). Nenhuma palavra do lockup leva acento, então a troca não altera a legibilidade de nenhuma letra.",
+  "limitacao_de_ambiente_upload_drive": {
+    "resumo": "Os 6 PNGs finais (3,8MB no total, pós pngquant+optipng) NÃO foram enviados por este metadata.json porque o MCP interativo do Google-Drive desta sessão só aceita binário via base64Content literal embutido na chamada da ferramenta -- sem upload por URL presignada nem por caminho de arquivo local. Medido nesta própria stack (ver drive_helper.py do repo): ~1 token por caractere de base64; 6 imagens comprimidas = ~5,1M caracteres de base64 = ordem de 4-5 milhões de tokens só para gerar as chamadas, além do Read tool desta sessão truncar em 25.000 tokens por chamada (não dá nem para montar o base64 em memória sem dezenas de leituras parciais que depois precisariam ser reproduzidas sem erro numa única chamada de função). Mesmo bloqueio, independente, já documentado por duas execuções anteriores desta mesma rotina (nao-precisa-virar-robo e tempo-que-escorre, ambas 2026-09-29/30) e descrito na documentação própria do repo (agente aidealab/automation/cloud/drive_helper.py, docstring).",
+    "o_que_foi_feito_em_vez_disso": "Os 6 PNGs finais + este metadata.json (status aprovado) foram commitados e enviados ao repositório GitHub otaluiz/aidealab-post, em agente aidealab/clientes/aidealab/output/lead-que-esfria/ -- entrega real, completa e verificável, só que fora do Drive. Este MESMO metadata.json (textContent, sem custo de base64) foi gravado em Clientes/aidealab/04-Carrosseis/lead-que-esfria/ no Drive para manter o registro visível ali; a pasta Clientes/aidealab/06-Aprovados-para-Postar/RASCUNHOS/lead-que-esfria/ foi criada mas deixada vazia (sem este metadata.json) para não publicar um registro 'aprovado' apontando para uma pasta sem os PNGs de verdade -- violaria a regra do próprio SKILL.md de nunca deixar metadado referenciando arquivo que não existe na pasta.",
+    "caminho_recomendado": "Rodar a automação em GitHub Actions deste mesmo repositório (agente aidealab/automation/cloud/, secrets GOOGLE_DRIVE_CLIENT_ID/SECRET/REFRESH_TOKEN) para sincronizar os 6 PNGs de agente aidealab/clientes/aidealab/output/lead-que-esfria/ para as duas pastas do Drive via drive_helper.py (upload por caminho de arquivo, sem base64 passando pelo modelo) -- ou copiar manualmente os 6 arquivos do GitHub para o Drive."
+  },
+  "slides": [
+    { "ordem": 1, "arquivo": "01_hook.png", "papel": "hook",
+      "layout": "Template A, foto plena banco img-ref, scrim-top+scrim-bottom + lockup Inter900+Playfair itálico",
+      "texto": "Lead quente de ontem, ESQUECE. / O cliente que ia fechar com você hoje nem lembra que você existe.",
+      "alt": "Figura encapuzada cromada segurando uma espada com reflexos de luz, de pé contra um céu azul-escuro com nuvens." },
+    { "ordem": 2, "arquivo": "02_problema.png", "papel": "problema",
+      "layout": "cartão escuro sobre foto, sem monumento, card ancorado no rodapé",
+      "texto": "Você responde na hora, mas se ele não decide ali, ninguém mais toca na conversa.",
+      "alt": "Floresta mística com trepadeiras azuis brilhantes, folhagens exuberantes e plantas luminosas num sub-bosque enevoado." },
+    { "ordem": 3, "arquivo": "03_causa.png", "papel": "causa",
+      "layout": "cartão escuro sobre foto, sem monumento, card ancorado no rodapé",
+      "texto": "Sem nada que lembre por você, cada lead parado vira um lead esquecido.",
+      "alt": "Cavaleiro em armadura escura de pé sob um céu azul tempestuoso cheio de cruzes flamejantes em dourado e vermelho." },
+    { "ordem": 4, "arquivo": "04_solucao.png", "papel": "solução",
+      "layout": "cartão escuro sobre foto, sem monumento, card ancorado no rodapé",
+      "texto": "A IA guarda a conversa parada e manda a retomada certa, na hora certa.",
+      "alt": "Duas mãos cromadas azul e laranja erguidas no espaço estrelado, formando um arco ao redor de um brilho central." },
+    { "ordem": 5, "arquivo": "05_resultado.png", "papel": "resultado",
+      "layout": "cartão escuro sobre foto, sem monumento, card ancorado no rodapé",
+      "texto": "O lead que ia esfriar responde de novo, sem você lembrar de ninguém.",
+      "alt": "Busto de cavaleiro cibernético com viseira vermelha brilhante, armadura azul-escura pontilhada, segurando uma espada neon." },
+    { "ordem": 6, "arquivo": "06_cta.png", "papel": "cta",
+      "layout": "Template A, foto plena banco img-ref, scrim + lockup + chip de ação",
+      "texto": "Lead parado também é venda, RETOMA. / Comenta \"RETOMA\" que a gente te mostra como.",
+      "alt": "Imagem em visão térmica de um grupo de cavalos em tons quentes de laranja e vermelho, pastando perto de um lago cercado de árvores em tons frios de azul." }
+  ],
+  "legenda": "Você respondeu rápido. Ele disse \"vou ver com calma\". Aí sumiu.\n\nQuem lê como desinteresse costuma ser só isso: ninguém voltou a tocar naquela conversa no momento certo.\n\nA maioria dos leads que um pequeno negócio perde não morre na primeira mensagem, esfria depois dela, quando ninguém lembra de retomar.\n\nA IA guarda essa conversa parada e manda a retomada certa sozinha, sem você precisar lembrar manualmente de cada pessoa que sumiu.\n\nComenta RETOMA que a gente te mostra como isso funciona.",
+  "primeiro_comentario": "Quantos \"vou ver com calma\" você não retomou essa semana?",
+  "hashtags": ["#aidealab", "#automacaocomia", "#pequenosnegocios", "#vendasonline"],
+  "handle": "@aidealab7",
+  "cta": { "tipo": "palavra-chave", "palavra_chave": "RETOMA", "texto": "comenta \"RETOMA\" que a gente te mostra como" },
+  "publicacao": { "rede": "instagram", "formato": "carrossel", "proporcao": "4:5", "slides_total": 6,
+                  "ordem_arquivos": ["01_hook.png", "02_problema.png", "03_causa.png", "04_solucao.png", "05_resultado.png", "06_cta.png"] },
+  "imagens_banco_migradas": [
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/neon_knight_dark_fantasy_ethereal_wallpaper_5801d1f52142d9d4cabf60b8e3381491.png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "hook (01_hook.png)" },
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/The_Glimmer_in_the_Deepwood_Cobra_AI_4K_Wallp_b5f2cbbcd74959e177194e65d4f7da75.png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "problema (02_problema.png)" },
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/neon_knight_dark_fantasy_ethereal_wallpaper_be186371e7513553eb52009ae9ceb57a.png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "causa (03_causa.png)" },
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/download (23).png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "solução (04_solucao.png)" },
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/neon_knight_dark_fantasy_ethereal_wallpaper_b4d8e49c2e7fed63112850841be4eee8.png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "resultado (05_resultado.png)" },
+    { "origem": "Clientes/aidealab/02-Materiais-Brutos/img-ref/img2.png", "destino": "Clientes/aidealab/01-Referencias/Instagram/img-ref/ (mesmo nome)", "uso": "cta (06_cta.png)" }
+  ],
+  "imagens_banco_migradas_nota": "Movidas via mcp Google-Drive update_file (parentId, operação de metadata, sem custo de base64) -- nenhuma colisão de nome com o que já existia em 01-Referencias/Instagram/img-ref (conferido antes de mover).",
+  "github_delivery": {
+    "repo": "otaluiz/aidealab-post",
+    "path": "agente aidealab/clientes/aidealab/output/lead-que-esfria/",
+    "contem": ["01_hook.png", "02_problema.png", "03_causa.png", "04_solucao.png", "05_resultado.png", "06_cta.png", "metadata.json (este arquivo)"]
+  }
+}
