@@ -1,0 +1,67 @@
+Rotina automática em nuvem (GitHub Actions, sem supervisão humana). Cliente: aidealab.
+Tarefa: RE-RENDERIZAR 1 carrossel já aprovado, com texto mais legível, e colocá-lo na
+fila de publicação. Siga as instruções ao pé da letra; se algo for ambíguo, escolha a
+leitura mais conservadora (bloquear e documentar) em vez de inventar solução.
+
+Os parâmetros desta rodada vêm no fim deste prompt (SRC_FOLDER_ID, SRC_NAME, DIA,
+QUEUE_DIR). Use a skill `criar-post` (`agente aidealab/skills/criar-post/SKILL.md`) e o
+motor de render `agente aidealab/skills/criar-post/templates/render-engine/` (capture.py
+via Playwright, já instalado no runner). Template da moldura: `templates/ref-frame.html`
+(já atualizado: texto branco e maior).
+
+## Acesso ao Drive
+
+Só via `python "agente aidealab/automation/cloud/drive_helper.py" ...` (find-folder, list,
+download, read-text, upload, mkdir). NÃO use MCP do Google Drive (base64 queima contexto).
+`$AIDEALAB_FOLDER_ID` é a pasta Clientes/aidealab. Trabalhe em
+`agente aidealab/automation/cloud/_run/` (no .gitignore).
+
+## Passos
+
+1. Baixe de `SRC_FOLDER_ID` o `metadata.json` (read-text) e os PNGs originais (download)
+   para `_run/orig/`. O metadata traz, por slide: `texto`, `papel` (hook/problema/
+   explicacao/pratica/resultado/cta/referencia), `layout`, `alt`, e em `geracao_imagem.fontes`
+   os nomes dos arquivos do banco usados como fundo. Olhe os PNGs originais (Read) para
+   manter a mesma composição, paleta (`familia_cor`) e hierarquia.
+2. Baixe as imagens de fundo pelo nome listado em `geracao_imagem.fontes`, procurando em
+   `01-Referencias/Instagram/img-ref` (encadeie `find-folder` a partir de
+   `$AIDEALAB_FOLDER_ID`) e, se faltar, em `02-Materiais-Brutos/img-ref`. Uma imagem por
+   slide, a mesma do original. Se alguma imagem de fundo não for encontrada, NÃO troque por
+   outra nem por gradiente: pare, grave `status: "bloqueado"` com o motivo e termine.
+3. Reconstrua cada slide em HTML 1080x1440 (mesmo texto do original, sem reescrever copy)
+   com as regras de legibilidade abaixo, e renderize com capture.py. Respeite todas as
+   checagens bloqueantes do SKILL.md (cor por pixel da palavra-chave, gap mword/script,
+   nada encostando no header/rodapé, imagem do fundo distinta por slide).
+4. Otimize cada PNG: `pngquant --quality=65-90 --strip --force --ext .png <f>` e
+   `optipng -o2 <f>`.
+5. Grave em `QUEUE_DIR` (relativo à raiz do repo): os 5-6 PNGs renomeados `01_...png` etc.
+   e um `metadata.json` copiado do original com: `postado: false`, `status: "aprovado"`,
+   `origem_carousel_id` = carousel_id original, `slides[].arquivo` apontando para os PNGs
+   novos, `legenda`/`hashtags` inalterados. NÃO escreva `postado_em` nem `post_id`.
+6. Suba também a versão nova ao Drive em `06-Aprovados-para-Postar/RERENDER-LEGIVEL/<SRC_NAME>/`
+   (crie com mkdir, upload por caminho de arquivo). NÃO altere nem apague nada em
+   RASCUNHOS: os originais ficam intocados.
+
+## Regras de legibilidade (o motivo desta rodada)
+
+- Todo texto sobre moldura/card ou sobre imagem: branco puro `#FFFFFF`, sem `opacity`,
+  sem cream/cinza dimmed. Isso inclui corpo, legenda da moldura de referência, URL da barra
+  do navegador, chips/labels e rodapé.
+- Aumente o tamanho em ~25% sobre o original: corpo do card >= 34px (era ~27), legenda da
+  moldura >= 32px, URL da barra >= 30px, chip/label >= 28px, título do card >= 68px.
+  Hook e CTA mantêm a escala editorial grande já prevista no SKILL.md.
+- Se o texto maior não couber no card, aumente a altura do card (respeitando margens do
+  header/rodapé) antes de reduzir fonte; nunca corte nem reescreva o texto. Se mesmo assim
+  não couber, deixe a fonte no maior tamanho que couber, nunca abaixo do original, e
+  registre o slide em `avisos_legibilidade` no metadata.json.
+- Contraste: se o fundo for claro atrás do texto, reforce com scrim/`text-shadow` escuro,
+  nunca com texto cinza.
+
+## Não declare sucesso sem render + gravação reais
+
+Antes do resumo final confirme: (1) todos os PNGs em `QUEUE_DIR` existem e têm exatamente
+1080x1440 (PIL), (2) `drive_helper.py upload` devolveu `id` real para cada PNG e para o
+metadata.json em RERENDER-LEGIVEL, (3) o metadata.json em `QUEUE_DIR` tem o schema completo.
+Se qualquer um faltar, escreva `status: "bloqueado"` + motivo e NÃO deixe PNGs parciais em
+`QUEUE_DIR` (apague a pasta). Termine com um resumo curto em texto puro: carrossel, slides
+renderizados, tamanhos de fonte aplicados, avisos, bloqueios.
