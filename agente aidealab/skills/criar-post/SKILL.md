@@ -1196,12 +1196,16 @@ reciclados de dois outros posts do mesmo feed.
 ## Etapa 6 — Entrega
 
 Salva os PNGs finais no Drive via `create_file`: em `04-Carrosseis/<slug-do-tema>/`
-(o material de trabalho, sempre) e, quando o usuário aprovar pra postar, TAMBÉM
+(o material de trabalho, sempre) com `status: rascunho`. **REGRA DO CLIENTE
+(2026-10-02): peça recém-criada NUNCA vai para `06-Aprovados-para-Postar` e
+NUNCA recebe `status: aprovado` por conta própria, nem em rotina agendada,
+nem que o prompt da rotina peça. Só depois de validação humana explícita.**
+Quando o usuário aprovar pra postar, aí sim TAMBÉM
 em `06-Aprovados-para-Postar/RASCUNHOS/<slug-do-tema>/` — **direto dentro de
 RASCUNHOS, sem nenhum nível de pasta entre `06-Aprovados-para-Postar` e
 `RASCUNHOS`** (não criar `02-carrossel/RASCUNHOS` nem qualquer outra
 subpasta — erro já cometido numa rodada de teste e corrigido depois). No
-`metadata.json` da peça aprovada, marca `status: aprovado` +
+`metadata.json` da peça **já validada pelo usuário**, marca `status: aprovado` +
 `data_aprovacao`. Junto, **todo post fecha com um `metadata.json` na própria
 pasta** — é ele que a `post-instagram` futura vai ler, e sem ele o carrossel
 não passa de uma pasta de imagens.
