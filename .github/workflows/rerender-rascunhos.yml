@@ -1,0 +1,178 @@
+name: aidealab - re-renderizar rascunhos aprovados (texto legível) e enfileirar
+
+# Re-renderiza os carrosséis de 06-Aprovados-para-Postar/RASCUNHOS com texto
+# branco e maior e os coloca na fila de publicação (queue/FILA-SEMANA-2), do
+# mais antigo ao mais novo, continuando a numeração DiaNN a partir de start_dia.
+# Os originais no Drive nunca são alterados; a versão nova também vai para
+# 06-Aprovados-para-Postar/RERENDER-LEGIVEL/.
+#
+# Piloto primeiro: `limit` padrão = 1 (só o mais antigo). Confira o resultado e
+# depois rode de novo (o que já está na fila é pulado) com limit maior.
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_dia:
+        description: "Número DiaNN do primeiro item novo (depois do último da fila)"
+        required: true
+        default: "12"
+      limit:
+        description: "Quantos carrosséis re-renderizar nesta execução (0 = todos)"
+        required: true
+        default: "1"
+      only:
+        description: "Opcional: nome exato de uma pasta de RASCUNHOS (ignora ordem/limit)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aidealab-rerender
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.list.outputs.matrix }}
+      count: ${{ steps.list.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r "agente aidealab/automation/cloud/requirements.txt"
+      - name: Listar rascunhos (mais antigo -> mais novo)
+        id: list
+        env:
+          AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+          START_DIA: ${{ inputs.start_dia }}
+          LIMIT: ${{ inputs.limit }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          python "agente aidealab/automation/cloud/list_rascunhos.py" --start-dia "$START_DIA" > all.json
+          python - <<'EOF'
+          import json, os
+          items = json.load(open("all.json", encoding="utf-8"))
+          only, limit = os.environ["ONLY"], int(os.environ["LIMIT"])
+          if only:
+              items = [i for i in items if i["name"] == only]
+          elif limit > 0:
+              items = items[:limit]
+          for i in items:
+              slug = "".join(c if c.isalnum() else "-" for c in i["name"]).strip("-")
+              i["queue_dir"] = f"agente aidealab/skills/post-instagram/queue/FILA-SEMANA-2/02-carrossel/Dia{i['dia']}-{slug}"
+          print(json.dumps(items, ensure_ascii=False, indent=1))
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write("matrix=" + json.dumps({"include": items}, ensure_ascii=False) + "\n")
+              fh.write(f"count={len(items)}\n")
+          EOF
+
+  rerender:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências Python (Drive, render-engine)
+        run: |
+          pip install -r "agente aidealab/automation/cloud/requirements.txt"
+          pip install -r "agente aidealab/skills/criar-post/templates/render-engine/requirements.txt"
+
+      - run: playwright install chromium --with-deps
+
+      - name: Instalar pngquant/optipng
+        run: sudo apt-get update && sudo apt-get install -y pngquant optipng
+
+      - name: Instalar Claude Code CLI
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: Re-renderizar ${{ matrix.name }}
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          AIDEALAB_FOLDER_ID: ${{ secrets.AIDEALAB_DRIVE_FOLDER_ID }}
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+          SRC_FOLDER_ID: ${{ matrix.id }}
+          SRC_NAME: ${{ matrix.name }}
+          DIA: ${{ matrix.dia }}
+          QUEUE_DIR: ${{ matrix.queue_dir }}
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          PROMPT="$(cat 'agente aidealab/automation/cloud/rerender-carousel-prompt-cloud.txt')
+
+          ## Parâmetros desta rodada
+          SRC_FOLDER_ID=$SRC_FOLDER_ID
+          SRC_NAME=$SRC_NAME
+          DIA=$DIA
+          QUEUE_DIR=$QUEUE_DIR"
+          claude -p "$PROMPT" \
+            --model claude-sonnet-5 \
+            --permission-mode dontAsk \
+            --permission-prompts none \
+            --allowedTools "Read,Write,Edit,Bash,Glob,Grep" \
+            2>&1 | tee "agente aidealab/automation/cloud/_run_log.txt"
+
+      - name: Validar saída (PNGs 1080x1440 + metadata)
+        env:
+          QUEUE_DIR: ${{ matrix.queue_dir }}
+        run: |
+          python - <<'EOF'
+          import json, os, sys
+          from pathlib import Path
+          from PIL import Image
+          d = Path(os.environ["QUEUE_DIR"])
+          meta_path = d / "metadata.json"
+          if not meta_path.exists():
+              sys.exit(f"ERRO: {meta_path} nao existe (render bloqueado ou falhou)")
+          meta = json.loads(meta_path.read_text(encoding="utf-8-sig"))
+          if meta.get("status") == "bloqueado" or meta.get("postado") is not False:
+              sys.exit(f"ERRO: metadata bloqueado/invalido: status={meta.get('status')} postado={meta.get('postado')}")
+          slides = meta.get("slides", [])
+          if len(slides) < 3:
+              sys.exit("ERRO: poucos slides no metadata")
+          for s in slides:
+              p = d / (s.get("arquivo") or s.get("nome") or "")
+              if not p.is_file():
+                  sys.exit(f"ERRO: slide ausente: {p}")
+              if Image.open(p).size != (1080, 1440):
+                  sys.exit(f"ERRO: {p} nao e 1080x1440")
+          print(f"OK: {len(slides)} slides validos em {d}")
+          EOF
+
+      - name: Commitar item na fila
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ matrix.queue_dir }}"
+          git diff --cached --quiet && { echo "nada para commitar"; exit 1; }
+          git commit -m "feat(post-instagram): enfileira ${{ matrix.name }} re-renderizado (texto legível) [skip ci]"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: Upload de segurança (log + _run)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rerender-${{ matrix.dia }}-${{ github.run_id }}
+          path: |
+            agente aidealab/automation/cloud/_run/
+            agente aidealab/automation/cloud/_run_log.txt
+          retention-days: 14
+          if-no-files-found: ignore

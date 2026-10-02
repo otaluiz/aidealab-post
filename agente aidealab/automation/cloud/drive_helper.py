@@ -91,7 +91,7 @@ def cmd_list(svc, args):
     page_token = None
     while True:
         resp = svc.files().list(
-            q=query, fields="nextPageToken, files(id,name,mimeType,size,modifiedTime)",
+            q=query, fields="nextPageToken, files(id,name,mimeType,size,createdTime,modifiedTime)",
             pageSize=200, pageToken=page_token,
         ).execute()
         files.extend(resp.get("files", []))
