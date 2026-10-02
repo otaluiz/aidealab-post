@@ -1,0 +1,83 @@
+{
+  "carousel_id": "avaliacao-que-nao-vem",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho aguardando validação humana. Nunca marcar aprovado nem mover para 06-Aprovados-para-Postar sem aprovação explícita do cliente.",
+  "postado": false,
+  "tema": "Cliente satisfeito quase nunca avalia sozinho. O elogio acontece na hora, o pedido de avaliação fica pra depois e vira nunca. A IA pede no momento certo, com o link direto.",
+  "pilar": "educacional",
+  "familia_cor": "amber",
+  "template": "hook(Template A, banco img-ref, foto plena, scrim + lockup Tempting+Inter900) - miolo(cartão escuro sobre foto, contrato único: chip dentro, head Inter, accent Playfair 1 linha, body Inter) - cta(Template A + chip)",
+  "formato": "1080x1440",
+  "geracao_imagem": "100% banco 02-Materiais-Brutos/img-ref (lote novo surrealism_digital_art_ethereal_lighting de 2026-10-02), 6 imagens distintas nativas 1080x1440. Rejeitadas: #2 (texto cirílico incrustado 'Жизнь'), #6 (cena quase igual à do hook do do-caos-ao-caminho), #4 (duplicata de composição de #1). Custo Higgsfield: 0.",
+  "checagens": {
+    "qa_contract": "OK nos 6 slides (chip dentro do cartão, accent 1 linha, body Inter, sem texto solto, sem invasão de header/rodapé)",
+    "anticolisao_residual_px": {
+      "hook": 0,
+      "cta": 0
+    },
+    "fontes": "locais: Tempting (script hook/CTA), Inter 900/400, Playfair Display Italic 900 (accent do cartão)",
+    "dimensoes": "1080x1440 nos 6 PNGs"
+  },
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_calado_hook.png",
+      "texto": "Cliente feliz CALADO. / Quem gostou do seu trabalho quase nunca avalia sozinho."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_silencio_problema.png",
+      "texto": "O cliente saiu satisfeito, e a avaliação nunca veio."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_esquecimento_causa.png",
+      "texto": "Ninguém pede na hora certa, e depois o momento passa."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_pedido_solucao.png",
+      "texto": "A IA pede por você, no momento em que ele sorri."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_confianca_resultado.png",
+      "texto": "Mais avaliações reais, sem correr atrás de ninguém."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_avalia_cta.png",
+      "texto": "Quem pede RECEBE. / Comenta \"AVALIA\""
+    }
+  ],
+  "legenda": "Seu cliente saiu feliz, elogiou o atendimento e foi embora. Duas semanas depois, o Google ainda mostra pouca coisa sobre você.\n\nQuase ninguém avalia sozinho. O elogio acontece na hora, o pedido de avaliação fica pra depois, e depois vira nunca.\n\nQuem pesquisa seu negócio procura gente de verdade falando dele. Uma mensagem educada, enviada logo depois do atendimento, muda esse jogo.\n\nÉ esse pedido que a IA faz por você, no momento certo, com o link direto, sem você precisar lembrar de cada cliente.\n\nComenta AVALIA que a gente te mostra como montar isso.",
+  "primeiro_comentario": "Hoje você pede avaliação pra todo cliente satisfeito, ou só quando lembra?",
+  "hashtags": [
+    "#aidealab",
+    "#avaliacoes",
+    "#pequenosnegocios",
+    "#automacaocomia"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "AVALIA",
+    "texto": "comenta AVALIA que a gente te mostra como montar isso"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_calado_hook.png",
+      "02_silencio_problema.png",
+      "03_esquecimento_causa.png",
+      "04_pedido_solucao.png",
+      "05_confianca_resultado.png",
+      "06_avalia_cta.png"
+    ]
+  }
+}
