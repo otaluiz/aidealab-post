@@ -1,0 +1,75 @@
+{
+  "carousel_id": "prova-que-vende-v2",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho v2 refeito no contrato único do cartão (corpo Inter 33px branco), fontes locais. Aguarda validação humana; não mover para Aprovados sem aprovação explícita.",
+  "postado": false,
+  "refeito_de": "prova-que-vende",
+  "tema": "Post bonito sozinho não converte: falta prova concreta (depósito, print de resultado, número real) que sustente a promessa",
+  "pilar": "educacional",
+  "familia_cor": "azul",
+  "formato": "1080x1440",
+  "geracao_imagem": "Mesmas 6 imagens do original (banco 01-Referencias/Instagram/img-ref, nenhuma substituída): hook download (3)_2026-09-26 [1ugrzaxx...], problema download (5)_2026-09-26 [1JUtKI1S...], causa cinematic_astral_58a2701e [1-MRQ63KA...], prática download (34) [1uAuSUED...], resultado download (8)_2026-09-26 [12yvhw3s...], CTA download (7)_2026-09-26 [1QWA3_i6...]. Identificação por nomes do metadata original; não correlacionada por NCC.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "texto": "Post bonito, VAZIO. Bonito chama atenção. Quem decide comprar procura prova."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "texto": "O problema: Bonito não basta pra confiar, a promessa vale igual pra todos. Quem lê o post não sabe se sua empresa entrega o que promete. Sem nada que comprove, a legenda vale o mesmo pra quem cumpre e pra quem não cumpre."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "texto": "Por que acontece: Toda empresa pequena diz as mesmas frases, sem exemplo real atrás. Atendimento incrível, resultado garantido, qualidade premium: todo mundo escreve isso sobre si mesmo. Sem um caso concreto, o cliente não separa quem entrega de quem só promete."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_pratica.png",
+      "texto": "O que fazer: Mostre o antes, o depois e o número que sustenta. Use print de resultado, depoimento gravado ou comparação real. Não precisa ser perfeito, precisa ser checável: quem vê tem que conseguir confirmar que aconteceu de verdade."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "texto": "O resultado: Quem prova vende antes de falar de preço. Com a prova na frente, o cliente para de adivinhar se você entrega e passa a saber. A decisão chega mais perto e a conversa de preço fica bem mais leve."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "texto": "O que convence e PROVA. Comenta \"PROVA\""
+    }
+  ],
+  "legenda": "Seu feed pode estar bonito e mesmo assim não vender nada.\n\nO design chama atenção, mas quem decide comprar procura por outra coisa: alguma prova de que aquilo funciona de verdade. Depoimento, print de resultado, número, antes e depois.\n\nSem isso, toda promessa soa igual. \"Atendimento incrível\" no seu post e no post do concorrente pesam a mesma coisa pra quem está de fora decidindo.\n\nA prova muda o jogo porque tira a decisão do campo da opinião. Quem vê consegue checar, não só acreditar.\n\nComenta PROVA que a gente te manda o passo a passo pra montar a sua.",
+  "primeiro_comentario": "Seu post mais recente tem alguma prova de resultado ou só a promessa?",
+  "hashtags": [
+    "#aidealab",
+    "#provasocial",
+    "#marketingdigital",
+    "#pequenosnegocios",
+    "#instagramparaempresas"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "PROVA",
+    "texto": "comenta PROVA que a gente te manda o passo a passo pra montar a sua"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_pratica.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  }
+}

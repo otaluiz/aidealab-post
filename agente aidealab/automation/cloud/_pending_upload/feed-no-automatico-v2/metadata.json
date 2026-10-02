@@ -1,0 +1,86 @@
+{
+  "carousel_id": "feed-no-automatico-v2",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho v2 refeito no contrato único do cartão (corpo Inter 33px branco), fontes locais. Aguarda validação humana; não mover para Aprovados sem aprovação explícita.",
+  "postado": false,
+  "refeito_de": "feed-no-automatico",
+  "tema": "Dono de pequeno negócio não posta porque o dia não sobra tempo pra criar. Um agente de IA aprende o tom e o visual da marca e cria o carrossel inteiro, pra o feed não depender de sobrar hora livre.",
+  "pilar": "oferta",
+  "familia_cor": "amber",
+  "formato": "1080x1440",
+  "geracao_imagem": {
+    "fonte": "banco img-ref",
+    "ids": {
+      "hook": "1ugrzaxxXOmksM67XWozF_oKqX2lq2uTt SUBSTITUIDA (original 1vj3BvhSgp51DjEiU0-aDSwy7sSdHA5qf nao existe mais no Drive)",
+      "problema": "1IKbz1MHFmTF6TjlFE1TgpfHLI47jfhMc",
+      "causa": "1FC18vovZ_I8R2vQxDUGSqf3W5BPetQ5B",
+      "solucao": "1aPqO8jzfUdpzi9WsY5DFqAKCD6zn7TzM",
+      "resultado": "12FxGWQUr8dxpxgraJhSIf3m9wpYBjkXr",
+      "cta": "135Jz4ZrDcNxbSLP7KDCdR8hquxbSmUhI"
+    },
+    "imagens_nota": "Hook substituido por outra imagem do banco."
+  },
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "texto": "O post de hoje PARA. Ninguém teve 10 minutos livres pra sentar e criar."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "texto": "O problema | Ninguém senta pra criar: o dia emenda no seguinte. A reunião acaba, o cliente liga e o post daquele dia fica pra amanhã. Escrever, montar a arte e revisar pede uma hora que não sobra."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "texto": "Por que acontece | A ideia existe, falta a hora de virar post pronto. Tirar a ideia da cabeça e transformar em roteiro, arte e legenda toda semana consome um tempo que o dono de pequeno negócio raramente tem."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_solucao.png",
+      "texto": "O que muda | Um agente de IA aprende seu tom e cria o carrossel inteiro. Tema, copy, imagem e arte final saem prontos, no padrão visual da sua marca. Você só revisa e publica, sem abrir editor nenhum."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "texto": "O resultado | O feed segue ativo mesmo na semana mais cheia. A regularidade deixa de depender de sobrar tempo livre. Mesmo na semana em que ninguém abriu o Canva, o post sai."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "texto": "Descansa, o feed segue, CHAMA. Comenta \"CHAMA\""
+    }
+  ],
+  "legenda": "Teve semana que o post do dia simplesmente não saiu.\n\nFalta de ideia nem era o problema, foi falta de tempo mesmo: sentar, escrever, montar a arte, revisar. Isso consome um pedaço do dia que o dono de negócio pequeno raramente tem sobrando.\n\nA gente treinou um agente de IA que aprende o tom e o visual da marca e monta o carrossel inteiro sozinho, do roteiro à arte final, toda semana.\n\nO feed segue ativo mesmo na semana mais cheia.\n\nComenta \"CHAMA\" que a gente te mostra como funciona (inclusive, esse post aqui foi ele que fez).",
+  "primeiro_comentario": "Quantos posts vocês deixam de fazer numa semana cheia por falta de tempo?",
+  "hashtags": [
+    "#aidealab",
+    "#automacaocomia",
+    "#criacaodeconteudo",
+    "#pequenosnegocios",
+    "#marketingdigital"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "CHAMA",
+    "texto": "comenta \"CHAMA\" e descansa enquanto a gente cuida do feed"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_solucao.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  }
+}

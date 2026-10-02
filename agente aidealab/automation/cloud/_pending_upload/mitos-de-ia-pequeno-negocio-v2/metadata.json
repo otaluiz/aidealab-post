@@ -1,0 +1,75 @@
+{
+  "carousel_id": "mitos-de-ia-pequeno-negocio-v2",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho v2 refeito no contrato único do cartão (corpo Inter 33px branco), fontes locais. Aguarda validação humana; não mover para Aprovados sem aprovação explícita.",
+  "postado": false,
+  "refeito_de": "mitos-de-ia-pequeno-negocio",
+  "tema": "Mitos que travam o pequeno negócio na hora de usar IA: o maior é achar que IA é coisa de empresa gigante, quando na prática começa com uma resposta automática no WhatsApp",
+  "pilar": "educacional",
+  "familia_cor": "amber",
+  "formato": "1080x1440",
+  "geracao_imagem": "Mesmas 6 imagens do original (banco 01-Referencias/Instagram/img-ref, dreamcore_surrealism lote 2026-09-26, nenhuma substituída), identificadas pelo mapa 'imagens_banco_migradas' do metadata original: hook ...04fc4055 [1nU8B2TC], problema ...bb19c1a2 [1vHVx_zS], causa ...ecc60d5b [1j9LIQ-Q], prática ...71889137 [1lM6YlSB], resultado ...306944a8 [17lwRIeH], CTA ...7e914b23 [147QT50d]. Identificação por nomes do metadata; não correlacionada por NCC.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "texto": "Antes da tecnologia MEDO. O que trava o pequeno negócio na hora de usar IA."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "texto": "O mito: IA é coisa de empresa grande, foi o que você ouviu. Equipe de tecnologia, orçamento alto e sistema complicado demais pra mexer sozinho. É a imagem que fica na cabeça de quem tem um negócio pequeno."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "texto": "De onde vem: Ferramenta feita pra empresa de duzentos funcionários. O que você viu por aí foi pensado pra outro tamanho de problema. Por isso parece caro e complicado: nunca foi desenhado pro seu negócio."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_pratica.png",
+      "texto": "Por onde começar: Comece pequeno: uma resposta, um agendamento. Um WhatsApp que responde a primeira mensagem sozinho. Uma agenda que confirma o horário sem você digitar. Isso já é IA e cabe no seu orçamento."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "texto": "O que muda: O tempo que sobra vira atendimento de verdade. Menos hora copiando e colando resposta. Mais hora falando com quem já decidiu comprar."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "texto": "Todo passo grande COMEÇA. Comenta \"COMECA\""
+    }
+  ],
+  "legenda": "Medo trava mais decisão de pequeno negócio do que falta de dinheiro.\n\nVocê já ouviu que inteligência artificial é coisa de empresa grande, com equipe de tecnologia e orçamento que sua empresa não tem. Faz sentido pensar assim: a maioria das ferramentas que aparecem por aí foi pensada pra esse tamanho de problema.\n\nMas o que cabe no seu negócio é bem mais simples que isso. Uma resposta automática no WhatsApp. Uma agenda que confirma horário sozinha. O primeiro passo não precisa ser grande, só precisa sair do papel.\n\nComenta COMECA que a gente te manda o primeiro passo pra sua empresa usar IA ainda essa semana.",
+  "primeiro_comentario": "Qual tarefa consome mais o seu tempo hoje: responder mensagem, marcar horário ou cobrar cliente?",
+  "hashtags": [
+    "#aidealab",
+    "#inteligenciaartificial",
+    "#pequenosnegocios",
+    "#automacaowhatsapp",
+    "#marketingdigital"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "COMECA",
+    "texto": "comenta COMECA que a gente te manda o primeiro passo pra sua empresa usar IA ainda essa semana"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_pratica.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  }
+}

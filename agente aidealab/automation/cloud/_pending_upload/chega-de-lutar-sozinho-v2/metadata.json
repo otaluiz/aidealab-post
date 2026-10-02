@@ -1,0 +1,74 @@
+{
+  "carousel_id": "chega-de-lutar-sozinho-v2",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho v2 refeito no contrato único do cartão (corpo Inter 33px branco), fontes locais. Aguarda validação humana; não mover para Aprovados sem aprovação explícita.",
+  "postado": false,
+  "refeito_de": "chega-de-lutar-sozinho",
+  "tema": "Dono de pequeno negócio tenta sustentar sozinho tudo que a rotina exige (mensagem, agendamento, post, venda) achando que automação é coisa de empresa grande; a aidealab entra como reforço que assume o repetitivo",
+  "pilar": "oferta",
+  "familia_cor": "magenta",
+  "formato": "1080x1440",
+  "geracao_imagem": "Do banco img-ref. Mantidas do original: CTA 1Pv7bd7B (neon_knight, cavaleiro com espada erguida sobre gradiente vermelho/verde). Das 6 imagens do lote neon_knight do original só 4 restam no Drive e só a do CTA pode ser confirmada como a original (as de hook, problema, causa, solução e resultado, descritas no metadata original, não existem mais). Por isso foram SUBSTITUÍDAS por imagens do banco com tema cavaleiro/espada, sem texto/marca d'água/nudez: hook -> 1uAuSUEd (cavaleira montada com espada, céu azul); problema -> 1HnMwfle (cavaleiro azul neon, neon_knight b4d8e49c); causa -> 12yvhw3s (armadura vermelha e dourada); solução -> 1MBT-cze (armadura prateada); resultado -> 11vf5eEn (figura cromada encapuzada com espada, neon_knight 5801d1f5). Descartada a do cavaleiro entre cruzes flamejantes (1G0Kmelo), como no original. Nenhuma imagem repetida no carrossel.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "texto": "Cansado de lutar SOZINHO."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "texto": "O problema: Tudo na correria, e a estratégia fica pra depois. Toda mensagem, todo post e toda ligação pedem sua atenção ao mesmo tempo. Sobra pouco tempo pra pensar no negócio."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "texto": "Por que acontece: Ninguém te mostrou que dá pra automatizar isso. A maioria continua fazendo tudo na mão porque acha que automação é coisa de empresa grande. Só que existem soluções no tamanho do seu negócio."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_solucao.png",
+      "texto": "O que muda: A gente entra como reforço que responde por você. Mensagem automática, agendamento e resposta rápida no WhatsApp. O trabalho repetitivo sai da sua mão e continua acontecendo."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "texto": "O resultado: O dia fica mais leve porque o repetitivo já está resolvido. Menos aba aberta, menos mensagem esquecida. Sobra tempo pra atender bem quem já decidiu comprar."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "texto": "Pra lutar menos, JUNTOS. Manda \"REFORCO\" na DM"
+    }
+  ],
+  "legenda": "Sozinho, todo dia vira apagar incêndio.\n\nMensagem, ligação, imprevisto, tudo empilhado pra resolver na hora, sem ajuda nenhuma.\n\nNinguém te mostrou que dá pra dividir isso com automação. A ideia de que ferramenta assim é coisa de empresa grande trava muito pequeno negócio bom.\n\nWhatsApp que responde na hora, agendamento que se organiza sozinho, mensagem que não fica esquecida. O repetitivo sai da sua lista e o tempo volta pra quem só você atende bem.\n\nManda REFORCO na DM e a gente monta o primeiro passo com você.",
+  "primeiro_comentario": "Qual dessas tarefas mais rouba seu tempo hoje: responder mensagem, agendar horário ou postar conteúdo?",
+  "hashtags": [
+    "#aidealab",
+    "#automacaointeligente",
+    "#pequenosnegocios",
+    "#marketingdigital"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "REFORCO",
+    "texto": "manda REFORCO na DM"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_solucao.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  }
+}
