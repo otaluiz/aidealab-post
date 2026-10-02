@@ -1,0 +1,73 @@
+{
+  "carousel_id": "espera-o-momento-perfeito-v2",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho v2, refeito no contrato único do cartão de miolo e com as fontes locais (Tempting no script do hook/CTA, Inter, Playfair no destaque). Aguarda validação humana; não mover para Aprovados sem aprovação.",
+  "postado": false,
+  "tema": "Esperar o momento perfeito para postar, lançar ou automatizar trava o negócio pequeno mais do que qualquer erro real. Quem testa pequeno e ajusta andando sai na frente de quem só planeja.",
+  "pilar": "educacional",
+  "familia_cor": "magenta",
+  "formato": "1080x1440",
+  "geracao_imagem": "Banco/referências já existentes no Drive, mesmas imagens da versão anterior (exceto 02_problema do do-caos-ao-caminho-v2, substituída: a imagem original não está mais no Drive). Custo Higgsfield: 0.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_parada_hook.png",
+      "texto": "A ideia ainda PARADA. / Todo mundo tem uma. Quase ninguém coloca no ar."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_adiamento_problema.png",
+      "texto": "Sempre falta um detalhe pro momento ficar perfeito."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_medo_causa.png",
+      "texto": "Não é falta de plano. É medo de errar na frente de alguém."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_pequeno_pratica.png",
+      "texto": "Comece pequeno: um post, um teste, um ajuste por vez."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_salto_resultado.png",
+      "texto": "O salto ensina o que a espera nunca vai ensinar."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_agora_cta.png",
+      "texto": "O momento certo, AGORA. / Salva esse post"
+    }
+  ],
+  "legenda": "Você já teve uma ideia pronta há semanas e ainda não postou, não mandou, não testou.\n\nSempre falta alguma coisa. O feed mais bonito, o site mais rápido, a agenda menos cheia.\n\nEnquanto isso, alguém do seu nicho publicou errado, ajustou no dia seguinte e já foi pra frente. Não porque era melhor, e sim porque testou.\n\nMedo de errar na frente de alguém trava mais negócio pequeno do que qualquer erro real.\n\nComece pequeno essa semana: um post, uma resposta automática, um ajuste no anúncio. O momento perfeito não chega sozinho, ele se constrói testando.\n\nSe tem uma ideia parada aí, salva este post e escolhe qual dela sai primeiro.",
+  "primeiro_comentario": "Qual ideia do seu negócio está esperando o momento perfeito pra sair do papel?",
+  "hashtags": [
+    "#aidealab",
+    "#pequenosnegocios",
+    "#marketingdigital",
+    "#empreendedorismo"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "salvar",
+    "palavra_chave": "",
+    "texto": "Salva esse post antes de adiar mais uma ideia boa."
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_parada_hook.png",
+      "02_adiamento_problema.png",
+      "03_medo_causa.png",
+      "04_pequeno_pratica.png",
+      "05_salto_resultado.png",
+      "06_agora_cta.png"
+    ]
+  }
+}

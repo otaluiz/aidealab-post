@@ -23,6 +23,9 @@ JS = """() => {
    }
    [head, body].forEach(e => { if (e && /playfair|tempting|serif/.test(fam(e)) && !/inter/.test(fam(e))) err('card'+i+': head/body nao pode ser serifado'); });
    if (body && /playfair|tempting|georgia/.test(fam(body))) err('card'+i+': body serifado');
+   if (body) { const cs = getComputedStyle(body), m = cs.color.match(/\\d+/g).map(Number);
+     if (parseFloat(cs.fontSize) < 32) err('card'+i+': .t-card-body menor que 32px ('+cs.fontSize+')');
+     if (m[0] < 250 || m[1] < 250 || m[2] < 250) err('card'+i+': .t-card-body tem que ser BRANCO (#fff), veio '+cs.color); }
    const b = r(c); if (b.bottom > footTop - 10) err('card'+i+': invade o rodape ('+Math.round(b.bottom)+' > '+Math.round(footTop-10)+')');
    if (b.top < headBot + 10) err('card'+i+': invade o header');
  });

@@ -450,7 +450,7 @@ você</div><div class="t-card-accent">não vai atender.</div>`. CSS:
 ```
 .t-card-head{font-family:var(--font-mon);font-weight:900;font-size:50px;line-height:1.1;color:var(--cream);}
 .t-card-accent{font-family:var(--font-serif);font-style:italic;font-weight:900;font-size:44px;line-height:1.12;color:var(--amber-base);margin-top:8px;}  /* UMA linha, <=70 chars */
-.t-card-body{font-family:'Inter';font-weight:400;font-size:27px;line-height:1.5;color:var(--cream-dim);margin-top:22px;}  /* explicacao, NUNCA serifado */
+.t-card-body{font-family:'Inter';font-weight:400;font-size:33px;line-height:1.45;color:#fff;margin-top:24px;}  /* explicacao: GRANDE (>=32px) e BRANCA, NUNCA serifado */
 ```
 `--font-serif:'Playfair Display',Georgia,serif;` (carrega
 `family=Playfair+Display:ital,wght@1,900` no link do Google Fonts — é
@@ -479,8 +479,9 @@ de referência em `templates/render-engine/slide-miolo.html`):
    carrossel. Nunca frase solta sobre a imagem no miolo.
 2. Dentro do cartão, nesta ordem: `.t-chip` (PRIMEIRO filho, rótulo verbal) →
    `.t-card-head` (Inter 900, setup) → `.t-card-accent` (serifa itálica, **UMA
-   linha curta, ≤70 caracteres, só o giro**) → `.t-card-body` (**Inter 400**, o
-   texto explicativo de verdade, 2–4 linhas).
+   linha curta, ≤70 caracteres, só o giro**) → `.t-card-body` (**Inter 400,
+   33px, branco `#fff`** — nunca menor que 32px nem cinza/cream apagado; o texto
+   explicativo de verdade, 2–4 linhas).
 3. **Serifa só no `.t-card-accent`** (e no script do hook/CTA). Head e body nunca
    serifados. Nunca o parágrafo explicativo inteiro em serifa.
 4. O sujeito/objeto da imagem fica inteiro na moldura da foto (cena 3:4 sem
@@ -488,7 +489,7 @@ de referência em `templates/render-engine/slide-miolo.html`):
    escolha outra imagem ou outra âncora de recorte, não empurre o cartão pro topo.
 5. Verificação bloqueante: `python templates/render-engine/qa_contract.py
    <url-de-cada-slide>` — falha se o chip estiver fora do cartão, se o accent
-   passar de uma linha, se faltar `.t-card-body`, se head/body forem serifados,
+   passar de uma linha, se faltar `.t-card-body`, se o body for menor que 32px ou não for branco, se head/body forem serifados,
    se houver texto solto fora de cartão/lockup ou se o cartão invadir
    header/rodapé. Peça com FAIL não é entregue.
 
