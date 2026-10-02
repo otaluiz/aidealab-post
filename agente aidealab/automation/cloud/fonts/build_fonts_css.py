@@ -30,7 +30,7 @@ for fam, w, st, f in faces:
     out.append(f"@font-face{{font-family:'{fam}';font-weight:{w};font-style:{st};src:url('fonts/{f}') format('{fmt}');}}")
 script = "'Tempting','Playfair Display',Georgia,serif" if tempting else "'Playfair Display',Georgia,serif"
 cond = "'Helvetica Neue LT Std 57 Condensed','Arial Narrow',sans-serif" if helv else "'Inter',sans-serif"
-out.append(f":root{{--font-script:{script};--font-cond:{cond};}}")
+out.append(f":root{{--font-serif:'Playfair Display',Georgia,serif;--font-script:{script};--font-cond:{cond};}}")
 open(os.path.join(HERE, "fonts.css"), "w").write("\n".join(out) + "\n")
 print("Tempting:", tempting or "AUSENTE (usando Playfair Display Italic 900)")
 print("Helvetica Neue 57 Condensed:", helv or "AUSENTE")
