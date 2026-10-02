@@ -1104,10 +1104,22 @@ gerado antes disso.
    peça de citação, não um card de legibilidade de texto.
 
    **Header/rodapé sempre em branco sólido com sombra, nunca some contra a
-   imagem.** O lockup do topo (`AIDEA LAB` / categoria) e o rodapé (`@handle`
-   + dots) usam branco puro com text-shadow forte (nunca a cor cream/dim do
-   corpo de texto) — precisam ficar legíveis em qualquer ponto de qualquer
-   imagem de fundo, clara ou escura, sem depender de moldura.
+   imagem.** O lockup do topo e o rodapé usam branco puro com text-shadow
+   forte (nunca a cor cream/dim do corpo de texto) — precisam ficar legíveis
+   em qualquer ponto de qualquer imagem de fundo, clara ou escura, sem
+   depender de moldura.
+
+   **FORMATO FIXO do header e do rodapé (regra do cliente, 2026-10-02) — em
+   TODOS os slides, hook e CTA incluídos:**
+   - **Topo:** `2026` à esquerda (`.t-kicker.l`) e `AIDEA LAB` à direita
+     (`.t-kicker.r`). Nada de categoria no topo.
+   - **Rodapé:** `@aidealab7` à esquerda (`.t-footer-handle`), os dots no
+     centro (`.t-footer-dots`) e a **categoria do carrossel** em caixa alta à
+     direita (`.t-footer-cat`, ex.: `AUTOMAÇÃO`). A categoria é a mesma nos 6
+     slides.
+   - **NUNCA contador `01/06`, `02/06`...** no rodapé: os dots já são o guia
+     de slides do carrossel, ter os dois é redundância.
+   Referência de HTML: `templates/render-engine/slide-miolo.html`.
 
    **Nunca deixa texto encostar ou sobrepor o header/rodapé.** No hook e no
    CTA — onde o texto fica solto sobre a imagem, sem moldura — garante
