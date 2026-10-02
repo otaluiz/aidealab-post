@@ -12,8 +12,8 @@
   --amber-base:#E9BA4B;
   --amber-shade:#B3833A;
   --font-mon:'Inter',system-ui,sans-serif;
-  --font-script:'Tempting','Brush Script MT',cursive;
-  --font-body:'Manrope',system-ui,sans-serif;
+  --font-script:'Tempting','Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{width:1080px;height:1440px;overflow:hidden;}
@@ -64,10 +64,15 @@ body{background:var(--bg);color:var(--cream);font-family:var(--font-body);-webki
   font-size:32px;padding:20px 40px 22px;border-radius:16px;box-shadow:0 10px 30px rgba(233,186,75,.45);}
 
 .t-block{position:absolute;left:64px;right:64px;bottom:176px;z-index:4;}
+/* CONTRATO DO CARTAO DE MIOLO (nao reimplementar):
+   .t-card > .t-chip (PRIMEIRO filho, dentro do cartao) + .t-card-head (Inter 900) +
+   .t-card-accent (serifa italica, UMA linha curta, so o giro) + .t-card-body (Inter 400,
+   2-4 linhas, o texto explicativo -- NUNCA serifado). Cartao sempre ancorado por bottom. */
 .t-chip{display:inline-block;color:#0A0E16;background:var(--amber-base);padding:9px 20px 10px;border-radius:9px;
-  font-family:var(--font-mon);font-weight:700;font-size:19px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;}
+  font-family:var(--font-mon);font-weight:700;font-size:19px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px;}
 .t-card{background:rgba(8,11,20,.72);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);
-  border:1px solid rgba(245,237,231,.16);border-radius:22px;padding:46px 42px;box-shadow:0 20px 50px rgba(0,0,0,.4);}
+  border:1px solid rgba(245,237,231,.16);border-radius:22px;padding:40px 42px 42px;box-shadow:0 20px 50px rgba(0,0,0,.4);}
 .t-card-head{font-family:var(--font-mon);font-weight:900;font-size:50px;line-height:1.1;color:var(--cream);}
-.t-card-body{font-family:var(--font-body);font-size:24px;color:var(--cream-dim);margin-top:20px;line-height:1.55;}
+.t-card-accent{font-family:var(--font-script);font-style:italic;font-weight:900;font-size:44px;line-height:1.12;color:var(--amber-base);margin-top:8px;}
+.t-card-body{font-family:var(--font-body);font-weight:400;font-style:normal;font-size:27px;color:var(--cream-dim);margin-top:22px;line-height:1.5;}
 .t-card-body .kw{color:var(--amber-base);font-weight:700;}

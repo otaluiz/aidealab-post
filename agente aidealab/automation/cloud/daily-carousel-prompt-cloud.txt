@@ -122,15 +122,16 @@ recuperar os PNGs manualmente caso o upload pro Drive dê problema.
   ferramenta Skill não encontrar alguma, **siga sem ela** (a orientação delas
   já está resumida no SKILL.md da `criar-post`), não trave a rotina por causa
   disso.
-- Fontes: Tempting normalmente não está disponível neste runner. Use Google
-  Fonts (`fonts.googleapis.com`/`fonts.gstatic.com`, com acesso de rede
-  normal aqui, ao contrário de sandbox restrito) -- Inter 900 + Manrope
-  sempre. Para o script do lockup, tente `Tempting` primeiro (caso o
-  workflow tenha instalado o arquivo da fonte -- confira
-  `agente aidealab/automation/cloud/fonts/`); se não existir, use o par
-  alternativo **Helvetica Neue + Shelley Script/Playfair Display Italic 900**
-  documentado no SKILL.md como rede de segurança -- troque o PAR inteiro,
-  nunca só metade.
+- Fontes: SEMPRE locais, em `agente aidealab/automation/cloud/fonts/` (Inter e
+  Playfair Display Italic 900 versionados; `Tempting.ttf` quando o cliente colocar
+  o arquivo). Rode `python agente aidealab/automation/cloud/fonts/build_fonts_css.py`,
+  copie `fonts.css` + `fonts/` pro build e linke `fonts.css` -- nada de Google Fonts
+  em runtime. Sem Tempting, o par Inter 900 + Playfair Display Italic 900 vale e
+  vai em `fonte_script_nota`. Troque o PAR inteiro, nunca só metade.
+- Cartão de miolo: contrato único do SKILL.md (chip DENTRO do cartão, cartão sempre
+  no rodapé, accent serifado de UMA linha, texto explicativo em Inter em
+  `.t-card-body`). Rode `templates/render-engine/qa_contract.py` em todo slide;
+  FAIL bloqueia a entrega.
 
 Se algo travar de verdade (ferramenta indisponível, geração falha muitas
 vezes, credencial faltando), documente o bloqueio no metadata.json com

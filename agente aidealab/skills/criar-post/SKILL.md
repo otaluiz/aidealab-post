@@ -449,7 +449,8 @@ itálica, cor de acento).** Padrão de referência (`estrategia/estrat_2_passo1`
 você</div><div class="t-card-accent">não vai atender.</div>`. CSS:
 ```
 .t-card-head{font-family:var(--font-mon);font-weight:900;font-size:50px;line-height:1.1;color:var(--cream);}
-.t-card-accent{font-family:var(--font-serif);font-style:italic;font-weight:900;font-size:46px;line-height:1.08;color:var(--amber-base);margin-top:2px;}
+.t-card-accent{font-family:var(--font-serif);font-style:italic;font-weight:900;font-size:44px;line-height:1.12;color:var(--amber-base);margin-top:8px;}  /* UMA linha, <=70 chars */
+.t-card-body{font-family:'Inter';font-weight:400;font-size:27px;line-height:1.5;color:var(--cream-dim);margin-top:22px;}  /* explicacao, NUNCA serifado */
 ```
 `--font-serif:'Playfair Display',Georgia,serif;` (carrega
 `family=Playfair+Display:ital,wght@1,900` no link do Google Fonts — é
@@ -465,6 +466,42 @@ a cor + itálico já fazem o destaque sozinhos. Versão descartada (usada até
 2026-09-21): só uma palavra em CAIXA ALTA ganhando `<span class="kw">` dentro
 de uma única linha — funciona mas é mais fraco que a linha inteira em serifa
 colorida; a referência real usa a linha toda.
+
+**CONTRATO ÚNICO DO CARTÃO DE MIOLO (2026-10-02) — vale para TODO slide de
+explicação, sem variante.** Inconsistências reais encontradas em
+`do-caos-ao-caminho`, `whatsapp-plantao`, `resultado-real`, `processo-criativo`,
+`automacao-inteligente` e `espera-o-momento-perfeito`: chip flutuando FORA do
+cartão, cartão no topo num slide e no rodapé noutro, frase solta no meio da
+imagem sem cartão (por cima do objeto), e o texto explicativo curto e INTEIRO em
+serifa. O contrato (CSS pronto em `templates/render-engine/slide-base.css`, HTML
+de referência em `templates/render-engine/slide-miolo.html`):
+1. `.t-card` SEMPRE ancorado por `bottom` (nunca `.top`), em todos os slides do
+   carrossel. Nunca frase solta sobre a imagem no miolo.
+2. Dentro do cartão, nesta ordem: `.t-chip` (PRIMEIRO filho, rótulo verbal) →
+   `.t-card-head` (Inter 900, setup) → `.t-card-accent` (serifa itálica, **UMA
+   linha curta, ≤70 caracteres, só o giro**) → `.t-card-body` (**Inter 400**, o
+   texto explicativo de verdade, 2–4 linhas).
+3. **Serifa só no `.t-card-accent`** (e no script do hook/CTA). Head e body nunca
+   serifados. Nunca o parágrafo explicativo inteiro em serifa.
+4. O sujeito/objeto da imagem fica inteiro na moldura da foto (cena 3:4 sem
+   cortar o objeto principal pelas bordas); se o cartão for cobrir o sujeito,
+   escolha outra imagem ou outra âncora de recorte, não empurre o cartão pro topo.
+5. Verificação bloqueante: `python templates/render-engine/qa_contract.py
+   <url-de-cada-slide>` — falha se o chip estiver fora do cartão, se o accent
+   passar de uma linha, se faltar `.t-card-body`, se head/body forem serifados,
+   se houver texto solto fora de cartão/lockup ou se o cartão invadir
+   header/rodapé. Peça com FAIL não é entregue.
+
+**Fontes — locais, nunca Google Fonts em runtime.** Arquivos em
+`automation/cloud/fonts/` (Inter 400/700/900 e Playfair Display Italic 900 já
+versionados, licença OFL). **Tempting é comercial e NÃO está no repo**: o cliente
+coloca `Tempting.ttf` (ou `.otf`/`.woff2`) nessa pasta e roda
+`python automation/cloud/fonts/build_fonts_css.py`, que gera `fonts.css` com
+`@font-face` local e define `--font-script` (Tempting → Playfair Display → Georgia).
+Sem o arquivo, o par de emergência Inter 900 + Playfair Display Italic 900 é
+usado e registrado em `fonte_script_nota` no `metadata.json`. Copie `fonts.css` +
+a pasta `fonts/` para o build do slide e linke `fonts.css` (não o `<link>` do
+Google Fonts). Manrope não entra em peça nova; corpo é Inter.
 
 **Checagem obrigatória, bloqueante, antes de aceitar QUALQUER hook/CTA — dois
 bugs que já se repetiram em builds independentes feitos do zero (não é
