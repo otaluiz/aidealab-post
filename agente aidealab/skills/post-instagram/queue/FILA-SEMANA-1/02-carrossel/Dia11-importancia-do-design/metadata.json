@@ -3,7 +3,7 @@
   "cliente": "aidealab",
   "data_criacao": "2026-09-26",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "tema": "importancia do design para negocios",
   "familia_cor": "azul",
   "template": "hook-explicacao-referencia-cta",
@@ -43,5 +43,7 @@
   ],
   "legenda": "Design não é enfeite. Três segundos pra entender, ou a pessoa fecha. Só isso.\n\nSalva e segue a gente.",
   "hashtags": "#design #uxui #conversao #primeira_impressao #aidealab",
-  "handle": "@aidealab7"
+  "handle": "@aidealab7",
+  "postado_em": "2026-10-02T10:33:03.582174",
+  "post_id": "18089118386688050"
 }
