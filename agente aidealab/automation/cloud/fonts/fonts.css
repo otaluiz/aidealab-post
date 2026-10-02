@@ -2,4 +2,6 @@
 @font-face{font-family:'Inter';font-weight:700;font-style:normal;src:url('fonts/Inter-Bold.ttf') format('truetype');}
 @font-face{font-family:'Inter';font-weight:900;font-style:normal;src:url('fonts/Inter-Black.ttf') format('truetype');}
 @font-face{font-family:'Playfair Display';font-weight:900;font-style:italic;src:url('fonts/PlayfairDisplay-BlackItalic.ttf') format('truetype');}
-:root{--font-script:'Playfair Display',Georgia,serif;--font-cond:'Inter',sans-serif;}
+@font-face{font-family:'Tempting';font-weight:400;font-style:normal;src:url('fonts/Tempting.ttf') format('truetype');}
+@font-face{font-family:'Helvetica Neue LT Std 57 Condensed';font-weight:400;font-style:normal;src:url('fonts/Helvetica Neue LT Std 57 Condensed.otf') format('opentype');}
+:root{--font-script:'Tempting','Playfair Display',Georgia,serif;--font-cond:'Helvetica Neue LT Std 57 Condensed','Arial Narrow',sans-serif;}
