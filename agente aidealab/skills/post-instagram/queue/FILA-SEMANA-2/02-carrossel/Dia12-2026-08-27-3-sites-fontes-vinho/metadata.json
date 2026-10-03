@@ -3,7 +3,7 @@
   "cliente": "aidealab",
   "data_criacao": "2026-08-27",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "origem_carousel_id": "2026-08-27_3-sites-fontes-vinho",
   "tema": "sites de combinacao de fontes",
   "familia_cor": "vinho",
@@ -41,5 +41,7 @@
   ],
   "legenda": "Fontpair, Typewolf, Fonts In Use — três sites que batem a combinação certa de tipografia. Pronto, tirou uma preocupação do dia.\n\nSalva e vem com a gente.",
   "hashtags": "#tipografia #design #ferramenta #aidealab",
-  "handle": "@aidealab7"
+  "handle": "@aidealab7",
+  "postado_em": "2026-10-03T15:09:49.108150",
+  "post_id": "17971252032164638"
 }
