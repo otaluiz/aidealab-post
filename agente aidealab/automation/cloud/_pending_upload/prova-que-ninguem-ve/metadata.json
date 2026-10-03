@@ -1,0 +1,177 @@
+{
+  "carousel_id": "prova-que-ninguem-ve",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-03",
+  "status": "rascunho",
+  "status_nota": "Rascunho aguardando validação humana. SKILL.md (Etapa 6, REGRA DO CLIENTE 2026-10-02) proíbe marcar aprovado ou mover para 06-Aprovados-para-Postar sem aprovação explícita.",
+  "postado": false,
+  "tema": "Pequeno negócio recebe prova social de verdade todo dia (elogio no Direct, áudio, comentário), mas ela fica espalhada e esquecida (no WhatsApp, num print antigo, na lembrança de quem atendeu) e nunca chega pra quem está decidindo comprar agora. A IA junta essas pontas e mostra a prova certa no momento exato da dúvida.",
+  "pilar": "prova",
+  "familia_cor": "magenta",
+  "familia_cor_nota": "Magenta não aparecia desde lead-que-esfria (2026-10-01); azul foi usada nas duas peças anteriores (negocio-preso-na-mao e bastidor-antes-de-parecer-magica) e amber antes delas. Magenta contrasta com o azul dominante das cenas.",
+  "espinha_de_palavras": [
+    "ESCONDIDA",
+    "decidir",
+    "junta",
+    "arquiva",
+    "quase",
+    "BRILHAR"
+  ],
+  "template": "hook(Template A/D, banco img-ref, foto plena 1080x1440 nativa, t-vign-top+t-vign-bottom + lockup Tempting+Inter900) - problema/causa/solução/resultado(cartão de vidro sobre imagem: chip dentro do cartão, head Inter 900, accent Playfair itálico 1 linha, body Inter 400 branco 33px) - cta(Template A/D + t-cta-chip)",
+  "formato": "1080x1440",
+  "geracao_imagem": {
+    "fonte": "100% banco 02-Materiais-Brutos/img-ref (nenhuma geração). 6 imagens distintas, nativas 1080x1440.",
+    "custo_creditos": 0,
+    "imagens_escolhidas": [
+      {
+        "papel": "hook",
+        "arquivo_origem": "surrealism_digital_art_ethereal_lighting_07e6a1425563a3fc5af8ca3ed3340f8d.png",
+        "drive_file_id": "1BVCmSLqHm95kThtYs8pubpdlLyTGiwEd"
+      },
+      {
+        "papel": "problema",
+        "arquivo_origem": "download (39).png",
+        "drive_file_id": "1VxDWk_fGKQEq-SiH7gQza6y-NHWSvdtQ"
+      },
+      {
+        "papel": "causa",
+        "arquivo_origem": "surrealism_digital_art_ethereal_lighting_4dc0ca51b03a744caf84747ccfcd12d6.png",
+        "drive_file_id": "1FiHQvaeGMAQ6aWQoNOq7TbTk0vU-6UWr"
+      },
+      {
+        "papel": "solução",
+        "arquivo_origem": "download (42).png",
+        "drive_file_id": "1zzj-IsFBdDp7dp4wzzn6MSZOh7jlbJpd"
+      },
+      {
+        "papel": "resultado",
+        "arquivo_origem": "surrealism_digital_art_ethereal_lighting_5dea18bcd8b9d19a479645b44b748761.png",
+        "drive_file_id": "1J7azsufkRHb5X-v0aMoS0EP-sJ2dyt6j"
+      },
+      {
+        "papel": "cta",
+        "arquivo_origem": "download (19).png",
+        "drive_file_id": "1paMpNXRji9JNeozicTqKrCkbBcSSbhLs"
+      }
+    ]
+  },
+  "checagem_conteudo_sensivel": {
+    "metodologia": "Candidatas do banco inspecionadas em resolução nativa na rodada original (run 14 do criar-post-diario); 17 candidatas, 11 rejeitadas por texto/marca d'água/IP de terceiros/nudez.",
+    "aprovadas": 6,
+    "nota": "Lista detalhada de rejeitadas no metadata original da rodada, preservada no histórico do Drive (lixeira)."
+  },
+  "checagem_ineditismo": {
+    "metodo": "phash 64 bits contra PNGs finais das peças recentes.",
+    "resultado": "Distância mínima 24/64 (limiar de duplicata <10/64)."
+  },
+  "checagem_cor_pixel_monumento": {
+    "hook_ESCONDIDA": {
+      "rgb": [
+        233,
+        75,
+        145
+      ],
+      "hex": "#E94B91",
+      "bate_com_magenta_base": true
+    },
+    "cta_BRILHAR": {
+      "rgb": [
+        233,
+        75,
+        145
+      ],
+      "hex": "#E94B91",
+      "bate_com_magenta_base": true
+    }
+  },
+  "checagem_anticolisao_script_monumento": {
+    "hook_residual_px": 0,
+    "cta_residual_px": 0
+  },
+  "checagem_zindex_script_sobre_mono": ".script{z-index:2} / .mono{z-index:1}, herdado de slide-base.css (só recolorido para magenta).",
+  "checagem_qa_contract": "qa_contract.py OK nos 6 slides.",
+  "checagem_dimensoes": "1080x1440 nos 6 PNGs, antes e depois de pngquant+optipng.",
+  "checagem_acentuacao": "Revisão de acentuação em slides, legenda, primeiro comentário e alt. A linha .script do hook/CTA não tem palavra que peça acento. Corrigida a versão original da rotina, que tinha texto sem acento (voce, nao, ja, proxima, mao).",
+  "revisao_copy": "Texto revisado com as regras de copy-aidealab e humanizer-aidealab (skills locais do repo em .claude/skills/).",
+  "fonte_script_nota": "Tempting real do cliente (automation/cloud/fonts/Tempting.ttf). Corpo/head Inter 400/900, accent Playfair Display Italic 900.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "papel": "hook",
+      "layout": "Template A/D, foto plena banco img-ref + lockup, monumento em magenta",
+      "texto": "Sua prova social ESCONDIDA. Ela existe no print antigo, no comentário que ninguém mais vê. Só não chega pra quem está decidindo comprar agora.",
+      "alt": "Silhueta de uma pessoa de costas contra um redemoinho de energia holográfica multicolorida (azul, dourado, magenta) que se espalha pelo céu, fundo de nuvens escuras."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "papel": "problema",
+      "layout": "cartão de vidro sobre imagem, ancorado no rodapé",
+      "texto": "Seu cliente já elogiou, e esse elogio apagou sozinho. Foi um áudio, um print, um comentário que sumiu no feed. Ele existiu, mas não ficou guardado em lugar nenhum que ajude o próximo cliente a decidir.",
+      "alt": "Cavaleiro em armadura cromada reflexiva empunhando uma espada em chamas brancas, em pé sobre páginas de livro espalhadas, ruínas de colunas ao fundo contra céu azul noturno com lua crescente."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "papel": "causa",
+      "layout": "cartão de vidro sobre imagem, ancorado no rodapé",
+      "texto": "A prova boa fica espalhada, cada pedaço num lugar diferente. Um elogio no direct, outro no grupo do WhatsApp, outro só na lembrança de quem atendeu. Ninguém junta essas pontas na hora de vender de novo.",
+      "alt": "Duas figuras de pé frente a frente numa praia à noite: uma silhueta escura comum e outra totalmente luminosa e branca, céu estrelado azul profundo ao fundo."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_solucao.png",
+      "papel": "solução",
+      "layout": "cartão de vidro sobre imagem, ancorado no rodapé",
+      "texto": "A IA resgata cada prova real e guarda pronta pra usar. Ela lê a conversa, separa o elogio de verdade e arquiva por categoria. Na próxima venda, a prova certa já está à mão, sem você precisar procurar.",
+      "alt": "Figura encapuzada cromada com asas estilizadas que se erguem como chamas metálicas atrás dos ombros, vista de baixo contra céu azul com nuvens."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "papel": "resultado",
+      "layout": "cartão de vidro sobre imagem, ancorado no rodapé",
+      "texto": "A prova aparece na hora em que o cliente ainda duvida. Antes de fechar, entra um print, um áudio, um número real de quem já comprou. É isso que tira a decisão do quase.",
+      "alt": "Explosão de luz multicolorida (dourado, magenta, azul, verde) estourando no centro de uma nebulosa escura, estética pictórica cósmica."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "papel": "cta",
+      "layout": "Template A/D + t-cta-chip, monumento em magenta",
+      "texto": "Sua prova social pode BRILHAR. Comenta \"PROVA\".",
+      "alt": "Pirâmide de vidro translúcida emergindo de um mar de nuvens com um feixe de luz vertical saindo do topo, arco-íris no céu, floresta e lago visíveis ao fundo abaixo das nuvens."
+    }
+  ],
+  "legenda": "Seu cliente já elogiou seu trabalho. A pergunta é: esse elogio ainda existe em algum lugar?\n\nNa maioria dos negócios, não. Ficou num áudio que ninguém salvou, num print que sumiu no rolo da câmera, na lembrança de quem atendeu naquele dia.\n\nEnquanto isso, o próximo cliente está exatamente na dúvida que aquele elogio resolveria, e nunca vai ver.\n\nA IA junta esses pedaços: separa o que é prova de verdade, organiza por assunto e entrega pronta pra usar na hora que o próximo cliente hesitar.\n\nComenta PROVA que a gente te mostra como organizar a sua.",
+  "primeiro_comentario": "Você já tentou lembrar de um elogio bom de cliente e não achou onde ficou guardado?",
+  "hashtags": [
+    "#aidealab",
+    "#provasocial",
+    "#pequenosnegocios",
+    "#automacaocomia"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "PROVA",
+    "texto": "comenta \"PROVA\" que a gente te mostra como organizar a sua"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_solucao.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  },
+  "imagens_banco_migradas": "6 imagens movidas de 02-Materiais-Brutos/img-ref para 01-Referencias/Instagram/img-ref pela rotina.",
+  "layout_header_rodape": "Topo: 2026 (esq) + AIDEA LAB (dir). Rodapé: @aidealab7 (esq), dots (centro), PROVA SOCIAL (dir). Sem contador 01/06."
+}
