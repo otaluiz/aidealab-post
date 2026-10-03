@@ -1,0 +1,21 @@
+/* otalogia — tokens do design system de posts (1080×1440) */
+:root{
+  /* cor: preto é a base; roxo e azul são painéis chapados; laranja é o único accent */
+  --ota-noite:#0B0B12;   /* base 60% */
+  --ota-violeta:#7C3AED; /* painel/primária 30% */
+  --ota-violeta-t:#C4B5FD; --ota-violeta-s:#5B21B6;
+  --ota-azul:#2563EB;    /* painel secundário, formas, linhas */
+  --ota-azul-t:#BFD4FF;  --ota-azul-s:#1D4ED8;
+  --ota-laranja:#FF7A1A; /* accent 10% — marca-texto, CTA */
+  --ota-laranja-t:#FFD0A8; --ota-laranja-s:#C2570A;
+  --ota-papel:#F5F5FA;   /* texto e painel claro */
+  --ota-linha:rgba(245,245,250,.16);
+
+  /* tipografia (Google Fonts, OFL) */
+  --ota-display:'Syne',system-ui,sans-serif;          /* 800, caixa mista, entrelinha 0.95 */
+  --ota-body:'Inter',system-ui,sans-serif;            /* 400 / 600 */
+  --ota-mono:'JetBrains Mono',ui-monospace,monospace; /* 500, caixa alta, rótulos */
+
+  /* layout */
+  --ota-w:1080px; --ota-h:1440px; --ota-margem:64px; --ota-colunas:12; --ota-raio:0px;
+}

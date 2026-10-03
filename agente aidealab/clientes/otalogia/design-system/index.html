@@ -1,0 +1,141 @@
+<title>Design System otalogia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: ficha técnica em grade, cantos retos, rótulos em mono; os slides são painéis chapados 3:4. */
+:root{
+  --noite:#0B0B12; --violeta:#7C3AED; --azul:#2563EB; --laranja:#FF7A1A; --papel:#F5F5FA;
+  --linha:rgba(245,245,250,.16); --mudo:#A1A1B5;
+  --display:'Syne',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+body{background:var(--noite);color:var(--papel);font-family:var(--body);padding-inline:16px;padding-block:32px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:64px}
+.mono{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--mudo)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,8vw,84px);line-height:.95;letter-spacing:-.02em;margin:12px 0 0;text-wrap:balance}
+h1 mark{background:var(--laranja);color:var(--noite);padding:0 .12em}
+.lede{color:var(--mudo);max-width:60ch;margin-top:20px;line-height:1.55}
+h2{margin:0 0 16px;display:flex;gap:12px;align-items:baseline;border-top:1px solid var(--linha);padding-top:14px}
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;border:1px solid var(--linha)}
+.sw div{padding:16px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;font-size:13px;min-width:0}
+.sw b{font-family:var(--display);font-size:20px}
+.sw span{font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.type{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border:1px solid var(--linha)}
+.type>div{padding:22px;min-width:0;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha);margin:0 -1px -1px 0}
+.type .s{margin-top:14px;overflow-wrap:anywhere}
+.t1{font-family:var(--display);font-weight:800;font-size:46px;line-height:.95;letter-spacing:-.02em}
+.t2{font-size:16px;line-height:1.5}
+.t3{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:15px;line-height:1.7}
+.tpl{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tpl figure{margin:0}
+.tpl figcaption{margin-top:12px;font-size:13px;color:var(--mudo);line-height:1.45}
+.tpl figcaption b{display:block;color:var(--papel);font-family:var(--display);font-size:16px;margin-bottom:2px}
+.frame{container-type:inline-size;border:1px solid var(--linha)}
+.slide{--u:calc(100cqw/1080);aspect-ratio:3/4;position:relative;overflow:hidden;font-family:var(--body)}
+.m{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:calc(26*var(--u))}
+.top{position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));top:calc(56*var(--u));display:flex;justify-content:space-between;z-index:4}
+.bot{position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));bottom:calc(56*var(--u));display:flex;justify-content:space-between;z-index:4}
+.grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(245,245,250,.08) 0 1px,transparent 1px calc(90*var(--u)))}
+.sh{position:absolute}
+.titulo{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:.95}
+.titulo mark{background:var(--laranja);color:var(--noite);padding:0 .1em}
+.fig{position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));border:calc(2*var(--u)) solid var(--papel)}
+.legenda{position:absolute;left:calc(64*var(--u));font-size:calc(22*var(--u))}
+.corpo{font-size:calc(36*var(--u));line-height:1.4}
+.btn{display:inline-block;background:var(--noite);color:var(--papel);font-weight:600;font-size:calc(40*var(--u));padding:calc(28*var(--u)) calc(64*var(--u));border-radius:999px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;padding:0;margin:0;list-style:none;border:1px solid var(--linha)}
+.rules li{padding:16px;font-size:14px;line-height:1.45;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha);margin:0 -1px -1px 0;min-width:0}
+.ritmo{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.ritmo span{padding:10px 14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="mono">otalogia · design system de posts · proposta</span>
+  <h1>Marca de bancada, <mark>não</mark> de vitrine</h1>
+  <p class="lede">Grade visível, formas chapadas e rótulos em mono. Cada slide é de um tema de cor só, e o laranja fica reservado ao marca-texto e ao CTA. Textos dos exemplos são ilustrativos.</p>
+</header>
+
+<section>
+  <h2><span class="mono">01</span><span class="mono">Cor e temas</span></h2>
+  <div class="sw">
+    <div style="background:#0B0B12"><b>Noite</b><span>#0B0B12 · base</span></div>
+    <div style="background:#7C3AED"><b>Violeta</b><span>#7C3AED · painel</span></div>
+    <div style="background:#2563EB"><b>Azul</b><span>#2563EB · painel e formas</span></div>
+    <div style="background:#FF7A1A;color:#0B0B12"><b>Laranja</b><span>#FF7A1A · accent</span></div>
+    <div style="background:#F5F5FA;color:#0B0B12"><b>Papel</b><span>#F5F5FA · texto e painel claro</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="mono">02</span><span class="mono">Tipografia</span></h2>
+  <div class="type">
+    <div><span class="mono">Display · Syne 800</span><div class="s t1">Marca que se lê de longe</div></div>
+    <div><span class="mono">Corpo · Inter 400/600</span><div class="s t2">Texto corrido claro sobre painel chapado, entrelinha 1,4 a 1,5 para ler rápido no celular.</div></div>
+    <div><span class="mono">Rótulo · JetBrains Mono 500</span><div class="s t3">Fig. 03 — 03 / 06</div></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="mono">03</span><span class="mono">Templates · 1080×1440</span></h2>
+  <div class="tpl">
+    <figure><div class="frame"><div class="slide" style="background:#0B0B12;color:#F5F5FA">
+      <div class="grid"></div>
+      <div class="sh" style="width:calc(430*var(--u));height:calc(430*var(--u));border-radius:50%;background:#2563EB;right:calc(64*var(--u));top:calc(190*var(--u))"></div>
+      <div class="sh" style="width:calc(360*var(--u));height:calc(360*var(--u));border-radius:calc(360*var(--u)) 0 0 0;background:#7C3AED;right:calc(64*var(--u));top:calc(620*var(--u))"></div>
+      <div class="sh" style="width:calc(120*var(--u));height:calc(120*var(--u));background:#FF7A1A;right:calc(424*var(--u));top:calc(500*var(--u))"></div>
+      <div class="top m"><span>otalogia</span><span>01 — 06</span></div>
+      <div class="titulo" style="position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));bottom:calc(220*var(--u));font-size:calc(176*var(--u))">Sua marca<br>precisa ser<br><mark>vista</mark></div>
+      <div class="bot m"><span>@otalogia</span><span>deslize →</span></div>
+    </div></div>
+    <figcaption><b>T1 · Capa</b>Tema Noite com grade, formas chapadas e um marca-texto laranja no título.</figcaption></figure>
+
+    <figure><div class="frame"><div class="slide" style="background:#7C3AED;color:#F5F5FA">
+      <div class="top m"><span>otalogia</span><span>03 — 06</span></div>
+      <div class="m" style="position:absolute;left:calc(64*var(--u));top:calc(170*var(--u));color:#0B0B12;background:#F5F5FA;padding:calc(8*var(--u)) calc(18*var(--u))">Consistência</div>
+      <div class="titulo" style="position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));top:calc(260*var(--u));font-size:calc(104*var(--u))">Repetir é o que faz a marca ficar</div>
+      <div class="fig" style="top:calc(640*var(--u));height:calc(420*var(--u));background:#0B0B12">
+        <div class="sh" style="width:calc(260*var(--u));height:calc(260*var(--u));border-radius:50%;background:#2563EB;left:calc(70*var(--u));top:calc(80*var(--u))"></div>
+        <div class="sh" style="width:calc(220*var(--u));height:calc(220*var(--u));background:#FF7A1A;left:calc(250*var(--u));top:calc(150*var(--u));mix-blend-mode:normal"></div>
+        <div class="sh" style="width:calc(300*var(--u));height:calc(300*var(--u));border-radius:calc(300*var(--u)) 0 0 0;background:#C4B5FD;right:0;bottom:0"></div>
+      </div>
+      <div class="legenda m" style="top:calc(1080*var(--u))">Fig. 03 — cena ou foto entra aqui</div>
+      <p class="corpo" style="position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));top:calc(1150*var(--u));margin:0">Título médio, moldura de linha fina e corpo curto.</p>
+      <div class="bot m"><span>@otalogia</span><span>●●○○○○</span></div>
+    </div></div>
+    <figcaption><b>T2 · Conteúdo</b>Tema Violeta, Azul ou Papel, em rodízio. Moldura de figura com legenda em mono.</figcaption></figure>
+
+    <figure><div class="frame"><div class="slide" style="background:#FF7A1A;color:#0B0B12">
+      <div class="top m"><span>otalogia</span><span>06 — 06</span></div>
+      <div class="sh" style="width:calc(300*var(--u));height:calc(300*var(--u));border-radius:50%;background:#0B0B12;right:calc(64*var(--u));top:calc(180*var(--u))"></div>
+      <div class="titulo" style="position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));top:calc(560*var(--u));font-size:calc(170*var(--u))">Salve para consultar</div>
+      <div style="position:absolute;left:calc(64*var(--u));top:calc(1090*var(--u))"><span class="btn">Salvar este post</span></div>
+      <div class="bot m"><span>@otalogia</span><span>fim</span></div>
+    </div></div>
+    <figcaption><b>T3 · CTA</b>Painel laranja inteiro, texto preto, botão preto em pílula. É o único slide em que o laranja domina.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2><span class="mono">04</span><span class="mono">Ritmo do feed</span></h2>
+  <div class="ritmo">
+    <span style="background:#0B0B12;border:1px solid var(--linha)">Capa · Noite</span>
+    <span style="background:#7C3AED">Conteúdo · Violeta</span>
+    <span style="background:#F5F5FA;color:#0B0B12">Conteúdo · Papel</span>
+    <span style="background:#2563EB">Conteúdo · Azul</span>
+    <span style="background:#FF7A1A;color:#0B0B12">CTA · Laranja</span>
+  </div>
+</section>
+
+<section>
+  <h2><span class="mono">05</span><span class="mono">Regras</span></h2>
+  <ul class="rules">
+    <li>Tipo grande só em capa e CTA; o miolo usa título médio.</li>
+    <li>Raio zero em painéis e molduras; pílula só no botão.</li>
+    <li>Contador em mono ("03 — 06"), nunca numeral gigante.</li>
+    <li>Um marca-texto laranja por slide, no máximo.</li>
+    <li>Um tema de cor por slide; capas sempre Noite.</li>
+    <li>Texto sempre em HTML; a IA gera só a imagem, sem letras.</li>
+  </ul>
+</section>
+</div>
