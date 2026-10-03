@@ -52,6 +52,7 @@ jobs:
       - name: Fila - arquivar postados quando tudo foi postado (so no agendamento)
         id: fila
         run: |
+          set -o pipefail
           if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ inputs.start_dia }}" ]; then
             python "agente aidealab/skills/post-instagram/scripts/queue_maintenance.py" --archive | tee fila.txt
           else
