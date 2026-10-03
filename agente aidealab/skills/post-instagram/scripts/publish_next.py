@@ -17,7 +17,8 @@ import re
 import sys
 import json
 import time
-from datetime import datetime, date
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Optional, Dict, Any, List
 
@@ -167,11 +168,24 @@ def load_queue() -> List[Dict[str, Any]]:
     return items
 
 
+CUIABA = ZoneInfo("America/Cuiaba")
+
+
+def _cuiaba_date(postado_em: str) -> str:
+    try:
+        dt = datetime.fromisoformat(postado_em)
+    except ValueError:
+        return ""
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(CUIABA).date().isoformat()
+
+
 def already_posted_today(items: List[Dict[str, Any]]) -> bool:
-    today = date.today().isoformat()
+    today = datetime.now(CUIABA).date().isoformat()
     for it in items:
         postado_em = it["metadata"].get("postado_em", "")
-        if postado_em.startswith(today):
+        if postado_em and _cuiaba_date(postado_em) == today:
             print(f"[GUARD] {it['label']} já foi postado hoje ({postado_em}). Só 1 post por dia.")
             return True
     return False
@@ -414,7 +428,7 @@ def main():
         sys.exit(1)
 
     meta["postado"] = True
-    meta["postado_em"] = datetime.now().isoformat()
+    meta["postado_em"] = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
     meta["post_id"] = post_id
     nxt["meta_path"].write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
