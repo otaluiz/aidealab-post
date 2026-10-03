@@ -1,9 +1,11 @@
 ---
 name: copy-aidealab
-description: Copywriting de carrossel e legenda de Instagram da aidealab (hook, problema, causa, solução, resultado, CTA). Use em toda copy da criar-post, antes de escrever slides e legenda. Destilação própria do repo das práticas de copywriting/social; substitui marketing-skills:copywriting e marketing-skills:social quando elas não estão instaladas.
+description: Copywriting de carrossel e legenda de Instagram da aidealab (hook, problema, causa, solução, resultado, CTA). Use em toda copy da criar-post, antes de escrever slides e legenda. Camada de adaptação para carrossel e legenda de Instagram, aplicada em cima da skill copywriting.
 ---
 
 # copy-aidealab
+
+Primeiro aplique os princípios da skill `copywriting` (clareza sobre esperteza, benefício sobre feature, específico sobre vago, linguagem do cliente, uma ideia por seção, CTA forte). Ela é pensada para páginas web; aqui você a adapta para slides de carrossel com as regras abaixo, que valem acima dela em caso de conflito.
 
 Escreva a copy ANTES de montar qualquer slide. Português do Brasil, tom direto de quem fala com dono de pequeno negócio.
 
