@@ -999,6 +999,18 @@ gerado antes disso.
    acentuada não dá erro: o glifo cai silenciosamente na fonte de fallback e
    quebra o lockup sem avisar — então valida a string antes de usar.
 
+   **Acentuação é obrigatória em TODO texto, exceto no `.script` (Tempting).**
+   A restrição de "sem acento" vale SÓ para a linha `.script` do hook/CTA
+   (Tempting não tem glifo acentuado). Monumento, `.t-sub`, chip, cartão
+   (head, accent, body), legenda, primeiro comentário e `alt` são Inter/
+   Playfair e levam acentuação completa e correta (você, não, só, já, até,
+   próxima, mão, elogio, comentário). Falha real, run 14 de 2026-10-03
+   (`prova-que-ninguem-ve`): o modelo estendeu a regra do script a tudo e
+   publicou "voce", "nao", "ja", "proxima", "mao" nos slides e na legenda.
+   Antes de renderizar, releia cada string fora do `.script` procurando
+   palavra sem acento que deveria ter; peça com acento faltando não é
+   entregue.
+
    **Se a copy do hook/CTA exigir acento na linha-script (não dá pra reescrever
    sem o acento), troca o par inteiro para Helvetica Bold + Shelley Script —
    nunca só um dos dois.** `--mon: 'Helvetica Neue', Helvetica, Arial,
