@@ -18,13 +18,13 @@ on:
   workflow_dispatch:
     inputs:
       start_dia:
-        description: "Número DiaNN do primeiro item novo (depois do último da fila)"
-        required: true
-        default: "12"
+        description: "DiaNN do primeiro item novo. VAZIO = modo automatico (arquiva postados se a fila acabou e repoe 10)"
+        required: false
+        default: ""
       limit:
         description: "Quantos carrosséis re-renderizar nesta execução (0 = todos)"
         required: true
-        default: "1"
+        default: "10"
       only:
         description: "Opcional: nome exato de uma pasta de RASCUNHOS (ignora ordem/limit)"
         required: false
@@ -52,7 +52,7 @@ jobs:
       - name: Fila - arquivar postados quando tudo foi postado (so no agendamento)
         id: fila
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ -z "${{ inputs.start_dia }}" ]; then
             python "agente aidealab/skills/post-instagram/scripts/queue_maintenance.py" --archive | tee fila.txt
           else
             python "agente aidealab/skills/post-instagram/scripts/queue_maintenance.py" | tee fila.txt
@@ -79,7 +79,7 @@ jobs:
           PENDING: ${{ steps.fila.outputs.pending }}
           EVENT: ${{ github.event_name }}
         run: |
-          if [ "$EVENT" = "schedule" ] && [ "$PENDING" != "0" ]; then
+          if { [ "$EVENT" = "schedule" ] || [ -z "${{ inputs.start_dia }}" ]; } && [ "$PENDING" != "0" ]; then
             echo "Fila ainda tem $PENDING item(ns) pendente(s); nada a repor."
             echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
             echo "count=0" >> "$GITHUB_OUTPUT"
