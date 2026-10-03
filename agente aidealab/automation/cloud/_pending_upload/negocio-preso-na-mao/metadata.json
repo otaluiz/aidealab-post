@@ -1,0 +1,218 @@
+{
+  "carousel_id": "negocio-preso-na-mao",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-02",
+  "status": "rascunho",
+  "status_nota": "Rascunho aguardando validacao humana. SKILL.md (Etapa 6, REGRA DO CLIENTE 2026-10-02) proibe marcar aprovado ou mover para 06-Aprovados-para-Postar sem aprovacao explicita.",
+  "postado": false,
+  "tema": "Pequeno negócio que só anda com a mão do dono trava toda vez que ele sai de cena, de um dia corrido a uma semana de férias. A IA segura o repetitivo (responder, lembrar, postar) para o negócio seguir rodando mesmo quando a mão que resolve tudo solta por um instante.",
+  "pilar": "oferta",
+  "familia_cor": "azul",
+  "familia_cor_nota": "As duas peças mais recentes em 04-Carrosseis (avaliacao-que-nao-vem, 2026-10-02, e feed-no-automatico, 2026-10-01) usaram amber; lead-que-esfria (2026-10-02) usou magenta. Azul não aparece desde prova-nao-e-elogio (2026-09-30) — é a família menos usada recentemente. O lote de imagens (liquid chrome / mão cromada) é predominantemente prata/preto com realces de cor pontuais, então azul sólido como acento cria contraste limpo sem brigar com nenhuma imagem do set.",
+  "espinha_de_palavras": [
+    "TRAVA",
+    "empacado",
+    "lembrar",
+    "repetitivo",
+    "segue",
+    "LIBERA"
+  ],
+  "espinha_de_palavras_nota": "Hook e CTA levam a palavra no monumento (TRAVA / LIBERA, Inter 900 + Tempting real do cliente). O miolo não leva monumento (contrato do cartão escuro sobre foto): a espinha ali guia a palavra-chave .kw dentro do corpo do card (empacado / lembrar / repetitivo / segue).",
+  "template": "hook(Template D — banco img-ref, foto plena 1080x1440 nativa, sem recorte, scrim-top+scrim-bottom + lockup Tempting real+Inter900) - problema/causa/solução/resultado(cartão escuro sobre foto, contrato único: chip dentro do cartão, head Inter 900, accent Playfair itálico 1 linha, body Inter 400 branco 33px) - cta(Template D + chip de ação)",
+  "template_nota": "Nomenclatura 'Template D' usada no prompt desta rotina para banco img-ref (equivalente funcional ao 'Template A' citado nos metadata.json de peças anteriores — mesma composição: foto plena + scrim duplo + lockup, zero geração). Miolo é a 3ª peça seguida em 'cartão escuro sobre foto' (depois de lead-que-esfria e avaliacao-que-nao-vem), completando o bloco de três que o SKILL.md pede antes de trocar de variação de miolo.",
+  "formato": "1080x1440",
+  "geracao_imagem": {
+    "fonte": "100% banco 02-Materiais-Brutos/img-ref, lote novo criado hoje (liquid_chrome_surreal_abstract_digital_art_0f_* e chrome_hand_orb_3d_render_aesthetic_liquid_me_*, uploads às 2026-10-02T11:01-11:02Z). 6 imagens distintas, uma por slide, todas já nativas 1080x1440 (PIL Image.size confirmado, sem upscale necessário). Custo Higgsfield: 0 crédito — MCP do Higgsfield estava disponível nesta sessão mas o banco cobriu o carrossel inteiro, então nenhuma geração foi necessária (regra da skill: checar o banco antes de gastar crédito).",
+    "imagens_escolhidas": [
+      {
+        "papel": "hook",
+        "arquivo_origem": "chrome_hand_orb_3d_render_aesthetic_liquid_me_9b99d7a26330ee67bb7bb3e69e6c96fa.png",
+        "drive_file_id": "1rrTAoY00IXDP9lgcL8Bjz9-V1CJ0dxs_"
+      },
+      {
+        "papel": "problema",
+        "arquivo_origem": "liquid_chrome_surreal_abstract_digital_art_0f_990e805df607b1718c0a24f6eb0a8abd.png",
+        "drive_file_id": "159IeI-5Z1UztdVu5mDcQnmdfdSxEM2xE"
+      },
+      {
+        "papel": "causa",
+        "arquivo_origem": "liquid_chrome_surreal_abstract_digital_art_0f_027e956b73ce62dc08e7a920cf11c0a8.png",
+        "drive_file_id": "1m02BI1VIDEMeVUgw64Ha288aQ3Ig3INe"
+      },
+      {
+        "papel": "solução",
+        "arquivo_origem": "liquid_chrome_surreal_abstract_digital_art_0f_49aba85ab3307f52b8ed659cfa235e07.png",
+        "drive_file_id": "1vvfrkuN8476eCG7IuPIewdaED0UDE5C8"
+      },
+      {
+        "papel": "resultado",
+        "arquivo_origem": "chrome_hand_orb_3d_render_aesthetic_liquid_me_1bf7aa38ee6c480b475ef08a0242d630.png",
+        "drive_file_id": "1M6bMVEzQtt-ONg2s9MiziYxlu3LneZRn"
+      },
+      {
+        "papel": "cta",
+        "arquivo_origem": "liquid_chrome_surreal_abstract_digital_art_0f_6af2172919de0faa72b91b79a2c02fc1.png",
+        "drive_file_id": "1ne-YAm8lnczaDknAkyo4thMPktgxo7HU"
+      }
+    ],
+    "nao_usadas_mas_limpas": [
+      {
+        "arquivo": "liquid_chrome_surreal_abstract_digital_art_0f_4c08c9455fd214f2368a7d3766b1c34f.png",
+        "motivo": "sobra do mesmo lote, passou em todas as checagens (conteúdo e ineditismo) mas não foi necessária para completar os 6 papéis; permanece no banco para uso futuro"
+      },
+      {
+        "arquivo": "liquid_chrome_surreal_abstract_digital_art_0f_df6e7f381ec55a4e6a8c78950b36546f.png",
+        "motivo": "idem — sobra limpa, não usada, permanece no banco"
+      }
+    ]
+  },
+  "checagem_conteudo_sensivel": {
+    "metodologia": "Download de 8 candidatas novas (lote de hoje) em resolução nativa 1080x1440 via MCP do Google Drive (decodificadas localmente a partir do base64 salvo pelo próprio harness em disco, nunca lidas como texto no contexto — ver nota técnica), inspeção visual pixel a pixel de cada uma via contact sheet + leitura individual em tamanho real antes de decidir.",
+    "resultado": "Nenhuma nudez ou insinuação sexual (a imagem de mão/pulso cromado em 05_resultado.png é só mão e antebraço, sem conotação). Nenhum texto, legenda, código ou marca d'água incrustado em nenhuma das 8. Nenhum logo ou personagem de marca de terceiros. Todas as 8 aprovadas para uso; 6 usadas, 2 ficaram de sobra no banco (ver geracao_imagem.nao_usadas_mas_limpas).",
+    "rejeitadas": []
+  },
+  "checagem_ineditismo": {
+    "metodo": "Hash perceptual (imagehash.phash, distância de Hamming, 64 bits) das 8 candidatas contra os PNGs finais de do-caos-ao-caminho (6 slides completos — carrossel mais recente a usar a mesma linhagem 'liquid_chrome_surreal_abstract_digital_art'/'chrome_hand_orb'), mais o hook de avaliacao-que-nao-vem e o hook de lead-que-esfria (as duas peças mais recentes antes desta).",
+    "resultado": "Distância mínima observada: 18/64 bits (limiar de near-duplicate usado pela casa: <10/64). Nenhuma das 8 bateu com nenhuma peça publicada. Verificação adicional por nome/sufixo de arquivo: dois arquivos do lote (sufixos 'bcd0e1f4...' e '2124b8e6...') tinham sufixo idêntico a arquivos já rejeitados/publicados em rodadas anteriores (ver metadata de feed-no-automatico) e foram descartados por precaução sem nem baixar, antes mesmo do hash."
+  },
+  "checagem_cor_pixel_monumento": {
+    "metodo": "PIL, pixel-sample direto no PNG final (pós pngquant+optipng) em múltiplos pontos dentro do traço das letras do monumento.",
+    "hook_TRAVA": {
+      "amostras": [
+        [
+          300,
+          280
+        ],
+        [
+          750,
+          260
+        ]
+      ],
+      "rgb": [
+        76,
+        126,
+        240
+      ],
+      "hex": "#4C7EF0",
+      "bate_com_azul_base": true
+    },
+    "cta_LIBERA": {
+      "amostras": [
+        [
+          550,
+          580
+        ],
+        [
+          700,
+          600
+        ],
+        [
+          850,
+          590
+        ]
+      ],
+      "rgb": [
+        76,
+        126,
+        240
+      ],
+      "hex": "#4C7EF0",
+      "bate_com_azul_base": true
+    }
+  },
+  "checagem_anticolisao_script_monumento": {
+    "metodo": "window.__fitReport.anticolisao embutido no document.title pelo capture.py, checagem bloqueante (tolerância ±4px).",
+    "hook_residual_px": 0,
+    "cta_residual_px": 0
+  },
+  "checagem_zindex_script_sobre_mono": ".script{z-index:2} / .mono{z-index:1} — herdado verbatim de templates/render-engine/slide-base.css, só recolorido amber->azul nas 3 variáveis de cor (nenhuma regra de posicionamento/z-index tocada).",
+  "checagem_qa_contract": "python qa_contract.py nos 4 slides de miolo: OK nos 4 (chip primeiro filho do cartão, accent 1 linha ≤70 chars, body Inter branco ≥32px, sem texto solto fora de cartão/lockup, sem invasão de header/rodapé). Rodado também em hook e CTA (cards=0, OK).",
+  "checagem_geometria_clearance": {
+    "metodo": "Playwright getBoundingClientRect de .t-card/.t-lockup/.t-sub/.t-cta-chip nos 6 slides; header (kicker) termina em y=90, rodapé (dots) começa em y=1330.",
+    "resultado": "Nenhum bloco de conteúdo ultrapassa y=1330 nem fica acima de y=90 em nenhum dos 6 slides. Menor folga: 66px (cartões de miolo terminam em y=1264)."
+  },
+  "checagem_dimensoes": "1080x1440 exato nos 6 PNGs finais, confirmado via PIL Image.size antes e depois de pngquant --quality=65-90 --strip + optipng -o2 (redução média de ~65% no tamanho do arquivo, sem perda visível nem mudança de dimensão ou de cor de acento).",
+  "checagem_promessa_vs_slides": "Nenhum número de contagem citado na copy (hook/CTA/legenda) que precise bater com quantidade de slides.",
+  "fonte_script_nota": "Tempting real do cliente (automation/cloud/fonts/Tempting.ttf, @font-face local) — não foi necessário o par de emergência Playfair Display Italic. Corpo/head em Inter 400/900, accent do cartão em Playfair Display Italic 900.",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_hook.png",
+      "papel": "hook",
+      "layout": "Template D, foto plena banco img-ref, scrim-top+scrim-bottom + lockup Tempting+Inter900, monumento em azul (--amber-base recolorido)",
+      "texto": "Sua empresa, TRAVA. Toda vez que a sua mão sai de cena. De um dia corrido a uma semana de férias.",
+      "alt": "Mão cromada e translúcida descendo de cima contra fundo preto, dedos quase tocando uma esfera de vidro que brilha em azul e branco no centro da composição."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_problema.png",
+      "papel": "problema",
+      "layout": "cartão escuro sobre foto, ancorado no rodapé",
+      "texto": "Tudo espera a sua mão, nada anda sem você dar o aval. Responder o cliente, lembrar o orçamento parado, postar no dia certo: tudo empacado até você abrir o WhatsApp.",
+      "alt": "Close-up de uma escultura líquida cromada iridescente, com reflexos em azul, dourado e magenta, formando curvas orgânicas contra fundo preto."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_causa.png",
+      "papel": "causa",
+      "layout": "cartão escuro sobre foto, ancorado no rodapé",
+      "texto": "Ninguém mais segura o repetitivo, só a sua memória dá conta disso. Cada tarefa pequena depende só de você lembrar. Sem sistema por trás, ela só acontece quando passa pela sua cabeça.",
+      "alt": "Estrutura líquida prateada em forma de rede neural, com gotas e laços cromados conectados, reflexos coloridos pontuais contra fundo preto."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_solucao.png",
+      "papel": "solução",
+      "layout": "cartão escuro sobre foto, ancorado no rodapé",
+      "texto": "A IA segura o repetitivo, você decide o que importa. Ela responde a primeira pergunta, lembra o lead parado e posta no dia certo. O repetitivo anda sozinho, sua mão fica livre.",
+      "alt": "Formas líquidas cromadas entrelaçadas em vermelho-escuro e prata, torcendo-se em espiral contra fundo preto, estética dramática."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_resultado.png",
+      "papel": "resultado",
+      "layout": "cartão escuro sobre foto, ancorado no rodapé",
+      "texto": "O dia que você tira, deixa de ser um dia parado. Cliente respondido, feed ativo, orçamento lembrado: o negócio segue rodando mesmo com você fora da tela.",
+      "alt": "Mão e antebraço cobertos de líquido metálico azulado e brilhante, dedos abertos e estendidos, gotejando, contra fundo preto."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_cta.png",
+      "papel": "cta",
+      "layout": "Template D + chip de ação, lockup Tempting+Inter900, monumento em azul",
+      "texto": "A empresa segue, LIBERA. Comenta \"LIBERA\".",
+      "alt": "Textura líquida cromada escura e cinematográfica, com feixes de luz diagonal em tons dourado, azul e violeta cruzando o quadro contra fundo quase todo preto."
+    }
+  ],
+  "legenda": "Você tira um dia de folga e sente a empresa parar junto com você.\n\nA causa mora nas tarefas pequenas que só acontecem quando passam pela sua cabeça: responder o cliente, lembrar o orçamento parado, postar no dia certo.\n\nA IA segura essas tarefas no automático. Ela responde a primeira pergunta, lembra quem ficou esperando e posta sem você abrir o Canva.\n\nO negócio segue rodando mesmo no dia em que sua mão não está em cima dele.\n\nComenta LIBERA que a gente te mostra como montar isso no seu negócio.",
+  "primeiro_comentario": "Hoje, quantas dessas tarefinhas só acontecem porque você lembrou na hora certa?",
+  "hashtags": [
+    "#aidealab",
+    "#automacaocomia",
+    "#pequenosnegocios",
+    "#produtividade"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "LIBERA",
+    "texto": "comenta \"LIBERA\" que a gente te mostra como"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_hook.png",
+      "02_problema.png",
+      "03_causa.png",
+      "04_solucao.png",
+      "05_resultado.png",
+      "06_cta.png"
+    ]
+  },
+  "imagens_banco_migradas": "6 imagens movidas de 02-Materiais-Brutos/img-ref para 01-Referencias/Instagram/img-ref em 2026-10-03, sem colisao de nome.",
+  "layout_header_rodape": "Topo: 2026 (esq) + AIDEA LAB (dir). Rodape: @aidealab7 (esq), dots (centro), AUTOMAÇÃO (dir). Sem contador 01/06 (dots ja sao o guia). Formato fixado no SKILL.md em 2026-10-02.",
+  "upload_nota": "PNGs enviados via workflow upload-pending-carousel.yml (MCP do Drive nao sobe binario grande)."
+}
