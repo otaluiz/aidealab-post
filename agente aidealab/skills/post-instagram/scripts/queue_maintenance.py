@@ -25,7 +25,7 @@ def load_items():
         if img.is_dir():
             for mf in img.glob("*.metadata.json"):
                 label = mf.name[: -len(".metadata.json")]
-                items.append({"label": label, "meta": mf, "files": [mf, *img.glob(f"{label}.*")]})
+                items.append({"label": label, "meta": mf, "files": sorted({mf, *img.glob(f"{label}.*")})})
         car = fila / "02-carrossel"
         if car.is_dir():
             for d in (p for p in car.iterdir() if p.is_dir()):
@@ -62,11 +62,15 @@ def main():
                 if it["data"].get(key):
                     ids.add(it["data"][key])
             ledger["ultimo_dia"] = max(ledger["ultimo_dia"], it["dia"])
-            for f in it["files"]:
-                shutil.rmtree(f) if f.is_dir() else f.unlink()
-            archived += 1
         ledger["carousel_ids"] = sorted(ids)
         LEDGER.write_text(json.dumps(ledger, indent=2, ensure_ascii=False), encoding="utf-8")
+        for it in items:
+            for f in it["files"]:
+                if f.is_dir():
+                    shutil.rmtree(f, ignore_errors=True)
+                else:
+                    f.unlink(missing_ok=True)
+            archived += 1
         items, pending = [], []
     else:
         ledger["ultimo_dia"] = max([ledger["ultimo_dia"], *[i["dia"] for i in items]])
