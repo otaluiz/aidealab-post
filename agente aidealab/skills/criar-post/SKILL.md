@@ -695,7 +695,13 @@ repetindo o que o rodapé diz. Vale também para o chip do card — rótulo verb
 2. Escreve a copy com o arco **hook → problema → explicação → solução → CTA**
    distribuído nos slides (no formato imagem única, colapsa num único frame
    forte: hook + CTA).
-3. **Skills de conteúdo** (Corey Haines, via a ferramenta Skill):
+3. **Skills de conteúdo OBRIGATÓRIAS, locais do repo (`.claude/skills/`):**
+   escreva a copy com `copy-aidealab` e depois passe `humanizer-aidealab` em
+   todos os textos (slides, legenda, primeiro comentário, alt). Invoque pela
+   ferramenta Skill; se uma delas não carregar, leia o `SKILL.md` dela em
+   `.claude/skills/<nome>/SKILL.md` e siga igual. Só depois renderize.
+   Se as skills originais estiverem instaladas, podem reforçar:
+   **Skills de conteúdo** (Corey Haines, via a ferramenta Skill):
    `marketing-skills:social` como primária (carrossel, slide-by-slide, hooks),
    reforçada por `marketing-skills:copywriting` (headlines/CTA),
    `marketing-skills:marketing-psychology` (gatilhos de persuasão) e
