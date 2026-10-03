@@ -1,0 +1,97 @@
+{
+  "carousel_id": "Prompt-Tres-Prompts-Na-DM-rerender-legivel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-09-13",
+  "status": "aprovado",
+  "postado": false,
+  "origem_carousel_id": "Prompt-Tres-Prompts-Na-DM",
+  "tema": "dois prompts reais que viraram post aprovado",
+  "pilar": "bastidor",
+  "familia_cor": "azul",
+  "template": "hook-foto-prompt-foto-prompt-cta",
+  "formato": "1080x1440",
+  "geracao_imagem": "re-render de legibilidade (2026-10-03): mesmos PNGs aprovados do carrossel original reaproveitados como fundo de cada slide (imagens recicladas de carrosseis ja aprovados, higgsfield soul_2, zero credito novo); nenhuma imagem nova gerada. Kicker/rodape/chip/cartao de conteudo foram redesenhados em HTML/CSS por cima do mesmo fundo para cumprir as regras de legibilidade desta rodada (texto branco puro, fontes maiores, contrato de cartao do SKILL.md).",
+  "avisos_legibilidade": [
+    "Slides 03 e 05 (cartao 'receita'): o paragrafo do prompt em ingles e o texto curto em portugues juntos nao cabem no cartao respeitando as margens de header/rodape com .t-card-body em 34px (minimo pedido nesta rodada). Para nao invadir header/rodape (checagem bloqueante do SKILL.md) o corpo ficou em 32px -- ainda acima do original (~27px) e no piso minimo do contrato .t-card-body do SKILL.md (qa_contract.py exige >=32px), mas abaixo do alvo ideal de 34px desta rodada.",
+    "Slides 02 e 04 (cartao 'peca', foto cheia reaproveitada de outro carrossel ja aprovado): o titulo editorial burned-in na propria foto ('Retrato em MOVIMENTO' / 'A cidade em BORRAO') pertence a peca original citada e nao foi alterado (mesmo texto, sem reescrever copy); so o kicker, o rodape e o chip 'PROMPT 0X' desta peca foram redesenhados em branco puro e fonte maior por cima do mesmo fundo."
+  ],
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "01_dmb_1_hook.png",
+      "papel": "hook",
+      "layout": "oclusao: palavra atras do sujeito",
+      "texto": "Dois prompts que a gente USA DE VERDADE.",
+      "alt": "Homem de gola alta preta com os braços cruzados, luz âmbar de fundo, com o texto \"Dois prompts que a gente usa de verdade\" atrás dele."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "02_dmb_2_foto1.png",
+      "papel": "peca",
+      "layout": "foto sangrando + chip PROMPT 01 (chip e kicker/rodape redesenhados em branco maior nesta rodada)",
+      "texto": "Prompt 01: retrato em movimento. Capa do carrossel \"Você não precisa de mais seguidores\".",
+      "alt": "Retrato em preto e branco de homem de jaqueta jeans e óculos escuros, mão desfocada em movimento."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "03_dmb_3_prompt1.png",
+      "papel": "receita",
+      "layout": "cartao do prompt inteiro sobre textura (cartao reconstruido no contrato .t-card do SKILL.md: chip primeiro filho, titulo 68px, corpo 32px branco)",
+      "texto": "Prompt 01 completo em inglês, descrevendo retrato de estúdio em preto e branco com movimento borrado na mão. Nota: o rosto vem da referência de personagem, o texto descreve tudo menos quem é.",
+      "alt": "Cartão escuro com o texto integral do prompt 01 sobre fundo de textura azul."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "04_dmb_4_foto2.png",
+      "papel": "peca",
+      "layout": "foto sangrando + chip PROMPT 02 (chip e kicker/rodape redesenhados em branco maior nesta rodada)",
+      "texto": "Prompt 02: a cidade em borrão. CTA do mesmo carrossel, ele parado e o mundo passando.",
+      "alt": "Homem de jaqueta creme caminhando em rua movimentada, fundo borrado pelo movimento."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "05_dmb_5_prompt2.png",
+      "papel": "receita",
+      "layout": "cartao do prompt inteiro sobre textura (cartao reconstruido no contrato .t-card do SKILL.md: chip primeiro filho, titulo 68px, corpo 32px branco)",
+      "texto": "Prompt 02 completo em inglês, descrevendo figura nítida em ambiente urbano borrado. Nota: \"panning\" é a palavra que trava o sujeito e borra o resto.",
+      "alt": "Cartão escuro com o texto integral do prompt 02 sobre fundo de textura azul."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "06_dmb_6_cta.png",
+      "papel": "cta",
+      "layout": "oclusao: palavra atras do sujeito",
+      "texto": "Quer os dois em PDF? Digite PROMPT na DM.",
+      "alt": "Homem de gola alta em estúdio azul escuro, com o texto \"Quer os dois em PDF\" atrás dele."
+    }
+  ],
+  "legenda": "Dois prompts abertos, linha por linha. As duas fotos já foram pro nosso feed, você pode conferir.\n\nUma coisa importante antes de copiar: em nenhum dos dois o rosto está escrito no prompt. Ele vem de uma referência de personagem salva. O texto descreve roupa, gesto, luz e lente, e não descreve quem é a pessoa.\n\nRepara também no que se repete nos dois: a linha de proibição no fim. Modelo de imagem adora escrever, e escreve errado. Sem essa linha você recebe uma foto linda com uma palavra torta no meio e perde a imagem inteira.\n\nEscreve PROMPT no direct que eu te mando o PDF com os dois, mais a anatomia completa e o checklist.",
+  "primeiro_comentario": "Se você tentar rodar algum e o resultado vier estranho, cola aqui que eu te digo qual bloco está faltando.",
+  "hashtags": [
+    "#prompt",
+    "#inteligenciaartificial",
+    "#iagenerativa",
+    "#designgrafico",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "cta": {
+    "tipo": "palavra-chave",
+    "palavra_chave": "PROMPT",
+    "texto": "digite PROMPT na DM"
+  },
+  "publicacao": {
+    "rede": "instagram",
+    "formato": "carrossel",
+    "proporcao": "4:5",
+    "slides_total": 6,
+    "ordem_arquivos": [
+      "01_dmb_1_hook.png",
+      "02_dmb_2_foto1.png",
+      "03_dmb_3_prompt1.png",
+      "04_dmb_4_foto2.png",
+      "05_dmb_5_prompt2.png",
+      "06_dmb_6_cta.png"
+    ]
+  }
+}
