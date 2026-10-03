@@ -697,7 +697,7 @@ repetindo o que o rodapé diz. Vale também para o chip do card — rótulo verb
    forte: hook + CTA).
 3. **Skills de conteúdo OBRIGATÓRIAS, locais do repo (`.claude/skills/`):**
    escreva a copy com `copywriting` (original do cliente) + `copy-aidealab`
-   (adaptação para carrossel) e depois passe `humanizer-aidealab` em
+   (adaptação para carrossel) e depois passe `humanizer` (original) + `humanizer-aidealab` (acentos e voz da casa) em
    todos os textos (slides, legenda, primeiro comentário, alt). Invoque pela
    ferramenta Skill; se uma delas não carregar, leia o `SKILL.md` dela em
    `.claude/skills/<nome>/SKILL.md` e siga igual. Só depois renderize.

@@ -1,9 +1,11 @@
 ---
 name: humanizer-aidealab
-description: Revisão final de texto da aidealab para tirar marcas de texto de IA e conferir acentuação e voz. Use em slides, legenda e primeiro comentário, depois do copy-aidealab e antes de renderizar. Substitui a skill humanizer quando ela não está instalada.
+description: Camada em português da aidealab aplicada depois da skill humanizer: acentuação, voz da casa e checagens de carrossel. Use em slides, legenda e primeiro comentário, depois do copy-aidealab e antes de renderizar.
 ---
 
 # humanizer-aidealab
+
+Primeiro rode a skill `humanizer` (original, em `.claude/skills/humanizer/`) em modo embutido: devolva só o texto final. As construções em inglês dela (not X but Y, fecho de uma linha, tríade, travessão) valem igual em português ("não é X, é Y", "não é só X, é Y"). Depois aplique as checagens abaixo, que são específicas da casa e valem acima da humanizer em caso de conflito.
 
 Releia cada string (slides, legenda, primeiro_comentario, alt, CTA) e corrija:
 
