@@ -10,6 +10,11 @@ name: aidealab - re-renderizar rascunhos aprovados (texto legível) e enfileirar
 # depois rode de novo (o que já está na fila é pulado) com limit maior.
 
 on:
+  schedule:
+    # Todo dia 10:30 America/Cuiaba (14:30 UTC). Se a fila ainda tem item pendente,
+    # nao faz nada; se tudo foi postado, apaga os postados e enfileira os 10
+    # rascunhos mais antigos de RASCUNHOS (todos ja aprovados).
+    - cron: "30 14 * * *"
   workflow_dispatch:
     inputs:
       start_dia:
@@ -44,6 +49,23 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r "agente aidealab/automation/cloud/requirements.txt"
+      - name: Fila - arquivar postados quando tudo foi postado (so no agendamento)
+        id: fila
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python "agente aidealab/skills/post-instagram/scripts/queue_maintenance.py" --archive | tee fila.txt
+          else
+            python "agente aidealab/skills/post-instagram/scripts/queue_maintenance.py" | tee fila.txt
+          fi
+          cat fila.txt >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A "agente aidealab/skills/post-instagram/queue"
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(post-instagram): arquiva itens postados da fila [skip ci]"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
       - name: Listar rascunhos (mais antigo -> mais novo)
         id: list
         env:
@@ -51,10 +73,18 @@ jobs:
           GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
           GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
-          START_DIA: ${{ inputs.start_dia }}
-          LIMIT: ${{ inputs.limit }}
+          START_DIA: ${{ inputs.start_dia || steps.fila.outputs.next_dia }}
+          LIMIT: ${{ inputs.limit || '10' }}
           ONLY: ${{ inputs.only }}
+          PENDING: ${{ steps.fila.outputs.pending }}
+          EVENT: ${{ github.event_name }}
         run: |
+          if [ "$EVENT" = "schedule" ] && [ "$PENDING" != "0" ]; then
+            echo "Fila ainda tem $PENDING item(ns) pendente(s); nada a repor."
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+            echo "count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           python "agente aidealab/automation/cloud/list_rascunhos.py" --start-dia "$START_DIA" > all.json
           python - <<'EOF'
           import json, os
