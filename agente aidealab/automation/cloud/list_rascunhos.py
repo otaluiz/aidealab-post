@@ -41,6 +41,9 @@ def queued_ids():
         for key in ("carousel_id", "origem_carousel_id"):
             if meta.get(key):
                 ids.add(meta[key])
+    ledger = QUEUE_ROOT / "_arquivo-postados.json"
+    if ledger.exists():
+        ids.update(json.loads(ledger.read_text(encoding="utf-8")).get("carousel_ids", []))
     return ids
 
 
