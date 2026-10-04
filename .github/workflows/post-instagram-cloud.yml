@@ -4,11 +4,11 @@ name: post-instagram-cloud
 on:
   schedule:
     # O agendador do GitHub atrasa e descarta execucoes (medido: os disparos
-    # chegam ~4-5h depois do horario). Para absorver isso sem postar antes da hora,
-    # ha disparos a cada 30 min de 07:07 a 15:37 UTC e o publish_next.py so publica
-    # na janela 8h-14h America/Cuiaba (12:00-18:00 UTC), 1 post/dia (fuso Cuiaba).
-    # Disparos fora da janela ou depois do post do dia nao fazem nada.
-    - cron: "7,37 7-15 * * *"
+    # chegam ~4-5h depois do horario). Meta: postar ate 9h America/Cuiaba. Por isso
+    # os disparos comecam cedo (a cada 15 min, de 04:05 a 13:50 UTC = 0h-9h50 Cuiaba) e
+    # o publish_next.py so publica na janela 6h-12h Cuiaba (10:00-16:00 UTC), 1 post/dia
+    # (fuso Cuiaba). Disparos antes da janela ou depois do post do dia nao fazem nada.
+    - cron: "5,20,35,50 4-13 * * *"
   workflow_dispatch:
     inputs:
       force_publish:
