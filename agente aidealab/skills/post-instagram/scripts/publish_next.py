@@ -368,8 +368,8 @@ def main():
 
     if not force and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
         hora = datetime.now(CUIABA).hour
-        if not 8 <= hora < 14:
-            print(f"[STOP] Fora da janela de postagem (8h-14h Cuiabá; agora {hora}h). Use --force pra ignorar.")
+        if not 6 <= hora < 12:
+            print(f"[STOP] Fora da janela de postagem (6h-12h Cuiabá; agora {hora}h). Use --force pra ignorar.")
             return
     if not force and already_posted_today(items):
         print("[STOP] Nada publicado — guarda de 1-post-por-dia ativa. Use --force pra ignorar.")
