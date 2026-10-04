@@ -117,11 +117,14 @@ recuperar os PNGs manualmente caso o upload pro Drive dê problema.
   (últimos 4-5) pra não gastar tempo/token à toa, e por localização no banco
   (se a imagem ainda está em `02-Materiais-Brutos/img-ref`, ainda não foi
   usada -- é a convenção que a própria skill mantém).
+- Copy: use as skills locais do repo `copywriting` + `copy-aidealab` (escrever) e `humanizer` + `humanizer-aidealab` (revisar) em TODO texto antes de renderizar (ferramenta Skill, ou leia `.claude/skills/<nome>/SKILL.md` e siga). Não são opcionais.
 - Skills de conteúdo (`marketing-skills:*`, `marketing:content-creation`,
   `humanizer`) podem não estar instaladas neste ambiente de CI -- se a
   ferramenta Skill não encontrar alguma, **siga sem ela** (a orientação delas
   já está resumida no SKILL.md da `criar-post`), não trave a rotina por causa
   disso.
+- Acentuação: TODO texto fora da linha `.script` (Tempting) leva acentuação completa em português (você, não, já, próxima, mão). Só a linha `.script` do hook/CTA é escrita sem acento. Slides, legenda, primeiro comentário e alt sem acento são defeito bloqueante.
+- Header/rodapé: topo `2026` (esq) + `AIDEA LAB` (dir); rodapé `@aidealab7` + dots + categoria em caixa alta (dir). Sem contador 01/06. Ver SKILL.md.
 - Fontes: SEMPRE locais, em `agente aidealab/automation/cloud/fonts/` (Inter e
   Playfair Display Italic 900 versionados; `Tempting.ttf` quando o cliente colocar
   o arquivo). Rode `python agente aidealab/automation/cloud/fonts/build_fonts_css.py`,
