@@ -695,7 +695,14 @@ repetindo o que o rodapé diz. Vale também para o chip do card — rótulo verb
 2. Escreve a copy com o arco **hook → problema → explicação → solução → CTA**
    distribuído nos slides (no formato imagem única, colapsa num único frame
    forte: hook + CTA).
-3. **Skills de conteúdo** (Corey Haines, via a ferramenta Skill):
+3. **Skills de conteúdo OBRIGATÓRIAS, locais do repo (`.claude/skills/`):**
+   escreva a copy com `copywriting` (original do cliente) + `copy-aidealab`
+   (adaptação para carrossel) e depois passe `humanizer` (original) + `humanizer-aidealab` (acentos e voz da casa) em
+   todos os textos (slides, legenda, primeiro comentário, alt). Invoque pela
+   ferramenta Skill; se uma delas não carregar, leia o `SKILL.md` dela em
+   `.claude/skills/<nome>/SKILL.md` e siga igual. Só depois renderize.
+   Se as skills originais estiverem instaladas, podem reforçar:
+   **Skills de conteúdo** (Corey Haines, via a ferramenta Skill):
    `marketing-skills:social` como primária (carrossel, slide-by-slide, hooks),
    reforçada por `marketing-skills:copywriting` (headlines/CTA),
    `marketing-skills:marketing-psychology` (gatilhos de persuasão) e
@@ -879,6 +886,18 @@ gerado antes disso.
    - **Nunca reusa a mesma imagem** — nem entre carrosséis, nem entre hook e
      CTA. Antes de escolher, confere quais já foram publicadas (compara com
      os PNGs finais dos carrosséis anteriores; hash perceptual resolve).
+   - **Ordem de uso do banco: da imagem MAIS ANTIGA para a mais nova
+     (regra do cliente, 2026-10-04).** Liste `02-Materiais-Brutos/img-ref`
+     com `createdTime` e percorra em ordem crescente (empate: nome do
+     arquivo). Pegue as primeiras que passarem nas checagens de conteúdo
+     (texto/legenda/código incrustado, marca ou personagem de terceiros,
+     nudez ou insinuação), de ineditismo (phash contra os PNGs finais
+     anteriores) e de harmonia de cor do conjunto. Pule as reprovadas, mas
+     não as apague: registre cada uma em `checagem_conteudo_sensivel` para a
+     próxima rodada não baixar de novo. Só avance para imagens mais novas
+     quando as mais antigas acabarem ou forem todas reprovadas. Não escolha
+     por "a mais bonita" nem pela mais recente; a escolha de papel (hook,
+     miolo, CTA) dentro das aprovadas continua pela área vazia da cena.
    - **Monta um contact sheet antes de escolher** (grade de miniaturas num
      único JPEG) em vez de abrir 18 imagens uma a uma — uma leitura em vez
      de dezoito.
@@ -999,6 +1018,18 @@ gerado antes disso.
    acentuada não dá erro: o glifo cai silenciosamente na fonte de fallback e
    quebra o lockup sem avisar — então valida a string antes de usar.
 
+   **Acentuação é obrigatória em TODO texto, exceto no `.script` (Tempting).**
+   A restrição de "sem acento" vale SÓ para a linha `.script` do hook/CTA
+   (Tempting não tem glifo acentuado). Monumento, `.t-sub`, chip, cartão
+   (head, accent, body), legenda, primeiro comentário e `alt` são Inter/
+   Playfair e levam acentuação completa e correta (você, não, só, já, até,
+   próxima, mão, elogio, comentário). Falha real, run 14 de 2026-10-03
+   (`prova-que-ninguem-ve`): o modelo estendeu a regra do script a tudo e
+   publicou "voce", "nao", "ja", "proxima", "mao" nos slides e na legenda.
+   Antes de renderizar, releia cada string fora do `.script` procurando
+   palavra sem acento que deveria ter; peça com acento faltando não é
+   entregue.
+
    **Se a copy do hook/CTA exigir acento na linha-script (não dá pra reescrever
    sem o acento), troca o par inteiro para Helvetica Bold + Shelley Script —
    nunca só um dos dois.** `--mon: 'Helvetica Neue', Helvetica, Arial,
@@ -1104,10 +1135,22 @@ gerado antes disso.
    peça de citação, não um card de legibilidade de texto.
 
    **Header/rodapé sempre em branco sólido com sombra, nunca some contra a
-   imagem.** O lockup do topo (`AIDEA LAB` / categoria) e o rodapé (`@handle`
-   + dots) usam branco puro com text-shadow forte (nunca a cor cream/dim do
-   corpo de texto) — precisam ficar legíveis em qualquer ponto de qualquer
-   imagem de fundo, clara ou escura, sem depender de moldura.
+   imagem.** O lockup do topo e o rodapé usam branco puro com text-shadow
+   forte (nunca a cor cream/dim do corpo de texto) — precisam ficar legíveis
+   em qualquer ponto de qualquer imagem de fundo, clara ou escura, sem
+   depender de moldura.
+
+   **FORMATO FIXO do header e do rodapé (regra do cliente, 2026-10-02) — em
+   TODOS os slides, hook e CTA incluídos:**
+   - **Topo:** `2026` à esquerda (`.t-kicker.l`) e `AIDEA LAB` à direita
+     (`.t-kicker.r`). Nada de categoria no topo.
+   - **Rodapé:** `@aidealab7` à esquerda (`.t-footer-handle`), os dots no
+     centro (`.t-footer-dots`) e a **categoria do carrossel** em caixa alta à
+     direita (`.t-footer-cat`, ex.: `AUTOMAÇÃO`). A categoria é a mesma nos 6
+     slides.
+   - **NUNCA contador `01/06`, `02/06`...** no rodapé: os dots já são o guia
+     de slides do carrossel, ter os dois é redundância.
+   Referência de HTML: `templates/render-engine/slide-miolo.html`.
 
    **Nunca deixa texto encostar ou sobrepor o header/rodapé.** No hook e no
    CTA — onde o texto fica solto sobre a imagem, sem moldura — garante
