@@ -886,6 +886,18 @@ gerado antes disso.
    - **Nunca reusa a mesma imagem** — nem entre carrosséis, nem entre hook e
      CTA. Antes de escolher, confere quais já foram publicadas (compara com
      os PNGs finais dos carrosséis anteriores; hash perceptual resolve).
+   - **Ordem de uso do banco: da imagem MAIS ANTIGA para a mais nova
+     (regra do cliente, 2026-10-04).** Liste `02-Materiais-Brutos/img-ref`
+     com `createdTime` e percorra em ordem crescente (empate: nome do
+     arquivo). Pegue as primeiras que passarem nas checagens de conteúdo
+     (texto/legenda/código incrustado, marca ou personagem de terceiros,
+     nudez ou insinuação), de ineditismo (phash contra os PNGs finais
+     anteriores) e de harmonia de cor do conjunto. Pule as reprovadas, mas
+     não as apague: registre cada uma em `checagem_conteudo_sensivel` para a
+     próxima rodada não baixar de novo. Só avance para imagens mais novas
+     quando as mais antigas acabarem ou forem todas reprovadas. Não escolha
+     por "a mais bonita" nem pela mais recente; a escolha de papel (hook,
+     miolo, CTA) dentro das aprovadas continua pela área vazia da cena.
    - **Monta um contact sheet antes de escolher** (grade de miniaturas num
      único JPEG) em vez de abrir 18 imagens uma a uma — uma leitura em vez
      de dezoito.

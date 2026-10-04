@@ -57,6 +57,7 @@ recuperar os PNGs manualmente caso o upload pro Drive dê problema.
 
 ## Regras obrigatórias desta rodada
 
+- **Ordem de uso do banco: da MAIS ANTIGA para a mais nova.** Rode `drive_helper.py list` na pasta `img-ref` (traz `createdTime`), ordene por `createdTime` crescente (empate: nome) e baixe as candidatas nessa ordem, parando quando tiver as imagens aprovadas que a peça precisa. Pule as reprovadas na checagem de conteúdo e registre-as no metadata; só avance para as mais novas quando as antigas acabarem. Não escolha por beleza nem pela mais recente.
 - **Antes de gerar imagem nova, confira `02-Materiais-Brutos/img-ref`** por
   imagens do banco ainda não usadas (baixe candidatas com `download` pra
   `/tmp` e inspecione o PNG salvo -- nunca decida só pelo nome do arquivo).
