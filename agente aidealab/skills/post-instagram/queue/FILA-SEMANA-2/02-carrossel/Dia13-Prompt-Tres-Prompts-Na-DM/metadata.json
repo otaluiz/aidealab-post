@@ -3,7 +3,7 @@
   "cliente": "aidealab",
   "data_criacao": "2026-09-13",
   "status": "aprovado",
-  "postado": false,
+  "postado": true,
   "origem_carousel_id": "Prompt-Tres-Prompts-Na-DM",
   "tema": "dois prompts reais que viraram post aprovado",
   "pilar": "bastidor",
@@ -93,5 +93,7 @@
       "05_dmb_5_prompt2.png",
       "06_dmb_6_cta.png"
     ]
-  }
+  },
+  "postado_em": "2026-10-04T15:13:43.201732",
+  "post_id": "18115704602279468"
 }
