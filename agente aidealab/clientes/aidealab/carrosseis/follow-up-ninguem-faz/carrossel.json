@@ -1,13 +1,159 @@
 {
  "id": "follow-up-ninguem-faz",
- "meta": {"serie": "VENDAS", "data": "2026/10"},
+ "meta": {
+  "serie": "VENDAS",
+  "data": "2026/10"
+ },
  "slides": [
-  {"template": "T1", "display": ["O CLIENTE SUMIU."], "emocao": {"texto": "e ninguém [cobrou].", "posicao": "depois"}, "imagem": "capa_orig.png"},
-  {"template": "T2", "display": ["A MENSAGEM", "FICOU NO VISTO."], "emocao": {"texto": "e a venda [esfriou].", "posicao": "depois"}, "imagem": "slide2_orig.png"},
-  {"template": "T3", "display": ["POR QUE O", "{FOLLOW-UP} MORRE"], "lista": ["Falta tempo no meio do atendimento", "Ninguém lembra quem ficou de voltar", "Dá vergonha de insistir", "Cada cliente pede uma resposta diferente"], "textura": "grain"},
-  {"template": "T2", "display": ["UMA SEGUNDA MENSAGEM", "RESGATA VENDA QUE JÁ ERA"], "emocao": {"texto": "{possível}.", "posicao": "depois"}},
-  {"template": "T3", "display": ["O QUE A IA", "{LEMBRA} POR VOCÊ"], "lista": ["Quem pediu orçamento e não respondeu", "Quem abandonou a conversa no meio", "Quando chamar de novo", "Um texto de retorno pronto para ajustar"], "textura": "led"},
-  {"template": "T2c", "display": ["VOCÊ SÓ", "CONFERE E"], "emocao": {"texto": "{envia}.", "posicao": "depois"}, "textura": "led"},
-  {"template": "T4", "display": ["QUER UM FOLLOW-UP", "QUE FUNCIONA?"], "cta": {"acao": "Comenta RETORNO", "texto": "a aidealab te mostra"}, "imagem": "cta_orig.png"}
+  {
+   "template": "T1",
+   "display": [
+    "O CLIENTE SUMIU."
+   ],
+   "emocao": {
+    "texto": "e ninguém [cobrou].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "texto_frente": true,
+   "sujeito": {
+    "cabeca": [
+     290,
+     50,
+     810,
+     850
+    ],
+    "rostos": [
+     [
+      290,
+      50,
+      810,
+      850
+     ]
+    ],
+    "rostos_manual": [
+     [
+      290,
+      50,
+      810,
+      850
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": true
+   },
+   "bloco": {
+    "y": 960,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A MENSAGEM",
+    "FICOU NO VISTO."
+   ],
+   "emocao": {
+    "texto": "e a venda [esfriou].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "POR QUE O",
+    "{FOLLOW-UP} MORRE"
+   ],
+   "lista": [
+    "Falta tempo no meio do atendimento",
+    "Ninguém lembra quem ficou de voltar",
+    "Dá vergonha de insistir",
+    "Cada cliente pede uma resposta diferente"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "UMA SEGUNDA MENSAGEM",
+    "RESGATA VENDA QUE JÁ ERA"
+   ],
+   "emocao": {
+    "texto": "{possível}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA",
+    "{LEMBRA} POR VOCÊ"
+   ],
+   "lista": [
+    "Quem pediu orçamento e não respondeu",
+    "Quem abandonou a conversa no meio",
+    "Quando chamar de novo",
+    "Um texto de retorno pronto para ajustar"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ SÓ",
+    "CONFERE E"
+   ],
+   "emocao": {
+    "texto": "{envia}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER UM FOLLOW-UP",
+    "QUE FUNCIONA?"
+   ],
+   "cta": {
+    "acao": "Comenta RETORNO",
+    "texto": "a aidealab te mostra"
+   },
+   "imagem": "cta_orig.png",
+   "texto_frente": true,
+   "sujeito": {
+    "cabeca": [
+     290,
+     80,
+     820,
+     850
+    ],
+    "rostos": [
+     [
+      290,
+      80,
+      820,
+      850
+     ]
+    ],
+    "rostos_manual": [
+     [
+      290,
+      80,
+      820,
+      850
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": true
+   },
+   "bloco": {
+    "y": 880,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
  ]
 }

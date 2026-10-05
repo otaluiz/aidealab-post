@@ -1,1 +1,69 @@
-{"status":"bloqueado","personagem":"wel","motivo":"capa e CTA reprovados apos 2 refazer; ver BLOQUEIO.md"}
+{
+ "carousel_id": "follow-up-ninguem-faz",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-05",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "VENDAS",
+ "tema": "O CLIENTE SUMIU. e ninguém cobrou.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "O CLIENTE SUMIU. e ninguém cobrou."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "A MENSAGEM FICOU NO VISTO. e a venda esfriou."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "POR QUE O FOLLOW-UP MORRE Falta tempo no meio do atendimento Ninguém lembra quem ficou de voltar Dá vergonha de insistir Cada cliente pede uma resposta diferente"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "UMA SEGUNDA MENSAGEM RESGATA VENDA QUE JÁ ERA possível."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE A IA LEMBRA POR VOCÊ Quem pediu orçamento e não respondeu Quem abandonou a conversa no meio Quando chamar de novo Um texto de retorno pronto para ajustar"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "VOCÊ SÓ CONFERE E envia."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER UM FOLLOW-UP QUE FUNCIONA? Comenta RETORNO a aidealab te mostra"
+  }
+ ],
+ "legenda": "O cliente pediu orçamento, sumiu, e ninguém voltou a falar com ele. Quase sempre não foi desinteresse: foi falta de lembrete.\n\nDá pra a IA avisar quem ficou sem resposta, sugerir quando chamar de novo e deixar o texto de retorno pronto. Você confere e envia.\n\nComenta RETORNO que a aidealab te mostra por onde começar.\n\n#followup #vendas #atendimento #iaaplicada #aidealab",
+ "hashtags": [
+  "#followup",
+  "#vendas",
+  "#atendimento",
+  "#iaaplicada",
+  "#aidealab"
+ ],
+ "handle": "@aidealab7",
+ "personagem": "wel"
+}
