@@ -1,0 +1,74 @@
+{
+  "carousel_id": "Servicos-Criacao-Design",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 9,
+  "serie": "DESIGN",
+  "tema": "NO IMPROVISO peça solta vira ruído.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "NO IMPROVISO peça solta vira ruído."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "UM MONTE DE PEÇA SOLTA não vira marca."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A GENTE CRIA Sites e e-commerce Branding Design gráfico Motion"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "SITE BONITO QUE NÃO VENDE é portfólio."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "BRANDING: RECONHECEM você antes de ler o nome."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PEÇA BOA REDUZ DÚVIDA e dúvida custa venda."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "MOTION GUIA O OLHO e trava o dedo."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "AGORA É A SUA VEZ sem material solto. Chama no direct e a gente põe tudo no mesmo sistema"
+    }
+  ],
+  "legenda": "Um monte de peça solta não vira marca. Vira ruído.\n\nO que a gente faz na criação:\n\nSites e e-commerce. Institucional, landing page e loja completa, com velocidade, medição e integração com o CRM e o meio de pagamento que você já usa. Site bonito que não vende é portfólio.\n\nBranding. Logotipo e sistema de marca, manual, paleta e tipografia, e as aplicações que fazem isso sobreviver ao dia a dia. O objetivo é reconhecerem você antes de ler o nome.\n\nDesign gráfico. Social media, e-books e infoprodutos, apresentação comercial e impresso, tudo no mesmo sistema. Peça boa reduz dúvida, e dúvida custa venda.\n\nMotion. Vinheta, animação de logo e templates que a sua equipe consegue reusar sozinha.\n\nSe o seu material hoje é um monte de arquivo solto em pastas diferentes, chama no direct.\n\n#designgrafico #identidadevisual #branding #socialmediadesign #aidealab",
+  "hashtags": [
+    "#designgrafico",
+    "#identidadevisual",
+    "#branding",
+    "#socialmediadesign",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7"
+}

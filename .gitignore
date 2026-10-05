@@ -59,3 +59,5 @@ agente aidealab/automation/cloud/drive_token_output.json
 # comitado só durante o próprio upload, nunca permanentemente (use `git add
 # -f` pra forçar o commit temporário quando for usar o workflow de novo).
 agente aidealab/automation/cloud/_pending_upload/
+
+agente aidealab/automation/logs/

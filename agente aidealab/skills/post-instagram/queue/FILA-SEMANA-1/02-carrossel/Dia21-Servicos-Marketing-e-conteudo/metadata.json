@@ -1,0 +1,73 @@
+{
+  "carousel_id": "Servicos-Marketing-e-conteudo",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 11,
+  "serie": "MARKETING",
+  "tema": "SER LEMBRADO aparecer todo mundo aparece.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SER LEMBRADO aparecer todo mundo aparece."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "ANÚNCIO NÃO É APOSTA é público certo."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A GENTE FAZ Tráfego pago Redes sociais Audiovisual SEO"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "FEED COM LINHA EDITORIAL não post quando dá tempo."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "OS PRIMEIROS 3 SEGUNDOS decidem o resto."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "SEO É O ANÚNCIO pra quando você para de pagar."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "RELATÓRIO QUE VOCÊ LÊ sem tradutor."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "VAMOS COMEÇAR conta o que você faz. Chama no direct e a gente responde com um caminho"
+    }
+  ],
+  "legenda": "Aparecer todo mundo aparece. Ser lembrado é que dá trabalho.\n\nO que a gente faz no marketing e conteúdo:\n\nTráfego pago que persegue intenção de compra em vez de alcance, com verba revista toda semana e relatório que você lê sem precisar de tradutor.\n\nRedes sociais com linha editorial de verdade. Planejamento mensal, design e copy no mesmo sistema, e alguém respondendo os comentários.\n\nAudiovisual pensado pros três primeiros segundos. Vídeo 4K e drone, edição, cor e legenda, com corte vertical feito pro Reels e não sobra de vídeo horizontal.\n\nE SEO, que é a parte que continua trabalhando depois que a verba do anúncio acaba.\n\nConta o que você faz no direct que a gente responde com um caminho, sem proposta genérica.\n\n#marketingdigital #marketingparapequenasempresas #conteudoestrategico #aidealab",
+  "hashtags": [
+    "#marketingdigital",
+    "#marketingparapequenasempresas",
+    "#conteudoestrategico",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7"
+}

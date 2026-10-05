@@ -1,0 +1,74 @@
+{
+  "carousel_id": "prova-que-vende",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 12,
+  "serie": "CONTEÚDO",
+  "tema": "POST BONITO, VAZIO. quem compra procura prova.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "POST BONITO, VAZIO. quem compra procura prova."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "BONITO NÃO BASTA pra confiar."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "AS FRASES IGUAIS Atendimento incrível Resultado garantido Qualidade premium Todo mundo escreve isso de si"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "SEM CASO REAL, NINGUÉM SEPARA quem entrega de quem só promete."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "MOSTRE O ANTES, O DEPOIS e o número."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PROVA QUE CHECA Print de resultado Depoimento gravado Comparação real Não precisa ser perfeito, precisa ser checável"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "QUEM PROVA VENDE ANTES de falar de preço."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "O QUE CONVENCE? prova. Comenta PROVA e a aidealab te manda o passo a passo"
+    }
+  ],
+  "legenda": "Seu feed pode estar bonito e mesmo assim não vender nada.\n\nO design chama atenção, mas quem decide comprar procura por outra coisa: alguma prova de que aquilo funciona de verdade. Depoimento, print de resultado, número, antes e depois.\n\nSem isso, toda promessa soa igual. \"Atendimento incrível\" no seu post e no post do concorrente pesam a mesma coisa pra quem está de fora decidindo.\n\nA prova muda o jogo porque tira a decisão do campo da opinião. Quem vê consegue checar, não só acreditar.\n\nComenta PROVA que a gente te manda o passo a passo pra montar a sua.",
+  "hashtags": [
+    "#aidealab",
+    "#provasocial",
+    "#marketingdigital",
+    "#pequenosnegocios",
+    "#instagramparaempresas"
+  ],
+  "handle": "@aidealab7"
+}

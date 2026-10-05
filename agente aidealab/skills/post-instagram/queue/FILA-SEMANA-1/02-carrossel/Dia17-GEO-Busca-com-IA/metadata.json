@@ -1,0 +1,68 @@
+{
+  "carousel_id": "GEO-Busca-com-IA",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 7,
+  "serie": "IA",
+  "tema": "ELE PULA A BUSCA e pergunta direto pra IA.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T5-T2c-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ELE PULA A BUSCA e pergunta direto pra IA."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "SEO TE BOTA NA LISTA de links."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "SEO X GEO SEO: ganhar posição na lista de links GEO: ser citado dentro da resposta da IA São otimizações diferentes Ganhar uma não garante a outra"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": ""
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "ESCREVA resposta, não palavra-chave."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "UM BLOCO SÓ Definição Número Fonte Data"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "APARECE NA RESPOSTA e não só na lista. Chama no direct e a aidealab ajusta seu conteúdo pra IA"
+    }
+  ],
+  "legenda": "Hoje ele pula a busca e pergunta direto pra IA.\n\nSEO te bota na lista de links. GEO decide se a IA cita sua marca dentro da resposta. Escreva resposta, não palavra-chave.\n\nChama no direct.",
+  "hashtags": [
+    "#geo",
+    "#seo",
+    "#ia",
+    "#buscacomia",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7"
+}

@@ -1,0 +1,68 @@
+{
+  "carousel_id": "Servicos-IA-Automacoes",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 10,
+  "serie": "IA",
+  "tema": "RODA EM POST-IT sua operação ainda",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "RODA EM POST-IT sua operação ainda"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE CHAMA E espera até amanhã."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "QUATRO FRENTES Atendimento com IA Automação de processos Dados e previsão Painel sob medida"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ATENDIMENTO COM IA responde em segundos."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O TRABALHO REPETIDO sai do seu dia."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "DADOS LIDOS POR IA o que cai aparece a tempo."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "O NEGÓCIO EM UMA TELA sem planilha de madrugada."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "CHEGA DE POST-IT conta a tarefa que mais te consome. Chama no direct e a gente diz se dá pra automatizar"
+    }
+  ],
+  "legenda": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.\n\nQuatro frentes que a gente monta:\n\nAtendimento com IA. Chatbot treinado no seu negócio, não naquele genérico. Responde em segundos, qualifica quem tem intenção real e passa pra você só o que precisa de gente.\n\nAutomação de processos. Orçamento, cadastro, cobrança, relatório. O que hoje é copiar e colar vira rotina que roda sozinha e avisa quando trava.\n\nDados e previsão. Seus números em um lugar só, lidos por IA. O que está caindo aparece enquanto ainda dá tempo de corrigir o mês.\n\nPainel sob medida. Vendas, anúncios e atendimento numa tela que se atualiza sozinha, sem planilha remendada na madrugada.\n\nManda um direct com a tarefa que mais te consome hoje. A gente responde dizendo se dá pra automatizar e como.\n\n#inteligenciaartificial #automacao #iaparanegocios #produtividade #aidealab",
+  "hashtags": [],
+  "handle": "@aidealab7"
+}

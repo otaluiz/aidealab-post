@@ -10,11 +10,12 @@ name: aidealab - re-renderizar rascunhos aprovados (texto legível) e enfileirar
 # depois rode de novo (o que já está na fila é pulado) com limit maior.
 
 on:
-  schedule:
-    # Todo dia 10:30 America/Cuiaba (14:30 UTC). Se a fila ainda tem item pendente,
-    # nao faz nada; se tudo foi postado, apaga os postados e enfileira os 10
-    # rascunhos mais antigos de RASCUNHOS (todos ja aprovados).
-    - cron: "30 14 * * *"
+  # agendamento desligado em 2026-10-05: gerava/enfileirava carrossel no motor antigo. Fila agora vem do Drive 06/FILA (sync_fila_drive.py).
+  # schedule:
+  #   # Todo dia 10:30 America/Cuiaba (14:30 UTC). Se a fila ainda tem item pendente,
+  #   # nao faz nada; se tudo foi postado, apaga os postados e enfileira os 10
+  #   # rascunhos mais antigos de RASCUNHOS (todos ja aprovados).
+  #   - cron: "30 14 * * *"
   workflow_dispatch:
     inputs:
       start_dia:

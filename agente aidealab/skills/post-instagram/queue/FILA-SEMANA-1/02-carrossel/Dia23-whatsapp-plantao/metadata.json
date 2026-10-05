@@ -1,0 +1,68 @@
+{
+  "carousel_id": "whatsapp-plantao",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 13,
+  "serie": "AUTOMAÇÃO",
+  "tema": "CAOS. seu WhatsApp virou",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T2-T3-T2-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "CAOS. seu WhatsApp virou"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE MANDA OI e o pedido some no meio da conversa."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "NÃO FALTA GENTE falta um sistema que responda por você."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A TRIAGEM AUTOMÁTICA Separa quem quer comprar De quem só pergunta preço Todo mundo recebe resposta Sem você digitar nada"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "TODO MUNDO RECEBE RESPOSTA no minuto que manda a mensagem."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "NÃO NO FIM DO DIA. a resposta chega na hora."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "DEPOIS DO CAOS VEM A ordem. Comenta ORGANIZA e a aidealab te mostra como"
+    }
+  ],
+  "legenda": "Seu WhatsApp virou caos. O cliente manda oi e o pedido some no meio da conversa.\n\nNão falta gente, falta um sistema que responda por você. A triagem automática separa quem quer comprar de quem só pergunta preço, e todo mundo recebe resposta no minuto em que manda a mensagem, não no fim do dia.\n\nDepois do caos vem a ordem.\n\nComenta ORGANIZA que a gente te mostra como.",
+  "hashtags": [
+    "#aidealab",
+    "#automacaocomia",
+    "#whatsappbusiness",
+    "#pequenosnegocios",
+    "#atendimento"
+  ],
+  "handle": "@aidealab7"
+}

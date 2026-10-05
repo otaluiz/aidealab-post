@@ -1,0 +1,74 @@
+{
+  "carousel_id": "Jornada-do-Cliente",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 8,
+  "serie": "VENDAS",
+  "tema": "ELE SOME. e você chama isso de funil.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2c-T3-T2-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ELE SOME. e você chama isso de funil."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "A PRIMEIRA VISITA não é intenção de compra."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "PÁGINA BONITA SEM PROVA é cadeira vazia: linda, e ninguém senta."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "O RETORNO quase nunca é no mesmo canal."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O CAMINHO REAL Viu no Reels Procurou no Google Perguntou pra IA Voltou pelo direct"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A CONVERSA É O FIM, não o começo."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "SEU CONTEÚDO TRABALHA enquanto ninguém está olhando."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "VAMOS MAPEAR O CAMINHO do seu cliente? Chama no direct e a aidealab desenha o caminho com você"
+    }
+  ],
+  "legenda": "Antes de comprar, ele some. E você chama isso de funil.\n\nA primeira visita só confere se você é real. O segundo toque quase nunca é no mesmo canal. Quando ele chama, já decidiu.\n\nChama no direct e vamos mapear o caminho.",
+  "hashtags": [
+    "#jornadadocliente",
+    "#funil",
+    "#vendas",
+    "#marketing",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7"
+}
