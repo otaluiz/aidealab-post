@@ -1,67 +1,71 @@
-Rotina automática em nuvem (GitHub Actions, sem humano para responder). Cliente: aidealab.
-Modelo Sonnet: siga ao pé da letra; na dúvida, escolha a leitura mais conservadora.
+Rotina diária na nuvem (rotina do Claude em claude.ai, sem humano para responder). Cliente: aidealab.
+Siga ao pé da letra; na dúvida, escolha a leitura mais conservadora.
 
-Gere carrosséis de Instagram novos no MOTOR NOVO (pasta `motor/` = carrossel-engine, tema aidealab).
-NÃO use a skill `criar-post` nem nada em `agente aidealab/skills/criar-post/` (é o motor antigo).
-Quantidade: a variável de ambiente `QTD` (padrão 3). Se `FORCAR=1`, ignore a regra de lote abaixo.
+Gere 1 carrossel de Instagram novo no MOTOR NOVO (pasta `motor/` = carrossel-engine, tema aidealab), com os
+PERSONAGENS gerados no Higgsfield Soul 2.0. NÃO use a skill `criar-post` nem nada em
+`agente aidealab/skills/criar-post/` (é o motor antigo).
 
-## Ambiente
-- Raiz do repositório = diretório atual. O workflow já rodou `agente aidealab/automation/cloud/setup-motor.sh`
-  (Playwright, rembg, OpenCV 4 em `motor/.vendor_cv4`, fontes do tema).
-- Drive: só via `python "agente aidealab/automation/cloud/drive_helper.py"` (find-folder, list, download,
-  read-text, move). Nunca MCP do Drive. `$AIDEALAB_FOLDER_ID` = pasta `Clientes/aidealab`.
-  Localize as subpastas com find-folder encadeado: `04-Carrosseis`, `02-Materiais-Brutos/img-ref`,
-  `01-Referencias/Instagram/img-ref`, `03-Roteiros`, `_arquivo-carrosseis-v1`, `06-Aprovados-para-Postar/FILA`
-  e `06-Aprovados-para-Postar/POSTADOS`.
-- NÃO suba nada para o Drive: o workflow sobe sozinho, depois de você, toda pasta
-  `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `png/metadata.json` em `"status": "rascunho"`.
-- Não há Higgsfield nem geração de imagem neste runner. Imagens vêm só do banco `02-Materiais-Brutos/img-ref`.
+## 0. Ambiente
+- Raiz do repositório = diretório atual. Rode `bash "agente aidealab/automation/cloud/setup-motor.sh"`
+  (Playwright, rembg, OpenCV 4 em `motor/.vendor_cv4`, fontes do tema). Se falhar, pare e relate.
+- Você NÃO acessa o Google Drive. O estado dele está em `agente aidealab/automation/cloud/estado-drive.json`
+  (atualizado todo dia pelo GitHub Actions): `rascunhos_04` (aguardando aprovação), `fila` (aprovados) e
+  `postados`. A entrega no Drive também é do GitHub Actions: você só faz commit e push.
 
-## Regra de lote (pule se FORCAR=1)
-Liste `04-Carrosseis` e leia o `metadata.json` de cada pasta (read-text). Se 1 ou mais estiver com
-`"status": "rascunho"`, NÃO gere nada: escreva "aguardando aprovação (N rascunhos), pulei a geração" e pare.
-Não é erro. Aprovar = o humano mover a pasta de 04 para `06-Aprovados-para-Postar/FILA`.
+## 1. Regra de lote
+Se `estado-drive.json` existir e `rascunhos_04` tiver 3 ou mais pastas, NÃO gere nada: escreva
+"aguardando aprovação (N rascunhos em 04), pulei a geração" e termine sem commit. Não é erro.
+Se o arquivo não existir, gere normalmente.
 
-## Temas
-Priorize `03-Roteiros/temas-disponiveis.md` (baixe com download). Para esses temas, parta do texto antigo em
-`_arquivo-carrosseis-v1/<slug>/metadata.json` (mesma ideia, mesmo hook se couber em 10 palavras), reescrito
-na estrutura do motor novo. Cada carrossel com pilar diferente (educacional, bastidor, prova, oferta).
-Não repita tema de pasta que já existe em 04, 06/FILA ou 06/POSTADOS (compare pelos nomes).
+## 2. Tema
+Escolha um tema/pilar (educacional, bastidor, prova ou oferta) sobre marketing, conteúdo, IA aplicada e
+automação para pequenos negócios. Não repita tema de nenhum nome em `rascunhos_04`, `fila`, `postados`
+nem das pastas de `agente aidealab/clientes/aidealab/carrosseis/`. Varie o pilar em relação ao último
+carrossel dessa pasta (veja o mais recente pelo `git log`).
 
-## Formato (leia antes de começar)
+## 3. Formato (leia antes de começar)
 - `motor/README.md`, `motor/carrossel.schema.md`, `agente aidealab/clientes/aidealab/design-system/templates/templates.md`.
-- Modelos para copiar o formato: `agente aidealab/clientes/aidealab/exemplos/*/carrossel.json` e `legenda.md`.
-- Pasta de trabalho: `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `carrossel.json`, `legenda.md` e imagens.
-  O texto NUNCA vai dentro da imagem: o motor desenha.
-- 7 ou 8 slides: capa T1 → slide 2 T2 com imagem (a tensão) → miolo SÓ TEXTO (T3 com `lista` até 4 itens,
-  T2 papel, T2c caderno; destaque `{palavra}` um por slide; nunca mais de 3 fundos iguais seguidos)
-  → último T4 CTA com imagem e "Comenta PALAVRA".
-- Imagem SÓ na capa, no slide 2 e no CTA. Variante A (banco nas 3) ou B (banco nas 3 + 1 a 3 slides T5 com
-  print real: `python ../../../../../motor/print_site.py <url> prints/<nome>.png --wait 3`).
+- Modelo com personagens para copiar o formato:
+  `agente aidealab/clientes/aidealab/exemplos/2026-10-led-caixa-registradora/` (outros em `exemplos/`).
+- Pasta de trabalho: `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `carrossel.json`, `legenda.md` e
+  as imagens. O texto NUNCA vai dentro da imagem: o motor desenha.
+- 7 ou 8 slides: capa T1 com o personagem (como no exemplo) → slide 2 T2 com imagem (a tensão) → miolo SÓ TEXTO (T3 com `lista`
+  até 4 itens, T2 papel, T2c caderno; destaque `{palavra}` um por slide; nunca mais de 3 fundos iguais
+  seguidos) → último T4 CTA com personagem e "Comenta PALAVRA".
 
-## Imagens do banco
-- Baixe candidatas de `02-Materiais-Brutos/img-ref` para `/tmp` e olhe cada uma em resolução real.
-  Rejeite: texto/letras/código na imagem, logo ou personagem de marca, marca d'água, nudez ou insinuação.
-- Uma imagem DISTINTA para cada um dos 3 papéis (capa, slide 2, CTA). Nunca reuse.
-- Corte em 3:4 1080x1440 (Pillow: cover + Lanczos + unsharp leve). Nunca upscale pago.
-- Ao aceitar o carrossel, mova as imagens usadas de `02-Materiais-Brutos/img-ref` para
-  `01-Referencias/Instagram/img-ref` (move) para que nunca se repitam.
-- Sem imagem limpa que caiba no tema: não invente (nada de gradiente no lugar de foto). Marque o carrossel
-  `"status": "bloqueado"` com o motivo no `png/metadata.json` e siga para o próximo.
+## 4. Imagens (Higgsfield)
+- Capa e CTA: personagem com `soul_2` + `soul_id`, `aspect_ratio` "3:4", `quality` "2k":
+  @luizota = `f752ac25-65a0-4930-a628-722af0508c5b`, @wel = `68f715ee-167c-4c8f-92eb-16bbd177f7d3`.
+  Alterne o personagem em relação ao último carrossel (campo `personagem` no `png/metadata.json` dele);
+  capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
+  marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
+  "no text, no letters, no logos". Mantenha o cabelo visível, sem chapéu nem óculos.
+- Enquadramento grande (como um hook de revista): do peito para cima, cabeça no terço de cima, e um lado do
+  quadro livre (fundo liso) para o texto. Nada de figura pequena de corpo inteiro.
+- Slide 2: `gpt_image_2_5` (3:4), surreal editorial, paleta navy/ciano, sem pessoas reconhecíveis,
+  "no text, no letters, no logos".
+- Se um job falhar (429/erro), reenvie só o que falhou. Baixe com curl, corte em 3:4 1080x1440
+  (Pillow: cover + Lanczos + unsharp leve). Nunca upscale pago. Confira cada imagem: sem texto, logo ou
+  marca d'água; rosto do personagem coerente. Refaça a que estiver ruim (no máximo 2 vezes).
 
-## Composição, render e conferência (a partir da pasta do carrossel)
+## 5. Composição, render e conferência (a partir da pasta do carrossel)
 - `python ../../../../../motor/compor.py carrossel.json --led slide2` (recorte rembg só se limpo, sujeito na frente
   do título, área vazia para o texto, LED no slide 2, grain no slide 3, LED nas listas e na conclusão).
 - `python ../../../../../motor/render.py carrossel.json png --tema ../../design-system/tema`
-  Se falhar por texto sobre cabeça/rosto, ajuste `bloco` (y/alinhar/largura) e renderize de novo.
-  No CTA com pessoa grande no quadro pode usar `"texto_frente": true` + `bloco` manual: texto na frente do corpo,
-  nunca do rosto.
+  Se falhar por texto sobre cabeça/rosto, ajuste `bloco` (y/alinhar/largura) e renderize de novo. Com o
+  personagem grande no quadro, use `"texto_frente": true` + `bloco` manual no lado livre: texto pode passar na
+  frente do corpo, nunca do rosto (`sujeito.cabeca_manual` cobrindo a cabeça).
 - Abra capa, slide 2 e CTA em tamanho cheio: título legível, nenhuma palavra escondida atrás do sujeito,
   nenhuma palavra sozinha numa linha, nada cortado, texto acima do rodapé. Corrija e renderize de novo.
 - Copy: skill `copywriting` para escrever e `humanizer` para revisar (slides e legenda). Hook até 10 palavras,
-  sem número inventado. `@aidealab7` é o handle.
-- Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`
-  e depois `status` = `"rascunho"` no `png/metadata.json`.
+  sem número inventado. Handle `@aidealab7`.
+- Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
+  depois, no `png/metadata.json`, `status` = `"rascunho"` e `personagem` = `"luizota"`, `"wel"` ou `"ambos"`.
+
+## 6. Entrega
+`git add` só a pasta do carrossel, commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só
+permitir push numa branch própria, use essa branch: o GitHub Actions leva para a main e sobe para o Drive.
+Se algo travar de verdade, marque `"status": "bloqueado"` com o motivo, faça commit do que existir e termine.
 
 ## Fim
-Resumo curto: temas, variante, imagens usadas (nomes no banco), checagens e qualquer bloqueio.
+Resumo curto: tema, personagens, prompts usados, créditos estimados, checagens e qualquer bloqueio.

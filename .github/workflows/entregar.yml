@@ -1,0 +1,52 @@
+name: aidealab - rotina -> main -> drive
+
+# Os carrosséis são gerados pela rotina "aidealab - carrossel diário 8h" do Claude na nuvem (claude.ai),
+# que tem o Higgsfield (Soul 2.0 dos personagens). Ela só consegue dar push numa branch própria (main-xxxx).
+# Este workflow, num job só (push feito com GITHUB_TOKEN não dispara outro workflow):
+#   1. traz a branch da rotina para a main e apaga a branch
+#   2. sobe os rascunhos novos para Clientes/aidealab/04-Carrosseis (upload_carrosseis.py)
+#   3. grava agente aidealab/automation/cloud/estado-drive.json (04, 06/FILA, 06/POSTADOS) e commita,
+#      para a rotina saber a regra de lote e os temas já usados sem acessar o Drive.
+on:
+  push:
+    paths-ignore:
+      - "agente aidealab/skills/post-instagram/queue/**"
+  schedule:
+    - cron: "30 10 * * *"  # 7h30 BRT, antes da rotina das 8h: atualiza o estado do Drive
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: aidealab-drive
+jobs:
+  entregar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: merge da branch da rotina
+        if: github.event_name == 'push' && github.ref_name != 'main'
+        run: |
+          git merge --no-edit "origin/${GITHUB_REF_NAME}"
+          git push origin main
+          git push origin --delete "${GITHUB_REF_NAME}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r "agente aidealab/automation/cloud/requirements.txt"
+      - name: sobe para o Drive e grava o estado
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python "agente aidealab/automation/cloud/upload_carrosseis.py"
+      - name: commit do estado
+        run: |
+          f="agente aidealab/automation/cloud/estado-drive.json"
+          git add "$f"
+          git diff --cached --quiet || { git commit -m "chore: estado do Drive [skip ci]" && git pull --rebase -q origin main && git push origin main; }

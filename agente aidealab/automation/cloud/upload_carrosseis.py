@@ -1,6 +1,6 @@
-"""Sobe para o Drive (Clientes/aidealab/04-Carrosseis) os carrosséis gerados nesta rodada.
+"""Sobe para o Drive (Clientes/aidealab/04-Carrosseis) os carrosséis gerados pela rotina e grava o estado do Drive.
 
-Etapa fixa do workflow, depois do `claude -p`: o modelo não sobe nada. Para cada pasta em
+Etapa fixa do workflow `entregar.yml`: a rotina (claude.ai) não acessa o Drive. Para cada pasta em
 `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `png/metadata.json` em status "rascunho",
 cria `04-Carrosseis/<slug>/` e envia os PNGs, o metadata.json e o legenda.md. Pula slugs que já
 existem em 04, em 06-Aprovados-para-Postar/FILA ou em 06-Aprovados-para-Postar/POSTADOS.
@@ -34,9 +34,10 @@ def main():
     svc = get_service()
     destino = achar(svc, "Clientes/aidealab/04-Carrosseis")
     seis = achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar")
-    ja = set(filhos(svc, destino))
-    for sub in ("FILA", "POSTADOS"):
-        ja |= set(filhos(svc, filhos(svc, seis)[sub])) if sub in filhos(svc, seis) else set()
+    subs = filhos(svc, seis)
+    fila = sorted(filhos(svc, subs["FILA"])) if "FILA" in subs else []
+    postados = sorted(filhos(svc, subs["POSTADOS"])) if "POSTADOS" in subs else []
+    ja = set(filhos(svc, destino)) | set(fila) | set(postados)
     enviados = 0
     for d in sorted(RAIZ.iterdir()) if RAIZ.exists() else []:
         meta = d / "png" / "metadata.json"
@@ -51,6 +52,11 @@ def main():
         print("enviado:", d.name, len(arquivos), "arquivos")
         enviados += 1
     print("total enviados:", enviados)
+    # estado do Drive para a rotina (regra de lote e temas já usados), commitado pelo workflow
+    # 04 só tem rascunho: aprovar = mover a pasta para 06/FILA
+    estado = {"rascunhos_04": sorted(filhos(svc, destino)), "fila": fila, "postados": postados}
+    (Path(__file__).parent / "estado-drive.json").write_text(json.dumps(estado, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print("estado:", {k: len(v) for k, v in estado.items()})
 
 
 if __name__ == "__main__":

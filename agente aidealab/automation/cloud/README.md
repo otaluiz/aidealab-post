@@ -6,16 +6,16 @@ rotina antiga, `agente aidealab/automation/run-daily-carousel.ps1` +
 Windows Task Scheduler, continua funcionando à parte se você quiser manter
 as duas).
 
-Workflow único de geração: `.github/workflows/criar-post-diario.yml` (8h BRT, Sonnet),
-no MOTOR NOVO: `motor/` (cópia do carrossel-engine) + tema
-`agente aidealab/clientes/aidealab/design-system/tema/`. Prepara o runner com
-`setup-motor.sh`, gera com `daily-carousel-prompt-cloud.txt` (imagens só do banco
-`02-Materiais-Brutos/img-ref`) e sobe os rascunhos para `04-Carrosseis` com
-`upload_carrosseis.py`. Regra de lote: só gera quando 04 não tem rascunho; para
-testar use Run workflow com `forcar` e `qtd = 1`. A skill `criar-post` e o
-`render-engine` antigo não são mais usados pela nuvem. Rotina de flyer removida
-em 2026-10-05 (só carrosséis). Quando o carrossel-engine mudar, copie de novo os
-arquivos para `motor/`.
+Geração: rotina do Claude na nuvem "aidealab - carrossel diário 8h" (claude.ai, com o
+conector Higgsfield), que segue `daily-carousel-prompt-cloud.txt`: 1 carrossel por dia no
+MOTOR NOVO (`motor/` = cópia do carrossel-engine, tema
+`agente aidealab/clientes/aidealab/design-system/tema/`), capa e CTA com os personagens
+@luizota/@wel no Soul 2.0 e slide 2 no gpt_image_2_5. Ela commita numa branch própria.
+Entrega: `.github/workflows/entregar.yml` leva a branch para a main, sobe os rascunhos para
+`04-Carrosseis` (`upload_carrosseis.py`) e grava `estado-drive.json` (04, 06/FILA,
+06/POSTADOS), que a rotina lê para a regra de lote (pula com 3+ rascunhos em 04). A skill
+`criar-post` e o `render-engine` antigo não são mais usados. Rotina de flyer removida em
+2026-10-05. Quando o carrossel-engine mudar, copie de novo os arquivos para `motor/`.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
