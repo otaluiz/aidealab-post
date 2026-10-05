@@ -19,6 +19,9 @@ não contam). Se forem 3 ou mais, NÃO gere nada: escreva "aguardando aprovaçã
 pulei a geração" e termine sem commit. Não é erro. Se o arquivo não existir, gere normalmente.
 
 ## 2. Tema
+Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"status": "bloqueado"` no
+`png/metadata.json`, retome ESSA (mesmo tema, mesma copy, reaproveite as imagens já aprovadas e refaça só o que
+foi reprovado; leia o `BLOQUEIO.md`), apague os `*_rejeitada.png` e o `BLOQUEIO.md` ao terminar. Senão:
 Escolha um tema/pilar (educacional, bastidor, prova ou oferta) sobre marketing, conteúdo, IA aplicada e
 automação para pequenos negócios. Não repita tema de nenhum nome em `rascunhos_04`, `fila`, `postados`
 nem das pastas de `agente aidealab/clientes/aidealab/carrosseis/`. Varie o pilar em relação ao último
@@ -41,8 +44,16 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
   capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
   marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
   "no text, no letters, no logos". Mantenha o cabelo visível, sem chapéu nem óculos.
-- Enquadramento grande (como um hook de revista): do peito para cima, cabeça no terço de cima, e um lado do
-  quadro livre (fundo liso) para o texto. Nada de figura pequena de corpo inteiro.
+- Enquadramento grande: retrato do peito para cima, cabeça inteira dentro do quadro no terço de cima, o
+  personagem levemente deslocado para um lado, num cenário real e simples (estúdio com fundo liso navy, escritório,
+  café, rua) que continua atrás dele. O espaço para o texto quem resolve é o motor (`texto_frente` + `bloco`),
+  não a foto.
+- NUNCA escreva no prompt "left/right half empty", "empty side", "negative space", "magazine", "cover" ou
+  "border": o Soul 2.0 responde a isso com imagem partida ao meio, rosto cortado na borda, moldura ou logotipo
+  de revista. Peça "plain t-shirt without print". Use `generate_image` com `model` "soul_2", `soul_id`,
+  `aspect_ratio` "3:4" e `quality` "2k" em toda chamada de personagem.
+- Rejeite e refaça se: rosto ou cabeça cortados pela borda, imagem dividida/emendada, moldura ou borda de
+  papel, texto ou logo na roupa ou no fundo.
 - Slide 2: `gpt_image_2_5` (3:4), surreal editorial, paleta navy/ciano, sem pessoas reconhecíveis,
   "no text, no letters, no logos".
 - Se um job falhar (429/erro), reenvie só o que falhou. Baixe com curl, corte em 3:4 1080x1440
