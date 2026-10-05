@@ -13,9 +13,10 @@ PERSONAGENS gerados no Higgsfield Soul 2.0. NÃO use a skill `criar-post` nem na
   `postados`. A entrega no Drive também é do GitHub Actions: você só faz commit e push.
 
 ## 1. Regra de lote
-Se `estado-drive.json` existir e `rascunhos_04` tiver 3 ou mais pastas, NÃO gere nada: escreva
-"aguardando aprovação (N rascunhos em 04), pulei a geração" e termine sem commit. Não é erro.
-Se o arquivo não existir, gere normalmente.
+Conte os nomes de `rascunhos_04` (em `estado-drive.json`) que também existem como pasta em
+`agente aidealab/clientes/aidealab/carrosseis/` (só os feitos por esta rotina; os rascunhos antigos de banco
+não contam). Se forem 3 ou mais, NÃO gere nada: escreva "aguardando aprovação (N rascunhos da rotina em 04),
+pulei a geração" e termine sem commit. Não é erro. Se o arquivo não existir, gere normalmente.
 
 ## 2. Tema
 Escolha um tema/pilar (educacional, bastidor, prova ou oferta) sobre marketing, conteúdo, IA aplicada e
