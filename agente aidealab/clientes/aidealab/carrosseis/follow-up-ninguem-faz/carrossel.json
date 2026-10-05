@@ -8,7 +8,8 @@
   {
    "template": "T1",
    "display": [
-    "O CLIENTE SUMIU."
+    "O CLIENTE",
+    "SUMIU."
    ],
    "emocao": {
     "texto": "e ninguém [cobrou].",
@@ -18,34 +19,25 @@
    "texto_frente": true,
    "sujeito": {
     "cabeca": [
-     290,
-     50,
-     810,
-     850
+     240,
+     120,
+     730,
+     790
     ],
-    "rostos": [
-     [
-      290,
-      50,
-      810,
-      850
-     ]
+    "cabeca_manual": [
+     240,
+     120,
+     730,
+     790
     ],
-    "rostos_manual": [
-     [
-      290,
-      50,
-      810,
-      850
-     ]
-    ],
-    "rostos_so_manual": true,
-    "cabeca_manual": true
+    "rostos": [],
+    "rostos_so_manual": true
    },
    "bloco": {
-    "y": 960,
-    "alinhar": "esquerda",
-    "largura": 936
+    "y": 820,
+    "alinhar": "direita",
+    "largura": 620,
+    "manual": true
    }
   },
   {
@@ -125,34 +117,25 @@
    "texto_frente": true,
    "sujeito": {
     "cabeca": [
-     290,
-     80,
-     820,
+     230,
+     110,
+     710,
      850
     ],
-    "rostos": [
-     [
-      290,
-      80,
-      820,
-      850
-     ]
+    "cabeca_manual": [
+     230,
+     110,
+     710,
+     850
     ],
-    "rostos_manual": [
-     [
-      290,
-      80,
-      820,
-      850
-     ]
-    ],
-    "rostos_so_manual": true,
-    "cabeca_manual": true
+    "rostos": [],
+    "rostos_so_manual": true
    },
    "bloco": {
-    "y": 880,
+    "y": 900,
     "alinhar": "esquerda",
-    "largura": 936
+    "largura": 720,
+    "manual": true
    }
   }
  ]
