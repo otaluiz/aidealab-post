@@ -6,15 +6,12 @@ rotina antiga, `agente aidealab/automation/run-daily-carousel.ps1` +
 Windows Task Scheduler, continua funcionando à parte se você quiser manter
 as duas).
 
-Workflows: `.github/workflows/criar-post-diario.yml` (1 carrossel/execução, 8h
-BRT, modelo **Sonnet**) e `.github/workflows/criar-flyer-semanal.yml` (1
-flyer/semana, segunda 8h BRT, modelo **Haiku**). O carrossel foi trocado de
-Haiku pra Sonnet depois de um teste real em produção: com Haiku a parte
-visual saiu ruim (baixou 1 imagem só e reusou nos 3 slides do miolo, hook/CTA
-ficaram só com texto — viola regras do SKILL.md da `criar-post`). Se o flyer
-também sair com qualidade abaixo do esperado, o mesmo ajuste vale lá: trocar
-`--model claude-haiku-4-5-20251001` por `--model claude-sonnet-5` no
-`criar-flyer-semanal.yml`.
+Workflow: `.github/workflows/criar-post-diario.yml` (1 carrossel/execução, 8h
+BRT, modelo **Sonnet**). O carrossel foi trocado de Haiku pra Sonnet depois de
+um teste real em produção: com Haiku a parte visual saiu ruim (baixou 1 imagem
+só e reusou nos 3 slides do miolo, hook/CTA ficaram só com texto). A rotina
+semanal de flyer foi removida em 2026-10-05: a aidealab trabalha só com
+carrosséis.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
