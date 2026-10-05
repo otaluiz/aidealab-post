@@ -40,6 +40,9 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
 ## 4. Imagens (Higgsfield)
 - Capa e CTA: personagem com `soul_2` + `soul_id`, `aspect_ratio` "3:4", `quality` "2k":
   @luizota = `f752ac25-65a0-4930-a628-722af0508c5b`, @wel = `68f715ee-167c-4c8f-92eb-16bbd177f7d3`.
+  Os DOIS são homens. @luizota: homem jovem, cabelo escuro curto e texturizado. @wel: homem jovem, cabelo
+  escuro cacheado e barba. No prompt escreva sempre "a young man" (nunca "woman", "person" ou "she") e descreva o
+  cabelo dele; o texto do prompt manda mais que o soul_id.
   Alterne o personagem em relação ao último carrossel (campo `personagem` no `png/metadata.json` dele);
   capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
   marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
