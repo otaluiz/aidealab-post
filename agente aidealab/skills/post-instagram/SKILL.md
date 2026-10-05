@@ -5,6 +5,14 @@ description: Publica no Instagram (@idea_lab7) o próximo conteúdo aprovado da 
 
 # Postar no Instagram
 
+## Fluxo atual (desde 2026-10-05)
+
+- `04-Carrosseis/`: rascunhos do motor novo, aguardando aprovação.
+- Aprovar = mover a pasta de `04-Carrosseis/` para `06-Aprovados-para-Postar/FILA/`. A ordem de postagem segue `ordem_fila` do metadata.
+- A tarefa local `aidealab-sync-fila` (de hora em hora e no logon) roda `D:\claudeidealab-filagente aidealabutomationun-sync-fila.ps1`: copia até 10 aprovados de `06/FILA` para a fila do repo (`queue/FILA-SEMANA-1/02-carrossel/DiaNN-*`), faz commit e push; quando a nuvem publica, move a pasta de `06/FILA` para `06/POSTADOS` com `post_id`.
+- A publicação é o workflow `post-instagram-cloud.yml` (GitHub Actions, 1 post por dia, janela 0h-9h Cuiabá), lendo só a fila do repo.
+- `RASCUNHOS` e `FILA-SEMANA-1` no Drive foram desativados; os antigos estão em `_arquivo-carrosseis-v1/_rascunhos-06-motor-antigo`.
+
 Publica de verdade, via Instagram Graph API, o próximo conteúdo aprovado em
 `Clientes/aidealab/06-Aprovados-para-Postar` no Drive. Não gera arte nem copy
 — isso é responsabilidade da `criar-post`. Esta skill só lê o que já foi
