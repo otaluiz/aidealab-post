@@ -1,0 +1,173 @@
+{
+ "id": "clareza-vende-mais",
+ "meta": {
+  "serie": "MARCA",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "MARCA BONITA,",
+    "CLIENTE CONFUSO."
+   ],
+   "emocao": {
+    "texto": "todo mundo admira e ninguém [entende].",
+    "posicao": "depois"
+   },
+   "imagem": "capa.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     211,
+     184,
+     618,
+     479
+    ],
+    "caixa": [
+     0,
+     195,
+     1079,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 520,
+    "alinhar": "esquerda",
+    "largura": 620
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "ADMIRAM O VISUAL,",
+    "NÃO ENTENDEM"
+   ],
+   "emocao": {
+    "texto": "a [oferta].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_led_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     342,
+     242,
+     663,
+     524
+    ],
+    "caixa": [
+     0,
+     253,
+     1079,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "direita",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "FALTA A FRASE",
+    "QUE EXPLICA"
+   ],
+   "emocao": {
+    "texto": "o que você faz e {para quem}.",
+    "posicao": "depois"
+   },
+   "textura": "grain"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "QUANDO TUDO",
+    "{DESTACA}"
+   ],
+   "lista": [
+    "Efeito, cor e animação",
+    "Frase de impacto",
+    "Tudo pede atenção ao mesmo tempo",
+    "O cliente não sabe onde olhar"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "RESUMA O QUE",
+    "VOCÊ VENDE"
+   ],
+   "emocao": {
+    "texto": "numa {frase} que um estranho entenda.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "TESTE COM",
+    "ALGUÉM DE FORA"
+   ],
+   "emocao": {
+    "texto": "se entendeu, ela vai pro {topo}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "MENSAGEM CLARA,",
+    "{DECISÃO} RÁPIDA"
+   ],
+   "lista": [
+    "O cliente para de adivinhar",
+    "Confia mais cedo",
+    "Pergunta menos",
+    "Decide antes de fechar a aba"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "TROCA O EFEITO",
+    "POR"
+   ],
+   "emocao": {
+    "texto": "[clareza].",
+    "posicao": "depois"
+   },
+   "cta": {
+    "acao": "Comenta CLAREZA",
+    "texto": "e a aidealab te ajuda a simplificar"
+   },
+   "imagem": "cta.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     0,
+     716,
+     995,
+     886
+    ],
+    "caixa": [
+     0,
+     723,
+     1019,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  }
+ ]
+}

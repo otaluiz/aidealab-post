@@ -1,0 +1,177 @@
+{
+ "id": "2026-10-led-caixa-registradora",
+ "meta": {
+  "serie": "DADOS",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "VOCÊ VENDE",
+    "TODO DIA."
+   ],
+   "emocao": {
+    "texto": "e não sabe quanto [sobra].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "cabeca": [
+     380,
+     550,
+     1040,
+     1150
+    ],
+    "rostos": [
+     [
+      380,
+      550,
+      1040,
+      1150
+     ]
+    ],
+    "rostos_manual": [
+     [
+      380,
+      550,
+      1040,
+      1150
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": true
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A NOTA",
+    "VAI PRA GAVETA."
+   ],
+   "emocao": {
+    "texto": "e a resposta [junto].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_led_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      629,
+      584,
+      748,
+      703
+     ]
+    ],
+    "cabeca": [
+     804,
+     38,
+     1031,
+     368
+    ],
+    "caixa": [
+     0,
+     51,
+     1079,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE FICA",
+    "{ESCONDIDO}"
+   ],
+   "lista": [
+    "Qual produto dá lucro de verdade",
+    "Em que dia da semana você mais vende",
+    "Quanto sai em taxa de cartão",
+    "Quem comprou uma vez e sumiu"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "SEM ESSES NÚMEROS,",
+    "VOCÊ DECIDE NO"
+   ],
+   "emocao": {
+    "texto": "{achismo}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA",
+    "{ORGANIZA}"
+   ],
+   "lista": [
+    "Junta as vendas do caixa e do cartão",
+    "Separa por produto e por dia",
+    "Avisa quando a margem cai",
+    "Manda o resumo da semana no WhatsApp"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ LÊ UM",
+    "RESUMO E"
+   ],
+   "emocao": {
+    "texto": "{decide}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER VER O QUE",
+    "SEU CAIXA DIZ?"
+   ],
+   "cta": {
+    "acao": "Comenta CAIXA",
+    "texto": "a aidealab te mostra"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_orig_nat_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     473,
+     446,
+     759,
+     764
+    ],
+    "caixa": [
+     145,
+     455,
+     869,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

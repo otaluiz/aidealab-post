@@ -61,3 +61,8 @@ agente aidealab/automation/cloud/drive_token_output.json
 agente aidealab/automation/cloud/_pending_upload/
 
 agente aidealab/automation/logs/
+
+# motor novo (carrossel-engine)
+motor/.vendor_cv4/
+__pycache__/
+agente aidealab/automation/cloud/_run/

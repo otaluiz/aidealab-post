@@ -1,159 +1,67 @@
-Rotina diária automática em nuvem (GitHub Actions, sem supervisão humana, sem
-computador local ligado). Cliente: aidealab. Modelo: Sonnet -- siga as
-instruções ao pé da letra em vez de reinterpretar; se alguma instrução
-parecer ambígua, escolha a leitura mais conservadora (a que bloqueia e
-documenta) em vez de inventar solução.
+Rotina automática em nuvem (GitHub Actions, sem humano para responder). Cliente: aidealab.
+Modelo Sonnet: siga ao pé da letra; na dúvida, escolha a leitura mais conservadora.
 
-Use a skill `criar-post` (em `agente aidealab/skills/criar-post/SKILL.md`) para
-gerar 1 carrossel de Instagram novo, do início ao fim (escolha um
-tema/pilar entre educacional, bastidor, prova ou oferta). Renderização: `agente aidealab/skills/criar-post/templates/render-engine/`
-(capture.py via Playwright, já instalado neste runner pelo workflow).
+Gere carrosséis de Instagram novos no MOTOR NOVO (pasta `motor/` = carrossel-engine, tema aidealab).
+NÃO use a skill `criar-post` nem nada em `agente aidealab/skills/criar-post/` (é o motor antigo).
+Quantidade: a variável de ambiente `QTD` (padrão 3). Se `FORCAR=1`, ignore a regra de lote abaixo.
 
-## Diferença central para a rotina local: acesso ao Google Drive
+## Ambiente
+- Raiz do repositório = diretório atual. O workflow já rodou `agente aidealab/automation/cloud/setup-motor.sh`
+  (Playwright, rembg, OpenCV 4 em `motor/.vendor_cv4`, fontes do tema).
+- Drive: só via `python "agente aidealab/automation/cloud/drive_helper.py"` (find-folder, list, download,
+  read-text, move). Nunca MCP do Drive. `$AIDEALAB_FOLDER_ID` = pasta `Clientes/aidealab`.
+  Localize as subpastas com find-folder encadeado: `04-Carrosseis`, `02-Materiais-Brutos/img-ref`,
+  `01-Referencias/Instagram/img-ref`, `03-Roteiros`, `_arquivo-carrosseis-v1`, `06-Aprovados-para-Postar/FILA`
+  e `06-Aprovados-para-Postar/POSTADOS`.
+- NÃO suba nada para o Drive: o workflow sobe sozinho, depois de você, toda pasta
+  `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `png/metadata.json` em `"status": "rascunho"`.
+- Não há Higgsfield nem geração de imagem neste runner. Imagens vêm só do banco `02-Materiais-Brutos/img-ref`.
 
-Esta máquina (runner do GitHub Actions) NÃO tem o Google Drive sincronizado
-localmente -- não existe `C:\Users\...\Meu Drive`. Todo acesso ao Drive é via
-o script `agente aidealab/automation/cloud/drive_helper.py`, chamado por
-Bash. NÃO use nenhuma ferramenta MCP do Google Drive mesmo que apareça
-disponível -- o MCP devolve conteúdo binário como base64 no resultado da
-ferramenta e isso queima o contexto/orçamento de token à toa (~1 token por
-caractere de base64, medido em produção). Exemplos de uso:
+## Regra de lote (pule se FORCAR=1)
+Liste `04-Carrosseis` e leia o `metadata.json` de cada pasta (read-text). Se 1 ou mais estiver com
+`"status": "rascunho"`, NÃO gere nada: escreva "aguardando aprovação (N rascunhos), pulei a geração" e pare.
+Não é erro. Aprovar = o humano mover a pasta de 04 para `06-Aprovados-para-Postar/FILA`.
 
-```bash
-# localizar uma pasta pelo nome dentro de outra
-python "agente aidealab/automation/cloud/drive_helper.py" find-folder --name "02-Materiais-Brutos" --parent-id "$AIDEALAB_FOLDER_ID"
+## Temas
+Priorize `03-Roteiros/temas-disponiveis.md` (baixe com download). Para esses temas, parta do texto antigo em
+`_arquivo-carrosseis-v1/<slug>/metadata.json` (mesma ideia, mesmo hook se couber em 10 palavras), reescrito
+na estrutura do motor novo. Cada carrossel com pilar diferente (educacional, bastidor, prova, oferta).
+Não repita tema de pasta que já existe em 04, 06/FILA ou 06/POSTADOS (compare pelos nomes).
 
-# listar arquivos de uma pasta
-python "agente aidealab/automation/cloud/drive_helper.py" list --parent-id "<id>"
+## Formato (leia antes de começar)
+- `motor/README.md`, `motor/carrossel.schema.md`, `agente aidealab/clientes/aidealab/design-system/templates/templates.md`.
+- Modelos para copiar o formato: `agente aidealab/clientes/aidealab/exemplos/*/carrossel.json` e `legenda.md`.
+- Pasta de trabalho: `agente aidealab/clientes/aidealab/carrosseis/<slug>/` com `carrossel.json`, `legenda.md` e imagens.
+  O texto NUNCA vai dentro da imagem: o motor desenha.
+- 7 ou 8 slides: capa T1 → slide 2 T2 com imagem (a tensão) → miolo SÓ TEXTO (T3 com `lista` até 4 itens,
+  T2 papel, T2c caderno; destaque `{palavra}` um por slide; nunca mais de 3 fundos iguais seguidos)
+  → último T4 CTA com imagem e "Comenta PALAVRA".
+- Imagem SÓ na capa, no slide 2 e no CTA. Variante A (banco nas 3) ou B (banco nas 3 + 1 a 3 slides T5 com
+  print real: `python ../../../../../motor/print_site.py <url> prints/<nome>.png --wait 3`).
 
-# baixar um arquivo do banco pra um caminho local
-python "agente aidealab/automation/cloud/drive_helper.py" download --file-id "<id>" --out "agente aidealab/automation/cloud/_run/img/hook.png"
+## Imagens do banco
+- Baixe candidatas de `02-Materiais-Brutos/img-ref` para `/tmp` e olhe cada uma em resolução real.
+  Rejeite: texto/letras/código na imagem, logo ou personagem de marca, marca d'água, nudez ou insinuação.
+- Uma imagem DISTINTA para cada um dos 3 papéis (capa, slide 2, CTA). Nunca reuse.
+- Corte em 3:4 1080x1440 (Pillow: cover + Lanczos + unsharp leve). Nunca upscale pago.
+- Ao aceitar o carrossel, mova as imagens usadas de `02-Materiais-Brutos/img-ref` para
+  `01-Referencias/Instagram/img-ref` (move) para que nunca se repitam.
+- Sem imagem limpa que caiba no tema: não invente (nada de gradiente no lugar de foto). Marque o carrossel
+  `"status": "bloqueado"` com o motivo no `png/metadata.json` e siga para o próximo.
 
-# ler um metadata.json como texto (pra checar temas recentes)
-python "agente aidealab/automation/cloud/drive_helper.py" read-text --file-id "<id>"
+## Composição, render e conferência (a partir da pasta do carrossel)
+- `python ../../../../../motor/compor.py carrossel.json --led slide2` (recorte rembg só se limpo, sujeito na frente
+  do título, área vazia para o texto, LED no slide 2, grain no slide 3, LED nas listas e na conclusão).
+- `python ../../../../../motor/render.py carrossel.json png --tema ../../design-system/tema`
+  Se falhar por texto sobre cabeça/rosto, ajuste `bloco` (y/alinhar/largura) e renderize de novo.
+  No CTA com pessoa grande no quadro pode usar `"texto_frente": true` + `bloco` manual: texto na frente do corpo,
+  nunca do rosto.
+- Abra capa, slide 2 e CTA em tamanho cheio: título legível, nenhuma palavra escondida atrás do sujeito,
+  nenhuma palavra sozinha numa linha, nada cortado, texto acima do rodapé. Corrija e renderize de novo.
+- Copy: skill `copywriting` para escrever e `humanizer` para revisar (slides e legenda). Hook até 10 palavras,
+  sem número inventado. `@aidealab7` é o handle.
+- Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`
+  e depois `status` = `"rascunho"` no `png/metadata.json`.
 
-# criar a pasta de destino do carrossel
-python "agente aidealab/automation/cloud/drive_helper.py" mkdir --parent-id "<id-04-Carrosseis>" --title "<slug-do-tema>"
-
-# subir um PNG final ou o metadata.json (upload por CAMINHO de arquivo, nunca por texto/base64)
-python "agente aidealab/automation/cloud/drive_helper.py" upload --parent-id "<id-da-pasta-nova>" --file "agente aidealab/automation/cloud/_run/final/01_hook.png"
-
-# mover a imagem do banco usada pro arquivo, depois de usar
-python "agente aidealab/automation/cloud/drive_helper.py" move --file-id "<id>" --new-parent-id "<id-01-Referencias-Instagram-img-ref>"
-```
-
-`$AIDEALAB_FOLDER_ID` (pasta `Clientes/aidealab` no Drive) vem como variável
-de ambiente já setada pelo workflow. Localize as subpastas (`02-Materiais-Brutos`,
-`04-Carrosseis`, `01-Referencias/Instagram/img-ref`) com `find-folder`
-encadeado a partir dela -- os IDs não são fixos aqui de propósito, confira
-sempre.
-
-Trabalhe dentro de `agente aidealab/automation/cloud/_run/` (crie com
-`mkdir -p`) para os arquivos temporários de cada rodada -- HTML, PNGs
-intermediários e finais. Essa pasta está no `.gitignore` (nunca vira commit),
-mas o workflow do GitHub Actions sobe o conteúdo dela como *artifact* da
-Action ao final do job, mesmo se algo falhar -- é uma rede de segurança pra
-recuperar os PNGs manualmente caso o upload pro Drive dê problema.
-
-## Regras obrigatórias desta rodada
-
-- **Antes de gerar imagem nova, confira `02-Materiais-Brutos/img-ref`** por
-  imagens do banco ainda não usadas (baixe candidatas com `download` pra
-  `/tmp` e inspecione o PNG salvo -- nunca decida só pelo nome do arquivo).
-  **Geração via Higgsfield NÃO está disponível nesta rotina por padrão** --
-  diferente da sessão interativa, aqui não há MCP do Higgsfield conectado, e
-  o caminho alternativo (API REST própria, `api.higgsfield.ai`, autenticação
-  por API key separada do app) não está implementado ainda porque o endpoint
-  exato do modelo `soul_2` e a existência de um equivalente a
-  `remove_background` nessa API não foram confirmados na documentação oficial
-  no momento em que esta rotina foi configurada (ver README.md desta pasta).
-  Rode 100% a partir do banco `img-ref` -- é o que toda execução recente
-  bem-sucedida desta skill já faz de qualquer forma.
-  **Checagem de conteúdo obrigatória, em resolução real (não thumbnail):**
-  rejeite qualquer imagem com nudez ou insinuação sexual, texto/código/
-  legenda falsa incrustada na própria imagem (defeito recorrente de bancos de
-  imagem geradas por IA), ou logo/personagem de marca de terceiros (ex.:
-  grifes, Apple, super-heróis licenciados). Documente cada rejeição e o
-  motivo no `metadata.json` da peça (campo `checagem_conteudo_sensivel`) --
-  isso evita que a próxima rodada baixe a mesma imagem ruim de novo.
-- **Baixe uma imagem DISTINTA do banco para cada slide com papel de imagem**
-  (hook, cada slide do miolo, CTA) -- nunca baixe uma imagem só e reuse ela
-  em vários slides. **Hook e CTA sempre levam imagem própria, nunca saem só
-  com texto/moldura** (regra do SKILL.md da `criar-post`, seção hook/CTA --
-  já aconteceu desta rotina pular a imagem do hook/CTA e reusar a mesma
-  imagem em 3 slides do miolo pra economizar chamadas; isso é o oposto do
-  esperado, mesmo sob pressão de tempo/orçamento).
-- Miolo do carrossel SEMPRE com imagem real do banco -- **nunca gradiente
-  liso/procedural como fundo sozinho**. Se o banco não cobrir o tema (imagens
-  insuficientes, ou todas rejeitadas na checagem de conteúdo), **pare esse
-  carrossel específico, marque `status: "bloqueado"` no metadata.json com o
-  motivo, e siga pro próximo tema** -- não substitua por fundo procedural. (Isto é mais
-  rígido que uma execução anterior desta mesma automação, que usou fundo
-  procedural como fallback documentado; a partir de agora isso não é mais
-  aceito -- bloquear e reportar é o caminho certo.)
-- Render local do texto: motor em `skills/criar-post/templates/render-engine/`
-  (capture.py via Playwright -- o Chromium já vem instalado pelo workflow via
-  `playwright install chromium --with-deps`, não precisa reinstalar).
-  Confere cor por pixel-sample (a palavra-chave do monumento tem que sair no
-  hex exato da família de acento escolhida, nunca cream/branco) e o gap
-  `.mword`/`.script` (-10 a -35px) antes de aceitar o slide -- é checagem
-  bloqueante, ver SKILL.md.
-- Otimize cada PNG final com `pngquant --quality=65-90 --strip` +
-  `optipng -o2` (ambos já instalados pelo workflow) antes de subir pro Drive
-  -- reduz ~70% do tamanho sem perda visível e o upload por `drive_helper.py`
-  é rápido de qualquer forma (upload por arquivo local, não por base64).
-- **Destino: SOMENTE `04-Carrosseis/<slug-do-tema>/`** (material de trabalho).
-  **NÃO copie nem crie nada em `06-Aprovados-para-Postar/RASCUNHOS`** --
-  essa pasta é portão humano, a aprovação pra postar é manual, feita depois
-  por um humano revisando o resultado. `status` no metadata.json desta rodada
-  é sempre `"rascunho"` (ou `"bloqueado"` se travou), nunca `"aprovado"`.
-- Ao terminar (ou travar) cada carrossel, mova (`drive_helper.py move`) as
-  imagens do banco que ele usou de `02-Materiais-Brutos/img-ref` para
-  `01-Referencias/Instagram/img-ref`.
-- A imagem usada não pode se repetir com carrosséis já existentes em
-  `04-Carrosseis` ou `06-Aprovados-para-Postar`
-  -- confira por hash perceptual (`imagehash`, já no requirements.txt) contra
-  os PNGs finais de carrosséis recentes, baixando só uma amostra pequena
-  (últimos 4-5) pra não gastar tempo/token à toa, e por localização no banco
-  (se a imagem ainda está em `02-Materiais-Brutos/img-ref`, ainda não foi
-  usada -- é a convenção que a própria skill mantém).
-- Skills de conteúdo (`marketing-skills:*`, `marketing:content-creation`,
-  `humanizer`) podem não estar instaladas neste ambiente de CI -- se a
-  ferramenta Skill não encontrar alguma, **siga sem ela** (a orientação delas
-  já está resumida no SKILL.md da `criar-post`), não trave a rotina por causa
-  disso.
-- Fontes: SEMPRE locais, em `agente aidealab/automation/cloud/fonts/` (Inter e
-  Playfair Display Italic 900 versionados; `Tempting.ttf` quando o cliente colocar
-  o arquivo). Rode `python agente aidealab/automation/cloud/fonts/build_fonts_css.py`,
-  copie `fonts.css` + `fonts/` pro build e linke `fonts.css` -- nada de Google Fonts
-  em runtime. Sem Tempting, o par Inter 900 + Playfair Display Italic 900 vale e
-  vai em `fonte_script_nota`. Troque o PAR inteiro, nunca só metade.
-- Cartão de miolo: contrato único do SKILL.md (chip DENTRO do cartão, cartão sempre
-  no rodapé, accent serifado de UMA linha, texto explicativo em Inter em
-  `.t-card-body`). Rode `templates/render-engine/qa_contract.py` em todo slide;
-  FAIL bloqueia a entrega.
-
-Se algo travar de verdade (ferramenta indisponível, geração falha muitas
-vezes, credencial faltando), documente o bloqueio no metadata.json com
-`status: "bloqueado"` e o motivo -- não invente workaround arriscado.
-
-## Não declare sucesso sem render+upload real
-
-Já aconteceu de uma execução anterior escrever um resumo de "sucesso" e um
-`metadata.json` de planejamento (imagens inspecionadas, tema escolhido) sem
-ter de fato rodado o `capture.py` nem subido nenhum PNG pro Drive -- o job
-terminou com exit 0 e `04-Carrosseis/<slug>/` ficou vazia. Antes de escrever
-o resumo final, confirme que (1) os 6 PNGs existem em disco com exatamente
-1080x1440 cada (`PIL Image.size`), (2) `drive_helper.py upload` retornou um
-`id` de arquivo real para cada um deles e para o metadata.json, e (3) o
-`metadata.json` subido tem o schema completo do SKILL.md (slides com
-texto/alt, legenda, hashtags, cta, checagens), não um stub tipo
-`{"imagens_usadas": [...], "slides_gerados": N}`. Se qualquer um desses três
-faltar, o resumo final tem que dizer isso explicitamente e `status` é
-`"bloqueado"`, nunca declarar sucesso.
-
-Ao final (ou ao bloquear), escreva um resumo curto (texto
-puro) do que foi feito: qual tema, qual imagem usada (banco vs
-Higgsfield), quais checagens passaram, e qualquer bloqueio -- esse texto vira
-o log da Action, é a única forma de alguém acompanhar essa rodada sem abrir o
-Drive.
+## Fim
+Resumo curto: temas, variante, imagens usadas (nomes no banco), checagens e qualquer bloqueio.

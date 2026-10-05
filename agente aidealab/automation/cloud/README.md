@@ -6,12 +6,16 @@ rotina antiga, `agente aidealab/automation/run-daily-carousel.ps1` +
 Windows Task Scheduler, continua funcionando à parte se você quiser manter
 as duas).
 
-Workflow: `.github/workflows/criar-post-diario.yml` (1 carrossel/execução, 8h
-BRT, modelo **Sonnet**). O carrossel foi trocado de Haiku pra Sonnet depois de
-um teste real em produção: com Haiku a parte visual saiu ruim (baixou 1 imagem
-só e reusou nos 3 slides do miolo, hook/CTA ficaram só com texto). A rotina
-semanal de flyer foi removida em 2026-10-05: a aidealab trabalha só com
-carrosséis.
+Workflow único de geração: `.github/workflows/criar-post-diario.yml` (8h BRT, Sonnet),
+no MOTOR NOVO: `motor/` (cópia do carrossel-engine) + tema
+`agente aidealab/clientes/aidealab/design-system/tema/`. Prepara o runner com
+`setup-motor.sh`, gera com `daily-carousel-prompt-cloud.txt` (imagens só do banco
+`02-Materiais-Brutos/img-ref`) e sobe os rascunhos para `04-Carrosseis` com
+`upload_carrosseis.py`. Regra de lote: só gera quando 04 não tem rascunho; para
+testar use Run workflow com `forcar` e `qtd = 1`. A skill `criar-post` e o
+`render-engine` antigo não são mais usados pela nuvem. Rotina de flyer removida
+em 2026-10-05 (só carrosséis). Quando o carrossel-engine mudar, copie de novo os
+arquivos para `motor/`.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 

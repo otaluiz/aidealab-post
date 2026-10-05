@@ -1,0 +1,20 @@
+{
+  "marca": "aidealab",
+  "nome_meta": "AIDEA LAB",
+  "handle": "@aidealab7",
+  "rodape_centro": "",
+  "google_fonts": "https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Manrope:wght@400;500;600;700&family=Yellowtail&family=Fira+Code:wght@400;500&display=swap",
+  "fontes": [
+    "900 100px \"Inter\"",
+    "400 30px \"Manrope\"",
+    "500 30px \"Manrope\"",
+    "600 26px \"Manrope\"",
+    "400 100px \"Yellowtail\"",
+    "400 20px \"Fira Code\""
+  ],
+  "familia_cor": "navy-ciano",
+  "topo": [
+    "AIDEA LAB",
+    "MARKETING & IA"
+  ]
+}

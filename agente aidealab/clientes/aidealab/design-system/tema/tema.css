@@ -1,0 +1,31 @@
+/* Tema aidealab para o carrossel-engine — só custom properties. Base: carrossel atual (Inter 900 + Manrope, navy #0A0E16)
+   com cor quente fixa em ciano (#6EC9F7). Sem gradiente. Decisões de 2026-10-04. */
+:root {
+  --ink: #0A0E16; --papel: #E9EEF4; --branco: #FFFFFF; --grafite: #0A0E16;
+  --quente: #6EC9F7;        /* grita sobre navy/foto: 10.45:1 */
+  --quente-papel: #0B6E9E;  /* grita sobre o papel gelo: 4.82:1 */
+  --apoio: #E94B91;         /* números de lista, rótulos de diagrama sobre navy */
+  --apoio-papel: #2E52B8;   /* grade do caderno, linhas sobre papel */
+  --detalhe: #E9BA4B;       /* detalhe raro (âmbar da logo) */
+  --papel-sombra: rgb(30, 45, 70);
+  --tex-dobra: .9; --tex-ht: .2; --tex-pano: .5;
+  --f-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --f-serif: "Yellowtail", "Brush Script MT", cursive;
+  --f-serif-style: normal;
+  --f-body: "Manrope", "Inter", Arial, sans-serif;
+  --f-mono: "Fira Code", Consolas, "Courier New", monospace;
+  /* topo e rodapé no padrão aidealab: sans, branco com sombra, sem "salva pra depois", bolinha ativa em pílula */
+  --meta-familia: var(--f-body); --meta-peso: 600; --meta-tam: 26; --meta-track: .04em;
+  --meta-sombra: 0 2px 14px rgba(0, 0, 0, .45);
+  --foot-familia: var(--f-body); --foot-estilo: normal; --foot-peso: 600; --foot-tam: 26;
+  --dot-tam: 10; --dot-borda: none; --dot-fundo: currentColor; --dot-opac: .5; --dot-on-w: 34;
+}
+/* a pílula ativa usa a cor quente do fundo do slide */
+/* textura LED nos slides só de texto (textura: "led") */
+:root { --tex-led: 1; }
+.slide { --dot-on-cor: var(--hot); }
+.slide.t2:not(.com-foto) , .slide.t2c { --meta-sombra: none; }
+
+/* LED padrão (2026-10-05): filtro LED só na foto do slide 2 (tensão); grade LED nos slides de lista e conclusão (--tex-led). Capa e CTA com foto natural. */
+
+/* Slide 3 (2026-10-05): textura grain, só grão forte sobre o fundo liso, sem gradiente de cor ("textura": "grain", o compor.py marca). Força: --grao-grain. */

@@ -55,3 +55,8 @@ quanto for preciso.
 - Rodapé fixo em altura (100–120px) e posição em todos os templates.
 - Fundo sempre `#0D0D12` dominante — cor não vira decoração, vira hierarquia
   (primária = destaque neutro, accent = a única coisa que "grita").
+
+## Texturas dos slides de texto (2026-10-05)
+
+- Slide 3: `"textura": "grain"`, só grão forte sobre o fundo liso, sem gradiente nem brilho de cor (nada de spotlight ciano ou rosa). O `compor.py` marca sozinho.
+- Demais slides de lista e o de conclusão: `"textura": "led"`.

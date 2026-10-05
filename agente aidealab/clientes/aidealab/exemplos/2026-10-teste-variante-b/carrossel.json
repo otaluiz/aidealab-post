@@ -1,0 +1,150 @@
+{
+  "id": "2026-10-teste-variante-b",
+  "meta": {
+    "serie": "DESIGN",
+    "data": "2026/10"
+  },
+  "slides": [
+    {
+      "template": "T1",
+      "display": [
+        "DESIGN BOM",
+        "TEM"
+      ],
+      "emocao": {
+        "texto": "[referência].",
+        "posicao": "depois"
+      },
+      "imagem": "capa.png",
+      "sujeito": {
+        "rostos": [],
+        "caixa": [
+          6,
+          611,
+          930,
+          1439
+        ]
+      },
+      "bloco": {
+        "y": 170,
+        "alinhar": "esquerda",
+        "largura": 720
+      }
+    },
+    {
+      "template": "T2",
+      "display": [
+        "NINGUÉM CRIA",
+        "DO ZERO."
+      ],
+      "emocao": {
+        "texto": "nem quem você [admira].",
+        "posicao": "depois"
+      },
+      "imagem": "slide2_led.png",
+      "sujeito": {
+        "rostos": [
+          [
+            277,
+            186,
+            626,
+            535
+          ]
+        ],
+        "cabeca": [
+          1,
+          33,
+          646,
+          364
+        ],
+        "caixa": [
+          0,
+          46,
+          1079,
+          1439
+        ]
+      },
+      "bloco": {
+        "y": 600,
+        "alinhar": "direita",
+        "largura": 560
+      }
+    },
+    {
+      "template": "T5",
+      "referencia": {
+        "site": "lawsofux.com",
+        "nome": "Laws of UX",
+        "descricao": "Princípios de psicologia aplicados à interface: hierarquia, atenção e decisão, com exemplo pra cada um.",
+        "print": "prints/lawsofux.png"
+      }
+    },
+    {
+      "template": "T5",
+      "referencia": {
+        "site": "coolors.co",
+        "nome": "Coolors",
+        "descricao": "Gera paletas de cor em segundos e mostra o contraste antes de você levar pro post.",
+        "print": "prints/coolors.png"
+      }
+    },
+    {
+      "template": "T5",
+      "referencia": {
+        "site": "fonts.google.com",
+        "nome": "Google Fonts",
+        "descricao": "Fontes gratuitas com acento em português, prontas pra site e redes sociais.",
+        "print": "prints/googlefonts.png"
+      }
+    },
+    {
+      "template": "T2",
+      "display": [
+        "OLHE, ANOTE",
+        "E {ADAPTE}"
+      ],
+      "emocao": {
+        "texto": "pro seu cliente.",
+        "posicao": "depois"
+      },
+      "textura": "led"
+    },
+    {
+      "template": "T4",
+      "display": [
+        "QUER A LISTA",
+        "COMPLETA DE"
+      ],
+      "emocao": {
+        "texto": "referências?",
+        "posicao": "depois"
+      },
+      "cta": {
+        "acao": "Comenta LISTA",
+        "texto": "que a aidealab te manda no direct"
+      },
+      "imagem": "cta.png",
+      "recorte": "cta_recorte.png",
+      "sujeito": {
+        "rostos": [],
+        "cabeca": [
+          405,
+          103,
+          432,
+          417
+        ],
+        "caixa": [
+          145,
+          115,
+          940,
+          1439
+        ]
+      },
+      "bloco": {
+        "y": 300,
+        "alinhar": "esquerda",
+        "largura": 936
+      }
+    }
+  ]
+}
