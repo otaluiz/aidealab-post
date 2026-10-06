@@ -11,6 +11,7 @@ A cada execução:
      POSTADOS no Drive, com post_id/postado_em no metadata. Itens postados ANTES de hoje
      saem da fila do repo e o id vai para _arquivo-postados.json (os de hoje ficam, porque
      o publish_next usa eles para garantir 1 post por dia).
+  Pastas de FILA ainda sem "halftone": true no metadata ganham a textura no hook e no CTA (no próprio Drive).
   2. Pastas de FILA que ainda não estão na fila nem no arquivo de postados entram na fila
      do repo como FILA-SEMANA-1/02-carrossel/Dia<N>-<slug>, até MAX_PENDENTES pendentes.
 
@@ -39,13 +40,14 @@ sys.path.insert(0, str(REPO / "motor"))
 
 def aplicar_halftone(d, meta):
     """Textura halftone no hook (1º slide) e no CTA (último), padrão aidealab desde 2026-10-06. Idempotente via meta["halftone"]."""
-    if meta.get("halftone") or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
-        return
+    if meta.get("halftone") or meta.get("postado") or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
+        return False
     from PIL import Image
     from filtro_halftone import halftone
     for s in {meta["slides"][0]["arquivo"], meta["slides"][-1]["arquivo"]}:
         halftone(Image.open(d / s)).save(d / s)
     meta["halftone"] = True
+    return True
 
 
 def ler(p):
@@ -115,6 +117,13 @@ def main():
             print(f"POSTADO  {d.name} -> POSTADOS (já no arquivo de postados)")
             if not DRY:
                 shutil.move(str(d), str(POSTADOS / d.name))
+
+    # aprovados no Drive (FILA) ganham a textura halftone no hook e no CTA, para visualizar lá também
+    for d in fila_drive.values():
+        dm = ler(d / "metadata.json")
+        if not DRY and all((d / s["arquivo"]).exists() for s in dm.get("slides", [])) and aplicar_halftone(d, dm):
+            gravar(d / "metadata.json", dm)
+            print(f"HALFTONE {d.name} (Drive)")
 
     # 2. aprovados novos entram na fila do repo
     vivos = [it for it in itens if not it.get("arquivado")]
