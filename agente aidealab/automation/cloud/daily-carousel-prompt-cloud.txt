@@ -47,10 +47,11 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
   capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
   marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
   "no text, no letters, no logos". Mantenha o cabelo visível, sem chapéu nem óculos.
-- Enquadramento grande: retrato do peito para cima, cabeça inteira dentro do quadro no terço de cima, o
-  personagem levemente deslocado para um lado, num cenário real e simples (estúdio com fundo liso navy, escritório,
-  café, rua) que continua atrás dele. O espaço para o texto quem resolve é o motor (`texto_frente` + `bloco`),
-  não a foto.
+- Enquadramento grande: retrato do peito para cima, cabeça inteira dentro do quadro, o personagem levemente
+  deslocado para um lado, num cenário real e simples (estúdio com fundo liso navy, escritório, café, rua) que
+  continua atrás dele. Capa e CTA com folga acima da cabeça: o topo da cabeça em cerca de 1/3 da altura do quadro
+  (no prompt: "generous headroom, the top of his head about one third down the frame"). É ali que o título entra,
+  ATRÁS DA CABEÇA (capa de revista), e nunca atrás do tronco/costas. Cabeça colada no topo = refaça a imagem.
 - NUNCA escreva no prompt "left/right half empty", "empty side", "negative space", "magazine", "cover" ou
   "border": o Soul 2.0 responde a isso com imagem partida ao meio, rosto cortado na borda, moldura ou logotipo
   de revista. Peça "plain t-shirt without print". Use `generate_image` com `model` "soul_2", `soul_id`,
@@ -67,9 +68,10 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
 - `python ../../../../../motor/compor.py carrossel.json --led slide2` (recorte rembg só se limpo, sujeito na frente
   do título, área vazia para o texto, LED no slide 2, grain no slide 3, LED nas listas e na conclusão).
 - `python ../../../../../motor/render.py carrossel.json png --tema ../../design-system/tema`
-  Se falhar por texto sobre cabeça/rosto, ajuste `bloco` (y/alinhar/largura) e renderize de novo. Com o
-  personagem grande no quadro, use `"texto_frente": true` + `bloco` manual no lado livre: texto pode passar na
-  frente do corpo, nunca do rosto (`sujeito.cabeca_manual` cobrindo a cabeça).
+  O compor põe o título atrás da cabeça sempre que couber (nunca atrás do corpo). Só se o log disser "sem espaço
+  para o display atrás do sujeito" (cabeça colada no topo), prefira refazer a imagem com mais folga acima da cabeça;
+  em último caso use `"texto_frente": true` + `bloco` manual no lado livre (texto na frente do corpo, nunca do rosto,
+  `sujeito.cabeca_manual` cobrindo a cabeça). Se falhar por texto sobre cabeça/rosto, ajuste `bloco` e renderize de novo.
 - Abra capa, slide 2 e CTA em tamanho cheio: título legível, nenhuma palavra escondida atrás do sujeito,
   nenhuma palavra sozinha numa linha, nada cortado, texto acima do rodapé. Corrija e renderize de novo.
 - Copy: skill `copywriting` para escrever e `humanizer` para revisar (slides e legenda). Hook até 10 palavras,

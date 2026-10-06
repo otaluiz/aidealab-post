@@ -17,32 +17,13 @@
    },
    "imagem": "capa_orig.png",
    "sujeito": {
-    "rostos": [],
-    "cabeca": [
-     330,
-     320,
-     700,
-     850
-    ],
-    "caixa": [
-     40,
-     339,
-     1060,
-     1439
-    ],
-    "rostos_so_manual": true,
     "cabeca_manual": [
      330,
      320,
      700,
      850
-    ]
-   },
-   "recorte": "capa_recorte.png",
-   "bloco": {
-    "y": 190,
-    "alinhar": "esquerda",
-    "largura": 936
+    ],
+    "rostos_so_manual": true
    }
   },
   {
@@ -55,27 +36,7 @@
     "texto": "e ninguém [anota].",
     "posicao": "depois"
    },
-   "imagem": "slide2_led.png",
-   "sujeito": {
-    "rostos": [],
-    "cabeca": [
-     192,
-     1046,
-     443,
-     1104
-    ],
-    "caixa": [
-     202,
-     1049,
-     530,
-     1291
-    ]
-   },
-   "bloco": {
-    "y": 200,
-    "alinhar": "esquerda",
-    "largura": 936
-   }
+   "imagem": "slide2_orig.png"
   },
   {
    "template": "T3",
@@ -88,8 +49,7 @@
     "Serve para o meu tipo de negócio",
     "Em quanto tempo vejo resultado",
     "Como é o primeiro passo"
-   ],
-   "textura": "grain"
+   ]
   },
   {
    "template": "T2",
@@ -113,8 +73,7 @@
     "Agrupa as dúvidas que mais se repetem",
     "Sugere o formato: carrossel, reels ou story",
     "Deixa o rascunho do texto pronto"
-   ],
-   "textura": "led"
+   ]
   },
   {
    "template": "T2c",
@@ -125,8 +84,7 @@
    "emocao": {
     "texto": "a sua {voz}.",
     "posicao": "depois"
-   },
-   "textura": "led"
+   }
   },
   {
    "template": "T4",
@@ -140,32 +98,13 @@
    },
    "imagem": "cta_orig.png",
    "sujeito": {
-    "rostos": [],
-    "cabeca": [
-     340,
-     190,
-     710,
-     760
-    ],
-    "caixa": [
-     0,
-     207,
-     1079,
-     1439
-    ],
-    "rostos_so_manual": true,
     "cabeca_manual": [
      340,
      190,
      710,
      760
-    ]
-   },
-   "bloco": {
-    "y": 900,
-    "alinhar": "esquerda",
-    "largura": 936,
-    "manual": true
+    ],
+    "rostos_so_manual": true
    }
   }
  ]
