@@ -264,7 +264,7 @@ def compor(jp, a):
             rgba = Image.open(cache).convert("RGBA")
         else:
             if not _sessao:
-                _sessao.append(new_session())
+                _sessao.append(new_session("u2net"))  # explícito: o padrão do rembg 2.0.8x é bria-rmbg (1 GB, mata o processo por memória)
             rgba = remove(limpa, session=_sessao[0])
             cache.parent.mkdir(exist_ok=True)
             rgba.save(cache)

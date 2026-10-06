@@ -12,7 +12,7 @@ import sys
 
 import numpy as np
 from PIL import Image
-from rembg import remove
+from rembg import new_session, remove
 from scipy import ndimage
 
 
@@ -34,7 +34,7 @@ def avaliar(rgba, area_max=0.70):
 
 
 if __name__ == "__main__":
-    rgba = remove(Image.open(sys.argv[1]).convert("RGB"))
+    rgba = remove(Image.open(sys.argv[1]).convert("RGB"), session=new_session("u2net"))
     motivos, m = avaliar(rgba)
     print("metricas:", m)
     if motivos:
