@@ -34,6 +34,18 @@ MAX_PENDENTES = 10  # ponytail: buffer fixo de ~10 dias com o PC desligado; aume
 CUIABA = timezone(timedelta(hours=-4))
 DIA_RE = re.compile(r"^Dia(\d+)")
 DRY = "--dry-run" in sys.argv
+sys.path.insert(0, str(REPO / "motor"))
+
+
+def aplicar_halftone(d, meta):
+    """Textura halftone no hook (1º slide) e no CTA (último), padrão aidealab desde 2026-10-06. Idempotente via meta["halftone"]."""
+    if meta.get("halftone") or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
+        return
+    from PIL import Image
+    from filtro_halftone import halftone
+    for s in {meta["slides"][0]["arquivo"], meta["slides"][-1]["arquivo"]}:
+        halftone(Image.open(d / s)).save(d / s)
+    meta["halftone"] = True
 
 
 def ler(p):
@@ -126,6 +138,7 @@ def main():
             for s in meta["slides"]:
                 shutil.copy2(d / s["arquivo"], alvo / s["arquivo"])
             meta.update(postado=False, status="aprovado")
+            aplicar_halftone(alvo, meta)
             gravar(alvo / "metadata.json", meta)
         prox += 1
         pendentes += 1

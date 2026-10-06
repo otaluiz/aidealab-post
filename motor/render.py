@@ -21,6 +21,8 @@ from pathlib import Path
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
+from filtro_halftone import halftone
+
 W, H = 1080, 1440
 AQUI = Path(__file__).resolve().parent
 
@@ -105,9 +107,12 @@ def main():
             browser.close()
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    ht = {i for k, i in (("hook", 1), ("cta", n)) if k in tema.get("halftone", [])}
     for i, b in enumerate(shots, 1):
         png = out_dir / f"slide-{i:02d}.png"
         png.write_bytes(b)
+        if i in ht:
+            halftone(Image.open(png)).save(png)
         pngs.append(png)
     for png in pngs:
         assert Image.open(png).size == (W, H), f"{png} fora de {W}x{H}"
