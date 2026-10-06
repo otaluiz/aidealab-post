@@ -254,7 +254,7 @@
 
   // Texto na frente (emocao, cta, corpo, gancho) nunca cobre cabeça nem rostos; display também não cobre rostos
   // (a cabeça do próprio sujeito recortado fica por cima do display, então só vale para texto à frente).
-  // Determinístico, ≤ 20 tentativas por item: abaixo do display, abaixo da cabeça, acima da cabeça, acima do display,
+  // Determinístico, ≤ 20 tentativas por item: abaixo do display, abaixo da cabeça (na frente do corpo), acima do display, acima da cabeça,
   // cada uma no x atual e no lado com mais espaço; encolhe a emoção até 0.7× por último.
   function camadas(el, s, root, u, efs) {
     var base = el.getBoundingClientRect(), su = s.sujeito || {}, cab = su.cabeca || null, rostos = su.rostos || [];
@@ -282,7 +282,7 @@
           if (it[0] === 'emocao') { x.style.setProperty('--efsn', efs * escalas[ei]); x.style.transform = ''; }
           var nn = caixa([x], base, u); w = nn[2] - nn[0]; h = nn[3] - nn[1];
           var U = frente.reduce(function (a, f) { return [Math.min(a[0], f[0]), Math.min(a[1], f[1]), Math.max(a[2], f[2]), Math.max(a[3], f[3])]; }, [1e9, 1e9, -1e9, -1e9]);
-          var ys = [disp[3] + 16, disp[1] - 16 - h, U[3] + m, U[1] - m - h];
+          var ys = [disp[3] + 16, U[3] + m, disp[1] - 16 - h, U[1] - m - h];  // depois do display, depois na frente do corpo (abaixo da cabeça); acima só por último
           frente.forEach(function (f) { ys.push(f[3] + m, f[1] - m - h); });
           fixos.forEach(function (f) { ys.push(f[3] + 28, f[1] - 28 - h); });
           var ref = U;

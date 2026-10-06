@@ -144,14 +144,16 @@ def estimar(s, larg, fs0):
 
 
 def escolher(s, template, fs0, mask, sob, cab, rostos, recorte, propr=(), fixo=None):
-    """Com recorte, o display só pode passar atrás da CABEÇA (capa de revista), nunca atrás do tronco/costas:
-    cobertura pelo tronco <= 4% por palavra; pela cabeça <= 55% por palavra e <= 30% no total. Título atrás da cabeça
+    """Com recorte, o display só pode passar atrás do TOPO DA CABEÇA (cabelo/testa, 40% de cima da caixa da cabeça;
+    capa de revista), nunca atrás do rosto nem do tronco/costas: cobertura por rosto/tronco <= 4% por palavra; pelo
+    topo da cabeça <= 35% por palavra e <= 30% no total. Título atrás da cabeça
     (8-30% coberto) ganha bônus forte: é o layout preferido sempre que couber. Regra das camadas: bold (display) atrás,
     handwritten (emocao) na frente; emoção 10-60% sobre o corpo ganha bônus. `fixo` = bloco manual {y, alinhar, largura}:
     só confere esse bloco (None = não cabe)."""
     mcab = np.zeros_like(mask)
     if recorte and cab:
-        mcab[max(0, cab[1]):min(H, cab[3]), max(0, cab[0]):min(W, cab[2])] = True
+        topo = cab[1] + 0.40 * (cab[3] - cab[1])  # só cabelo/testa: o rosto conta como tronco (o título nunca cobre o rosto)
+        mcab[max(0, cab[1]):min(H, int(topo)), max(0, cab[0]):min(W, cab[2])] = True
         mcab &= mask
     mtor = mask & ~mcab
     ii_s = np.pad(np.cumsum(np.cumsum(sob * (~mask if recorte else 1), 0), 1), ((1, 0), (1, 0)))
@@ -213,7 +215,7 @@ def escolher(s, template, fs0, mask, sob, cab, rostos, recorte, propr=(), fixo=N
                         cov_tot += soma(ii_m, wb); cab_tot += soma(ii_h, wb); atot += area(wb)
                         pos += len(palavra) + 1
                 cov, cov_cab = cov_tot / max(atot, 1), cab_tot / max(atot, 1)
-                if recorte and (tor_max > 0.04 or cab_max > 0.55 or cov > 0.30):
+                if recorte and (tor_max > 0.04 or cab_max > 0.35 or cov > 0.30):
                     continue
                 bb = [X(g["w"]), y, X(g["w"]) + g["w"], y + g["h"]]
                 vis = soma(ii_c, bb)

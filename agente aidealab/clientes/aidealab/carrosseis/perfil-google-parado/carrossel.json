@@ -1,0 +1,167 @@
+{
+ "id": "perfil-google-parado",
+ "meta": {
+  "serie": "PRESENÇA",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "SEU GOOGLE",
+    "TÁ PARADO."
+   ],
+   "emocao": {
+    "texto": "e o cliente vai no [vizinho].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      400,
+      560,
+      705,
+      852
+     ]
+    ],
+    "cabeca": [
+     420,
+     470,
+     668,
+     698
+    ],
+    "caixa": [
+     188,
+     479,
+     877,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 370,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "FOTO VELHA,",
+    "HORÁRIO ERRADO."
+   ],
+   "emocao": {
+    "texto": "quem procura, [desiste].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     332,
+     390,
+     747,
+     543
+    ],
+    "caixa": [
+     336,
+     396,
+     745,
+     1039
+    ]
+   },
+   "bloco": {
+    "y": 310,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE O CLIENTE",
+    "{VÊ PRIMEIRO}"
+   ],
+   "lista": [
+    "Nota e últimas avaliações",
+    "Fotos recentes do lugar",
+    "O horário de hoje",
+    "Botão de rota ou WhatsApp"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "PERFIL ABANDONADO",
+    "PARECE LOJA"
+   ],
+   "emocao": {
+    "texto": "{fechada}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE MANTÉM",
+    "O PERFIL {VIVO}"
+   ],
+   "lista": [
+    "Responder toda avaliação",
+    "Uma foto nova por semana",
+    "Horário certo nos feriados",
+    "Lembrete automático pedindo avaliação"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "UMA ROTINA SIMPLES",
+    "E VOCÊ"
+   ],
+   "emocao": {
+    "texto": "{aparece} no mapa.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER SEU PERFIL",
+    "TRABALHANDO?"
+   ],
+   "cta": {
+    "acao": "Comenta GOOGLE",
+    "texto": "a aidealab revisa com você"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     411,
+     398,
+     699,
+     751
+    ],
+    "caixa": [
+     150,
+     408,
+     854,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 310,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

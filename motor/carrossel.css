@@ -238,6 +238,9 @@ body.single #carrossel { padding: 0; gap: 0; display: block; }
 .slide.cam2 .recorte { position: absolute; inset: 0; z-index: 6; background-size: cover; background-position: center; pointer-events: none; }
 .slide.cam2 .emocao, .slide.cam2 .corpo, .slide.cam2 .cta { position: relative; z-index: 8; }
 .slide.cam2 .gancho { z-index: 8; }
+/* texto à frente sobre o sujeito (roupa clara/escura): halo ink para ler sempre */
+.slide.cam2 .emocao, .slide.cam2 .cta .txt, .slide.cam2 .corpo { text-shadow: 0 0 calc(3 * var(--u)) var(--ink), 0 0 calc(10 * var(--u)) var(--ink), 0 0 calc(24 * var(--u)) color-mix(in srgb, var(--ink) 85%, transparent); }
+.slide.cam2 .cta .txt { font-weight: 600; }
 /* `texto_frente`: sujeito grande ocupa o quadro; o display passa na frente do corpo (o bloco nunca toca a cabeça) */
 .slide.cam2.texto-frente .display { z-index: 8; text-shadow: 0 0 calc(30 * var(--u)) color-mix(in srgb, var(--ink) 60%, transparent); }
 .slide.cam2 .emocao { text-shadow: 0 0 calc(30 * var(--u)) color-mix(in srgb, var(--ink) 60%, transparent); }

@@ -1,0 +1,70 @@
+{
+  "carousel_id": "perfil-google-parado",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-06",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PRESENÇA",
+  "tema": "SEU GOOGLE TÁ PARADO. e o cliente vai no vizinho.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEU GOOGLE TÁ PARADO. e o cliente vai no vizinho."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "FOTO VELHA, HORÁRIO ERRADO. quem procura, desiste."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O CLIENTE VÊ PRIMEIRO Nota e últimas avaliações Fotos recentes do lugar O horário de hoje Botão de rota ou WhatsApp"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PERFIL ABANDONADO PARECE LOJA fechada."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE MANTÉM O PERFIL VIVO Responder toda avaliação Uma foto nova por semana Horário certo nos feriados Lembrete automático pedindo avaliação"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA ROTINA SIMPLES E VOCÊ aparece no mapa."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER SEU PERFIL TRABALHANDO? Comenta GOOGLE a aidealab revisa com você"
+    }
+  ],
+  "legenda": "Antes de entrar, o cliente procura no Google. E o que ele encontra? Foto antiga, horário errado, avaliação sem resposta.\n\nPerfil parado passa a impressão de loja fechada, e a pessoa vai no concorrente que aparece arrumado. Responder avaliação, trocar uma foto por semana e manter o horário certo já muda o jogo. Dá até pra automatizar o pedido de avaliação depois de cada venda.\n\nComenta GOOGLE que a aidealab revisa seu perfil com você.",
+  "hashtags": [
+    "#googlemeunegocio",
+    "#marketinglocal",
+    "#pequenosnegocios",
+    "#presencadigital",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "personagem": "wel",
+  "variante": "personagem-gerado"
+}
