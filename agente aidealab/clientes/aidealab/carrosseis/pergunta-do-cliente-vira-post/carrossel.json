@@ -1,0 +1,139 @@
+{
+ "id": "pergunta-do-cliente-vira-post",
+ "meta": {
+  "serie": "BASTIDOR",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "A PERGUNTA",
+    "DO CLIENTE"
+   ],
+   "emocao": {
+    "texto": "é o seu próximo [post].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "texto_frente": true,
+   "sujeito": {
+    "cabeca": [
+     330,
+     320,
+     700,
+     850
+    ],
+    "cabeca_manual": [
+     330,
+     320,
+     700,
+     850
+    ],
+    "rostos": [],
+    "rostos_so_manual": true
+   },
+   "bloco": {
+    "y": 862,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "TODO DIA",
+    "ALGUÉM PERGUNTA."
+   ],
+   "emocao": {
+    "texto": "e ninguém [anota].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE ELES",
+    "{PERGUNTAM}"
+   ],
+   "lista": [
+    "Quanto custa e como funciona",
+    "Serve para o meu tipo de negócio",
+    "Em quanto tempo vejo resultado",
+    "Como é o primeiro passo"
+   ]
+  },
+  {
+   "template": "T2",
+   "display": [
+    "DÚVIDA REPETIDA",
+    "É TEMA DE"
+   ],
+   "emocao": {
+    "texto": "{post}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA",
+    "{ORGANIZA}"
+   ],
+   "lista": [
+    "Lê as conversas do WhatsApp e do direct",
+    "Agrupa as dúvidas que mais se repetem",
+    "Sugere o formato: carrossel, reels ou story",
+    "Deixa o rascunho do texto pronto"
+   ]
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ REVISA",
+    "E POSTA COM"
+   ],
+   "emocao": {
+    "texto": "a sua {voz}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER SUA PAUTA",
+    "VINDA DO CLIENTE?"
+   ],
+   "cta": {
+    "acao": "Comenta PAUTA",
+    "texto": "a aidealab te mostra"
+   },
+   "imagem": "cta_orig.png",
+   "texto_frente": true,
+   "sujeito": {
+    "cabeca": [
+     340,
+     190,
+     710,
+     760
+    ],
+    "cabeca_manual": [
+     340,
+     190,
+     710,
+     760
+    ],
+    "rostos": [],
+    "rostos_so_manual": true
+   },
+   "bloco": {
+    "y": 900,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}
