@@ -1,0 +1,69 @@
+{
+ "carousel_id": "pergunta-do-cliente-vira-post",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-06",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "BASTIDOR",
+ "tema": "A PERGUNTA DO CLIENTE é o seu próximo post.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "A PERGUNTA DO CLIENTE é o seu próximo post."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "TODO DIA ALGUÉM PERGUNTA. e ninguém anota."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE ELES PERGUNTAM Quanto custa e como funciona Serve para o meu tipo de negócio Em quanto tempo vejo resultado Como é o primeiro passo"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "DÚVIDA REPETIDA É TEMA DE post."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE A IA ORGANIZA Lê as conversas do WhatsApp e do direct Agrupa as dúvidas que mais se repetem Sugere o formato: carrossel, reels ou story Deixa o rascunho do texto pronto"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "VOCÊ REVISA E POSTA COM a sua voz."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER SUA PAUTA VINDA DO CLIENTE? Comenta PAUTA a aidealab te mostra"
+  }
+ ],
+ "legenda": "O cliente pergunta quanto custa, se serve pro negócio dele, em quanto tempo dá resultado. Toda semana, nas mesmas conversas. E quase ninguém anota.\n\nDúvida que se repete é tema de post. A IA lê as conversas, agrupa o que mais aparece e deixa o rascunho pronto. Você revisa e publica com a sua voz.\n\nComenta PAUTA que a aidealab te mostra por onde começar.\n\n#conteudo #marketingdigital #iaaplicada #pequenosnegocios #aidealab",
+ "hashtags": [
+  "#conteudo",
+  "#marketingdigital",
+  "#iaaplicada",
+  "#pequenosnegocios",
+  "#aidealab"
+ ],
+ "handle": "@aidealab7",
+ "personagem": "luizota"
+}
