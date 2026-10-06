@@ -146,7 +146,8 @@ def estimar(s, larg, fs0):
 def escolher(s, template, fs0, mask, sob, cab, rostos, recorte, propr=(), fixo=None):
     """Com recorte, o display só pode passar atrás da CABEÇA (capa de revista), nunca atrás do tronco/costas:
     cobertura pelo tronco <= 4% por palavra; pela cabeça <= 55% por palavra e <= 30% no total. Título atrás da cabeça
-    (8-30% coberto) ganha bônus forte: é o layout preferido sempre que couber. `fixo` = bloco manual {y, alinhar, largura}:
+    (8-30% coberto) ganha bônus forte: é o layout preferido sempre que couber. Regra das camadas: bold (display) atrás,
+    handwritten (emocao) na frente; emoção 10-60% sobre o corpo ganha bônus. `fixo` = bloco manual {y, alinhar, largura}:
     só confere esse bloco (None = não cabe)."""
     mcab = np.zeros_like(mask)
     if recorte and cab:
@@ -219,7 +220,10 @@ def escolher(s, template, fs0, mask, sob, cab, rostos, recorte, propr=(), fixo=N
                 busy = (soma(ii_s, bb) / max(vis, 1)) / 40.0
                 sc = busy + pen + 0.8 * (1 - fs / fs0)
                 if recorte:
-                    sc -= 0.6 if 0.08 <= cov_cab <= 0.30 else 0  # atrás da cabeça: layout preferido
+                    sc -= 0.6 if 0.08 <= cov_cab <= 0.30 else 0  # bold atrás da cabeça: layout preferido
+                    if g["emo"]:  # handwritten na frente, sobre o corpo (nunca o rosto): dá a profundidade
+                        eb = fr[0]
+                        sc -= 0.2 if 0.10 <= soma(ii_t, eb) / max(area(eb), 1) <= 0.60 else 0
                 else:
                     sc += 1.5 * soma(ii_m, bb) / max(area(bb), 1)
                 sc += 0.02 * (al == "direita") + 0.0003 * y

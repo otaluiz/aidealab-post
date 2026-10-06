@@ -51,7 +51,8 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
   deslocado para um lado, num cenário real e simples (estúdio com fundo liso navy, escritório, café, rua) que
   continua atrás dele. Capa e CTA com folga acima da cabeça: o topo da cabeça em cerca de 1/3 da altura do quadro
   (no prompt: "generous headroom, the top of his head about one third down the frame"). É ali que o título entra,
-  ATRÁS DA CABEÇA (capa de revista), e nunca atrás do tronco/costas. Cabeça colada no topo = refaça a imagem.
+  ATRÁS DA CABEÇA (capa de revista), e nunca atrás do tronco/costas;
+  a frase handwritten (`emocao`) vai NA FRENTE do sujeito, sobre o corpo, nunca no rosto. Cabeça colada no topo = refaça a imagem.
 - NUNCA escreva no prompt "left/right half empty", "empty side", "negative space", "magazine", "cover" ou
   "border": o Soul 2.0 responde a isso com imagem partida ao meio, rosto cortado na borda, moldura ou logotipo
   de revista. Peça "plain t-shirt without print". Use `generate_image` com `model` "soul_2", `soul_id`,
