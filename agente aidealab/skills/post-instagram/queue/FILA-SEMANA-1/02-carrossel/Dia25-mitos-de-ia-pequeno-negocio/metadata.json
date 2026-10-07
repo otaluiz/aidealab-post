@@ -71,5 +71,8 @@
     "#marketingdigital"
   ],
   "handle": "@aidealab7",
-  "halftone": true
+  "textura_foto": {
+    "hook": "halftone",
+    "cta": "cloth"
+  }
 }
