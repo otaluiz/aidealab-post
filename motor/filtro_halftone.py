@@ -1,7 +1,7 @@
 """
 Filtro "impresso halftone" (ref. post HALFTONE TEXTURE, aprovado 2026-10-06): retícula AM fina a 45° modulando a
 luminância (média zero: o tom da foto se mantém), pretos levantados, leve dessaturação/aquecimento e grão.
-O render aplica no slide inteiro do hook e do CTA quando o tema.json tem "halftone": ["hook", "cta"].
+Usado por textura_foto.py (só na foto do hook, pelo "textura_foto" do tema.json).
 
 Uso: python filtro_halftone.py <entrada> [saida]   (sem saida = sobrescreve)
 """

@@ -60,5 +60,5 @@ quanto for preciso.
 
 - Slide 3: `"textura": "grain"`, só grão forte sobre o fundo liso, sem gradiente nem brilho de cor (nada de spotlight ciano ou rosa). O `compor.py` marca sozinho.
 - Hook e CTA com personagem: título bold ATRÁS DO TOPO DA CABEÇA (cabelo/testa; capa de revista), nunca atrás do rosto nem do tronco/costas, e a frase handwritten (emocao) NA FRENTE do sujeito, sobre o corpo e nunca no rosto; o `compor.py` escolhe sozinho sempre que houver folga acima da cabeça (topo da cabeça em ~1/3 do quadro).
-- Hook (slide 1) e CTA (último): textura halftone de impresso (`motor/filtro_halftone.py`), sempre. O `render.py` aplica sozinho pelo `"halftone": ["hook", "cta"]` do `tema.json`; o `sync_fila_drive.py` aplica nos aprovados que entram na fila (marca `"halftone": true` no metadata).
+- Textura só na FOTO (o texto fica sempre limpo), pelo `"textura_foto"` do `tema.json`: hook (slide 1) = `halftone` (`motor/filtro_halftone.py`), CTA (último) = `cloth`, a trama de tecido `motor/assets/pano.png` em soft-light 55% (a mesma da engine otalogia). O `render.py` aplica na `imagem` e no `recorte` antes de desenhar o texto (`motor/textura_foto.py`); o `sync_fila_drive.py` aplica nos aprovados que entram na FILA (slide pronto: máscara protege o texto; marca `"textura_foto"` no metadata).
 - Demais slides de lista e o de conclusão: `"textura": "led"`.

@@ -16,12 +16,13 @@ Setup: pip install playwright pillow && playwright install chromium
 import json
 import os
 import sys
+import tempfile
 from pathlib import Path
 
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
-from filtro_halftone import halftone
+from textura_foto import aplicar
 
 W, H = 1080, 1440
 AQUI = Path(__file__).resolve().parent
@@ -52,18 +53,26 @@ def main():
     data = json.loads(json_path.read_text(encoding="utf-8"))
     out_dir = Path(args[1]) if len(args) > 1 else json_path.parent / data["id"]
 
-    # imagem relativa ao JSON -> URI absoluta file:///; null continua null
-    for s in data["slides"]:
+    # imagem relativa ao JSON -> URI absoluta file:///; null continua null.
+    # tema "textura_foto" {"hook": tipo, "cta": tipo}: textura só na foto e no recorte (o texto fica limpo)
+    n = len(data["slides"])
+    tex = {1: tema.get("textura_foto", {}).get("hook"), n: tema.get("textura_foto", {}).get("cta")}
+    tmp = Path(tempfile.mkdtemp(prefix="textura_foto_"))
+    for i, s in enumerate(data["slides"], 1):
         for k in ("imagem", "recorte"):
             if s.get(k):
-                s[k] = (json_path.parent / s[k]).resolve().as_uri()
+                f = (json_path.parent / s[k]).resolve()
+                if tex.get(i):
+                    f2 = tmp / f"{i}_{k}.png"
+                    aplicar(Image.open(f), tex[i]).save(f2)
+                    f = f2
+                s[k] = f.as_uri()
         # T5: print do site, também relativo ao JSON
         ref = s.get("referencia")
         if ref and ref.get("print"):
             ref["print"] = (json_path.parent / ref["print"]).resolve().as_uri()
 
     url = (AQUI / "carrossel.html").as_uri()
-    n = len(data["slides"])
     shots = []
     pngs = []
     with sync_playwright() as p:
@@ -107,12 +116,9 @@ def main():
             browser.close()
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    ht = {i for k, i in (("hook", 1), ("cta", n)) if k in tema.get("halftone", [])}
     for i, b in enumerate(shots, 1):
         png = out_dir / f"slide-{i:02d}.png"
         png.write_bytes(b)
-        if i in ht:
-            halftone(Image.open(png)).save(png)
         pngs.append(png)
     for png in pngs:
         assert Image.open(png).size == (W, H), f"{png} fora de {W}x{H}"

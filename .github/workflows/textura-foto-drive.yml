@@ -1,0 +1,39 @@
+name: aidealab - textura só na foto (Drive FILA)
+
+# Refaz a textura do hook e do CTA nas pastas de 06-Aprovados-para-Postar/FILA, só na foto (texto limpo),
+# recuperando do histórico do Drive a versão limpa dos slides que receberam o halftone no slide inteiro.
+# Atualiza também as cópias na fila do repo. Disparo manual (Actions > Run workflow), dry_run para só listar.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "só listar, sem gravar"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency: aidealab-drive
+jobs:
+  textura:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r "agente aidealab/automation/cloud/requirements.txt" scipy
+      - name: textura no Drive
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python "agente aidealab/automation/cloud/textura_foto_drive.py" ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: commit da fila do repo
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "agente aidealab/skills/post-instagram/queue"
+          git diff --cached --quiet || { git commit -m "chore(post-instagram): textura só na foto no hook e CTA [skip ci]" && git pull --rebase -q origin main && git push origin main; }

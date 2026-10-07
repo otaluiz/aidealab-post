@@ -17,8 +17,8 @@
     "AIDEA LAB",
     "MARKETING & IA"
   ],
-  "halftone": [
-    "hook",
-    "cta"
-  ]
+  "textura_foto": {
+    "hook": "halftone",
+    "cta": "cloth"
+  }
 }

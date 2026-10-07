@@ -11,7 +11,7 @@ A cada execução:
      POSTADOS no Drive, com post_id/postado_em no metadata. Itens postados ANTES de hoje
      saem da fila do repo e o id vai para _arquivo-postados.json (os de hoje ficam, porque
      o publish_next usa eles para garantir 1 post por dia).
-  Pastas de FILA ainda sem "halftone": true no metadata ganham a textura no hook e no CTA (no próprio Drive).
+  Pastas de FILA sem "textura_foto" no metadata ganham a textura só na foto do hook e do CTA (no próprio Drive).
   2. Pastas de FILA que ainda não estão na fila nem no arquivo de postados entram na fila
      do repo como FILA-SEMANA-1/02-carrossel/Dia<N>-<slug>, até MAX_PENDENTES pendentes.
 
@@ -38,15 +38,27 @@ DRY = "--dry-run" in sys.argv
 sys.path.insert(0, str(REPO / "motor"))
 
 
-def aplicar_halftone(d, meta):
-    """Textura halftone no hook (1º slide) e no CTA (último), padrão aidealab desde 2026-10-06. Idempotente via meta["halftone"]."""
-    if meta.get("halftone") or meta.get("postado") or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
+TEMA = REPO / "agente aidealab" / "clientes" / "aidealab" / "design-system" / "tema" / "tema.json"
+
+
+def aplicar_textura(d, meta):
+    """Textura só na foto do hook (1º slide) e do CTA (último), conforme "textura_foto" do tema (o texto fica limpo).
+    Idempotente via meta["textura_foto"]. Pastas com o legado meta["halftone"] (slide inteiro) ficam para o workflow
+    textura-foto-drive.yml, que recupera a versão limpa no histórico do Drive."""
+    if meta.get("textura_foto") or meta.get("halftone") or meta.get("postado") \
+            or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
         return False
     from PIL import Image
-    from filtro_halftone import halftone
-    for s in {meta["slides"][0]["arquivo"], meta["slides"][-1]["arquivo"]}:
-        halftone(Image.open(d / s)).save(d / s)
-    meta["halftone"] = True
+    try:
+        from textura_foto import aplicar_slide
+    except ImportError as e:  # scipy ausente no PC: não quebra a sincronização
+        print(f"AVISO    textura pulada ({e}); instale: pip install scipy")
+        return False
+    cfg = ler(TEMA).get("textura_foto") or {}
+    for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
+        if cfg.get(papel):
+            aplicar_slide(Image.open(d / s["arquivo"]), cfg[papel]).save(d / s["arquivo"])
+    meta["textura_foto"] = cfg
     return True
 
 
@@ -118,12 +130,12 @@ def main():
             if not DRY:
                 shutil.move(str(d), str(POSTADOS / d.name))
 
-    # aprovados no Drive (FILA) ganham a textura halftone no hook e no CTA, para visualizar lá também
+    # aprovados no Drive (FILA) ganham a textura (só na foto) no hook e no CTA, para visualizar lá também
     for d in fila_drive.values():
         dm = ler(d / "metadata.json")
-        if not DRY and all((d / s["arquivo"]).exists() for s in dm.get("slides", [])) and aplicar_halftone(d, dm):
+        if not DRY and all((d / s["arquivo"]).exists() for s in dm.get("slides", [])) and aplicar_textura(d, dm):
             gravar(d / "metadata.json", dm)
-            print(f"HALFTONE {d.name} (Drive)")
+            print(f"TEXTURA  {d.name} (Drive)")
 
     # 2. aprovados novos entram na fila do repo
     vivos = [it for it in itens if not it.get("arquivado")]
@@ -147,7 +159,7 @@ def main():
             for s in meta["slides"]:
                 shutil.copy2(d / s["arquivo"], alvo / s["arquivo"])
             meta.update(postado=False, status="aprovado")
-            aplicar_halftone(alvo, meta)
+            aplicar_textura(alvo, meta)
             gravar(alvo / "metadata.json", meta)
         prox += 1
         pendentes += 1
