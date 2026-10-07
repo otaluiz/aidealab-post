@@ -1,0 +1,74 @@
+{
+  "carousel_id": "clareza-vende-mais",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 14,
+  "serie": "MARCA",
+  "tema": "MARCA BONITA, CLIENTE CONFUSO. todo mundo admira e ninguém entende.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T2-T3-T2c-T2-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "MARCA BONITA, CLIENTE CONFUSO. todo mundo admira e ninguém entende."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "ADMIRAM O VISUAL, NÃO ENTENDEM a oferta."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "FALTA A FRASE QUE EXPLICA o que você faz e para quem."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "QUANDO TUDO DESTACA Efeito, cor e animação Frase de impacto Tudo pede atenção ao mesmo tempo O cliente não sabe onde olhar"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "RESUMA O QUE VOCÊ VENDE numa frase que um estranho entenda."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "TESTE COM ALGUÉM DE FORA se entendeu, ela vai pro topo."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "MENSAGEM CLARA, DECISÃO RÁPIDA O cliente para de adivinhar Confia mais cedo Pergunta menos Decide antes de fechar a aba"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "TROCA O EFEITO POR clareza. Comenta CLAREZA e a aidealab te ajuda a simplificar"
+    }
+  ],
+  "legenda": "Seu feed pode estar lindo e mesmo assim não vender nada.\n\nO design chama atenção, a cor combina, a foto é boa. Só que quem decide comprar procura outra coisa: entender rápido o que você faz e para quem.\n\nQuando tudo compete por atenção (efeito, cor, frase de impacto), o cliente não sabe onde olhar. Ele admira o post e sai sem decidir nada.\n\nResume o que sua empresa vende numa frase que um estranho entenda de primeira. Testa lendo pra alguém de fora do seu nicho.\n\nComenta CLAREZA que a gente te ajuda a simplificar essa frase.",
+  "hashtags": [
+    "#aidealab",
+    "#marketingdigital",
+    "#comunicacaoclara",
+    "#pequenosnegocios"
+  ],
+  "handle": "@aidealab7",
+  "halftone": true
+}

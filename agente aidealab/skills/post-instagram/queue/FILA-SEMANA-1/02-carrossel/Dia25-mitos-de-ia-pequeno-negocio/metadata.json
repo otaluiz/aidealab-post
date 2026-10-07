@@ -1,0 +1,75 @@
+{
+  "carousel_id": "mitos-de-ia-pequeno-negocio",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 15,
+  "serie": "IA",
+  "tema": "ANTES DA TECNOLOGIA vem o medo.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ANTES DA TECNOLOGIA vem o medo."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "IA É COISA DE EMPRESA GRANDE foi o que você ouviu."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O MITO PARECE REAL Equipe de tecnologia Orçamento alto Sistema complicado demais pra mexer sozinho"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "FEITA PRA OUTRO TAMANHO por isso parece cara e complicada."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMECE PEQUENO uma resposta, um agendamento."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "ISSO JÁ É IA WhatsApp que responde a primeira mensagem sozinho Agenda que confirma o horário sem você digitar Cabe no seu orçamento"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "MENOS HORA COPIANDO, MAIS HORA falando com quem já decidiu."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "TODO PASSO GRANDE começa. Comenta COMECA e a aidealab te manda o primeiro passo"
+    }
+  ],
+  "legenda": "Medo trava mais decisão de pequeno negócio do que falta de dinheiro.\n\nVocê já ouviu que inteligência artificial é coisa de empresa grande, com equipe de tecnologia e orçamento que sua empresa não tem. Faz sentido pensar assim: a maioria das ferramentas que aparecem por aí foi pensada pra esse tamanho de problema.\n\nMas o que cabe no seu negócio é bem mais simples que isso. Uma resposta automática no WhatsApp. Uma agenda que confirma horário sozinha. O primeiro passo não precisa ser grande, só precisa sair do papel.\n\nComenta COMECA que a gente te manda o primeiro passo pra sua empresa usar IA ainda essa semana.",
+  "hashtags": [
+    "#aidealab",
+    "#inteligenciaartificial",
+    "#pequenosnegocios",
+    "#automacaowhatsapp",
+    "#marketingdigital"
+  ],
+  "handle": "@aidealab7",
+  "halftone": true
+}
