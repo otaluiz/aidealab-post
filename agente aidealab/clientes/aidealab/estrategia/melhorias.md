@@ -25,7 +25,11 @@ Marcar `[x]` quando resolver.
 - [x] Handle errado no rodapé (`@aidealab7`) corrigido no tema para `@idea_lab7`; os 4 rascunhos do motor novo foram re-renderizados.
 - [x] Palavras escondidas atrás do personagem/objeto corrigidas (perfil-google capa, slide 2 e CTA; pergunta-do-cliente capa; whatsapp-ganhou-ia capa).
 - [x] `upload_carrosseis.py` agora atualiza no Drive os rascunhos já existentes em 04 quando o PNG muda (antes pulava a pasta).
-- [ ] **Carrosséis já aprovados em `06-Aprovados-para-Postar/FILA` feitos pelo motor antes de 08/10 ainda têm `@aidealab7` no rodapé.** As imagens-fonte deles não estão no repositório, então não dá para re-renderizar daqui. Conferir no Drive antes de postar; se tiver o handle errado, mover de volta para 04 com as fotos originais para re-render.
+- [x] Fila de publicação do repo (Dia16–25, 70 slides): rodapé trocado para `@idea_lab7` direto nos PNGs (sem as fotos-fonte; máscara gerada pelo próprio motor) e `handle` corrigido no metadata.
+- [x] Publicador repetia as hashtags quando a legenda já terminava com elas (Dia19, Dia21, whatsapp-ganhou-ia). Corrigido em `publish_next.py`.
+- [ ] As cópias desses 10 posts em `06-Aprovados-para-Postar/FILA` no Drive continuam com `@aidealab7` (quem publica é a fila do repo, então não afeta o post). Só importa se o `textura-foto-drive.yml` for rodado de novo com outra configuração de textura: ele recomeça das versões do Drive.
+- [ ] Fila tem 3 posts de serviços seguidos (Dia19–21). Intercalar com conteúdo útil (ex.: mover Dia22–25 para antes).
+- [ ] Motor antigo (`skills/criar-post/templates/render-engine`) só é usado pela rotina local do Windows (`run-daily-carousel.ps1`). Desligar essa tarefa no Agendador para não gerar carrossel fora da pauta nova.
 - [ ] perfil-google-parado, slide 7: a linha "a aidealab revisa com você" cai sobre a camiseta clara e perde contraste. Melhorar na engine: fundo/halo automático no texto de apoio do CTA quando a área for clara.
 - [ ] Capa: o título atrás da cabeça só funciona com folga acima do personagem. A rotina já pede "generous headroom"; quando o `compor.py` não achar espaço, refazer a foto (custou 1 regeração no whatsapp-ganhou-ia).
 - [ ] Repetição visual: 3 carrosséis seguidos com a mesma estrutura (T1-T2-T3-T2-T3-T2c-T4). Variar a sequência e usar T5 (referência) e diagrama quando couber.

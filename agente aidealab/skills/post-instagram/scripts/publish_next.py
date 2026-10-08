@@ -324,7 +324,10 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
 def build_caption(meta: Dict[str, Any]) -> str:
     legenda = repair_mojibake(meta.get("legenda", ""))
     tags = meta.get("hashtags", [])
-    hashtags = repair_mojibake(tags) if isinstance(tags, str) else " ".join(repair_mojibake(t) for t in tags)
+    tags = repair_mojibake(tags).split() if isinstance(tags, str) else [repair_mojibake(t) for t in tags]
+    # legenda.md do motor já pode terminar com as hashtags: não repetir as que já estão no texto
+    ja = {w.lower() for w in legenda.split() if w.startswith("#")}
+    hashtags = " ".join(t for t in tags if t.lower() not in ja)
     caption = f"{legenda}\n\n{hashtags}".strip()
     if has_mojibake(caption):
         raise ValueError(f"Legenda ainda com caracteres corrompidos após reparo: {caption[:200]!r}")
