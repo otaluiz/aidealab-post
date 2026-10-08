@@ -57,6 +57,17 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
   marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
   "no text, no letters, no logos". Mantenha o cabelo visível, sem chapéu nem óculos.
+- Direção de arte (pedido do cliente em 08/10): personagem NUNCA sorrindo (sério, intenso, "mouth closed, not
+  smiling"). Pose editorial de moda inspirada na pasta do Drive `01-Referencias/Instagram/soul-ref` (câmera baixa contra
+  o céu, salto, casaco em movimento, sentado em cubo/banquinho/cadeira dobrável em estúdio navy, corredor de paredes
+  brancas). DESCREVA a composição no prompt; não mande a foto da soul-ref como media: o soul_2 copia roupa, óculos,
+  bandana, corrente e peito nu da referência mesmo com o prompt proibindo. Peça "figure in the lower half, head at the
+  vertical middle, large empty backdrop/sky above his head" para o título caber atrás dele.
+- Título da capa GRANDE: 2 linhas curtas (até ~10 letras cada), `bloco` manual `{"alinhar":"centro","largura":1020}` e
+  `y` tal que a cabeça morda só a parte de baixo da última linha (~50px); nenhuma letra pode sumir. Se a cabeça cair
+  embaixo de um número/letra-chave, mude o alinhamento (direita/esquerda) até ela cair num espaço entre palavras.
+- O `compor.py` relê o `carrossel.json.bak` a cada execução: apague o `.bak` antes de re-rodar, senão ele desfaz
+  edições de texto e de bloco.
 - Enquadramento grande: retrato do peito para cima, cabeça inteira dentro do quadro, o personagem levemente
   deslocado para um lado, num cenário real e simples (estúdio com fundo liso navy, escritório, café, rua) que
   continua atrás dele. Capa e CTA com folga acima da cabeça: o topo da cabeça em cerca de 1/3 da altura do quadro

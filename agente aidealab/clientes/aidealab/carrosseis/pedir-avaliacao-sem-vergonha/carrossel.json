@@ -8,7 +8,7 @@
   {
    "template": "T1",
    "display": [
-    "PEDIR AVALIAÇÃO",
+    "AVALIAÇÃO",
     "DÁ VERGONHA?"
    ],
    "emocao": {
@@ -16,28 +16,30 @@
     "posicao": "depois"
    },
    "imagem": "capa_orig.png",
-   "recorte": "capa_recorte.png",
    "sujeito": {
-    "rostos": [],
     "cabeca": [
-     352,
-     361,
-     656,
-     746
+     434,
+     482,
+     635,
+     652
     ],
-    "caixa": [
-     216,
-     371,
-     920,
-     1439
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      434,
+      482,
+      635,
+      652
+     ]
     ]
    },
    "bloco": {
-    "y": 154,
-    "alinhar": "esquerda",
-    "largura": 936,
+    "y": 230,
+    "alinhar": "centro",
+    "largura": 1020,
     "manual": true
-   }
+   },
+   "recorte": "capa_recorte.png"
   },
   {
    "template": "T2",
@@ -138,22 +140,30 @@
    "sujeito": {
     "rostos": [],
     "cabeca": [
-     359,
-     321,
-     664,
-     663
+     355,
+     398,
+     697,
+     628
     ],
     "caixa": [
-     186,
-     331,
-     868,
-     1439
+     227,
+     407,
+     836,
+     1376
+    ],
+    "rostos_sujeito": [
+     [
+      355,
+      398,
+      697,
+      628
+     ]
     ]
    },
    "bloco": {
-    "y": 150,
+    "y": 188,
     "alinhar": "esquerda",
-    "largura": 880,
+    "largura": 936,
     "manual": true
    }
   }

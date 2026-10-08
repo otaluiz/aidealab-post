@@ -8,7 +8,7 @@
   {
    "template": "T1",
    "display": [
-    "RESPONDE CLIENTE",
+    "CLIENTE",
     "ÀS 23H?"
    ],
    "emocao": {
@@ -18,32 +18,26 @@
    "imagem": "capa_orig.png",
    "recorte": "capa_recorte.png",
    "sujeito": {
+    "cabeca": [
+     460,
+     350,
+     580,
+     520
+    ],
     "rostos": [],
     "rostos_sujeito": [
      [
-      340,
-      448,
-      673,
-      781
+      460,
+      350,
+      580,
+      520
      ]
-    ],
-    "cabeca": [
-     381,
-     391,
-     637,
-     638
-    ],
-    "caixa": [
-     171,
-     401,
-     880,
-     1439
     ]
    },
    "bloco": {
-    "y": 242,
-    "alinhar": "esquerda",
-    "largura": 720,
+    "y": 150,
+    "alinhar": "direita",
+    "largura": 800,
     "manual": true
    }
   },
@@ -57,7 +51,7 @@
     "texto": "e ainda fecha o [caixa].",
     "posicao": "depois"
    },
-   "imagem": "slide2_orig.png"
+   "imagem": "slide2_led_led.png"
   },
   {
    "template": "T3",
@@ -107,35 +101,30 @@
     "texto": "por semana, a gente te mostra"
    },
    "imagem": "cta_orig.png",
-   "recorte": "cta_recorte.png",
    "sujeito": {
+    "cabeca": [
+     443,
+     366,
+     644,
+     622
+    ],
     "rostos": [],
     "rostos_sujeito": [
      [
-      349,
-      655,
-      609,
-      904
+      443,
+      366,
+      644,
+      622
      ]
-    ],
-    "cabeca": [
-     406,
-     643,
-     570,
-     808
-    ],
-    "caixa": [
-     284,
-     650,
-     722,
-     1343
     ]
    },
    "bloco": {
-    "y": 190,
+    "y": 150,
     "alinhar": "esquerda",
-    "largura": 936
-   }
+    "largura": 936,
+    "manual": true
+   },
+   "recorte": "cta_recorte.png"
   }
  ]
 }

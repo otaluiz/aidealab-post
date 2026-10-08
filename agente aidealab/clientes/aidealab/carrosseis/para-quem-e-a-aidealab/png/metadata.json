@@ -8,7 +8,7 @@
  "post_id": null,
  "ordem_fila": 0,
  "serie": "MANIFESTO",
- "tema": "RESPONDE CLIENTE ÀS 23H? esse perfil é pra você.",
+ "tema": "CLIENTE ÀS 23H? esse perfil é pra você.",
  "familia_cor": "navy-ciano",
  "template": "T1-T2-T3-T2-T2c-T4",
  "formato": "1080x1440",
@@ -17,7 +17,7 @@
    "ordem": 1,
    "arquivo": "slide-01.png",
    "papel": "hook",
-   "texto": "RESPONDE CLIENTE ÀS 23H? esse perfil é pra você."
+   "texto": "CLIENTE ÀS 23H? esse perfil é pra você."
   },
   {
    "ordem": 2,
@@ -60,5 +60,9 @@
  ],
  "handle": "@idea_lab7",
  "personagem": "ambos",
- "pilar": "bastidor"
+ "pilar": "bastidor",
+ "referencias": [
+  "soul-ref #21 (casaco em movimento)",
+  "soul-ref #10 (sentado contra a parede)"
+ ]
 }
