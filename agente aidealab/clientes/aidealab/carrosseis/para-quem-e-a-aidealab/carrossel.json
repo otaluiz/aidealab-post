@@ -1,0 +1,141 @@
+{
+ "id": "para-quem-e-a-aidealab",
+ "meta": {
+  "serie": "MANIFESTO",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "RESPONDE CLIENTE",
+    "ÀS 23H?"
+   ],
+   "emocao": {
+    "texto": "esse perfil é pra [você].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      340,
+      448,
+      673,
+      781
+     ]
+    ],
+    "cabeca": [
+     381,
+     391,
+     637,
+     638
+    ],
+    "caixa": [
+     171,
+     401,
+     880,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 242,
+    "alinhar": "esquerda",
+    "largura": 720,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "VOCÊ ATENDE,",
+    "VENDE, POSTA..."
+   ],
+   "emocao": {
+    "texto": "e ainda fecha o [caixa].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE VOCÊ",
+    "VÊ {AQUI}"
+   ],
+   "lista": [
+    "IA no WhatsApp, no Google e no Instagram",
+    "Passo a passo pra fazer hoje",
+    "Uma tarefa a menos por vez"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O QUE NÃO",
+    "VÊ AQUI:"
+   ],
+   "emocao": {
+    "texto": "{hype}.",
+    "posicao": "depois"
+   },
+   "corpo": "Nem ferramenta que você nunca vai usar."
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A GENTE TESTA",
+    "NO BALCÃO"
+   ],
+   "emocao": {
+    "texto": "antes de te {mostrar}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "SEGUE E TIRA",
+    "UMA TAREFA"
+   ],
+   "cta": {
+    "acao": "Segue @idea_lab7",
+    "texto": "por semana, a gente te mostra"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      349,
+      655,
+      609,
+      904
+     ]
+    ],
+    "cabeca": [
+     406,
+     643,
+     570,
+     808
+    ],
+    "caixa": [
+     284,
+     650,
+     722,
+     1343
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

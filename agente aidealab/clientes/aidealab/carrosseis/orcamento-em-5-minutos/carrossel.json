@@ -1,0 +1,177 @@
+{
+ "id": "orcamento-em-5-minutos",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ORÇAMENTO",
+    "DEMORADO"
+   ],
+   "emocao": {
+    "texto": "vira cliente [perdido].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      360,
+      362,
+      701,
+      703
+     ]
+    ],
+    "cabeca": [
+     385,
+     351,
+     615,
+     607
+    ],
+    "caixa": [
+     175,
+     361,
+     868,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 152,
+    "alinhar": "esquerda",
+    "largura": 720,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "QUEM RESPONDE",
+    "PRIMEIRO"
+   ],
+   "emocao": {
+    "texto": "costuma [levar].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     679,
+     728,
+     879,
+     824
+    ],
+    "caixa": [
+     584,
+     732,
+     1043,
+     1137
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "MONTE UMA",
+    "{BASE}"
+   ],
+   "lista": [
+    "Seus serviços e preços",
+    "Prazo padrão de cada um",
+    "Forma de pagamento",
+    "O que não está incluso"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A IA PREENCHE",
+    "COM O PEDIDO"
+   ],
+   "emocao": {
+    "texto": "do {cliente}.",
+    "posicao": "depois"
+   },
+   "corpo": "Cola a base e a mensagem do cliente. Pede o orçamento no seu modelo."
+  },
+  {
+   "template": "T3",
+   "display": [
+    "VOCÊ SÓ",
+    "{CONFERE}"
+   ],
+   "lista": [
+    "Preço certo",
+    "Prazo que dá pra cumprir",
+    "Nome do cliente",
+    "Validade do orçamento"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "E MANDA ANTES",
+    "DO"
+   ],
+   "emocao": {
+    "texto": "{concorrente}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O MODELO",
+    "DE ORÇAMENTO?"
+   ],
+   "cta": {
+    "acao": "Comenta ORÇAMENTO",
+    "texto": "a aidealab te manda"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      422,
+      436,
+      654,
+      672
+     ]
+    ],
+    "cabeca": [
+     422,
+     436,
+     654,
+     672
+    ],
+    "caixa": [
+     186,
+     445,
+     875,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}

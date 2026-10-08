@@ -1,0 +1,70 @@
+{
+ "carousel_id": "pedir-avaliacao-sem-vergonha",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-08",
+ "status": "aguardando_validacao",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "IA NO BALCÃO",
+ "tema": "PEDIR AVALIAÇÃO DÁ VERGONHA? é só pedir na hora certa.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "PEDIR AVALIAÇÃO DÁ VERGONHA? é só pedir na hora certa."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "CLIENTE FELIZ NÃO AVALIA. o bravo sempre avalia."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "A HORA CERTA Logo depois do elogio Na entrega do pedido Quando o problema foi resolvido No dia seguinte ao serviço"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "MANDA O LINK PRONTO. um toque e pronto."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "A MENSAGEM PRONTA Obrigado pela preferência, Ana! Se gostou, deixa sua avaliação aqui? Leva 30 segundos e ajuda muito a gente"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "E RESPONDE TODAS, até a ruim."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER A MENSAGEM PRONTA? Comenta ESTRELA a aidealab te manda"
+  }
+ ],
+ "legenda": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.\n\nPedir não é chato quando é na hora certa: logo depois do elogio, na entrega, quando o problema foi resolvido. O link sai do seu Perfil da Empresa no Google, e a mensagem pode ficar pronta pra copiar e colar. E responde todas, até a ruim.\n\nQuantas avaliações seu negócio tem hoje?\n\nComenta ESTRELA que a aidealab te manda a mensagem pronta.\n\n#googlemeunegocio #avaliacoes #pequenosnegocios #marketinglocal #aidealab",
+ "hashtags": [
+  "#googlemeunegocio",
+  "#avaliacoes",
+  "#pequenosnegocios",
+  "#marketinglocal",
+  "#aidealab"
+ ],
+ "handle": "@idea_lab7",
+ "personagem": "ambos",
+ "pilar": "educacional"
+}

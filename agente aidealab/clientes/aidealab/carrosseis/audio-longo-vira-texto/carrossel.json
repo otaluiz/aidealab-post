@@ -1,0 +1,174 @@
+{
+ "id": "audio-longo-vira-texto",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ÁUDIO DE",
+    "5 MINUTOS?"
+   ],
+   "emocao": {
+    "texto": "lê em 10 [segundos].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      315,
+      528,
+      684,
+      859
+     ]
+    ],
+    "cabeca": [
+     381,
+     499,
+     632,
+     721
+    ],
+    "caixa": [
+     146,
+     508,
+     1024,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 284,
+    "alinhar": "esquerda",
+    "largura": 720,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE FALA,",
+    "FALA, FALA..."
+   ],
+   "emocao": {
+    "texto": "e o pedido some no [meio].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     99,
+     599,
+     516,
+     726
+    ],
+    "caixa": [
+     115,
+     604,
+     890,
+     1139
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO",
+    "{ATIVAR}"
+   ],
+   "lista": [
+    "Configurações",
+    "Conversas",
+    "Transcrição de mensagens de voz",
+    "Escolha português"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "SEGURA O ÁUDIO",
+    "E TOCA EM"
+   ],
+   "emocao": {
+    "texto": "{transcrever}.",
+    "posicao": "depois"
+   },
+   "corpo": "A transcrição fica no seu celular. Quem mandou não fica sabendo."
+  },
+  {
+   "template": "T3",
+   "display": [
+    "DEPOIS, A IA",
+    "{RESUME}"
+   ],
+   "lista": [
+    "Cola o texto no ChatGPT ou Gemini",
+    "Pede: o que o cliente quer e até quando",
+    "Recebe 3 linhas pra responder"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ RESPONDE",
+    "SEM OUVIR"
+   ],
+   "emocao": {
+    "texto": "{tudo} de novo.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O PROMPT",
+    "DO RESUMO?"
+   ],
+   "cta": {
+    "acao": "Comenta ÁUDIO",
+    "texto": "a aidealab te manda"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      357,
+      380,
+      678,
+      667
+     ]
+    ],
+    "cabeca": [
+     382,
+     341,
+     615,
+     599
+    ],
+    "caixa": [
+     156,
+     351,
+     927,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 132,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}

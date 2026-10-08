@@ -1,0 +1,161 @@
+{
+ "id": "pedir-avaliacao-sem-vergonha",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "PEDIR AVALIAÇÃO",
+    "DÁ VERGONHA?"
+   ],
+   "emocao": {
+    "texto": "é só pedir na [hora] certa.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     352,
+     361,
+     656,
+     746
+    ],
+    "caixa": [
+     216,
+     371,
+     920,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 154,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "CLIENTE FELIZ",
+    "NÃO AVALIA."
+   ],
+   "emocao": {
+    "texto": "o bravo [sempre] avalia.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     226,
+     743,
+     841,
+     844
+    ],
+    "caixa": [
+     225,
+     747,
+     849,
+     1174
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "A HORA",
+    "{CERTA}"
+   ],
+   "lista": [
+    "Logo depois do elogio",
+    "Na entrega do pedido",
+    "Quando o problema foi resolvido",
+    "No dia seguinte ao serviço"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "MANDA O LINK",
+    "PRONTO."
+   ],
+   "emocao": {
+    "texto": "um toque e {pronto}.",
+    "posicao": "depois"
+   },
+   "corpo": "No Perfil da Empresa tem a opção de pedir avaliações e copiar o link."
+  },
+  {
+   "template": "T3",
+   "display": [
+    "A MENSAGEM",
+    "{PRONTA}"
+   ],
+   "lista": [
+    "Obrigado pela preferência, Ana!",
+    "Se gostou, deixa sua avaliação aqui?",
+    "Leva 30 segundos e ajuda muito a gente"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "E RESPONDE",
+    "TODAS,"
+   ],
+   "emocao": {
+    "texto": "até a {ruim}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER A MENSAGEM",
+    "PRONTA?"
+   ],
+   "cta": {
+    "acao": "Comenta ESTRELA",
+    "texto": "a aidealab te manda"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     359,
+     321,
+     664,
+     663
+    ],
+    "caixa": [
+     186,
+     331,
+     868,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 880,
+    "manual": true
+   }
+  }
+ ]
+}
