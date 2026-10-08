@@ -42,9 +42,9 @@ TEMA = REPO / "agente aidealab" / "clientes" / "aidealab" / "design-system" / "t
 
 
 def slide3_texto(meta):
-    """Slide 3 só de texto (T2/T2c/T3), pelo campo "template" do metadata (ex.: "T1-T2-T3-T5-T2c-T2-T4")."""
+    """Slide 3 T3 (texto em fundo escuro; T2/T2c são papel), pelo "template" do metadata (ex.: "T1-T2-T3-T5-T2c-T2-T4")."""
     t = (meta.get("template") or "").split("-")
-    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] in ("T2", "T2c", "T3")
+    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] == "T3"
 
 
 def aplicar_textura(d, meta):
@@ -72,7 +72,7 @@ def aplicar_textura(d, meta):
             aplicar_slide(Image.open(f), foto[papel]).save(f)
         if slide.get(papel):
             aplicar(Image.open(f), slide[papel]).save(f)
-    meta["textura_foto"], meta["textura_slide"] = foto, slide
+    meta["textura_foto"], meta["textura_slide"], meta["slide3_t3"] = foto, slide, True
     return True
 
 

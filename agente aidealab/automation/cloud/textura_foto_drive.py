@@ -56,7 +56,7 @@ def limpa(svc, fid):
 
 def slide3_texto(meta):
     t = (meta.get("template") or "").split("-")
-    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] in ("T2", "T2c", "T3")
+    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] == "T3"  # T2/T2c são papel: sem quadro
 
 
 def main():
@@ -77,12 +77,15 @@ def main():
         meta = json.loads(baixar(svc.files().get_media(fileId=fs["metadata.json"])).decode("utf-8-sig"))
         if meta.get("postado") or not meta.get("slides"):
             continue
-        if meta.get("textura_foto") == foto and meta.get("textura_slide") == slide and not meta.get("halftone"):
+        if meta.get("textura_foto") == foto and meta.get("textura_slide") == slide and meta.get("slide3_t3") \
+                and not meta.get("halftone"):
             continue
         novos = {}
         alvos = [("hook", meta["slides"][0]), ("cta", meta["slides"][-1])]
         if slide3_texto(meta):
             alvos.append(("slide3", meta["slides"][2]))
+        elif meta.get("textura_slide", {}).get("slide3") and len(meta["slides"]) > 3:
+            alvos.append(("limpo", meta["slides"][2]))  # quadro aplicado antes em slide 3 de papel: volta ao limpo
         for papel, s in alvos:
             arq = s["arquivo"]
             if arq not in fs:
@@ -102,7 +105,7 @@ def main():
         if not novos:
             continue
         meta.pop("halftone", None)
-        meta["textura_foto"], meta["textura_slide"] = foto, slide
+        meta["textura_foto"], meta["textura_slide"], meta["slide3_t3"] = foto, slide, True
         mj = tmp / f"{nome.replace('/', '_')}_metadata.json"
         mj.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"TEXTURA  {nome}: {', '.join(novos)}")
@@ -117,7 +120,7 @@ def main():
                 (d / arq).write_bytes(f.read_bytes())
             rm = json.loads((d / "metadata.json").read_text(encoding="utf-8"))
             rm.pop("halftone", None)
-            rm["textura_foto"], rm["textura_slide"] = foto, slide
+            rm["textura_foto"], rm["textura_slide"], rm["slide3_t3"] = foto, slide, True
             (d / "metadata.json").write_text(json.dumps(rm, ensure_ascii=False, indent=2), encoding="utf-8")
         feitos += 1
     print(f"pastas atualizadas: {feitos}")

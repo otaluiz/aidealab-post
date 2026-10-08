@@ -2,7 +2,7 @@
 Texturas por papel do slide, configuradas no tema.json:
   "textura_foto": {"hook": "halftone"}       só na foto (imagem e recorte), o texto fica limpo
   "textura_slide": {"cta": "cloth_letras", "slide3": "quadro"}   no slide inteiro, letras incluídas (PNG final);
-                                             slide3 só quando o slide 3 é só de texto (T2/T2c/T3 sem imagem)
+                                             slide3 só quando o slide 3 é T3 (texto em fundo escuro)
 - halftone: filtro_halftone.halftone (retícula de impresso)
 - cloth: trama de tecido assets/pano.png em soft-light 55% (a mesma da engine otalogia, --tex-pano)
 - cloth_letras: cloth + ±9% de luz/sombra dos fios, para a trama aparecer também nas letras brancas
