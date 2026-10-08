@@ -1,0 +1,74 @@
+{
+  "carousel_id": "orcamento-em-5-minutos",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-08",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 17,
+  "serie": "IA NO BALCÃO",
+  "tema": "ORÇAMENTO DEMORADO vira cliente perdido.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ORÇAMENTO DEMORADO vira cliente perdido."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "QUEM RESPONDE PRIMEIRO costuma levar."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "MONTE UMA BASE Seus serviços e preços Prazo padrão de cada um Forma de pagamento O que não está incluso"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA PREENCHE COM O PEDIDO do cliente."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "VOCÊ SÓ CONFERE Preço certo Prazo que dá pra cumprir Nome do cliente Validade do orçamento"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "E MANDA ANTES DO concorrente."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O MODELO DE ORÇAMENTO? Comenta ORÇAMENTO a aidealab te manda"
+    }
+  ],
+  "legenda": "Cliente pede orçamento em três lugares. Quem responde primeiro, com tudo claro, costuma levar.\n\nMonta uma base uma vez só: serviços, preços, prazos, pagamento e o que não está incluso. Na hora, cola a base e o pedido do cliente numa IA e pede o orçamento no seu modelo. Você confere preço, prazo e validade e manda.\n\nQuanto tempo você leva hoje pra mandar um orçamento?\n\nComenta ORÇAMENTO que a aidealab te manda o modelo.\n\n#vendas #iaparanegocios #pequenosnegocios #atendimento #aidealab",
+  "hashtags": [
+    "#vendas",
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#atendimento",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "ambos",
+  "pilar": "educacional",
+  "referencias": [
+    "soul-ref #02 (salto contra o céu)",
+    "soul-ref #25 (inclinado no banquinho)"
+  ]
+}
