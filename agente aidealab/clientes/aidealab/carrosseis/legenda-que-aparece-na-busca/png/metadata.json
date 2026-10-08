@@ -8,7 +8,7 @@
  "post_id": null,
  "ordem_fila": 0,
  "serie": "IA NO BALCÃO",
- "tema": "SEU POST NÃO APARECE NA BUSCA. culpa da legenda.",
+ "tema": "INVISÍVEL NA BUSCA? a culpa é da legenda.",
  "familia_cor": "navy-ciano",
  "template": "T1-T2-T3-T2-T3-T2c-T4",
  "formato": "1080x1440",
@@ -17,7 +17,7 @@
    "ordem": 1,
    "arquivo": "slide-01.png",
    "papel": "hook",
-   "texto": "SEU POST NÃO APARECE NA BUSCA. culpa da legenda."
+   "texto": "INVISÍVEL NA BUSCA? a culpa é da legenda."
   },
   {
    "ordem": 2,
@@ -66,5 +66,9 @@
  ],
  "handle": "@idea_lab7",
  "personagem": "ambos",
- "pilar": "educacional"
+ "pilar": "educacional",
+ "referencias": [
+  "soul-ref #17 (corredor branco)",
+  "soul-ref #42 (banco de perfil)"
+ ]
 }

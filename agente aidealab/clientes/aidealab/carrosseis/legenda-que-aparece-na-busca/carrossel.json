@@ -8,42 +8,42 @@
   {
    "template": "T1",
    "display": [
-    "SEU POST NÃO",
-    "APARECE NA BUSCA."
+    "INVISÍVEL",
+    "NA BUSCA?"
    ],
    "emocao": {
-    "texto": "culpa da [legenda].",
+    "texto": "a culpa é da [legenda].",
     "posicao": "depois"
    },
    "imagem": "capa_orig.png",
    "recorte": "capa_recorte.png",
    "sujeito": {
     "rostos": [],
-    "rostos_sujeito": [
-     [
-      269,
-      444,
-      629,
-      804
-     ]
-    ],
     "cabeca": [
-     291,
-     396,
-     572,
-     642
+     451,
+     795,
+     609,
+     1001
     ],
     "caixa": [
-     82,
-     406,
-     866,
+     365,
+     801,
+     741,
      1439
+    ],
+    "rostos_sujeito": [
+     [
+      451,
+      795,
+      609,
+      1001
+     ]
     ]
    },
    "bloco": {
-    "y": 230,
-    "alinhar": "esquerda",
-    "largura": 936,
+    "y": 530,
+    "alinhar": "centro",
+    "largura": 1020,
     "manual": true
    }
   },
@@ -150,36 +150,30 @@
     "texto": "a aidealab te manda"
    },
    "imagem": "cta_orig.png",
-   "recorte": "cta_recorte.png",
    "sujeito": {
+    "cabeca": [
+     360,
+     374,
+     566,
+     614
+    ],
     "rostos": [],
     "rostos_sujeito": [
      [
-      320,
-      365,
-      690,
-      735
+      360,
+      374,
+      566,
+      614
      ]
-    ],
-    "cabeca": [
-     337,
-     293,
-     663,
-     562
-    ],
-    "caixa": [
-     24,
-     303,
-     940,
-     1439
     ]
    },
    "bloco": {
-    "y": 150,
+    "y": 164,
     "alinhar": "esquerda",
-    "largura": 742,
+    "largura": 936,
     "manual": true
-   }
+   },
+   "recorte": "cta_recorte.png"
   }
  ]
 }

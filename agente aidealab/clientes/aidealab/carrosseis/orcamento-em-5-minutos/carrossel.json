@@ -16,36 +16,30 @@
     "posicao": "depois"
    },
    "imagem": "capa_orig.png",
-   "recorte": "capa_recorte.png",
    "sujeito": {
+    "cabeca": [
+     460,
+     600,
+     570,
+     730
+    ],
     "rostos": [],
     "rostos_sujeito": [
      [
-      360,
-      362,
-      701,
-      703
+      460,
+      600,
+      570,
+      730
      ]
-    ],
-    "cabeca": [
-     385,
-     351,
-     615,
-     607
-    ],
-    "caixa": [
-     175,
-     361,
-     868,
-     1439
     ]
    },
    "bloco": {
-    "y": 152,
-    "alinhar": "esquerda",
-    "largura": 720,
+    "y": 320,
+    "alinhar": "centro",
+    "largura": 1020,
     "manual": true
-   }
+   },
+   "recorte": "capa_recorte.png"
   },
   {
    "template": "T2",
@@ -57,20 +51,20 @@
     "texto": "costuma [levar].",
     "posicao": "depois"
    },
-   "imagem": "slide2_led.png",
+   "imagem": "slide2_led_led.png",
    "sujeito": {
     "rostos": [],
     "cabeca": [
-     679,
-     728,
+     682,
+     727,
      879,
      824
     ],
     "caixa": [
-     584,
-     732,
-     1043,
-     1137
+     637,
+     731,
+     1045,
+     1138
     ]
    },
    "bloco": {
@@ -142,32 +136,30 @@
     "texto": "a aidealab te manda"
    },
    "imagem": "cta_orig.png",
-   "recorte": "cta_recorte.png",
    "sujeito": {
-    "rostos": [],
-    "rostos_sujeito": [
+    "rostos": [
      [
-      422,
-      436,
-      654,
-      672
+      303,
+      395,
+      471,
+      563
      ]
     ],
     "cabeca": [
-     422,
-     436,
-     654,
-     672
+     285,
+     384,
+     451,
+     617
     ],
     "caixa": [
-     186,
-     445,
-     875,
-     1439
+     209,
+     393,
+     937,
+     1376
     ]
    },
    "bloco": {
-    "y": 150,
+    "y": 174,
     "alinhar": "esquerda",
     "largura": 936,
     "manual": true
