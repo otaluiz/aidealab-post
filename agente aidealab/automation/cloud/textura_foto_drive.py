@@ -36,17 +36,17 @@ def baixar(req):
     d = MediaIoBaseDownload(buf, req)
     done = False
     while not done:
-        _, done = d.next_chunk()
+        _, done = d.next_chunk(num_retries=5)
     return buf.getvalue()
 
 
 def arquivos(svc, pasta):
-    r = svc.files().list(q=f"'{pasta}' in parents and trashed = false", fields="files(id,name)", pageSize=200).execute()
+    r = svc.files().list(q=f"'{pasta}' in parents and trashed = false", fields="files(id,name)", pageSize=200).execute(num_retries=5)
     return {f["name"]: f["id"] for f in r["files"]}
 
 
 def limpa(svc, fid):
-    revs = svc.revisions().list(fileId=fid, fields="revisions(id,modifiedTime)", pageSize=200).execute().get("revisions", [])
+    revs = svc.revisions().list(fileId=fid, fields="revisions(id,modifiedTime)", pageSize=200).execute(num_retries=5).get("revisions", [])
     if not revs:
         return baixar(svc.files().get_media(fileId=fid))
     antes = [r for r in revs if r["modifiedTime"] < LIMPO]
@@ -112,8 +112,8 @@ def main():
         if DRY:
             continue
         for arq, f in novos.items():
-            svc.files().update(fileId=fs[arq], media_body=MediaFileUpload(str(f), mimetype="image/png")).execute()
-        svc.files().update(fileId=fs["metadata.json"], media_body=MediaFileUpload(str(mj), mimetype="application/json")).execute()
+            svc.files().update(fileId=fs[arq], media_body=MediaFileUpload(str(f), mimetype="image/png")).execute(num_retries=5)
+        svc.files().update(fileId=fs["metadata.json"], media_body=MediaFileUpload(str(mj), mimetype="application/json")).execute(num_retries=5)
         d = repo.get(meta.get("carousel_id"))
         if d:  # mesma imagem na fila do repo (a publicação lê de lá)
             for arq, f in novos.items():

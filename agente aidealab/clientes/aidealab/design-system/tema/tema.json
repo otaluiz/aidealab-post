@@ -21,7 +21,6 @@
     "hook": "halftone"
   },
   "textura_slide": {
-    "cta": "cloth_letras",
-    "slide3": "quadro"
+    "cta": "cloth_letras"
   }
 }

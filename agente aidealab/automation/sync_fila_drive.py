@@ -41,14 +41,8 @@ sys.path.insert(0, str(REPO / "motor"))
 TEMA = REPO / "agente aidealab" / "clientes" / "aidealab" / "design-system" / "tema" / "tema.json"
 
 
-def slide3_texto(meta):
-    """Slide 3 T3 (texto em fundo escuro; T2/T2c são papel), pelo "template" do metadata (ex.: "T1-T2-T3-T5-T2c-T2-T4")."""
-    t = (meta.get("template") or "").split("-")
-    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] == "T3"
-
-
 def aplicar_textura(d, meta):
-    """Texturas do hook (1º slide), do CTA (último) e do slide 3 só de texto conforme o tema: "textura_foto" só fora do texto (máscara) e
+    """Texturas do hook (1º slide) e do CTA (último) conforme o tema: "textura_foto" só fora do texto (máscara) e
     "textura_slide" no slide inteiro, letras incluídas. Idempotente: pula pasta com qualquer marca de textura
     ("textura_foto", "textura_slide" ou o legado "halftone"); as já marcadas são refeitas pelo workflow
     textura-foto-drive.yml, que parte da versão limpa no histórico do Drive."""
@@ -63,16 +57,13 @@ def aplicar_textura(d, meta):
         return False
     tema = ler(TEMA)
     foto, slide = tema.get("textura_foto") or {}, tema.get("textura_slide") or {}
-    alvos = [("hook", meta["slides"][0]), ("cta", meta["slides"][-1])]
-    if slide3_texto(meta):
-        alvos.append(("slide3", meta["slides"][2]))
-    for papel, s in alvos:
+    for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
         f = d / s["arquivo"]
         if foto.get(papel):
             aplicar_slide(Image.open(f), foto[papel]).save(f)
         if slide.get(papel):
             aplicar(Image.open(f), slide[papel]).save(f)
-    meta["textura_foto"], meta["textura_slide"], meta["slide3_t3"] = foto, slide, True
+    meta["textura_foto"], meta["textura_slide"] = foto, slide
     return True
 
 
