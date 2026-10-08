@@ -41,9 +41,9 @@
     ]
    },
    "bloco": {
-    "y": 150,
+    "y": 140,
     "alinhar": "esquerda",
-    "largura": 936,
+    "largura": 840,
     "manual": true
    }
   },

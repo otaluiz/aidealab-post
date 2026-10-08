@@ -54,7 +54,7 @@ writing skills mirror the rhythm and word choice of these, not a generic voice.
 Used by the illustration step (`lib.illustrate`) to keep every generated image
 on-brand via a pixel-exact overlay. All optional; leave blank to skip the overlay.
 
-- Handle to stamp on images: @aidealab7
+- Handle to stamp on images: @idea_lab7
 - Brand color (hex): navy/ciano (ver agente aidealab/clientes/aidealab/design-system/tokens.json)
 - Logo: (path or Pixfaro `logo_id`, if you have one)
 - Overlay position: (e.g. bottom-right)

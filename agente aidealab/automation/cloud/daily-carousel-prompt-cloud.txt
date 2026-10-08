@@ -92,7 +92,7 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   `skills/ig-hashtag-strategist/SKILL.md` (3 a 5). Revisão final de slides e legenda:
   `skills/ig-humanizer/SKILL.md` em modo audit, adaptando as regras para português. Ignore toda parte de
   publicação (Publora/Apify) e os passos de "esperar aprovação": aqui só se escreve. Hook até 10 palavras, sem número inventado; dado de notícia
-  leva a fonte na legenda. Handle `@aidealab7`.
+  leva a fonte na legenda. Handle `@idea_lab7`.
 - Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
   depois, no `png/metadata.json`, `status` = `"rascunho"` e `personagem` = `"luizota"`, `"wel"` ou `"ambos"`.
 
