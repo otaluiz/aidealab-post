@@ -1,0 +1,74 @@
+{
+  "carousel_id": "legenda-que-aparece-na-busca",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-08",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 20,
+  "serie": "IA NO BALCÃO",
+  "tema": "INVISÍVEL NA BUSCA? a culpa é da legenda.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "INVISÍVEL NA BUSCA? a culpa é da legenda."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O INSTAGRAM LÊ O TEXTO. não só a hashtag."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "ONDE ELE LÊ Primeira linha da legenda Texto escrito na imagem Nome do perfil Texto alternativo da foto"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ESCREVA O QUE O CLIENTE DIGITA. não o que você acha."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO ACHAR Digite seu serviço na lupa do Instagram Veja o que ele completa sozinho Use essas palavras na 1ª linha"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "HASHTAG? 3 A 5, e pronto."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER SUAS PALAVRAS-CHAVE? Comenta BUSCA a aidealab te manda"
+    }
+  ],
+  "legenda": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.\n\nO Instagram lê a primeira linha da legenda, o texto da imagem e o nome do perfil. Escreve \"bolo de pote em Cuiabá\", não \"delícias feitas com amor\". Pra achar as palavras, digita seu serviço na lupa e vê o que ele completa.\n\nQue palavra seu cliente digitaria pra te achar?\n\nComenta BUSCA que a aidealab te manda as palavras-chave do seu nicho.\n\n#instagramparanegocios #marketinglocal #pequenosnegocios #seo #aidealab",
+  "hashtags": [
+    "#instagramparanegocios",
+    "#marketinglocal",
+    "#pequenosnegocios",
+    "#seo",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "ambos",
+  "pilar": "educacional",
+  "referencias": [
+    "soul-ref #17 (corredor branco)",
+    "soul-ref #42 (banco de perfil)"
+  ]
+}

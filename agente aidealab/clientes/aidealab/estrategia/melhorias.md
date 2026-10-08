@@ -28,7 +28,7 @@ Marcar `[x]` quando resolver.
 - [x] Fila de publicação do repo (Dia16–25, 70 slides): rodapé trocado para `@idea_lab7` direto nos PNGs (sem as fotos-fonte; máscara gerada pelo próprio motor) e `handle` corrigido no metadata.
 - [x] Publicador repetia as hashtags quando a legenda já terminava com elas (Dia19, Dia21, whatsapp-ganhou-ia). Corrigido em `publish_next.py`.
 - [ ] As cópias desses 10 posts em `06-Aprovados-para-Postar/FILA` no Drive continuam com `@aidealab7` (quem publica é a fila do repo, então não afeta o post). Só importa se o `textura-foto-drive.yml` for rodado de novo com outra configuração de textura: ele recomeça das versões do Drive.
-- [ ] Fila tem 3 posts de serviços seguidos (Dia19–21). Intercalar com conteúdo útil (ex.: mover Dia22–25 para antes).
+- [x] Fila intercala personagem e banco automaticamente (`publish_next.py`); os 5 carrosséis com personagem entraram como Dia26–30 e separam os 3 de serviços.
 - [ ] Motor antigo (`skills/criar-post/templates/render-engine`) só é usado pela rotina local do Windows (`run-daily-carousel.ps1`). Desligar essa tarefa no Agendador para não gerar carrossel fora da pauta nova.
 - [ ] perfil-google-parado, slide 7: a linha "a aidealab revisa com você" cai sobre a camiseta clara e perde contraste. Melhorar na engine: fundo/halo automático no texto de apoio do CTA quando a área for clara.
 - [ ] Capa: o título atrás da cabeça só funciona com folga acima do personagem. A rotina já pede "generous headroom"; quando o `compor.py` não achar espaço, refazer a foto (custou 1 regeração no whatsapp-ganhou-ia).
