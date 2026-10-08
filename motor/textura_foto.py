@@ -1,16 +1,18 @@
 """
 Texturas por papel do slide, configuradas no tema.json:
   "textura_foto": {"hook": "halftone"}       só na foto (imagem e recorte), o texto fica limpo
-  "textura_slide": {"cta": "cloth_letras"}   no slide inteiro, letras incluídas (aplicada no PNG final)
+  "textura_slide": {"cta": "cloth_letras", "slide3": "quadro"}   no slide inteiro, letras incluídas (PNG final);
+                                             slide3 só quando o slide 3 é só de texto (T2/T2c/T3 sem imagem)
 - halftone: filtro_halftone.halftone (retícula de impresso)
 - cloth: trama de tecido assets/pano.png em soft-light 55% (a mesma da engine otalogia, --tex-pano)
 - cloth_letras: cloth + ±9% de luz/sombra dos fios, para a trama aparecer também nas letras brancas
+- quadro: quadro-negro na cor da marca (filtro_quadro.quadro)
 
 O render.py aplica na `imagem` e no `recorte` (alfa preservado) antes de desenhar o texto.
 Para slides já renderizados (fila/Drive, sem as fotos de origem), `aplicar_slide` protege o texto com uma máscara
 de cor + forma (branco, ciano quente, pílula do CTA) e texturiza o resto.
 
-Uso: python textura_foto.py <halftone|cloth|cloth_letras> <entrada> [saida] [--slide]   (--slide = só fora do texto)
+Uso: python textura_foto.py <halftone|cloth|cloth_letras|quadro> <entrada> [saida] [--slide]   (--slide = só fora do texto)
 """
 import sys
 from pathlib import Path
@@ -20,6 +22,7 @@ from PIL import Image
 from scipy import ndimage
 
 from filtro_halftone import halftone
+from filtro_quadro import quadro
 
 PANO = Path(__file__).resolve().parent / "assets" / "pano.png"
 
@@ -40,7 +43,7 @@ def cloth_letras(im):
     return Image.fromarray(((t * (1 + 0.09 * p)[..., None]).clip(0, 1) * 255).astype("uint8"))
 
 
-FILTROS = {"halftone": halftone, "cloth": cloth, "cloth_letras": cloth_letras}
+FILTROS = {"halftone": halftone, "cloth": cloth, "cloth_letras": cloth_letras, "quadro": quadro}
 
 
 def aplicar(im, tipo):

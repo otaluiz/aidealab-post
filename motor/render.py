@@ -118,6 +118,9 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     # tema "textura_slide" {"hook"/"cta": tipo}: textura no slide inteiro, letras incluídas
     tsl = {1: tema.get("textura_slide", {}).get("hook"), n: tema.get("textura_slide", {}).get("cta")}
+    s3 = data["slides"][2] if n > 3 else {}
+    if s3.get("template") in ("T2", "T2c", "T3") and not s3.get("imagem"):  # slide 3 só de texto
+        tsl[3] = tema.get("textura_slide", {}).get("slide3")
     for i, b in enumerate(shots, 1):
         png = out_dir / f"slide-{i:02d}.png"
         png.write_bytes(b)

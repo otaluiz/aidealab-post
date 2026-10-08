@@ -1,4 +1,4 @@
-"""Refaz as texturas do hook e do CTA nas pastas de 06-Aprovados-para-Postar/FILA e de 04-Carrosseis (aidealab).
+"""Refaz as texturas do hook, do CTA e do slide 3 (só de texto) nas pastas de 06-Aprovados-para-Postar/FILA e de 04-Carrosseis (aidealab).
 
 Para workflow textura-foto-drive.yml (GitHub Actions, credenciais do Drive nos secrets). Aplica a configuração atual
 do tema ("textura_foto" só fora do texto, "textura_slide" no slide inteiro) sempre a partir da versão LIMPA de cada
@@ -54,6 +54,11 @@ def limpa(svc, fid):
     return baixar(svc.revisions().get_media(fileId=fid, revisionId=r["id"]))
 
 
+def slide3_texto(meta):
+    t = (meta.get("template") or "").split("-")
+    return len(meta.get("slides", [])) > 3 and len(t) > 2 and t[2] in ("T2", "T2c", "T3")
+
+
 def main():
     svc = get_service()
     tema = json.loads(TEMA.read_text(encoding="utf-8"))
@@ -75,7 +80,10 @@ def main():
         if meta.get("textura_foto") == foto and meta.get("textura_slide") == slide and not meta.get("halftone"):
             continue
         novos = {}
-        for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
+        alvos = [("hook", meta["slides"][0]), ("cta", meta["slides"][-1])]
+        if slide3_texto(meta):
+            alvos.append(("slide3", meta["slides"][2]))
+        for papel, s in alvos:
             arq = s["arquivo"]
             if arq not in fs:
                 continue
