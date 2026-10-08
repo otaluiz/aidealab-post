@@ -69,6 +69,7 @@
     "hook": "halftone"
   },
   "textura_slide": {
-    "cta": "cloth_letras"
+    "cta": "cloth_letras",
+    "slide3": "quadro"
   }
 }
