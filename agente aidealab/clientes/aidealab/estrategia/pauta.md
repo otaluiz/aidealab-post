@@ -3,6 +3,9 @@
 Fonte de verdade editorial da rotina "aidealab - carrossel diário 8h". Plano completo e
 justificativas em `plano-instagram-2026-10.md` (mesma pasta). Revisar a cada 14 dias.
 
+**Campanha ativa (13/10 a 11/11/2026): "IA no Balcão"** — ver `campanha-seguidores.md`. Nesse período
+use `meta.serie` = "IA NO BALCÃO" e siga o foco da semana do calendário da campanha. Pendências em `melhorias.md`.
+
 ## Para quem
 Dono(a) de pequeno negócio sem time de marketing (loja, clínica, serviço local, MEI) que
 responde cliente no WhatsApp e quer vender mais sem virar técnico. Nunca falar com designer
@@ -27,7 +30,7 @@ passo a passo, sem hype.
 - **Saiu hoje** — novidade da semana (Meta, Google, WhatsApp, Instagram, ChatGPT/Gemini/Claude) e o que fazer com ela.
 
 ## Banco de temas (usar quando a tendência do dia não servir; riscar ao usar)
-- [ ] WhatsApp Business com IA: 5 coisas para arrumar antes de ligar
+- [x] WhatsApp Business com IA: 5 coisas para arrumar antes de ligar (whatsapp-ganhou-ia)
 - [ ] Mito ou verdade: 5 frases sobre IA no pequeno negócio
 - [ ] O Google agora responde por você: seu negócio aparece?
 - [ ] A semana de conteúdo em 1 hora com IA (você reescreve a 1ª frase)

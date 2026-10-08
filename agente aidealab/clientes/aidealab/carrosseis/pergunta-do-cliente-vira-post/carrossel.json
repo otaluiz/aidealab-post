@@ -40,9 +40,10 @@
    },
    "recorte": "capa_recorte.png",
    "bloco": {
-    "y": 190,
+    "y": 140,
     "alinhar": "esquerda",
-    "largura": 936
+    "largura": 620,
+    "manual": true
    }
   },
   {

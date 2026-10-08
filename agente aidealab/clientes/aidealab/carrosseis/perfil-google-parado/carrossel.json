@@ -41,9 +41,10 @@
     ]
    },
    "bloco": {
-    "y": 370,
+    "y": 190,
     "alinhar": "esquerda",
-    "largura": 720
+    "largura": 720,
+    "manual": true
    }
   },
   {
@@ -57,26 +58,11 @@
     "posicao": "depois"
    },
    "imagem": "slide2_led.png",
-   "recorte": "slide2_recorte.png",
-   "sujeito": {
-    "rostos": [],
-    "cabeca": [
-     332,
-     390,
-     747,
-     543
-    ],
-    "caixa": [
-     336,
-     396,
-     745,
-     1039
-    ]
-   },
    "bloco": {
-    "y": 310,
+    "y": 190,
     "alinhar": "esquerda",
-    "largura": 720
+    "largura": 720,
+    "manual": true
    }
   },
   {
@@ -158,9 +144,10 @@
     ]
    },
    "bloco": {
-    "y": 310,
+    "y": 180,
     "alinhar": "esquerda",
-    "largura": 936
+    "largura": 936,
+    "manual": true
    }
   }
  ]
