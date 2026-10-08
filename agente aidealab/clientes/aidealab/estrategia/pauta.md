@@ -51,7 +51,9 @@ passo a passo, sem hype.
 
 ## Como usar os dados diários
 - `automation/cloud/estado-instagram.json`: `top5` mostra o tipo de gancho e o tema que
-  mais gerou envio/salvamento/seguidor por alcance → repetir a forma, não o tema.
+  mais gerou envio/salvamento/seguidor por alcance → repetir a forma, não o tema. Base 08/10: o que mais rendeu foi frase de contraste
+  ("X não é só Y. É Z.") e entrega prática aberta ("Dois prompts. Abertos."); o pior foi abertura
+  genérica de agência e tema de história do design.
   `piores5` → evitar a forma. Se tiver `erro`, ignore e siga a pauta.
 - `automation/cloud/estado-tendencias.json`: notícias das últimas 48h do nicho. Escolha
   só o que muda algo prático para o pequeno negócio. Ignore política, esporte, crime,

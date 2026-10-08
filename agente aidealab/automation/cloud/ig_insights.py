@@ -18,6 +18,7 @@ OUT = Path(__file__).with_name("estado-instagram.json")
 TOKEN = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "")
 IG_ID = os.environ.get("INSTAGRAM_BUSINESS_ACCOUNT_ID", "")
 # Métricas por post, da mais completa para a mínima (a API recusa o pedido inteiro se uma não existir).
+MIN_REACH = 30
 MEDIA_METRICS = ["reach,saved,shares,views,total_interactions,follows,profile_visits", "reach,saved,shares,total_interactions", "reach,saved"]
 
 
@@ -80,9 +81,13 @@ def main():
                 p["score"] = score(p)
                 posts.append(p)
             estado["posts"] = posts
-            ranqueados = sorted((p for p in posts if p["score"] is not None), key=lambda p: p["score"], reverse=True)
-            estado["top5"] = [{k: p[k] for k in ("data", "tipo", "gancho", "score")} for p in ranqueados[:5]]
-            estado["piores5"] = [{k: p[k] for k in ("data", "tipo", "gancho", "score")} for p in ranqueados[-5:]]
+            # Alcance muito baixo deixa o score aleatório (3 curtidas em 12 contas = 25%); só ranqueia com amostra mínima.
+            validos = [p for p in posts if p["score"] is not None and p["insights"].get("reach", 0) >= MIN_REACH]
+            if len(validos) < 6:
+                validos = [p for p in posts if p["score"] is not None]
+            ranqueados = sorted(validos, key=lambda p: p["score"], reverse=True)
+            estado["top5"] = [{k: p[k] for k in ("data", "tipo", "gancho", "score")} | {"alcance": p["insights"].get("reach")} for p in ranqueados[:5]]
+            estado["piores5"] = [{k: p[k] for k in ("data", "tipo", "gancho", "score")} | {"alcance": p["insights"].get("reach")} for p in ranqueados[-5:]]
         except Exception as e:  # noqa: BLE001 — o workflow não pode quebrar por isso
             estado["erro"] = str(e)
     OUT.write_text(json.dumps(estado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

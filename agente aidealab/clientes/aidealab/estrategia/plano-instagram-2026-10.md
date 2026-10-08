@@ -4,12 +4,36 @@ Feito com a skill `instagram-skills` (`.claude/skills/instagram-skills`):
 `ig-profile-optimizer`, `ig-audience-insights`, `ig-content-planner`,
 `ig-carousel-planner`, `ig-hashtag-strategist`.
 
-> **Limite desta análise:** o Instagram bloqueou a leitura pública do perfil
-> (HTTP 401/429 sem login) e não há `APIFY_TOKEN` nem Insights no ambiente.
-> O diagnóstico usa o que já foi publicado/agendado (fila em
-> `skills/post-instagram/queue`, legendas em `clientes/aidealab/carrosseis`).
-> Números de seguidores/alcance **não** foram inventados. Para fechar a leitura
-> com dados reais, ver a seção 7.
+> **Dados reais** (Graph API, 08/10/2026, `automation/cloud/estado-instagram.json`, atualizado
+> todo dia às 7h30 BRT pelo `entregar.yml`).
+
+### Números do perfil
+| Métrica | Valor |
+|---|---|
+| Seguidores / seguindo / posts | **443** / 215 / 22 |
+| Alcance da conta (28 dias) | **342 contas** (menos que a base de seguidores) |
+| Visitas ao perfil (28d) | 102 |
+| Cliques no link (28d) | 3 |
+| Contas engajadas (28d) | 27 |
+| Posts desde 21/09 (15) | alcance 12–79 · **0 salvamentos · 0 envios (só 1) · 0 seguidores ganhos** |
+| Reels antigos (2025) | alcance **254–493**, o maior do perfil; um teve 7 envios |
+
+**Leitura:** o conteúdo novo não sai da bolha. Alcance de 12–20 contas por carrossel significa que nem
+os seguidores estão vendo, e ninguém de fora. Sem salvamento e sem envio, o algoritmo não tem motivo
+para distribuir. Os únicos posts que passaram de 150 contas foram Reels e posts antigos de 2025.
+
+**O que funcionou melhor no recorte recente (alcance ≥ 30):**
+1. "Marketing não é só aparecer. É saber onde, como e por que aparecer." — 65 contas, 4 comentários (frase de contraste, imagem única).
+2. "Dois prompts. Abertos. Linha por linha." — 70 contas, 152 views (isca de DM / entrega prática).
+3. "Site, marca, peça gráfica ou motion..." — 79 contas, 1 envio, 3 visitas ao perfil.
+
+**O que foi pior:** abertura genérica de agência ("Entra: processo manual...", "Oi! Vi seu perfil..."),
+série de história do design (alcance 15–22: interessa a designer, não ao cliente).
+
+**Perfil hoje:**
+- NAME: `AIdea Lab 🤖` → sem palavra-chave buscável.
+- Bio: `✨ Marketing & Soluções com IA / 🚀 Mais vendas, menos esforço / 🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia / 📩 Consultoria Gratuita👇` → lista de serviços com 5 emojis, não diz para quem é.
+- 3 cliques no link em 28 dias: o link não está convertendo.
 
 ---
 
@@ -40,15 +64,15 @@ Feito com a skill `instagram-skills` (`.claude/skills/instagram-skills`):
 
 ## 2. Perfil (ig-profile-optimizer)
 
-Validar cada item no app; o que não deu para ver está marcado "conferir".
+Itens visuais (foto, destaques, fixados) conferir no app.
 
 | Parte | Status | Ação |
 |---|---|---|
 | Foto | conferir | Logo legível em 110px ou rosto do Luiz com fundo liso. Alto contraste. |
-| NAME (30) | provável falha | `aidealab · IA pro seu negócio` (29) |
+| NAME (30) | falha (`AIdea Lab 🤖`) | `aidealab · IA pro seu negócio` (29) |
 | @handle | precisa melhorar | Se `@aidealab` estiver livre, migrar. Senão manter e reforçar no NAME. |
-| Bio (150) | reescrever | ver abaixo |
-| Link | conferir | Um link: diagnóstico grátis / WhatsApp. Não a home. |
+| Bio (150) | falha (lista de serviços, 5 emojis) | ver abaixo |
+| Link | falha (3 cliques/28d) | Um link: diagnóstico grátis / WhatsApp. Não a home. |
 | Categoria | conferir | "Agência de marketing" ou "Serviço de consultoria empresarial" |
 | Destaques | criar | **Comece aqui · Antes/depois · IA no zap · Dúvidas · Fale com a gente** |
 | Grid 9 | falha | Arquivar ou mover para baixo os posts de design puro; manter 9 do nicho novo no topo |
@@ -74,7 +98,8 @@ Posts toda semana com o passo a passo.
 
 ## 3. Plano para ganhar seguidores (90 dias)
 
-**Meta de processo** (controlável): 5 posts/semana + stories diários + 30 min/dia de interação. Meta de resultado só depois de 2 semanas de Insights reais (seção 7).
+**Meta de processo:** 5 posts/semana + stories diários + 30 min/dia de interação.
+**Metas de resultado (base 08/10):** alcance 28d de 342 → 1.500 em 30 dias; primeiro post com 5+ salvamentos; 10+ seguidores/semana; cliques no link de 3 → 20/mês.
 
 ### Mix semanal (ig-content-planner)
 | Dia | Formato | Pilar | Objetivo |
@@ -196,16 +221,13 @@ Legenda: `O WhatsApp Business agora responde cliente com IA. Mas ela só sabe o 
 
 ---
 
-## 7. Fechar a análise com dados reais
+## 7. Acompanhamento automático
 
-1. **Apify (recomendado pela skill):** criar token grátis em console.apify.com, adicionar `APIFY_TOKEN` nas variáveis do ambiente e rodar `ig-audience-insights` para:
-   - `fetch_profile("idea_lab7")` → seguidores, posts, bio atual;
-   - `fetch_niche_posts` em `#iaparanegocios`, `#pequenosnegocios`, `#whatsappbusiness` → padrões que estão performando agora;
-   - 3 concorrentes do nicho para benchmark.
-2. **Insights do próprio perfil** (já existe token da Graph API na skill `post-instagram`): exportar alcance de não-seguidores, envios e salvamentos por post dos últimos 30 dias. Isso diz quais dos 25 posts repetir.
-3. Revisar este plano em 14 dias com esses números.
-
----
+- `automation/cloud/ig_insights.py` grava o perfil e o desempenho dos últimos 40 posts em
+  `estado-instagram.json` todo dia (7h30 BRT). O ranking `top5`/`piores5` só usa posts com alcance ≥ 30.
+- `automation/cloud/tendencias.py` grava as notícias do nicho das últimas 48h em `estado-tendencias.json`.
+- A rotina de carrossel das 8h lê os dois + `pauta.md` para escolher o tema e escreve com a `instagram-skills`.
+- Revisar metas em 22/10 comparando `conta_28d` com a base acima.
 
 ### Fontes
 - [Forbes — WhatsApp Business lança IA agêntica para PMEs](https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/)
