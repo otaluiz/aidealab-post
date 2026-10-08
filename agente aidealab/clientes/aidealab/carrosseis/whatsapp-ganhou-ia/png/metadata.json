@@ -1,0 +1,71 @@
+{
+ "carousel_id": "whatsapp-ganhou-ia",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-08",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "SAIU HOJE",
+ "tema": "O WHATSAPP GANHOU IA. arruma isso antes de ligar.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "O WHATSAPP GANHOU IA. arruma isso antes de ligar."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "ELA RESPONDE COM O QUE você ensinou."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "ANTES DE LIGAR Catálogo com preço e foto Horário e endereço certos As perguntas que mais chegam, com a sua resposta A regra de quando passa pra você"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "ONDE FICA: FERRAMENTAS, ia para empresas."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE FICA COM VOCÊ Desconto e negociação Reclamação Pedido grande Cliente que pede pra falar com gente"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "TESTA DE OUTRO NÚMERO ANTES de liberar."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER O MODELO DAS PERGUNTAS? Comenta ZAP a aidealab te manda"
+  }
+ ],
+ "legenda": "O WhatsApp Business agora tem IA que responde cliente. Só que ela responde com o que você ensinou.\n\nFica em Ferramentas, IA para Empresas, e pede o app em português e pelo menos um item no catálogo (segundo a Forbes Brasil). Antes de ligar, arruma o catálogo com preço, o horário certo, as perguntas que mais chegam com a sua resposta e a regra de quando a conversa passa pra você. Depois testa de outro número.\n\nQual pergunta seu cliente mais faz no zap?\n\nComenta ZAP que a aidealab te manda o modelo das perguntas.\n\n#whatsappbusiness #iaparanegocios #pequenosnegocios #atendimento #aidealab",
+ "hashtags": [
+  "#whatsappbusiness",
+  "#iaparanegocios",
+  "#pequenosnegocios",
+  "#atendimento",
+  "#aidealab"
+ ],
+ "handle": "@aidealab7",
+ "personagem": "wel",
+ "pilar": "tendência",
+ "fonte_tendencia": "https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/"
+}
