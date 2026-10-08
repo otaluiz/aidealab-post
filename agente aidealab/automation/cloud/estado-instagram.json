@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-08T01:41:36+00:00",
+  "atualizado_em": "2026-10-08T01:43:25+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
@@ -389,34 +389,39 @@
   ],
   "top5": [
     {
-      "data": "2026-09-29",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Chegamos no fim: flat design e o estilo de agora, tipo grande cortado na borda. Onze estilos, uma linha do tempo, uma marca que sabe transit",
-      "score": 46.67
-    },
-    {
-      "data": "2026-10-06",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Branding não é logo bonito. É você sendo escolhido sem precisar explicar preço.",
-      "score": 46.15
-    },
-    {
       "data": "2026-09-25",
       "tipo": "IMAGE",
       "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
-      "score": 33.85
+      "score": 33.85,
+      "alcance": 65
     },
     {
-      "data": "2026-09-24",
+      "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Tem estilo que cria regra e estilo que existe só pra quebrar ela. Suíço, pós-modernismo e brutalismo — a grade, a rebeldia e a estrutura cru",
-      "score": 31.82
+      "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
+      "score": 22.86,
+      "alcance": 70
     },
     {
-      "data": "2026-09-22",
+      "data": "2026-09-21",
+      "tipo": "IMAGE",
+      "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
+      "score": 21.52,
+      "alcance": 79
+    },
+    {
+      "data": "2025-02-21",
       "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Todo layout que você usa hoje descende de alguma dessas três escolas. A gente abriu os onze estilos que sustentam o design gráfico moderno —",
-      "score": 29.41
+      "gancho": "🧠✨ Desperte o poder da sua mente! Os gatilhos mentais são ferramentas incríveis que podem impulsionar suas vendas e engajamento. Conheça os ",
+      "score": 18.56,
+      "alcance": 194
+    },
+    {
+      "data": "2025-02-26",
+      "tipo": "IMAGE",
+      "gancho": "🚦 Impulsione seus resultados com um sistema de gestão de tráfego eficiente! Aprenda como otimizar suas campanhas e aumentar suas conversões.",
+      "score": 16.29,
+      "alcance": 178
     }
   ],
   "piores5": [
@@ -424,31 +429,36 @@
       "data": "2026-10-01",
       "tipo": "IMAGE",
       "gancho": "\"Oi! Vi seu perfil e acho que posso te ajudar\" — nunca respondido. Se seu direct parece com isso, o problema não é falta de esforço, é falta",
-      "score": 11.43
+      "score": 11.43,
+      "alcance": 35
     },
     {
       "data": "2025-04-16",
       "tipo": "REELS",
       "gancho": "Da ideia à tela! 🎬✨ Na Idea Lab Marketing, adoramos transformar a essência dos nossos clientes em vídeos que conectam e informam.",
-      "score": 9.84
+      "score": 9.84,
+      "alcance": 254
     },
     {
       "data": "2026-09-26",
       "tipo": "IMAGE",
       "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
-      "score": 9.38
+      "score": 9.38,
+      "alcance": 32
     },
     {
       "data": "2025-01-24",
       "tipo": "REELS",
       "gancho": "",
-      "score": 7.89
+      "score": 7.89,
+      "alcance": 469
     },
     {
       "data": "2025-09-20",
       "tipo": "REELS",
       "gancho": "🎥✨ Campo Novo do Parecis está vivendo a emoção do Ranch Sorting e a @aidealab está presente com tecnologia de ponta, garantindo uma transmis",
-      "score": 5.48
+      "score": 5.48,
+      "alcance": 493
     }
   ]
 }
