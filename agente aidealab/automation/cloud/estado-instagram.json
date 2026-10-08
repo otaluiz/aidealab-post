@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-10-08T02:17:48+00:00",
+  "atualizado_em": "2026-10-08T17:24:08+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 443,
+    "followers_count": 442,
     "follows_count": 215,
-    "media_count": 22,
+    "media_count": 23,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -18,22 +18,40 @@
   },
   "posts": [
     {
+      "data": "2026-10-08",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Marketing sem estratégia é só barulho caro.",
+      "link": "https://www.instagram.com/p/DeOz2bCE6Dj/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 7,
+        "saved": 0,
+        "shares": 0,
+        "views": 16,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 3
+      },
+      "score": 57.14
+    },
+    {
       "data": "2026-10-07",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Marca consistente não é medo de mudar. É gente reconhecendo você pela primeira peça, antes de ler o nome.",
       "link": "https://www.instagram.com/p/DeMNF7ZmBHE/",
-      "likes": 3,
+      "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 12,
+        "reach": 13,
         "saved": 0,
         "shares": 0,
-        "views": 39,
-        "total_interactions": 3,
+        "views": 41,
+        "total_interactions": 4,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 25.0
+      "score": 30.77
     },
     {
       "data": "2026-10-06",
@@ -79,15 +97,15 @@
       "likes": 16,
       "comments": 0,
       "insights": {
-        "reach": 70,
+        "reach": 71,
         "saved": 0,
         "shares": 0,
-        "views": 152,
+        "views": 156,
         "total_interactions": 19,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 22.86
+      "score": 22.54
     },
     {
       "data": "2026-10-03",
@@ -399,8 +417,8 @@
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
-      "score": 22.86,
-      "alcance": 70
+      "score": 22.54,
+      "alcance": 71
     },
     {
       "data": "2026-09-21",
