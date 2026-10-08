@@ -1,14 +1,16 @@
 """
-Texturas aplicadas SÓ na foto (o texto do motor fica limpo), por papel do slide, configuradas no tema.json:
-  "textura_foto": {"hook": "halftone", "cta": "cloth"}
+Texturas por papel do slide, configuradas no tema.json:
+  "textura_foto": {"hook": "halftone"}       só na foto (imagem e recorte), o texto fica limpo
+  "textura_slide": {"cta": "cloth_letras"}   no slide inteiro, letras incluídas (aplicada no PNG final)
 - halftone: filtro_halftone.halftone (retícula de impresso)
 - cloth: trama de tecido assets/pano.png em soft-light 55% (a mesma da engine otalogia, --tex-pano)
+- cloth_letras: cloth + ±9% de luz/sombra dos fios, para a trama aparecer também nas letras brancas
 
 O render.py aplica na `imagem` e no `recorte` (alfa preservado) antes de desenhar o texto.
 Para slides já renderizados (fila/Drive, sem as fotos de origem), `aplicar_slide` protege o texto com uma máscara
 de cor + forma (branco, ciano quente, pílula do CTA) e texturiza o resto.
 
-Uso: python textura_foto.py <halftone|cloth> <entrada> [saida] [--slide]   (--slide = PNG final com texto)
+Uso: python textura_foto.py <halftone|cloth|cloth_letras> <entrada> [saida] [--slide]   (--slide = só fora do texto)
 """
 import sys
 from pathlib import Path
@@ -30,7 +32,15 @@ def cloth(im, opac=0.55):
     return Image.fromarray(((b + opac * (sl - b)).clip(0, 1) * 255).astype("uint8"))
 
 
-FILTROS = {"halftone": halftone, "cloth": cloth}
+def cloth_letras(im):
+    """cloth + luz/sombra dos fios (±9%), para a trama marcar também o branco das letras (soft-light não muda o branco)."""
+    t = np.asarray(cloth(im)).astype(float) / 255
+    p = np.asarray(Image.open(PANO).convert("L").resize(im.size, Image.BILINEAR)).astype(float) / 255
+    p = (p - p.mean()) / max(p.std(), 1e-6)
+    return Image.fromarray(((t * (1 + 0.09 * p)[..., None]).clip(0, 1) * 255).astype("uint8"))
+
+
+FILTROS = {"halftone": halftone, "cloth": cloth, "cloth_letras": cloth_letras}
 
 
 def aplicar(im, tipo):

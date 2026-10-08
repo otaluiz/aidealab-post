@@ -42,23 +42,28 @@ TEMA = REPO / "agente aidealab" / "clientes" / "aidealab" / "design-system" / "t
 
 
 def aplicar_textura(d, meta):
-    """Textura só na foto do hook (1º slide) e do CTA (último), conforme "textura_foto" do tema (o texto fica limpo).
-    Idempotente via meta["textura_foto"]. Pastas com o legado meta["halftone"] (slide inteiro) ficam para o workflow
-    textura-foto-drive.yml, que recupera a versão limpa no histórico do Drive."""
-    if meta.get("textura_foto") or meta.get("halftone") or meta.get("postado") \
+    """Texturas do hook (1º slide) e do CTA (último) conforme o tema: "textura_foto" só fora do texto (máscara) e
+    "textura_slide" no slide inteiro, letras incluídas. Idempotente: pula pasta com qualquer marca de textura
+    ("textura_foto", "textura_slide" ou o legado "halftone"); as já marcadas são refeitas pelo workflow
+    textura-foto-drive.yml, que parte da versão limpa no histórico do Drive."""
+    if meta.get("textura_foto") or meta.get("textura_slide") or meta.get("halftone") or meta.get("postado") \
             or meta.get("cliente", "aidealab") != "aidealab" or not meta.get("slides"):
         return False
     from PIL import Image
     try:
-        from textura_foto import aplicar_slide
+        from textura_foto import aplicar, aplicar_slide
     except ImportError as e:  # scipy ausente no PC: não quebra a sincronização
         print(f"AVISO    textura pulada ({e}); instale: pip install scipy")
         return False
-    cfg = ler(TEMA).get("textura_foto") or {}
+    tema = ler(TEMA)
+    foto, slide = tema.get("textura_foto") or {}, tema.get("textura_slide") or {}
     for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
-        if cfg.get(papel):
-            aplicar_slide(Image.open(d / s["arquivo"]), cfg[papel]).save(d / s["arquivo"])
-    meta["textura_foto"] = cfg
+        f = d / s["arquivo"]
+        if foto.get(papel):
+            aplicar_slide(Image.open(f), foto[papel]).save(f)
+        if slide.get(papel):
+            aplicar(Image.open(f), slide[papel]).save(f)
+    meta["textura_foto"], meta["textura_slide"] = foto, slide
     return True
 
 

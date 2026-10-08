@@ -116,9 +116,13 @@ def main():
             browser.close()
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    # tema "textura_slide" {"hook"/"cta": tipo}: textura no slide inteiro, letras incluídas
+    tsl = {1: tema.get("textura_slide", {}).get("hook"), n: tema.get("textura_slide", {}).get("cta")}
     for i, b in enumerate(shots, 1):
         png = out_dir / f"slide-{i:02d}.png"
         png.write_bytes(b)
+        if tsl.get(i):
+            aplicar(Image.open(png), tsl[i]).save(png)
         pngs.append(png)
     for png in pngs:
         assert Image.open(png).size == (W, H), f"{png} fora de {W}x{H}"

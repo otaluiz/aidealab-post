@@ -1,21 +1,17 @@
-"""Refaz a textura do hook e do CTA nas pastas de 06-Aprovados-para-Postar/FILA e de 04-Carrosseis (aidealab), só na foto.
+"""Refaz as texturas do hook e do CTA nas pastas de 06-Aprovados-para-Postar/FILA e de 04-Carrosseis (aidealab).
 
-Para workflow textura-foto-drive.yml (GitHub Actions, credenciais do Drive nos secrets). Por pasta:
-- metadata com "textura_foto" -> já feita, pula.
-- metadata com o legado "halftone": true (halftone no slide inteiro, texto junto) -> baixa do histórico do Drive a
-  última revisão do 1º e do último slide de antes da marca (modifiedTime do metadata.json - 5 min = versão limpa).
-- sem marca -> usa o arquivo atual.
-Rascunho de 04 que existe em clientes/aidealab/carrosseis/<slug>/png (renderizado com a textura_foto) sobe o PNG do
-repo. Senão aplica textura_foto.aplicar_slide (texto protegido por máscara) conforme "textura_foto" do tema, sobe como nova
-revisão do mesmo arquivo e grava "textura_foto" no metadata. A mesma imagem vai para a cópia na fila do repo
-(queue/FILA-SEMANA-1/02-carrossel/*, casada por carousel_id), que o workflow commita.
+Para workflow textura-foto-drive.yml (GitHub Actions, credenciais do Drive nos secrets). Aplica a configuração atual
+do tema ("textura_foto" só fora do texto, "textura_slide" no slide inteiro) sempre a partir da versão LIMPA de cada
+slide: a última revisão do Drive de antes de LIMPO (antes de qualquer textura) ou, se o arquivo é mais novo, a
+primeira revisão. Rascunho de 04 que existe em clientes/aidealab/carrosseis/<slug>/png sobe o PNG do repo (já
+renderizado com as texturas). Pula pasta cujo metadata já tem a configuração atual. Sobe como nova revisão do mesmo
+arquivo, grava as marcas no metadata e copia para a fila do repo (casada por carousel_id), que o workflow commita.
 Uso: textura_foto_drive.py [--dry-run]
 """
 import io
 import json
 import sys
 import tempfile
-from datetime import datetime, timedelta
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
@@ -25,9 +21,10 @@ sys.path.insert(0, str(REPO / "motor"))
 from drive_helper import get_service  # noqa: E402
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload  # noqa: E402
 from PIL import Image  # noqa: E402
-from textura_foto import aplicar_slide  # noqa: E402
+from textura_foto import aplicar, aplicar_slide  # noqa: E402
 from upload_carrosseis import achar, filhos  # noqa: E402
 
+LIMPO = "2026-10-06T18:45:00Z"  # 1º commit de textura: revisões de antes disso são os slides limpos
 TEMA = REPO / "agente aidealab" / "clientes" / "aidealab" / "design-system" / "tema" / "tema.json"
 RAIZ = REPO / "agente aidealab" / "clientes" / "aidealab" / "carrosseis"
 QUEUE = REPO / "agente aidealab" / "skills" / "post-instagram" / "queue"
@@ -48,17 +45,19 @@ def arquivos(svc, pasta):
     return {f["name"]: f["id"] for f in r["files"]}
 
 
-def limpa(svc, fid, corte):
+def limpa(svc, fid):
     revs = svc.revisions().list(fileId=fid, fields="revisions(id,modifiedTime)", pageSize=200).execute().get("revisions", [])
-    antes = [r for r in revs if r["modifiedTime"] < corte]
-    if not antes:
-        return None
-    return baixar(svc.revisions().get_media(fileId=fid, revisionId=max(antes, key=lambda r: r["modifiedTime"])["id"]))
+    if not revs:
+        return baixar(svc.files().get_media(fileId=fid))
+    antes = [r for r in revs if r["modifiedTime"] < LIMPO]
+    r = max(antes, key=lambda r: r["modifiedTime"]) if antes else min(revs, key=lambda r: r["modifiedTime"])
+    return baixar(svc.revisions().get_media(fileId=fid, revisionId=r["id"]))
 
 
 def main():
     svc = get_service()
-    cfg = json.loads(TEMA.read_text(encoding="utf-8"))["textura_foto"]
+    tema = json.loads(TEMA.read_text(encoding="utf-8"))
+    foto, slide = tema.get("textura_foto") or {}, tema.get("textura_slide") or {}
     fila = filhos(svc, filhos(svc, achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar"))["FILA"])
     fila.update({f"04/{k}": v for k, v in filhos(svc, achar(svc, "Clientes/aidealab/04-Carrosseis")).items()})
     repo = {}
@@ -71,36 +70,34 @@ def main():
         if "metadata.json" not in fs:
             continue
         meta = json.loads(baixar(svc.files().get_media(fileId=fs["metadata.json"])).decode("utf-8-sig"))
-        if meta.get("textura_foto") or meta.get("postado") or not meta.get("slides"):
+        if meta.get("postado") or not meta.get("slides"):
             continue
-        legado = bool(meta.get("halftone"))
-        corte = None
-        if legado:  # o halftone e a marca no metadata foram gravados juntos: revisões de antes disso são limpas
-            mt = svc.files().get(fileId=fs["metadata.json"], fields="modifiedTime").execute()["modifiedTime"]
-            corte = (datetime.fromisoformat(mt.replace("Z", "+00:00")) - timedelta(minutes=5)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        if meta.get("textura_foto") == foto and meta.get("textura_slide") == slide and not meta.get("halftone"):
+            continue
         novos = {}
         for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
             arq = s["arquivo"]
-            if not cfg.get(papel) or arq not in fs:
+            if arq not in fs:
                 continue
             render = RAIZ / nome[3:] / "png" / arq
-            if nome.startswith("04/") and render.exists():
-                novos[arq] = render
-                continue
-            dado = limpa(svc, fs[arq], corte) if legado else baixar(svc.files().get_media(fileId=fs[arq]))
-            if dado is None:
-                print(f"PULA     {nome}/{arq}: sem revisão de antes de {corte}")
-                continue
             out = tmp / f"{nome.replace('/', '_')}_{arq}"
-            aplicar_slide(Image.open(io.BytesIO(dado)), cfg[papel]).save(out)
+            if nome.startswith("04/") and render.exists():
+                out.write_bytes(render.read_bytes())
+            else:
+                im = Image.open(io.BytesIO(limpa(svc, fs[arq]))).convert("RGB")
+                if foto.get(papel):
+                    im = aplicar_slide(im, foto[papel])
+                if slide.get(papel):
+                    im = aplicar(im, slide[papel])
+                im.save(out)
             novos[arq] = out
         if not novos:
             continue
         meta.pop("halftone", None)
-        meta["textura_foto"] = cfg
+        meta["textura_foto"], meta["textura_slide"] = foto, slide
         mj = tmp / f"{nome.replace('/', '_')}_metadata.json"
         mj.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"TEXTURA  {nome}: {', '.join(novos)}" + (" (de revisão limpa)" if legado else ""))
+        print(f"TEXTURA  {nome}: {', '.join(novos)}")
         if DRY:
             continue
         for arq, f in novos.items():
@@ -112,7 +109,7 @@ def main():
                 (d / arq).write_bytes(f.read_bytes())
             rm = json.loads((d / "metadata.json").read_text(encoding="utf-8"))
             rm.pop("halftone", None)
-            rm["textura_foto"] = cfg
+            rm["textura_foto"], rm["textura_slide"] = foto, slide
             (d / "metadata.json").write_text(json.dumps(rm, ensure_ascii=False, indent=2), encoding="utf-8")
         feitos += 1
     print(f"pastas atualizadas: {feitos}")
