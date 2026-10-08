@@ -67,3 +67,4 @@ motor/.vendor_cv4/
 __pycache__/
 agente aidealab/automation/cloud/_run/
 previas/
+.compor_cache/
