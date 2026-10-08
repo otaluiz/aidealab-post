@@ -71,7 +71,9 @@
   ],
   "handle": "@aidealab7",
   "textura_foto": {
-    "hook": "halftone",
-    "cta": "cloth"
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
   }
 }
