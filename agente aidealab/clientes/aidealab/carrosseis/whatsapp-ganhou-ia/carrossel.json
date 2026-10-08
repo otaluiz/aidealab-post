@@ -1,0 +1,177 @@
+{
+ "id": "whatsapp-ganhou-ia",
+ "meta": {
+  "serie": "SAIU HOJE",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "O WHATSAPP",
+    "GANHOU IA."
+   ],
+   "emocao": {
+    "texto": "arruma isso antes de [ligar].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      389,
+      403,
+      855,
+      858
+     ]
+    ],
+    "cabeca": [
+     436,
+     344,
+     779,
+     602
+    ],
+    "caixa": [
+     130,
+     354,
+     1079,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "ELA RESPONDE",
+    "COM O QUE"
+   ],
+   "emocao": {
+    "texto": "você [ensinou].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     434,
+     1009,
+     445,
+     1035
+    ],
+    "caixa": [
+     363,
+     1010,
+     498,
+     1121
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "ANTES DE",
+    "{LIGAR}"
+   ],
+   "lista": [
+    "Catálogo com preço e foto",
+    "Horário e endereço certos",
+    "As perguntas que mais chegam, com a sua resposta",
+    "A regra de quando passa pra você"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "ONDE FICA:",
+    "FERRAMENTAS,"
+   ],
+   "emocao": {
+    "texto": "ia para {empresas}.",
+    "posicao": "depois"
+   },
+   "corpo": "Precisa do app em português e de pelo menos um item no catálogo."
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE FICA",
+    "COM {VOCÊ}"
+   ],
+   "lista": [
+    "Desconto e negociação",
+    "Reclamação",
+    "Pedido grande",
+    "Cliente que pede pra falar com gente"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "TESTA DE OUTRO",
+    "NÚMERO ANTES"
+   ],
+   "emocao": {
+    "texto": "de {liberar}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O MODELO",
+    "DAS PERGUNTAS?"
+   ],
+   "cta": {
+    "acao": "Comenta ZAP",
+    "texto": "a aidealab te manda"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      372,
+      470,
+      670,
+      768
+     ]
+    ],
+    "cabeca": [
+     385,
+     404,
+     634,
+     648
+    ],
+    "caixa": [
+     210,
+     414,
+     887,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 180,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}
