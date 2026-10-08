@@ -7,6 +7,8 @@ name: aidealab - rotina -> main -> drive
 #   2. sobe os rascunhos novos para Clientes/aidealab/04-Carrosseis (upload_carrosseis.py)
 #   3. grava agente aidealab/automation/cloud/estado-drive.json (04, 06/FILA, 06/POSTADOS) e commita,
 #      para a rotina saber a regra de lote e os temas já usados sem acessar o Drive.
+#   4. grava estado-instagram.json (perfil + desempenho dos posts, Graph API) e estado-tendencias.json
+#      (notícias do nicho das últimas 48h), que a rotina usa para escolher o tema do dia.
 on:
   push:
     paths-ignore:
@@ -45,8 +47,16 @@ jobs:
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
           GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
         run: python "agente aidealab/automation/cloud/upload_carrosseis.py"
+      - name: desempenho do Instagram e tendências do dia
+        continue-on-error: true
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          python "agente aidealab/automation/cloud/ig_insights.py" || true
+          python "agente aidealab/automation/cloud/tendencias.py"
       - name: commit do estado
         run: |
-          f="agente aidealab/automation/cloud/estado-drive.json"
-          git add "$f"
+          d="agente aidealab/automation/cloud"
+          git add "$d"/estado-*.json
           git diff --cached --quiet || { git commit -m "chore: estado do Drive [skip ci]" && git pull --rebase -q origin main && git push origin main; }

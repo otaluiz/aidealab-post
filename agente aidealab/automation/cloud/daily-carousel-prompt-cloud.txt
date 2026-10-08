@@ -22,10 +22,20 @@ pulei a geração" e termine sem commit. Não é erro. Se o arquivo não existir
 Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"status": "bloqueado"` no
 `png/metadata.json`, retome ESSA (mesmo tema, mesma copy, reaproveite as imagens já aprovadas e refaça só o que
 foi reprovado; leia o `BLOQUEIO.md`), apague os `*_rejeitada.png` e o `BLOQUEIO.md` ao terminar. Senão:
-Escolha um tema/pilar (educacional, bastidor, prova ou oferta) sobre marketing, conteúdo, IA aplicada e
-automação para pequenos negócios. Não repita tema de nenhum nome em `rascunhos_04`, `fila`, `postados`
-nem das pastas de `agente aidealab/clientes/aidealab/carrosseis/`. Varie o pilar em relação ao último
-carrossel dessa pasta (veja o mais recente pelo `git log`).
+escolha o tema do dia assim:
+1. Leia `agente aidealab/clientes/aidealab/estrategia/pauta.md` (público, pilares, séries, banco de temas,
+   regras de copy). Ela manda sobre qualquer outra orientação de tema.
+2. Leia `agente aidealab/automation/cloud/estado-tendencias.json` (notícias do nicho das últimas 48h,
+   atualizado às 7h30) e faça 1 ou 2 buscas na web (WebSearch) sobre a novidade mais útil para pequeno
+   negócio hoje (WhatsApp, Instagram, Google, Meta, ChatGPT/Gemini/Claude, marketing local). Confirme o fato
+   em pelo menos uma fonte confiável. Se nada servir, use o banco de temas da pauta.
+3. Leia `agente aidealab/automation/cloud/estado-instagram.json`: copie a FORMA dos `top5` (tipo de gancho,
+   formato) e evite a dos `piores5`. Se tiver `erro` ou não existir, siga só a pauta.
+4. Siga a rotação de pilares da pauta (veja o `pilar` do último `png/metadata.json` pelo `git log`).
+Não repita tema de nenhum nome em `rascunhos_04`, `fila`, `postados` nem das pastas de
+`agente aidealab/clientes/aidealab/carrosseis/`. Se usar tema do banco, marque-o com [x] em `pauta.md` e
+inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `serie` (ou null) e
+`fonte_tendencia` (URL da notícia usada ou null).
 
 ## 3. Formato (leia antes de começar)
 - `motor/README.md`, `motor/carrossel.schema.md`, `agente aidealab/clientes/aidealab/design-system/templates/templates.md`.
@@ -75,15 +85,21 @@ carrossel dessa pasta (veja o mais recente pelo `git log`).
   `sujeito.cabeca_manual` cobrindo a cabeça). Se falhar por texto sobre cabeça/rosto, ajuste `bloco` e renderize de novo.
 - Abra capa, slide 2 e CTA em tamanho cheio: título legível, nenhuma palavra escondida atrás do sujeito,
   nenhuma palavra sozinha numa linha, nada cortado, texto acima do rodapé. Corrija e renderize de novo.
-- Copy: skill `copywriting` para escrever e `humanizer` para revisar (slides e legenda). Hook até 10 palavras,
-  sem número inventado. Handle `@aidealab7`.
+- Copy (antes de renderizar): use a skill `instagram-skills` (`.claude/skills/instagram-skills/`) no lugar de
+  `copywriting`/`humanizer`. Leia antes `references/voice-profile.md` (voz da aidealab, já preenchida) e
+  `references/hook-formulas.md`. Slides: `skills/ig-carousel-planner/SKILL.md` (escolha IG5, IG6, IG7 ou IG8
+  conforme o pilar da `pauta.md`). Legenda: `skills/ig-caption-writer/SKILL.md`. Hashtags:
+  `skills/ig-hashtag-strategist/SKILL.md` (3 a 5). Revisão final de slides e legenda:
+  `skills/ig-humanizer/SKILL.md` em modo audit, adaptando as regras para português. Ignore toda parte de
+  publicação (Publora/Apify) e os passos de "esperar aprovação": aqui só se escreve. Hook até 10 palavras, sem número inventado; dado de notícia
+  leva a fonte na legenda. Handle `@aidealab7`.
 - Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
   depois, no `png/metadata.json`, `status` = `"rascunho"` e `personagem` = `"luizota"`, `"wel"` ou `"ambos"`.
 
 ## 6. Entrega
-`git add` só a pasta do carrossel, commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só
+`git add` só a pasta do carrossel (e `pauta.md` se marcou tema), commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só
 permitir push numa branch própria, use essa branch: o GitHub Actions leva para a main e sobe para o Drive.
 Se algo travar de verdade, marque `"status": "bloqueado"` com o motivo, faça commit do que existir e termine.
 
 ## Fim
-Resumo curto: tema, personagens, prompts usados, créditos estimados, checagens e qualquer bloqueio.
+Resumo curto: tema, pilar, tendência usada (com link), personagens, prompts usados, créditos estimados, checagens e qualquer bloqueio.
