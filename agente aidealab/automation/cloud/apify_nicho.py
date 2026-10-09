@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
-REPO = AQUI.parents[1]
+REPO = AQUI.parents[2]
 sys.path.insert(0, str(REPO / ".claude" / "skills" / "instagram-skills"))
 OUT = AQUI / "estado-nicho.json"
 REFS = REPO / "agente aidealab" / "clientes" / "aidealab" / "campanha" / "referencias-nicho.json"
