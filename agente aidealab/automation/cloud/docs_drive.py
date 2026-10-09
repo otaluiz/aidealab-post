@@ -58,7 +58,7 @@ def enviar(svc, f, pid, existentes):
         except HttpError as e:
             if tipo == "text/plain":
                 raise
-            print(f"aviso: markdown recusado em {f.name} ({getattr(e, "status_code", e.resp.status)}), enviando como texto")
+            print(f"aviso: markdown recusado em {f.name} ({getattr(e, 'status_code', e.resp.status)}), enviando como texto")
 
 
 def main():
