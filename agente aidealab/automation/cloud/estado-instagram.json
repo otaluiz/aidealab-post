@@ -1,35 +1,53 @@
 {
-  "atualizado_em": "2026-10-08T19:03:43+00:00",
+  "atualizado_em": "2026-10-09T15:23:32+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 442,
     "follows_count": 215,
-    "media_count": 23,
+    "media_count": 24,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 343,
-    "profile_views": 102,
+    "reach": 342,
+    "profile_views": 103,
     "website_clicks": 3,
     "follows_and_unfollows": null,
     "accounts_engaged": 27
   },
   "posts": [
     {
+      "data": "2026-10-09",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se você atende, vende, posta e ainda fecha o caixa, esse perfil é pra você.",
+      "link": "https://www.instagram.com/p/DeRYf-7GGVo/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 12,
+        "saved": 0,
+        "shares": 0,
+        "views": 25,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 33.33
+    },
+    {
       "data": "2026-10-08",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Marketing sem estratégia é só barulho caro.",
       "link": "https://www.instagram.com/p/DeOz2bCE6Dj/",
-      "likes": 4,
+      "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 8,
+        "reach": 10,
         "saved": 0,
         "shares": 0,
-        "views": 16,
-        "total_interactions": 4,
+        "views": 19,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 3
       },
@@ -169,7 +187,7 @@
       "likes": 7,
       "comments": 0,
       "insights": {
-        "reach": 15,
+        "reach": 16,
         "saved": 0,
         "shares": 0,
         "views": 45,
@@ -177,7 +195,7 @@
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 46.67
+      "score": 43.75
     },
     {
       "data": "2026-09-27",
