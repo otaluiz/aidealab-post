@@ -14,7 +14,7 @@ Marcar `[x]` quando resolver.
 - [ ] Decidir o @: manter `@idea_lab7` ou migrar para `@aidealab` (se livre). Se migrar, trocar `handle` em `design-system/tema/tema.json` e re-renderizar.
 
 ## 2. Conteúdo
-- [ ] **Sem Reels desde 2025.** Os Reels antigos alcançaram 254–493 contas; os carrosséis novos, 12–79. Sem Reels o perfil não chega a quem não segue. Meta: 3 Reels/semana (ver `campanha-seguidores.md`).
+- [ ] **Sem Reels desde 2025.** Os Reels antigos alcançaram 254–493 contas; os carrosséis novos, 12–79. Sem Reels o perfil não chega a quem não segue. Meta: 3 Reels/semana (ver `../campanha/campanha-out-dez-2026.md`).
 - [ ] **0 salvamentos e 1 envio em 15 posts.** Todo post precisa de um motivo para salvar (checklist, passo a passo) ou enviar ("manda pra quem...").
 - [ ] **Nicho misturado.** Parar posts para designer (estilos, fontes, sites de referência). Público é dono de pequeno negócio.
 - [ ] **Abertura genérica de agência** ("Entra: processo manual...", "Na aidealab, ...") foi o pior desempenho. Abrir sempre com a cena do cliente.

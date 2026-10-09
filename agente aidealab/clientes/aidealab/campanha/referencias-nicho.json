@@ -1,0 +1,4 @@
+{
+  "nota": "Contas de referência do nicho (IA/marketing para pequeno negócio no Brasil). Começa vazia: a coleta semanal da Apify (automation/cloud/apify_nicho.py) lista em estado-nicho.json -> contas_sugeridas os donos dos posts com melhor engajamento normalizado. Copie para cá as que fizerem sentido, uma por linha: {\"username\": \"...\", \"motivo\": \"...\"}.",
+  "contas": []
+}

@@ -144,3 +144,20 @@ estando numa branch de feature.
   `concurrency: group: aidealab-criar-post` já serializa as execuções pra
   evitar duas rodadas brigando pela mesma imagem do banco `img-ref` ao mesmo
   tempo.
+
+## Tudo em nuvem (desde 09/10/2026)
+
+| Etapa | Onde | Arquivo |
+|---|---|---|
+| Nicho no Instagram via **Apify** (segunda 6h BRT) | GitHub Actions `nicho-semanal.yml` | `apify_nicho.py` → `estado-nicho.json` |
+| Instagram + tendências do dia (7h30) | `entregar.yml` | `ig_insights.py`, `tendencias.py` |
+| Pauta da semana + roteiros de Reels (segunda) e carrossel do dia (8h) | rotina claude.ai | `daily-carousel-prompt-cloud.txt` → `clientes/aidealab/campanha/semanas/`, `clientes/aidealab/roteiro/` |
+| Rascunhos → `04-Carrosseis` | `entregar.yml` | `upload_carrosseis.py` |
+| Aprovados em `06/FILA` → fila do repo; postados → `06/POSTADOS` | `entregar.yml` | `sync_fila_cloud.py` (substitui `sync_fila_drive.py` do Windows) |
+| Publicação (intercala personagem e banco) | `post-instagram-cloud.yml` | `publish_next.py` |
+
+Secrets do GitHub: além dos do Drive e do Instagram, **`APIFY_TOKEN`** (token grátis em
+console.apify.com/account/integrations). Sem ele o `estado-nicho.json` sai só com `erro` e o resto segue normal.
+
+Com o `sync_fila_cloud.py` rodando, **desligue no Agendador do Windows** as tarefas `run-sync-fila.ps1` e
+`run-daily-carousel.ps1` (motor antigo), para não enfileirar em dobro nem gerar carrossel fora da pauta.

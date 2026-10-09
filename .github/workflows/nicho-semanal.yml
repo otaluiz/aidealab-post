@@ -1,0 +1,33 @@
+name: aidealab - nicho semanal (Apify)
+
+# Toda segunda às 6h BRT, antes da rotina de carrossel das 8h (que no início da semana gera a pauta e os roteiros
+# da semana a partir deste arquivo). Lê pela Apify o perfil @idea_lab7, as contas de referência e os top posts das
+# hashtags do nicho e grava agente aidealab/automation/cloud/estado-nicho.json.
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: aidealab-drive
+jobs:
+  nicho:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q requests python-dotenv
+      - name: coleta do nicho
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: python "agente aidealab/automation/cloud/apify_nicho.py"
+      - name: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "agente aidealab/automation/cloud/estado-nicho.json"
+          git diff --cached --quiet || { git commit -m "chore: estado do nicho (Apify) [skip ci]" && git pull --rebase -q origin main && git push origin main; }

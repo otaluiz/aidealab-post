@@ -18,6 +18,24 @@ PERSONAGENS gerados no Higgsfield Soul 2.0. NÃO use a skill `criar-post` nem na
   (atualizado todo dia pelo GitHub Actions): `rascunhos_04` (aguardando aprovação), `fila` (aprovados) e
   `postados`. A entrega no Drive também é do GitHub Actions: você só faz commit e push.
 
+## 0.5 Pauta da semana (faça ANTES da regra de lote, mesmo que a geração do dia seja pulada)
+Calcule a semana ISO de hoje no fuso de Cuiabá (`python -c "import datetime as d;y,w,_=d.date.today().isocalendar();print(f'{y}-W{w:02d}')"`).
+Se NÃO existe `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md`:
+a. Leia `agente aidealab/automation/cloud/estado-nicho.json` (Apify, atualizado na segunda às 6h: `top_normalizado`,
+   `formatos_top20`, `contas_sugeridas`; se tiver `erro`, siga sem ele), `estado-tendencias.json`,
+   `estado-instagram.json` e a fase atual de `agente aidealab/clientes/aidealab/campanha/campanha-out-dez-2026.md`.
+b. Faça 3 a 5 buscas na web (WebSearch) do que está em alta no nicho (IA, WhatsApp, Instagram, Google, Meta para
+   pequeno negócio no Brasil; datas comerciais próximas). Confirme cada fato em fonte confiável.
+c. Escreva `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md` no MESMO formato de `agente aidealab/clientes/aidealab/campanha/semanas/2026-W42.md`: tabela do que
+   está em alta com fonte, 5 temas de carrossel `[ ]` (alternando com/sem personagem, pilar, série, gancho de 2 linhas
+   curtas, formato IG5–IG8, palavra do CTA), 3 temas de Reels, stories da semana. Não repita tema já usado
+   (`estado-drive.json`, pastas de `carrosseis/`, semanas anteriores). Forma de gancho: a que performa no nicho
+   (`estado-nicho.json`) e no perfil (`top5`).
+d. Escreva os 3 roteiros em `agente aidealab/clientes/aidealab/roteiro/<ano>-W<nn>/0N-<slug>.md` seguindo `agente aidealab/clientes/aidealab/roteiro/README.md` (gancho em 2 s,
+   personagem sério, um CTA, sem número inventado, fonte na legenda). Use as skills
+   `.claude/skills/instagram-skills/skills/ig-content-planner/SKILL.md` e `references/hook-formulas.md` (IG9/IG10).
+e. Commit `content: pauta e roteiros <ano>-W<nn> (rotina nuvem)` com só esses arquivos e push, antes de seguir.
+
 ## 1. Regra de lote
 Conte os nomes de `rascunhos_04` (em `estado-drive.json`) que também existem como pasta em
 `agente aidealab/clientes/aidealab/carrosseis/` (só os feitos por esta rotina; os rascunhos antigos de banco
@@ -29,6 +47,9 @@ Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"sta
 `png/metadata.json`, retome ESSA (mesmo tema, mesma copy, reaproveite as imagens já aprovadas e refaça só o que
 foi reprovado; leia o `BLOQUEIO.md`), apague os `*_rejeitada.png` e o `BLOQUEIO.md` ao terminar. Senão:
 escolha o tema do dia assim:
+0. PRIMEIRO os temas da semana: em `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md`, pegue o primeiro tema `[ ]` que
+   respeita o INTERCALAR (com/sem personagem) e use o gancho, pilar e CTA dele. Ao terminar, marque
+   `[x] → <slug>` no arquivo e inclua-o no commit. Só se não houver tema livre da semana, siga os passos 1–4.
 1. Leia `agente aidealab/clientes/aidealab/estrategia/pauta.md` (público, pilares, séries, banco de temas,
    regras de copy). Ela manda sobre qualquer outra orientação de tema.
 2. Leia `agente aidealab/automation/cloud/estado-tendencias.json` (notícias do nicho das últimas 48h,
@@ -106,7 +127,7 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   depois, no `png/metadata.json`, `status` = `"rascunho"` e `personagem` = `"luizota"`, `"wel"` ou `"ambos"`.
 
 ## 6. Entrega
-`git add` só a pasta do carrossel (e `pauta.md` se marcou tema), commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só
+`git add` só a pasta do carrossel (e `pauta.md` ou o arquivo da semana se marcou tema), commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só
 permitir push numa branch própria, use essa branch: o GitHub Actions leva para a main e sobe para o Drive.
 Se algo travar de verdade, marque `"status": "bloqueado"` com o motivo, faça commit do que existir e termine.
 

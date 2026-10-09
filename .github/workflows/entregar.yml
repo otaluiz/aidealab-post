@@ -7,7 +7,8 @@ name: aidealab - rotina -> main -> drive
 #   2. sobe os rascunhos novos para Clientes/aidealab/04-Carrosseis (upload_carrosseis.py)
 #   3. grava agente aidealab/automation/cloud/estado-drive.json (04, 06/FILA, 06/POSTADOS) e commita,
 #      para a rotina saber a regra de lote e os temas já usados sem acessar o Drive.
-#   4. grava estado-instagram.json (perfil + desempenho dos posts, Graph API) e estado-tendencias.json
+#   4. sync_fila_cloud.py: aprovados em 06/FILA entram na fila do repo; postados vão para 06/POSTADOS
+#   5. grava estado-instagram.json (perfil + desempenho dos posts, Graph API) e estado-tendencias.json
 #      (notícias do nicho das últimas 48h), que a rotina usa para escolher o tema do dia.
 on:
   push:
@@ -47,6 +48,13 @@ jobs:
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
           GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
         run: python "agente aidealab/automation/cloud/upload_carrosseis.py"
+      - name: aprovados no Drive (06/FILA) entram na fila de publicação
+        continue-on-error: true
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python "agente aidealab/automation/cloud/sync_fila_cloud.py"
       - name: desempenho do Instagram e tendências do dia
         continue-on-error: true
         env:
@@ -58,5 +66,5 @@ jobs:
       - name: commit do estado
         run: |
           d="agente aidealab/automation/cloud"
-          git add "$d"/estado-*.json
+          git add "$d"/estado-*.json "agente aidealab/skills/post-instagram/queue"
           git diff --cached --quiet || { git commit -m "chore: estado do Drive [skip ci]" && git pull --rebase -q origin main && git push origin main; }
