@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-09T17:48:26+00:00",
+  "atualizado_em": "2026-10-09T17:54:54+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -41,6 +41,12 @@
     ],
     "WhatsApp Business IA": [
       {
+        "titulo": "Como está a Zapia depois das mudanças nas regras do WhatsApp - Startups",
+        "fonte": "Startups",
+        "data": "Fri, 09 Oct 2026",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORGtiYVRNVXhtNDJ3anZ1eFBiSjVNbDJpQ2cyUlVsa01BLUJxRV9jcjJFN1pPVllhT09VWmhCeVVpQXdQb3k0Q2FINjhpSE5WdGhLaEc4ZzZXbGpMQlZ4SmdXNndOVndiSTNVWTAwZWtSaklDQTlxSVpaM2MzS2RQM2hSYUpzMnpvTnFPUkhwNDBVMDZuU24xNWt3dGMzUmxQb1ZIbmxRWDQtZmNYbmhRZmp5Tzl1UlJuREE?oc=5"
+      },
+      {
         "titulo": "Tok&Stok gera 3,4x mais receita por cliente no WhatsApp com IA - Portal ClienteSA",
         "fonte": "Portal ClienteSA",
         "data": "Fri, 09 Oct 2026",
@@ -69,12 +75,6 @@
         "fonte": "Acia Araçatuba",
         "data": "Fri, 09 Oct 2026",
         "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUUZxckZzc09SSjdkcjhoLTBEY2ZDNXJQRHk5Y2xvT041bkoxSWFyZ0ltVUlRYWNTUVhNejBKTnJzTnVMdGw4dHhLZXBjaWRiZVY5cXkyZ194TFBMNHUtYlhSWHVpbjNVNlIxVFBsTWlzN3BsRXRxZzVtaGl5LVEzd2dWVHVodw?oc=5"
-      },
-      {
-        "titulo": "Lucros do S&P 500 devem subir 31% com IA de Alphabet, Amazon e Meta - Paraíba Business",
-        "fonte": "Paraíba Business",
-        "data": "Fri, 09 Oct 2026",
-        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYms3UUxKbk40VDBteGMyODMxS0VBMnlQWU5JU2NFRzNZWk5uV0RwTkJvc2NMNzMyUzY5c0xqaG1PaEROZDJ3MzhpZkd0UUxSRXo1RGltRVJZWEJwSVc1WktqY0JSZmh3cWFMejA1N3U4NkhEejJPdm1xVXdNTkV4QS0xekgza3lhLXV4WlJNejdiTTRVTkRQNE93ZG8?oc=5"
       }
     ],
     "Instagram novidade recurso": [
@@ -117,6 +117,12 @@
     ],
     "Google Perfil da Empresa OR \"Modo IA\" Google": [
       {
+        "titulo": "Mais de um terço das empresas no topo do Google Maps em Curitiba não tem site próprio, mostra levantamento - Estadão Blue Studio",
+        "fonte": "Estadão Blue Studio",
+        "data": "Fri, 09 Oct 2026",
+        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOek5lWVg4ajFVcmJXeFozQXNjSTV3RmxGNHhlYS1vcWQxT3pReG1kSllVOHllY1JlbVZCcDhOOEUzZ2I0UGtFX1F2UGpRRVZhRjMtV04xenRKVExoZVBaNDBQX3VfQlQ3VzJWTGstY1JrS29SR2NnZ0RZQUNlMzRDamk5cGM4OU1DdkZyNGNXazk0NjBiLWZ3QklQWjVOc1pHYlZmd1hCMWFCNm84cHl2djNKMDJ0YTgxRk9n?oc=5"
+      },
+      {
         "titulo": "Ucrânia realiza ataque de drones contra centros de dados do ‘Google russo’ pelo segundo dia consecutivo - Brasil de Fato",
         "fonte": "Brasil de Fato",
         "data": "Fri, 09 Oct 2026",
@@ -145,12 +151,6 @@
         "fonte": "Espaço do Povo -",
         "data": "Fri, 09 Oct 2026",
         "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0zRFhKMm9ha1pxRnFDZF9MWmgwX3N5RGstRlFoOFA2UjF6VG5kd3ZtcnNCNFN5YVloLVVYUFZZVWZsdExSZ1pHRWR5OW9VYmJ4WlF6SFRieHJPWlFUN3dCYkJEWDBZbFRVTm82YQ?oc=5"
-      },
-      {
-        "titulo": "Google lança agente Gemini para empresas e amplia disputa por mercado de IA - InfoMoney",
-        "fonte": "InfoMoney",
-        "data": "Thu, 08 Oct 2026",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdU1ORlUteGNnRzlRN2REdmxVbkNtWUh2bkRCQV96OURUeFJjVFFvNmNPZzJzb0hsZTd3WkprMmJlSk85aUdiR3dtN0YtcmY4TnlRbEY1aEFMT0thOEZDX0RSOHlOUkZQeVRUSHFBaGpBa3N6SVU1XzFnNlRvcHphelZVS1R2cXViZVh4dFkwdFBqeEZ5WU5xNUdzdUxOaDZMbXhNRnlrVjMzM1V3RENSWXVOSDHSAboBQVVfeXFMUHBzaFJrRTBUMjZDMUx0YVRLeDRoZ3ZiWWlBVGZUNHZXNFU0YVlMUFRleTVQMkVRSlVqWjBTSVhYaTNOVlQ0UVdFS1dUbU96MWJoWlJzZGlNQTlWeVJuUGJEMHUyTG1nYkZWQ25CWFUtNlhqRmt1Tk9XQlpaRHpBdWdVeFRkRC0wRHdJTS1ubVF4V0dJWm9BS3MwT3JoUjJ2b1ZjNHpKblpiY3dqMWFhaEJFZlgteFh0VkNB?oc=5"
       }
     ],
     "marketing digital pequenos negócios": [
