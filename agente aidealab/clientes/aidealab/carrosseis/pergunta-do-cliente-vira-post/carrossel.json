@@ -16,33 +16,34 @@
     "posicao": "depois"
    },
    "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
    "sujeito": {
     "rostos": [],
+    "rostos_sujeito": [
+     [
+      317,
+      695,
+      720,
+      1035
+     ]
+    ],
     "cabeca": [
-     330,
-     320,
-     700,
-     850
+     406,
+     673,
+     641,
+     853
     ],
     "caixa": [
-     40,
-     339,
-     1060,
+     138,
+     680,
+     1009,
      1439
-    ],
-    "rostos_so_manual": true,
-    "cabeca_manual": [
-     330,
-     320,
-     700,
-     850
     ]
    },
-   "recorte": "capa_recorte.png",
    "bloco": {
-    "y": 140,
-    "alinhar": "esquerda",
-    "largura": 620,
+    "y": 409,
+    "alinhar": "centro",
+    "largura": 1020,
     "manual": true
    }
   },
@@ -140,30 +141,32 @@
     "texto": "a aidealab te mostra"
    },
    "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
    "sujeito": {
     "rostos": [],
+    "rostos_sujeito": [
+     [
+      304,
+      587,
+      761,
+      779
+     ]
+    ],
     "cabeca": [
-     340,
-     190,
-     710,
-     760
+     304,
+     587,
+     761,
+     779
     ],
     "caixa": [
-     0,
-     207,
-     1079,
-     1439
-    ],
-    "rostos_so_manual": true,
-    "cabeca_manual": [
-     340,
-     190,
-     710,
-     760
+     193,
+     594,
+     879,
+     1350
     ]
    },
    "bloco": {
-    "y": 900,
+    "y": 430,
     "alinhar": "esquerda",
     "largura": 936,
     "manual": true
