@@ -153,6 +153,7 @@ estando numa branch de feature.
 | Instagram + tendências do dia (7h30) | `entregar.yml` | `ig_insights.py`, `tendencias.py` |
 | Pauta da semana + roteiros de Reels (segunda) e carrossel do dia (8h) | rotina claude.ai | `daily-carousel-prompt-cloud.txt` → `clientes/aidealab/campanha/semanas/`, `clientes/aidealab/roteiro/` |
 | Rascunhos → `04-Carrosseis` | `entregar.yml` | `upload_carrosseis.py` |
+| Campanha, melhorias e roteiros → Google Docs em `05-Campanhas` e `03-Roteiros` | `entregar.yml` | `docs_drive.py` |
 | Aprovados em `06/FILA` → fila do repo; postados → `06/POSTADOS` | `entregar.yml` | `sync_fila_cloud.py` (substitui `sync_fila_drive.py` do Windows) |
 | Publicação (intercala personagem e banco) | `post-instagram-cloud.yml` | `publish_next.py` |
 
