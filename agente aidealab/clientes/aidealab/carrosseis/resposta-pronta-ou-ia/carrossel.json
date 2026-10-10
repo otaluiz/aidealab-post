@@ -1,0 +1,156 @@
+{
+ "id": "resposta-pronta-ou-ia",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/10"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "PRONTA",
+    "OU IA?"
+   ],
+   "emocao": {
+    "texto": "no seu [WhatsApp].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "bloco": {
+    "y": 800,
+    "alinhar": "esquerda",
+    "largura": 720
+   },
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     276,
+     552,
+     857,
+     685
+    ],
+    "caixa": [
+     236,
+     557,
+     892,
+     1117
+    ]
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A MESMA PERGUNTA",
+    "CHEGA DE NOVO."
+   ],
+   "emocao": {
+    "texto": "e você [digita] tudo.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     486,
+     458,
+     606,
+     642
+    ],
+    "caixa": [
+     406,
+     465,
+     705,
+     1240
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "RESPOSTA PRONTA",
+    "PARA O QUE {REPETE}"
+   ],
+   "lista": [
+    "Horário e endereço",
+    "Formas de pagamento",
+    "Prazo de entrega",
+    "Preço que não muda"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "DÚVIDA DIFERENTE?",
+    "A IA ESCREVE O"
+   ],
+   "emocao": {
+    "texto": "{rascunho}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "USE A IA",
+    "QUANDO {MUDA}"
+   ],
+   "lista": [
+    "Pergunta fora do padrão",
+    "Cliente com reclamação",
+    "Pedido com várias etapas",
+    "Proposta sob medida"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ CONFERE",
+    "E ENVIA"
+   ],
+   "emocao": {
+    "texto": "{sempre}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER A LISTA DO",
+    "QUE SALVAR?"
+   ],
+   "cta": {
+    "acao": "Comenta RESPOSTA",
+    "texto": "a aidealab te manda"
+   },
+   "imagem": "cta_orig.png",
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   },
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     617,
+     373,
+     952,
+     583
+    ],
+    "caixa": [
+     166,
+     381,
+     944,
+     1264
+    ]
+   }
+  }
+ ]
+}
