@@ -1,0 +1,70 @@
+{
+ "carousel_id": "resposta-pronta-ou-ia",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-10",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "IA NO BALCÃO",
+ "tema": "PRONTA OU IA? no seu WhatsApp.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "PRONTA OU IA? no seu WhatsApp."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "A MESMA PERGUNTA CHEGA DE NOVO. e você digita tudo."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "RESPOSTA PRONTA PARA O QUE REPETE Horário e endereço Formas de pagamento Prazo de entrega Preço que não muda"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "DÚVIDA DIFERENTE? A IA ESCREVE O rascunho."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "USE A IA QUANDO MUDA Pergunta fora do padrão Cliente com reclamação Pedido com várias etapas Proposta sob medida"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "VOCÊ CONFERE E ENVIA sempre."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER A LISTA DO QUE SALVAR? Comenta RESPOSTA a aidealab te manda"
+  }
+ ],
+ "legenda": "Pergunta que se repete merece resposta pronta. Pergunta nova merece a IA.\n\nHorário, endereço, forma de pagamento e prazo você salva como resposta rápida no WhatsApp Business e manda em um toque. Quando a dúvida foge do padrão, a IA escreve o rascunho e você confere antes de enviar. Cada uma no seu lugar, e o cliente espera menos.\n\nQual pergunta chega mais no seu WhatsApp? Comenta RESPOSTA que a aidealab te manda a lista do que salvar.\n\n#pequenosnegocios #whatsappbusiness #iaparanegocios #aidealab",
+ "hashtags": [
+  "#pequenosnegocios",
+  "#whatsappbusiness",
+  "#iaparanegocios",
+  "#aidealab"
+ ],
+ "handle": "@idea_lab7",
+ "personagem": "",
+ "pilar": "educacional",
+ "fonte_tendencia": null
+}
