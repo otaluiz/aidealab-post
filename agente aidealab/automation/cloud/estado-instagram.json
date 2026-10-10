@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-10-09T19:31:22+00:00",
+  "atualizado_em": "2026-10-10T11:22:00+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 442,
     "follows_count": 215,
-    "media_count": 24,
+    "media_count": 25,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -18,22 +18,40 @@
   },
   "posts": [
     {
+      "data": "2026-10-10",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Hoje ele pula a busca e pergunta direto pra IA.",
+      "link": "https://www.instagram.com/p/DeT4VtImFk4/",
+      "likes": 0,
+      "comments": 0,
+      "insights": {
+        "reach": 0,
+        "saved": 0,
+        "shares": 0,
+        "views": 0,
+        "total_interactions": 0,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": null
+    },
+    {
       "data": "2026-10-09",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Se você atende, vende, posta e ainda fecha o caixa, esse perfil é pra você.",
       "link": "https://www.instagram.com/p/DeRYf-7GGVo/",
-      "likes": 4,
+      "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 14,
+        "reach": 17,
         "saved": 0,
         "shares": 0,
-        "views": 29,
-        "total_interactions": 4,
+        "views": 35,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 28.57
+      "score": 29.41
     },
     {
       "data": "2026-10-08",
@@ -43,15 +61,15 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 10,
+        "reach": 11,
         "saved": 0,
         "shares": 0,
-        "views": 19,
+        "views": 20,
         "total_interactions": 5,
         "follows": 0,
         "profile_visits": 3
       },
-      "score": 50.0
+      "score": 45.45
     },
     {
       "data": "2026-10-07",
@@ -97,15 +115,15 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 21,
+        "reach": 22,
         "saved": 0,
         "shares": 0,
-        "views": 40,
+        "views": 41,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 23.81
+      "score": 22.73
     },
     {
       "data": "2026-10-04",
@@ -115,15 +133,15 @@
       "likes": 16,
       "comments": 0,
       "insights": {
-        "reach": 71,
+        "reach": 72,
         "saved": 0,
         "shares": 0,
-        "views": 156,
+        "views": 157,
         "total_interactions": 19,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 22.54
+      "score": 22.22
     },
     {
       "data": "2026-10-03",
@@ -169,15 +187,15 @@
       "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 20,
+        "reach": 21,
         "saved": 0,
         "shares": 0,
-        "views": 40,
+        "views": 41,
         "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 20.0
+      "score": 19.05
     },
     {
       "data": "2026-09-29",
@@ -435,8 +453,8 @@
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
-      "score": 22.54,
-      "alcance": 71
+      "score": 22.22,
+      "alcance": 72
     },
     {
       "data": "2026-09-21",
