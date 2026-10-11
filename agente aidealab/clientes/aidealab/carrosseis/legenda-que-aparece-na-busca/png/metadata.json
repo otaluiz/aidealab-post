@@ -70,5 +70,10 @@
  "referencias": [
   "soul-ref #17 (corredor branco)",
   "soul-ref #42 (banco de perfil)"
- ]
+ ],
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

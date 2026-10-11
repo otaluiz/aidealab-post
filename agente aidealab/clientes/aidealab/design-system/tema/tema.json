@@ -22,5 +22,8 @@
   },
   "textura_slide": {
     "cta": "cloth_letras"
+  },
+  "textura_personagem": {
+    "hook": "cloth_letras"
   }
 }

@@ -2,7 +2,8 @@
  "id": "pergunta-do-cliente-vira-post",
  "meta": {
   "serie": "BASTIDOR",
-  "data": "2026/10"
+  "data": "2026/10",
+  "personagem": "ambos"
  },
  "slides": [
   {

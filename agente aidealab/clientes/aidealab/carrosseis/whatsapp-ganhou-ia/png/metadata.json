@@ -67,5 +67,10 @@
  "handle": "@idea_lab7",
  "personagem": "wel",
  "pilar": "tendência",
- "fonte_tendencia": "https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/"
+ "fonte_tendencia": "https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/",
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

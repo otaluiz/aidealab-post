@@ -2,6 +2,7 @@
 Texturas por papel do slide, configuradas no tema.json:
   "textura_foto": {"hook": "halftone"}       só na foto (imagem e recorte), o texto fica limpo
   "textura_slide": {"cta": "cloth_letras"}   no slide inteiro, letras incluídas (aplicada no PNG final)
+  "textura_personagem": {"hook": "cloth_letras"}   carrossel com personagem: hook no slide inteiro, sem a da foto
 - halftone: filtro_halftone.halftone (retícula de impresso)
 - cloth: trama de tecido assets/pano.png em soft-light 55% (a mesma da engine otalogia, --tex-pano)
 - cloth_letras: cloth + ±9% de luz/sombra dos fios, para a trama aparecer também nas letras brancas

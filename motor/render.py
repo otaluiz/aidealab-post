@@ -33,6 +33,13 @@ def falhar(msg):
     sys.exit(1)
 
 
+def personagem(data, out_dir):
+    if data.get("meta", {}).get("personagem"):
+        return True
+    m = Path(out_dir) / "metadata.json"
+    return m.exists() and bool(json.loads(m.read_text(encoding="utf-8-sig")).get("personagem"))
+
+
 def main():
     args = sys.argv[1:]
     tema_dir = os.environ.get("CARROSSEL_TEMA")
@@ -57,6 +64,11 @@ def main():
     # tema "textura_foto" {"hook": tipo, "cta": tipo}: textura só na foto e no recorte (o texto fica limpo)
     n = len(data["slides"])
     tex = {1: tema.get("textura_foto", {}).get("hook"), n: tema.get("textura_foto", {}).get("cta")}
+    # carrossel com personagem (meta.personagem no JSON ou no metadata.json já gerado): o hook troca a textura da
+    # foto pela do tema "textura_personagem" {"hook": tipo}, aplicada no slide inteiro
+    tper = tema.get("textura_personagem", {}) if personagem(data, out_dir) else {}
+    if tper.get("hook"):
+        tex[1] = None
     tmp = Path(tempfile.mkdtemp(prefix="textura_foto_"))
     for i, s in enumerate(data["slides"], 1):
         for k in ("imagem", "recorte"):
@@ -118,6 +130,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     # tema "textura_slide" {"hook"/"cta": tipo}: textura no slide inteiro, letras incluídas
     tsl = {1: tema.get("textura_slide", {}).get("hook"), n: tema.get("textura_slide", {}).get("cta")}
+    tsl[1] = tper.get("hook") or tsl[1]
     for i, b in enumerate(shots, 1):
         png = out_dir / f"slide-{i:02d}.png"
         png.write_bytes(b)

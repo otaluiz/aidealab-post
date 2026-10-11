@@ -70,5 +70,10 @@
  "referencias": [
   "soul-ref #16 (bloco de concreto, céu)",
   "soul-ref #37 (cubo, mão no queixo)"
- ]
+ ],
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

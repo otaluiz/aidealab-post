@@ -70,5 +70,10 @@
  "referencias": [
   "soul-ref #02 (salto contra o céu)",
   "soul-ref #25 (inclinado no banquinho)"
- ]
+ ],
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

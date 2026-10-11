@@ -57,6 +57,9 @@ def aplicar_textura(d, meta):
         return False
     tema = ler(TEMA)
     foto, slide = tema.get("textura_foto") or {}, tema.get("textura_slide") or {}
+    if meta.get("personagem") and (tema.get("textura_personagem") or {}).get("hook"):  # hook com personagem: cloth
+        foto = {k: v for k, v in foto.items() if k != "hook"}
+        slide = {**slide, "hook": tema["textura_personagem"]["hook"]}
     for papel, s in (("hook", meta["slides"][0]), ("cta", meta["slides"][-1])):
         f = d / s["arquivo"]
         if foto.get(papel):

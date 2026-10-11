@@ -2,7 +2,8 @@
  "id": "follow-up-ninguem-faz",
  "meta": {
   "serie": "VENDAS",
-  "data": "2026/10"
+  "data": "2026/10",
+  "personagem": "ambos"
  },
  "slides": [
   {

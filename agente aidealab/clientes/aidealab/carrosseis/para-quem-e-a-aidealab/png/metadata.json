@@ -64,5 +64,10 @@
  "referencias": [
   "soul-ref #21 (casaco em movimento)",
   "soul-ref #10 (sentado contra a parede)"
- ]
+ ],
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

@@ -67,13 +67,20 @@ def gerar(json_path, tema, ordem_fila=None, hashtags=()):
         "legenda": legenda_md.read_text(encoding="utf-8").strip() if legenda_md.exists() else "",
         "hashtags": list(hashtags),
         "handle": tema["handle"],
+        "personagem": d["meta"].get("personagem", ""),
     }
+    # texturas que o render.py já aplicou (o sync_fila_drive pula quem tem a marca, sem texturizar de novo)
+    foto, slide = dict(tema.get("textura_foto") or {}), dict(tema.get("textura_slide") or {})
+    if meta["personagem"] and (tema.get("textura_personagem") or {}).get("hook"):
+        foto.pop("hook", None)
+        slide["hook"] = tema["textura_personagem"]["hook"]
+    meta["textura_foto"], meta["textura_slide"] = foto, slide
     for sl in meta["slides"]:
         assert (png / sl["arquivo"]).exists(), f"falta {sl['arquivo']} em {png}"
     destino = png / "metadata.json"
     if destino.exists():
         antigo = json.loads(destino.read_text(encoding="utf-8"))
-        for k in ("postado", "postado_em", "post_id", "data_criacao"):
+        for k in ("postado", "postado_em", "post_id", "data_criacao", "status"):
             if k in antigo:
                 meta[k] = antigo[k]
     destino.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")

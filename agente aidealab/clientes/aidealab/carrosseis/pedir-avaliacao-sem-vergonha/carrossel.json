@@ -2,7 +2,8 @@
  "id": "pedir-avaliacao-sem-vergonha",
  "meta": {
   "serie": "IA NO BALCÃO",
-  "data": "2026/10"
+  "data": "2026/10",
+  "personagem": "ambos"
  },
  "slides": [
   {

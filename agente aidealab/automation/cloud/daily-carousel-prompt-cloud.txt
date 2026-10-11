@@ -108,6 +108,8 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
 ## 5. Composição, render e conferência (a partir da pasta do carrossel)
 - `python ../../../../../motor/compor.py carrossel.json --led slide2` (recorte rembg só se limpo, sujeito na frente
   do título, área vazia para o texto, LED no slide 2, grain no slide 3, LED nas listas e na conclusão).
+- Com personagem: ANTES do render ponha `"personagem": "luizota" | "wel" | "ambos"` em `meta` do `carrossel.json`;
+  o render aplica a textura cloth no hook inteiro (letras incluídas, como no CTA). Banco: sem o campo (halftone na foto).
 - `python ../../../../../motor/render.py carrossel.json png --tema ../../design-system/tema`
   O compor põe o título atrás da cabeça sempre que couber (nunca atrás do corpo). Só se o log disser "sem espaço
   para o display atrás do sujeito" (cabeça colada no topo), prefira refazer a imagem com mais folga acima da cabeça;
@@ -124,7 +126,7 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   publicação (Publora/Apify) e os passos de "esperar aprovação": aqui só se escreve. Hook até 10 palavras, sem número inventado; dado de notícia
   leva a fonte na legenda. Handle `@idea_lab7`.
 - Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
-  depois, no `png/metadata.json`, `status` = `"rascunho"` e `personagem` = `"luizota"`, `"wel"` ou `"ambos"`.
+  depois, no `png/metadata.json`, `status` = `"rascunho"` (o `personagem` já vem do `meta` do `carrossel.json`).
 
 ## 6. Entrega
 `git add` só a pasta do carrossel (e `pauta.md` ou o arquivo da semana se marcou tema), commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só

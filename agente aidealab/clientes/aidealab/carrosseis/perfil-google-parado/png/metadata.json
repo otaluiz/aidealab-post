@@ -66,5 +66,10 @@
   ],
   "handle": "@idea_lab7",
   "personagem": "wel",
-  "variante": "personagem-gerado"
+  "variante": "personagem-gerado",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  }
 }

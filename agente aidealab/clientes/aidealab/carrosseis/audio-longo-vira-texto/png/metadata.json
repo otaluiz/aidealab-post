@@ -70,5 +70,10 @@
  "referencias": [
   "soul-ref #19 (cadeira, curvado)",
   "soul-ref #32 (mãos para a câmera)"
- ]
+ ],
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ }
 }

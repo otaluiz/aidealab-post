@@ -69,3 +69,5 @@ no hat, no jewelry`
 O publicador (`skills/post-instagram/scripts/publish_next.py`) alterna sozinho: depois de um post com `personagem`
 no metadata vem um sem personagem (imagem de banco/cena), e vice-versa. Por isso todo carrossel com personagem precisa
 de `personagem` = `luizota`, `wel` ou `ambos` no `png/metadata.json`, e todo carrossel de banco deixa o campo vazio.
+O campo vai em `meta.personagem` do `carrossel.json` antes do render: o hook ganha a textura cloth no slide inteiro
+(`textura_personagem` do `tema.json`) e o `metadata.py` copia o campo para o `png/metadata.json`.
