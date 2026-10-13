@@ -1,0 +1,181 @@
+{
+ "id": "2026-10-3-meses-de-burocracia",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/10",
+  "personagem": "ambos"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "3 MESES",
+    "NO PAPEL?"
+   ],
+   "emocao": {
+    "texto": "a IA devolve [parte].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "cabeca": [
+     254,
+     83,
+     602,
+     402
+    ],
+    "rostos": [
+     [
+      254,
+      83,
+      602,
+      402
+     ]
+    ],
+    "rostos_manual": [
+     [
+      254,
+      83,
+      602,
+      402
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": true
+   },
+   "bloco": {
+    "y": 880,
+    "alinhar": "esquerda",
+    "largura": 720
+   },
+   "texto_frente": true
+  },
+  {
+   "template": "T2",
+   "display": [
+    "QUASE UM TRIMESTRE",
+    "POR ANO"
+   ],
+   "emocao": {
+    "texto": "perdido em [burocracia].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     618,
+     41,
+     935,
+     329
+    ],
+    "caixa": [
+     587,
+     52,
+     985,
+     1263
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 560
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA",
+    "{ADIANTA}"
+   ],
+   "lista": [
+    "Monta o orçamento com os dados do cliente",
+    "Responde a pergunta que todo mundo repete",
+    "Resume o áudio de 4 minutos em 5 linhas",
+    "Lembra quem ficou de pagar"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "VOCÊ NÃO PRECISA",
+    "FAZER TUDO"
+   ],
+   "emocao": {
+    "texto": "{sozinho}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE FICA",
+    "{COM VOCÊ}"
+   ],
+   "lista": [
+    "Conferir antes de enviar",
+    "Decidir o preço e o prazo",
+    "Conversar com o cliente que importa"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "TEMPO DE PAPEL",
+    "VIRA TEMPO DE"
+   ],
+   "emocao": {
+    "texto": "{vender}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER TIRAR PARTE",
+    "DISSO DAS COSTAS?"
+   ],
+   "cta": {
+    "acao": "Comenta TEMPO",
+    "texto": "a aidealab te mostra por onde começar"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "cabeca": [
+     396,
+     165,
+     639,
+     465
+    ],
+    "rostos": [
+     [
+      396,
+      165,
+      639,
+      465
+     ]
+    ],
+    "rostos_manual": [
+     [
+      396,
+      165,
+      639,
+      465
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": true
+   },
+   "bloco": {
+    "y": 900,
+    "alinhar": "esquerda",
+    "largura": 760
+   },
+   "texto_frente": true
+  }
+ ]
+}

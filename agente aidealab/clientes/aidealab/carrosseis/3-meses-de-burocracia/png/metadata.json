@@ -1,0 +1,76 @@
+{
+ "carousel_id": "2026-10-3-meses-de-burocracia",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-13",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "IA NO BALCÃO",
+ "tema": "3 MESES NO PAPEL? a IA devolve parte.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2c-T3-T2-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "3 MESES NO PAPEL? a IA devolve parte."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "QUASE UM TRIMESTRE POR ANO perdido em burocracia."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE A IA ADIANTA Monta o orçamento com os dados do cliente Responde a pergunta que todo mundo repete Resume o áudio de 4 minutos em 5 linhas Lembra quem ficou de pagar"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "VOCÊ NÃO PRECISA FAZER TUDO sozinho."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "O QUE FICA COM VOCÊ Conferir antes de enviar Decidir o preço e o prazo Conversar com o cliente que importa"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "TEMPO DE PAPEL VIRA TEMPO DE vender."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "QUER TIRAR PARTE DISSO DAS COSTAS? Comenta TEMPO a aidealab te mostra por onde começar"
+  }
+ ],
+ "legenda": "Quase 3 meses por ano. É o tempo que o pequeno empreendedor gasta com papelada, segundo pesquisa feita para o Nubank: cerca de 9 horas por semana em guia de imposto, fluxo de caixa e nota fiscal.\n\nParte disso a IA adianta: monta o orçamento com os dados do cliente, responde a pergunta que todo mundo repete, resume o áudio de 4 minutos e lembra quem ficou de pagar. Você confere, decide o preço e conversa com quem importa.\n\nComenta TEMPO que a aidealab te mostra por onde começar.\n\nFonte: pesquisa Bridge Research para o Nubank, divulgada em 08/10/2026 (Seu Dinheiro).\n\n#marketingdigital #iaparanegocios #pequenonegocio #whatsappbusiness #empreendedorismo",
+ "hashtags": [
+  "#marketingdigital",
+  "#iaparanegocios",
+  "#pequenonegocio",
+  "#whatsappbusiness",
+  "#empreendedorismo"
+ ],
+ "handle": "@idea_lab7",
+ "personagem": "ambos",
+ "textura_foto": {},
+ "textura_slide": {
+  "cta": "cloth_letras",
+  "hook": "cloth_letras"
+ },
+ "pilar": "educacional",
+ "fonte_tendencia": "https://www.seudinheiro.com/2026/seu-negocio/pesquisa-do-nubank-mostra-que-ha-um-fator-que-engole-tres-meses-de-trabalho-por-ano-de-quem-e-empreendedor-entenda-giov/"
+}
