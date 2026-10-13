@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-10-13T11:27:15+00:00",
+  "atualizado_em": "2026-10-13T17:42:29+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 437,
+    "followers_count": 440,
     "follows_count": 215,
-    "media_count": 27,
+    "media_count": 28,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -17,6 +17,24 @@
     "accounts_engaged": 27
   },
   "posts": [
+    {
+      "data": "2026-10-13",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente manda áudio de 5 minutos e o pedido de verdade está lá no meio. Você ouve duas vezes e ainda esquece o prazo.",
+      "link": "https://www.instagram.com/p/DebuhHpmGnJ/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 4,
+        "saved": 0,
+        "shares": 0,
+        "views": 9,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 100.0
+    },
     {
       "data": "2026-10-12",
       "tipo": "CAROUSEL_ALBUM",
@@ -172,7 +190,7 @@
         "reach": 74,
         "saved": 0,
         "shares": 0,
-        "views": 158,
+        "views": 159,
         "total_interactions": 19,
         "follows": 0,
         "profile_visits": 1
