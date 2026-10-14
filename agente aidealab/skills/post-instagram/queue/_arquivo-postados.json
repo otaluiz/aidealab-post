@@ -1,5 +1,5 @@
 {
-  "ultimo_dia": 27,
+  "ultimo_dia": 28,
   "carousel_ids": [
     "01-A-ordem",
     "02-O-ornamento",
@@ -15,6 +15,7 @@
     "Jornada-do-Cliente",
     "Prompt-Tres-Prompts-Na-DM",
     "Prompt-Tres-Prompts-Na-DM-rerender-legivel",
+    "audio-longo-vira-texto",
     "orcamento-em-5-minutos",
     "para-quem-e-a-aidealab"
   ]

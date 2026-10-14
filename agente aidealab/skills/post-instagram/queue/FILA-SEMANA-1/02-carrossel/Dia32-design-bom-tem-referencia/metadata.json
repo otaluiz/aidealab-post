@@ -1,0 +1,75 @@
+{
+  "carousel_id": "2026-10-teste-variante-b",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 17,
+  "serie": "DESIGN",
+  "tema": "DESIGN BOM TEM referência.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T5-T5-T5-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "DESIGN BOM TEM referência."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "NINGUÉM CRIA DO ZERO. nem quem você admira."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": ""
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": ""
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": ""
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "OLHE, ANOTE E ADAPTE pro seu cliente."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER A LISTA COMPLETA DE referências? Comenta LISTA que a aidealab te manda no direct"
+    }
+  ],
+  "legenda": "Ninguém cria do zero. Nem os designers que você admira. A diferença é saber onde olhar: Laws of UX pra entender como as pessoas leem uma tela, Coolors pra montar a paleta e Google Fonts pra achar a fonte certa, com acento.\n\nOlhe, anote e adapte pro seu cliente.\n\nComenta LISTA que a aidealab te manda a lista completa de referências.",
+  "hashtags": [
+    "#aidealab",
+    "#design",
+    "#referencias",
+    "#pequenosnegocios",
+    "#marketingdigital"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
