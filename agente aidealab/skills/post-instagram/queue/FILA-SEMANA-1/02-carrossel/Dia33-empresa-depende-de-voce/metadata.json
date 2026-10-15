@@ -1,0 +1,75 @@
+{
+  "carousel_id": "2026-10-teste-variante-c",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 18,
+  "serie": "AUTOMAÇÃO",
+  "tema": "SUA EMPRESA DEPENDE de você pra tudo?",
+  "familia_cor": "navy-ciano",
+  "template": "T1b-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SUA EMPRESA DEPENDE de você pra tudo?"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O TELEFONE TOCA. e a cadeira está vazia."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE TRAVA Orçamento que só você sabe fazer Cliente que só fala com você Planilha que só você entende Resposta que depende do seu horário"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "CADA COISA QUE SÓ VOCÊ FAZ é um limite."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A IA ASSUME Primeira resposta no WhatsApp Orçamento padrão a partir de um formulário Lembrete de pagamento e de agenda Resumo do dia no seu celular"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "VOCÊ VOLTA A CUIDAR DO negócio."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER VER O QUE DÁ PRA automatizar aí? Comenta TEMPO e a aidealab te mostra por onde começar"
+    }
+  ],
+  "legenda": "Se o orçamento, o cliente e a planilha só andam quando você está por perto, a empresa para quando você para.\n\nA primeira resposta no WhatsApp, o orçamento padrão, o lembrete de pagamento e o resumo do dia podem rodar sozinhos. Você volta a cuidar do negócio.\n\nComenta TEMPO que a aidealab te mostra por onde começar.",
+  "hashtags": [
+    "#aidealab",
+    "#pequenosnegocios",
+    "#marketingdigital",
+    "#inteligenciaartificial",
+    "#automacao"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
