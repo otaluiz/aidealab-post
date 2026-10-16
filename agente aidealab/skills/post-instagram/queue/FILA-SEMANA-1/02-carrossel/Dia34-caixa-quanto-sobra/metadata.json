@@ -1,0 +1,75 @@
+{
+  "carousel_id": "2026-10-led-caixa-registradora",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-04",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 19,
+  "serie": "DADOS",
+  "tema": "VOCÊ VENDE TODO DIA. e não sabe quanto sobra.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "VOCÊ VENDE TODO DIA. e não sabe quanto sobra."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "A NOTA VAI PRA GAVETA. e a resposta junto."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE FICA ESCONDIDO Qual produto dá lucro de verdade Em que dia da semana você mais vende Quanto sai em taxa de cartão Quem comprou uma vez e sumiu"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "SEM ESSES NÚMEROS, VOCÊ DECIDE NO achismo."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A IA ORGANIZA Junta as vendas do caixa e do cartão Separa por produto e por dia Avisa quando a margem cai Manda o resumo da semana no WhatsApp"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "VOCÊ LÊ UM RESUMO E decide."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER VER O QUE SEU CAIXA DIZ? Comenta CAIXA a aidealab te mostra"
+    }
+  ],
+  "legenda": "A venda acontece, a nota vai pra gaveta e a pergunta fica sem resposta: quanto sobrou?\n\nQual produto dá lucro, em que dia você mais vende, quanto vai em taxa de cartão. Dá pra juntar caixa e cartão, separar por produto e receber um resumo da semana no WhatsApp. Aí você decide com número, não com palpite.\n\nComenta CAIXA que a aidealab te mostra por onde começar.",
+  "hashtags": [
+    "#aidealab",
+    "#pequenosnegocios",
+    "#marketingdigital",
+    "#inteligenciaartificial",
+    "#automacao"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
