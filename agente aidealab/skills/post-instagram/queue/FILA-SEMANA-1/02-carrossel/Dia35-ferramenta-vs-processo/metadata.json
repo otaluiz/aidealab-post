@@ -1,0 +1,81 @@
+{
+  "carousel_id": "ferramenta-vs-processo",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 20,
+  "serie": "CONTEÚDO",
+  "tema": "NÃO É A FERRAMENTA. é o processo que falta.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "NÃO É A FERRAMENTA. é o processo que falta."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "TODO MUNDO TEM A MESMA IA o que muda é o uso."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "SEM PROCESSO, FERRAMENTA VIRA RUÍDO Testa uma IA nova toda semana Nunca documenta o que funcionou Cada post sai de um jeito Ferramenta nova não é sistema novo"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PROCESSO É REPETIR O QUE já funcionou."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "A FERRAMENTA MUDA, O MÉTODO FICA esse é o ativo de verdade."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE VIRA SISTEMA Um briefing padrão Uma paleta fixa Um checklist de revisão Isso não depende de qual IA você usa"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "QUEM TEM PROCESSO TROCA DE IA sem perder o padrão."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "TEM PROCESSO NA SUA IA? ferramenta. Comenta PROCESSO e a aidealab te manda o checklist"
+    }
+  ],
+  "legenda": "Você trocou de ferramenta de IA de novo este mês?\n\nO problema quase nunca é qual IA você usa. Todo mundo tem acesso à mesma tecnologia hoje — o que separa quem cresce de quem fica girando em círculo é o processo por trás dela.\n\nSem processo, cada post sai de um jeito. Sem processo, você testa uma ferramenta nova toda semana e nunca sabe o que realmente funcionou. A ferramenta muda, mas o método — briefing padrão, paleta fixa, checklist de revisão — é o que fica e vira ativo de verdade.\n\nQuem tem processo troca de IA sem perder o padrão. Quem não tem, recomeça do zero a cada lançamento.\n\nComenta PROCESSO que a gente te manda o checklist que usamos aqui.",
+  "hashtags": [
+    "#aidealab",
+    "#marketingdigital",
+    "#iaparanegocios",
+    "#processocriativo",
+    "#pequenosnegocios"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
