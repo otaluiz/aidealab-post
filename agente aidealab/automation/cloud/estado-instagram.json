@@ -1,39 +1,57 @@
 {
-  "atualizado_em": "2026-10-17T13:50:24+00:00",
+  "atualizado_em": "2026-10-18T14:05:58+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 440,
+    "followers_count": 439,
     "follows_count": 215,
-    "media_count": 32,
+    "media_count": 33,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 361,
-    "profile_views": 111,
+    "reach": 363,
+    "profile_views": 112,
     "website_clicks": 3,
     "follows_and_unfollows": null,
     "accounts_engaged": 32
   },
   "posts": [
     {
-      "data": "2026-10-17",
+      "data": "2026-10-18",
       "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.",
-      "link": "https://www.instagram.com/p/DemGcUMHCC5/",
+      "gancho": "Aparecer todo mundo aparece. Ser lembrado é que dá trabalho.",
+      "link": "https://www.instagram.com/p/DeouTJnlxNK/",
       "likes": 0,
       "comments": 0,
       "insights": {
-        "reach": 0,
+        "reach": 1,
         "saved": 0,
         "shares": 0,
-        "views": 3,
+        "views": 1,
         "total_interactions": 0,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": null
+      "score": 0.0
+    },
+    {
+      "data": "2026-10-17",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.",
+      "link": "https://www.instagram.com/p/DemGcUMHCC5/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 12,
+        "saved": 0,
+        "shares": 0,
+        "views": 29,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 33.33
     },
     {
       "data": "2026-10-16",
@@ -43,33 +61,33 @@
       "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 28,
+        "reach": 29,
         "saved": 0,
         "shares": 0,
-        "views": 66,
+        "views": 68,
         "total_interactions": 4,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 14.29
+      "score": 13.79
     },
     {
       "data": "2026-10-15",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
       "link": "https://www.instagram.com/p/DehJkt6FyzX/",
-      "likes": 9,
+      "likes": 10,
       "comments": 0,
       "insights": {
-        "reach": 34,
+        "reach": 35,
         "saved": 0,
         "shares": 0,
-        "views": 68,
-        "total_interactions": 10,
+        "views": 74,
+        "total_interactions": 11,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 26.47
+      "score": 28.57
     },
     {
       "data": "2026-10-14",
@@ -97,15 +115,15 @@
       "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 12,
+        "reach": 13,
         "saved": 0,
         "shares": 0,
-        "views": 18,
+        "views": 21,
         "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 33.33
+      "score": 30.77
     },
     {
       "data": "2026-10-12",
@@ -257,17 +275,17 @@
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
       "link": "https://www.instagram.com/p/DeE7gxdDJMA/",
       "likes": 16,
-      "comments": 0,
+      "comments": 1,
       "insights": {
-        "reach": 75,
+        "reach": 76,
         "saved": 0,
         "shares": 0,
-        "views": 160,
-        "total_interactions": 19,
+        "views": 166,
+        "total_interactions": 20,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 21.33
+      "score": 23.68
     },
     {
       "data": "2026-10-03",
@@ -579,15 +597,15 @@
       "data": "2026-10-15",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "score": 26.47,
-      "alcance": 34
+      "score": 28.57,
+      "alcance": 35
     },
     {
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
-      "score": 21.33,
-      "alcance": 75
+      "score": 23.68,
+      "alcance": 76
     },
     {
       "data": "2026-09-21",

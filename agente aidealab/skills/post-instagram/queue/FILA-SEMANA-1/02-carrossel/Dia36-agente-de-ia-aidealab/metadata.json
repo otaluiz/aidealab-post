@@ -1,0 +1,82 @@
+{
+  "carousel_id": "agente-de-ia-aidealab",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "SERVIÇOS",
+  "tema": "ENQUANTO VOCÊ DORME, ela trabalha.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ENQUANTO VOCÊ DORME, ela trabalha."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O ATENDIMENTO NÃO PARA às seis da tarde."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE UM AGENTE DE IA FAZ Responde o direct na hora Qualifica quem quer comprar Agenda sem troca de mensagem Te avisa só do que importa"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ELE APRENDE A SUA MARCA e repete o padrão sem cansar."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "SEGUNDA DE MANHÃ, A FILA JÁ ANDOU e você nem abriu o celular."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE CONTINUA COM VOCÊ A decisão final O cliente que pede conversa A proposta e o preço O que exige olho humano"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "ELE NÃO SUBSTITUI O SEU TIME tira o repetitivo dele."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "SEU AGENTE PODE COMEÇAR ESSA SEMANA. Comenta AGENTE e a gente te mostra o que ele faria no seu negócio"
+    }
+  ],
+  "legenda": "Enquanto você dorme, um agente de IA pode estar respondendo direct, qualificando quem quer comprar e marcando horário.\n\nEle aprende como a sua marca fala e repete esse padrão sem cansar. Segunda de manhã, a fila já andou.\n\nO que fica com você é o que precisa de gente: a decisão final, a proposta, o cliente que quer conversar.\n\nQuer ver o que um agente faria no seu negócio? Comenta AGENTE.",
+  "hashtags": [
+    "#agentedeia",
+    "#inteligenciaartificial",
+    "#automacao",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
