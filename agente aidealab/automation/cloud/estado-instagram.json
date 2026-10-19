@@ -1,17 +1,17 @@
 {
-  "atualizado_em": "2026-10-19T11:27:49+00:00",
+  "atualizado_em": "2026-10-19T17:04:43+00:00",
   "perfil": {
-    "id": "17841472134319553",
+    "username": "idea_lab7",
+    "name": "AIdea Lab 🤖",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 438,
     "follows_count": 215,
     "media_count": 33,
-    "name": "AIdea Lab 🤖",
-    "username": "idea_lab7"
+    "id": "17841472134319553"
   },
   "conta_28d": {
-    "reach": 347,
-    "profile_views": 98,
+    "reach": 348,
+    "profile_views": 99,
     "website_clicks": 2,
     "follows_and_unfollows": null,
     "accounts_engaged": 30
@@ -22,24 +22,114 @@
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Aparecer todo mundo aparece. Ser lembrado é que dá trabalho.",
       "link": "https://www.instagram.com/p/DeouTJnlxNK/",
-      "likes": 3,
+      "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 6,
+        "reach": 14,
         "saved": 0,
         "shares": 0,
-        "views": 20,
-        "total_interactions": 3,
+        "views": 35,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 50.0
+      "score": 35.71
     },
     {
       "data": "2026-10-17",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.",
       "link": "https://www.instagram.com/p/DemGcUMHCC5/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 13,
+        "saved": 0,
+        "shares": 0,
+        "views": 31,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 30.77
+    },
+    {
+      "data": "2026-10-16",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.",
+      "link": "https://www.instagram.com/p/DejsP7RFT-G/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 30,
+        "saved": 0,
+        "shares": 0,
+        "views": 73,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 13.33
+    },
+    {
+      "data": "2026-10-15",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
+      "link": "https://www.instagram.com/p/DehJkt6FyzX/",
+      "likes": 10,
+      "comments": 0,
+      "insights": {
+        "reach": 36,
+        "saved": 0,
+        "shares": 0,
+        "views": 76,
+        "total_interactions": 11,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 27.78
+    },
+    {
+      "data": "2026-10-14",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Um monte de peça solta não vira marca. Vira ruído.",
+      "link": "https://www.instagram.com/p/DeenrsLoMn8/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 16,
+        "saved": 0,
+        "shares": 0,
+        "views": 38,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 25.0
+    },
+    {
+      "data": "2026-10-13",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente manda áudio de 5 minutos e o pedido de verdade está lá no meio. Você ouve duas vezes e ainda esquece o prazo.",
+      "link": "https://www.instagram.com/p/DebuhHpmGnJ/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 14,
+        "saved": 0,
+        "shares": 0,
+        "views": 22,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 28.57
+    },
+    {
+      "data": "2026-10-12",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Antes de comprar, ele some. E você chama isso de funil.",
+      "link": "https://www.instagram.com/p/DeZLAc1lnrz/",
       "likes": 4,
       "comments": 0,
       "insights": {
@@ -54,96 +144,6 @@
       "score": 33.33
     },
     {
-      "data": "2026-10-16",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.",
-      "link": "https://www.instagram.com/p/DejsP7RFT-G/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 29,
-        "saved": 0,
-        "shares": 0,
-        "views": 68,
-        "total_interactions": 4,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 13.79
-    },
-    {
-      "data": "2026-10-15",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "link": "https://www.instagram.com/p/DehJkt6FyzX/",
-      "likes": 10,
-      "comments": 0,
-      "insights": {
-        "reach": 35,
-        "saved": 0,
-        "shares": 0,
-        "views": 74,
-        "total_interactions": 11,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 28.57
-    },
-    {
-      "data": "2026-10-14",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Um monte de peça solta não vira marca. Vira ruído.",
-      "link": "https://www.instagram.com/p/DeenrsLoMn8/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 15,
-        "saved": 0,
-        "shares": 0,
-        "views": 36,
-        "total_interactions": 4,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 26.67
-    },
-    {
-      "data": "2026-10-13",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Cliente manda áudio de 5 minutos e o pedido de verdade está lá no meio. Você ouve duas vezes e ainda esquece o prazo.",
-      "link": "https://www.instagram.com/p/DebuhHpmGnJ/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 13,
-        "saved": 0,
-        "shares": 0,
-        "views": 21,
-        "total_interactions": 5,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 30.77
-    },
-    {
-      "data": "2026-10-12",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Antes de comprar, ele some. E você chama isso de funil.",
-      "link": "https://www.instagram.com/p/DeZLAc1lnrz/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 11,
-        "saved": 0,
-        "shares": 0,
-        "views": 28,
-        "total_interactions": 4,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 36.36
-    },
-    {
       "data": "2026-10-11",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Cliente pede orçamento em três lugares. Quem responde primeiro, com tudo claro, costuma levar.",
@@ -151,15 +151,15 @@
       "likes": 2,
       "comments": 0,
       "insights": {
-        "reach": 18,
+        "reach": 19,
         "saved": 0,
         "shares": 0,
-        "views": 34,
+        "views": 35,
         "total_interactions": 2,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 11.11
+      "score": 10.53
     },
     {
       "data": "2026-10-10",
@@ -169,15 +169,15 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 12,
+        "reach": 13,
         "saved": 0,
         "shares": 0,
-        "views": 35,
+        "views": 37,
         "total_interactions": 6,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 41.67
+      "score": 38.46
     },
     {
       "data": "2026-10-09",
@@ -187,15 +187,15 @@
       "likes": 7,
       "comments": 0,
       "insights": {
-        "reach": 26,
+        "reach": 27,
         "saved": 0,
         "shares": 0,
-        "views": 48,
+        "views": 49,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 26.92
+      "score": 25.93
     },
     {
       "data": "2026-10-08",
@@ -205,15 +205,15 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 14,
+        "reach": 15,
         "saved": 0,
         "shares": 0,
-        "views": 31,
+        "views": 32,
         "total_interactions": 6,
         "follows": 0,
         "profile_visits": 3
       },
-      "score": 42.86
+      "score": 40.0
     },
     {
       "data": "2026-10-07",
@@ -259,15 +259,15 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 22,
+        "reach": 23,
         "saved": 0,
         "shares": 0,
-        "views": 41,
+        "views": 42,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 22.73
+      "score": 21.74
     },
     {
       "data": "2026-10-04",
@@ -277,15 +277,15 @@
       "likes": 16,
       "comments": 1,
       "insights": {
-        "reach": 76,
+        "reach": 77,
         "saved": 0,
         "shares": 0,
-        "views": 166,
+        "views": 167,
         "total_interactions": 20,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 23.68
+      "score": 23.38
     },
     {
       "data": "2026-10-03",
@@ -367,15 +367,15 @@
       "likes": 8,
       "comments": 0,
       "insights": {
-        "reach": 28,
+        "reach": 29,
         "saved": 0,
         "shares": 0,
-        "views": 58,
+        "views": 60,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 28.57
+      "score": 27.59
     },
     {
       "data": "2026-09-26",
@@ -385,15 +385,15 @@
       "likes": 3,
       "comments": 0,
       "insights": {
-        "reach": 32,
+        "reach": 33,
         "saved": 0,
         "shares": 0,
-        "views": 58,
+        "views": 61,
         "total_interactions": 3,
         "follows": 0,
         "profile_visits": 2
       },
-      "score": 9.38
+      "score": 9.09
     },
     {
       "data": "2026-09-25",
@@ -403,15 +403,15 @@
       "likes": 14,
       "comments": 4,
       "insights": {
-        "reach": 65,
+        "reach": 66,
         "saved": 0,
         "shares": 0,
-        "views": 148,
+        "views": 150,
         "total_interactions": 21,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 33.85
+      "score": 33.33
     },
     {
       "data": "2026-09-24",
@@ -421,15 +421,15 @@
       "likes": 7,
       "comments": 0,
       "insights": {
-        "reach": 22,
+        "reach": 23,
         "saved": 0,
         "shares": 0,
-        "views": 56,
+        "views": 57,
         "total_interactions": 7,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 31.82
+      "score": 30.43
     },
     {
       "data": "2026-09-23",
@@ -457,15 +457,15 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 17,
+        "reach": 18,
         "saved": 0,
         "shares": 0,
-        "views": 72,
+        "views": 74,
         "total_interactions": 7,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 29.41
+      "score": 27.78
     },
     {
       "data": "2026-09-21",
@@ -475,15 +475,15 @@
       "likes": 10,
       "comments": 2,
       "insights": {
-        "reach": 80,
+        "reach": 81,
         "saved": 0,
         "shares": 1,
-        "views": 191,
+        "views": 192,
         "total_interactions": 14,
         "follows": 0,
         "profile_visits": 3
       },
-      "score": 21.25
+      "score": 20.99
     },
     {
       "data": "2025-09-20",
@@ -559,15 +559,15 @@
       "likes": 16,
       "comments": 2,
       "insights": {
-        "reach": 218,
+        "reach": 219,
         "saved": 1,
         "shares": 3,
-        "views": 510,
+        "views": 511,
         "total_interactions": 22,
         "follows": 1,
         "profile_visits": 5
       },
-      "score": 16.06
+      "score": 15.98
     },
     {
       "data": "2025-01-24",
@@ -590,29 +590,29 @@
       "data": "2026-09-25",
       "tipo": "IMAGE",
       "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
-      "score": 33.85,
-      "alcance": 65
+      "score": 33.33,
+      "alcance": 66
     },
     {
       "data": "2026-10-15",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "score": 28.57,
-      "alcance": 35
+      "score": 27.78,
+      "alcance": 36
     },
     {
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
-      "score": 23.68,
-      "alcance": 76
+      "score": 23.38,
+      "alcance": 77
     },
     {
       "data": "2026-09-21",
       "tipo": "IMAGE",
       "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
-      "score": 21.25,
-      "alcance": 80
+      "score": 20.99,
+      "alcance": 81
     },
     {
       "data": "2025-02-21",
@@ -641,8 +641,8 @@
       "data": "2026-09-26",
       "tipo": "IMAGE",
       "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
-      "score": 9.38,
-      "alcance": 32
+      "score": 9.09,
+      "alcance": 33
     },
     {
       "data": "2025-01-24",
