@@ -1,0 +1,164 @@
+{
+ "id": "whatsapp-vai-cobrar",
+ "meta": {
+  "serie": "SAIU HOJE",
+  "data": "2026/10",
+  "personagem": ""
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "VAI COBRAR",
+    "NO ZAP?"
+   ],
+   "emocao": {
+    "texto": "só pra quem usa [API].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     349,
+     559,
+     717,
+     660
+    ],
+    "caixa": [
+     362,
+     563,
+     705,
+     991
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "MITO: O WHATSAPP",
+    "VIROU PAGO."
+   ],
+   "emocao": {
+    "texto": "e o [app] segue grátis.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [
+     [
+      680,
+      1074,
+      886,
+      1280
+     ]
+    ],
+    "cabeca": [
+     375,
+     473,
+     986,
+     634
+    ],
+    "caixa": [
+     398,
+     479,
+     964,
+     1160
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "VERDADE: {MUDOU}",
+    "NA API OFICIAL"
+   ],
+   "lista": [
+    "Desde 1º de outubro de 2026",
+    "Vale só para a API oficial",
+    "Mensagem de serviço entra na conta",
+    "Depois de 1.000 grátis por mês"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "APP BUSINESS",
+    "CONTINUA GRÁTIS"
+   ],
+   "emocao": {
+    "texto": "se você responde [no celular].",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "VEJA SE {AFETA}",
+    "O SEU NEGÓCIO"
+   ],
+   "lista": [
+    "Usa chatbot ou sistema?",
+    "Pergunte se é a API oficial",
+    "Conte as mensagens do mês",
+    "Passou de 1.000? Há custo"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "SEM CHATBOT?",
+    "NADA MUDA"
+   ],
+   "emocao": {
+    "texto": "{segue} igual.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "MANDA PRA QUEM",
+    "USA CHATBOT"
+   ],
+   "cta": {
+    "acao": "Manda pra quem usa",
+    "texto": "e confira a conta do mês"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     268,
+     788,
+     634,
+     846
+    ],
+    "caixa": [
+     216,
+     791,
+     650,
+     1032
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}
