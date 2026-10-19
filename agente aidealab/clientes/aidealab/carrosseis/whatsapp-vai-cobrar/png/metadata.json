@@ -1,0 +1,77 @@
+{
+ "carousel_id": "whatsapp-vai-cobrar",
+ "cliente": "aidealab",
+ "data_criacao": "2026-10-19",
+ "status": "rascunho",
+ "postado": false,
+ "postado_em": null,
+ "post_id": null,
+ "ordem_fila": 0,
+ "serie": "SAIU HOJE",
+ "tema": "VAI COBRAR NO ZAP? só pra quem usa API.",
+ "familia_cor": "navy-ciano",
+ "template": "T1-T2-T3-T2-T3-T2c-T4",
+ "formato": "1080x1440",
+ "slides": [
+  {
+   "ordem": 1,
+   "arquivo": "slide-01.png",
+   "papel": "hook",
+   "texto": "VAI COBRAR NO ZAP? só pra quem usa API."
+  },
+  {
+   "ordem": 2,
+   "arquivo": "slide-02.png",
+   "papel": "tensao",
+   "texto": "MITO: O WHATSAPP VIROU PAGO. e o app segue grátis."
+  },
+  {
+   "ordem": 3,
+   "arquivo": "slide-03.png",
+   "papel": "desenvolvimento",
+   "texto": "VERDADE: MUDOU NA API OFICIAL Desde 1º de outubro de 2026 Vale só para a API oficial Mensagem de serviço entra na conta Depois de 1.000 grátis por mês"
+  },
+  {
+   "ordem": 4,
+   "arquivo": "slide-04.png",
+   "papel": "desenvolvimento",
+   "texto": "APP BUSINESS CONTINUA GRÁTIS se você responde no celular."
+  },
+  {
+   "ordem": 5,
+   "arquivo": "slide-05.png",
+   "papel": "desenvolvimento",
+   "texto": "VEJA SE AFETA O SEU NEGÓCIO Usa chatbot ou sistema? Pergunte se é a API oficial Conte as mensagens do mês Passou de 1.000? Há custo"
+  },
+  {
+   "ordem": 6,
+   "arquivo": "slide-06.png",
+   "papel": "desenvolvimento",
+   "texto": "SEM CHATBOT? NADA MUDA segue igual."
+  },
+  {
+   "ordem": 7,
+   "arquivo": "slide-07.png",
+   "papel": "cta",
+   "texto": "MANDA PRA QUEM USA CHATBOT Manda pra quem usa e confira a conta do mês"
+  }
+ ],
+ "legenda": "O WhatsApp não virou pago. A cobrança nova vale para a API oficial.\n\nDesde 1º de outubro de 2026, quem usa chatbot ou sistema de atendimento pela API oficial paga as mensagens de serviço depois de 1.000 grátis por número a cada mês. O aplicativo WhatsApp Business gratuito, o do celular, não muda (segundo Digisac, Zenvia e Tribuna de Jundiaí).\n\nUsa chatbot? Pergunte ao seu fornecedor quantas mensagens você manda por mês e confira a conta.\n\nManda pra quem usa chatbot no negócio.\n\n#whatsappbusiness #pequenosnegocios #atendimento #iaparanegocios #aidealab",
+ "hashtags": [
+  "#whatsappbusiness",
+  "#pequenosnegocios",
+  "#atendimento",
+  "#iaparanegocios",
+  "#aidealab"
+ ],
+ "handle": "@idea_lab7",
+ "personagem": "",
+ "textura_foto": {
+  "hook": "halftone"
+ },
+ "textura_slide": {
+  "cta": "cloth_letras"
+ },
+ "pilar": "tendência",
+ "fonte_tendencia": "https://tribunadejundiai.com.br/economia/whatsapp-business-sera-pago-a-partir-de-outubro-mensagem-assusta-pequenos-negocios-mas-cobranca-nao-funciona-como-parece/"
+}
