@@ -55,21 +55,20 @@ def itens(resto):
 
 
 def linhas(display, max_l=3):
-    """Quebra o display em até 3 linhas equilibradas; devolve (linhas, tamanho da fonte em px)."""
+    """Quebra o display em até 3 linhas (testa todas as quebras) maximizando a fonte, sem linha com uma
+    palavra curta sozinha; devolve (linhas, tamanho da fonte em px)."""
+    from itertools import combinations
     pal = display.split()
     melhor = None
     for n in range(1, min(max_l, len(pal)) + 1):
-        alvo = len(display) / n
-        ls, cur = [], ""
-        for p in pal:
-            if cur and len(cur) + 1 + len(p) > alvo + 3 and len(ls) < n - 1:
-                ls.append(cur); cur = p
-            else:
-                cur = f"{cur} {p}".strip()
-        ls.append(cur)
-        tam = min(150, int(936 / (max(len(l) for l in ls) * 0.7)))
-        if melhor is None or tam > melhor[1] + 8:
-            melhor = (ls, tam)
+        for cortes in combinations(range(1, len(pal)), n - 1):
+            idx = (0, *cortes, len(pal))
+            ls = [" ".join(pal[a:b]) for a, b in zip(idx, idx[1:])]
+            if n > 1 and any(len(l) <= 3 for l in ls):
+                continue
+            tam = min(150, int(936 / (max(len(l) for l in ls) * 0.78)))
+            if melhor is None or tam > melhor[1] + 8 or (tam >= melhor[1] - 8 and n == 2 and len(melhor[0]) != 2):
+                melhor = (ls, tam)
     return melhor
 
 
@@ -92,8 +91,10 @@ def slide_tipo(i, n, tpl, texto):
     spans = []
     for j, l in enumerate(ls):
         if j == len(ls) - 1:
-            w = l.rsplit(" ", 1)
-            l = (esc(w[0]) + " " if len(w) > 1 else "") + f'<span class="hot">{esc(w[-1])}</span>'
+            # palavra quente = a última com mais de 3 letras da última linha (nunca "DO", "NO", "QUE")
+            w = l.split(" ")
+            k = max((x for x in range(len(w)) if len(w[x].strip(".,?!")) > 3), default=None)
+            l = " ".join(f'<span class="hot">{esc(p)}</span>' if x == k else esc(p) for x, p in enumerate(w))
         else:
             l = esc(l)
         spans.append(f'<span class="linha"><span class="lin">{l}</span></span>')
