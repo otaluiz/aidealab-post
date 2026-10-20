@@ -1,0 +1,82 @@
+{
+  "carousel_id": "automacao-com-criterio",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "CONTEÚDO",
+  "tema": "AUTOMAÇÃO SEM FILTRO VIRA spam.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "AUTOMAÇÃO SEM FILTRO VIRA spam."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "A MESMA MENSAGEM PRA TODO MUNDO cansa até quem ia comprar."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "ONDE A AUTOMAÇÃO ERRA Manda oferta pra quem já comprou Fala igual com cliente e curioso Insiste em quem pediu pra parar Responde o que precisava de gente"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "O PROBLEMA NÃO É AUTOMATIZAR é automatizar sem critério."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "QUEM DECIDE O TOM AINDA É VOCÊ a máquina só repete."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE VALE AUTOMATIZAR Dúvida que chega toda semana Lembrete de prazo e horário Follow-up de quem sumiu Confirmação de pedido"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA MENSAGEM CERTA NA HORA CERTA vale mais que cem iguais."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "AUTOMAÇÃO, MAS COM CRITÉRIO. Comenta CRITÉRIO e a gente revisa a sua com você"
+    }
+  ],
+  "legenda": "Automação sem filtro vira spam. Mandar o mesmo texto pra quem já comprou e pra quem nunca ouviu falar de você cansa os dois.\n\nO problema não é automatizar. É automatizar sem critério. Quem decide o tom, o momento e a exceção ainda é você.\n\nDeixe a máquina com o repetitivo: dúvida frequente, lembrete de horário, follow-up de quem sumiu. O primeiro contato e o caso fora da curva ficam com gente.\n\nQuer revisar a sua automação? Comenta CRITÉRIO.",
+  "hashtags": [
+    "#automacao",
+    "#whatsappbusiness",
+    "#marketingdigital",
+    "#atendimento",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}

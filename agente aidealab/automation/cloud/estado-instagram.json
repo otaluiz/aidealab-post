@@ -1,16 +1,16 @@
 {
-  "atualizado_em": "2026-10-19T17:04:43+00:00",
+  "atualizado_em": "2026-10-20T15:16:10+00:00",
   "perfil": {
     "username": "idea_lab7",
     "name": "AIdea Lab 🤖",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 438,
-    "follows_count": 215,
-    "media_count": 33,
+    "followers_count": 439,
+    "follows_count": 218,
+    "media_count": 34,
     "id": "17841472134319553"
   },
   "conta_28d": {
-    "reach": 348,
+    "reach": 350,
     "profile_views": 99,
     "website_clicks": 2,
     "follows_and_unfollows": null,
@@ -18,40 +18,58 @@
   },
   "posts": [
     {
+      "data": "2026-10-20",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Seu feed pode estar bonito e mesmo assim não vender nada.",
+      "link": "https://www.instagram.com/p/DeuDO57F48I/",
+      "likes": 0,
+      "comments": 0,
+      "insights": {
+        "reach": 1,
+        "saved": 0,
+        "shares": 0,
+        "views": 5,
+        "total_interactions": 0,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 0.0
+    },
+    {
       "data": "2026-10-18",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Aparecer todo mundo aparece. Ser lembrado é que dá trabalho.",
       "link": "https://www.instagram.com/p/DeouTJnlxNK/",
-      "likes": 5,
+      "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 14,
+        "reach": 25,
         "saved": 0,
         "shares": 0,
-        "views": 35,
-        "total_interactions": 5,
+        "views": 53,
+        "total_interactions": 6,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 35.71
+      "score": 24.0
     },
     {
       "data": "2026-10-17",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.",
       "link": "https://www.instagram.com/p/DemGcUMHCC5/",
-      "likes": 4,
+      "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 13,
+        "reach": 16,
         "saved": 0,
         "shares": 0,
-        "views": 31,
-        "total_interactions": 4,
+        "views": 34,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 30.77
+      "score": 31.25
     },
     {
       "data": "2026-10-16",
@@ -64,7 +82,7 @@
         "reach": 30,
         "saved": 0,
         "shares": 0,
-        "views": 73,
+        "views": 74,
         "total_interactions": 4,
         "follows": 0,
         "profile_visits": 0
@@ -79,15 +97,15 @@
       "likes": 10,
       "comments": 0,
       "insights": {
-        "reach": 36,
+        "reach": 37,
         "saved": 0,
         "shares": 0,
-        "views": 76,
+        "views": 77,
         "total_interactions": 11,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 27.78
+      "score": 27.03
     },
     {
       "data": "2026-10-14",
@@ -277,15 +295,15 @@
       "likes": 16,
       "comments": 1,
       "insights": {
-        "reach": 77,
+        "reach": 78,
         "saved": 0,
         "shares": 0,
-        "views": 167,
+        "views": 168,
         "total_interactions": 20,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 23.38
+      "score": 23.08
     },
     {
       "data": "2026-10-03",
@@ -475,7 +493,7 @@
       "likes": 10,
       "comments": 2,
       "insights": {
-        "reach": 81,
+        "reach": 82,
         "saved": 0,
         "shares": 1,
         "views": 192,
@@ -483,7 +501,7 @@
         "follows": 0,
         "profile_visits": 3
       },
-      "score": 20.99
+      "score": 20.73
     },
     {
       "data": "2025-09-20",
@@ -493,12 +511,12 @@
       "likes": 19,
       "comments": 4,
       "insights": {
-        "reach": 494,
+        "reach": 495,
         "saved": 0,
         "shares": 0,
         "total_interactions": 23
       },
-      "score": 5.47
+      "score": 5.45
     },
     {
       "data": "2025-04-16",
@@ -597,22 +615,22 @@
       "data": "2026-10-15",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "score": 27.78,
-      "alcance": 36
+      "score": 27.03,
+      "alcance": 37
     },
     {
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
-      "score": 23.38,
-      "alcance": 77
+      "score": 23.08,
+      "alcance": 78
     },
     {
       "data": "2026-09-21",
       "tipo": "IMAGE",
       "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
-      "score": 20.99,
-      "alcance": 81
+      "score": 20.73,
+      "alcance": 82
     },
     {
       "data": "2025-02-21",
@@ -655,8 +673,8 @@
       "data": "2025-09-20",
       "tipo": "REELS",
       "gancho": "🎥✨ Campo Novo do Parecis está vivendo a emoção do Ranch Sorting e a @aidealab está presente com tecnologia de ponta, garantindo uma transmis",
-      "score": 5.47,
-      "alcance": 494
+      "score": 5.45,
+      "alcance": 495
     }
   ]
 }
