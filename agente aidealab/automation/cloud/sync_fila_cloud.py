@@ -114,6 +114,8 @@ def main():
             alvo.mkdir(parents=True)
             for s in meta["slides"]:
                 (alvo / s["arquivo"]).write_bytes(baixar(svc, fs[s["arquivo"]]))
+                if s.get("video") in fs:  # carrossel animado (motor/motion)
+                    (alvo / s["video"]).write_bytes(baixar(svc, fs[s["video"]]))
             meta.update(postado=False, status="aprovado")
             local.aplicar_textura(alvo, meta)
             local.gravar(alvo / "metadata.json", meta)

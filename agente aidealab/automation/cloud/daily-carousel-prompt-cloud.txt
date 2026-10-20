@@ -84,6 +84,10 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   capa e CTA podem ser o mesmo personagem ou um em cada. Prompt descritivo, editorial, paleta navy/ciano da
   marca, pose e cenário ligados ao tema e diferentes do último carrossel; sempre
   "no text, no letters, no logos". Mantenha o cabelo visível, sem chapéu nem óculos.
+- `soul_2` é só para os personagens (@luizota/@wel). E ele desenha letra falsa em qualquer objeto que lembre
+  texto: NÃO peça balão de conversa, tela de celular acesa, placa, letreiro, cartaz, documento, embalagem com
+  rótulo nem camiseta estampada (celular só "plain dark smartphone with a blank dark screen"). Texto e interface
+  ficam no carrossel, nunca na imagem. Imagem com letra = refaça.
 - Direção de arte dos personagens: siga `agente aidealab/clientes/aidealab/design-system/personagens.md` (nunca
   sorrindo, pose editorial da biblioteca da soul-ref descrita no prompt, título grande atrás do sujeito com
   `motor/capa_grande.py`). Ele manda sobre as regras de enquadramento abaixo quando houver conflito.
@@ -127,6 +131,11 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
   leva a fonte na legenda. Handle `@idea_lab7`.
 - Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
   depois, no `png/metadata.json`, `status` = `"rascunho"` (o `personagem` já vem do `meta` do `carrossel.json`).
+- CARROSSEL ANIMADO (formato padrão desde 20/10/2026, skill `agente aidealab/skills/criar-motion/SKILL.md`):
+  `python ../../../../../motor/motion/motion.py png` — gera `png/slide-NN.mp4` (6 s cada, motion suave sobre a
+  capa/slide 2/CTA aprovados e tipografia animada no miolo) e grava `slides[].video` no `png/metadata.json`.
+  Precisa de node e ffmpeg (~4 min). Confira 3 quadros (capa, um slide do miolo, CTA) com ffmpeg antes do commit.
+  Se o render falhar, siga sem os vídeos e diga no resumo: o publicador posta os PNGs.
 
 ## 6. Entrega
 `git add` só a pasta do carrossel (e `pauta.md` ou o arquivo da semana se marcou tema), commit `content: <slug> (rotina nuvem)` e `git push`. Se a sessão só

@@ -10,6 +10,14 @@ Projeto de referência (aprovado como teste em 20/10/2026):
 (`index.html` = composição HyperFrames, `variaveis.json` = versões, `render.sh` = render + corte por slide).
 Copie a pasta, troque o texto dos slides e as imagens; a estrutura de motion fica.
 
+## Produção (fila e carrosséis novos)
+
+`python motor/motion/motion.py <pasta>` converte qualquer carrossel do motor (pasta com `metadata.json` +
+`slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2, CTA e slides sem texto (T5)
+usam a arte aprovada com efeito por cima; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
+O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. O projeto de referência abaixo
+é para peça feita à mão (texto da capa animado sobre foto limpa, recorte com título atrás da cabeça).
+
 ## Formato
 
 - Composição única 1080×1440, 30 fps, 6 slides × 6 s (`data-duration="36"`); o `render.sh` corta um MP4 por slide

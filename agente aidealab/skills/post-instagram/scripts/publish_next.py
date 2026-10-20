@@ -219,9 +219,11 @@ def upload_to_supabase(image_path: Path) -> Optional[str]:
 
         supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
         image_bytes = image_path.read_bytes()
-        remote_path = f"{datetime.now().strftime('%Y%m%d')}/{image_path.stem}_{datetime.now().strftime('%H%M%S')}.png"
+        ext = image_path.suffix.lower() or ".png"
+        content_type = "video/mp4" if ext == ".mp4" else "image/png"
+        remote_path = f"{datetime.now().strftime('%Y%m%d')}/{image_path.stem}_{datetime.now().strftime('%H%M%S')}{ext}"
         supabase.storage.from_(SUPABASE_BUCKET).upload(
-            remote_path, image_bytes, {"contentType": "image/png"}
+            remote_path, image_bytes, {"contentType": content_type}
         )
         url = f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/{remote_path}"
         print(f"  [OK] {image_path.name} -> Supabase")
@@ -287,12 +289,15 @@ def publish_image(image_url: str, caption: str, ig_account_id: str) -> Optional[
 
 
 def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) -> Optional[str]:
+    """Filhos .mp4 viram itens VIDEO (carrossel animado da criar-motion); o resto, imagem."""
     media_url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media"
     child_ids = []
+    tem_video = any(u.endswith(".mp4") for u in child_urls)
     for url in child_urls:
+        item = {"media_type": "VIDEO", "video_url": url} if url.endswith(".mp4") else {"image_url": url}
         resp = requests.post(
             media_url,
-            json={"image_url": url, "is_carousel_item": True, "access_token": INSTAGRAM_ACCESS_TOKEN},
+            json={**item, "is_carousel_item": True, "access_token": INSTAGRAM_ACCESS_TOKEN},
             timeout=30,
         )
         raise_checked(resp)
@@ -304,7 +309,8 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
         print(f"  [OK] slide -> {media_id}")
 
     for media_id in child_ids:
-        if not wait_for_container_ready(media_id):
+        # vídeo leva minutos para processar no Instagram
+        if not wait_for_container_ready(media_id, timeout_s=600 if tem_video else 90, poll_s=10 if tem_video else 3):
             return None
 
     resp = requests.post(
@@ -430,21 +436,36 @@ def main():
         post_id = publish_image(image_url, caption, ig_account_id)
     else:
         slides = sorted(meta.get("slides", []), key=lambda s: s.get("ordem", 999))
-        child_urls = []
-        for slide in slides:
-            arquivo = slide.get("arquivo") or slide.get("nome")
-            if not arquivo:
-                print(f"[ERROR] Slide sem 'arquivo'/'nome': {slide}")
-                sys.exit(1)
-            image_path = nxt["folder"] / arquivo
-            if not image_path.exists():
-                print(f"[ERROR] Slide não encontrado: {image_path}")
-                sys.exit(1)
-            url = upload_to_supabase(image_path)
-            if not url:
-                sys.exit(1)
-            child_urls.append(url)
-        post_id = publish_carousel(child_urls, caption, ig_account_id)
+
+        def subir(campo: Optional[str]) -> List[str]:
+            urls = []
+            for slide in slides:
+                arquivo = (campo and slide.get(campo)) or slide.get("arquivo") or slide.get("nome")
+                if not arquivo:
+                    print(f"[ERROR] Slide sem 'arquivo'/'nome': {slide}")
+                    sys.exit(1)
+                path = nxt["folder"] / arquivo
+                if not path.exists():
+                    print(f"[ERROR] Slide não encontrado: {path}")
+                    sys.exit(1)
+                url = upload_to_supabase(path)
+                if not url:
+                    sys.exit(1)
+                urls.append(url)
+            return urls
+
+        post_id = None
+        # carrossel animado (slides[].video, gerado pelo motor/motion): tenta em vídeo; se o Instagram
+        # recusar, cai para os PNGs aprovados da mesma pasta para não perder o dia
+        if all(s.get("video") and (nxt["folder"] / s["video"]).exists() for s in slides):
+            try:
+                post_id = publish_carousel(subir("video"), caption, ig_account_id)
+            except requests.RequestException as e:
+                print(f"[WARN] Carrossel em vídeo falhou ({e}).")
+            if not post_id:
+                print("[WARN] Publicando os PNGs no lugar dos vídeos.")
+        if not post_id:
+            post_id = publish_carousel(subir(None), caption, ig_account_id)
 
     if not post_id:
         print("[FAIL] Publicação não completou.")

@@ -1231,6 +1231,24 @@ o nome do arquivo — cópias com nomes diferentes (`hook.b64` vs `hook_new.b64`
 escondem a repetição. Já aconteceu de um carrossel sair com hook e CTA
 reciclados de dois outros posts do mesmo feed.
 
+## Etapa 5b — Carrossel animado (formato padrão desde 20/10/2026)
+
+Todo carrossel novo sai também em vídeo. Depois dos PNGs finais e do `metadata.json`:
+
+```
+python motor/motion/motion.py <pasta com metadata.json e slide-NN.png>
+```
+
+Gera `slide-NN.mp4` (1080×1440, 6 s, HyperFrames) ao lado de cada PNG e grava `slides[].video` no
+`metadata.json`. Capa, slide 2 e CTA ficam com a arte aprovada e ganham o efeito por cima (acende com push-in,
+brilho que varre, poeira); o miolo é refeito em tipografia animada a partir de `slides[].texto` (display em
+caixa alta revelado por máscara + serifada, corpo ou lista no T3). Os PNGs continuam na pasta: o
+`post-instagram` publica os vídeos e, se o Instagram recusar, cai para os PNGs.
+
+Imagem de capa/CTA: `soul_2` **só** para @luizota/@wel e **sem nenhum objeto que carregue texto** (balão de
+chat, tela acesa, placa, cartaz, rótulo, estampa). Carrossel sem personagem usa o banco `img-ref`. Detalhes,
+efeitos e versões em `skills/criar-motion/SKILL.md`.
+
 ## Etapa 6 — Entrega
 
 Salva os PNGs finais no Drive via `create_file`: em `04-Carrosseis/<slug-do-tema>/`

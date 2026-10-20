@@ -166,6 +166,8 @@ def main():
             alvo.mkdir(parents=True)
             for s in meta["slides"]:
                 shutil.copy2(d / s["arquivo"], alvo / s["arquivo"])
+                if s.get("video") and (d / s["video"]).exists():  # carrossel animado (motor/motion)
+                    shutil.copy2(d / s["video"], alvo / s["video"])
             meta.update(postado=False, status="aprovado")
             aplicar_textura(alvo, meta)
             gravar(alvo / "metadata.json", meta)
