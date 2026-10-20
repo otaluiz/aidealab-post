@@ -17,43 +17,50 @@
       "ordem": 1,
       "arquivo": "slide-01.png",
       "papel": "hook",
-      "texto": "CAOS. seu WhatsApp virou"
+      "texto": "CAOS. seu WhatsApp virou",
+      "video": "slide-01.mp4"
     },
     {
       "ordem": 2,
       "arquivo": "slide-02.png",
       "papel": "tensao",
-      "texto": "O CLIENTE MANDA OI e o pedido some no meio da conversa."
+      "texto": "O CLIENTE MANDA OI e o pedido some no meio da conversa.",
+      "video": "slide-02.mp4"
     },
     {
       "ordem": 3,
       "arquivo": "slide-03.png",
       "papel": "desenvolvimento",
-      "texto": "NÃO FALTA GENTE falta um sistema que responda por você."
+      "texto": "NÃO FALTA GENTE falta um sistema que responda por você.",
+      "video": "slide-03.mp4"
     },
     {
       "ordem": 4,
       "arquivo": "slide-04.png",
       "papel": "desenvolvimento",
-      "texto": "A TRIAGEM AUTOMÁTICA Separa quem quer comprar De quem só pergunta preço Todo mundo recebe resposta Sem você digitar nada"
+      "texto": "A TRIAGEM AUTOMÁTICA Separa quem quer comprar De quem só pergunta preço Todo mundo recebe resposta Sem você digitar nada",
+      "video": "slide-04.mp4"
     },
     {
       "ordem": 5,
       "arquivo": "slide-05.png",
       "papel": "desenvolvimento",
-      "texto": "TODO MUNDO RECEBE RESPOSTA no minuto que manda a mensagem."
+      "texto": "TODO MUNDO RECEBE RESPOSTA no minuto que manda a mensagem.",
+      "video": "slide-05.mp4"
     },
     {
       "ordem": 6,
       "arquivo": "slide-06.png",
       "papel": "desenvolvimento",
-      "texto": "NÃO NO FIM DO DIA. a resposta chega na hora."
+      "texto": "NÃO NO FIM DO DIA. a resposta chega na hora.",
+      "video": "slide-06.mp4"
     },
     {
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "DEPOIS DO CAOS VEM A ordem. Comenta ORGANIZA e a aidealab te mostra como"
+      "texto": "DEPOIS DO CAOS VEM A ordem. Comenta ORGANIZA e a aidealab te mostra como",
+      "video": "slide-07.mp4"
     }
   ],
   "legenda": "Seu WhatsApp virou caos. O cliente manda oi e o pedido some no meio da conversa.\n\nNão falta gente, falta um sistema que responda por você. A triagem automática separa quem quer comprar de quem só pergunta preço, e todo mundo recebe resposta no minuto em que manda a mensagem, não no fim do dia.\n\nDepois do caos vem a ordem.\n\nComenta ORGANIZA que a gente te mostra como.",
@@ -71,5 +78,10 @@
   "textura_slide": {
     "cta": "cloth_letras"
   },
-  "slide3_t3": true
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
 }

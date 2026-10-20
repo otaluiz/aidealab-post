@@ -17,43 +17,50 @@
       "ordem": 1,
       "arquivo": "slide-01.png",
       "papel": "hook",
-      "texto": "VOCÊ VENDE TODO DIA. e não sabe quanto sobra."
+      "texto": "VOCÊ VENDE TODO DIA. e não sabe quanto sobra.",
+      "video": "slide-01.mp4"
     },
     {
       "ordem": 2,
       "arquivo": "slide-02.png",
       "papel": "tensao",
-      "texto": "A NOTA VAI PRA GAVETA. e a resposta junto."
+      "texto": "A NOTA VAI PRA GAVETA. e a resposta junto.",
+      "video": "slide-02.mp4"
     },
     {
       "ordem": 3,
       "arquivo": "slide-03.png",
       "papel": "desenvolvimento",
-      "texto": "O QUE FICA ESCONDIDO Qual produto dá lucro de verdade Em que dia da semana você mais vende Quanto sai em taxa de cartão Quem comprou uma vez e sumiu"
+      "texto": "O QUE FICA ESCONDIDO Qual produto dá lucro de verdade Em que dia da semana você mais vende Quanto sai em taxa de cartão Quem comprou uma vez e sumiu",
+      "video": "slide-03.mp4"
     },
     {
       "ordem": 4,
       "arquivo": "slide-04.png",
       "papel": "desenvolvimento",
-      "texto": "SEM ESSES NÚMEROS, VOCÊ DECIDE NO achismo."
+      "texto": "SEM ESSES NÚMEROS, VOCÊ DECIDE NO achismo.",
+      "video": "slide-04.mp4"
     },
     {
       "ordem": 5,
       "arquivo": "slide-05.png",
       "papel": "desenvolvimento",
-      "texto": "O QUE A IA ORGANIZA Junta as vendas do caixa e do cartão Separa por produto e por dia Avisa quando a margem cai Manda o resumo da semana no WhatsApp"
+      "texto": "O QUE A IA ORGANIZA Junta as vendas do caixa e do cartão Separa por produto e por dia Avisa quando a margem cai Manda o resumo da semana no WhatsApp",
+      "video": "slide-05.mp4"
     },
     {
       "ordem": 6,
       "arquivo": "slide-06.png",
       "papel": "desenvolvimento",
-      "texto": "VOCÊ LÊ UM RESUMO E decide."
+      "texto": "VOCÊ LÊ UM RESUMO E decide.",
+      "video": "slide-06.mp4"
     },
     {
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "QUER VER O QUE SEU CAIXA DIZ? Comenta CAIXA a aidealab te mostra"
+      "texto": "QUER VER O QUE SEU CAIXA DIZ? Comenta CAIXA a aidealab te mostra",
+      "video": "slide-07.mp4"
     }
   ],
   "legenda": "A venda acontece, a nota vai pra gaveta e a pergunta fica sem resposta: quanto sobrou?\n\nQual produto dá lucro, em que dia você mais vende, quanto vai em taxa de cartão. Dá pra juntar caixa e cartão, separar por produto e receber um resumo da semana no WhatsApp. Aí você decide com número, não com palpite.\n\nComenta CAIXA que a aidealab te mostra por onde começar.",
@@ -71,5 +78,10 @@
   "textura_slide": {
     "cta": "cloth_letras"
   },
-  "slide3_t3": true
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
 }

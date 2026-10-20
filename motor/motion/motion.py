@@ -156,7 +156,7 @@ def main():
         for i, s in enumerate(sorted(meta["slides"], key=lambda s: s["ordem"]), 1):
             video = Path(s["arquivo"]).with_suffix(".mp4").name
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
-                            "-c:v", "libx264", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
+                            "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
             s["video"] = video
     meta["formato_motion"] = {"fps": 30, "segundos_por_slide": S, "motor": HF}
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
