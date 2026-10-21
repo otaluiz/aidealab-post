@@ -20,7 +20,8 @@ texto impresso da arte (máscara do branco/ciano do tema + inpaint), devolve cad
 folga para acento) e recorta o elemento principal (rembg `u2net`) para o parallax sobre a placa; sem elemento
 recortável (ex. foto que ocupa a tela toda) fica só o parallax da placa. Nada de brilho varrendo. Slides sem texto
 (T5) só acendem com push-in; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
-No post, a capa (slide 1) sai como o PNG estático, com o hook visível no feed; do 2 em diante, vídeo.
+No post, o carrossel animado abre com a capa estática (PNG do hook, pronta no feed), seguida do hook animado e dos
+demais vídeos (até 10 itens; com 10 slides, a capa estática substitui o hook animado).
 O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. O projeto de referência abaixo
 é para peça feita à mão (texto da capa animado sobre foto limpa, recorte com título atrás da cabeça).
 
