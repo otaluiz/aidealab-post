@@ -12,6 +12,8 @@ Copie a pasta, troque o texto dos slides e as imagens; a estrutura de motion fic
 
 ## Produção (fila e carrosséis novos)
 
+**Carrossel novo → `motor/motion/fonte.py` (seção abaixo), usado pela rotina diária e pela `criar-post`.**
+O `motion.py` fica só para carrossel antigo sem `carrossel.json` (fila já aprovada, só arte final):
 `python motor/motion/motion.py <pasta>` converte qualquer carrossel do motor (pasta com `metadata.json` +
 `slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2, CTA e slides sem texto (T5)
 usam a arte aprovada com efeito por cima; o miolo é refeito em tipografia animada a partir de `slides[].texto`.

@@ -20,6 +20,9 @@ import tempfile
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
+# OpenCV 4 do motor (motor/.vendor_cv4, instalado pelo setup-motor.sh) traz os cascades Haar da detecção de rosto
+if (AQUI.parent / ".vendor_cv4").exists():
+    sys.path.insert(0, str(AQUI.parent / ".vendor_cv4"))
 S = 6
 HF = "hyperframes@0.8.181"
 
@@ -165,7 +168,6 @@ def main():
         subprocess.run(["npx", "-y", HF, "render", "--quality", "looks", "--output", "completo.mp4"], cwd=proj, check=True)
         saida = pasta / "png"
         saida.mkdir(exist_ok=True)
-        shutil.copy2(proj / "completo.mp4", saida / "completo.mp4")
         for i in range(1, len(car["slides"]) + 1):
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
                             "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart",

@@ -1231,19 +1231,25 @@ o nome do arquivo — cópias com nomes diferentes (`hook.b64` vs `hook_new.b64`
 escondem a repetição. Já aconteceu de um carrossel sair com hook e CTA
 reciclados de dois outros posts do mesmo feed.
 
-## Etapa 5b — Carrossel animado (formato padrão desde 20/10/2026)
+## Etapa 5b — Carrossel animado (formato padrão, aprovado em 21/10/2026)
 
 Todo carrossel novo sai também em vídeo. Depois dos PNGs finais e do `metadata.json`:
 
 ```
-python motor/motion/motion.py <pasta com metadata.json e slide-NN.png>
+python motor/motion/fonte.py <pasta do carrossel com carrossel.json>
 ```
 
-Gera `slide-NN.mp4` (1080×1440, 6 s, HyperFrames) ao lado de cada PNG e grava `slides[].video` no
-`metadata.json`. Capa, slide 2 e CTA ficam com a arte aprovada e ganham o efeito por cima (acende com push-in,
-brilho que varre, poeira); o miolo é refeito em tipografia animada a partir de `slides[].texto` (display em
-caixa alta revelado por máscara + serifada, corpo ou lista no T3). Os PNGs continuam na pasta: o
-`post-instagram` publica os vídeos e, se o Instagram recusar, cai para os PNGs.
+Gera `png/slide-NN.mp4` (1080×1440, 6 s, HyperFrames) e grava `slides[].video` no `png/metadata.json`:
+- **texto animado em todos os slides**, montado do `carrossel.json` (display revelado por máscara, serifada,
+  marca-texto, lista item a item, botão do CTA);
+- **parallax só na capa, no slide 2 e no CTA**, com a imagem ESTÁTICA: recorte do elemento principal + fundo sem
+  ele (inpaint), em velocidades diferentes; o personagem só respira de leve. Nunca gerar vídeo nem gastar
+  crédito para animar personagem;
+- slides de texto no formato anterior (grade/LED respira no lugar, sem camadas andando);
+- **texto nunca sobre rosto**: o layout afasta título, serifada e botão das caixas de rosto antes de animar.
+
+Os PNGs continuam na pasta: o `post-instagram` publica os vídeos e, se o Instagram recusar, cai para os PNGs.
+Carrossel antigo sem `carrossel.json` (só arte final) usa `motor/motion/motion.py`.
 
 Imagem de capa/CTA: `soul_2` **só** para @luizota/@wel e **sem nenhum objeto que carregue texto** (balão de
 chat, tela acesa, placa, cartaz, rótulo, estampa). Carrossel sem personagem usa o banco `img-ref`. Detalhes,
