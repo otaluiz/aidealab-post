@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-20T23:06:45+00:00",
+  "atualizado_em": "2026-10-21T03:15:51+00:00",
   "perfil": {
     "username": "idea_lab7",
     "name": "AIdea Lab 🤖",
@@ -22,18 +22,18 @@
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Seu feed pode estar bonito e mesmo assim não vender nada.",
       "link": "https://www.instagram.com/p/DeuDO57F48I/",
-      "likes": 1,
+      "likes": 2,
       "comments": 0,
       "insights": {
         "reach": 8,
         "saved": 0,
         "shares": 0,
         "views": 16,
-        "total_interactions": 1,
+        "total_interactions": 2,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 12.5
+      "score": 25.0
     },
     {
       "data": "2026-10-18",
@@ -64,7 +64,7 @@
         "reach": 17,
         "saved": 0,
         "shares": 0,
-        "views": 35,
+        "views": 36,
         "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
@@ -169,15 +169,15 @@
       "likes": 2,
       "comments": 0,
       "insights": {
-        "reach": 19,
+        "reach": 20,
         "saved": 0,
         "shares": 0,
-        "views": 35,
+        "views": 37,
         "total_interactions": 2,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 10.53
+      "score": 10.0
     },
     {
       "data": "2026-10-10",
