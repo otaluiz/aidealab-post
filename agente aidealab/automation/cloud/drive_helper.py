@@ -71,6 +71,10 @@ def get_service():
         scopes=SCOPES,
     )
     creds.refresh(Request())
+    # vídeos do carrossel animado: o timeout padrão do googleapiclient (60 s) estoura no upload
+    import socket
+    if socket.getdefaulttimeout() is None:
+        socket.setdefaulttimeout(600)
     return build("drive", "v3", credentials=creds, cache_discovery=False)
 
 
