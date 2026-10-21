@@ -1,0 +1,82 @@
+{
+  "carousel_id": "bastidor-3-cores",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "BASTIDOR",
+  "tema": "A GENTE SEMPRE REPARA na cor primeiro.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "A GENTE SEMPRE REPARA na cor primeiro."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "ANTES DO FIGMA, A GENTE ESCUTA o que a marca quer dizer."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO NASCE A PALETA Ler a história do cliente Separar os tons que fazem sentido Testar contraste no claro e no escuro Cortar o que não precisa"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "TRÊS CORES, NUNCA MAIS QUE ISSO o resto vira ruído."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA PRA FALAR, UMA PRA APOIAR e uma pra chamar atenção."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O TESTE QUE FECHA A COR Funciona no feed escuro Funciona impressa Lê bem no celular no sol Não depende de gradiente"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "QUANDO A COR ESTÁ CERTA a marca é reconhecida de longe."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "É ASSIM QUE UMA MARCA NASCE. Comenta CORES e a gente te mostra a paleta por dentro"
+    }
+  ],
+  "legenda": "Antes de abrir o Figma, a gente escuta. A cor de uma marca começa na história do cliente, não no gosto de quem desenha.\n\nDepois vem o teste: claro e escuro, tela e impressão, celular no sol. A paleta fecha em três cores, uma pra falar, uma pra apoiar e uma pra chamar atenção.\n\nQuando a cor está certa, a marca é reconhecida antes de alguém ler o nome.\n\nQuer ver como montamos uma paleta? Comenta CORES.",
+  "hashtags": [
+    "#bastidores",
+    "#identidadevisual",
+    "#paletadecores",
+    "#designdemarca",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
