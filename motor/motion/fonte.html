@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1440" />
+<title>{{TITULO}}</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  @font-face { font-family: "Inter"; font-weight: 900; src: url(fonts/Inter-900.woff2) format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 400; src: url(fonts/manrope-400.woff2) format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 600; src: url(fonts/manrope-600.woff2) format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 700; src: url(fonts/manrope-700.woff2) format("woff2"); }
+  @font-face { font-family: "Yellowtail"; font-weight: 400; src: url(fonts/yellowtail-400.woff2) format("woff2"); }
+  @font-face { font-family: "Fira Code"; font-weight: 500; src: url(fonts/fira-code-500.woff2) format("woff2"); }
+
+  /* tokens do tema aidealab (clientes/aidealab/design-system/tema/tema.css) */
+  :root { --ink: #0A0E16; --papel: #E9EEF4; --branco: #FFFFFF; --quente: #6EC9F7; --quente-papel: #0B6E9E; --apoio: #E94B91; }
+  body { margin: 0; background: var(--ink); }
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); }
+
+  /* mídia na raiz: foto/vídeo (z 0) < texto do slide (z 1) < recorte do personagem (z 2) < resto (z 3).
+     As sections não criam contexto de empilhamento, então os z-index se intercalam. */
+  .raiz-midia { position: absolute; inset: 0; transform-origin: 50% 70%; }
+  .foto-w { z-index: 0; } .recorte-w { z-index: 2; }
+  .foto, .recorte { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .slide { position: absolute; inset: 0; color: var(--branco); font-family: "Manrope", sans-serif; }
+  .slide.ink { background: var(--ink); --hot: var(--quente); }
+  .slide.papel { background: var(--papel); color: var(--ink); --hot: var(--quente-papel); }
+  .slide.foto { --hot: var(--quente); }
+  .slide.foto .display, .slide.foto .serif, .slide.foto .apoio, .slide.foto .topo, .slide.foto .rodape { text-shadow: 0 2px 22px rgba(0, 0, 0, .6); }
+
+  .led { position: absolute; inset: -60px; background-image: radial-gradient(rgba(110, 201, 247, .16) 1.6px, transparent 1.8px); background-size: 22px 22px; }
+  .grade { position: absolute; inset: -80px; background-image: linear-gradient(rgba(46, 82, 184, .09) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 82, 184, .09) 1px, transparent 1px); background-size: 60px 60px; }
+  .grao { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; z-index: 3; }
+  .ink .grao, .foto .grao { opacity: .14; } .papel .grao { opacity: .10; }
+  .topo, .rodape { position: absolute; z-index: 3; left: 72px; right: 72px; display: flex; justify-content: space-between; align-items: center; font: 600 26px "Manrope"; letter-spacing: .04em; }
+  .topo { top: 64px; } .rodape { bottom: 64px; }
+  .dots { display: flex; gap: 10px; align-items: center; }
+  .dots i { display: block; width: 10px; height: 10px; border-radius: 5px; background: currentColor; opacity: .5; }
+  .dots i.on { width: 34px; background: var(--hot); opacity: 1; }
+
+  .conteudo { position: absolute; left: 72px; right: 72px; top: 200px; bottom: 170px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .display { position: relative; z-index: 1; font: 900 120px/0.92 "Inter"; text-transform: uppercase; letter-spacing: -.02em; margin: 0; }
+  .display .linha { display: block; overflow: hidden; padding: 0.12em 0 6px; margin-top: -0.12em; }
+  .display .lin { display: inline-block; }
+  .hot { color: var(--hot); }
+  /* marca-texto {x}: caixa na cor quente que varre da esquerda, texto ink */
+  .mt { position: relative; display: inline-block; padding: 0 .12em; }
+  .mt i { position: absolute; inset: .06em 0 .02em; background: var(--hot); transform-origin: left center; }
+  .mt b { position: relative; font-weight: inherit; color: var(--ink); }
+  .serif { position: relative; z-index: 3; font: 400 88px/1.05 "Yellowtail"; color: var(--hot); margin: 30px 0 0; text-transform: none; }
+  .serif .em-l { display: block; }
+  /* capa com personagem: a serifada vai no peito, embaixo, nunca no rosto */
+  .t1 .serif, .t1b .serif { position: absolute; left: 0; right: 0; bottom: 40px; margin: 0; text-align: center; }
+  .serif .mt b { color: var(--ink); }
+  .papel .mt b, .papel .serif .mt b { color: #fff; }
+  .t2.foto .conteudo { justify-content: flex-start; }
+  .lista { position: relative; z-index: 1; list-style: none; margin: 56px 0 0; padding: 0; align-self: stretch; }
+  .lista li { display: flex; gap: 34px; align-items: baseline; padding: 26px 0; position: relative; }
+  .lista .n { font: 500 34px "Fira Code"; color: var(--apoio); width: 60px; flex: none; }
+  .lista .t { font: 700 40px/1.2 "Manrope"; }
+  .lista .fio { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: currentColor; opacity: .16; transform-origin: left center; }
+  .pill { position: relative; z-index: 3; display: inline-flex; align-items: center; height: 104px; padding: 0 50px; margin-top: 40px; border-radius: 52px;
+    background: var(--quente); color: var(--ink); font: 700 44px "Manrope"; }
+  .apoio { position: relative; z-index: 3; font: 600 32px "Manrope"; margin: 22px 0 0; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="ruido"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
+</svg>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1440" data-duration="{{DURACAO}}">
+  {{SLIDES}}
+</div>
+<script>
+  // Texto animado em todos os slides + parallax: cada camada anda numa velocidade conforme a profundidade.
+  const tl = gsap.timeline({ paused: true });
+  const E = "expo.out", S = 6;
+  const aparece = (el, t, d = 0.9) => tl.fromTo(el, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+
+  document.querySelectorAll(".slide").forEach((sl, k) => {
+    const t0 = k * S, i = k + 1, q = s => sl.querySelectorAll(s);
+    // parallax: fundo/foto quase parados, texto sobe mais, CTA/serifada mais ainda
+    const foto = document.getElementById("foto" + i), rec = document.getElementById("recorte" + i);
+    if (foto) {
+      // foto e recorte juntos (o recorte precisa casar com a foto), com zoom e deriva lentos
+      tl.fromTo([foto, rec].filter(Boolean), { scale: 1.07, y: 10, filter: "brightness(.45)" },
+        { scale: 1.025, y: -8, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+    }
+    q(".led, .grade").forEach(el => tl.fromTo(el, { y: 30 }, { y: -10, duration: S, ease: "none" }, t0));
+    q(".camada[data-prof]").forEach(el => {
+      const p = +el.dataset.prof;
+      if (el.classList.contains("led") || el.classList.contains("grade")) return;
+      tl.fromTo(el, { y: p * 9 }, { y: -p * 7, duration: S, ease: "sine.inOut" }, t0);
+    });
+    // texto
+    tl.fromTo(q(".lin"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E, stagger: 0.12 }, t0 + 0.35);
+    q(".serif").forEach(el => aparece(el, t0 + 1.1, 1));
+    q(".lista li").forEach((li, j) => {
+      const t = t0 + 1.0 + j * 0.32;
+      tl.fromTo(li.querySelector(".n"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, t);
+      tl.fromTo(li.querySelector(".t"), { opacity: 0, x: 40, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.9, ease: E }, t + 0.08);
+      tl.fromTo(li.querySelector(".fio"), { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: E }, t + 0.15);
+    });
+    q(".mt i").forEach(el => tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.inOut" }, t0 + 1.6));
+    q(".pill").forEach(el => {
+      tl.fromTo(el, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "back.out(1.7)" }, t0 + 1.5);
+      tl.to(el, { scale: 1.04, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 2.5);
+    });
+    q(".apoio").forEach(el => aparece(el, t0 + 1.9));
+  });
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
