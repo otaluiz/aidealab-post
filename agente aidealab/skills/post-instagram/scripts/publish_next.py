@@ -439,9 +439,13 @@ def main():
 
         def subir(campo: Optional[str]) -> List[str]:
             urls = []
-            for i, slide in enumerate(slides):
-                # capa sempre estática: o hook do PNG aparece já no feed, sem esperar o vídeo
-                arquivo = (campo and i > 0 and slide.get(campo)) or slide.get("arquivo") or slide.get("nome")
+            # carrossel animado: capa estática (PNG do hook, aparece pronta no feed) + o hook animado em seguida
+            # (a API aceita até 10 itens; carrossel de 10 slides troca o hook animado pela capa estática)
+            fila = [(slide, campo) for slide in slides]
+            if campo:
+                fila = [(slides[0], None)] + (fila if len(fila) < 10 else fila[1:])
+            for slide, c in fila:
+                arquivo = (c and slide.get(c)) or slide.get("arquivo") or slide.get("nome")
                 if not arquivo:
                     print(f"[ERROR] Slide sem 'arquivo'/'nome': {slide}")
                     sys.exit(1)
