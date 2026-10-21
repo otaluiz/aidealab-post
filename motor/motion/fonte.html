@@ -74,7 +74,37 @@
   {{SLIDES}}
 </div>
 <script>
-  // Texto animado em todos os slides + parallax: cada camada anda numa velocidade conforme a profundidade.
+  // Texto animado em todos os slides. Parallax só nos slides com imagem (capa, slide 2, CTA);
+  // os de texto ficam no formato anterior (grade respira no lugar, sem camadas andando).
+  // Antes da timeline, o texto dos slides com foto sai de cima dos rostos (data-rostos, coordenadas 1080x1440).
+  const FOLGA = 60; // margem do rosto + o que o parallax desloca
+  const cruza = (a, b) => a.left < b[2] + FOLGA && a.right > b[0] - FOLGA && a.top < b[3] + FOLGA && a.bottom > b[1] - FOLGA;
+  function evitarRostos(sl) {
+    const rs = JSON.parse(sl.dataset.rostos || "[]");
+    if (!rs.length) return;
+    const base = sl.getBoundingClientRect();
+    const caixa = el => { const r = el.getBoundingClientRect(); return { left: r.left - base.left, right: r.right - base.left, top: r.top - base.top, bottom: r.bottom - base.top }; };
+    const topo = Math.min(...rs.map(r => r[1])) - FOLGA, chao = Math.max(...rs.map(r => r[3])) + FOLGA;
+    // serifada solta (capa): vai para baixo do rosto, ou para cima se não couber
+    sl.querySelectorAll(".t1 .serif, .t1b .serif").forEach(el => {
+      if (!rs.some(r => cruza(caixa(el), r))) return;
+      const h = caixa(el).bottom - caixa(el).top;
+      Object.assign(el.style, chao + h <= 1440 - 150 ? { top: chao + "px", bottom: "auto" } : { top: (topo - h) + "px", bottom: "auto" });
+    });
+    const ct = sl.querySelector(".conteudo"), itens = [...ct.children].filter(el => getComputedStyle(el).position !== "absolute");
+    for (let tent = 0; tent < 6; tent++) {
+      if (!itens.some(el => rs.some(r => cruza(caixa(el), r)))) return;
+      const cx = itens.map(caixa), alto = Math.max(...cx.map(c => c.bottom)) - Math.min(...cx.map(c => c.top));
+      ct.style.justifyContent = "flex-start"; ct.style.bottom = "auto";
+      if (topo - alto >= 130) { ct.style.top = (topo - alto) + "px"; continue; }
+      if (chao + alto <= 1440 - 150) { ct.style.top = chao + "px"; continue; }
+      const d = ct.querySelector(".display");  // não cabe nem acima nem abaixo: diminui o título e tenta de novo
+      d.style.fontSize = (parseFloat(getComputedStyle(d).fontSize) * 0.9) + "px";
+    }
+  }
+  document.fonts.ready.then(() => {
+  document.querySelectorAll(".slide[data-rostos]").forEach(evitarRostos);
+
   const tl = gsap.timeline({ paused: true });
   const E = "expo.out", S = 6;
   const aparece = (el, t, d = 0.9) => tl.fromTo(el, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
@@ -91,12 +121,14 @@
         tl.fromTo(rec.querySelector(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
       }
     }
-    q(".led, .grade").forEach(el => tl.fromTo(el, { y: 30 }, { y: -10, duration: S, ease: "none" }, t0));
-    q(".camada[data-prof]").forEach(el => {
-      const p = +el.dataset.prof;
-      if (el.classList.contains("led") || el.classList.contains("grade")) return;
-      tl.fromTo(el, { y: p * 9 }, { y: -p * 7, duration: S, ease: "sine.inOut" }, t0);
-    });
+    if (foto) {
+      q(".camada[data-prof]").forEach(el => {
+        const p = +el.dataset.prof;
+        tl.fromTo(el, { y: p * 9 }, { y: -p * 7, duration: S, ease: "sine.inOut" }, t0);
+      });
+    } else {
+      q(".led, .grade").forEach(el => tl.fromTo(el, { scale: 1 }, { scale: 1.06, duration: S, ease: "none" }, t0));
+    }
     // texto
     tl.fromTo(q(".lin"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E, stagger: 0.12 }, t0 + 0.35);
     q(".serif").forEach(el => aparece(el, t0 + 1.1, 1));
@@ -114,6 +146,7 @@
     q(".apoio").forEach(el => aparece(el, t0 + 1.9));
   });
   window.__timelines["main"] = tl;
+  });
 </script>
 </body>
 </html>

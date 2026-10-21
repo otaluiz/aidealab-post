@@ -61,6 +61,22 @@ def camadas_foto(pasta, s):
     return placa.relative_to(pasta).as_posix(), rec.relative_to(pasta).as_posix()
 
 
+def rostos(pasta, s):
+    """Caixas [x1,y1,x2,y2] de rosto/cabeça na foto (1080x1440): as do motor (sujeito.rostos_sujeito e
+    sujeito.cabeca) ou detecção Haar do OpenCV quando o carrossel.json não traz o sujeito."""
+    suj = s.get("sujeito") or {}
+    caixas = [list(c) for c in (suj.get("rostos_sujeito") or [])] + ([list(suj["cabeca"])] if suj.get("cabeca") else [])
+    if caixas or not s.get("imagem"):
+        return caixas
+    try:
+        import cv2
+        cinza = cv2.cvtColor(cv2.imread(str(pasta / s["imagem"])), cv2.COLOR_BGR2GRAY)
+        cls = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+        return [[int(x), int(y), int(x + w), int(y + h)] for x, y, w, h in cls.detectMultiScale(cinza, 1.1, 6, minSize=(80, 80))]
+    except Exception:  # OpenCV sem cascades (5.x): sem detecção, vale só o que o motor marcou
+        return []
+
+
 def camada(src, kind, i):
     """Imagem na raiz (clip da janela do slide) dentro de wrapper que leva o parallax."""
     resp = '<div class="respira">' if kind.startswith("recorte") else '<div class="fixo">'
@@ -109,7 +125,8 @@ def slide(i, n, s, pasta):
     else:
         camadas.append('<div class="camada grade" data-prof="1"></div>')
     dots = "".join(f'<i class="{"on" if k == i else ""}"></i>' for k in range(1, n + 1))
-    return f'''<section id="s{i}" class="slide {fundo} {tpl.lower()} clip" data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
+    dados = f" data-rostos='{json.dumps(rostos(pasta, s))}'" if foto else ""
+    return f'''<section id="s{i}" class="slide {fundo} {tpl.lower()} clip"{dados} data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
     {"".join(camadas)}
     <div class="conteudo" style="{estilo}">{"".join(partes)}</div>
     <div class="topo"><span>AIDEA LAB</span><span>MARKETING &amp; IA</span></div>

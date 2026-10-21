@@ -18,6 +18,17 @@ usam a arte aprovada com efeito por cima; o miolo é refeito em tipografia anima
 O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. O projeto de referência abaixo
 é para peça feita à mão (texto da capa animado sobre foto limpa, recorte com título atrás da cabeça).
 
+## Carrossel novo (fonte = carrossel.json) — formato validado em 21/10/2026
+
+`python motor/motion/fonte.py <pasta do carrossel>` (piloto: `clientes/aidealab/carrosseis/follow-up-ninguem-faz`).
+- Texto animado em todos os slides, montado do `carrossel.json` (display, emoção, lista, CTA).
+- **Parallax só nos slides com imagem (capa, slide 2, CTA)**, com a imagem ESTÁTICA: recorte do elemento
+  principal (o do motor ou rembg) + placa sem o elemento (OpenCV inpaint), camadas em velocidades diferentes;
+  personagem só respira de leve. **Nunca gerar vídeo nem gastar crédito para animar personagem.**
+- Slides de texto no formato anterior: tipografia animada, grade/LED respira no lugar, sem camadas andando.
+- **Texto nunca em cima de rosto:** cada slide com foto leva as caixas de rosto (`sujeito` do motor ou detecção
+  OpenCV) e o layout tira título/serifada/botão de cima delas antes de animar (margem que cobre o parallax).
+
 ## Formato
 
 - Composição única 1080×1440, 30 fps, 6 slides × 6 s (`data-duration="36"`); o `render.sh` corta um MP4 por slide
