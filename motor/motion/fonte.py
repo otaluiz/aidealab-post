@@ -128,7 +128,8 @@ def slide(i, n, s, pasta):
     else:
         camadas.append('<div class="camada grade" data-prof="1"></div>')
     dots = "".join(f'<i class="{"on" if k == i else ""}"></i>' for k in range(1, n + 1))
-    dados = f" data-rostos='{json.dumps(rostos(pasta, s))}'" if foto else ""
+    corpo = (s.get("sujeito") or {}).get("caixa")
+    dados = (f" data-rostos='{json.dumps(rostos(pasta, s))}'" + (f" data-corpo='{json.dumps(corpo)}'" if corpo else "")) if foto else ""
     return f'''<section id="s{i}" class="slide {fundo} {tpl.lower()} clip"{dados} data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
     {"".join(camadas)}
     <div class="conteudo" style="{estilo}">{"".join(partes)}</div>

@@ -17,43 +17,50 @@
       "ordem": 1,
       "arquivo": "slide-01.png",
       "papel": "hook",
-      "texto": "SEU GOOGLE TÁ PARADO. e o cliente vai no vizinho."
+      "texto": "SEU GOOGLE TÁ PARADO. e o cliente vai no vizinho.",
+      "video": "slide-01.mp4"
     },
     {
       "ordem": 2,
       "arquivo": "slide-02.png",
       "papel": "tensao",
-      "texto": "FOTO VELHA, HORÁRIO ERRADO. quem procura, desiste."
+      "texto": "FOTO VELHA, HORÁRIO ERRADO. quem procura, desiste.",
+      "video": "slide-02.mp4"
     },
     {
       "ordem": 3,
       "arquivo": "slide-03.png",
       "papel": "desenvolvimento",
-      "texto": "O QUE O CLIENTE VÊ PRIMEIRO Nota e últimas avaliações Fotos recentes do lugar O horário de hoje Botão de rota ou WhatsApp"
+      "texto": "O QUE O CLIENTE VÊ PRIMEIRO Nota e últimas avaliações Fotos recentes do lugar O horário de hoje Botão de rota ou WhatsApp",
+      "video": "slide-03.mp4"
     },
     {
       "ordem": 4,
       "arquivo": "slide-04.png",
       "papel": "desenvolvimento",
-      "texto": "PERFIL ABANDONADO PARECE LOJA fechada."
+      "texto": "PERFIL ABANDONADO PARECE LOJA fechada.",
+      "video": "slide-04.mp4"
     },
     {
       "ordem": 5,
       "arquivo": "slide-05.png",
       "papel": "desenvolvimento",
-      "texto": "O QUE MANTÉM O PERFIL VIVO Responder toda avaliação Uma foto nova por semana Horário certo nos feriados Lembrete automático pedindo avaliação"
+      "texto": "O QUE MANTÉM O PERFIL VIVO Responder toda avaliação Uma foto nova por semana Horário certo nos feriados Lembrete automático pedindo avaliação",
+      "video": "slide-05.mp4"
     },
     {
       "ordem": 6,
       "arquivo": "slide-06.png",
       "papel": "desenvolvimento",
-      "texto": "UMA ROTINA SIMPLES E VOCÊ aparece no mapa."
+      "texto": "UMA ROTINA SIMPLES E VOCÊ aparece no mapa.",
+      "video": "slide-06.mp4"
     },
     {
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "QUER SEU PERFIL TRABALHANDO? Comenta GOOGLE a aidealab revisa com você"
+      "texto": "QUER SEU PERFIL TRABALHANDO? Comenta GOOGLE a aidealab revisa com você",
+      "video": "slide-07.mp4"
     }
   ],
   "legenda": "Antes de entrar, o cliente procura no Google. E o que ele encontra? Foto antiga, horário errado, avaliação sem resposta.\n\nPerfil parado passa a impressão de loja fechada, e a pessoa vai no concorrente que aparece arrumado. Responder avaliação, trocar uma foto por semana e manter o horário certo já muda o jogo. Dá até pra automatizar o pedido de avaliação depois de cada venda.\n\nComenta GOOGLE que a aidealab revisa seu perfil com você.",
@@ -71,5 +78,11 @@
   "textura_slide": {
     "cta": "cloth_letras",
     "hook": "cloth_letras"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181",
+    "fonte": "carrossel.json"
   }
 }

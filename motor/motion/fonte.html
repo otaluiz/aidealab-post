@@ -85,21 +85,35 @@
     const base = sl.getBoundingClientRect();
     const caixa = el => { const r = el.getBoundingClientRect(); return { left: r.left - base.left, right: r.right - base.left, top: r.top - base.top, bottom: r.bottom - base.top }; };
     const topo = Math.min(...rs.map(r => r[1])) - FOLGA, chao = Math.max(...rs.map(r => r[3])) + FOLGA;
-    // serifada solta (capa): vai para baixo do rosto, ou para cima se não couber
-    sl.querySelectorAll(".t1 .serif, .t1b .serif").forEach(el => {
-      if (!rs.some(r => cruza(caixa(el), r))) return;
-      const h = caixa(el).bottom - caixa(el).top;
-      Object.assign(el.style, chao + h <= 1440 - 150 ? { top: chao + "px", bottom: "auto" } : { top: (topo - h) + "px", bottom: "auto" });
-    });
     const ct = sl.querySelector(".conteudo"), itens = [...ct.children].filter(el => getComputedStyle(el).position !== "absolute");
     for (let tent = 0; tent < 6; tent++) {
-      if (!itens.some(el => rs.some(r => cruza(caixa(el), r)))) return;
+      if (!itens.some(el => rs.some(r => cruza(caixa(el), r)))) break;
       const cx = itens.map(caixa), alto = Math.max(...cx.map(c => c.bottom)) - Math.min(...cx.map(c => c.top));
       ct.style.justifyContent = "flex-start"; ct.style.bottom = "auto";
       if (topo - alto >= 130) { ct.style.top = (topo - alto) + "px"; continue; }
       if (chao + alto <= 1440 - 150) { ct.style.top = chao + "px"; continue; }
       const d = ct.querySelector(".display");  // não cabe nem acima nem abaixo: diminui o título e tenta de novo
       d.style.fontSize = (parseFloat(getComputedStyle(d).fontSize) * 0.9) + "px";
+    }
+    // serifada solta (capa): primeira posição que não toca rosto nem título (abaixo do rosto, logo abaixo
+    // do título, acima do rosto)
+    sl.querySelectorAll(".t1 .serif, .t1b .serif").forEach(el => {
+      const disp = sl.querySelector(".display");
+      const bate = () => rs.some(r => cruza(caixa(el), r)) || (disp && (() => { const a = caixa(el), b = caixa(disp); return a.top < b.bottom + 10 && a.bottom > b.top - 10; })());
+      if (!bate()) return;
+      const h = caixa(el).bottom - caixa(el).top, dfim = disp ? caixa(disp).bottom + 24 : 0;
+      for (const y of [chao, dfim, topo - h]) {
+        if (y < 130 || y + h > 1440 - 150) continue;
+        Object.assign(el.style, { top: (y - caixa(ct).top) + "px", bottom: "auto" });  // top é relativo ao .conteudo
+        if (!bate()) return;
+      }
+      el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * 0.85) + "px";
+    });
+    // texto que cruza o CORPO (abaixo da cabeça) vai para a frente do recorte: atrás só da cabeça, nunca do corpo
+    const corpo = JSON.parse(sl.dataset.corpo || "null");
+    if (corpo) {
+      const pe = [corpo[0], chao - FOLGA, corpo[2], corpo[3]];
+      sl.querySelectorAll(".display, .serif, .lista").forEach(el => { if (cruza(caixa(el), pe)) el.style.zIndex = 3; });
     }
   }
   document.fonts.ready.then(() => {
