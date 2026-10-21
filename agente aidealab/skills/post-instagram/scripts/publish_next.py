@@ -439,8 +439,9 @@ def main():
 
         def subir(campo: Optional[str]) -> List[str]:
             urls = []
-            for slide in slides:
-                arquivo = (campo and slide.get(campo)) or slide.get("arquivo") or slide.get("nome")
+            for i, slide in enumerate(slides):
+                # capa sempre estática: o hook do PNG aparece já no feed, sem esperar o vídeo
+                arquivo = (campo and i > 0 and slide.get(campo)) or slide.get("arquivo") or slide.get("nome")
                 if not arquivo:
                     print(f"[ERROR] Slide sem 'arquivo'/'nome': {slide}")
                     sys.exit(1)
