@@ -3,9 +3,9 @@
   "cliente": "aidealab",
   "data_criacao": "2026-10-04",
   "status": "aprovado",
-  "postado": true,
-  "postado_em": "2026-10-21T14:36:08.358852",
-  "post_id": "18381728044232998",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
   "ordem_fila": 13,
   "serie": "AUTOMAÇÃO",
   "tema": "CAOS. seu WhatsApp virou",
@@ -82,6 +82,7 @@
   "formato_motion": {
     "fps": 30,
     "segundos_por_slide": 6,
-    "motor": "hyperframes@0.8.181"
+    "motor": "hyperframes@0.8.181",
+    "camadas": "camadas_png.py"
   }
 }
