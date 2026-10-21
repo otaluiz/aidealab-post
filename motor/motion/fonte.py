@@ -36,17 +36,37 @@ def tamanho(linhas, largura, maximo):
     return min(maximo, int(largura / (n * 0.74)))
 
 
-def midia(pasta, nome, kind, i):
-    """Vídeo animado da imagem (motion/<nome>.mp4|webm) ou a própria imagem. Vídeo é clip próprio na raiz
-    (não pode ficar dentro da section temporizada), dentro de um wrapper que leva o parallax."""
-    stem = Path(nome).stem
-    for ext in (".webm", ".mp4"):
-        v = pasta / "motion" / f"{stem}{ext}"
-        if v.exists():
-            return (f'<div class="raiz-midia {kind}-w" id="{kind}{i}"><video id="v-{kind}{i}" class="clip {kind}" src="motion/{v.name}" muted playsinline '
-                    f'data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="{2 if kind == "recorte" else 1}"></video></div>')
-    return (f'<div class="raiz-midia {kind}-w" id="{kind}{i}"><img class="clip {kind}" src="{nome}" alt="" '
-            f'data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="{2 if kind == "recorte" else 1}" /></div>')
+def camadas_foto(pasta, s):
+    """Separa a foto estática em duas camadas para o parallax (sem gerar vídeo, sem crédito):
+    recorte = elemento principal com fundo transparente (o do motor ou rembg) e
+    placa = a foto sem o elemento (OpenCV inpaint na máscara dilatada), para não aparecer "fantasma"
+    quando as camadas andam em velocidades diferentes. Cache em <pasta>/motion/."""
+    import numpy as np
+    from PIL import Image
+    cache = pasta / "motion"
+    cache.mkdir(exist_ok=True)
+    stem = Path(s["imagem"]).stem
+    rec = pasta / s["recorte"] if s.get("recorte") else cache / f"{stem}_recorte.png"
+    placa = cache / f"{stem}_placa.jpg"
+    foto = Image.open(pasta / s["imagem"]).convert("RGB")
+    if not rec.exists():
+        from rembg import new_session, remove
+        remove(foto, session=new_session("isnet-general-use")).save(rec)
+    if not placa.exists():
+        import cv2
+        alfa = np.array(Image.open(rec).convert("RGBA").resize(foto.size))[:, :, 3]
+        mascara = cv2.dilate((alfa > 24).astype("uint8") * 255, np.ones((45, 45), "uint8"))
+        bgr = cv2.cvtColor(np.array(foto), cv2.COLOR_RGB2BGR)
+        cv2.imwrite(str(placa), cv2.inpaint(bgr, mascara, 21, cv2.INPAINT_TELEA), [cv2.IMWRITE_JPEG_QUALITY, 92])
+    return placa.relative_to(pasta).as_posix(), rec.relative_to(pasta).as_posix()
+
+
+def camada(src, kind, i):
+    """Imagem na raiz (clip da janela do slide) dentro de wrapper que leva o parallax."""
+    resp = '<div class="respira">' if kind.startswith("recorte") else '<div class="fixo">'
+    k = kind.split()[0]
+    return (f'<div class="raiz-midia {kind.replace(k, k + "-w")}" id="{k}{i}">{resp}<img class="clip {k}" src="{src}" alt="" '
+            f'data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="{2 if k == "recorte" else 1}" /></div></div>')
 
 
 def slide(i, n, s, pasta):
@@ -81,9 +101,9 @@ def slide(i, n, s, pasta):
         estilo += "align-items:center;text-align:center;"
     camadas, raiz = [], []
     if foto:
-        raiz.append(midia(pasta, s["imagem"], "foto", i))
-        if s.get("recorte"):
-            raiz.append(midia(pasta, s["recorte"], "recorte", i))
+        placa, rec = camadas_foto(pasta, s)
+        # só personagem (recorte do motor) fica na frente do título; elemento recortado aqui fica atrás do texto
+        raiz += [camada(placa, "foto", i), camada(rec, "recorte" if s.get("recorte") else "recorte sob", i)]
     elif fundo == "ink":
         camadas.append('<div class="camada led" data-prof="1"></div>')
     else:
@@ -116,9 +136,10 @@ def main():
             for k in ("imagem", "recorte"):
                 if s.get(k):
                     shutil.copy2(pasta / s[k], proj / s[k])
+        html_pronto = montar(car, pasta)  # gera placa/recorte em motion/ antes da cópia
         if (pasta / "motion").exists():
             shutil.copytree(pasta / "motion", proj / "motion")
-        (proj / "index.html").write_text(montar(car, pasta), encoding="utf-8")
+        (proj / "index.html").write_text(html_pronto, encoding="utf-8")
         if "--so-html" in sys.argv:
             shutil.copytree(proj, pasta / "_motion", dirs_exist_ok=True)
             print("projeto em", pasta / "_motion")

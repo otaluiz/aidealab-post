@@ -21,8 +21,9 @@
   /* mídia na raiz: foto/vídeo (z 0) < texto do slide (z 1) < recorte do personagem (z 2) < resto (z 3).
      As sections não criam contexto de empilhamento, então os z-index se intercalam. */
   .raiz-midia { position: absolute; inset: 0; transform-origin: 50% 70%; }
-  .foto-w { z-index: 0; } .recorte-w { z-index: 2; }
+  .foto-w { z-index: 0; } .recorte-w { z-index: 2; } .recorte-w.sob { z-index: 0; }
   .foto, .recorte { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .respira, .fixo { position: absolute; inset: 0; transform-origin: 50% 100%; }
   .slide { position: absolute; inset: 0; color: var(--branco); font-family: "Manrope", sans-serif; }
   .slide.ink { background: var(--ink); --hot: var(--quente); }
   .slide.papel { background: var(--papel); color: var(--ink); --hot: var(--quente-papel); }
@@ -83,9 +84,12 @@
     // parallax: fundo/foto quase parados, texto sobe mais, CTA/serifada mais ainda
     const foto = document.getElementById("foto" + i), rec = document.getElementById("recorte" + i);
     if (foto) {
-      // foto e recorte juntos (o recorte precisa casar com a foto), com zoom e deriva lentos
-      tl.fromTo([foto, rec].filter(Boolean), { scale: 1.07, y: 10, filter: "brightness(.45)" },
-        { scale: 1.025, y: -8, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      // parallax 2.5D da foto estática: fundo (placa sem o elemento) anda pouco, recorte anda mais e respira
+      tl.fromTo(foto, { scale: 1.08, y: 14, filter: "brightness(.45)" }, { scale: 1.03, y: -10, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      if (rec) {
+        tl.fromTo(rec, { scale: 1.08, y: 30, x: 8, filter: "brightness(.45)" }, { scale: 1.035, y: -26, x: -6, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+        tl.fromTo(rec.querySelector(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
+      }
     }
     q(".led, .grade").forEach(el => tl.fromTo(el, { y: 30 }, { y: -10, duration: S, ease: "none" }, t0));
     q(".camada[data-prof]").forEach(el => {
