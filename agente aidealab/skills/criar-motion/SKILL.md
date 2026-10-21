@@ -15,8 +15,12 @@ Copie a pasta, troque o texto dos slides e as imagens; a estrutura de motion fic
 **Carrossel novo → `motor/motion/fonte.py` (seção abaixo), usado pela rotina diária e pela `criar-post`.**
 O `motion.py` fica só para carrossel antigo sem `carrossel.json` (fila já aprovada, só arte final):
 `python motor/motion/motion.py <pasta>` converte qualquer carrossel do motor (pasta com `metadata.json` +
-`slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2, CTA e slides sem texto (T5)
-usam a arte aprovada com efeito por cima; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
+`slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2 e CTA: `camadas_png.py` tira o
+texto impresso da arte (máscara do branco/ciano do tema + inpaint), devolve cada linha animada por máscara (com
+folga para acento) e recorta o elemento principal (rembg `u2net`) para o parallax sobre a placa; sem elemento
+recortável (ex. foto que ocupa a tela toda) fica só o parallax da placa. Nada de brilho varrendo. Slides sem texto
+(T5) só acendem com push-in; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
+No post, a capa (slide 1) sai como o PNG estático, com o hook visível no feed; do 2 em diante, vídeo.
 O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. O projeto de referência abaixo
 é para peça feita à mão (texto da capa animado sobre foto limpa, recorte com título atrás da cabeça).
 

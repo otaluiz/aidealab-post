@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=1080, height=1440" />
 <title>{{TITULO}}</title>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="vendor/gsap.min.js"></script>
 <style>
   @font-face { font-family: "Inter"; font-weight: 900; src: url(fonts/Inter-900.woff2) format("woff2"); }
   @font-face { font-family: "Manrope"; font-weight: 400; src: url(fonts/manrope-400.woff2) format("woff2"); }
@@ -21,13 +21,18 @@
   .slide.ink { background: var(--ink); --hot: var(--quente); }
   .slide.papel { background: var(--papel); color: var(--ink); --hot: var(--quente-papel); }
 
-  /* arte aprovada (png) com efeito por cima */
-  .foto, .bloom { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; }
-  .bloom { filter: blur(22px) brightness(1.4); mix-blend-mode: screen; opacity: 0; }
-  .brilho { position: absolute; top: -20%; bottom: -20%; width: 380px; left: -500px; transform: rotate(18deg);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .16), transparent); mix-blend-mode: screen; }
-  .poeira { position: absolute; inset: 0; }
-  .poeira i { position: absolute; display: block; border-radius: 50%; background: #cfeeff; }
+  /* arte aprovada sem texto (ex. T5): só acende com push-in */
+  .foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; }
+  /* arte aprovada em camadas (camadas_png.py): placa < recorte < texto < moldura */
+  .cam { position: absolute; inset: 0; transform-origin: 50% 70%; }
+  .cam img, .respira { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .respira { transform-origin: 50% 100%; }
+  .rec-w { z-index: 1; }
+  .txt-w { z-index: 2; }
+  .txt { position: absolute; overflow: hidden; }
+  .txt img { display: block; width: 100%; height: 100%; }
+  .txt.pil { overflow: visible; transform-origin: 0 50%; }
+  .mold { position: absolute; }
 
   /* tipografia animada */
   .led { position: absolute; inset: -40px; background-image: radial-gradient(rgba(110, 201, 247, .16) 1.6px, transparent 1.8px); background-size: 22px 22px; }
@@ -42,7 +47,7 @@
   .dots i.on { width: 34px; background: var(--hot); opacity: 1; }
   .conteudo { position: absolute; left: 72px; right: 72px; top: 200px; bottom: 170px; display: flex; flex-direction: column; justify-content: center; }
   .display { font: 900 120px/0.92 "Inter"; text-transform: uppercase; letter-spacing: -.02em; margin: 0; }
-  .display .linha { display: block; overflow: hidden; padding: 0.12em 0 6px; margin-top: -0.12em; }
+  .display .linha { display: block; overflow: hidden; padding: 0.3em 0 0.1em; margin: -0.3em 0 -0.1em; }
   .display .lin { display: inline-block; }
   .hot { color: var(--hot); }
   .serif { font: 400 88px/1.05 "Yellowtail"; color: var(--hot); margin: 34px 0 0; }
@@ -65,27 +70,39 @@
   // Motion suave: entra com expo/power3.out, assenta até ~3.5 s e só o ambiente respira até o fim do slide.
   const tl = gsap.timeline({ paused: true });
   const E = "expo.out", S = 6;
-  let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
   const sobe = (el, t, d = 0.9) => tl.fromTo(el, { y: 30, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
 
   document.querySelectorAll(".slide").forEach((sl, k) => {
     const t0 = k * S, q = s => sl.querySelectorAll(s);
     if (sl.classList.contains("png")) {
-      // arte aprovada: acende com push-in, brilho varre uma vez, bloom respira, poeira sobe
       tl.fromTo(q(".foto"), { scale: 1.05, filter: "brightness(.4)" }, { scale: 1, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
-      tl.fromTo(q(".bloom"), { scale: 1.05 }, { scale: 1, duration: S, ease: "power2.out" }, t0);
-      tl.fromTo(q(".brilho"), { x: 0 }, { x: 2100, duration: 1.8, ease: "power2.inOut" }, t0 + 1.0);
-      if (q(".bloom").length) {
-        tl.fromTo(q(".bloom"), { opacity: 0 }, { opacity: .22, duration: 1.4, ease: "sine.out" }, t0 + 0.8);
-        tl.to(q(".bloom"), { opacity: .08, duration: 1.1, ease: "sine.inOut", yoyo: true, repeat: 2 }, t0 + 2.4);
-        const p = sl.querySelector(".poeira");
-        for (let i = 0; i < 40; i++) {
-          const d = document.createElement("i"), r = 1.5 + rnd() * 3;
-          Object.assign(d.style, { width: r + "px", height: r + "px", left: rnd() * 1080 + "px", top: 400 + rnd() * 1000 + "px" });
-          p.appendChild(d);
-          tl.fromTo(d, { y: 0, opacity: 0 }, { y: -(80 + rnd() * 220), x: (rnd() - .5) * 60, opacity: .15 + rnd() * .45, duration: S, ease: "sine.out" }, t0);
+      return;
+    }
+    if (sl.classList.contains("camadas")) {
+      // parallax 2.5D: placa quase parada, recorte anda mais e respira; texto revela por máscara, linha a linha
+      // o texto anda junto com a placa: fica sempre em cima do buraco do inpaint
+      tl.fromTo(q(".placa-w"), { scale: 1.08, y: 14, filter: "brightness(.45)" }, { scale: 1.02, y: -8, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      tl.fromTo(q(".txt-w"), { scale: 1.08, y: 14 }, { scale: 1.02, y: -8, duration: S, ease: "power2.out" }, t0);
+      // gente descola mais do fundo; objeto (recorte de cena) anda pouco para não rasgar onde a máscara é parcial
+      q(".rec-w.gente").forEach(el => tl.fromTo(el, { scale: 1.09, y: 28, x: 6, filter: "brightness(.45)" }, { scale: 1.03, y: -18, x: -4, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
+      q(".rec-w.objeto").forEach(el => tl.fromTo(el, { scale: 1.085, y: 20, filter: "brightness(.45)" }, { scale: 1.025, y: -12, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
+      tl.fromTo(q(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
+      q(".mold").forEach(el => tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, t0 + 0.1));
+      const ult = Math.max(0, ...[...q(".txt:not(.pil)")].map(el => +el.dataset.ordem));
+      q(".txt:not(.pil)").forEach(el => {
+        const k = +el.dataset.ordem;
+        tl.fromTo(el.querySelector("img"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E }, t0 + 0.35 + k * 0.13);
+      });
+      // botão do CTA entra com overshoot e pulsa; marca-texto no meio da frase varre da esquerda
+      q(".txt.pil").forEach(el => {
+        const t = t0 + 0.5 + (ult + 1) * 0.13;
+        if (el.classList.contains("cta")) {
+          tl.fromTo(el, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "back.out(1.7)" }, t);
+          tl.to(el, { scale: 1.04, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, t + 1.0);
+        } else {
+          tl.fromTo(el, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.inOut" }, t0 + 1.4);
         }
-      }
+      });
       return;
     }
     tl.fromTo(q(".led, .grade"), { scale: 1 }, { scale: 1.06, duration: S, ease: "none" }, t0);

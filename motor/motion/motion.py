@@ -6,8 +6,9 @@ Uso: python motor/motion/motion.py <pasta> [--so-html]
 Saída na própria pasta: slide-NN.mp4 (6 s cada, 1080x1440) e metadata.json com slides[].video.
 
 Regras de motion (skill criar-motion):
-  - capa, slide 2 e CTA (e slides sem texto, ex. T5) usam a ARTE APROVADA (png) com efeito por cima:
-    acende do escuro com push-in, brilho que varre, poeira na névoa.
+  - capa, slide 2 e CTA: a ARTE APROVADA (png) é separada em camadas (camadas_png.py): o texto impresso sai
+    da foto (inpaint) e volta animado linha a linha por máscara, com folga para acento; o elemento principal
+    (recorte rembg) anda em parallax sobre a placa. Slides sem texto (ex. T5) só acendem com push-in.
   - os outros slides são refeitos em tipografia animada a partir do texto: display em caixa alta revelado
     por máscara + serifada/corpo ou lista (T3). Papel em T2/T2c, navy com grade LED em T3.
 Precisa de node (npx hyperframes) e ffmpeg.
@@ -76,11 +77,24 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
-def slide_png(i, arq, foto):
-    efeitos = ('<img class="bloom" src="{a}" alt="" /><div class="poeira" data-layout-allow-overflow></div>'.format(a=arq)
-               if foto else "")
+def slide_png(i, arq):
     return f'''<section id="s{i}" class="slide png clip" data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
-    <img class="foto" src="{arq}" alt="" />{efeitos}<div class="brilho" data-layout-allow-overflow></div>
+    <img class="foto" src="{arq}" alt="" />
+  </section>'''
+
+
+def slide_camadas(i, d, cta=False):
+    """Arte aprovada em camadas: placa < recorte < texto (anda junto com a placa, cobrindo o inpaint)."""
+    pos = lambda c: f'left:{c["x"]}px;top:{c["y"]}px;width:{c["w"]}px;height:{c["h"]}px'
+    txt = "".join(f'<div class="txt{(" pil cta" if cta else " pil") if c["pilula"] else ""}" data-ordem="{c["ordem"]}" style="{pos(c)}">'
+                  f'<img src="{c["src"]}" alt="" /></div>' for c in d["linhas"])
+    mold = "".join(f'<img class="mold" src="{c["src"]}" alt="" style="{pos(c)}" />' for c in d["moldura"])
+    rec = (f'<div class="cam rec-w {d.get("recorte_tipo", "gente")}"><div class="respira"><img class="rec" src="{d["recorte"]}" alt="" /></div></div>'
+           if d["recorte"] else "")
+    return f'''<section id="s{i}" class="slide camadas clip" data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
+    <div class="cam placa-w"><img class="placa" src="{d["placa"]}" alt="" /></div>
+    {rec}
+    <div class="cam txt-w">{txt}{mold}</div>
   </section>'''
 
 
@@ -121,7 +135,8 @@ def slide_tipo(i, n, tpl, texto):
   </section>'''
 
 
-def montar(meta):
+def montar(meta, pasta):
+    from camadas_png import separar
     slides = sorted(meta["slides"], key=lambda s: s["ordem"])
     tpls = (meta.get("template") or "").split("-")
     n = len(slides)
@@ -130,7 +145,8 @@ def montar(meta):
         tpl = tpls[i - 1] if i - 1 < len(tpls) else "T2"
         texto = (s.get("texto") or "").strip()
         if i in (1, 2, n) or not texto or tpl.startswith("T5"):
-            partes.append(slide_png(i, s["arquivo"], foto=i in (1, 2, n)))
+            d = separar(pasta, s["arquivo"]) if texto and i in (1, 2, n) else None
+            partes.append(slide_camadas(i, d, cta=i == n) if d and d["linhas"] else slide_png(i, s["arquivo"]))
         else:
             partes.append(slide_tipo(i, n, tpl, texto))
     tpl_html = (AQUI / "template.html").read_text(encoding="utf-8")
@@ -144,9 +160,13 @@ def main():
     with tempfile.TemporaryDirectory(prefix="motion-") as tmp:
         proj = Path(tmp)
         shutil.copytree(AQUI / "fonts", proj / "fonts")
+        shutil.copytree(AQUI / "vendor", proj / "vendor")  # GSAP local: render não depende de CDN
         for s in meta["slides"]:
             shutil.copy2(pasta / s["arquivo"], proj / s["arquivo"])
-        (proj / "index.html").write_text(montar(meta), encoding="utf-8")
+        sys.path.insert(0, str(AQUI))
+        (proj / "index.html").write_text(montar(meta, pasta), encoding="utf-8")
+        if (pasta / "motion").exists():
+            shutil.copytree(pasta / "motion", proj / "motion", dirs_exist_ok=True)
         if "--so-html" in sys.argv:
             shutil.copytree(proj, pasta / "_motion", dirs_exist_ok=True)
             print("projeto em", pasta / "_motion")
@@ -158,6 +178,7 @@ def main():
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
                             "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
             s["video"] = video
+    shutil.rmtree(pasta / "motion", ignore_errors=True)  # camadas intermediárias não vão para a fila
     meta["formato_motion"] = {"fps": 30, "segundos_por_slide": S, "motor": HF}
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
     print("ok:", pasta.name, len(meta["slides"]), "vídeos")
