@@ -1,0 +1,81 @@
+{
+  "carousel_id": "bastidor-producao-em-lote",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "BASTIDOR",
+  "tema": "UM POST BONITO, TODO MUNDO FAZ. difícil é repetir.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "UM POST BONITO, TODO MUNDO FAZ. difícil é repetir."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CUSTO APARECE NA PEÇA QUARENTA quando o padrão escorrega."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "QUANDO CADA PEÇA COMEÇA DO ZERO Cor escolhida de novo Fonte ajustada de novo Layout decidido de novo E o resultado muda com quem fez"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A GENTE TROCOU O IMPROVISO por um motor fixo."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "A DECISÃO NOVA FICA SÓ NA IDEIA o resto já está decidido."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O MOTOR SEGURA Banco de imagem já testado Render que a gente reaproveita Checagem de cor e encaixe Nada sai fora da régua"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "O POST DE HOJE LEMBRA O DE ONTEM e isso tem nome: marca."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "O QUE NÃO MUDA VIRA MARCA. todo dia. Comenta MARCA e a aidealab te mostra o motor por dentro"
+    }
+  ],
+  "legenda": "Um post bonito, qualquer um faz. O difícil é o quadragésimo sair com o mesmo padrão do primeiro.\n\nA gente também começou recomeçando do zero a cada peça: cor de novo, fonte de novo, layout de novo. O resultado mudava conforme quem estava fazendo naquele dia.\n\nHoje existe um motor fixo. Banco de imagem testado, render reaproveitado e uma checagem de cor e encaixe antes de qualquer arquivo sair. A decisão nova fica só na ideia.\n\nÉ por isso que o post de hoje lembra o de duas semanas atrás. Quer ver o motor por dentro? Comenta MARCA.",
+  "hashtags": [
+    "#bastidores",
+    "#identidadevisual",
+    "#processocriativo",
+    "#marketingcomia",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
