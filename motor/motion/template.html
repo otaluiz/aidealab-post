@@ -29,10 +29,20 @@
   .respira { transform-origin: 50% 100%; }
   .rec-w { z-index: 1; }
   .txt-w { z-index: 2; }
-  .txt { position: absolute; overflow: hidden; }
-  .txt img { display: block; width: 100%; height: 100%; }
-  .txt.pil { overflow: visible; transform-origin: 0 50%; }
-  .mold { position: absolute; }
+  /* texto refeito em HTML nas caixas do texto impresso (posição e tamanho resolvidos no script) */
+  .ln { position: absolute; white-space: nowrap; color: #fff; text-shadow: 0 2px 16px rgba(0, 0, 0, .28); }
+  .ln.disp { font-family: "Inter"; font-weight: 900; letter-spacing: -.02em; overflow: hidden; }
+  .ln.ser { font-family: "Yellowtail"; font-weight: 400; }
+  .ln .w { display: inline-block; white-space: nowrap; }
+  .ln .c { display: inline-block; }
+  .ln .hot { color: var(--quente); }
+  .ln .mt { color: var(--ink); text-shadow: none; background: linear-gradient(var(--quente), var(--quente)) no-repeat 0 0 / 100% 100%; padding: 0 .08em; }
+  .botao { position: absolute; background: var(--quente); border-radius: 14px; transform-origin: 0 50%; }
+  .botao span { position: absolute; white-space: nowrap; font-family: "Manrope"; font-weight: 700; color: var(--ink); }
+  .apoio-t { position: absolute; font-family: "Manrope"; font-weight: 400; }
+  .camadas .topo { top: 93px; } .camadas .rodape { bottom: 96px; }
+  .camadas .topo, .camadas .rodape { z-index: 3; text-shadow: 0 2px 14px rgba(0, 0, 0, .45); }
+  .camadas .dots i.on { background: var(--quente); }
 
   /* tipografia animada */
   .led { position: absolute; inset: -40px; background-image: radial-gradient(rgba(110, 201, 247, .16) 1.6px, transparent 1.8px); background-size: 22px 22px; }
@@ -67,11 +77,108 @@
   {{SLIDES}}
 </div>
 <script>
-  // Motion suave: entra com expo/power3.out, assenta até ~3.5 s e só o ambiente respira até o fim do slide.
-  const tl = gsap.timeline({ paused: true });
+  // Motion suave (padrão otalogia): título letra por letra saindo da máscara, serifada se escreve da esquerda
+  // pra direita, marca-texto varre; nada de blur. Assenta até ~3,5 s e só o ambiente respira até o fim.
   const E = "expo.out", S = 6;
-  const sobe = (el, t, d = 0.9) => tl.fromTo(el, { y: 30, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: d, ease: "power3.out" }, t);
+  const cv = document.createElement("canvas").getContext("2d");
+  const FONTE = { disp: ['900 100px "Inter"', -2], ser: ['400 100px "Yellowtail"', 0], acao: ['700 100px "Manrope"', 0], apoio: ['400 100px "Manrope"', 0] };
+  function mede(t, tipo) {
+    cv.font = FONTE[tipo][0]; cv.letterSpacing = FONTE[tipo][1] + "px";
+    const m = cv.measureText(t);
+    return { w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight, l: m.actualBoundingBoxLeft, a: m.actualBoundingBoxAscent,
+             d: m.actualBoundingBoxDescent, fa: m.fontBoundingBoxAscent, fd: m.fontBoundingBoxDescent, adv: m.width };
+  }
+  // todas as formas de quebrar `pal` em `k` linhas, na ordem
+  function* quebras(pal, k) {
+    if (k === 1) { yield [pal.join(" ")]; return; }
+    for (let i = 1; i <= pal.length - k + 1; i++) for (const r of quebras(pal.slice(i), k - 1)) yield [pal.slice(0, i).join(" "), ...r];
+  }
+  // melhor divisão do texto nas caixas detectadas: tamanho pela largura tem que bater com o pela altura e
+  // as linhas do mesmo grupo (título / serifada) têm que ter o mesmo corpo
+  function resolve(C) {
+    const L = C.linhas.length, D = C.display, Sr = C.serif;
+    let melhor = null;
+    const jmin = D.length ? 1 : 0, jmax = Sr.length ? L - 1 : L;
+    for (let j = jmin; j <= jmax; j++) {
+      if (j > D.length || L - j > Sr.length) continue;
+      for (const qd of (j ? quebras(D, j) : [[]])) for (const qs of (L - j ? quebras(Sr, L - j) : [[]])) {
+        const ts = [...qd.map(t => [t, "disp"]), ...qs.map(t => [t, "ser"])];
+        let err = 0; const tam = { disp: [], ser: [] };
+        ts.forEach(([t, tipo], k) => {
+          const b = C.linhas[k], m = mede(t, tipo), sw = b.w / m.w * 100, sh = b.h / (m.a + m.d) * 100;
+          err += Math.log(sw / sh) ** 2; tam[tipo].push(Math.log(sw));
+        });
+        for (const g of Object.values(tam)) if (g.length > 1) { const mu = g.reduce((a, b) => a + b) / g.length; err += 2 * g.reduce((a, b) => a + (b - mu) ** 2, 0); }
+        if (!melhor || err < melhor.err) melhor = { err, ts };
+      }
+    }
+    return melhor.ts;
+  }
+  // coloca o texto com o desenho da letra exatamente na caixa (esquerda e topo do glifo)
+  function linha(cont, b, t, tipo, cls) {
+    let m = mede(t, tipo), fs = b.w / m.w * 100, ls = 0;
+    let base = null;
+    if (tipo === "disp") {
+      // título: corpo pela altura da versal (b.fs, igual em todas as linhas do título, como no motor estático) e a
+      // largura fecha no espaçamento entre letras (o espaço e o tracking dele são mais justos que o padrão)
+      fs = b.fs;
+      ls = (b.w - m.w * fs / 100) / Math.max(1, t.length - 1);
+      if (Math.abs(ls) > 0.08 * fs) { ls = Math.sign(ls) * 0.08 * fs; fs = (b.w - ls * (t.length - 1)) / m.w * 100; }
+      base = b.cap[1];
+    }
+    const k = fs / 100;
+    const el = document.createElement("div");
+    el.className = "ln " + cls;
+    const lh = (m.fa + m.fd) * k, padT = tipo === "disp" ? 0.35 * fs : 0, padB = tipo === "disp" ? 0.25 * fs : 0;
+    if (base === null) base = b.y + m.a * k;  // serifada: topo do glifo na caixa
+    Object.assign(el.style, { fontSize: fs + "px", lineHeight: lh + "px", left: (b.x + m.l * k) + "px", letterSpacing: (tipo === "disp" ? (ls - 2 * k) : 0) + "px",
+      top: (base - m.fa * k - padT) + "px", paddingTop: padT + "px", paddingBottom: padB + "px" });
+    // palavras: quente (ciano) ou marca-texto conforme a cor que estava na arte, pela posição na linha
+    let x = b.x;
+    t.split(" ").forEach((p, i, arr) => {
+      const w = document.createElement("span"); w.className = "w";
+      const pre = arr.slice(0, i).join(" ") + (i ? " " : "");
+      const ini = x + mede(pre, tipo).adv * k + ls * pre.length, fim = ini + mede(p, tipo).adv * k + ls * (p.length - 1), meio = (ini + fim) / 2;
+      if ((b.mt || []).some(([a, z]) => meio > a && meio < z)) w.classList.add("mt");
+      else if ((b.hot || []).some(([a, z]) => meio > a - 4 && meio < z + 4)) w.classList.add("hot");
+      if (tipo === "disp") [...p].forEach(ch => { const c = document.createElement("span"); c.className = "c"; c.textContent = ch; w.appendChild(c); });
+      else w.textContent = p;
+      el.appendChild(w); if (i < arr.length - 1) el.appendChild(document.createTextNode(" "));
+    });
+    cont.appendChild(el);
+    return el;
+  }
+  function monta(sl) {
+    const C = JSON.parse(sl.dataset.cam), cont = sl.querySelector(".txt-w");
+    const ts = resolve(C);
+    // corpo único do título: mediana das alturas de versal (H) das linhas do título
+    const H = mede("H", "disp"), fss = ts.map(([t, tipo], k) => tipo === "disp" ? (C.linhas[k].cap[1] - C.linhas[k].cap[0]) / H.a * 100 : null).filter(v => v).sort((a, b) => a - b);
+    const fsd = fss.length ? fss[Math.floor(fss.length / 2)] : 0;
+    ts.forEach(([t, tipo], k) => linha(cont, { ...C.linhas[k], fs: fsd }, t, tipo, tipo));
+    if (C.botao) {
+      const b = C.botao, d = C.botao.dentro || [b.x + b.h * .5, b.y + b.h * .3, b.w - b.h, b.h * .4];
+      const el = document.createElement("div"); el.className = "botao";
+      Object.assign(el.style, { left: b.x + "px", top: b.y + "px", width: b.w + "px", height: b.h + "px", borderRadius: Math.round(b.h * .14) + "px" });
+      const m = mede(C.acao, "acao"), fs = d[2] / m.w * 100, k = fs / 100, sp = document.createElement("span");
+      sp.textContent = C.acao;
+      Object.assign(sp.style, { fontSize: fs + "px", lineHeight: (m.fa + m.fd) * k + "px", left: (d[0] - b.x + m.l * k) + "px", top: (d[1] - b.y + m.a * k - m.fa * k) + "px" });
+      el.appendChild(sp); sl.appendChild(el);
+    }
+    if (C.apoio) {
+      const a = C.apoio, el = document.createElement("div"); el.className = "apoio-t"; el.textContent = C.apoio_txt;
+      let fs, lh;
+      if (a.linhas > 1) { fs = a.passo / 1.32; lh = a.passo; }
+      else { const m = mede(C.apoio_txt, "apoio"); fs = a.w / m.w * 100; lh = (m.fa + m.fd) * fs / 100; }
+      const m = mede("dlp", "apoio"), k = fs / 100;
+      Object.assign(el.style, { color: a.cor, fontSize: fs + "px", lineHeight: lh + "px", left: a.x + "px", width: (a.w * 1.06) + "px",
+        top: (a.y - ((lh - (m.fa + m.fd) * k) / 2 + m.fa * k - m.a * k)) + "px", zIndex: 3 });
+      sl.appendChild(el);
+    }
+  }
 
+  Promise.all(Object.values(FONTE).map(f => document.fonts.load(f[0]))).then(() => {
+  document.querySelectorAll(".slide.camadas").forEach(monta);
+  const tl = gsap.timeline({ paused: true });
   document.querySelectorAll(".slide").forEach((sl, k) => {
     const t0 = k * S, q = s => sl.querySelectorAll(s);
     if (sl.classList.contains("png")) {
@@ -79,43 +186,45 @@
       return;
     }
     if (sl.classList.contains("camadas")) {
-      // parallax 2.5D: placa quase parada, recorte anda mais e respira; texto revela por máscara, linha a linha
-      // o texto anda junto com a placa: fica sempre em cima do buraco do inpaint
+      // parallax 2.5D: placa e texto andam juntos (o texto cobre o inpaint), recorte descola por cima e respira
       tl.fromTo(q(".placa-w"), { scale: 1.08, y: 14, filter: "brightness(.45)" }, { scale: 1.02, y: -8, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
       tl.fromTo(q(".txt-w"), { scale: 1.08, y: 14 }, { scale: 1.02, y: -8, duration: S, ease: "power2.out" }, t0);
-      // gente descola mais do fundo; objeto (recorte de cena) anda pouco para não rasgar onde a máscara é parcial
       q(".rec-w.gente").forEach(el => tl.fromTo(el, { scale: 1.09, y: 28, x: 6, filter: "brightness(.45)" }, { scale: 1.03, y: -18, x: -4, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
       q(".rec-w.objeto").forEach(el => tl.fromTo(el, { scale: 1.085, y: 20, filter: "brightness(.45)" }, { scale: 1.025, y: -12, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
       tl.fromTo(q(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
-      q(".mold").forEach(el => tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, t0 + 0.1));
-      const ult = Math.max(0, ...[...q(".txt:not(.pil)")].map(el => +el.dataset.ordem));
-      q(".txt:not(.pil)").forEach(el => {
-        const k = +el.dataset.ordem;
-        tl.fromTo(el.querySelector("img"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E }, t0 + 0.35 + k * 0.13);
+      tl.fromTo(q(".topo, .rodape"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, t0 + 0.1);
+      // título letra por letra: cada linha sobe de trás da máscara com leve rotação, em cascata
+      let t = t0 + 0.35;
+      q(".ln.disp").forEach((ln, i) => {
+        tl.fromTo(ln.querySelectorAll(".c"), { yPercent: 115, rotate: 8, opacity: 0 }, { yPercent: 0, rotate: 0, opacity: 1, duration: 0.95, ease: E, stagger: 0.022 }, t0 + 0.35 + i * 0.14);
+        t = t0 + 0.35 + i * 0.14 + 0.5;
       });
-      // botão do CTA entra com overshoot e pulsa; marca-texto no meio da frase varre da esquerda
-      q(".txt.pil").forEach(el => {
-        const t = t0 + 0.5 + (ult + 1) * 0.13;
-        if (el.classList.contains("cta")) {
-          tl.fromTo(el, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "back.out(1.7)" }, t);
-          tl.to(el, { scale: 1.04, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, t + 1.0);
-        } else {
-          tl.fromTo(el, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.7, ease: "power3.inOut" }, t0 + 1.4);
-        }
+      // serifada se escreve da esquerda pra direita
+      q(".ln.ser").forEach((ln, i) => {
+        tl.fromTo(ln, { clipPath: "inset(-40% 105% -40% -5%)" }, { clipPath: "inset(-40% -5% -40% -5%)", duration: 1.1, ease: "power2.inOut" }, t + 0.1 + i * 0.35);
+        t = t + 0.1 + i * 0.35 + 0.6;
       });
+      q(".ln .mt").forEach(el => tl.fromTo(el, { backgroundSize: "0% 100%", color: "#fff" }, { backgroundSize: "100% 100%", color: "#0A0E16", duration: 0.7, ease: "power3.inOut" }, t + 0.4));
+      q(".botao").forEach(el => {
+        tl.fromTo(el, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "back.out(1.7)" }, t + 0.3);
+        tl.to(el, { scale: 1.04, duration: 0.7, ease: "sine.inOut", yoyo: true, repeat: 3 }, t + 1.3);
+      });
+      q(".apoio-t").forEach(el => tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, t + 0.7));
       return;
     }
     tl.fromTo(q(".led, .grade"), { scale: 1 }, { scale: 1.06, duration: S, ease: "none" }, t0);
     tl.fromTo(q(".lin"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E, stagger: 0.12 }, t0 + 0.2);
-    q(".sobe").forEach(el => sobe(el, t0 + 1.0, 1));
+    q(".serif.sobe").forEach(el => tl.fromTo(el, { clipPath: "inset(-40% 105% -40% -5%)" }, { clipPath: "inset(-40% -5% -40% -5%)", duration: 1.2, ease: "power2.inOut" }, t0 + 1.0));
+    q(".corpo.sobe").forEach(el => tl.fromTo(el, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, t0 + 1.0));
     q(".lista li").forEach((li, i) => {
       const t = t0 + 1.0 + i * 0.35;
       tl.fromTo(li.querySelector(".n"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, t);
-      tl.fromTo(li.querySelector(".t"), { opacity: 0, x: 40, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.9, ease: E }, t + 0.08);
+      tl.fromTo(li.querySelector(".t"), { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.9, ease: E }, t + 0.08);
       tl.fromTo(li.querySelector(".fio"), { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: E }, t + 0.15);
     });
   });
   window.__timelines["main"] = tl;
+  }).catch(e => console.error("motion:", e.message, e.stack));
 </script>
 </body>
 </html>

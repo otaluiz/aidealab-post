@@ -153,6 +153,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix="motion-") as tmp:
         proj = Path(tmp)
         shutil.copytree(AQUI / "fonts", proj / "fonts")
+        shutil.copytree(AQUI / "vendor", proj / "vendor")  # GSAP local: render não depende de CDN
         for s in car["slides"]:
             for k in ("imagem", "recorte"):
                 if s.get(k):
@@ -171,7 +172,7 @@ def main():
         saida.mkdir(exist_ok=True)
         for i in range(1, len(car["slides"]) + 1):
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
-                            "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
                             str(saida / f"slide-{i:02d}.mp4")], check=True)
     meta_path = pasta / "png" / "metadata.json"
     if meta_path.exists():

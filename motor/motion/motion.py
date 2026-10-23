@@ -83,22 +83,38 @@ def slide_png(i, arq):
   </section>'''
 
 
-def slide_camadas(i, d, cta=False):
-    """Arte aprovada em camadas: placa < recorte < texto (anda junto com a placa, cobrindo o inpaint)."""
-    pos = lambda c: f'left:{c["x"]}px;top:{c["y"]}px;width:{c["w"]}px;height:{c["h"]}px'
-    txt = "".join(f'<div class="txt{(" pil cta" if cta else " pil") if c["pilula"] else ""}" data-ordem="{c["ordem"]}" style="{pos(c)}">'
-                  f'<img src="{c["src"]}" alt="" /></div>' for c in d["linhas"])
-    mold = "".join(f'<img class="mold" src="{c["src"]}" alt="" style="{pos(c)}" />' for c in d["moldura"])
+ACAO_CTA = {"Comenta": 2, "Salva": 3, "Clica": 3, "Manda": 3, "Chama": 3}
+
+
+def slide_camadas(i, n, d, texto, handle):
+    """Arte aprovada em camadas: placa < recorte < texto refeito em HTML (vetor, nítido) nas caixas do texto
+    impresso. O layout (quebra de linha, tamanho, palavra quente) é resolvido no navegador pelo template."""
+    display, resto = separar(texto)
+    acao, apoio = "", ""
+    if d["botao"]:
+        pal = resto.split()
+        k = next((x for x, p in enumerate(pal) if p in ACAO_CTA), None)
+        if k is not None:
+            resto, acao, apoio = " ".join(pal[:k]), " ".join(pal[k:k + ACAO_CTA[pal[k]]]), " ".join(pal[k + ACAO_CTA[pal[k]]:])
+    grupos = (1 if display else 0) + (1 if resto else 0)
+    if len(d["linhas"]) < grupos or len(d["linhas"]) > len((display + " " + resto).split()):
+        return None  # detecção não bate com o texto do metadata: fica a arte estática
+    cam = {"linhas": d["linhas"], "display": display.split(), "serif": resto.split(),
+           "botao": d["botao"] if acao else None, "acao": acao, "apoio": d["apoio"] if apoio else None, "apoio_txt": apoio}
+    dados = html.escape(json.dumps(cam, ensure_ascii=False), quote=True)
     rec = (f'<div class="cam rec-w {d.get("recorte_tipo", "gente")}"><div class="respira"><img class="rec" src="{d["recorte"]}" alt="" /></div></div>'
            if d["recorte"] else "")
-    return f'''<section id="s{i}" class="slide camadas clip" data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
+    dots = "".join(f'<i class="{"on" if k == i else ""}"></i>' for k in range(1, n + 1))
+    return f'''<section id="s{i}" class="slide camadas clip" data-cam="{dados}" data-start="{(i - 1) * S}" data-duration="{S}" data-track-index="0">
     <div class="cam placa-w"><img class="placa" src="{d["placa"]}" alt="" /></div>
     {rec}
-    <div class="cam txt-w">{txt}{mold}</div>
+    <div class="cam txt-w"></div>
+    <div class="topo"><span>AIDEA LAB</span><span>MARKETING &amp; IA</span></div>
+    <div class="rodape"><span>{esc(handle)}</span><span class="dots">{dots}</span></div>
   </section>'''
 
 
-def slide_tipo(i, n, tpl, texto):
+def slide_tipo(i, n, tpl, texto, handle):
     display, resto = separar(texto)
     ls, tam = linhas(display)
     fundo = "ink" if tpl.startswith("T3") else "papel"
@@ -130,14 +146,15 @@ def slide_tipo(i, n, tpl, texto):
       {corpo}
     </div>
     <div class="topo"><span>AIDEA LAB</span><span>MARKETING &amp; IA</span></div>
-    <div class="rodape"><span>@idea_lab7</span><span class="dots">{dots}</span></div>
+    <div class="rodape"><span>{esc(handle)}</span><span class="dots">{dots}</span></div>
     <svg class="grao" width="100%" height="100%"><rect width="100%" height="100%" filter="url(#ruido)" /></svg>
   </section>'''
 
 
 def montar(meta, pasta):
-    from camadas_png import separar
+    from camadas_png import separar as camadas
     slides = sorted(meta["slides"], key=lambda s: s["ordem"])
+    handle = meta.get("handle") or "@aidealab7"
     tpls = (meta.get("template") or "").split("-")
     n = len(slides)
     partes = []
@@ -145,10 +162,13 @@ def montar(meta, pasta):
         tpl = tpls[i - 1] if i - 1 < len(tpls) else "T2"
         texto = (s.get("texto") or "").strip()
         if i in (1, 2, n) or not texto or tpl.startswith("T5"):
-            d = separar(pasta, s["arquivo"]) if texto and i in (1, 2, n) else None
-            partes.append(slide_camadas(i, d, cta=i == n) if d and d["linhas"] else slide_png(i, s["arquivo"]))
+            d = camadas(pasta, s["arquivo"]) if texto and i in (1, 2, n) else None
+            sec = slide_camadas(i, n, d, texto, handle) if d and d["linhas"] else None
+            if d and not sec:
+                print(f"[aviso] slide {i}: texto detectado não bate com o metadata, fica a arte estática")
+            partes.append(sec or slide_png(i, s["arquivo"]))
         else:
-            partes.append(slide_tipo(i, n, tpl, texto))
+            partes.append(slide_tipo(i, n, tpl, texto, handle))
     tpl_html = (AQUI / "template.html").read_text(encoding="utf-8")
     return tpl_html.replace("{{DURACAO}}", str(n * S)).replace("{{SLIDES}}", "\n  ".join(partes)).replace("{{TITULO}}", esc(meta.get("tema", "carrossel")))
 
@@ -176,7 +196,7 @@ def main():
         for i, s in enumerate(sorted(meta["slides"], key=lambda s: s["ordem"]), 1):
             video = Path(s["arquivo"]).with_suffix(".mp4").name
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
-                            "-c:v", "libx264", "-crf", "23", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
+                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
             s["video"] = video
     shutil.rmtree(pasta / "motion", ignore_errors=True)  # camadas intermediárias não vão para a fila
     meta["formato_motion"] = {"fps": 30, "segundos_por_slide": S, "motor": HF}

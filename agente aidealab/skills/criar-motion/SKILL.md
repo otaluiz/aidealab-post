@@ -16,9 +16,13 @@ Copie a pasta, troque o texto dos slides e as imagens; a estrutura de motion fic
 O `motion.py` fica só para carrossel antigo sem `carrossel.json` (fila já aprovada, só arte final):
 `python motor/motion/motion.py <pasta>` converte qualquer carrossel do motor (pasta com `metadata.json` +
 `slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2 e CTA: `camadas_png.py` tira o
-texto impresso da arte (máscara do branco/ciano do tema + inpaint), devolve cada linha animada por máscara (com
-folga para acento) e recorta o elemento principal (rembg `u2net`) para o parallax sobre a placa; sem elemento
-recortável (ex. foto que ocupa a tela toda) fica só o parallax da placa. Nada de brilho varrendo. Slides sem texto
+texto impresso da arte (máscara do branco/ciano do tema + inpaint) e mede onde cada linha estava (caixa, altura da
+versal, palavras em ciano, botão e frase de apoio). O texto volta **refeito em HTML** (Inter/Yellowtail/Manrope,
+vetor nítido) nessas caixas, a partir de `slides[].texto`; nunca o recorte raster da arte (sai com pontilhado da
+textura e borrado). Animação padrão otalogia, sem blur: título letra por letra saindo da máscara (com folga para
+acento), serifada se escreve da esquerda pra direita, botão com overshoot. O elemento principal (gente:
+`u2net_human_seg`; objeto: `u2net`) é recortado para o parallax sobre a placa. Se a detecção não bater com o texto
+do metadata, o slide fica com a arte estática (aviso no log). Nada de brilho varrendo. Slides sem texto
 (T5) só acendem com push-in; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
 No post, o carrossel animado abre com a capa estática (PNG do hook, pronta no feed), seguida do hook animado e dos
 demais vídeos (até 10 itens; com 10 slides, a capa estática substitui o hook animado).

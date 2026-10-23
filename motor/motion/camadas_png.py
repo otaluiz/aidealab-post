@@ -12,7 +12,6 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-FOLGA = 14  # px acima/abaixo de cada linha (acento e cauda da serifada não cortam)
 
 
 def _cv():
@@ -58,12 +57,19 @@ def mascara_texto(rgb):
         sel = lab[y:y + h, x:x + w] == k
         pts = core[y:y + h, x:x + w][sel] > 0
         dens = pts.mean() if pts.size else 0
-        if w < 30 or h < 16 or pts.sum() < 120 or dens < 0.16:
+        if w < 30 or h < 16 or pts.sum() < 120 or dens < 0.07:
             continue
         sub = (core[y:y + h, x:x + w] > 0) & sel
         # texto pontilhado pela textura vira traço cheio; letras continuam abertas (sem fechar o miolo do O)
         m = cv2.morphologyEx((sub * 255).astype(np.uint8), cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
-        blocos.append((int(x), int(y), int(w), int(h), False, m))
+        blocos.append((int(x), int(y), int(w), int(h), False, m, dens))
+    # traço fino (serifada cursiva) tem pouca densidade: só vale colado num bloco denso (título)
+    densos = [b for b in blocos if b[6] >= 0.16]
+    def perto(a, b):
+        dx = max(b[0] - (a[0] + a[2]), a[0] - (b[0] + b[2]), 0)
+        dy = max(b[1] - (a[1] + a[3]), a[1] - (b[1] + b[3]), 0)
+        return max(dx, dy) < 70
+    blocos = [b[:6] for b in blocos if b[6] >= 0.16 or (b[2] >= 150 and any(perto(b, d) for d in densos))]
     blocos += pilulas
     # bloco pequeno só vale colado num bloco grande ("?", ponto, marca-texto); solto é brilho da foto
     grandes = [b for b in blocos if b[3] >= 40 and b[2] >= 150]
@@ -101,10 +107,15 @@ def mascara_texto(rgb):
                 k = j + 1
             else:
                 k += 1
-        corridas = [c for c in corridas if 10 <= c[1] - c[0] + 1 <= 50]
+        corridas = [c for c in corridas if 8 <= c[1] - c[0] + 1 <= 50]
         if not corridas:
             continue
         r0, r1 = corridas[0]
+        for c0, c1 in corridas[1:]:  # frase de apoio quebrada em 2-3 linhas
+            if c0 - r1 <= 20 and (c1 - c0) <= 1.6 * (corridas[0][1] - corridas[0][0] + 1):
+                r1 = c1
+            else:
+                break
         linhas_c = [r0]
         faixa = claro[r0:r1 + 1]
         cols = np.nonzero(faixa.any(0))[0]
@@ -187,21 +198,20 @@ def linhas_do_bloco(mask, x, y, w, h):
 
 
 def inpaint(rgb, mask):
-    """LaMa quando instalado (simple-lama-inpainting); senão OpenCV Telea."""
-    try:
-        from simple_lama_inpainting import SimpleLama
-        global _LAMA
-        if "_LAMA" not in globals():
-            _LAMA = SimpleLama()
-        out = np.array(_LAMA(Image.fromarray(rgb), Image.fromarray(mask).convert("L")))
-        return out[: rgb.shape[0], : rgb.shape[1]]
-    except Exception:
-        cv2 = _cv()
-        return cv2.cvtColor(cv2.inpaint(cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR), mask, 9, cv2.INPAINT_TELEA), cv2.COLOR_BGR2RGB)
+    """FSR do opencv-contrib (reconstrói a textura/retícula da foto); sem contrib, Telea (deixa mancha)."""
+    cv2 = _cv()
+    bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+    if hasattr(cv2, "xphoto"):
+        out = bgr.copy()
+        cv2.xphoto.inpaint(bgr, (255 - mask).astype(np.uint8), out, cv2.xphoto.INPAINT_FSR_FAST)
+    else:
+        out = cv2.inpaint(bgr, mask, 5, cv2.INPAINT_TELEA)
+    return cv2.cvtColor(out, cv2.COLOR_BGR2RGB)
 
 
 def separar(pasta, arquivo):
-    """-> dict com caminhos relativos à pasta: placa, recorte, linhas[{src,x,y,w,h}], moldura[{...}]."""
+    """-> placa e recorte (caminhos relativos à pasta) + geometria do texto impresso: linhas[{x,y,w,h,hot,mt}],
+    botao{x,y,w,h,dentro} e apoio{x,y,w,h,cor}. O texto é refeito em HTML por cima, nessas caixas."""
     cv2 = _cv()
     pasta = Path(pasta)
     cache = pasta / "motion"
@@ -217,40 +227,88 @@ def separar(pasta, arquivo):
     # letra com textura por cima não é branco puro: o quase-branco dentro da caixa do bloco também é texto
     a_ = rgb.astype(int)
     quase = ((a_.min(2) > 195) & (a_.max(2) - a_.min(2) < 60)) | ((abs(a_[..., 0] - 0x6E) < 45) & (abs(a_[..., 1] - 0xC9) < 45) & (abs(a_[..., 2] - 0xF7) < 45))
-    caixas = np.zeros(mask.shape, bool)
-    for x, y, w, h, _ in blocos:
-        caixas[max(0, y - 6):y + h + 6, max(0, x - 6):x + w + 6] = True
-    texto = mask | ((quase & caixas) * 255).astype(np.uint8)
-    alfa = cv2.GaussianBlur(cv2.dilate(texto | mold, np.ones((3, 3), np.uint8)), (3, 3), 0)
-    rgba = np.dstack([rgb, alfa])
+    # só o quase-branco colado na letra (borda com retícula); o resto da caixa é foto e não pode virar buraco
+    perto = cv2.dilate(mask, np.ones((9, 9), np.uint8)) > 0
+    texto = mask | ((quase & perto) * 255).astype(np.uint8)
+    a_i = rgb.astype(int)
+    ciano = (abs(a_i[..., 0] - 0x6E) < 40) & (abs(a_i[..., 1] - 0xC9) < 40) & (abs(a_i[..., 2] - 0xF7) < 40)
 
-    def recortar(x, y, w, h, a, b, nome):
-        y0, y1 = max(0, a - FOLGA), min(H, b + FOLGA)
-        x0, x1 = max(0, x - FOLGA), min(W, x + w + FOLGA)
-        parte = rgba[y0:y1, x0:x1].copy()
-        sel = np.zeros((H, W), bool)
-        sel[max(0, a - 2):b + 2, max(0, x - 2):x + w + 2] = True
-        parte[..., 3] = np.where(sel[y0:y1, x0:x1], parte[..., 3], 0)
-        Image.fromarray(parte, "RGBA").save(cache / nome)
-        return {"src": f"motion/{nome}", "x": x0, "y": y0, "w": x1 - x0, "h": y1 - y0}
+    def intervalos(sel):
+        """colunas marcadas -> [[x0, x1], ...] (vão < 25 px junta)."""
+        cols = np.nonzero(sel.sum(0) >= 2)[0]
+        out = []
+        for c in cols:
+            if out and c - out[-1][1] < 25:
+                out[-1][1] = int(c)
+            else:
+                out.append([int(c), int(c)])
+        return [iv for iv in out if iv[1] - iv[0] > 24]
 
-    linhas, moldura = [], []
+    # caixas de cada linha (palavras na mesma altura viram uma linha); o texto volta em HTML (vetor, nítido)
+    itens = []
     for x, y, w, h, pil in blocos:
         for a, b in ([(y, y + h)] if pil else linhas_do_bloco(mask, x, y, w, h)):
-            linhas.append({**recortar(x, y, w, h, a, b, f"{stem}_txt{len(linhas):02d}.png"), "pilula": pil, "y_txt": a, "h_txt": b - a})
-    for k, (y0, y1) in enumerate(faixas_mold):
-        if mold[y0:y1].any():
-            moldura.append(recortar(0, y0, W, y1 - y0, y0, y1, f"{stem}_moldura{k}.png"))
-    # palavras na mesma altura formam uma linha e entram juntas (ordem = linha visual, de cima pra baixo)
-    linhas.sort(key=lambda d: (d["y_txt"], d["x"]))
-    ordem, ref = -1, None
-    for d in linhas:
-        meio = d["y_txt"] + d["h_txt"] / 2
-        if ref is None or abs(meio - ref) > 0.5 * d["h_txt"]:
-            ordem, ref = ordem + 1, meio
-        d["ordem"] = ordem
+            sub = mask[a:b, x:x + w] > 0  # só a cor pura do texto (o quase-branco pega brilho da foto)
+            lx, lw = x, w
+            if not pil and sub.any():  # aperta a caixa nos pixels de texto
+                cs, rs = np.nonzero(sub.any(0))[0], np.nonzero(sub.any(1))[0]
+                lx, lw, a, b = x + int(cs[0]), int(cs[-1] - cs[0] + 1), a + int(rs[0]), a + int(rs[-1]) + 1
+            itens.append({"x": int(lx), "y": int(a), "w": int(lw), "h": int(b - a), "pil": pil})
+    itens.sort(key=lambda d: (d["y"] + d["h"] / 2, d["x"]))
+    linhas = []
+    for d in itens:
+        meio = d["y"] + d["h"] / 2
+        ult = linhas[-1] if linhas else None
+        if ult and abs(meio - (ult["y"] + ult["h"] / 2)) < 0.45 * max(d["h"], ult["h"]) and not (d["pil"] and not ult["partes"][0]["pil"] and False):
+            ult["partes"].append(d)
+            x0, y0 = min(ult["x"], d["x"]), min(ult["y"], d["y"])
+            ult["w"] = max(ult["x"] + ult["w"], d["x"] + d["w"]) - x0
+            ult["h"] = max(ult["y"] + ult["h"], d["y"] + d["h"]) - y0
+            ult["x"], ult["y"] = x0, y0
+        else:
+            linhas.append({**d, "partes": [d]})
+    saida, botao, apoio = [], None, None
+    for k, ln in enumerate(linhas):
+        caixas_mt = [[p["x"], p["x"] + p["w"]] for p in ln["partes"] if p["pil"]]
+        if caixas_mt and len(ln["partes"]) == 1:
+            # botão do CTA: caixa ciano sozinha na linha; o texto escuro de dentro dá o tamanho da letra
+            bx, by, bw, bh = ln["x"], ln["y"], ln["w"], ln["h"]
+            mx, my = int(bh * 0.35), int(bh * 0.18)  # longe das bordas arredondadas (fora delas é fundo escuro)
+            esc = a_i[by + my:by + bh - my, bx + mx:bx + bw - mx].max(2) < 120
+            cs, rs = np.nonzero(esc.sum(0) >= 2)[0], np.nonzero(esc.sum(1) >= 2)[0]
+            dentro = ([bx + mx + int(cs[0]), by + my + int(rs[0]), int(cs[-1] - cs[0] + 1), int(rs[-1] - rs[0] + 1)]
+                      if len(cs) else None)
+            botao = {"x": bx, "y": by, "w": bw, "h": bh, "dentro": dentro}
+            j, fim = k + 1, by + bh
+            rows = []
+            while j < len(linhas) and not linhas[j]["pil"] and linhas[j]["y"] - fim < (120 if not rows else 30) and linhas[j]["h"] < 50:
+                rows.append(linhas[j]); fim = linhas[j]["y"] + linhas[j]["h"]; j += 1
+            if rows:
+                ax, ay = min(r["x"] for r in rows), rows[0]["y"]
+                cor = np.concatenate([rgb[r["y"]:r["y"] + r["h"], r["x"]:r["x"] + r["w"]][texto[r["y"]:r["y"] + r["h"], r["x"]:r["x"] + r["w"]] > 0] for r in rows])
+                apoio = {"x": ax, "y": ay, "w": max(r["x"] + r["w"] for r in rows) - ax, "h": rows[0]["h"], "linhas": len(rows),
+                         "passo": (rows[1]["y"] - rows[0]["y"]) if len(rows) > 1 else 0, "ids": [id(r) for r in rows],
+                         "cor": "#%02x%02x%02x" % tuple(int(v) for v in (np.median(cor, 0) if len(cor) else (200, 200, 200)))}
+            continue
+        if apoio and id(ln) in apoio["ids"]:
+            continue
+        hot = intervalos(ciano[ln["y"]:ln["y"] + ln["h"], ln["x"]:ln["x"] + ln["w"]] & (texto[ln["y"]:ln["y"] + ln["h"], ln["x"]:ln["x"] + ln["w"]] > 0))
+        hot = [[ln["x"] + a, ln["x"] + b] for a, b in hot if not any(a + ln["x"] >= c0 - 5 and b + ln["x"] <= c1 + 5 for c0, c1 in caixas_mt)]
+        # faixa da versal (topo da letra até a linha de base): onde quase toda coluna tem tinta; acento e sobra da
+        # linha vizinha são poucos pixels e ficam fora. É dela que sai o corpo do título (a caixa pode vir torta)
+        y0, y1 = max(0, ln["y"] - 30), ln["y"] + ln["h"] + 30
+        prof = (mask[y0:y1, ln["x"]:ln["x"] + ln["w"]] > 0).sum(1).astype(float)
+        meio = ln["y"] + ln["h"] // 2 - y0
+        forte = prof >= 0.3 * prof[max(0, meio - ln["h"] // 3):meio + ln["h"] // 3].max()
+        a_, b_ = meio, meio
+        while a_ > 0 and (forte[a_ - 1] or (a_ > 1 and forte[a_ - 2])):
+            a_ -= 1
+        while b_ < len(forte) - 1 and (forte[b_ + 1] or (b_ < len(forte) - 2 and forte[b_ + 2])):
+            b_ += 1
+        saida.append({"x": ln["x"], "y": ln["y"], "w": ln["w"], "h": ln["h"], "hot": hot, "mt": caixas_mt,
+                      "cap": [int(y0 + a_), int(y0 + b_ + 1)]})
     buraco = texto | mold
-    limpa = inpaint(rgb, cv2.dilate(buraco, np.ones((13, 13), np.uint8)))
+    limpa = inpaint(rgb, cv2.dilate(buraco, np.ones((7, 7), np.uint8)))
     # recorte: saliência na foto já sem o texto (com texto, o título vira "objeto" grudado na cabeça); elemento que ocupa a tela inteira (ou nada)
     # não tem o que recortar e o slide fica só com o parallax da placa
     from rembg import new_session, remove
@@ -266,12 +324,16 @@ def separar(pasta, arquivo):
     if n > 1:
         maior = st[1:, 4].max()
         a[~np.isin(lab, [k for k in range(1, n) if st[k, 4] >= 0.15 * maior])] = 0
-    dados = {"placa": f"motion/{stem}_placa.jpg", "recorte": None, "linhas": linhas, "moldura": moldura}
+    if apoio:
+        apoio.pop("ids")
+    dados = {"placa": f"motion/{stem}_placa.jpg", "recorte": None, "linhas": saida, "botao": botao, "apoio": apoio}
     if 0.05 <= (a > 128).mean() <= 0.6:
         Image.fromarray(np.dstack([limpa, a]), "RGBA").save(cache / f"{stem}_recorte.png")
         dados["recorte"] = f"motion/{stem}_recorte.png"
         dados["recorte_tipo"] = tipo
-        limpa = inpaint(limpa, cv2.dilate((a > 24).astype(np.uint8) * 255, np.ones((45, 45), np.uint8)))
+        if tipo == "gente":  # gente descola mais: o buraco atrás precisa ser preenchido
+            limpa = inpaint(limpa, cv2.dilate((a > 24).astype(np.uint8) * 255, np.ones((31, 31), np.uint8)))
+        # objeto anda quase junto com a placa: o original fica atrás (sem mancha de inpaint aparecendo)
     Image.fromarray(limpa).save(cache / f"{stem}_placa.jpg", quality=92)
     idx.write_text(json.dumps(dados, ensure_ascii=False), encoding="utf-8")
     return dados
