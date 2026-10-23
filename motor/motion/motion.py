@@ -32,7 +32,10 @@ def separar(texto):
     """'NÃO FALTA GENTE falta um sistema' -> ('NÃO FALTA GENTE', 'falta um sistema')."""
     pal = texto.split()
     i = 0
-    while i < len(pal) and re.sub(r"[^A-Za-zÀ-ÿ]", "", pal[i]) and re.sub(r"[^A-Za-zÀ-ÿ]", "", pal[i]).isupper():
+    def caixa_alta(p):  # número ("3", "5", "23H?") conta como título
+        letras = re.sub(r"[^A-Za-zÀ-ÿ]", "", p)
+        return letras.isupper() if letras else bool(re.sub(r"[^0-9]", "", p))
+    while i < len(pal) and caixa_alta(pal[i]):
         # artigo de 1 letra seguido de minúscula abre o resto ("RÁPIDA O cliente"), não é display
         if i and len(pal[i]) == 1 and i + 1 < len(pal) and pal[i + 1][:1].islower():
             break
@@ -83,7 +86,7 @@ def slide_png(i, arq):
   </section>'''
 
 
-ACAO_CTA = {"Comenta": 2, "Salva": 3, "Clica": 3, "Manda": 3, "Chama": 3}
+ACAO_CTA = {"Comenta": 2, "Salva": 3, "Clica": 3, "Manda": 3, "Chama": 3, "Segue": 2, "Responde": 2}
 
 
 def slide_camadas(i, n, d, texto, handle):

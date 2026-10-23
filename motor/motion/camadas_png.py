@@ -19,13 +19,15 @@ def _cv():
     return cv2
 
 
-def mascara_texto(rgb):
+def mascara_texto(rgb, dica=None):
     """-> (mascara uint8 0/255 do texto, lista de blocos (x, y, w, h, pilula))."""
     cv2 = _cv()
     a = rgb.astype(int)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     branco = (r >= 244) & (g >= 244) & (b >= 244)
     ciano = (abs(r - 0x6E) < 22) & (abs(g - 0xC9) < 22) & (abs(b - 0xF7) < 22)
+    if dica is not None:  # texto achado pela diferença com a foto limpa (pega letra com textura, que não é branco puro)
+        branco = branco | dica
     core = ((branco | ciano) * 255).astype(np.uint8)
     core0 = core.copy()
     core[:128] = 0  # topo e rodapé saem por faixa (moldura), não pela cor
@@ -229,7 +231,15 @@ def separar(pasta, arquivo, limpa=None):
         return json.loads(idx.read_text(encoding="utf-8"))
     rgb = np.array(Image.open(pasta / arquivo).convert("RGB"))
     H, W = rgb.shape[:2]
-    mask, blocos = mascara_texto(rgb)
+    dica = None
+    if limpa is not None:
+        lp = np.array(Image.open(pasta / limpa).convert("RGB")).astype(int)
+        lum = lambda z: z @ [0.2126, 0.7152, 0.0722]
+        dif = np.abs(rgb.astype(int) - lp).max(2)
+        # letra é bem mais clara que a foto atrás e neutra (branco/cinza com textura) ou ciano
+        neutro = (rgb.astype(int).max(2) - rgb.astype(int).min(2)) < 70
+        dica = (dif > 55) & (lum(rgb.astype(float)) > lum(lp.astype(float)) + 35) & neutro & (rgb.min(2) > 150)
+    mask, blocos = mascara_texto(rgb, dica)
     mold, faixas_mold = mascara_moldura(rgb)
     # letra com textura por cima não é branco puro: o quase-branco dentro da caixa do bloco também é texto
     a_ = rgb.astype(int)
