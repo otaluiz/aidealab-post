@@ -1,0 +1,82 @@
+{
+  "carousel_id": "bastidores-sistema-de-cores",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "BASTIDOR",
+  "tema": "ANTES DE POSTAR, A GENTE DECIDE o sistema.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ANTES DE POSTAR, A GENTE DECIDE o sistema."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "COR DE MARCA NÃO É ACHISMO é uma escolha testada."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O SISTEMA TEM TRÊS PARTES Paleta com três tons Duas fontes que conversam Moldes fixos de capa, meio e fim Uma régua de revisão"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "TIPOGRAFIA É OFÍCIO não decoração."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA FONTE DE DESTAQUE, UMA DE APOIO a dupla certa carrega o tom."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O MOLDE RESOLVE Margem decidida uma vez Hierarquia que não muda Post novo sem começar do zero Feed que parece um só"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "COR, FONTE E MOLDE TRABALHANDO JUNTOS o feed ganha harmonia."
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "SUA MARCA MERECE UM SISTEMA. Comenta SISTEMA e a gente te mostra o nosso"
+    }
+  ],
+  "legenda": "Antes de postar qualquer coisa, a gente decide o sistema.\n\nPaleta com três tons testados, duas fontes que conversam e um molde fixo pra capa, meio e fechamento. Tudo decidido uma vez só.\n\nCom isso, cada post novo já nasce parecido com o anterior, sem esforço e sem recomeçar do zero. O feed inteiro passa a parecer uma coisa só.\n\nQuer ver o nosso sistema por dentro? Comenta SISTEMA.",
+  "hashtags": [
+    "#designsystem",
+    "#identidadevisual",
+    "#bastidores",
+    "#instagramparanegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true
+}
