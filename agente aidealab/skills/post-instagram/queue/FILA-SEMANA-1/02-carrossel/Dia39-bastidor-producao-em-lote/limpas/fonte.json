@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "crazy wallpaper.jpg",
+    "semelhanca": 0.918,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "download (28)_2026-09-26.png",
+    "semelhanca": 0.921,
+    "filtro": "led+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "minimalist_sci_fi_portrait_neon_lighting_aura_5612891cbf9f1808cba2551ca423e4eb.png",
+    "semelhanca": 0.986,
+    "filtro": "halftone+cloth_letras"
+  }
+}

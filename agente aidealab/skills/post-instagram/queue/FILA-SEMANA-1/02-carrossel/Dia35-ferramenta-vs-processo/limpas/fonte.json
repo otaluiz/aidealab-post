@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "cinematic_astral_projections_surreal_digital_58a2701e81fdcfe5af93648a453cb4ed.png",
+    "semelhanca": 0.994,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "liquid_chrome_surreal_abstract_digital_art_0f05cb52654fbf30aaeb5d33c6b214e2.png",
+    "semelhanca": 0.961,
+    "filtro": "led+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "chrome_hand_orb_3d_render_aesthetic_liquid_me_436ef6201c527480697ee8262407dddb.png",
+    "semelhanca": 1.045,
+    "filtro": "led+cloth_letras"
+  }
+}

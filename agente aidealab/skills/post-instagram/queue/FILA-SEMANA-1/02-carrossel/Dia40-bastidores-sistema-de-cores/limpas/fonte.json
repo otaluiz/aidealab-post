@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "download (29)_2026-09-26.png",
+    "semelhanca": 1.015,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "iridescent_metallic_3d_abstract_render_dark_b_91cbde3e8df46d0bf2e254265ea2838a.png",
+    "semelhanca": 0.966,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "(17) Home _ X.png",
+    "semelhanca": 0.944,
+    "filtro": "led+cloth_letras"
+  }
+}
