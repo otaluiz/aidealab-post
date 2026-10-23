@@ -163,9 +163,10 @@ def montar(meta, pasta):
         texto = (s.get("texto") or "").strip()
         if i in (1, 2, n) or not texto or tpl.startswith("T5"):
             limpa = pasta / "limpas" / f"slide-{i:02d}.png"
-            d = camadas(pasta, s["arquivo"], limpa.relative_to(pasta) if limpa.exists() else None) if texto and i in (1, 2, n) else None
-            if d and not limpa.exists():
-                print(f"[aviso] slide {i}: sem foto limpa no banco, o texto da arte é apagado (inpaint)")
+            # sem a foto limpa do banco não se apaga texto da arte: o slide fica com a arte aprovada (só push-in)
+            d = camadas(pasta, s["arquivo"], limpa.relative_to(pasta)) if texto and i in (1, 2, n) and limpa.exists() else None
+            if texto and i in (1, 2, n) and not limpa.exists():
+                print(f"[aviso] slide {i}: sem foto limpa no banco, fica a arte estática")
             sec = slide_camadas(i, n, d, texto, handle) if d and d["linhas"] else None
             if d and not sec:
                 print(f"[aviso] slide {i}: texto detectado não bate com o metadata, fica a arte estática")

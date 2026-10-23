@@ -182,7 +182,7 @@
   document.querySelectorAll(".slide").forEach((sl, k) => {
     const t0 = k * S, q = s => sl.querySelectorAll(s);
     if (sl.classList.contains("png")) {
-      tl.fromTo(q(".foto"), { scale: 1.05, filter: "brightness(.4)" }, { scale: 1, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      tl.fromTo(q(".foto"), { scale: 1.03, filter: "brightness(.75)" }, { scale: 1, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
       return;
     }
     if (sl.classList.contains("camadas")) {
