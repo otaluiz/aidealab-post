@@ -2,7 +2,7 @@
   "slide-01": {
     "banco": "crazy wallpaper.jpg",
     "semelhanca": 0.918,
-    "filtro": "halftone+cloth_letras"
+    "filtro": "halftone"
   },
   "slide-02": {
     "banco": "download (28)_2026-09-26.png",
