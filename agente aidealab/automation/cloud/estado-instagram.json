@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-23T15:53:22+00:00",
+  "atualizado_em": "2026-10-23T16:25:49+00:00",
   "perfil": {
     "username": "idea_lab7",
     "name": "AIdea Lab 🤖",
@@ -25,15 +25,15 @@
       "likes": 0,
       "comments": 0,
       "insights": {
-        "reach": 0,
+        "reach": 1,
         "saved": 0,
         "shares": 0,
-        "views": 0,
+        "views": 4,
         "total_interactions": 0,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": null
+      "score": 0.0
     },
     {
       "data": "2026-10-22",
