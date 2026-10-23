@@ -84,6 +84,7 @@
     "fps": 30,
     "segundos_por_slide": 6,
     "motor": "hyperframes@0.8.181",
-    "fonte": "carrossel.json"
+    "texto": "html",
+    "foto": "limpas"
   }
 }
