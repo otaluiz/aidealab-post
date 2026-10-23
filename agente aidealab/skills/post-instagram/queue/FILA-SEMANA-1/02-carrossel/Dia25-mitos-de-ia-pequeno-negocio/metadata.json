@@ -3,9 +3,9 @@
   "cliente": "aidealab",
   "data_criacao": "2026-10-04",
   "status": "aprovado",
-  "postado": true,
-  "postado_em": "2026-10-23T14:27:10.024505",
-  "post_id": "17933611644407368",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
   "ordem_fila": 15,
   "serie": "IA",
   "tema": "ANTES DA TECNOLOGIA vem o medo.",
@@ -89,6 +89,7 @@
   "formato_motion": {
     "fps": 30,
     "segundos_por_slide": 6,
-    "motor": "hyperframes@0.8.181"
+    "motor": "hyperframes@0.8.181",
+    "texto": "html"
   }
 }
