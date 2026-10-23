@@ -255,7 +255,8 @@ def wait_for_container_ready(container_id: str, timeout_s: int = 90, poll_s: int
         if status == "FINISHED":
             return True
         if status in ("ERROR", "EXPIRED"):
-            print(f"[ERROR] Container {container_id} status={status}")
+            det = requests.get(url, params={"fields": "status", "access_token": INSTAGRAM_ACCESS_TOKEN}, timeout=30).json()
+            print(f"[ERROR] Container {container_id} status={status}: {det.get('status')}")
             return False
         time.sleep(poll_s)
     print(f"[ERROR] Container {container_id} não ficou pronto em {timeout_s}s")
@@ -329,7 +330,7 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
         print(f"[ERROR] Sem carousel_id: {resp.json()}")
         return None
 
-    if not wait_for_container_ready(carousel_id):
+    if not wait_for_container_ready(carousel_id, timeout_s=600 if tem_video else 90, poll_s=10 if tem_video else 3):
         return None
 
     publish_url = f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish"
