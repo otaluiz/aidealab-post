@@ -70,6 +70,11 @@ def mascara_texto(rgb):
         dy = max(b[1] - (a[1] + a[3]), a[1] - (b[1] + b[3]), 0)
         return max(dx, dy) < 70
     blocos = [b[:6] for b in blocos if b[6] >= 0.16 or (b[2] >= 150 and any(perto(b, d) for d in densos))]
+    # foto branca (roupa, tênis) passa pela cor: texto tem linhas altas; mancha de foto vira muitas faixas baixas
+    def linhas_ok(b):
+        r = linhas_do_bloco(b[5], 0, 0, b[2], b[3])
+        return bool(r) and sorted(z - a for a, z in r)[len(r) // 2] >= 32
+    blocos = [b for b in blocos if linhas_ok(b)]
     blocos += pilulas
     # bloco pequeno só vale colado num bloco grande ("?", ponto, marca-texto); solto é brilho da foto
     grandes = [b for b in blocos if b[3] >= 40 and b[2] >= 150]
@@ -158,43 +163,45 @@ def mascara_moldura(rgb):
 
 
 def linhas_do_bloco(mask, x, y, w, h):
-    """Corta um bloco em linhas pelo perfil horizontal (mínimos abaixo de 12% do pico)."""
+    """Linhas de um bloco pelo perfil horizontal: o miolo de cada linha é onde a tinta passa de 12% do pico;
+    acento logo acima (faixa baixinha colada) entra na linha de baixo; a borda se estende pela tinta contínua
+    (descendente, cauda da serifada). Tinta fraca solta (pedaço de foto branca) fica de fora."""
     prof = (mask[y:y + h, x:x + w] > 0).sum(1).astype(float)
     if prof.max() == 0:
         return []
-    suave = np.convolve(prof, np.ones(5) / 5, mode="same")
-    limiar = 0.12 * suave.max()
-    cortes, k = [0], 0
+    suave = np.convolve(prof, np.ones(3) / 3, mode="same")
+    forte = suave >= 0.12 * suave.max()
+    runs, k = [], 0
     while k < h:
-        if suave[k] < limiar:
+        if forte[k]:
             j = k
-            while j < h and suave[j] < limiar:
+            while j + 1 < h and (forte[j + 1] or (j + 3 < h and forte[j + 2:j + 4].any())):
                 j += 1
-            meio = k + int(np.argmin(suave[k:j]))
-            if meio - cortes[-1] > 18:
-                cortes.append(meio)
-            k = j
+            runs.append([k, j + 1])
+            k = j + 1
         else:
             k += 1
-    cortes.append(h)
+    if not runs:
+        return []
+    alt = sorted(b - a for a, b in runs)[len(runs) // 2]
+    k = 0
+    while k < len(runs) - 1:  # acento: faixa curta colada na de baixo
+        if runs[k][1] - runs[k][0] < 0.45 * alt and runs[k + 1][0] - runs[k][1] <= 10:
+            runs[k + 1][0] = runs[k][0]
+            del runs[k]
+        else:
+            k += 1
+    runs = [r for r in runs if r[1] - r[0] >= 0.3 * alt]  # sobra curta e solta não é linha
     out = []
-    for a, b in zip(cortes, cortes[1:]):
-        seg = prof[a:b]
-        if seg.sum() < 60:
-            continue
-        nz = np.nonzero(seg)[0]
-        out.append([y + a + int(nz[0]), y + a + int(nz[-1]) + 1])
-    # faixa baixinha (acento de ÃÊÇ, til) é da linha de baixo: junta, para entrar com as letras
-    if len(out) > 1:
-        alt = sorted(b - a for a, b in out)[len(out) // 2]
-        k = 0
-        while k < len(out) - 1:
-            if out[k][1] - out[k][0] < 0.35 * alt:
-                out[k + 1][0] = out[k][0]
-                del out[k]
-            else:
-                k += 1
-    return [tuple(f) for f in out]
+    for n_, (a, b) in enumerate(runs):
+        lim_a = (runs[n_ - 1][1] + a) // 2 if n_ else 0
+        lim_b = (b + runs[n_ + 1][0]) // 2 if n_ + 1 < len(runs) else h
+        while a > lim_a and prof[a - 1] > 0:
+            a -= 1
+        while b < lim_b and prof[b] > 0:
+            b += 1
+        out.append((y + a, y + b))
+    return out
 
 
 def inpaint(rgb, mask):
@@ -227,9 +234,23 @@ def separar(pasta, arquivo):
     # letra com textura por cima não é branco puro: o quase-branco dentro da caixa do bloco também é texto
     a_ = rgb.astype(int)
     quase = ((a_.min(2) > 195) & (a_.max(2) - a_.min(2) < 60)) | ((abs(a_[..., 0] - 0x6E) < 45) & (abs(a_[..., 1] - 0xC9) < 45) & (abs(a_[..., 2] - 0xF7) < 45))
-    # só o quase-branco colado na letra (borda com retícula); o resto da caixa é foto e não pode virar buraco
-    perto = cv2.dilate(mask, np.ones((9, 9), np.uint8)) > 0
-    texto = mask | ((quase & perto) * 255).astype(np.uint8)
+    # a letra do motor estático tem degradê (branco em cima, cinza embaixo) e retícula por cima: a máscara de cor
+    # pura pega só o topo. Cresce a partir dela por pixel claro e neutro (ou ciano) conectado, dentro da caixa do
+    # bloco; o resto da caixa é foto e não pode virar buraco
+    caixas = np.zeros(mask.shape, np.uint8)
+    for x, y, w, h, _ in blocos:
+        caixas[max(0, y - 12):y + h + 12, max(0, x - 12):x + w + 12] = 1
+    claro = ((a_.min(2) > 105) & (a_.max(2) - a_.min(2) < 55)) | ((abs(a_[..., 0] - 0x6E) < 60) & (abs(a_[..., 1] - 0xC9) < 60) & (abs(a_[..., 2] - 0xF7) < 60))
+    # só embaixo da parte branca da letra (o degradê escurece para baixo) e colado nela, nunca a foto em volta
+    k = np.zeros((91, 5), np.uint8)
+    k[:46, :] = 1  # dilate com a metade de cima do kernel = cada pixel branco se estende 45 px para baixo
+    abaixo = cv2.dilate(mask, k)
+    # letra inteira com retícula por cima não tem pixel branco puro: vale também o vizinho de lado na mesma linha
+    abaixo |= cv2.dilate(mask, np.ones((3, 121), np.uint8))
+    cand = (claro & (caixas > 0) & (abaixo > 0)).astype(np.uint8)
+    n, lab = cv2.connectedComponents(cv2.dilate(cand, np.ones((3, 3), np.uint8)))
+    ok = np.unique(lab[(mask > 0) & (lab > 0)])
+    texto = mask | ((np.isin(lab, ok) & (cand > 0)) * 255).astype(np.uint8)
     a_i = rgb.astype(int)
     ciano = (abs(a_i[..., 0] - 0x6E) < 40) & (abs(a_i[..., 1] - 0xC9) < 40) & (abs(a_i[..., 2] - 0xF7) < 40)
 
