@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-23T15:18:17+00:00",
+  "atualizado_em": "2026-10-23T15:21:05+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -205,6 +205,18 @@
         "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE96ZW4tZWlzYndsSlBZOTdXR2xtcDVwWHU5RlVxNWF6Q2xkeE5QTmY3aXdNcDJ0dzNQN3JCbkpNMVdoZHVFWlZPTmxiUGtfVFpuMkVqNHhic280YTVMNTdnLVVTNVUwX0ZqdUZLVDdiOW81MEpaSlhB?oc=5"
       },
       {
+        "titulo": "‘Claude Duet’: nova inteligência artificial da Anthropic organiza tarefas e acompanha e-mails - AJN1",
+        "fonte": "AJN1",
+        "data": "Thu, 22 Oct 2026",
+        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNRURSWDJPWGJVRkk4NVJtZG9EUlBHU1c0V3RsNzNHTmh4azBPVmtwTzRTcVlRMXRQd0tVRFA0SjJYTnBrRWtzUzZCTmNVaExwOFN0T29Ld0pDNGRaR2VRaUV2QzFLTlhiUS1xQ29uOUVlbW4tckFTYU83LTFrV3BxaGVtLWZOTVdlb3Q0UnFfYWh3S1I2Mi1ZbUhIZkJocHVOR2ZNSUdvV01Xd2VmYmMwMg?oc=5"
+      },
+      {
+        "titulo": "Jean-Claude Van Damme está no novo Street Fighter? Diretor explica referências do filme - Estadão",
+        "fonte": "Estadão",
+        "data": "Fri, 23 Oct 2026",
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOGVnWmkweHcyMjVlX1ZVM2VOWnktVEVYcVFtYlBJellTaHhtNFEwdlU2N09nTWF0ZHVWNjJ1bzdxMVA1cmpiUmhtTTU2TEhsRFRzNnVvSUlhSUtkS0hTY3JMM1VfVTVtdGNuVnMwWDFDUUxSLTU2SUFoNHdsVkl6TWFjdi1NUmJSQzNfVFVCeHlBWXhYRFRocG82U2VPcGdQTWdpT3RlM1JTTmNTeHBDemQ1SHlUeFY1NGRCYkF0QdIBxAFBVV95cUxOMTIwRE12WlhJZWdPMEVyTG1fV2N0MVRyWWh4eTQwSVJhSE9QTUduRWxfcDlSZzA0UTVLWHRBRW03ZlM1RDNfQUhVdVNaVWt5X1dnQmVGYWI4SFFMUEdtS2hBNTZQTlZNMXFybHBlcW45MC1CQWxYZl9ENTJ2MEw0dTRSWGt5NWFxalJWdlVUcTNEYnlVYzRaRHUyWlprSm5kdUVXOGI3bS1NaURyMjlwWTRPbVlZU3R1TWJWc29Vd2tnLWFG?oc=5"
+      },
+      {
         "titulo": "OpenAI amplia anúncios no ChatGPT para 26 novos países - Vero Notícias",
         "fonte": "Vero Notícias",
         "data": "Wed, 21 Oct 2026",
@@ -215,18 +227,6 @@
         "fonte": "TudoCelular.com",
         "data": "Thu, 22 Oct 2026",
         "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPenV3X0VNS0lyS1JkNkpQMnpJdmlNUU54a0NDakJxZHNBM2txTnZ3VXBRcDdWSHRxa0hqTFZwaDVjNzFjck5WX2hwVERva2QycEZGNkE5UUxYb1dBTUgxSDNRQ0MxZWxmdmttUmdDR05iamlsRDFSYzFrSjczZmN0SGdVbmxLMFpiNWZrbFdKWnJ0QURnY2V0VVBNWkplcUlKY2dyVkZmQQ?oc=5"
-      },
-      {
-        "titulo": "Claude ganha agente 24x7 para brigar com ChatGPT, Google e Meta - Tecnoblog",
-        "fonte": "Tecnoblog",
-        "data": "Thu, 22 Oct 2026",
-        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNVpqZVFhd25QRWFSLW9fUXctdkEzcDBqNFI1WVBaRnBSam9HOGV4amF6RjJ5VExNa2hVQnlaa3M0dEdid19iSjNhU2J1ZTlLSWRNRDR3Ri1mbG9DdzBhQVJoNi1oNmJUOEgtWDlWUm9VLTdwZml1bnhKUXpLTVFfVHB6SEs3RlRXRmtFTm1Ba2NmZFpGdUo3YVpR?oc=5"
-      },
-      {
-        "titulo": "Claude Duet: o que é o novo agente autônomo da Anthropic e como usar - Manual do Homem Moderno",
-        "fonte": "Manual do Homem Moderno",
-        "data": "Thu, 22 Oct 2026",
-        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQS3pEOHQ5LU9EN1o5SGoxR20xUWZRNUJFSnBPZGVRdy1KWDI1X0RjbEFZRDZsa3NNVG1MX1hmQXJWUElPcG1aRTJGYXYxTUhTUTBUQTh0b3A2aGEzX1hpdVFRS3o3UEkyLUprRDZ4SnQ2OExVX21xYUVvc3NydVBSTFNOUXFMRzdHdTZrc1JMSUI1OXZtNzFfQ2pmTS1WdzByVUVXUUR5NXN4b3ZHcHVyR1NMVi03T0p5NFlRazdkcWtJSlXSAcgBQVVfeXFMTmdWajNCX2hoLTRSOTlZU2FXTzkwQ2JvaF9nN2pUSXlGWXk5dURfcXBWdTdtdUtBakc4MzZzM2UyNVN3bVkyVlVwb1ZJOEE5aXJyZ1QxTjgtTWNUTnJ5UVBFZVBsbzhlU1VWSUxVTjdHMjk1R0JSV3FVaWRQNnhnSWE3QUZXQko2eDd1ZFhzQWJlalRsOUgxU0RjdzBuZnBhLUx6N3M5a2JKMEpVdTNRLU9UWUdUaGRTdnlXVVZ3U2JQUUlhTUpLYm8?oc=5"
       }
     ],
     "Meta IA anúncios empresas": [
