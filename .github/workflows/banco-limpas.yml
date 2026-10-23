@@ -1,0 +1,40 @@
+name: aidealab - fotos limpas da fila (banco img-ref)
+
+# Acha no banco do Drive (img-ref) a foto sem texto de cada slide com imagem da fila e grava em
+# <carrossel>/limpas/ (com o filtro da arte), para o motion animar sem apagar texto da arte.
+on:
+  workflow_dispatch:
+    inputs:
+      todos:
+        description: "incluir carrosséis já postados"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency: aidealab-drive
+jobs:
+  limpas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r "agente aidealab/automation/cloud/requirements.txt" scipy opencv-python-headless
+      - name: casar slides com o banco
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python motor/motion/banco_match.py "agente aidealab/skills/post-instagram/queue/FILA-SEMANA-1/02-carrossel" ${{ inputs.todos && '--todos' || '' }}
+      - name: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "agente aidealab/skills/post-instagram/queue"
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(motion): fotos limpas da fila a partir do banco img-ref [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push origin main && exit 0; sleep 5; done
+          exit 1
