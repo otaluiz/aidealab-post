@@ -23,6 +23,7 @@ AQUI = Path(__file__).resolve().parent
 # OpenCV 4 do motor (motor/.vendor_cv4, instalado pelo setup-motor.sh) traz os cascades Haar da detecção de rosto
 if (AQUI.parent / ".vendor_cv4").exists():
     sys.path.insert(0, str(AQUI.parent / ".vendor_cv4"))
+sys.path.insert(0, str(AQUI))
 S = 6
 HF = "hyperframes@0.8.181"
 
@@ -57,10 +58,10 @@ def camadas_foto(pasta, s):
         remove(foto, session=new_session("isnet-general-use")).save(rec)
     if not placa.exists():
         import cv2
+        from camadas_png import inpaint  # FSR (reconstrói a textura) atrás do elemento recortado
         alfa = np.array(Image.open(rec).convert("RGBA").resize(foto.size))[:, :, 3]
-        mascara = cv2.dilate((alfa > 24).astype("uint8") * 255, np.ones((45, 45), "uint8"))
-        bgr = cv2.cvtColor(np.array(foto), cv2.COLOR_RGB2BGR)
-        cv2.imwrite(str(placa), cv2.inpaint(bgr, mascara, 21, cv2.INPAINT_TELEA), [cv2.IMWRITE_JPEG_QUALITY, 92])
+        mascara = cv2.dilate((alfa > 24).astype("uint8") * 255, np.ones((31, 31), "uint8"))
+        Image.fromarray(inpaint(np.array(foto), mascara)).save(placa, quality=92)
     return placa.relative_to(pasta).as_posix(), rec.relative_to(pasta).as_posix()
 
 

@@ -132,10 +132,10 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
 - Metadata: `python ../../../../../motor/metadata.py carrossel.json 0 --tema ../../design-system/tema #tag1 ... #tag5`;
   depois, no `png/metadata.json`, `status` = `"rascunho"` (o `personagem` já vem do `meta` do `carrossel.json`).
 - CARROSSEL ANIMADO (formato padrão aprovado em 21/10/2026, skill `agente aidealab/skills/criar-motion/SKILL.md`),
-  depois do metadata: `python ../../../../../motor/motion/fonte.py .` — lê o `carrossel.json` e as imagens limpas,
-  gera `png/slide-NN.mp4` (6 s cada) e grava `slides[].video` no `png/metadata.json`. Texto animado em todos os
-  slides; parallax SÓ na capa, no slide 2 e no CTA, com a imagem estática (recorte + fundo sem o elemento, cache
-  em `motion/`); texto afastado dos rostos automaticamente. NUNCA gere vídeo no Higgsfield nem gaste crédito para
+  depois do metadata: `python ../../../../../motor/motion/limpas_locais.py . && python ../../../../../motor/motion/motion.py png`
+  — a foto limpa de capa/slide 2/CTA recebe o filtro e a cor da arte (png/limpas/) e o texto entra em HTML por cima,
+  na mesma posição do PNG estático (nada é apagado da arte); gera `png/slide-NN.mp4` (6 s, com trilha muda) e grava
+  `slides[].video` no `png/metadata.json`. Animação padrão otalogia, sem blur; zoom curto terminando em 100%. NUNCA gere vídeo no Higgsfield nem gaste crédito para
   animar personagem. Precisa de node, ffmpeg, rembg e OpenCV (~5 min). Antes do commit, extraia com ffmpeg o
   último quadro da capa, de um slide do miolo e do CTA e confira: nenhum texto sobre rosto, nada cortado.
   Inclua `motion/` e os `png/slide-NN.mp4` no commit. Se o render falhar, siga sem os vídeos e diga no resumo:

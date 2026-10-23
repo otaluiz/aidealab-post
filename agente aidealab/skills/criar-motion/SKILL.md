@@ -12,7 +12,9 @@ Copie a pasta, troque o texto dos slides e as imagens; a estrutura de motion fic
 
 ## Produção (fila e carrosséis novos)
 
-**Carrossel novo → `motor/motion/fonte.py` (seção abaixo), usado pela rotina diária e pela `criar-post`.**
+**Carrossel novo → `motor/motion/limpas_locais.py <pasta>` + `motor/motion/motion.py <pasta>/png`** (rotina diária e
+`criar-post`): mesmo motion da fila, a partir da foto limpa da pasta, com o layout idêntico ao PNG estático. Fila sem
+foto limpa local: `banco_match.py` (workflow `banco-limpas.yml`) acha a foto no banco img-ref.
 O `motion.py` fica só para carrossel antigo sem `carrossel.json` (fila já aprovada, só arte final):
 `python motor/motion/motion.py <pasta>` converte qualquer carrossel do motor (pasta com `metadata.json` +
 `slide-NN.png`) em vídeos `slide-NN.mp4` e grava `slides[].video`. Capa, slide 2 e CTA: `camadas_png.py` tira o

@@ -1236,8 +1236,10 @@ reciclados de dois outros posts do mesmo feed.
 Todo carrossel novo sai também em vídeo. Depois dos PNGs finais e do `metadata.json`:
 
 ```
-python motor/motion/fonte.py <pasta do carrossel com carrossel.json>
+python motor/motion/limpas_locais.py <pasta do carrossel> && python motor/motion/motion.py <pasta do carrossel>/png
 ```
+(o `fonte.py` antigo refaz o layout e não bate com a capa estática; use o par acima: foto limpa com o filtro e a
+cor da arte, texto em HTML na mesma posição do PNG, nada apagado)
 
 Gera `png/slide-NN.mp4` (1080×1440, 6 s, HyperFrames) e grava `slides[].video` no `png/metadata.json`:
 - **texto animado em todos os slides**, montado do `carrossel.json` (display revelado por máscara, serifada,

@@ -123,6 +123,24 @@
   const E = "expo.out", S = 6;
   // sem blur (padrão otalogia): apoio sobe e aparece; serifada se escreve da esquerda pra direita
   const aparece = (el, t, d = 0.9) => tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: d, ease: "power3.out" }, t);
+  // quebra os nós de texto em letras (palavra num inline-block para não partir a linha), mantendo .hot/.mt
+  function letras(el) {
+    const nos = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (w.nextNode()) nos.push(w.currentNode);
+    const out = [];
+    nos.forEach(n => {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(p => {
+        if (!p) return;
+        if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+        const pal = document.createElement("span"); pal.style.display = "inline-block";
+        [...p].forEach(ch => { const c = document.createElement("span"); c.style.display = "inline-block"; c.textContent = ch; pal.appendChild(c); out.push(c); });
+        frag.appendChild(pal);
+      });
+      n.replaceWith(frag);
+    });
+    return out;
+  }
   const escreve = (el, t, d = 1.2) => tl.fromTo(el, { clipPath: "inset(-40% 105% -40% -5%)" }, { clipPath: "inset(-40% -5% -40% -5%)", duration: d, ease: "power2.inOut" }, t);
 
   document.querySelectorAll(".slide").forEach((sl, k) => {
@@ -131,9 +149,10 @@
     const foto = document.getElementById("foto" + i), rec = document.getElementById("recorte" + i);
     if (foto) {
       // parallax 2.5D da foto estática: fundo (placa sem o elemento) anda pouco, recorte anda mais e respira
-      tl.fromTo(foto, { scale: 1.08, y: 14, filter: "brightness(.45)" }, { scale: 1.03, y: -10, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      // zoom curto terminando em 100% (nada ampliado no fim: foto nítida como no estático)
+      tl.fromTo(foto, { scale: 1.045, y: 8, filter: "brightness(.7)" }, { scale: 1, y: 0, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
       if (rec) {
-        tl.fromTo(rec, { scale: 1.08, y: 30, x: 8, filter: "brightness(.45)" }, { scale: 1.035, y: -26, x: -6, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+        tl.fromTo(rec, { scale: 1.06, y: 18, x: 4, filter: "brightness(.7)" }, { scale: 1, y: 0, x: 0, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
         tl.fromTo(rec.querySelector(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
       }
     }
@@ -146,7 +165,12 @@
       q(".led, .grade").forEach(el => tl.fromTo(el, { scale: 1 }, { scale: 1.06, duration: S, ease: "none" }, t0));
     }
     // texto
-    tl.fromTo(q(".lin"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E, stagger: 0.12 }, t0 + 0.35);
+    if (foto) {
+      // slide com foto (padrão otalogia): título letra por letra saindo da máscara, com leve rotação
+      q(".lin").forEach((ln, i) => tl.fromTo(letras(ln), { yPercent: 115, rotate: 8, opacity: 0 }, { yPercent: 0, rotate: 0, opacity: 1, duration: 0.95, ease: E, stagger: 0.022 }, t0 + 0.35 + i * 0.14));
+    } else {
+      tl.fromTo(q(".lin"), { yPercent: 105 }, { yPercent: 0, duration: 1.1, ease: E, stagger: 0.12 }, t0 + 0.35);
+    }
     q(".serif").forEach(el => escreve(el, t0 + 1.1));
     q(".lista li").forEach((li, j) => {
       const t = t0 + 1.0 + j * 0.32;

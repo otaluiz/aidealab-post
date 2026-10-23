@@ -5,7 +5,7 @@ cd "$(dirname "$0")/../../.."
 python -m pip install -q -r "agente aidealab/automation/cloud/requirements.txt" scipy "rembg[cpu]" opencv-contrib-python-headless  # contrib: inpaint FSR do motor/motion
 python -m playwright install --with-deps chromium
 # compor.py precisa dos cascades Haar do OpenCV 4 (o 5 não traz mais)
-[ -d motor/.vendor_cv4/cv2 ] || python -m pip install -q --target motor/.vendor_cv4 opencv-python-headless==4.10.0.84
+[ -d motor/.vendor_cv4/cv2 ] || python -m pip install -q --target motor/.vendor_cv4 opencv-contrib-python-headless==4.10.0.84  # contrib: inpaint FSR
 # modelos do rembg (o workflow guarda ~/.u2net e ~/.rembg em cache)
 python -c "from rembg import new_session; new_session('u2net'); new_session('u2net_human_seg')"
 # fontes do tema aidealab instaladas localmente (render não depende do Google Fonts carregar a tempo)
