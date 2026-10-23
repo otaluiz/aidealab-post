@@ -195,8 +195,8 @@ def main():
         subprocess.run(["npx", "-y", HF, "render", "--quality", "looks", "--output", "completo.mp4"], cwd=proj, check=True)
         for i, s in enumerate(sorted(meta["slides"], key=lambda s: s["ordem"]), 1):
             video = Path(s["arquivo"]).with_suffix(".mp4").name
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
-                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(pasta / video)], check=True)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"), "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
+                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", str(pasta / video)], check=True)
             s["video"] = video
     shutil.rmtree(pasta / "motion", ignore_errors=True)  # camadas intermediárias não vão para a fila
     meta["formato_motion"] = {"fps": 30, "segundos_por_slide": S, "motor": HF}

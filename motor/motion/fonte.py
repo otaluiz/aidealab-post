@@ -171,8 +171,8 @@ def main():
         saida = pasta / "png"
         saida.mkdir(exist_ok=True)
         for i in range(1, len(car["slides"]) + 1):
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"),
-                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str((i - 1) * S), "-t", str(S), "-i", str(proj / "completo.mp4"), "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
+                            "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart",
                             str(saida / f"slide-{i:02d}.mp4")], check=True)
     meta_path = pasta / "png" / "metadata.json"
     if meta_path.exists():
