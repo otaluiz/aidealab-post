@@ -90,6 +90,7 @@
   "formato_motion": {
     "fps": 30,
     "segundos_por_slide": 6,
-    "motor": "hyperframes@0.8.181"
+    "motor": "hyperframes@0.8.181",
+    "texto": "html"
   }
 }
