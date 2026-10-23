@@ -24,6 +24,8 @@ W, H = 1080, 1440
 LIMIAR = 0.80
 DRIVE = AQUI.parents[1] / "agente aidealab" / "automation" / "cloud" / "drive_helper.py"
 CACHE = Path.home() / ".cache" / "aidealab-banco"
+# pastas além das img-ref: fotos geradas dos personagens (Higgsfield Soul) usadas nas capas/CTAs
+EXTRA = ["1ekpwC3z2QDSsmwe-YqdxRTD7vZ75qgtg"]
 
 
 def drive(*args):
@@ -34,8 +36,8 @@ def baixar_banco():
     """Todas as imagens das pastas img-ref (banco bruto e as já usadas em peça)."""
     CACHE.mkdir(parents=True, exist_ok=True)
     fotos = []
-    for pasta in drive("find-folder", "--name", "img-ref"):
-        for f in drive("list", "--parent-id", pasta["id"]):
+    for pid in [p["id"] for p in drive("find-folder", "--name", "img-ref")] + EXTRA:
+        for f in drive("list", "--parent-id", pid):
             if not f.get("mimeType", "").startswith("image/"):
                 continue
             dest = CACHE / f"{f['id']}{Path(f['name']).suffix.lower() or '.png'}"
@@ -90,6 +92,24 @@ def erro(a, b, ok):
     return float(np.abs(x - y)[m].mean())
 
 
+def gradua(foto, arte, ok, sigma=48):
+    """Leva a cor/luz local da arte (degradê atrás do texto, vinheta, tom do filtro) para a foto limpa:
+    média e desvio por canal numa janela grande, medidos só fora do texto (convolução normalizada)."""
+    import cv2
+    f = np.asarray(foto.convert("RGB")).astype(np.float32)
+    a = np.asarray(arte.convert("RGB")).astype(np.float32)
+    w = ok.astype(np.float32)
+    def est(x):
+        sw = cv2.GaussianBlur(w, (0, 0), sigma) + 1e-4
+        m = cv2.GaussianBlur(x * w[..., None], (0, 0), sigma) / sw[..., None]
+        v = cv2.GaussianBlur((x - m) ** 2 * w[..., None], (0, 0), sigma) / sw[..., None]
+        return m, np.sqrt(np.maximum(v, 1.0))
+    mf, sf = est(f)
+    ma, sa = est(a)
+    out = (f - mf) / sf * np.minimum(sa, sf * 2.5) + ma
+    return Image.fromarray(out.clip(0, 255).astype("uint8"))
+
+
 def main():
     from camadas_png import mascara_moldura, mascara_texto
     import cv2
@@ -123,7 +143,9 @@ def main():
                 rel.append(linha + " — (abaixo do limiar, sem foto limpa) |")
                 continue
             ok_full = mask == 0
-            nome_f, foto = min(((k, f(melhor[2])) for k, f in fx.items()), key=lambda z: erro(z[1], arte, ok_full))
+            # filtro escolhido já com a cor local da arte aplicada (o que sobra de diferença é textura)
+            nome_f, foto = min(((k, gradua(f(melhor[2]), arte, ok_full)) for k, f in fx.items()),
+                               key=lambda z: erro(z[1], arte, ok_full))
             dest = pasta / "limpas" / f"slide-{i:02d}.png"
             dest.parent.mkdir(exist_ok=True)
             foto.convert("RGB").save(dest, optimize=True)
