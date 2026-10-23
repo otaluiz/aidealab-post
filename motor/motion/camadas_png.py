@@ -238,7 +238,8 @@ def separar(pasta, arquivo, limpa=None):
         dif = np.abs(rgb.astype(int) - lp).max(2)
         # letra é bem mais clara que a foto atrás e neutra (branco/cinza com textura) ou ciano
         neutro = (rgb.astype(int).max(2) - rgb.astype(int).min(2)) < 70
-        dica = (dif > 55) & (lum(rgb.astype(float)) > lum(lp.astype(float)) + 35) & neutro & (rgb.min(2) > 150)
+        # (atrás do texto a foto limpa é escura: área clara da foto, como roupa branca, não vira texto)
+        dica = (dif > 55) & (lum(rgb.astype(float)) > lum(lp.astype(float)) + 35) & neutro & (rgb.min(2) > 150) & (lum(lp.astype(float)) < 150)
     mask, blocos = mascara_texto(rgb, dica)
     mold, faixas_mold = mascara_moldura(rgb)
     # letra com textura por cima não é branco puro: o quase-branco dentro da caixa do bloco também é texto
