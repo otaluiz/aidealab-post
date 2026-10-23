@@ -216,7 +216,7 @@ def inpaint(rgb, mask):
     return cv2.cvtColor(out, cv2.COLOR_BGR2RGB)
 
 
-def separar(pasta, arquivo):
+def separar(pasta, arquivo, limpa=None):
     """-> placa e recorte (caminhos relativos à pasta) + geometria do texto impresso: linhas[{x,y,w,h,hot,mt}],
     botao{x,y,w,h,dentro} e apoio{x,y,w,h,cor}. O texto é refeito em HTML por cima, nessas caixas."""
     cv2 = _cv()
@@ -224,7 +224,7 @@ def separar(pasta, arquivo):
     cache = pasta / "motion"
     cache.mkdir(exist_ok=True)
     stem = Path(arquivo).stem
-    idx = cache / f"{stem}_camadas.json"
+    idx = cache / f"{stem}_camadas{'_limpa' if limpa else ''}.json"
     if idx.exists():
         return json.loads(idx.read_text(encoding="utf-8"))
     rgb = np.array(Image.open(pasta / arquivo).convert("RGB"))
@@ -329,7 +329,12 @@ def separar(pasta, arquivo):
         saida.append({"x": ln["x"], "y": ln["y"], "w": ln["w"], "h": ln["h"], "hot": hot, "mt": caixas_mt,
                       "cap": [int(y0 + a_), int(y0 + b_ + 1)]})
     buraco = texto | mold
-    limpa = inpaint(rgb, cv2.dilate(buraco, np.ones((7, 7), np.uint8)))
+    usa_limpa = limpa is not None
+    if usa_limpa:  # foto limpa do banco (banco_match.py): nada é apagado da arte
+        limpa = np.array(Image.open(pasta / limpa).convert("RGB"))
+    else:
+        limpa = inpaint(rgb, cv2.dilate(buraco, np.ones((7, 7), np.uint8)))
+
     # recorte: saliência na foto já sem o texto (com texto, o título vira "objeto" grudado na cabeça); elemento que ocupa a tela inteira (ou nada)
     # não tem o que recortar e o slide fica só com o parallax da placa
     from rembg import new_session, remove
@@ -352,7 +357,7 @@ def separar(pasta, arquivo):
         Image.fromarray(np.dstack([limpa, a]), "RGBA").save(cache / f"{stem}_recorte.png")
         dados["recorte"] = f"motion/{stem}_recorte.png"
         dados["recorte_tipo"] = tipo
-        if tipo == "gente":  # gente descola mais: o buraco atrás precisa ser preenchido
+        if tipo == "gente":  # gente descola mais: o buraco atrás dela (não o texto) é preenchido
             limpa = inpaint(limpa, cv2.dilate((a > 24).astype(np.uint8) * 255, np.ones((31, 31), np.uint8)))
         # objeto anda quase junto com a placa: o original fica atrás (sem mancha de inpaint aparecendo)
     Image.fromarray(limpa).save(cache / f"{stem}_placa.jpg", quality=92)

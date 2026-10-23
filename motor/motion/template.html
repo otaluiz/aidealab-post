@@ -187,10 +187,11 @@
     }
     if (sl.classList.contains("camadas")) {
       // parallax 2.5D: placa e texto andam juntos (o texto cobre o inpaint), recorte descola por cima e respira
-      tl.fromTo(q(".placa-w"), { scale: 1.08, y: 14, filter: "brightness(.45)" }, { scale: 1.02, y: -8, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
-      tl.fromTo(q(".txt-w"), { scale: 1.08, y: 14 }, { scale: 1.02, y: -8, duration: S, ease: "power2.out" }, t0);
-      q(".rec-w.gente").forEach(el => tl.fromTo(el, { scale: 1.09, y: 28, x: 6, filter: "brightness(.45)" }, { scale: 1.03, y: -18, x: -4, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
-      q(".rec-w.objeto").forEach(el => tl.fromTo(el, { scale: 1.085, y: 20, filter: "brightness(.45)" }, { scale: 1.025, y: -12, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
+      // movimento curto e terminando em escala 1 (nada ampliado no fim: a foto fica nítida como na arte)
+      tl.fromTo(q(".placa-w"), { scale: 1.045, y: 8, filter: "brightness(.7)" }, { scale: 1, y: 0, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0);
+      tl.fromTo(q(".txt-w"), { scale: 1.045, y: 8 }, { scale: 1, y: 0, duration: S, ease: "power2.out" }, t0);
+      q(".rec-w.gente").forEach(el => tl.fromTo(el, { scale: 1.06, y: 18, x: 4, filter: "brightness(.7)" }, { scale: 1, y: 0, x: 0, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
+      q(".rec-w.objeto").forEach(el => tl.fromTo(el, { scale: 1.055, y: 12, filter: "brightness(.7)" }, { scale: 1, y: 0, filter: "brightness(1)", duration: S, ease: "power2.out" }, t0));
       tl.fromTo(q(".respira"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.012, scaleX: 1.004, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, t0 + 0.2);
       tl.fromTo(q(".topo, .rodape"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, t0 + 0.1);
       // título letra por letra: cada linha sobe de trás da máscara com leve rotação, em cascata
