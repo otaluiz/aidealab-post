@@ -1,0 +1,27 @@
+name: aidealab - motion -> drive (09 - motion)
+
+# A sessão de motion do Claude na nuvem dá push em `motion-entrega` com motion-entrega/<Nome>/*.mp4|*.wav.
+# Este job sobe tudo para Clientes/aidealab/09 - motion e apaga a branch (os vídeos não entram na main).
+on:
+  push:
+    branches: [motion-entrega]
+permissions:
+  contents: write
+concurrency: aidealab-motion
+jobs:
+  subir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r "agente aidealab/automation/cloud/requirements.txt"
+      - name: sobe para o Drive
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python "agente aidealab/automation/cloud/motion_drive.py"
+      - name: apaga a branch de entrega
+        run: git push origin --delete motion-entrega

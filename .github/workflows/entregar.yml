@@ -14,6 +14,7 @@ on:
   push:
     paths-ignore:
       - "agente aidealab/skills/post-instagram/queue/**"
+      - "motion-entrega/**"  # entrega de motion: tratada pelo motion-drive.yml, não vai para a main
   schedule:
     - cron: "30 10 * * *"  # 7h30 BRT, antes da rotina das 8h: atualiza o estado do Drive
   workflow_dispatch:
