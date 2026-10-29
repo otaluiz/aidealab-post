@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-29T11:59:59+00:00",
+  "atualizado_em": "2026-10-29T17:01:59+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
@@ -10,11 +10,800 @@
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 386,
-    "profile_views": 84,
+    "reach": 392,
+    "profile_views": 85,
     "website_clicks": 1,
     "follows_and_unfollows": null,
     "accounts_engaged": 27
   },
-  "erro": "The read operation timed out"
+  "posts": [
+    {
+      "data": "2026-10-29",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Enquanto você dorme, um agente de IA pode estar respondendo direct, qualificando quem quer comprar e marcando horário.",
+      "link": "https://www.instagram.com/p/DfE1msigd1P/",
+      "likes": 2,
+      "comments": 0,
+      "insights": {
+        "reach": 6,
+        "saved": 0,
+        "shares": 0,
+        "views": 19,
+        "total_interactions": 2,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 33.33
+    },
+    {
+      "data": "2026-10-28",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Você trocou de ferramenta de IA de novo este mês?",
+      "link": "https://www.instagram.com/p/DfCOfTkFMRo/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 19,
+        "saved": 0,
+        "shares": 0,
+        "views": 48,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 26.32
+    },
+    {
+      "data": "2026-10-27",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "A venda acontece, a nota vai pra gaveta e a pergunta fica sem resposta: quanto sobrou?",
+      "link": "https://www.instagram.com/p/DfAMVcMgUw3/",
+      "likes": 8,
+      "comments": 0,
+      "insights": {
+        "reach": 23,
+        "saved": 0,
+        "shares": 0,
+        "views": 43,
+        "total_interactions": 8,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 34.78
+    },
+    {
+      "data": "2026-10-26",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se o orçamento, o cliente e a planilha só andam quando você está por perto, a empresa para quando você para.",
+      "link": "https://www.instagram.com/p/De9BrdaiMrR/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 22,
+        "saved": 0,
+        "shares": 0,
+        "views": 53,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 22.73
+    },
+    {
+      "data": "2026-10-25",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Ninguém cria do zero. Nem os designers que você admira. A diferença é saber onde olhar: Laws of UX pra entender como as pessoas leem uma tel",
+      "link": "https://www.instagram.com/p/De62ivClUpo/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 5,
+        "saved": 0,
+        "shares": 0,
+        "views": 16,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 80.0
+    },
+    {
+      "data": "2026-10-24",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Design não é enfeite. Três segundos pra entender, ou a pessoa fecha. Só isso.",
+      "link": "https://www.instagram.com/p/De4MS3SDA8P/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 11,
+        "saved": 0,
+        "shares": 0,
+        "views": 24,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 36.36
+    },
+    {
+      "data": "2026-10-23",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Medo trava mais decisão de pequeno negócio do que falta de dinheiro.",
+      "link": "https://www.instagram.com/p/De1292OkTKj/",
+      "likes": 2,
+      "comments": 0,
+      "insights": {
+        "reach": 10,
+        "saved": 0,
+        "shares": 0,
+        "views": 21,
+        "total_interactions": 2,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 20.0
+    },
+    {
+      "data": "2026-10-22",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Seu feed pode estar lindo e mesmo assim não vender nada.",
+      "link": "https://www.instagram.com/p/DezM4l1gL3g/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 14,
+        "saved": 0,
+        "shares": 0,
+        "views": 31,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 42.86
+    },
+    {
+      "data": "2026-10-21",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Seu WhatsApp virou caos. O cliente manda oi e o pedido some no meio da conversa.",
+      "link": "https://www.instagram.com/p/Dew2Z8NG6NR/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 30,
+        "saved": 0,
+        "shares": 1,
+        "views": 58,
+        "total_interactions": 7,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 30.0
+    },
+    {
+      "data": "2026-10-20",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Seu feed pode estar bonito e mesmo assim não vender nada.",
+      "link": "https://www.instagram.com/p/DeuDO57F48I/",
+      "likes": 3,
+      "comments": 0,
+      "insights": {
+        "reach": 13,
+        "saved": 0,
+        "shares": 0,
+        "views": 29,
+        "total_interactions": 3,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 23.08
+    },
+    {
+      "data": "2026-10-18",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Aparecer todo mundo aparece. Ser lembrado é que dá trabalho.",
+      "link": "https://www.instagram.com/p/DeouTJnlxNK/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 29,
+        "saved": 0,
+        "shares": 0,
+        "views": 61,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 20.69
+    },
+    {
+      "data": "2026-10-17",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Legenda bonita não aparece na busca. Legenda com a palavra que o cliente digita aparece.",
+      "link": "https://www.instagram.com/p/DemGcUMHCC5/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 20,
+        "saved": 0,
+        "shares": 0,
+        "views": 42,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 30.0
+    },
+    {
+      "data": "2026-10-16",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.",
+      "link": "https://www.instagram.com/p/DejsP7RFT-G/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 33,
+        "saved": 0,
+        "shares": 0,
+        "views": 78,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 12.12
+    },
+    {
+      "data": "2026-10-15",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
+      "link": "https://www.instagram.com/p/DehJkt6FyzX/",
+      "likes": 10,
+      "comments": 0,
+      "insights": {
+        "reach": 37,
+        "saved": 0,
+        "shares": 0,
+        "views": 79,
+        "total_interactions": 11,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 27.03
+    },
+    {
+      "data": "2026-10-14",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Um monte de peça solta não vira marca. Vira ruído.",
+      "link": "https://www.instagram.com/p/DeenrsLoMn8/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 18,
+        "saved": 0,
+        "shares": 0,
+        "views": 40,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 22.22
+    },
+    {
+      "data": "2026-10-13",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente manda áudio de 5 minutos e o pedido de verdade está lá no meio. Você ouve duas vezes e ainda esquece o prazo.",
+      "link": "https://www.instagram.com/p/DebuhHpmGnJ/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 16,
+        "saved": 0,
+        "shares": 0,
+        "views": 28,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 25.0
+    },
+    {
+      "data": "2026-10-12",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Antes de comprar, ele some. E você chama isso de funil.",
+      "link": "https://www.instagram.com/p/DeZLAc1lnrz/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 14,
+        "saved": 0,
+        "shares": 0,
+        "views": 33,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 28.57
+    },
+    {
+      "data": "2026-10-11",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente pede orçamento em três lugares. Quem responde primeiro, com tudo claro, costuma levar.",
+      "link": "https://www.instagram.com/p/DeWekZOjEB0/",
+      "likes": 2,
+      "comments": 0,
+      "insights": {
+        "reach": 22,
+        "saved": 0,
+        "shares": 0,
+        "views": 40,
+        "total_interactions": 2,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 9.09
+    },
+    {
+      "data": "2026-10-10",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Hoje ele pula a busca e pergunta direto pra IA.",
+      "link": "https://www.instagram.com/p/DeT4VtImFk4/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 15,
+        "saved": 0,
+        "shares": 0,
+        "views": 40,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 33.33
+    },
+    {
+      "data": "2026-10-09",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se você atende, vende, posta e ainda fecha o caixa, esse perfil é pra você.",
+      "link": "https://www.instagram.com/p/DeRYf-7GGVo/",
+      "likes": 7,
+      "comments": 0,
+      "insights": {
+        "reach": 28,
+        "saved": 0,
+        "shares": 0,
+        "views": 51,
+        "total_interactions": 8,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 25.0
+    },
+    {
+      "data": "2026-10-08",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Marketing sem estratégia é só barulho caro.",
+      "link": "https://www.instagram.com/p/DeOz2bCE6Dj/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 15,
+        "saved": 0,
+        "shares": 0,
+        "views": 33,
+        "total_interactions": 6,
+        "follows": 0,
+        "profile_visits": 3
+      },
+      "score": 40.0
+    },
+    {
+      "data": "2026-10-07",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Marca consistente não é medo de mudar. É gente reconhecendo você pela primeira peça, antes de ler o nome.",
+      "link": "https://www.instagram.com/p/DeMNF7ZmBHE/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 13,
+        "saved": 0,
+        "shares": 0,
+        "views": 42,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 30.77
+    },
+    {
+      "data": "2026-10-06",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Branding não é logo bonito. É você sendo escolhido sem precisar explicar preço.",
+      "link": "https://www.instagram.com/p/DeJporSEd0o/",
+      "likes": 6,
+      "comments": 0,
+      "insights": {
+        "reach": 14,
+        "saved": 0,
+        "shares": 0,
+        "views": 36,
+        "total_interactions": 7,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 42.86
+    },
+    {
+      "data": "2026-10-05",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Awwwards, Mobbin, One Page Love: quando você trava (e sabe que trava), esses três tiram o branco criativo.",
+      "link": "https://www.instagram.com/p/DeHardIlV0j/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 24,
+        "saved": 0,
+        "shares": 0,
+        "views": 46,
+        "total_interactions": 8,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 20.83
+    },
+    {
+      "data": "2026-10-04",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
+      "link": "https://www.instagram.com/p/DeE7gxdDJMA/",
+      "likes": 16,
+      "comments": 1,
+      "insights": {
+        "reach": 79,
+        "saved": 0,
+        "shares": 0,
+        "views": 171,
+        "total_interactions": 20,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 22.78
+    },
+    {
+      "data": "2026-10-03",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Fontpair, Typewolf, Fonts In Use — três sites que batem a combinação certa de tipografia. Pronto, tirou uma preocupação do dia.",
+      "link": "https://www.instagram.com/p/DeCWRe9GE95/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 22,
+        "saved": 0,
+        "shares": 0,
+        "views": 64,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 22.73
+    },
+    {
+      "data": "2026-10-01",
+      "tipo": "IMAGE",
+      "gancho": "\"Oi! Vi seu perfil e acho que posso te ajudar\" — nunca respondido. Se seu direct parece com isso, o problema não é falta de esforço, é falta",
+      "link": "https://www.instagram.com/p/Dd87j9lF6Tp/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 36,
+        "saved": 0,
+        "shares": 0,
+        "views": 82,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 11.11
+    },
+    {
+      "data": "2026-09-30",
+      "tipo": "IMAGE",
+      "gancho": "Na aidealab, estratégia, design e IA sentam na mesma mesa. Cada peça sai na medida — e cada marca sai reconhecível no feed antes de ser lida",
+      "link": "https://www.instagram.com/p/Dd6UF3joPyX/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 23,
+        "saved": 0,
+        "shares": 0,
+        "views": 43,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 17.39
+    },
+    {
+      "data": "2026-09-29",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Chegamos no fim: flat design e o estilo de agora, tipo grande cortado na borda. Onze estilos, uma linha do tempo, uma marca que sabe transit",
+      "link": "https://www.instagram.com/p/Dd38P2dIPW2/",
+      "likes": 7,
+      "comments": 0,
+      "insights": {
+        "reach": 17,
+        "saved": 0,
+        "shares": 0,
+        "views": 47,
+        "total_interactions": 7,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 41.18
+    },
+    {
+      "data": "2026-09-27",
+      "tipo": "IMAGE",
+      "gancho": "Todo negócio chega embaralhado. Não falta esforço — falta sequência, e alguém de fora pra enxergar ela.",
+      "link": "https://www.instagram.com/p/DdzAtUtIB26/",
+      "likes": 8,
+      "comments": 0,
+      "insights": {
+        "reach": 30,
+        "saved": 0,
+        "shares": 0,
+        "views": 61,
+        "total_interactions": 8,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 26.67
+    },
+    {
+      "data": "2026-09-26",
+      "tipo": "IMAGE",
+      "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
+      "link": "https://www.instagram.com/p/DdwXVcMl22z/",
+      "likes": 3,
+      "comments": 0,
+      "insights": {
+        "reach": 34,
+        "saved": 0,
+        "shares": 0,
+        "views": 64,
+        "total_interactions": 3,
+        "follows": 0,
+        "profile_visits": 2
+      },
+      "score": 8.82
+    },
+    {
+      "data": "2026-09-25",
+      "tipo": "IMAGE",
+      "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
+      "link": "https://www.instagram.com/p/DdtjXyuozo5/",
+      "likes": 14,
+      "comments": 4,
+      "insights": {
+        "reach": 67,
+        "saved": 0,
+        "shares": 0,
+        "views": 154,
+        "total_interactions": 21,
+        "follows": 0,
+        "profile_visits": 1
+      },
+      "score": 32.84
+    },
+    {
+      "data": "2026-09-24",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Tem estilo que cria regra e estilo que existe só pra quebrar ela. Suíço, pós-modernismo e brutalismo — a grade, a rebeldia e a estrutura cru",
+      "link": "https://www.instagram.com/p/Ddq93ziIAp7/",
+      "likes": 7,
+      "comments": 0,
+      "insights": {
+        "reach": 24,
+        "saved": 0,
+        "shares": 0,
+        "views": 59,
+        "total_interactions": 7,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 29.17
+    },
+    {
+      "data": "2026-09-23",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Depois da função, vem o exagero.",
+      "link": "https://www.instagram.com/p/DdoQtlHlgLo/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 21,
+        "saved": 0,
+        "shares": 0,
+        "views": 53,
+        "total_interactions": 4,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 19.05
+    },
+    {
+      "data": "2026-09-22",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Todo layout que você usa hoje descende de alguma dessas três escolas. A gente abriu os onze estilos que sustentam o design gráfico moderno —",
+      "link": "https://www.instagram.com/p/DdliCYklmpn/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 19,
+        "saved": 0,
+        "shares": 0,
+        "views": 75,
+        "total_interactions": 7,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 26.32
+    },
+    {
+      "data": "2026-09-21",
+      "tipo": "IMAGE",
+      "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
+      "link": "https://www.instagram.com/p/DdjR05Rjhsv/",
+      "likes": 10,
+      "comments": 2,
+      "insights": {
+        "reach": 83,
+        "saved": 0,
+        "shares": 1,
+        "views": 193,
+        "total_interactions": 14,
+        "follows": 0,
+        "profile_visits": 3
+      },
+      "score": 20.48
+    },
+    {
+      "data": "2025-09-20",
+      "tipo": "REELS",
+      "gancho": "🎥✨ Campo Novo do Parecis está vivendo a emoção do Ranch Sorting e a @aidealab está presente com tecnologia de ponta, garantindo uma transmis",
+      "link": "https://www.instagram.com/reel/DO1D2A6DUVI/",
+      "likes": 19,
+      "comments": 4,
+      "insights": {
+        "reach": 499,
+        "saved": 0,
+        "shares": 0,
+        "total_interactions": 23
+      },
+      "score": 5.41
+    },
+    {
+      "data": "2025-04-16",
+      "tipo": "REELS",
+      "gancho": "Da ideia à tela! 🎬✨ Na Idea Lab Marketing, adoramos transformar a essência dos nossos clientes em vídeos que conectam e informam.",
+      "link": "https://www.instagram.com/reel/DIg6zzQx6US/",
+      "likes": 11,
+      "comments": 3,
+      "insights": {
+        "reach": 254,
+        "saved": 1,
+        "shares": 2,
+        "total_interactions": 17
+      },
+      "score": 9.84
+    },
+    {
+      "data": "2025-02-26",
+      "tipo": "IMAGE",
+      "gancho": "🚦 Impulsione seus resultados com um sistema de gestão de tráfego eficiente! Aprenda como otimizar suas campanhas e aumentar suas conversões.",
+      "link": "https://www.instagram.com/p/DGinSRuRD4r/",
+      "likes": 10,
+      "comments": 2,
+      "insights": {
+        "reach": 178,
+        "saved": 1,
+        "shares": 3,
+        "views": 322,
+        "total_interactions": 16,
+        "follows": 1,
+        "profile_visits": 2
+      },
+      "score": 16.29
+    },
+    {
+      "data": "2025-02-21",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "🧠✨ Desperte o poder da sua mente! Os gatilhos mentais são ferramentas incríveis que podem impulsionar suas vendas e engajamento. Conheça os ",
+      "link": "https://www.instagram.com/p/DGV9CESxvv2/",
+      "likes": 15,
+      "comments": 4,
+      "insights": {
+        "reach": 194,
+        "saved": 2,
+        "shares": 3,
+        "views": 434,
+        "total_interactions": 24,
+        "follows": 0,
+        "profile_visits": 4
+      },
+      "score": 18.56
+    }
+  ],
+  "top5": [
+    {
+      "data": "2026-09-25",
+      "tipo": "IMAGE",
+      "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
+      "score": 32.84,
+      "alcance": 67
+    },
+    {
+      "data": "2026-10-21",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Seu WhatsApp virou caos. O cliente manda oi e o pedido some no meio da conversa.",
+      "score": 30.0,
+      "alcance": 30
+    },
+    {
+      "data": "2026-10-15",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
+      "score": 27.03,
+      "alcance": 37
+    },
+    {
+      "data": "2026-09-27",
+      "tipo": "IMAGE",
+      "gancho": "Todo negócio chega embaralhado. Não falta esforço — falta sequência, e alguém de fora pra enxergar ela.",
+      "score": 26.67,
+      "alcance": 30
+    },
+    {
+      "data": "2026-10-04",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
+      "score": 22.78,
+      "alcance": 79
+    }
+  ],
+  "piores5": [
+    {
+      "data": "2026-10-16",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.",
+      "score": 12.12,
+      "alcance": 33
+    },
+    {
+      "data": "2026-10-01",
+      "tipo": "IMAGE",
+      "gancho": "\"Oi! Vi seu perfil e acho que posso te ajudar\" — nunca respondido. Se seu direct parece com isso, o problema não é falta de esforço, é falta",
+      "score": 11.11,
+      "alcance": 36
+    },
+    {
+      "data": "2025-04-16",
+      "tipo": "REELS",
+      "gancho": "Da ideia à tela! 🎬✨ Na Idea Lab Marketing, adoramos transformar a essência dos nossos clientes em vídeos que conectam e informam.",
+      "score": 9.84,
+      "alcance": 254
+    },
+    {
+      "data": "2026-09-26",
+      "tipo": "IMAGE",
+      "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
+      "score": 8.82,
+      "alcance": 34
+    },
+    {
+      "data": "2025-09-20",
+      "tipo": "REELS",
+      "gancho": "🎥✨ Campo Novo do Parecis está vivendo a emoção do Ranch Sorting e a @aidealab está presente com tecnologia de ponta, garantindo uma transmis",
+      "score": 5.41,
+      "alcance": 499
+    }
+  ]
 }
