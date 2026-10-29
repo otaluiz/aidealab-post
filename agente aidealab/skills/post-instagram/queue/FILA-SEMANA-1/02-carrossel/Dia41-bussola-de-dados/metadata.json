@@ -1,0 +1,95 @@
+{
+  "carousel_id": "bussola-de-dados",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "CONTEÚDO",
+  "tema": "MAIS DADO NÃO VIROU CLAREZA. virou ruído.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "MAIS DADO NÃO VIROU CLAREZA. virou ruído.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "CADA FERRAMENTA SOLTA UM NÚMERO e ninguém sabe qual importa.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "SINAIS DE QUE VOCÊ ESTÁ PERDIDO Abre painel por hábito Cada reunião vira opinião Muda a meta todo mês Ninguém lembra o número da semana",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "SEM DIREÇÃO, A IA DEVOLVE um eco do óbvio.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA MÉTRICA-NORTE POR MÊS e o resto vira contexto.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A BÚSSOLA EM QUATRO PASSOS Escolha a métrica do mês Cruze só os dados que respondem a ela Peça à IA uma ação, não um resumo Feche a reunião com um próximo passo",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "O SINAL FICA FÁCIL DE ACHAR e a equipe age por critério.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "HORA DE ACHAR O RUMO. Comenta BÚSSOLA e a gente te ajuda a escolher a sua métrica",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Mais dado não virou mais clareza. Virou ruído. Cada ferramenta solta um número novo por dia e ninguém sabe qual deles importa.\n\nSem direção, até a IA devolve só o óbvio. O que resolve é uma bússola simples: uma métrica-norte por mês, só os dados que respondem a ela e uma ação clara no fim de cada reunião.\n\nO sinal fica fácil de achar e a equipe para de decidir por opinião.\n\nQuer ajuda pra escolher a sua métrica-norte? Comenta BÚSSOLA.",
+  "hashtags": [
+    "#dados",
+    "#gestao",
+    "#inteligenciaartificial",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

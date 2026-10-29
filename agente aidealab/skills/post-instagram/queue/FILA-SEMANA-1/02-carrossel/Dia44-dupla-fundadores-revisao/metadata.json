@@ -1,0 +1,95 @@
+{
+  "carousel_id": "dupla-fundadores-revisao",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "BASTIDOR",
+  "tema": "AQUI, A IA NUNCA DECIDE sozinha.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "AQUI, A IA NUNCA DECIDE sozinha.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "SEM REVISÃO, A IA ENTREGA A MÉDIA",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "POR QUE ELA ERRA A MARCA Nunca conviveu com o seu negócio Mistura milhões de referências Devolve o ponto mais comum Escolhe sempre o caminho seguro",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "CADA PEÇA PASSA PELOS DOIS antes de ir pro ar.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "UM OLHA A TÉCNICA, O OUTRO A ESTRATÉGIA duas leituras na mesma entrega.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE ISSO EVITA Retrabalho depois de publicado Post com cara de qualquer marca Ajuste feito na pressa Padrão que depende da sorte",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "A PEÇA JÁ NASCE COM A CARA DA MARCA porque alguém conferiu.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "IA COM REVISÃO DE GENTE. os dois juntos. Comenta REVISÃO e a gente te mostra como revisa cada peça",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Aqui a IA trabalha muito, mas nunca decide sozinha.\n\nSem revisão, ela entrega a média de tudo que já viu. Escolhe o caminho mais seguro, aquele que todo mundo já fez, e a sua marca some no meio.\n\nPor isso cada peça passa pelos dois antes de ir pro ar. Um olha a técnica, o outro a estratégia. Onde um não vê problema, o outro vê.\n\nO resultado é menos retrabalho depois de publicado e um padrão que não depende da sorte. Quer ver como a gente revisa? Comenta REVISÃO.",
+  "hashtags": [
+    "#bastidores",
+    "#inteligenciaartificial",
+    "#marketingcomia",
+    "#identidadevisual",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "variante": "personagens (Flyer-ref) + slide 2 do banco",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

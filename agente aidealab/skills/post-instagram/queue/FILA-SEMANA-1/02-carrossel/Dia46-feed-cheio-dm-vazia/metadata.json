@@ -1,0 +1,94 @@
+{
+  "carousel_id": "feed-cheio-dm-vazia",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "CONTEÚDO",
+  "tema": "SEU FEED ESTÁ CHEIO. a sua DM, não.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEU FEED ESTÁ CHEIO. a sua DM, não.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "POSTA TODO DIA E NINGUÉM PERGUNTA o preço.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA VITRINE SEM PORTA Fala da marca Mostra o bastidor Fica bonita no grid E não diz o que fazer depois",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "CADA POST PEDE UM PASSO um só, e bem claro.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "CURTIDA AJUDA, MAS NÃO PAGA BOLETO ela só abre a conversa.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O PRÓXIMO PASSO Uma pergunta direta Uma palavra-chave pra DM O link da bio, sempre no mesmo lugar Quem lê sabe o que fazer depois",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "CONTEÚDO QUE TIRA DÚVIDA DE VERDADE vira pergunta de preço.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "ONDE ESTÁ O FURO DO SEU FEED? a gente aponta. Comenta PASSO e a aidealab te mostra onde o seu feed perde gente",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Seu feed pode estar bonito, ativo, com seguidor chegando, e a DM continuar parada.\n\nQuase sempre o motivo é o mesmo: nenhum post diz o que a pessoa faz depois de ler. Vira vitrine sem porta. A pessoa olha, curte e vai embora.\n\nCada post precisa de um próximo passo só. Uma pergunta direta, uma palavra pra mandar na DM, o link da bio sempre no mesmo lugar.\n\nQuer saber onde o seu feed está perdendo gente? Comenta PASSO.",
+  "hashtags": [
+    "#marketingdigital",
+    "#instagramparanegocios",
+    "#conteudoquevende",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

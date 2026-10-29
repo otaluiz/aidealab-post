@@ -1,0 +1,95 @@
+{
+  "carousel_id": "chega-de-lutar-sozinho",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "SERVIÇOS",
+  "tema": "CANSADO DE LUTAR SOZINHO? tem reforço chegando.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "CANSADO DE LUTAR SOZINHO? tem reforço chegando.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "TUDO NA CORRERIA, A ESTRATÉGIA fica pra depois.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE AINDA PASSA PELA SUA MÃO Responder mensagem no WhatsApp Confirmar agendamento Postar no Instagram Lembrar quem sumiu",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "AUTOMAÇÃO NÃO É SÓ PRA EMPRESA GRANDE tem solução do seu tamanho.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O REPETITIVO SAI DA SUA MÃO e continua acontecendo.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A GENTE ASSUME Resposta rápida no WhatsApp Agendamento automático Lembrete pra quem esfriou Post saindo no dia certo",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "SOBRA TEMPO PRA QUEM JÁ DECIDIU comprar de você.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "PRA LUTAR MENOS, LUTA JUNTO. a gente entra. Comenta REFORÇO e a gente te mostra o que sai da sua mão",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Mensagem, agendamento, post, venda. Tudo passa pela sua mão, ao mesmo tempo, e a estratégia fica sempre pra depois.\n\nMuita gente acha que automação é coisa de empresa grande. Não é. Dá pra começar pelo que mais rouba o seu dia: responder o WhatsApp, confirmar horário, lembrar quem sumiu.\n\nA gente entra como reforço. O repetitivo sai da sua mão e continua acontecendo, e sobra tempo pra atender bem quem já decidiu comprar.\n\nQuer saber o que dá pra tirar da sua rotina? Comenta REFORÇO.",
+  "hashtags": [
+    "#automacao",
+    "#whatsappbusiness",
+    "#pequenosnegocios",
+    "#inteligenciaartificial",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "variante": "personagens (Flyer-ref) + slide 2 do banco",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "carousel_id": "espera-o-momento-perfeito",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "CONTEÚDO",
+  "tema": "A IDEIA AINDA ESTÁ PARADA. esperando o momento perfeito.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "A IDEIA AINDA ESTÁ PARADA. esperando o momento perfeito.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "SEMPRE FALTA UM DETALHE pro momento ficar perfeito.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE TE TRAVA Medo de errar na frente dos outros Achar que precisa estar pronto Comparar o seu começo com o meio dos outros Planejar mais do que testar",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "NÃO É FALTA DE PLANO é medo de errar.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMECE PEQUENO um post, um teste, um ajuste.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO SAIR DO PAPEL Escolha uma ideia só Poste a versão simples hoje Veja o que aconteceu Ajuste e poste de novo",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "O SALTO ENSINA O QUE A ESPERA nunca vai ensinar.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "O MOMENTO CERTO É AGORA. Comenta AGORA e a gente te ajuda a tirar a primeira do papel",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Todo mundo tem uma ideia guardada. Quase ninguém coloca no ar.\n\nSempre falta um detalhe pro momento ficar perfeito. Só que, na maioria das vezes, não é falta de plano. É medo de errar na frente de alguém.\n\nComece pequeno: uma ideia só, a versão simples hoje, olha o que aconteceu e ajusta. O primeiro post ensina mais do que um mês planejando.\n\nSe tem uma ideia parada aí, comenta AGORA que a gente te ajuda a tirar a primeira do papel.",
+  "hashtags": [
+    "#empreendedorismo",
+    "#marketingdigital",
+    "#pequenosnegocios",
+    "#conteudo",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "variante": "personagens (Flyer-ref) + slide 2 do banco",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

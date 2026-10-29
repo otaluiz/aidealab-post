@@ -32,3 +32,21 @@
 | Dia40-bastidores-sistema-de-cores | 1 | download (29)_2026-09-26.png | 1.02 | halftone+cloth_letras |
 | Dia40-bastidores-sistema-de-cores | 2 | iridescent_metallic_3d_abstract_render_dark_b_91cbde3e8df46d0bf2e254265ea2838a.png | 0.97 | led+cloth_letras |
 | Dia40-bastidores-sistema-de-cores | 8 | (17) Home _ X.png | 0.94 | halftone+cloth_letras |
+| Dia41-bussola-de-dados | 1 | download (40).png | 0.81 | halftone+cloth_letras |
+| Dia41-bussola-de-dados | 2 | download (18).jpg | 0.82 | halftone+cloth_letras |
+| Dia41-bussola-de-dados | 8 | (20) Home _ X.png | 1.03 | halftone+cloth_letras |
+| Dia42-chega-de-lutar-sozinho | 1 | lone_astronaut_canyon_alien_planet_aesthetic_710638fe1a83025896fb4d05e7cbf9b0.png | 0.35 | — (abaixo do limiar, sem foto limpa) |
+| Dia42-chega-de-lutar-sozinho | 2 | Expandir imagem_upscayl_1920px_upscayl-standard-4x.webp | 1.00 | led |
+| Dia42-chega-de-lutar-sozinho | 8 | dreamcore_aesthetic_dark_ethereal_landscape_ca728bdf17e3665da5f367a30bb7b960.png | 0.29 | — (abaixo do limiar, sem foto limpa) |
+| Dia43-concorrencia-consistencia | 1 | Ethereal celestial aesthetic_•_•_•_#holographicglitter #dreamcore #aigenerated #ai #midjourney.png | 0.96 | halftone+cloth_letras |
+| Dia43-concorrencia-consistencia | 2 | Neon Knight.jpg | 1.00 | led |
+| Dia43-concorrencia-consistencia | 8 | download (21).png | 0.94 | halftone+cloth_letras |
+| Dia44-dupla-fundadores-revisao | 1 | soul_creative_photography_editorial_aesthetic_men_20261021_08c67bb95820d76d854ce1702ce607c2.jpg | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia44-dupla-fundadores-revisao | 2 | download (5)_2026-09-26.png | 1.06 | led |
+| Dia44-dupla-fundadores-revisao | 8 | soul_avant_garde_photography_editorial_men_solo_20261007_6ec6c570876537c1198ba525e75ca154.jpg | 0.53 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 1 | soul_avant_garde_photography_editorial_men_solo_20261024_c40ee09ad3837c1cfcb56d2aef15fe24.jpg | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 2 | soul_avant_garde_photography_editorial_men_solo_20261015_856fc1de9e0f2155bf80c84594c8ce14.jpg | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 8 | dark_futurism_surreal_lighting_3d_art_3df0de58d650a1e602fa8bb5b7956a34.png | 0.62 | — (abaixo do limiar, sem foto limpa) |
+| Dia46-feed-cheio-dm-vazia | 1 | download (3)_2026-09-26.png | 1.04 | halftone+cloth_letras |
+| Dia46-feed-cheio-dm-vazia | 2 | How it Feels When Using Ai Agent.png | 1.01 | led+cloth_letras |
+| Dia46-feed-cheio-dm-vazia | 8 | surrealism_digital_art_ethereal_lighting_4dc0ca51b03a744caf84747ccfcd12d6.png | 0.92 | halftone+cloth_letras |

@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "download (40).png",
+    "semelhanca": 0.806,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "download (18).jpg",
+    "semelhanca": 0.819,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "(20) Home _ X.png",
+    "semelhanca": 1.028,
+    "filtro": "halftone+cloth_letras"
+  }
+}

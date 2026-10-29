@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "download (3)_2026-09-26.png",
+    "semelhanca": 1.035,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "How it Feels When Using Ai Agent.png",
+    "semelhanca": 1.013,
+    "filtro": "led+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "surrealism_digital_art_ethereal_lighting_4dc0ca51b03a744caf84747ccfcd12d6.png",
+    "semelhanca": 0.915,
+    "filtro": "halftone+cloth_letras"
+  }
+}
