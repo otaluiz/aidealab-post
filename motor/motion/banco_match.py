@@ -5,8 +5,9 @@ Aqui cada foto do banco passa pelo mesmo cover e é comparada (luminância borra
 aprovado; a melhor acima do limiar vira <carrossel>/limpas/slide-NN.png, já com o filtro que mais reproduz a arte.
 O motion usa essa foto limpa (texto em HTML por cima) e não precisa apagar nada da arte.
 
-Uso (GitHub Actions, com os secrets do Drive): python motor/motion/banco_match.py <pasta da fila> [--todos]
-Gera também <pasta da fila>/limpas-relatorio.md.
+Uso (GitHub Actions, com os secrets do Drive): python motor/motion/banco_match.py <pasta da fila> [--todos | --faltando]
+Gera também <pasta da fila>/limpas-relatorio.md. --faltando: só carrossel sem limpas/ (motion_fila.py), linhas
+acrescentadas ao relatório.
 """
 import io
 import json
@@ -115,6 +116,7 @@ def main():
     import cv2
     fila = Path(sys.argv[1])
     todos = "--todos" in sys.argv
+    faltando = "--faltando" in sys.argv
     banco = [(p, n, cover(Image.open(p))) for p, n in baixar_banco()]
     sig = [(p, n, c, assinatura(c)[0]) for p, n, c in banco]
     print(f"banco: {len(sig)} fotos")
@@ -123,7 +125,7 @@ def main():
     for meta_p in sorted(fila.glob("*/metadata.json")):
         pasta = meta_p.parent
         meta = json.loads(meta_p.read_text(encoding="utf-8-sig"))
-        if meta.get("postado") and not todos:
+        if meta.get("postado") and not todos or faltando and (pasta / "limpas").is_dir():
             continue
         n = len(meta["slides"])
         fonte = {}
@@ -153,7 +155,10 @@ def main():
             rel.append(linha + f" {nome_f} |")
         if fonte:
             (pasta / "limpas" / "fonte.json").write_text(json.dumps(fonte, indent=2, ensure_ascii=False), encoding="utf-8")
-    (fila / "limpas-relatorio.md").write_text("\n".join(rel) + "\n", encoding="utf-8")
+    relatorio = fila / "limpas-relatorio.md"
+    if faltando and relatorio.exists():
+        rel = [relatorio.read_text(encoding="utf-8").rstrip("\n")] + rel[4:]
+    relatorio.write_text("\n".join(rel) + "\n", encoding="utf-8")
     print("\n".join(rel))
 
 

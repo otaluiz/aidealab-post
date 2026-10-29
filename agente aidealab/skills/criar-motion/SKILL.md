@@ -28,7 +28,9 @@ do metadata, o slide fica com a arte estática (aviso no log). Nada de brilho va
 (T5) só acendem com push-in; o miolo é refeito em tipografia animada a partir de `slides[].texto`.
 No post, o carrossel animado abre com a capa estática (PNG do hook, pronta no feed), seguida do hook animado e dos
 demais vídeos (até 10 itens; com 10 slides, a capa estática substitui o hook animado).
-O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. O projeto de referência abaixo
+O `post-instagram` publica os vídeos e cai para os PNGs se o Instagram recusar. Aprovado que entra na fila
+(`entregar.yml`) leva os vídeos do render do repo (`<carrossel>/png`), nunca os da pasta do Drive; sem render no
+repo, `automation/cloud/motion_fila.py` renderiza no motion atual antes de postar. O projeto de referência abaixo
 é para peça feita à mão (texto da capa animado sobre foto limpa, recorte com título atrás da cabeça).
 
 ## Carrossel novo (fonte = carrossel.json) — formato validado em 21/10/2026

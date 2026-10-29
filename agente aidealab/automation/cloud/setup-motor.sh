@@ -4,6 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/../../.."
 python -m pip install -q -r "agente aidealab/automation/cloud/requirements.txt" scipy "rembg[cpu]" opencv-contrib-python-headless  # contrib: inpaint FSR do motor/motion
 python -m playwright install --with-deps chromium
+npx -y hyperframes@0.8.181 browser ensure  # Chrome Headless Shell do render (motor/motion)
 # compor.py precisa dos cascades Haar do OpenCV 4 (o 5 não traz mais)
 [ -d motor/.vendor_cv4/cv2 ] || python -m pip install -q --target motor/.vendor_cv4 opencv-contrib-python-headless==4.10.0.84  # contrib: inpaint FSR
 # modelos do rembg (o workflow guarda ~/.u2net e ~/.rembg em cache)

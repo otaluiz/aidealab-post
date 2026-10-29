@@ -67,7 +67,7 @@ def main():
             continue
         if json.loads(meta.read_text(encoding="utf-8")).get("status") != "rascunho":
             continue
-        arquivos = sorted((d / "png").iterdir()) + ([d / "legenda.md"] if (d / "legenda.md").exists() else [])
+        arquivos = sorted(f for f in (d / "png").iterdir() if f.is_file()) + ([d / "legenda.md"] if (d / "legenda.md").exists() else [])
         if d.name in em04:
             n = sincronizar(svc, em04[d.name], arquivos)
             if n:

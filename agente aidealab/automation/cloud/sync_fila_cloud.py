@@ -42,6 +42,30 @@ def ler_meta(svc, fs):
     return json.loads(baixar(svc, fs["metadata.json"]).decode("utf-8-sig")) if "metadata.json" in fs else None
 
 
+CARROSSEIS = AQUI.parents[1] / "clientes" / "aidealab" / "carrosseis"
+
+
+def render_do_repo(alvo, meta, png):
+    """Vídeos do item novo vêm do render mais recente do repo (<carrossel>/png), nunca da cópia do Drive: a pasta
+    em 06/FILA guarda o vídeo da época da aprovação (motion antigo). Sem render no repo o item fica sem vídeo e o
+    motion_fila.py renderiza no motion atual."""
+    for s in meta["slides"]:
+        s.pop("video", None)
+    meta.pop("formato_motion", None)
+    if not png:
+        return
+    if (png / "limpas").is_dir():  # fotos limpas do motor: o motion_fila não precisa do banco
+        shutil.copytree(png / "limpas", alvo / "limpas", dirs_exist_ok=True)
+    videos = {s["arquivo"]: s.get("video") for s in local.ler(png / "metadata.json").get("slides", [])}
+    if not all(videos.get(s["arquivo"]) and (png / videos[s["arquivo"]]).exists() for s in meta["slides"]):
+        return
+    for s in meta["slides"]:
+        s["video"] = videos[s["arquivo"]]
+        shutil.copy2(png / s["video"], alvo / s["video"])
+    meta["formato_motion"] = local.ler(png / "metadata.json").get("formato_motion")
+    print(f"         vídeos do render do repo ({png.parent.name})")
+
+
 def main():
     svc = get_service()
     seis = achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar")
@@ -101,6 +125,10 @@ def main():
     prox = max([ledger["ultimo_dia"], *[it["dia"] for it in vivos]]) + 1
     novos = [v for cid, v in fila_drive.items() if cid not in na_fila and cid not in arquivados]
     novos.sort(key=lambda v: (v[3].get("ordem_fila") or 999, v[0]))
+    repo = {}  # carrosséis do motor no repo, por pasta e por carousel_id
+    for mp in CARROSSEIS.glob("*/png/metadata.json"):
+        repo.setdefault(local.ler(mp).get("carousel_id"), mp.parent)
+        repo[mp.parents[1].name] = mp.parent
     for nome, pid, fs, meta in novos:
         if pendentes >= local.MAX_PENDENTES:
             break
@@ -114,10 +142,9 @@ def main():
             alvo.mkdir(parents=True)
             for s in meta["slides"]:
                 (alvo / s["arquivo"]).write_bytes(baixar(svc, fs[s["arquivo"]]))
-                if s.get("video") in fs:  # carrossel animado (motor/motion)
-                    (alvo / s["video"]).write_bytes(baixar(svc, fs[s["video"]]))
             meta.update(postado=False, status="aprovado")
             local.aplicar_textura(alvo, meta)
+            render_do_repo(alvo, meta, repo.get(nome) or repo.get(meta.get("carousel_id")))
             local.gravar(alvo / "metadata.json", meta)
         prox += 1
         pendentes += 1
