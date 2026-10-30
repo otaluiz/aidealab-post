@@ -1,0 +1,94 @@
+{
+  "carousel_id": "prova-nao-e-elogio",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PROVA",
+  "tema": "A PASTA CHEIA DE ELOGIOS não fecha venda sozinha.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "A PASTA CHEIA DE ELOGIOS não fecha venda sozinha.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "ELOGIO CONVENCE QUEM JÁ CONFIA e quem duvida nem vê.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "ONDE A PROVA SE PERDE No print salvo na galeria No story que some em 24 horas No comentário de três meses atrás Na sua memória, e só nela",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PROVA QUE NINGUÉM ENCONTRA vira só lembrança sua.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "PROVA BOA TEM LUGAR FIXO o cliente vê sem procurar.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE MOSTRAR Tempo de resposta Um antes e depois O processo em vídeo curto Tudo sempre no mesmo lugar do perfil",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "A DÚVIDA SE RESOLVE ANTES DA PRIMEIRA DM e a confiança faz o resto.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "PARE DE GUARDAR. COMECE A MOSTRAR. Comenta PROVA e a gente te mostra como deixar à vista",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "Você guarda print de elogio, e quem ainda não comprou de você nunca chega a ver.\n\nElogio convence quem já confia. Quem está decidindo agora quer evidência: quanto tempo você leva pra responder, um antes e depois, o processo acontecendo.\n\nO que muda é essa prova ficar sempre no mesmo lugar do perfil, sem o cliente procurar e sem você caçar no celular.\n\nSe hoje a sua prova mora espalhada na galeria, comenta PROVA que a gente te mostra como deixar à vista.",
+  "hashtags": [
+    "#provasocial",
+    "#marketingdigital",
+    "#vendasnoinstagram",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

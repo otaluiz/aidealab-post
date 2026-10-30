@@ -1,0 +1,17 @@
+{
+  "slide-01": {
+    "banco": "dreamcore_surrealism_moody_atmospheric_lighti_7359977d4733cc7d887528cf0d44e828.png",
+    "semelhanca": 0.983,
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "banco": "download (6).png",
+    "semelhanca": 1.034,
+    "filtro": "led+cloth_letras"
+  },
+  "slide-08": {
+    "banco": "surrealism_digital_art_ethereal_lighting_1d35f19e5c13ff6bbb922ccdfa62e7e3.png",
+    "semelhanca": 1.014,
+    "filtro": "cloth_letras"
+  }
+}
