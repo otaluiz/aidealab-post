@@ -1,0 +1,12 @@
+{
+  "slide-01": {
+    "banco": "Supercalifragilisticexpialidocious.png",
+    "semelhanca": 0.968,
+    "filtro": "halftone"
+  },
+  "slide-02": {
+    "banco": "surrealism_digital_art_ethereal_lighting_4dc0_39ca0481d4caa3e1efa5fd11fe965630.png",
+    "semelhanca": 0.877,
+    "filtro": "led+cloth_letras"
+  }
+}

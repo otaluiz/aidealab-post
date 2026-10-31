@@ -1,0 +1,95 @@
+{
+  "carousel_id": "views-que-nao-vendem",
+  "cliente": "aidealab",
+  "data_criacao": "2026-10-05",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "CONTEÚDO",
+  "tema": "MUITA VIEW, NENHUMA venda.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T2c-T3-T2-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "MUITA VIEW, NENHUMA venda.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CONTADOR SOBE, A GAVETA NÃO e a conta não fecha.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "POR QUE A VIEW NÃO VIRA VENDA Atenção não é intenção Falta a oferta no caminho Ninguém sabe o próximo passo A resposta demora demais",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "QUEM PAROU PRA OLHAR NÃO PAROU PRA COMPRAR ainda falta a ponte.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "TENHA UMA PORTA, NÃO SÓ VITRINE link, direct ou orçamento.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE MUDAR HOJE Uma oferta clara por semana Um caminho só em cada post Quem responde e em quanto tempo Uma primeira frase pronta",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "desenvolvimento",
+      "texto": "A VENDA MORRE NO SILÊNCIO entre o clique e a resposta.",
+      "video": "slide-07.mp4"
+    },
+    {
+      "ordem": 8,
+      "arquivo": "slide-08.png",
+      "papel": "cta",
+      "texto": "BORA TRANSFORMAR VIEW EM VENDA? Comenta VENDA e a gente olha o seu caminho com você",
+      "video": "slide-08.mp4"
+    }
+  ],
+  "legenda": "O contador de views sobe e a gaveta continua igual. Isso acontece porque view é atenção, não intenção. A pessoa parou pra olhar, não pra comprar.\n\nEntre ver e comprar existe uma distância que post bonito nenhum atravessa sozinho. Falta a oferta, falta a porta, falta alguém respondendo rápido.\n\nUma oferta clara, um caminho só em cada post e uma primeira resposta pronta já mudam o jogo.\n\nQuer olhar o seu caminho de venda com a gente? Comenta VENDA.",
+  "hashtags": [
+    "#marketingdigital",
+    "#vendasnoinstagram",
+    "#engajamento",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@aidealab7",
+  "origem": "refeito de 06/RASCUNHOS (motor antigo)",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "slide3_t3": true,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
