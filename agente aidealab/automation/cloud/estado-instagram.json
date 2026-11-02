@@ -1,22 +1,40 @@
 {
-  "atualizado_em": "2026-11-02T11:25:12+00:00",
+  "atualizado_em": "2026-11-02T20:29:36+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 428,
+    "followers_count": 429,
     "follows_count": 218,
-    "media_count": 47,
+    "media_count": 48,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 495,
+    "reach": 497,
     "profile_views": 76,
     "website_clicks": 1,
     "follows_and_unfollows": null,
     "accounts_engaged": 26
   },
   "posts": [
+    {
+      "data": "2026-11-02",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Antes de postar qualquer coisa, a gente decide o sistema.",
+      "link": "https://www.instagram.com/p/DfPSk42AnHl/",
+      "likes": 2,
+      "comments": 0,
+      "insights": {
+        "reach": 6,
+        "saved": 0,
+        "shares": 0,
+        "views": 14,
+        "total_interactions": 2,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 33.33
+    },
     {
       "data": "2026-11-01",
       "tipo": "CAROUSEL_ALBUM",
@@ -43,12 +61,12 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 122,
+        "reach": 123,
         "saved": 0,
         "shares": 0,
         "total_interactions": 6
       },
-      "score": 4.92
+      "score": 4.88
     },
     {
       "data": "2026-10-31",
@@ -61,7 +79,7 @@
         "reach": 12,
         "saved": 0,
         "shares": 0,
-        "views": 21,
+        "views": 23,
         "total_interactions": 3,
         "follows": 0,
         "profile_visits": 0
@@ -79,7 +97,7 @@
         "reach": 9,
         "saved": 0,
         "shares": 0,
-        "views": 30,
+        "views": 32,
         "total_interactions": 4,
         "follows": 0,
         "profile_visits": 0
@@ -94,7 +112,7 @@
       "likes": 3,
       "comments": 0,
       "insights": {
-        "reach": 9,
+        "reach": 10,
         "saved": 0,
         "shares": 0,
         "views": 24,
@@ -102,7 +120,7 @@
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 33.33
+      "score": 30.0
     },
     {
       "data": "2026-10-28",
@@ -715,24 +733,6 @@
         "profile_visits": 0
       },
       "score": 26.32
-    },
-    {
-      "data": "2026-09-21",
-      "tipo": "IMAGE",
-      "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
-      "link": "https://www.instagram.com/p/DdjR05Rjhsv/",
-      "likes": 10,
-      "comments": 2,
-      "insights": {
-        "reach": 83,
-        "saved": 0,
-        "shares": 1,
-        "views": 193,
-        "total_interactions": 14,
-        "follows": 0,
-        "profile_visits": 3
-      },
-      "score": 20.48
     }
   ],
   "top5": [
@@ -774,11 +774,11 @@
   ],
   "piores5": [
     {
-      "data": "2026-09-21",
-      "tipo": "IMAGE",
-      "gancho": "Site, marca, peça gráfica ou motion — cada entrega segue o mesmo sistema, então sua marca nunca sai parecendo improviso.",
-      "score": 20.48,
-      "alcance": 83
+      "data": "2026-10-04",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
+      "score": 22.78,
+      "alcance": 79
     },
     {
       "data": "2026-10-16",
@@ -805,8 +805,8 @@
       "data": "2026-10-31",
       "tipo": "REELS",
       "gancho": "Seu site tá sem vida? 💀🔥",
-      "score": 4.92,
-      "alcance": 122
+      "score": 4.88,
+      "alcance": 123
     }
   ]
 }
