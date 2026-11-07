@@ -53,11 +53,13 @@ def repair_mojibake(s: str) -> str:
     return cur
 
 
-MOJIBAKE_MARKERS = ("Ã", "â€", "Â")
+# Ã/Â seguidos de byte de continuação UTF-8 lido como cp1252 ('Ã£', 'Ã©', 'Â·'), ou 'â€'.
+# 'Ã'/'Â' sozinhos são letras legítimas em maiúsculas (REVISÃO, CONSTÂNCIA).
+MOJIBAKE_RE = re.compile("[ÃÂ][\u00a0-\u00bf€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ]|â€")
 
 
 def has_mojibake(s: str) -> bool:
-    return any(m in s for m in MOJIBAKE_MARKERS)
+    return bool(MOJIBAKE_RE.search(s))
 
 
 def load_env_file(path: Path) -> None:
