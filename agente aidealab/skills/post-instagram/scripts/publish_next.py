@@ -193,7 +193,7 @@ def already_posted_today(items: List[Dict[str, Any]]) -> bool:
     return False
 
 
-ULTIMO_TIPO = QUEUE_ROOT / "_ultimo-tipo.json"  # tipo do último post (sobrevive ao arquivamento dos postados)
+ULTIMO_TIPO = QUEUE_ROOT / "_ultimo-tipo.json"  # tipo dos últimos posts (sobrevive ao arquivamento dos postados)
 
 
 def tem_personagem(it: Dict[str, Any]) -> bool:
@@ -202,20 +202,23 @@ def tem_personagem(it: Dict[str, Any]) -> bool:
 
 def find_next(items: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     """Próximo pendente: primeiro os de tendência do nicho (fonte_tendencia), depois os demais;
-    dentro disso, intercala post com personagem e post com imagem de banco."""
+    dentro disso, 2 posts com personagem para 1 com imagem de banco (personagem converte mais)."""
     pendentes = [it for it in items if not it["metadata"].get("postado", False)]
     if not pendentes:
         return None
     tendencia = [it for it in pendentes if it["metadata"].get("fonte_tendencia")]
     pendentes = tendencia or pendentes
-    postados = [it for it in items if it["metadata"].get("postado")]
-    if postados:
-        ultimo = tem_personagem(max(postados, key=lambda it: it["metadata"].get("postado_em") or ""))
-    elif ULTIMO_TIPO.exists():
-        ultimo = json.loads(ULTIMO_TIPO.read_text(encoding="utf-8")).get("personagem", False)
-    else:
-        return pendentes[0]
-    return next((it for it in pendentes if tem_personagem(it) != ultimo), pendentes[0])
+    quer_personagem = ultimos_tipos()[-2:] != [True, True]
+    return next((it for it in pendentes if tem_personagem(it) == quer_personagem), pendentes[0])
+
+
+def ultimos_tipos() -> List[bool]:
+    """personagem (True/False) dos últimos posts, do mais antigo ao mais novo."""
+    try:
+        d = json.loads(ULTIMO_TIPO.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    return d.get("historico") or [bool(d.get("personagem"))]
 
 
 def upload_to_supabase(image_path: Path) -> Optional[str]:
@@ -486,7 +489,8 @@ def main():
     meta["postado_em"] = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
     meta["post_id"] = post_id
     nxt["meta_path"].write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
-    ULTIMO_TIPO.write_text(json.dumps({"personagem": tem_personagem(nxt)}), encoding="utf-8")
+    hist = (ultimos_tipos() + [tem_personagem(nxt)])[-2:]
+    ULTIMO_TIPO.write_text(json.dumps({"personagem": hist[-1], "historico": hist}), encoding="utf-8")
 
     print(f"\n[SUCCESS] {nxt['label']} publicado. Post ID: {post_id}")
 
