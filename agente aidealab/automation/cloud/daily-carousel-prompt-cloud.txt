@@ -18,12 +18,14 @@ PERSONAGENS gerados no Higgsfield Soul 2.0. NÃO use a skill `criar-post` nem na
   (atualizado todo dia pelo GitHub Actions): `rascunhos_04` (aguardando aprovação), `fila` (aprovados) e
   `postados`. A entrega no Drive também é do GitHub Actions: você só faz commit e push.
 
-## 0.5 Pauta da semana (faça ANTES da regra de lote, mesmo que a geração do dia seja pulada)
+## 0.5 Pauta da semana (faça ANTES de gerar o carrossel do dia)
 Calcule a semana ISO de hoje no fuso de Cuiabá (`python -c "import datetime as d;y,w,_=d.date.today().isocalendar();print(f'{y}-W{w:02d}')"`).
 Se NÃO existe `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md`:
 a. Leia `agente aidealab/automation/cloud/estado-nicho.json` (Apify, atualizado na segunda às 6h: `top_normalizado`,
    `formatos_top20`, `contas_sugeridas`; se tiver `erro`, siga sem ele), `estado-tendencias.json`,
    `estado-instagram.json` e a fase atual de `agente aidealab/clientes/aidealab/campanha/campanha-out-dez-2026.md`.
+   Use as skills de marketing quando disponíveis: `marketing:campaign-plan` para cruzar tendências, fase da
+   campanha e pilares, e `marketing:content-creation` para ganchos e CTAs (adaptando ao voice-profile da aidealab).
 b. Faça 3 a 5 buscas na web (WebSearch) do que está em alta no nicho (IA, WhatsApp, Instagram, Google, Meta para
    pequeno negócio no Brasil; datas comerciais próximas). Confirme cada fato em fonte confiável.
 c. Escreva `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md` no MESMO formato de `agente aidealab/clientes/aidealab/campanha/semanas/2026-W42.md`: tabela do que
@@ -36,11 +38,8 @@ d. Escreva os 3 roteiros em `agente aidealab/clientes/aidealab/roteiro/<ano>-W<n
    `.claude/skills/instagram-skills/skills/ig-content-planner/SKILL.md` e `references/hook-formulas.md` (IG9/IG10).
 e. Commit `content: pauta e roteiros <ano>-W<nn> (rotina nuvem)` com só esses arquivos e push, antes de seguir.
 
-## 1. Regra de lote
-Conte os nomes de `rascunhos_04` (em `estado-drive.json`) que também existem como pasta em
-`agente aidealab/clientes/aidealab/carrosseis/` (só os feitos por esta rotina; os rascunhos antigos de banco
-não contam). Se forem 3 ou mais, NÃO gere nada: escreva "aguardando aprovação (N rascunhos da rotina em 04),
-pulei a geração" e termine sem commit. Não é erro. Se o arquivo não existir, gere normalmente.
+## 1. Geração
+Sem limite de rascunhos: gere o carrossel do dia mesmo com rascunhos aguardando aprovação em `rascunhos_04`.
 
 ## 2. Tema
 Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"status": "bloqueado"` no
@@ -48,7 +47,8 @@ Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"sta
 foi reprovado; leia o `BLOQUEIO.md`), apague os `*_rejeitada.png` e o `BLOQUEIO.md` ao terminar. Senão:
 escolha o tema do dia assim:
 0. PRIMEIRO os temas da semana: em `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md`, pegue o primeiro tema `[ ]` que
-   respeita o INTERCALAR (com/sem personagem) e use o gancho, pilar e CTA dele. Ao terminar, marque
+   respeita o INTERCALAR (com/sem personagem) e use o gancho, pilar e CTA dele. Grave em `fonte_tendencia` a URL
+   da linha "em alta" da semana que originou o tema (é o que põe o post na frente da fila de publicação). Ao terminar, marque
    `[x] → <slug>` no arquivo e inclua-o no commit. Só se não houver tema livre da semana, siga os passos 1–4.
 1. Leia `agente aidealab/clientes/aidealab/estrategia/pauta.md` (público, pilares, séries, banco de temas,
    regras de copy). Ela manda sobre qualquer outra orientação de tema.
@@ -124,7 +124,8 @@ inclua esse arquivo no commit. Grave no `png/metadata.json` os campos `pilar`, `
 - Copy (antes de renderizar): use a skill `instagram-skills` (`.claude/skills/instagram-skills/`) no lugar de
   `copywriting`/`humanizer`. Leia antes `references/voice-profile.md` (voz da aidealab, já preenchida) e
   `references/hook-formulas.md`. Slides: `skills/ig-carousel-planner/SKILL.md` (escolha IG5, IG6, IG7 ou IG8
-  conforme o pilar da `pauta.md`). Legenda: `skills/ig-caption-writer/SKILL.md`. Hashtags:
+  conforme o pilar da `pauta.md`). Se disponíveis, rode também `marketing:content-creation` na copy dos slides e
+  `marketing:brand-review` na revisão final (voz e afirmações sem fonte). Legenda: `skills/ig-caption-writer/SKILL.md`. Hashtags:
   `skills/ig-hashtag-strategist/SKILL.md` (3 a 5). Revisão final de slides e legenda:
   `skills/ig-humanizer/SKILL.md` em modo audit, adaptando as regras para português. Ignore toda parte de
   publicação (Publora/Apify) e os passos de "esperar aprovação": aqui só se escreve. Hook até 10 palavras, sem número inventado; dado de notícia

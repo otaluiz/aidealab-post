@@ -201,10 +201,13 @@ def tem_personagem(it: Dict[str, Any]) -> bool:
 
 
 def find_next(items: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-    """Próximo pendente, intercalando post com personagem e post com imagem de banco."""
+    """Próximo pendente: primeiro os de tendência do nicho (fonte_tendencia), depois os demais;
+    dentro disso, intercala post com personagem e post com imagem de banco."""
     pendentes = [it for it in items if not it["metadata"].get("postado", False)]
     if not pendentes:
         return None
+    tendencia = [it for it in pendentes if it["metadata"].get("fonte_tendencia")]
+    pendentes = tendencia or pendentes
     postados = [it for it in items if it["metadata"].get("postado")]
     if postados:
         ultimo = tem_personagem(max(postados, key=lambda it: it["metadata"].get("postado_em") or ""))
