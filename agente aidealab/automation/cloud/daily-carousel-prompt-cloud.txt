@@ -1,11 +1,12 @@
 Rotina diária na nuvem (rotina do Claude em claude.ai, sem humano para responder). Cliente: aidealab.
 Siga ao pé da letra; na dúvida, escolha a leitura mais conservadora.
 
-INTERCALAR: veja o `png/metadata.json` do carrossel mais recente da rotina em
-`agente aidealab/clientes/aidealab/carrosseis/` (pelo `git log`). Se ele tem `personagem`, este sai SEM personagem:
+INTERCALAR (2 com personagem para 1 sem: post com @luizota/@wel converte mais visualização): veja o
+`png/metadata.json` dos DOIS carrosséis mais recentes da rotina em `agente aidealab/clientes/aidealab/carrosseis/`
+(pelo `git log`). Se os dois têm `personagem`, este sai SEM personagem:
 capa e CTA com cena gerada no `gpt_image_2_5` no estilo do banco img-ref (surreal editorial, objeto em escala, navy/
-ciano, sem pessoas reconhecíveis) e `personagem` vazio no metadata. Se ele não tem, este sai COM personagem.
-A fila de publicação também alterna sozinha pelo campo `personagem`.
+ciano, sem pessoas reconhecíveis) e `personagem` vazio no metadata. Senão, este sai COM personagem.
+A fila de publicação segue o mesmo ritmo (2 com, 1 sem) sozinha pelo campo `personagem`.
 
 Gere 1 carrossel de Instagram novo no MOTOR NOVO (pasta `motor/` = carrossel-engine, tema aidealab), com os
 PERSONAGENS gerados no Higgsfield Soul 2.0. NÃO use a skill `criar-post` nem nada em
@@ -29,7 +30,7 @@ a. Leia `agente aidealab/automation/cloud/estado-nicho.json` (Apify, atualizado 
 b. Faça 3 a 5 buscas na web (WebSearch) do que está em alta no nicho (IA, WhatsApp, Instagram, Google, Meta para
    pequeno negócio no Brasil; datas comerciais próximas). Confirme cada fato em fonte confiável.
 c. Escreva `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md` no MESMO formato de `agente aidealab/clientes/aidealab/campanha/semanas/2026-W42.md`: tabela do que
-   está em alta com fonte, 5 temas de carrossel `[ ]` (alternando com/sem personagem, pilar, série, gancho de 2 linhas
+   está em alta com fonte, 5 temas de carrossel `[ ]` (2 com personagem para cada 1 sem, pilar, série, gancho de 2 linhas
    curtas, formato IG5–IG8, palavra do CTA), 3 temas de Reels, stories da semana. Não repita tema já usado
    (`estado-drive.json`, pastas de `carrosseis/`, semanas anteriores). Forma de gancho: a que performa no nicho
    (`estado-nicho.json`) e no perfil (`top5`).
@@ -47,7 +48,7 @@ Se houver em `agente aidealab/clientes/aidealab/carrosseis/` uma pasta com `"sta
 foi reprovado; leia o `BLOQUEIO.md`), apague os `*_rejeitada.png` e o `BLOQUEIO.md` ao terminar. Senão:
 escolha o tema do dia assim:
 0. PRIMEIRO os temas da semana: em `agente aidealab/clientes/aidealab/campanha/semanas/<ano>-W<nn>.md`, pegue o primeiro tema `[ ]` que
-   respeita o INTERCALAR (com/sem personagem) e use o gancho, pilar e CTA dele. Grave em `fonte_tendencia` a URL
+   respeita o INTERCALAR (2 com, 1 sem personagem) e use o gancho, pilar e CTA dele. Grave em `fonte_tendencia` a URL
    da linha "em alta" da semana que originou o tema (é o que põe o post na frente da fila de publicação). Ao terminar, marque
    `[x] → <slug>` no arquivo e inclua-o no commit. Só se não houver tema livre da semana, siga os passos 1–4.
 1. Leia `agente aidealab/clientes/aidealab/estrategia/pauta.md` (público, pilares, séries, banco de temas,
