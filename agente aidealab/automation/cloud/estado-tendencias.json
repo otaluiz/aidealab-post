@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-07T15:31:42+00:00",
+  "atualizado_em": "2026-11-07T15:41:24+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -41,16 +41,16 @@
     ],
     "WhatsApp Business IA": [
       {
+        "titulo": "ClickMassa Conversas é lançada no Fórum Negócios, em Natal - Agora RN",
+        "fonte": "Agora RN",
+        "data": "Sat, 07 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWFBHdGxHRkM5dXJwRzgwYy05QWVuTDlsbV9IR0p2SEpvQm8zYWl3QU1HbENlX1IwYl9XbXdOcllhZGhSaVBkemstY2ZJVUpHcVZtM1BXd0FDMXctN202dHktbnBBdzl2eFRGWjliSWgzX01JalZkUEdJUDdqNDZPaFhsZw?oc=5"
+      },
+      {
         "titulo": "Ex-Warren captam R$ 3 milhões com Domo.VC para colocar IA na operação de vendas de empresas - Exame",
         "fonte": "Exame",
         "data": "Sat, 07 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNS2s2T3oxMFVVMXJvUFlPaW9lejV1OHA3N3VsQ0VZWGVPd0g2NDdYek12Qm5EeFNrZGxGSHB3MEQxdkFZRTc0b28xb3V0T0lhaVJQMjhpQ3Z2WFhBbmlmMmdQd2dvN3lqU1kyVEZ4UEE2OFVmejNLNDlvTHlSNHpQMGl2WW1sbC1DREhwTVdPMTF0U2hHTG84V1l3a0RpMC1zT2JQdnVZazR3MlAyYk5RN0ZPRkJBQ05qdkE?oc=5"
-      },
-      {
-        "titulo": "Startup brasileira lança Nora, assistente pessoal de IA que resolve tarefas pelo WhatsApp - ABC da Comunicação",
-        "fonte": "ABC da Comunicação",
-        "data": "Sat, 07 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVV9tb2ZxbUFSQl9EUDdCN3N6NXVtTEUtVENwbHVaR0NYWEFOUElwM3c5V1JDOUZ1RnYzdHkzMzN6UVkxQmJwZWNWN3Ntc0w0Z2syV212Vy1vemJUdmlXTEdId1U3NzVnVTFtaWUxam1ndmJrOTVCRkJzZVlHUF9sS3RORHBXTUtIT1ktckVqN3Uybl9DeVg3RlpTSmltWmJBYUZQRmhYVklpdW95bUQwWkZPdVhSSXkzenBUREc5S1lKYVU?oc=5"
       },
       {
         "titulo": "Conta do Whatsapp Sobe e Põe Margem do Varejo À Prova na Black Friday - Forbes Brasil",
@@ -59,22 +59,22 @@
         "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOGh2QTk2YnZVeGlSMl9uVG9ndUtUREJlclkyVlZXSkZuMlQ4WDNIT3pFNlFJS2oyQ1QydnFsbW91YUJ0X1BYbzZVQkM4QTNrUndTT2NXeGQ0Y09fQTNfdGF5aV9VdXRJMHVpR1dqTmI5X0xNSGZVOW94Z3B3R2RQSmQ4SE54ZDJpaFMzTWJCRFNzM1lSQVltRUhrMGE1QVJXX0tZQ29DVnJnY3lKX1ZuOTVpQQ?oc=5"
       },
       {
+        "titulo": "Startup brasileira lança Nora, assistente pessoal de IA que resolve tarefas pelo WhatsApp - ABC da Comunicação",
+        "fonte": "ABC da Comunicação",
+        "data": "Sat, 07 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVV9tb2ZxbUFSQl9EUDdCN3N6NXVtTEUtVENwbHVaR0NYWEFOUElwM3c5V1JDOUZ1RnYzdHkzMzN6UVkxQmJwZWNWN3Ntc0w0Z2syV212Vy1vemJUdmlXTEdId1U3NzVnVTFtaWUxam1ndmJrOTVCRkJzZVlHUF9sS3RORHBXTUtIT1ktckVqN3Uybl9DeVg3RlpTSmltWmJBYUZQRmhYVklpdW95bUQwWkZPdVhSSXkzenBUREc5S1lKYVU?oc=5"
+      },
+      {
         "titulo": "Inner AI lança assistente Mago no WhatsApp com Tadeu Schmidt e R$ 30 milhões em investimentos - Startups",
         "fonte": "Startups",
         "data": "Fri, 06 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMmptLU1nakxwQlNzNldMSnVzX3Z6dlFsUk9PQVJ6cFVPSjAyWEFCblE5RlFPQ3A3NzZuSGowWGpVbXJWVXBBNHV3cTFkMjByZVpjdTUyekl0eE1ueDE0dmY0N044WGJRU25mY3ktUzQ2U0pVTmhRQkxLZzhJcUp4di1VT2pMWkdEWUduZHhvMGJkRGxZTVQxM24zWThqSmtnR2hnZXVPeGtZcEZTVFFlVG1KSi1WcVdhM25hQ3pta2VpWFhsS0tsOWZVZWFQcXM?oc=5"
       },
       {
-        "titulo": "46% das PMEs brasileiras aumentam produtividade com IA, mas nuvem e segurança ainda são desafios, diz Dell - Pequenas Empresas & Grandes Negócios",
-        "fonte": "Pequenas Empresas & Grandes Negócios",
-        "data": "Thu, 05 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPUFYtOVpFSldhWDVSejZyb1k3VlF2SC1UVDJKdWRDbWNYMHZaaFY5alhraGJEazJ0NlNZcnYwbEQ4WXJ2WnlEeHZ4MHdWVkJUN1VnODM4OTB2U1RMZ1lBQjloWDBMM040VVhPTFNZYWVxV0hrVTg0LWd4OUlvZXBhRFVZYkpnSzNQdTlUMEJPQUE5ODQ4ZkJDWUpnQmlMRU94SDlHaFpRSzVoZE54NktBSXN3RUF5RFFOMkVUXzNaTnpXdGcyM1gzRXBZRXh4RjNiU3R4SmwzNzZVRW95M1lCd2J0cVB4VWs5VTRzWk5oS1lzY2hKcjdfXzRfM3A0SVVLWFJSY0hLSk5GaC1I0gGMAkFVX3lxTE9QVi05WkVKV2FYNVJ6NnJvWTdWUXZILVRUMkp1ZENtY1gwdlpoVjlqWGtoYkRrMnQ2U1lydjBsRDhZcnZaeUR4dngwd1ZWQlQ3VWc4Mzg5MHZTVExnWUFCOWhYMEwzTjRVWE9MU1lhZXFXSGtVODQtZ3g5SW9lcGFEVVliSmdLM1B1OVQwQk9BQTk4NDhmQkNZSmdCaUxFT3hIOUdoWlFLNWhkTng2S0FJc3dFQXlEUU4yRVRfM1pOeld0ZzIzWDNFcFlFeHhGM2JTdHhKbDM3NlVFb3kzWUJ3YnRxUHhVazlVNHNaTmhLWXNjaEpyN19fNF8zcDRJVUtYUlJjSEtKTkZoLUg?oc=5"
-      },
-      {
-        "titulo": "WhatsApp testa envio de fotos em qualidade original no Android, mas há um porém - TudoCelular.com",
-        "fonte": "TudoCelular.com",
+        "titulo": "Infobip revela que 73% das marcas pretendem ampliar investimentos em esportes - O GLOBO",
+        "fonte": "O GLOBO",
         "data": "Fri, 06 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNT1dOeUpjZl9PalRfRFJiZk1aVE5XQkhFTERYNjA3VEtOa0szTC01Y3VUaFp1dTUxMXNPRjVmaWwtY2lyTURBU3U2ZlFYbzY1ZVJrWl9kODA1X2JobkE3ek1NUEtNakxkb09xOUVSUFI1Wk9WNmNBVTdCR2RiYmxwS0Z4U1hNZDhwbVMyaHNQQU1zcFJxOGk4Tk5kakpJb25nZE1kYnBMVQ?oc=5"
+        "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOWVIxU2otb0g4Um1nWmxZRzFSLWU3dTVCRGxhVUJnMkExQVpjaDRBYkw2ZkVERkNsd0NtdmVCOE1VQW9KZUt0eDl2Z0NVWG8yOWFBVDJaTjV2LWtUeUpWcTNKRm1wbDNnY3hnUXlwaUZTR081MGtzVHhfaTBhOFNEMzRuNU84WTItZnVhYVFRd0tHUDlaTHY5UGE3R0VWVEs4U1lPeV9uYU1MZXRXWnlGeW9UblVncGtWcndBeHhEbkczTWJVVmRxUndtUFpTZ2V2QmRWWE45RnhZV2FvaTdyc0NoX3dSVDdiNlM2TGNKUVgyTWFTMlHSAfYBQVVfeXFMTllSMVNqLW9IOFJtZ1psWUcxUi1lN3U1QkRsYVVCZzJBMUFaY2g0QWJMNmZFREZDbHdDbXZlQjhNVUFvSmVLdHg5dmdDVVhvMjlhQVQyWk41di1rVHlKVnEzSkZtcGwzZ2N4Z1F5cGlGU0dPNTBrc1R4X2kwYThTRDM0bjVPOFkyLWZ1YWFRUXdLR1A5Wkx2OVBhN0dFVlRLOFNZT3lfbmFNTGV0V1p5RnlvVG5VZ3BrVnJ3QXh4RG5HM01iVVZkcVJ3bVBaU2dldkJkVlhOOUZ4WVdhb2k3cnNDaF93UlQ3YjZTNkxjSlFYMk1hUzJR?oc=5"
       }
     ],
     "Instagram novidade recurso": [
@@ -270,15 +270,15 @@
   },
   "erros": [],
   "google_trends_br": [
+    "arsenal",
+    "alerta laranja: tempestade",
+    "fulham newcastle 07/11/2026",
     "bayern munich",
     "borussia",
     "rb leipzig",
     "athletic club x real madrid club de fútbol",
     "previsão do tempo sorocaba",
     "alerta vermelho: tempestade",
-    "br-070",
-    "atlético-mg x grêmio",
-    "possiveis temas de redação enem 2026",
-    "espanyol x la coruña"
+    "br-070"
   ]
 }

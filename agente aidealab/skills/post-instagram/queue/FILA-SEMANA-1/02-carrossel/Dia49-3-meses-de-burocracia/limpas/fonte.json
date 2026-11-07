@@ -1,0 +1,14 @@
+{
+  "slide-01": {
+    "imagem": "capa_orig.png",
+    "filtro": "halftone+cloth_letras"
+  },
+  "slide-02": {
+    "imagem": "slide2_led.png",
+    "filtro": "nenhum"
+  },
+  "slide-07": {
+    "imagem": "cta_orig.png",
+    "filtro": "halftone+cloth_letras"
+  }
+}
