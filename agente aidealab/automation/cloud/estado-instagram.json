@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-11-07T16:34:46+00:00",
+  "atualizado_em": "2026-11-07T19:24:54+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 427,
     "follows_count": 218,
-    "media_count": 51,
+    "media_count": 52,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -18,6 +18,24 @@
   },
   "posts": [
     {
+      "data": "2026-11-07",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Quase 3 meses por ano. É o tempo que o pequeno empreendedor gasta com papelada, segundo pesquisa feita para o Nubank: cerca de 9 horas por s",
+      "link": "https://www.instagram.com/p/Dfc5wXbkiZJ/",
+      "likes": 0,
+      "comments": 0,
+      "insights": {
+        "reach": 0,
+        "saved": 0,
+        "shares": 0,
+        "views": 2,
+        "total_interactions": 0,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": null
+    },
+    {
       "data": "2026-11-06",
       "tipo": "REELS",
       "gancho": "Seu cliente quer falar com uma pessoa. Seu chatbot responde com mais um menu. 🤖",
@@ -25,12 +43,12 @@
       "likes": 3,
       "comments": 0,
       "insights": {
-        "reach": 4,
+        "reach": 5,
         "saved": 0,
         "shares": 0,
         "total_interactions": 3
       },
-      "score": 75.0
+      "score": 60.0
     },
     {
       "data": "2026-11-04",
@@ -712,34 +730,9 @@
         "profile_visits": 2
       },
       "score": 8.82
-    },
-    {
-      "data": "2026-09-25",
-      "tipo": "IMAGE",
-      "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
-      "link": "https://www.instagram.com/p/DdtjXyuozo5/",
-      "likes": 14,
-      "comments": 4,
-      "insights": {
-        "reach": 67,
-        "saved": 0,
-        "shares": 0,
-        "views": 154,
-        "total_interactions": 21,
-        "follows": 0,
-        "profile_visits": 1
-      },
-      "score": 32.84
     }
   ],
   "top5": [
-    {
-      "data": "2026-09-25",
-      "tipo": "IMAGE",
-      "gancho": "🚀 Marketing não é só aparecer. É saber onde, como e por que aparecer.",
-      "score": 32.84,
-      "alcance": 67
-    },
     {
       "data": "2026-10-21",
       "tipo": "CAROUSEL_ALBUM",
@@ -767,6 +760,13 @@
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
       "score": 22.78,
       "alcance": 79
+    },
+    {
+      "data": "2026-10-16",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Se a sua operação ainda depende de alguém lembrar, ela roda em post-it.",
+      "score": 12.12,
+      "alcance": 33
     }
   ],
   "piores5": [
