@@ -157,7 +157,7 @@ def slide_tipo(i, n, tpl, texto, handle):
 def montar(meta, pasta):
     from camadas_png import separar as camadas
     slides = sorted(meta["slides"], key=lambda s: s["ordem"])
-    handle = meta.get("handle") or "@aidealab7"
+    handle = meta.get("handle") or "@idea_lab7"
     tpls = (meta.get("template") or "").split("-")
     n = len(slides)
     partes = []
