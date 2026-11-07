@@ -124,7 +124,8 @@ def main():
     pendentes = sum(1 for it in vivos if not it["meta"].get("postado"))
     prox = max([ledger["ultimo_dia"], *[it["dia"] for it in vivos]]) + 1
     novos = [v for cid, v in fila_drive.items() if cid not in na_fila and cid not in arquivados]
-    novos.sort(key=lambda v: (v[3].get("ordem_fila") or 999, v[0]))
+    # tendência do nicho (fonte_tendencia) entra primeiro, para não ficar atrás do limite de pendentes
+    novos.sort(key=lambda v: (not v[3].get("fonte_tendencia"), v[3].get("ordem_fila") or 999, v[0]))
     repo = {}  # carrosséis do motor no repo, por pasta e por carousel_id
     for mp in CARROSSEIS.glob("*/png/metadata.json"):
         repo.setdefault(local.ler(mp).get("carousel_id"), mp.parent)

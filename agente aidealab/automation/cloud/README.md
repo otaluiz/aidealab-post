@@ -13,7 +13,7 @@ MOTOR NOVO (`motor/` = cópia do carrossel-engine, tema
 @luizota/@wel no Soul 2.0 e slide 2 no gpt_image_2_5. Ela commita numa branch própria.
 Entrega: `.github/workflows/entregar.yml` leva a branch para a main, sobe os rascunhos para
 `04-Carrosseis` (`upload_carrosseis.py`) e grava `estado-drive.json` (04, 06/FILA,
-06/POSTADOS), que a rotina lê para a regra de lote (pula com 3+ rascunhos em 04). A skill
+06/POSTADOS), que a rotina lê para saber os temas já usados (sem limite de rascunhos em 04). A skill
 `criar-post` e o `render-engine` antigo não são mais usados. Rotina de flyer removida em
 2026-10-05. Quando o carrossel-engine mudar, copie de novo os arquivos para `motor/`.
 

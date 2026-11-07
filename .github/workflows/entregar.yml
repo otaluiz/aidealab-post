@@ -6,7 +6,7 @@ name: aidealab - rotina -> main -> drive
 #   1. traz a branch da rotina para a main e apaga a branch
 #   2. sobe os rascunhos novos para Clientes/aidealab/04-Carrosseis (upload_carrosseis.py)
 #   3. grava agente aidealab/automation/cloud/estado-drive.json (04, 06/FILA, 06/POSTADOS) e commita,
-#      para a rotina saber a regra de lote e os temas já usados sem acessar o Drive.
+#      para a rotina saber os temas já usados sem acessar o Drive.
 #   4. sync_fila_cloud.py: aprovados em 06/FILA entram na fila do repo; postados vão para 06/POSTADOS
 #   5. grava estado-instagram.json (perfil + desempenho dos posts, Graph API) e estado-tendencias.json
 #      (notícias do nicho das últimas 48h), que a rotina usa para escolher o tema do dia.
