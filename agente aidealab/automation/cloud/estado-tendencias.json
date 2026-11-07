@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-07T15:41:24+00:00",
+  "atualizado_em": "2026-11-07T15:56:50+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -7,12 +7,6 @@
         "fonte": "Paraná Portal",
         "data": "Sat, 07 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeUpLcVF0ZkpDc1FVR1NBNkpJMlh1djdkRUcxTElFNkNzTnE5UlBwS1dEOW54bVUwTW9uT2VVRm1iOEJXVlFXZjhKLTlxT19CV1RFWlZMYmtyb0pESUVCQXpGaHMxY05vU180UGhQREYzaEVKaFFpaU95dUpBYXpaeGFONzNaTElFRXI0T2RPWjdLUGNKQ2U0bkN1TE1jQWJlUUM1TXhZbWJwNXg4YzVzb0ZvQVE?oc=5"
-      },
-      {
-        "titulo": "Semana da Micro e Pequena Empresa terá encontros gratuitos em cinco cidades do Paraná - Folha de Curitiba",
-        "fonte": "Folha de Curitiba",
-        "data": "Sat, 07 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOazBLcE5xVmZibVRuSThoMDh0NDhhQlpnRmEweHJqZWV3MXo3ZXBtbVl5UHZ2bm5NTXlwYTVud3lXc0VMYmVkWTNaLWdDbThQRi0tX3hScnVUYlhvczlkYUZILXVJVUxaRWc3ZmtpeWhKR3YwdW9wNEJkM3JtWGx6YzlES2tGVGFHcm9OMTBGS3VCb1M5TnQtMFFNZXdyVnBxQlJGWms3Y0hxQmJfTTZJelVyb3hKNWJQ?oc=5"
       },
       {
         "titulo": "Pequenas empresas precisam proteger margens e negociar fornecedores na Black Friday, diz Sérgio All - Times Brasil | CNBC",
@@ -33,10 +27,16 @@
         "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYjgtUFI3MDY4TGxnMkYzT3VxN1N0UVIyN0lRd0pDM3NXR1VaLWFmUllqYzhXUXFCTjVQenRQNjkxUGNONi1EQjh4a2V6dVgxSTRHRkdveVNZT3pvQjNLeHc2RGdaLUl0eEFFcFBqR0JvN2ZNaUhETGZHUHBwUGgxLUx0bk1SUVR3MHM4OTNmR1FNVUwwaDVtdGFiYktHb3Rqel9MakR6RkJGaWxHSWt1aWo0aFFadw?oc=5"
       },
       {
-        "titulo": "Como os pequenos negócios podem se preparar para ser encontrados na era da inteligência artificial - Zero Hora Digital",
-        "fonte": "Zero Hora Digital",
-        "data": "Fri, 06 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPbUJjTml6NW0yRm05eEl0UEp1b3hyajg2QW10TmJYYVlMazdtc1BuS3BaeVdpZjRRbnJrR016bGxvTmlSVm5NYjYtX1hIUFktY3dnZEIxTDBNeTdEZ0l0VFZPeE55ZXFuRlA5c1BMb29lZmJabTZubllycTZFdkwybnJaRmkyb256UlNUSkVXWWN5cGk3ZmJ3Yk1IOERjeGhTNGlKQjJ4OEFCRDNkOXFad2VyTUMzR3NqekdTNVlR?oc=5"
+        "titulo": "Vai viajar para a Espanha? Iniciativa cria minimercados autônomos com inteligência artificial em Navarra - SouBH",
+        "fonte": "SouBH",
+        "data": "Thu, 05 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPVnNQNkpnT0hHdU1FaENpMy1Sdk5UczF6Yjhva1BkUnhEVnFEeXpDclduZUJBRXBHVVYzY0Q2dzh0cnJuUi1XVEhxLUU4ZnhOSHNzR3pNR19RM0NvUXFVRUd5dC00Rk9mUFQ5b0ttQTFSYXBqMFNVSGstTUVQYnZpOTdTNXJFT2pOUFBGajB6UjZmSDF0c1FyZHdFbE5fV25IWXRBZUxwU29oVjZ0bnd0REE3dEhWd25MYTZqUUUtVEhJWEsxSHFPTGtfWEs3S3NSY2NJNmNEdHM3UVd4MHdZ?oc=5"
+      },
+      {
+        "titulo": "46% das PMEs brasileiras aumentam produtividade com IA, mas nuvem e segurança ainda são desafios, diz Dell - Pequenas Empresas & Grandes Negócios",
+        "fonte": "Pequenas Empresas & Grandes Negócios",
+        "data": "Thu, 05 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNeU9WM05MYTFLSm10T2RJQ0x0NHBHS1BpNFRMdUhBd3JUT1U5VEN5Qm1uMmU3ckVCUndnTTN0NFpVeU5yV2JXYkZrSU9HVzBDckFYYmQwS2NiLVZIVnF4a0tCMVItcDYzVTZxaEFoRnBQR3k2RWlmVm56Ri0xZVJUeUJHb0stLU1WOE1TUUphZjNOUUFSMnhpeVU5ZXdMT0ZRaDZqV3ozb2pRanJ1ZHNTemV5VV83bzRJd3YwZjN3RDR3UGtYaDZCdm9KMGp5cDg3Wl84TEJ1ZjFaNTB4LTA4ZzM4eHp6d3lOejdwakQ4VmJpVWR1dWJ2UDdUOFc4QdIBjAJBVV95cUxPUFYtOVpFSldhWDVSejZyb1k3VlF2SC1UVDJKdWRDbWNYMHZaaFY5alhraGJEazJ0NlNZcnYwbEQ4WXJ2WnlEeHZ4MHdWVkJUN1VnODM4OTB2U1RMZ1lBQjloWDBMM040VVhPTFNZYWVxV0hrVTg0LWd4OUlvZXBhRFVZYkpnSzNQdTlUMEJPQUE5ODQ4ZkJDWUpnQmlMRU94SDlHaFpRSzVoZE54NktBSXN3RUF5RFFOMkVUXzNaTnpXdGcyM1gzRXBZRXh4RjNiU3R4SmwzNzZVRW95M1lCd2J0cVB4VWs5VTRzWk5oS1lzY2hKcjdfXzRfM3A0SVVLWFJSY0hLSk5GaC1I?oc=5"
       }
     ],
     "WhatsApp Business IA": [
@@ -53,16 +53,16 @@
         "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNS2s2T3oxMFVVMXJvUFlPaW9lejV1OHA3N3VsQ0VZWGVPd0g2NDdYek12Qm5EeFNrZGxGSHB3MEQxdkFZRTc0b28xb3V0T0lhaVJQMjhpQ3Z2WFhBbmlmMmdQd2dvN3lqU1kyVEZ4UEE2OFVmejNLNDlvTHlSNHpQMGl2WW1sbC1DREhwTVdPMTF0U2hHTG84V1l3a0RpMC1zT2JQdnVZazR3MlAyYk5RN0ZPRkJBQ05qdkE?oc=5"
       },
       {
-        "titulo": "Conta do Whatsapp Sobe e Põe Margem do Varejo À Prova na Black Friday - Forbes Brasil",
-        "fonte": "Forbes Brasil",
-        "data": "Fri, 06 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOGh2QTk2YnZVeGlSMl9uVG9ndUtUREJlclkyVlZXSkZuMlQ4WDNIT3pFNlFJS2oyQ1QydnFsbW91YUJ0X1BYbzZVQkM4QTNrUndTT2NXeGQ0Y09fQTNfdGF5aV9VdXRJMHVpR1dqTmI5X0xNSGZVOW94Z3B3R2RQSmQ4SE54ZDJpaFMzTWJCRFNzM1lSQVltRUhrMGE1QVJXX0tZQ29DVnJnY3lKX1ZuOTVpQQ?oc=5"
-      },
-      {
         "titulo": "Startup brasileira lança Nora, assistente pessoal de IA que resolve tarefas pelo WhatsApp - ABC da Comunicação",
         "fonte": "ABC da Comunicação",
         "data": "Sat, 07 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVV9tb2ZxbUFSQl9EUDdCN3N6NXVtTEUtVENwbHVaR0NYWEFOUElwM3c5V1JDOUZ1RnYzdHkzMzN6UVkxQmJwZWNWN3Ntc0w0Z2syV212Vy1vemJUdmlXTEdId1U3NzVnVTFtaWUxam1ndmJrOTVCRkJzZVlHUF9sS3RORHBXTUtIT1ktckVqN3Uybl9DeVg3RlpTSmltWmJBYUZQRmhYVklpdW95bUQwWkZPdVhSSXkzenBUREc5S1lKYVU?oc=5"
+      },
+      {
+        "titulo": "Conta do Whatsapp Sobe e Põe Margem do Varejo À Prova na Black Friday - Forbes Brasil",
+        "fonte": "Forbes Brasil",
+        "data": "Fri, 06 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOGh2QTk2YnZVeGlSMl9uVG9ndUtUREJlclkyVlZXSkZuMlQ4WDNIT3pFNlFJS2oyQ1QydnFsbW91YUJ0X1BYbzZVQkM4QTNrUndTT2NXeGQ0Y09fQTNfdGF5aV9VdXRJMHVpR1dqTmI5X0xNSGZVOW94Z3B3R2RQSmQ4SE54ZDJpaFMzTWJCRFNzM1lSQVltRUhrMGE1QVJXX0tZQ29DVnJnY3lKX1ZuOTVpQQ?oc=5"
       },
       {
         "titulo": "Inner AI lança assistente Mago no WhatsApp com Tadeu Schmidt e R$ 30 milhões em investimentos - Startups",
@@ -71,10 +71,10 @@
         "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMmptLU1nakxwQlNzNldMSnVzX3Z6dlFsUk9PQVJ6cFVPSjAyWEFCblE5RlFPQ3A3NzZuSGowWGpVbXJWVXBBNHV3cTFkMjByZVpjdTUyekl0eE1ueDE0dmY0N044WGJRU25mY3ktUzQ2U0pVTmhRQkxLZzhJcUp4di1VT2pMWkdEWUduZHhvMGJkRGxZTVQxM24zWThqSmtnR2hnZXVPeGtZcEZTVFFlVG1KSi1WcVdhM25hQ3pta2VpWFhsS0tsOWZVZWFQcXM?oc=5"
       },
       {
-        "titulo": "Infobip revela que 73% das marcas pretendem ampliar investimentos em esportes - O GLOBO",
-        "fonte": "O GLOBO",
-        "data": "Fri, 06 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOWVIxU2otb0g4Um1nWmxZRzFSLWU3dTVCRGxhVUJnMkExQVpjaDRBYkw2ZkVERkNsd0NtdmVCOE1VQW9KZUt0eDl2Z0NVWG8yOWFBVDJaTjV2LWtUeUpWcTNKRm1wbDNnY3hnUXlwaUZTR081MGtzVHhfaTBhOFNEMzRuNU84WTItZnVhYVFRd0tHUDlaTHY5UGE3R0VWVEs4U1lPeV9uYU1MZXRXWnlGeW9UblVncGtWcndBeHhEbkczTWJVVmRxUndtUFpTZ2V2QmRWWE45RnhZV2FvaTdyc0NoX3dSVDdiNlM2TGNKUVgyTWFTMlHSAfYBQVVfeXFMTllSMVNqLW9IOFJtZ1psWUcxUi1lN3U1QkRsYVVCZzJBMUFaY2g0QWJMNmZFREZDbHdDbXZlQjhNVUFvSmVLdHg5dmdDVVhvMjlhQVQyWk41di1rVHlKVnEzSkZtcGwzZ2N4Z1F5cGlGU0dPNTBrc1R4X2kwYThTRDM0bjVPOFkyLWZ1YWFRUXdLR1A5Wkx2OVBhN0dFVlRLOFNZT3lfbmFNTGV0V1p5RnlvVG5VZ3BrVnJ3QXh4RG5HM01iVVZkcVJ3bVBaU2dldkJkVlhOOUZ4WVdhb2k3cnNDaF93UlQ3YjZTNkxjSlFYMk1hUzJR?oc=5"
+        "titulo": "46% das PMEs brasileiras aumentam produtividade com IA, mas nuvem e segurança ainda são desafios, diz Dell - Pequenas Empresas & Grandes Negócios",
+        "fonte": "Pequenas Empresas & Grandes Negócios",
+        "data": "Thu, 05 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPUFYtOVpFSldhWDVSejZyb1k3VlF2SC1UVDJKdWRDbWNYMHZaaFY5alhraGJEazJ0NlNZcnYwbEQ4WXJ2WnlEeHZ4MHdWVkJUN1VnODM4OTB2U1RMZ1lBQjloWDBMM040VVhPTFNZYWVxV0hrVTg0LWd4OUlvZXBhRFVZYkpnSzNQdTlUMEJPQUE5ODQ4ZkJDWUpnQmlMRU94SDlHaFpRSzVoZE54NktBSXN3RUF5RFFOMkVUXzNaTnpXdGcyM1gzRXBZRXh4RjNiU3R4SmwzNzZVRW95M1lCd2J0cVB4VWs5VTRzWk5oS1lzY2hKcjdfXzRfM3A0SVVLWFJSY0hLSk5GaC1I0gGMAkFVX3lxTE9QVi05WkVKV2FYNVJ6NnJvWTdWUXZILVRUMkp1ZENtY1gwdlpoVjlqWGtoYkRrMnQ2U1lydjBsRDhZcnZaeUR4dngwd1ZWQlQ3VWc4Mzg5MHZTVExnWUFCOWhYMEwzTjRVWE9MU1lhZXFXSGtVODQtZ3g5SW9lcGFEVVliSmdLM1B1OVQwQk9BQTk4NDhmQkNZSmdCaUxFT3hIOUdoWlFLNWhkTng2S0FJc3dFQXlEUU4yRVRfM1pOeld0ZzIzWDNFcFlFeHhGM2JTdHhKbDM3NlVFb3kzWUJ3YnRxUHhVazlVNHNaTmhLWXNjaEpyN19fNF8zcDRJVUtYUlJjSEtKTkZoLUg?oc=5"
       }
     ],
     "Instagram novidade recurso": [
@@ -270,15 +270,15 @@
   },
   "erros": [],
   "google_trends_br": [
+    "el nino",
+    "tempo curitiba",
+    "previsao do tempo curitiba",
+    "santo augusto",
+    "joshua kimmich",
+    "frankfurt fc",
+    "jj gabriel",
+    "que dia é o enem",
     "arsenal",
-    "alerta laranja: tempestade",
-    "fulham newcastle 07/11/2026",
-    "bayern munich",
-    "borussia",
-    "rb leipzig",
-    "athletic club x real madrid club de fútbol",
-    "previsão do tempo sorocaba",
-    "alerta vermelho: tempestade",
-    "br-070"
+    "alerta laranja: tempestade"
   ]
 }
