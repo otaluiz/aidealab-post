@@ -1,16 +1,16 @@
 {
-  "atualizado_em": "2026-11-07T19:24:54+00:00",
+  "atualizado_em": "2026-11-08T11:30:22+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 427,
+    "followers_count": 425,
     "follows_count": 218,
-    "media_count": 52,
+    "media_count": 53,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 381,
+    "reach": 383,
     "profile_views": 28,
     "website_clicks": 0,
     "follows_and_unfollows": null,
@@ -18,37 +18,55 @@
   },
   "posts": [
     {
-      "data": "2026-11-07",
+      "data": "2026-11-08",
       "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Quase 3 meses por ano. É o tempo que o pequeno empreendedor gasta com papelada, segundo pesquisa feita para o Nubank: cerca de 9 horas por s",
-      "link": "https://www.instagram.com/p/Dfc5wXbkiZJ/",
-      "likes": 0,
+      "gancho": "O WhatsApp Business agora tem IA que responde cliente. Só que ela responde com o que você ensinou.",
+      "link": "https://www.instagram.com/p/DfeoHCtGYJa/",
+      "likes": 1,
       "comments": 0,
       "insights": {
         "reach": 0,
         "saved": 0,
         "shares": 0,
-        "views": 2,
-        "total_interactions": 0,
+        "views": 3,
+        "total_interactions": 1,
         "follows": 0,
         "profile_visits": 0
       },
       "score": null
     },
     {
+      "data": "2026-11-07",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Quase 3 meses por ano. É o tempo que o pequeno empreendedor gasta com papelada, segundo pesquisa feita para o Nubank: cerca de 9 horas por s",
+      "link": "https://www.instagram.com/p/Dfc5wXbkiZJ/",
+      "likes": 1,
+      "comments": 0,
+      "insights": {
+        "reach": 8,
+        "saved": 0,
+        "shares": 0,
+        "views": 17,
+        "total_interactions": 1,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 12.5
+    },
+    {
       "data": "2026-11-06",
       "tipo": "REELS",
       "gancho": "Seu cliente quer falar com uma pessoa. Seu chatbot responde com mais um menu. 🤖",
       "link": "https://www.instagram.com/reel/DfaYInUNdy7/",
-      "likes": 3,
+      "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 5,
+        "reach": 8,
         "saved": 0,
         "shares": 0,
-        "total_interactions": 3
+        "total_interactions": 4
       },
-      "score": 60.0
+      "score": 50.0
     },
     {
       "data": "2026-11-04",
@@ -130,12 +148,12 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 132,
+        "reach": 133,
         "saved": 0,
         "shares": 0,
         "total_interactions": 6
       },
-      "score": 4.55
+      "score": 4.51
     },
     {
       "data": "2026-10-31",
@@ -145,7 +163,7 @@
       "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 16,
+        "reach": 17,
         "saved": 0,
         "shares": 0,
         "views": 33,
@@ -153,7 +171,7 @@
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 25.0
+      "score": 23.53
     },
     {
       "data": "2026-10-30",
@@ -220,7 +238,7 @@
         "reach": 28,
         "saved": 0,
         "shares": 0,
-        "views": 53,
+        "views": 54,
         "total_interactions": 9,
         "follows": 0,
         "profile_visits": 0
@@ -238,7 +256,7 @@
         "reach": 26,
         "saved": 0,
         "shares": 0,
-        "views": 62,
+        "views": 63,
         "total_interactions": 6,
         "follows": 0,
         "profile_visits": 0
@@ -712,24 +730,6 @@
         "profile_visits": 0
       },
       "score": 26.67
-    },
-    {
-      "data": "2026-09-26",
-      "tipo": "IMAGE",
-      "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
-      "link": "https://www.instagram.com/p/DdwXVcMl22z/",
-      "likes": 3,
-      "comments": 0,
-      "insights": {
-        "reach": 34,
-        "saved": 0,
-        "shares": 0,
-        "views": 64,
-        "total_interactions": 3,
-        "follows": 0,
-        "profile_visits": 2
-      },
-      "score": 8.82
     }
   ],
   "top5": [
@@ -771,6 +771,13 @@
   ],
   "piores5": [
     {
+      "data": "2026-09-27",
+      "tipo": "IMAGE",
+      "gancho": "Todo negócio chega embaralhado. Não falta esforço — falta sequência, e alguém de fora pra enxergar ela.",
+      "score": 26.67,
+      "alcance": 30
+    },
+    {
       "data": "2026-10-04",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Dois prompts. Abertos. Linha por linha. 👀",
@@ -792,18 +799,11 @@
       "alcance": 36
     },
     {
-      "data": "2026-09-26",
-      "tipo": "IMAGE",
-      "gancho": "Entra: processo manual, planilha, WhatsApp sem resposta.",
-      "score": 8.82,
-      "alcance": 34
-    },
-    {
       "data": "2026-10-31",
       "tipo": "REELS",
       "gancho": "Seu site tá sem vida? 💀🔥",
-      "score": 4.55,
-      "alcance": 132
+      "score": 4.51,
+      "alcance": 133
     }
   ]
 }

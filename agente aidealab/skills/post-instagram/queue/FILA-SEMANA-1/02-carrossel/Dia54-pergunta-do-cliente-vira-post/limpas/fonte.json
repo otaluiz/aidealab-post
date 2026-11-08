@@ -5,7 +5,7 @@
   },
   "slide-02": {
     "imagem": "slide2_led.png",
-    "filtro": "nenhum"
+    "filtro": "cloth_letras"
   },
   "slide-07": {
     "imagem": "cta_orig.png",
