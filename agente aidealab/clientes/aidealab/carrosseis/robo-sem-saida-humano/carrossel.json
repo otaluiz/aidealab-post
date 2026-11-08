@@ -1,0 +1,97 @@
+{
+ "id": "2026-11-robo-sem-saida-humano",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "ambos"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ROBÔ SEM",
+    "SAÍDA?"
+   ],
+   "emocao": {
+    "texto": "cliente pede [gente] e cai no menu.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE PEDE",
+    "ATENDENTE."
+   ],
+   "emocao": {
+    "texto": "e o robô manda o menu [de novo].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE O CLIENTE",
+    "{SENTE}"
+   ],
+   "lista": [
+    "Que ninguém ouviu o pedido",
+    "Que vai repetir tudo outra vez",
+    "Que a empresa não quer atender",
+    "Que é mais fácil ir pro concorrente"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "ROBÔ BOM",
+    "SEMPRE TEM"
+   ],
+   "emocao": {
+    "texto": "{saída} para um humano.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO DEIXAR",
+    "A {SAÍDA}"
+   ],
+   "lista": [
+    "Frase clara: \"Quer falar com uma pessoa? É só pedir\"",
+    "A palavra \"atendente\" já chama você",
+    "Fora do horário, avisa quando você volta",
+    "A conversa chega pra você com o histórico"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "O ROBÔ RESPONDE",
+    "O BÁSICO E VOCÊ"
+   ],
+   "emocao": {
+    "texto": "{fecha} a venda.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "SEU ROBÔ DEIXA",
+    "CHAMAR GENTE?"
+   ],
+   "cta": {
+    "acao": "Comenta HUMANO",
+    "texto": "a aidealab te mostra o roteiro"
+   },
+   "imagem": "cta_orig.png"
+  }
+ ]
+}
