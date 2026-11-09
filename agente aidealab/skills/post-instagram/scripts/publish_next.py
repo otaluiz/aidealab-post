@@ -166,6 +166,14 @@ def load_queue() -> List[Dict[str, Any]]:
                         "label": post_dir.name,
                     }
                 )
+    for meta_file in sorted(QUEUE_ROOT.glob("FILA-SEMANA-*/03-reels/*/metadata.json")):
+        try:
+            meta = json.loads(meta_file.read_text(encoding="utf-8-sig"))
+        except Exception as e:
+            print(f"[WARN] {meta_file.name}: {e}")
+            continue
+        items.append({"kind": "reel", "sort_key": dia_key(meta_file.parent.name), "meta_path": meta_file,
+                      "folder": meta_file.parent, "metadata": meta, "label": meta_file.parent.name})
     items.sort(key=lambda it: it["sort_key"])
     return items
 
@@ -206,6 +214,12 @@ def find_next(items: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     pendentes = [it for it in items if not it["metadata"].get("postado", False)]
     if not pendentes:
         return None
+    # reel e carrossel alternam; sem item aprovado do tipo da vez, publica o outro para não perder o dia
+    reels = [it for it in pendentes if it["kind"] == "reel"]
+    outros = [it for it in pendentes if it["kind"] != "reel"]
+    if reels and (not outros or ultimo_formato() != "reel"):
+        return next((it for it in reels if it["metadata"].get("fonte_tendencia")), reels[0])
+    pendentes = outros
     tendencia = [it for it in pendentes if it["metadata"].get("fonte_tendencia")]
     pendentes = tendencia or pendentes
     quer_personagem = ultimos_tipos()[-2:] != [True, True]
@@ -219,6 +233,14 @@ def ultimos_tipos() -> List[bool]:
     except (OSError, ValueError):
         return []
     return d.get("historico") or [bool(d.get("personagem"))]
+
+
+def ultimo_formato() -> str:
+    """Formato do último post: "reel" ou "carrossel" (arquivo sem o campo = carrossel)."""
+    try:
+        return json.loads(ULTIMO_TIPO.read_text(encoding="utf-8")).get("formato") or "carrossel"
+    except (OSError, ValueError):
+        return "carrossel"
 
 
 def upload_to_supabase(image_path: Path) -> Optional[str]:
@@ -351,6 +373,26 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
     return resp.json().get("id")
 
 
+def publish_reel(video_url: str, capa_url: Optional[str], caption: str, ig_account_id: str) -> Optional[str]:
+    """Reel: container REELS (o Instagram baixa o vídeo da URL pública), espera processar e publica."""
+    dados = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": True,
+             "access_token": INSTAGRAM_ACCESS_TOKEN}
+    if capa_url:
+        dados["cover_url"] = capa_url
+    resp = requests.post(f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media", json=dados, timeout=60)
+    raise_checked(resp)
+    media_id = resp.json().get("id")
+    if not media_id or not wait_for_container_ready(media_id, timeout_s=600, poll_s=10):
+        return None
+    resp = requests.post(
+        f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish",
+        json={"creation_id": media_id, "access_token": INSTAGRAM_ACCESS_TOKEN},
+        timeout=60,
+    )
+    raise_checked(resp)
+    return resp.json().get("id")
+
+
 def build_caption(meta: Dict[str, Any]) -> str:
     legenda = repair_mojibake(meta.get("legenda", ""))
     tags = meta.get("hashtags", [])
@@ -443,6 +485,11 @@ def main():
         if not image_url:
             sys.exit(1)
         post_id = publish_image(image_url, caption, ig_account_id)
+    elif nxt["kind"] == "reel":
+        if not meta.get("video_url"):
+            print(f"[ERROR] {nxt['label']} sem video_url (o sync_fila_cloud.py sobe o vídeo para o Supabase)")
+            sys.exit(1)
+        post_id = publish_reel(meta["video_url"], meta.get("capa_url"), caption, ig_account_id)
     else:
         slides = sorted(meta.get("slides", []), key=lambda s: s.get("ordem", 999))
 
@@ -489,8 +536,10 @@ def main():
     meta["postado_em"] = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
     meta["post_id"] = post_id
     nxt["meta_path"].write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
-    hist = (ultimos_tipos() + [tem_personagem(nxt)])[-2:]
-    ULTIMO_TIPO.write_text(json.dumps({"personagem": hist[-1], "historico": hist}), encoding="utf-8")
+    # reel não entra na conta de personagem: ela só vale entre carrosséis
+    hist = ultimos_tipos() if nxt["kind"] == "reel" else (ultimos_tipos() + [tem_personagem(nxt)])[-2:]
+    ULTIMO_TIPO.write_text(json.dumps({"personagem": hist[-1] if hist else False, "historico": hist,
+                                       "formato": "reel" if nxt["kind"] == "reel" else "carrossel"}), encoding="utf-8")
 
     print(f"\n[SUCCESS] {nxt['label']} publicado. Post ID: {post_id}")
 

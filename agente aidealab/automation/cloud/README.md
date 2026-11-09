@@ -17,6 +17,10 @@ Entrega: `.github/workflows/entregar.yml` leva a branch para a main, sobe os ras
 `criar-post` e o `render-engine` antigo não são mais usados. Rotina de flyer removida em
 2026-10-05. Quando o carrossel-engine mudar, copie de novo os arquivos para `motor/`.
 
+Reels: gerados no PC pela rotina `reel-vox-aidealab` (voz da Elise no Chrome e pinturas no ComfyUI). Mover o pacote para
+`06-Aprovados-para-Postar/FILA` é a aprovação; a partir daí a nuvem cuida de tudo e alterna com os carrosséis (veja a
+seção Reels em `skills/post-instagram/SKILL.md`). O passo do sync precisa do secret `SUPABASE_SERVICE_ROLE_KEY`.
+
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
 ### 1. Secret `CLAUDE_CODE_OAUTH_TOKEN` (usa sua assinatura, não API paga)

@@ -5,12 +5,16 @@ Roda no GitHub Actions (entregar.yml), sem depender do Drive sincronizado no Win
      post_id/postado_em). Postados ANTES de hoje saem da fila do repo e o id vai para _arquivo-postados.json.
   2. pastas de 06/FILA que não estão na fila nem no arquivo entram como FILA-SEMANA-1/02-carrossel/Dia<N>-<slug>,
      até MAX_PENDENTES pendentes (o publish_next intercala personagem e banco pelo campo "personagem").
+  3. pasta de 06/FILA com "tipo": "reel" entra como FILA-SEMANA-1/03-reels/Dia<N>-<slug>: vídeo e capa vão do Drive
+     para o Supabase e só as URLs ficam no repo. Depois de postado, a pasta vai para 09 - motion e o Supabase é limpo.
 Uso: sync_fila_cloud.py [--dry-run]
 """
 import io
 import json
+import os
 import shutil
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -43,6 +47,34 @@ def ler_meta(svc, fs):
 
 
 CARROSSEIS = AQUI.parents[1] / "clientes" / "aidealab" / "carrosseis"
+STORAGE = "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object"
+BUCKET = "ig-publish"
+
+
+def storage(metodo, caminho, dados=None, tipo="application/octet-stream"):
+    """Storage do Supabase por HTTP (a dependência supabase-py não está neste job)."""
+    req = urllib.request.Request(f"{STORAGE}/{BUCKET}/{caminho}", data=dados, method=metodo, headers={
+        "Authorization": f"Bearer {os.environ['SUPABASE_SERVICE_ROLE_KEY']}", "Content-Type": tipo, "x-upsert": "true"})
+    urllib.request.urlopen(req, timeout=300).read()
+    return f"{STORAGE}/public/{BUCKET}/{caminho}"
+
+
+def reel_para_fila(svc, alvo, nome, fs, meta):
+    """Sobe vídeo e capa e grava no repo só o metadata com as URLs."""
+    pasta = f"reels/{local.slug(nome)}"
+    meta["video_url"] = storage("POST", f"{pasta}/{meta['video']}", baixar(svc, fs[meta["video"]]), "video/mp4")
+    meta["capa_url"] = storage("POST", f"{pasta}/{meta['capa']}", baixar(svc, fs[meta["capa"]]), "image/jpeg")
+    meta.update(postado=False, status="aprovado", pasta_storage=pasta)
+    alvo.mkdir(parents=True)
+    local.gravar(alvo / "metadata.json", meta)
+
+
+def reel_invalido(fs, meta):
+    """Motivo para não enfileirar o reel; vazio = ok."""
+    falta = [c for c in ("video", "capa") if meta.get(c) not in fs]
+    if not meta.get("legenda"):
+        falta.append("legenda")
+    return ", ".join(falta)
 
 
 def render_do_repo(alvo, meta, png):
@@ -71,6 +103,7 @@ def main():
     seis = achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar")
     subs = filhos(svc, seis)
     fila_id, postados_id = subs["FILA"], subs["POSTADOS"]
+    motion_id = filhos(svc, achar(svc, "Clientes/aidealab"))["09 - motion"]
     ledger = local.ler(local.LEDGER) if local.LEDGER.exists() else {"ultimo_dia": 0, "carousel_ids": []}
     arquivados = set(ledger["carousel_ids"])
 
@@ -81,7 +114,7 @@ def main():
             fila_drive[meta.get("carousel_id")] = (nome, pid, fs, meta)
 
     itens = []
-    for mf in local.QUEUE.glob("FILA-SEMANA-*/02-carrossel/*/metadata.json"):
+    for mf in [*local.QUEUE.glob("FILA-SEMANA-*/02-carrossel/*/metadata.json"), *local.QUEUE.glob("FILA-SEMANA-*/03-reels/*/metadata.json")]:
         m = local.DIA_RE.match(mf.parent.name)
         itens.append({"dir": mf.parent, "meta": local.ler(mf), "dia": int(m.group(1)) if m else 0})
     hoje = datetime.now(local.CUIABA).date()
@@ -89,13 +122,14 @@ def main():
     def para_postados(nome, pid, fs, dm, meta=None):
         if meta:
             dm.update(postado=True, postado_em=meta.get("postado_em"), post_id=meta.get("post_id"), status="postado")
-        print(f"POSTADO  {nome} -> POSTADOS")
+        destino = motion_id if dm.get("tipo") == "reel" else postados_id
+        print(f"POSTADO  {nome} -> {'09 - motion' if destino == motion_id else 'POSTADOS'}")
         if DRY:
             return
         if meta:
             corpo = MediaIoBaseUpload(io.BytesIO(json.dumps(dm, ensure_ascii=False, indent=2).encode()), "application/json")
             svc.files().update(fileId=fs["metadata.json"], media_body=corpo).execute()
-        svc.files().update(fileId=pid, addParents=postados_id, removeParents=fila_id, fields="id").execute()
+        svc.files().update(fileId=pid, addParents=destino, removeParents=fila_id, fields="id").execute()
 
     # 1. postados
     for it in itens:
@@ -111,6 +145,12 @@ def main():
             ledger["ultimo_dia"] = max(ledger["ultimo_dia"], it["dia"])
             print(f"ARQUIVA  {it['dir'].name} (fila do repo)")
             if not DRY:
+                if meta.get("pasta_storage"):  # reel: o Instagram já tem o vídeo, libera o Storage
+                    for arq in (meta["video"], meta["capa"]):
+                        try:
+                            storage("DELETE", f"{meta['pasta_storage']}/{arq}")
+                        except OSError as e:
+                            print(f"AVISO    Storage não limpou {arq}: {e}")
                 shutil.rmtree(it["dir"])
             it["arquivado"] = True
     for cid in list(fila_drive):
@@ -121,7 +161,9 @@ def main():
     # 2. aprovados novos entram na fila do repo
     vivos = [it for it in itens if not it.get("arquivado")]
     na_fila = set().union(*[local.ids_de(it["meta"]) for it in vivos]) if vivos else set()
-    pendentes = sum(1 for it in vivos if not it["meta"].get("postado"))
+    eh_reel = lambda it: it["dir"].parent.name == "03-reels"
+    pendentes = sum(1 for it in vivos if not it["meta"].get("postado") and not eh_reel(it))
+    pendentes_reels = sum(1 for it in vivos if not it["meta"].get("postado") and eh_reel(it))
     prox = max([ledger["ultimo_dia"], *[it["dia"] for it in vivos]]) + 1
     novos = [v for cid, v in fila_drive.items() if cid not in na_fila and cid not in arquivados]
     # tendência do nicho (fonte_tendencia) entra primeiro, para não ficar atrás do limite de pendentes
@@ -131,8 +173,24 @@ def main():
         repo.setdefault(local.ler(mp).get("carousel_id"), mp.parent)
         repo[mp.parents[1].name] = mp.parent
     for nome, pid, fs, meta in novos:
+        if meta.get("tipo") == "reel":
+            motivo = reel_invalido(fs, meta)
+            if motivo or pendentes_reels >= local.MAX_PENDENTES:
+                print(f"PULA     {nome}: {motivo or 'limite de reels pendentes'}")
+                continue
+            alvo = local.DESTINO.parent / "03-reels" / f"Dia{prox}-{local.slug(nome)}"
+            print(f"ENFILEIRA {nome} -> {alvo.name} (reel)")
+            if not DRY:
+                try:
+                    reel_para_fila(svc, alvo, nome, fs, meta)
+                except OSError as e:  # falha de rede não derruba o resto da fila; tenta de novo no próximo ciclo
+                    print(f"AVISO    {nome}: upload falhou ({e})")
+                    continue
+            prox += 1
+            pendentes_reels += 1
+            continue
         if pendentes >= local.MAX_PENDENTES:
-            break
+            continue
         faltando = [s["arquivo"] for s in meta.get("slides", []) if s["arquivo"] not in fs]
         if faltando or not meta.get("legenda"):
             print(f"PULA     {nome}: slides faltando {faltando} ou sem legenda")

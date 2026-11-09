@@ -153,6 +153,8 @@ def main():
     novos = [(cid, d) for cid, d in fila_drive.items() if cid not in na_fila and cid not in arquivados]
     novos.sort(key=lambda x: (ler(x[1] / "metadata.json").get("ordem_fila") or 999, x[1].name))
     for cid, d in novos:
+        if ler(d / "metadata.json").get("tipo") == "reel":  # reel é com o sync_fila_cloud.py (vídeo vai para o Supabase)
+            continue
         if pendentes >= MAX_PENDENTES:
             break
         meta = ler(d / "metadata.json")
