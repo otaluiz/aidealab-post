@@ -1,13 +1,7 @@
 {
-  "atualizado_em": "2026-11-09T20:31:21+00:00",
+  "atualizado_em": "2026-11-09T20:55:32+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
-      {
-        "titulo": "Oito em cada 10 pequenos negócios já usam ou planejam usar IA para marketing e comunicação | ASN Nacional - Agência Sebrae de Notícias",
-        "fonte": "Agência Sebrae de Notícias",
-        "data": "Mon, 09 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONGxLbHdBTlFUUFU2Vlo2d3MyNkZwb1pyWkUwRTBCZHhFYkdRXzB1Qmt5SkNSMmtDVXRzLVJQUG55YkxYNV9yWDA4NmxXU3BvX2o4UVlIMExKejBUNXRObGRsaTJwdzJ0MUF0Rm5UQnFWcTdlbndxSlJYa2lvbWRZLWJxUGRCbEtISzFwUGFjcTNkRnR1VjZ5eDVOR1NaNGtLTzEwdkhvbklEci1sOEZJUHQ0Wmw0RmJMUU9MeWpsTEUydkl2?oc=5"
-      },
       {
         "titulo": "Itaú Unibanco amplia inteligência artificial generativa para pequenas e médias empresas - ADVFN",
         "fonte": "ADVFN",
@@ -19,6 +13,12 @@
         "fonte": "Vero Notícias",
         "data": "Mon, 09 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbEZuQXU3MEtLSW5MbW5wbjd3NUNOVEJiZDhFeEo3ZDBlVUFUbjdXeVRXMUV1UkhIRzBYUGxnbnBUeW5FNExOX3NLd0tkVTIxVUdJQjB1bGI3andmNk03T3hjYzNmZThua0FVUm9Ta3hqM3hNU3NrS29kakctckxDSi1KSEVQVjBWTGxjM2ZvT2xrM1pOTlFQR291amwyQ2kxcXk0WkpnYV9LZmxEWHl4aXRXNUVNem41SmdsQ3Q5V1o2c0Va?oc=5"
+      },
+      {
+        "titulo": "Oito em cada 10 pequenos negócios já usam ou planejam usar IA para marketing e comunicação | ASN Nacional - Agência Sebrae de Notícias",
+        "fonte": "Agência Sebrae de Notícias",
+        "data": "Mon, 09 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONGxLbHdBTlFUUFU2Vlo2d3MyNkZwb1pyWkUwRTBCZHhFYkdRXzB1Qmt5SkNSMmtDVXRzLVJQUG55YkxYNV9yWDA4NmxXU3BvX2o4UVlIMExKejBUNXRObGRsaTJwdzJ0MUF0Rm5UQnFWcTdlbndxSlJYa2lvbWRZLWJxUGRCbEtISzFwUGFjcTNkRnR1VjZ5eDVOR1NaNGtLTzEwdkhvbklEci1sOEZJUHQ0Wmw0RmJMUU9MeWpsTEUydkl2?oc=5"
       },
       {
         "titulo": "Inteligência artificial avança entre pequenos negócios e já faz parte da rotina de 51% deles - Brasil 247",
@@ -59,16 +59,16 @@
         "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9xRV9UUEFjazVvcHlzVkNZRzRKRVp6TU1XRVMydU9uZU1DU1R0SWJKT04xMjVBdTN6MEtqSFlCXzBZbWo2UHJUNmJZWjhfbklacHdxSmlOTzE5RjNkN0hpUDlsc1pKZ3pfNmhYbnpYN3daZnNZ?oc=5"
       },
       {
-        "titulo": "HSM+ reúne 2,5 mil participantes para discutir liderança na era da IA - Portal IN - Pompeu Vasconcelos - Portal IN - Pompeu Vasconcelos",
-        "fonte": "Portal IN - Pompeu Vasconcelos",
-        "data": "Mon, 09 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUHpUVGhCN3BuZkh4ckFXeTJ1S2l0RWdDSmlaRzFCOXNzck5fTFVUQThDZTVBTWl1SFVhOVRqdWNSblI4UmVjcnFPVHdZN2hZbVJsOVltMW9RT1NxcDBLTWRvLUFrYy1LYXlpVFVpUVRPNDVGalhXeHdia0llSng1YThCZzZlX0o0WWxrcmtvZ29Pd01MNEJOQVFJSEhMYUtITHlackZucVg?oc=5"
-      },
-      {
         "titulo": "Meta passa a cobrar por mensagens de resposta no WhatsApp Business e obriga empresas a reformularem o atendimento - Brasil Inovador",
         "fonte": "Brasil Inovador",
         "data": "Sun, 08 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQdF83eGRiLXpUcDdFRFFQU1BobXR1LWxXVVAwenBGWjJNWkt5NjZRcVhackx3OUlLR2ZWeTExZWtLQjBPVHVNWFprTklKNS0wRHpleER4OEhYNXItSHlkM0JwbEtLbHFnM0tTbmdkSDJRczAzaVRpNG81czhqV1h0cjVvQlI0eDNkTnFVbUpWM19kdGY2eXc3WXNUU3NzaGsyVkFLOGlucU4tbjFaWGxTSDNSOFQyZWZvR0c1cVJxdnNYcUZvNE91RHhDNmdDakJIdEpMeF9HcDA3dWVm?oc=5"
+      },
+      {
+        "titulo": "HSM+ reúne 2,5 mil participantes para discutir liderança na era da IA - Portal IN - Pompeu Vasconcelos - Portal IN - Pompeu Vasconcelos",
+        "fonte": "Portal IN - Pompeu Vasconcelos",
+        "data": "Mon, 09 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUHpUVGhCN3BuZkh4ckFXeTJ1S2l0RWdDSmlaRzFCOXNzck5fTFVUQThDZTVBTWl1SFVhOVRqdWNSblI4UmVjcnFPVHdZN2hZbVJsOVltMW9RT1NxcDBLTWRvLUFrYy1LYXlpVFVpUVRPNDVGalhXeHdia0llSng1YThCZzZlX0o0WWxrcmtvZ29Pd01MNEJOQVFJSEhMYUtITHlackZucVg?oc=5"
       },
       {
         "titulo": "84% das empresas usam IA, mas 61% não veem resultados - Portal UAI",
@@ -109,10 +109,10 @@
         "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNS0NfMTJjUC0ybGc0OWpCbEJ3TXI2Y3p2cE5XNTZ5SmVMSk1EX212SExKeklpSUZIOXF6MDNGNll0eS15U1dZeEZ3T1M1dDFuQm5NZXljMFRUQUc1N1ZTT0l0SUpla1VaQ2R6QWtjcWJMQmUxN2pMOWZmbFg0UnROMlJSNkNCWmJpZ1VONjV0MzAwMDZkR2phV1B3UEVjcllEVm5scVl0MHNwdVBJNGc?oc=5"
       },
       {
-        "titulo": "O que o Gemini sabe sobre você? Google libera recurso para editar e apagar memórias - TudoCelular.com",
+        "titulo": "Google Chrome vai mudar modo anônimo: entenda o novo recurso de segurança em teste - TudoCelular.com",
         "fonte": "TudoCelular.com",
         "data": "Mon, 09 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdHBLSmswUExmX0h4MjdGWDFFYlpyeFlRNzVoRjdOTUI1cnVGU1BuT2VId3BXRExSUjVJSjBxNWE5SVZSeFNzV2RZckp1Z1Nmb0dBeVFTeU5xbDhsY3YxWndhbHljU3RZRTc2SzFWQ3duMzVueXFQZDdPajNyaUFyNk4tbVlIYkdyYWd3dGxjempDZ092eXR2YlVKT0xNanliTFNMaTQwSQ?oc=5"
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNb2E1eXpIVEtiVFdxT2ZWLTJZbGplMldLemNIVHphaXB3dGN6eWJ2UmJSTTNQYzliVnlOTy1Pc0Fkc0Rob2JCZEFsZUhzRWpQUHN0Umd4Q1Y2MFdlYW41NTc4OTVUUVJxY0lWLU92NjgtWEt1NkFuYlVZUWZoYXBtTzJZY1FJWTNid25xU19fOWJwaEFia1ZXR2p5NUlnRl80Zk04bDg4bw?oc=5"
       }
     ],
     "Google Perfil da Empresa OR \"Modo IA\" Google": [
@@ -147,10 +147,10 @@
         "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQOG02dnNjcHpwTUpuTjMtZnQ0Z0U3N0kycDZBMVRzRlU4SUh3WG9kcG5YWFktbW51bXQ1eTFDcEdRZlIySm9iOWh1cGlibmt4ajdLWTFnRzVEMlJ2c3RmQ1J5QzRtT2lDeEtpZW5WX3dCejJlTlRkbXNWU3dnS1ZZb0xGQk9wZG1EQkpmNHQ1eUZoamxxMVN6LWFpZDg1S0xnY3B0SXU5NXJDWWJoNFBRVdIBsAFBVV95cUxQOG02dnNjcHpwTUpuTjMtZnQ0Z0U3N0kycDZBMVRzRlU4SUh3WG9kcG5YWFktbW51bXQ1eTFDcEdRZlIySm9iOWh1cGlibmt4ajdLWTFnRzVEMlJ2c3RmQ1J5QzRtT2lDeEtpZW5WX3dCejJlTlRkbXNWU3dnS1ZZb0xGQk9wZG1EQkpmNHQ1eUZoamxxMVN6LWFpZDg1S0xnY3B0SXU5NXJDWWJoNFBRVQ?oc=5"
       },
       {
-        "titulo": "Google amplia sua linha de TPUs de 8ª geração para acelerar a era dos agentes de IA - Google Discovery",
-        "fonte": "Google Discovery",
+        "titulo": "Google apresenta versões mais potentes de seus chips de IA - Tecnoblog",
+        "fonte": "Tecnoblog",
         "data": "Mon, 09 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOc1ZwTHVCMXc0Y3pRUFRIbmVtckFDdHhTMnJNSjlOczhNYUZyZTJneXJpQ3JPS2ZnaXFkRkFsY3NtSktSOFpnT1NxLTg4NHhrRWRZeU0yT1B4N0VjTmlCZFE1dFlDS3JnRWRVTWJmcTJjbkRHRi1wTG9nUklYNW9hZVZvdHM1ZVpQYVBpTEltTnMybVNUOGtmcDVjeXg1NjFiNjUwVmttVUVIWllsUHRrTjcxVnNnLUg0SVRLZzhB?oc=5"
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ0tRRnl0NkhoN19oWjhYZGkwUENTN2VUTVdnMU40dWNjcXZpRUNfaEZmam44Y00zZk1tVEV0OVd4YXhiRXhoam1tR2xGcGlFZjcwTmZrbkVqb2xkT3BVVWlzRGRtVXBWLTF6RjJrX3MwMWtGSGwtR2lNdVVhdF9zX085Vm9udnF1RC14djhfdUpIY2pv?oc=5"
       }
     ],
     "marketing digital pequenos negócios": [
@@ -167,16 +167,16 @@
         "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZm85TkIzbHF4aVZoZ1IxMjdaRVM2NlBrUHBlRVp6ZEtIcXhqMWhYdjdiSm12TjBtWXJrbUF3OVA0dm9ZdnZ6RVhtbWJGZzRieE1sS01xZFd6T3A2cWNOM2ZWVDM2UzJXQkxvQzRFWUROeHlGWnU0U0hRQjJMUDZLUmwxWHUzcHVlMTd3YjEtbnVtQ3B0ZXp4NXB0YWVRb1FONk1uVUI3dE04bUVFWEJXMGh2d0U0RTZqZjNKN2FGN0hyb1VaZ1lFTFV4X0ZWS2s1Q0szbWF5aVM?oc=5"
       },
       {
-        "titulo": "Inteligência artificial avança entre pequenos negócios e já faz parte da rotina de 51% deles - Brasil 247",
-        "fonte": "Brasil 247",
-        "data": "Mon, 09 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOXzJlQmFuTEJaTFZhMjQzc3kyRVd1WS1VTExHNDRFQkZMQW52RU04RzBzM2ZUU2Zkb05RazRWaEYtbzV3czljQl81c0wyOHNhQkNwS1JBUDhPdTVreTY3dlhGQ0JMNEVtX29ESUZTMzBJNmJFLWF0d0MweS1mVURzTkVJVVAtU3VVS2NEMm5ldjR1NGV6c292bmJFSTV3T2tUUGRQQlQzVElIQ0tvM1JrUGl6MXBmSGVFRWRjZXZnT0hQSHY3X2c1dQ?oc=5"
-      },
-      {
         "titulo": "Sebrae abre vagas para consultorias de marketing e finanças em Tabatinga - Portal No Ar!",
         "fonte": "Portal No Ar!",
         "data": "Mon, 09 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdmNvblBZa0ozcHJTX3p2MkM3SDFBSURwMEVxWWtvSW1zR2puT2FTbVJoQkI5SnE3ZkJCdlMwQjVQYUVsS25DeXdUSDZVaEVkQTBDUXNOWlBMblRZYjNma3ZfNXFPQnNWOS1nbVFqUGJJS1FnOFRBMlNjTGUyNnkxNnk1ZUFpUlFJNWxsZ1psLUtIOV9fLXZVY2JHLUtGajNo?oc=5"
+      },
+      {
+        "titulo": "Inteligência artificial avança entre pequenos negócios e já faz parte da rotina de 51% deles - Brasil 247",
+        "fonte": "Brasil 247",
+        "data": "Mon, 09 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOXzJlQmFuTEJaTFZhMjQzc3kyRVd1WS1VTExHNDRFQkZMQW52RU04RzBzM2ZUU2Zkb05RazRWaEYtbzV3czljQl81c0wyOHNhQkNwS1JBUDhPdTVreTY3dlhGQ0JMNEVtX29ESUZTMzBJNmJFLWF0d0MweS1mVURzTkVJVVAtU3VVS2NEMm5ldjR1NGV6c292bmJFSTV3T2tUUGRQQlQzVElIQ0tvM1JrUGl6MXBmSGVFRWRjZXZnT0hQSHY3X2c1dQ?oc=5"
       },
       {
         "titulo": "Comércio eletrônico cresce entre pequenos negócios em 2026 - Tarobá",
@@ -270,15 +270,15 @@
   },
   "erros": [],
   "google_trends_br": [
-    "caixa econômica federal",
+    "joel datena",
+    "advec alphaville",
+    "br-354",
+    "medicamento",
+    "joão lucas",
+    "estocar alimentos defesa civil",
+    "maguary",
     "rony",
     "aryna sabalenka",
-    "las palmas fc",
-    "chuva de meteoros",
-    "juíza gabriela hardt",
-    "real sociedad b",
-    "pat",
-    "ca lito danubio 09/11/2026",
-    "las palmas"
+    "caixa econômica federal"
   ]
 }
