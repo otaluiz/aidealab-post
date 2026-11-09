@@ -17,6 +17,7 @@ import re
 import sys
 import json
 import time
+import tempfile
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 from pathlib import Path
@@ -373,16 +374,54 @@ def publish_carousel(child_urls: List[str], caption: str, ig_account_id: str) ->
     return resp.json().get("id")
 
 
-def publish_reel(video_url: str, capa_url: Optional[str], caption: str, ig_account_id: str) -> Optional[str]:
-    """Reel: container REELS (o Instagram baixa o vídeo da URL pública), espera processar e publica."""
-    dados = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": True,
+def baixar_do_drive(file_id: str, destino: Path) -> None:
+    """Baixa o vídeo original do Drive (API REST, sem depender das libs do Google neste job)."""
+    token = requests.post(
+        "https://oauth2.googleapis.com/token",
+        data={
+            "client_id": os.environ["GOOGLE_DRIVE_CLIENT_ID"],
+            "client_secret": os.environ["GOOGLE_DRIVE_CLIENT_SECRET"],
+            "refresh_token": os.environ["GOOGLE_DRIVE_REFRESH_TOKEN"],
+            "grant_type": "refresh_token",
+        },
+        timeout=30,
+    )
+    raise_checked(token)
+    with requests.get(
+        f"https://www.googleapis.com/drive/v3/files/{file_id}",
+        params={"alt": "media"},
+        headers={"Authorization": f"Bearer {token.json()['access_token']}"},
+        stream=True,
+        timeout=300,
+    ) as resp:
+        raise_checked(resp)
+        with destino.open("wb") as f:
+            for bloco in resp.iter_content(1024 * 1024):
+                f.write(bloco)
+
+
+def publish_reel(video: Path, capa_url: Optional[str], caption: str, ig_account_id: str) -> Optional[str]:
+    """Reel por upload direto (resumable): o arquivo original vai inteiro para o Instagram, sem reencode nem limite do Storage."""
+    dados = {"media_type": "REELS", "upload_type": "resumable", "caption": caption, "share_to_feed": True,
              "access_token": INSTAGRAM_ACCESS_TOKEN}
     if capa_url:
         dados["cover_url"] = capa_url
     resp = requests.post(f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media", json=dados, timeout=60)
     raise_checked(resp)
     media_id = resp.json().get("id")
-    if not media_id or not wait_for_container_ready(media_id, timeout_s=600, poll_s=10):
+    if not media_id:
+        print(f"[ERROR] Sem media_id: {resp.json()}")
+        return None
+    with video.open("rb") as f:
+        resp = requests.post(
+            f"https://rupload.facebook.com/ig-api-upload/{GRAPH_API_VERSION}/{media_id}",
+            headers={"Authorization": f"OAuth {INSTAGRAM_ACCESS_TOKEN}", "offset": "0", "file_size": str(video.stat().st_size)},
+            data=f,
+            timeout=900,
+        )
+    raise_checked(resp)
+    print(f"  [OK] {video.stat().st_size // 1048576} MB enviados ao Instagram")
+    if not wait_for_container_ready(media_id, timeout_s=600, poll_s=10):
         return None
     resp = requests.post(
         f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish",
@@ -486,10 +525,13 @@ def main():
             sys.exit(1)
         post_id = publish_image(image_url, caption, ig_account_id)
     elif nxt["kind"] == "reel":
-        if not meta.get("video_url"):
-            print(f"[ERROR] {nxt['label']} sem video_url (o sync_fila_cloud.py sobe o vídeo para o Supabase)")
+        if not meta.get("video_drive_id"):
+            print(f"[ERROR] {nxt['label']} sem video_drive_id (quem grava é o sync_fila_cloud.py)")
             sys.exit(1)
-        post_id = publish_reel(meta["video_url"], meta.get("capa_url"), caption, ig_account_id)
+        with tempfile.TemporaryDirectory() as tmp:
+            video = Path(tmp) / "reel.mp4"
+            baixar_do_drive(meta["video_drive_id"], video)
+            post_id = publish_reel(video, meta.get("capa_url"), caption, ig_account_id)
     else:
         slides = sorted(meta.get("slides", []), key=lambda s: s.get("ordem", 999))
 

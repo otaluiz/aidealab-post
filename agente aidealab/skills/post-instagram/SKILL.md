@@ -124,11 +124,11 @@ continua parando se a fila estiver vazia ou se faltar credencial.
 
 ## Reels
 
-Pacote em `06-Aprovados-para-Postar/FILA/<pasta>/`: `reel.mp4` (1080x1920, H.264/AAC, até 45 MB), `capa.jpg`,
+Pacote em `06-Aprovados-para-Postar/FILA/<pasta>/`: `reel.mp4` (1080x1920, H.264/AAC, arquivo original, nunca reencodado), `capa.jpg`,
 `legenda.md` e `metadata.json` com `"tipo": "reel"`, `carousel_id`, `video`, `capa`, `legenda` e `hashtags`. O pacote é
 gerado pelo `motion_doc/empacotar_reel.py` (PC). Mover para a FILA é a aprovação.
 
-`sync_fila_cloud.py` leva o item para `queue/FILA-SEMANA-*/03-reels/Dia<N>-<slug>/`, sobe vídeo e capa para o Supabase
-e guarda só as URLs no repo. `publish_next.py` alterna reel e carrossel (`formato` em `_ultimo-tipo.json`); sem item do
-tipo da vez, publica o outro. Depois de postado, a pasta vai para `Clientes/aidealab/09 - motion` e o Storage é limpo.
+`sync_fila_cloud.py` leva o item para `queue/FILA-SEMANA-*/03-reels/Dia<N>-<slug>/`, guarda no repo só o metadata, com o id do
+vídeo no Drive e a capa no Supabase. Na hora de postar, o `publish_next.py` baixa o original do Drive e envia direto ao Instagram (upload resumable). `publish_next.py` alterna reel e carrossel (`formato` em `_ultimo-tipo.json`); sem item do
+tipo da vez, publica o outro. Depois de postado, a pasta vai para `Clientes/aidealab/09 - motion` e a capa sai do Storage.
 Teste da alternância: `python scripts/test_intercalar.py`.

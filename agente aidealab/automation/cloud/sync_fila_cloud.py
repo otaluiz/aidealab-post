@@ -5,8 +5,9 @@ Roda no GitHub Actions (entregar.yml), sem depender do Drive sincronizado no Win
      post_id/postado_em). Postados ANTES de hoje saem da fila do repo e o id vai para _arquivo-postados.json.
   2. pastas de 06/FILA que não estão na fila nem no arquivo entram como FILA-SEMANA-1/02-carrossel/Dia<N>-<slug>,
      até MAX_PENDENTES pendentes (o publish_next intercala personagem e banco pelo campo "personagem").
-  3. pasta de 06/FILA com "tipo": "reel" entra como FILA-SEMANA-1/03-reels/Dia<N>-<slug>: vídeo e capa vão do Drive
-     para o Supabase e só as URLs ficam no repo. Depois de postado, a pasta vai para 09 - motion e o Supabase é limpo.
+  3. pasta de 06/FILA com "tipo": "reel" entra como FILA-SEMANA-1/03-reels/Dia<N>-<slug>: só o metadata vai para o
+     repo, com o id do vídeo no Drive (o publish_next baixa o original na hora de postar) e a URL da capa no Supabase.
+     Depois de postado, a pasta vai para 09 - motion e a capa sai do Supabase.
 Uso: sync_fila_cloud.py [--dry-run]
 """
 import io
@@ -60,9 +61,9 @@ def storage(metodo, caminho, dados=None, tipo="application/octet-stream"):
 
 
 def reel_para_fila(svc, alvo, nome, fs, meta):
-    """Sobe vídeo e capa e grava no repo só o metadata com as URLs."""
+    """Grava no repo só o metadata: o vídeo original continua no Drive e a capa vai para o Supabase (a API pede URL pública)."""
     pasta = f"reels/{local.slug(nome)}"
-    meta["video_url"] = storage("POST", f"{pasta}/{meta['video']}", baixar(svc, fs[meta["video"]]), "video/mp4")
+    meta["video_drive_id"] = fs[meta["video"]]
     meta["capa_url"] = storage("POST", f"{pasta}/{meta['capa']}", baixar(svc, fs[meta["capa"]]), "image/jpeg")
     meta.update(postado=False, status="aprovado", pasta_storage=pasta)
     alvo.mkdir(parents=True)
@@ -145,12 +146,11 @@ def main():
             ledger["ultimo_dia"] = max(ledger["ultimo_dia"], it["dia"])
             print(f"ARQUIVA  {it['dir'].name} (fila do repo)")
             if not DRY:
-                if meta.get("pasta_storage"):  # reel: o Instagram já tem o vídeo, libera o Storage
-                    for arq in (meta["video"], meta["capa"]):
-                        try:
-                            storage("DELETE", f"{meta['pasta_storage']}/{arq}")
-                        except OSError as e:
-                            print(f"AVISO    Storage não limpou {arq}: {e}")
+                if meta.get("pasta_storage"):  # reel: o Instagram já tem a capa, libera o Storage
+                    try:
+                        storage("DELETE", f"{meta['pasta_storage']}/{meta['capa']}")
+                    except OSError as e:
+                        print(f"AVISO    Storage não limpou a capa: {e}")
                 shutil.rmtree(it["dir"])
             it["arquivado"] = True
     for cid in list(fila_drive):
