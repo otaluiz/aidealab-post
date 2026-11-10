@@ -20,6 +20,8 @@ Entrega: `.github/workflows/entregar.yml` leva a branch para a main, sobe os ras
 Reels: gerados no PC pela rotina `reel-vox-aidealab` (voz da Elise no Chrome e pinturas no ComfyUI). Mover o pacote para
 `06-Aprovados-para-Postar/FILA` é a aprovação; a partir daí a nuvem cuida de tudo e alterna com os carrosséis (veja a
 seção Reels em `skills/post-instagram/SKILL.md`). O passo do sync precisa do secret `SUPABASE_SERVICE_ROLE_KEY`.
+Para a fila pegar um pacote novo antes das 7h30, faça push de qualquer commit (fora de `queue/`) numa branch: o
+`entregar.yml` roda na hora, junta na `main` e executa o sync.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
