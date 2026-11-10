@@ -16,7 +16,34 @@
     "texto": "cliente pede [gente] e cai no menu.",
     "posicao": "depois"
    },
-   "imagem": "capa_orig.png"
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      368,
+      429,
+      668,
+      729
+     ]
+    ],
+    "cabeca": [
+     315,
+     327,
+     756,
+     589
+    ],
+    "caixa": [
+     123,
+     337,
+     847,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 800,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
   },
   {
    "template": "T2",
@@ -28,7 +55,27 @@
     "texto": "e o robô manda o menu [de novo].",
     "posicao": "depois"
    },
-   "imagem": "slide2_orig.png"
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     41,
+     37,
+     1029,
+     360
+    ],
+    "caixa": [
+     29,
+     49,
+     1060,
+     1412
+    ]
+   },
+   "bloco": {
+    "y": 900,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
   },
   {
    "template": "T3",
@@ -91,7 +138,28 @@
     "acao": "Comenta HUMANO",
     "texto": "a aidealab te mostra o roteiro"
    },
-   "imagem": "cta_orig.png"
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     416,
+     568,
+     643,
+     773
+    ],
+    "caixa": [
+     239,
+     576,
+     818,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
   }
  ]
 }

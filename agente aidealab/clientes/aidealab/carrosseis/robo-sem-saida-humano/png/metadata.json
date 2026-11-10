@@ -1,0 +1,88 @@
+{
+  "carousel_id": "2026-11-robo-sem-saida-humano",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-10",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "ROBÔ SEM SAÍDA? cliente pede gente e cai no menu.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ROBÔ SEM SAÍDA? cliente pede gente e cai no menu.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE PEDE ATENDENTE. e o robô manda o menu de novo.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O CLIENTE SENTE Que ninguém ouviu o pedido Que vai repetir tudo outra vez Que a empresa não quer atender Que é mais fácil ir pro concorrente",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ROBÔ BOM SEMPRE TEM saída para um humano.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO DEIXAR A SAÍDA Frase clara: \"Quer falar com uma pessoa? É só pedir\" A palavra \"atendente\" já chama você Fora do horário, avisa quando você volta A conversa chega pra você com o histórico",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O ROBÔ RESPONDE O BÁSICO E VOCÊ fecha a venda.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "SEU ROBÔ DEIXA CHAMAR GENTE? Comenta HUMANO a aidealab te mostra o roteiro",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "O cliente pede atendente e o robô responde com o mesmo menu. Quase sempre ele não volta.\n\nRobô bom resolve o básico (horário, endereço, preço) e deixa uma saída clara para falar com gente. Dá pra combinar uma frase simples, uma palavra que chama você e um aviso de quando você responde. A conversa chega com o histórico e você confere e envia. As novas regras de SAC (decreto de 02/11, segundo o Mercado & Consumo) valem para setores regulados, não para todo pequeno negócio, mas mostram o que o cliente passa a esperar.\n\nSeu robô deixa o cliente chamar um humano? Comenta HUMANO que a aidealab te mostra o roteiro.\n\n#iaparanegocios #pequenosnegocios #whatsappbusiness #atendimento #aidealab",
+  "hashtags": [
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#atendimento",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "ambos",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://www.meioemensagem.com.br/midia/brasileiros-preferem-whatsapp-para-acompanhar-black-friday",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
