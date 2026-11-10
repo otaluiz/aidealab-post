@@ -1,4 +1,4 @@
 {
-  "atualizado_em": "2026-11-10T15:39:31+00:00",
+  "atualizado_em": "2026-11-10T18:03:16+00:00",
   "erro": "HTTP 400 em 17841472134319553: {\"error\":{\"message\":\"Unsupported get request. Object with ID '17841472134319553' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\",\"code\":100,\"type\":\"GraphMethodE"
 }
