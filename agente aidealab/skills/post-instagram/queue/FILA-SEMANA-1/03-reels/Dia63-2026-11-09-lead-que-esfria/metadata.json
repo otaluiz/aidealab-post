@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-lead-que-esfria",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 8,
+  "tema": "O cliente que pergunta o preço e some",
+  "pilar": "oferta",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 46.3,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Ele perguntou o preço na sexta à noite. Você respondeu no sábado. Ele nunca mais apareceu.\n\nQuem pergunta preço quase sempre pergunta em mais de um lugar ao mesmo tempo, e fecha com quem responde primeiro e lembra de voltar a falar. A IA cuida da parte que ninguém tem tempo de lembrar.\n\nComenta RETOMA que a gente te mostra como isso funciona.",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#atendimento",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "1qsajmD9qbilGwZmrh_OIwYaSQ3RCWZjw",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-lead-que-esfria/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-lead-que-esfria"
+}

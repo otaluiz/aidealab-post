@@ -1,0 +1,34 @@
+{
+  "carousel_id": "reel-duolingo-coruja-atropelada",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 3,
+  "tema": "O Duolingo matou o próprio mascote",
+  "pilar": "educacional",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 42.7,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "O Duolingo anunciou a morte do próprio mascote. Sem anúncio pago.\n\nEm duas semanas foram 1,7 bilhão de impressões orgânicas, segundo a empresa. E para trazer a coruja de volta, os usuários precisavam fazer lições. O Duolingo vendeu uma história que as pessoas queriam terminar.\n\nComenta CORUJA e a gente te passa ideias assim para a sua marca.",
+  "hashtags": [
+    "#marketingdigital",
+    "#pequenosnegocios",
+    "#branding",
+    "#marketingdeconteudo",
+    "#aidealab"
+  ],
+  "fontes": [
+    "https://techcrunch.com/2025/02/18/duolingo-killed-its-mascot-with-a-cybertruck-and-its-going-weirdly-well/",
+    "https://www.fastcompany.com/91313082/duolingo-dead-duo-owl-social-media-campaign"
+  ],
+  "fonte_tendencia": null,
+  "video_drive_id": "1BG9kuTEV6iO_B0bBiGk4xB29RVloj4vq",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-duolingo-coruja-atropelada/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-duolingo-coruja-atropelada"
+}

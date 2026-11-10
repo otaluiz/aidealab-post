@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-cliente-feliz-sem-estrela",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 10,
+  "tema": "Cliente feliz quase nunca avalia sozinho",
+  "pilar": "oferta",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 43.7,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Ela amou o seu trabalho, mandou até áudio agradecendo. E no Google? Nenhuma estrela.\n\nCliente feliz quase nunca avalia sozinho, e quem reclama escreve sem ninguém pedir. A IA lembra de pedir na hora certa, e o elogio aparece para quem te procura no Google.\n\nComenta ESTRELA que a gente te mostra como isso funciona.",
+  "hashtags": [
+    "#googlemeunegocio",
+    "#avaliacoes",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "1D9W88PM7Z9PyR112ETqM9zJlcDL_vo6h",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-cliente-feliz-sem-estrela/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-cliente-feliz-sem-estrela"
+}

@@ -1,0 +1,35 @@
+{
+  "carousel_id": "reel-sistemas-pix-whatsapp",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 4,
+  "tema": "Os sistemas que fazem o seu negócio vender mudaram",
+  "pilar": "tendência",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 48.9,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Os sistemas que fazem o seu negócio vender já mudaram.\n\nO Pix bateu 318 milhões de transações num único dia, segundo o Banco Central. Com o Pix Automático, o cliente autoriza uma vez e a mensalidade cai todo mês. E o WhatsApp Business ganhou uma IA que atende, mas ela só responde com o que você ensinou.\n\nComenta ZAP e a gente te passa o passo a passo para configurar.",
+  "hashtags": [
+    "#sistemas",
+    "#tecnologia",
+    "#pequenosnegocios",
+    "#gestaoempresarial",
+    "#aidealab"
+  ],
+  "fontes": [
+    "https://gironews.com/negocios/pix-registra-recorde-de-318-milhoes-de-transacoes-em-um-dia/",
+    "https://olhardigital.com.br/2025/06/04/pro/agora-e-oficial-banco-central-apresenta-o-pix-automatico/",
+    "https://www.socialhub.pro/blog/business-ai-whatsapp-2026-meta-vs-plataforma/"
+  ],
+  "fonte_tendencia": null,
+  "video_drive_id": "1vOM2_BCHE6sS4yEqF0wicit11OMWUzvR",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-sistemas-pix-whatsapp/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-sistemas-pix-whatsapp"
+}

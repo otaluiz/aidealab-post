@@ -1,0 +1,35 @@
+{
+  "carousel_id": "reel-tres-sistemas-erros-minusculos",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 7,
+  "tema": "Três sistemas gigantes, três erros minúsculos",
+  "pilar": "educacional",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 72.7,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Três sistemas gigantes. Três erros minúsculos.\n\nA NASA perdeu uma sonda de US$ 125 milhões por causa de uma unidade de medida. O Ariane 5 se autodestruiu em menos de um minuto. E uma corretora perdeu mais de US$ 460 milhões em 45 minutos, depois de 97 e-mails automáticos que ninguém leu.\n\nNa sua empresa, quem avisa antes do erro custar caro?\n\nComenta SISTEMA que a gente te chama.",
+  "hashtags": [
+    "#sistemas",
+    "#tecnologia",
+    "#pequenosnegocios",
+    "#gestaoempresarial",
+    "#aidealab"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter",
+    "https://en.wikipedia.org/wiki/Ariane_flight_V88",
+    "https://www.sec.gov/litigation/admin/2013/34-70694.pdf"
+  ],
+  "fonte_tendencia": null,
+  "video_drive_id": "1vljCbrKz_puMQ0WqsCDafFYDFEOKzwXU",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-tres-sistemas-erros-minusculos/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-tres-sistemas-erros-minusculos"
+}

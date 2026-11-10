@@ -1,0 +1,34 @@
+{
+  "carousel_id": "reel-busca-mudou-instagram-google",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 6,
+  "tema": "O jeito de ser encontrado na internet mudou",
+  "pilar": "tendência",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 49.1,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "O jeito de ser encontrado na internet mudou, e mudou rápido.\n\nO Instagram passou de 3 bilhões de pessoas por mês, segundo Zuckerberg. A pessoa agora escolhe os assuntos que quer ver mais. E no Modo IA do Google, cerca de 93% das buscas terminam sem clique, segundo a Semrush.\n\nComenta BUSCA e a gente te mostra se a IA cita a sua empresa.",
+  "hashtags": [
+    "#marketingdigital",
+    "#seo",
+    "#pequenosnegocios",
+    "#inteligenciaartificial",
+    "#aidealab"
+  ],
+  "fontes": [
+    "https://www.thestar.com.my/tech/tech-news/2025/09/25/meta-ceo-zuckerberg-says-instagram-has-grown-to-3-billion-monthly-active-users",
+    "https://www.semrush.com/blog/google-ai-mode-seo-impact/"
+  ],
+  "fonte_tendencia": null,
+  "video_drive_id": "1Q5lKbwRk_YTWTJJLVqFHqEQcu1G8Dd4g",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-busca-mudou-instagram-google/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-busca-mudou-instagram-google"
+}
