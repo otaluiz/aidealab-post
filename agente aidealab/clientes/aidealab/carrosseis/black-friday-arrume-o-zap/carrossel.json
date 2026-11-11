@@ -1,0 +1,157 @@
+{
+ "id": "2026-11-black-friday-arrume-o-zap",
+ "meta": {
+  "serie": "BLACK FRIDAY",
+  "data": "2026/11"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ARRUME O ZAP",
+    "ANTES DA BF"
+   ],
+   "emocao": {
+    "texto": "o cliente vai [chamar].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     348,
+     81,
+     911,
+     358
+    ],
+    "caixa": [
+     123,
+     92,
+     1014,
+     1255
+    ]
+   },
+   "bloco": {
+    "y": 400,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "BLACK FRIDAY",
+    "É NO ZAP."
+   ],
+   "emocao": {
+    "texto": "e a fila de mensagens [cresce].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     422,
+     836,
+     579,
+     871
+    ],
+    "caixa": [
+     419,
+     838,
+     658,
+     984
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "4 AJUSTES",
+    "{AGORA}"
+   ],
+   "lista": [
+    "Catálogo com preço e foto atualizados",
+    "Respostas prontas para as dúvidas comuns",
+    "Etiquetas para separar quem já comprou",
+    "Horário de atendimento e mensagem de ausência"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "PREÇO E FRETE",
+    "NA PONTA DA LÍNGUA"
+   ],
+   "emocao": {
+    "texto": "pergunta repetida vira {resposta pronta}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "NA SEMANA",
+    "DA {PROMOÇÃO}"
+   ],
+   "lista": [
+    "Avise a lista de clientes antes",
+    "Responda rápido: quem espera, compra no vizinho",
+    "Marque pedidos pagos e pendentes",
+    "Proteja a margem: só desconte o que dá"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A IA ANOTA E",
+    "RESPONDE O BÁSICO"
+   ],
+   "emocao": {
+    "texto": "você {fecha} a venda.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "SEU ZAP ESTÁ",
+    "PRONTO PRA BF?"
+   ],
+   "cta": {
+    "acao": "Comenta BLACK",
+    "texto": "a aidealab te manda o checklist"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     467,
+     508,
+     996,
+     600
+    ],
+    "caixa": [
+     487,
+     512,
+     977,
+     898
+    ]
+   },
+   "bloco": {
+    "y": 910,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+  "carousel_id": "2026-11-black-friday-arrume-o-zap",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-11",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "BLACK FRIDAY",
+  "tema": "ARRUME O ZAP ANTES DA BF o cliente vai chamar.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ARRUME O ZAP ANTES DA BF o cliente vai chamar.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "BLACK FRIDAY É NO ZAP. e a fila de mensagens cresce.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "4 AJUSTES AGORA Catálogo com preço e foto atualizados Respostas prontas para as dúvidas comuns Etiquetas para separar quem já comprou Horário de atendimento e mensagem de ausência",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PREÇO E FRETE NA PONTA DA LÍNGUA pergunta repetida vira resposta pronta.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "NA SEMANA DA PROMOÇÃO Avise a lista de clientes antes Responda rápido: quem espera, compra no vizinho Marque pedidos pagos e pendentes Proteja a margem: só desconte o que dá",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA ANOTA E RESPONDE O BÁSICO você fecha a venda.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "SEU ZAP ESTÁ PRONTO PRA BF? Comenta BLACK a aidealab te manda o checklist",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "A Black Friday de 2026 cai em 27/11 (data indicada por fornecedores de software; confirme antes de anunciar). Em 2 semanas o cliente começa a chamar no WhatsApp.\n\nSegundo a Sinch, 68,6% dos brasileiros preferem o WhatsApp para acompanhar a Black Friday. Quem chega com catálogo atualizado, respostas prontas, etiquetas e horário claro atende mais rápido e vende melhor.\n\nComece hoje pelos 4 ajustes do carrossel e proteja a sua margem antes de dar desconto.\n\nComenta BLACK que a aidealab te manda o checklist.\n\n#blackfriday #whatsappbusiness #pequenosnegocios #iaparanegocios #aidealab\n\nFontes: https://www.meioemensagem.com.br/midia/brasileiros-preferem-whatsapp-para-acompanhar-black-friday · https://chatarmin.com/en/blog/whatsapp-marketing-on-black-friday",
+  "hashtags": [
+    "#blackfriday",
+    "#whatsappbusiness",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://chatarmin.com/en/blog/whatsapp-marketing-on-black-friday",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
