@@ -412,10 +412,13 @@ def publish_reel(video: Path, capa_url: Optional[str], caption: str, ig_account_
     if not media_id:
         print(f"[ERROR] Sem media_id: {resp.json()}")
         return None
+    # a Meta devolve a URL de upload (versão própria); com outra versão ou sem Content-Type dá ProcessingFailedError
+    upload_url = resp.json().get("uri") or f"https://rupload.facebook.com/ig-api-upload/{GRAPH_API_VERSION}/{media_id}"
     with video.open("rb") as f:
         resp = requests.post(
-            f"https://rupload.facebook.com/ig-api-upload/{GRAPH_API_VERSION}/{media_id}",
-            headers={"Authorization": f"OAuth {INSTAGRAM_ACCESS_TOKEN}", "offset": "0", "file_size": str(video.stat().st_size)},
+            upload_url,
+            headers={"Authorization": f"OAuth {INSTAGRAM_ACCESS_TOKEN}", "offset": "0", "file_size": str(video.stat().st_size),
+                     "Content-Type": "application/octet-stream"},
             data=f,
             timeout=900,
         )
