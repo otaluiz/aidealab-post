@@ -400,8 +400,45 @@ def baixar_do_drive(file_id: str, destino: Path) -> None:
                 f.write(bloco)
 
 
+LIMITE_STORAGE_MB = 49  # o bucket do Supabase aceita até 50 MB por arquivo
+
+
+def publicar_container(media_id: str, ig_account_id: str) -> Optional[str]:
+    if not wait_for_container_ready(media_id, timeout_s=600, poll_s=10):
+        return None
+    resp = requests.post(
+        f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media_publish",
+        json={"creation_id": media_id, "access_token": INSTAGRAM_ACCESS_TOKEN},
+        timeout=60,
+    )
+    raise_checked(resp)
+    return resp.json().get("id")
+
+
+def publish_reel_por_url(video: Path, capa_url: Optional[str], caption: str, ig_account_id: str) -> Optional[str]:
+    """Reel por URL pública (vídeo original no Storage, apagado depois). Funciona mesmo quando o upload direto da Meta recusa."""
+    remoto = f"reels/_postando/{video.stem}-{datetime.now().strftime('%H%M%S')}.mp4"
+    base = f"{SUPABASE_URL}/storage/v1"
+    with video.open("rb") as f:
+        up = requests.post(f"{base}/object/{SUPABASE_BUCKET}/{remoto}", data=f, timeout=900,
+                           headers={"Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}", "Content-Type": "video/mp4", "x-upsert": "true"})
+    raise_checked(up)
+    try:
+        dados = {"media_type": "REELS", "video_url": f"{base}/object/public/{SUPABASE_BUCKET}/{remoto}", "caption": caption,
+                 "share_to_feed": True, "access_token": INSTAGRAM_ACCESS_TOKEN}
+        if capa_url:
+            dados["cover_url"] = capa_url
+        resp = requests.post(f"{GRAPH_API_HOST}/{GRAPH_API_VERSION}/{ig_account_id}/media", json=dados, timeout=60)
+        raise_checked(resp)
+        return publicar_container(resp.json()["id"], ig_account_id)
+    finally:
+        requests.delete(f"{base}/object/{SUPABASE_BUCKET}/{remoto}", headers={"Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}"}, timeout=60)
+
+
 def publish_reel(video: Path, capa_url: Optional[str], caption: str, ig_account_id: str) -> Optional[str]:
-    """Reel por upload direto (resumable): o arquivo original vai inteiro para o Instagram, sem reencode nem limite do Storage."""
+    """Reel: por URL se couber no Storage (>49 MB cai no upload direto/resumable, o original vai inteiro, sem reencode)."""
+    if video.stat().st_size <= LIMITE_STORAGE_MB * 1048576:
+        return publish_reel_por_url(video, capa_url, caption, ig_account_id)
     dados = {"media_type": "REELS", "upload_type": "resumable", "caption": caption, "share_to_feed": True,
              "access_token": INSTAGRAM_ACCESS_TOKEN}
     if capa_url:
