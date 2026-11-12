@@ -97,5 +97,5 @@ jobs:
       - name: commit do estado
         run: |
           d="agente aidealab/automation/cloud"
-          git add "$d"/estado-*.json "agente aidealab/skills/post-instagram/queue"
+          git add "$d"/estado-*.json "agente aidealab/skills/post-instagram/queue" iscas/links.json
           git diff --cached --quiet || { git commit -m "chore: estado do Drive [skip ci]" && git pull --rebase -q origin main && git push origin main; }
