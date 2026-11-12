@@ -2,22 +2,11 @@
   "ATENDIMENTO": {
     "categoria": "ATENDIMENTO",
     "titulo": "Biblioteca ATENDIMENTO",
-    "links": [
-      {
-        "titulo": "Do lead ao cliente — Sistema de atendimento e follow-up no WhatsApp",
-        "link": "https://drive.google.com/file/d/1MJ1-BlBBUWvmBYa8qwl47WZnmwMG0iu2/view"
-      }
-    ]
+    "status": "consultar_catalogo_privado"
   },
   "RETOMA": {
     "categoria": "ATENDIMENTO",
     "titulo": "Biblioteca ATENDIMENTO",
-    "links": [
-      {
-        "titulo": "Do lead ao cliente — Sistema de atendimento e follow-up no WhatsApp",
-        "link": "https://drive.google.com/file/d/1MJ1-BlBBUWvmBYa8qwl47WZnmwMG0iu2/view"
-      }
-    ],
-    "alias_de": "ATENDIMENTO"
+    "status": "consultar_catalogo_privado"
   }
 }
