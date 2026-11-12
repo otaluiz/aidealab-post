@@ -23,6 +23,7 @@ seção Reels em `skills/post-instagram/SKILL.md`). O passo do sync precisa do s
 Para a fila pegar um pacote novo antes das 7h30, faça push de qualquer commit (fora de `queue/`) numa branch: o
 `entregar.yml` roda na hora, junta na `main` e executa o sync.
 Cada pasta de reel na `FILA` precisa de `reel.mp4`, `capa.jpg` e `metadata.json` (`legenda.md` é só para leitura).
+Para repostar um reel já arquivado: tire o id dele de `queue/_arquivo-postados.json`, devolva a pasta de `09 - motion` para `06/FILA` e deixe `postado: false` no `metadata.json`.
 
 ## O que falta pra ligar (nada disso eu consigo fazer por você)
 
