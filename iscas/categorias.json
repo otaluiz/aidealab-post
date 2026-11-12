@@ -1,0 +1,128 @@
+{
+  "versao_schema": 1,
+  "perfil": "@idea_lab7",
+  "politica": "Uma biblioteca por categoria; reutilizar e versionar antes de gerar novo PDF.",
+  "categorias": {
+    "ATENDIMENTO": {
+      "palavra": "ATENDIMENTO",
+      "assuntos": [
+        "WhatsApp Business",
+        "triagem",
+        "respostas rápidas",
+        "follow-up",
+        "gestão de leads",
+        "atendimento com IA"
+      ],
+      "guias": [
+        {
+          "id": "aidealab-atendimento-2026-01",
+          "titulo": "Do lead ao cliente — Sistema de atendimento e follow-up no WhatsApp",
+          "arquivo": "AIDEALAB_Playbook_Atendimento_WhatsApp_PILOTO.pdf",
+          "status": "piloto_aguardando_aprovacao",
+          "versao": "1.0",
+          "temas_cobertos": [
+            "triagem",
+            "proposta",
+            "follow-up",
+            "mensagem de ausência",
+            "respostas rápidas",
+            "etiquetas",
+            "guardrails de IA",
+            "LGPD",
+            "métricas"
+          ]
+        }
+      ],
+      "posts_relevantes": [
+        "2026-11-09-lead-que-esfria",
+        "resposta-pronta-ou-ia",
+        "follow-up-ninguem-faz",
+        "whatsapp-ganhou-ia",
+        "feed-cheio-dm-vazia",
+        "2026-11-09-sistemas-pix-whatsapp"
+      ]
+    },
+    "SITES": {
+      "palavra": "SITES",
+      "assuntos": [
+        "site",
+        "landing page",
+        "UX",
+        "conversão",
+        "SEO técnico",
+        "performance"
+      ],
+      "guias": [],
+      "posts_relevantes": [
+        "2026-11-09-sites-que-mudaram-tudo",
+        "porta-de-entrada-do-site"
+      ]
+    },
+    "AUTOMACAO": {
+      "palavra": "AUTOMACAO",
+      "assuntos": [
+        "automação",
+        "agentes",
+        "integrações",
+        "IA aplicada",
+        "processos",
+        "guardrails"
+      ],
+      "guias": [],
+      "posts_relevantes": [
+        "agente-de-ia-aidealab",
+        "automacao-com-criterio",
+        "2026-11-09-ia-aplicada-ao-negocio"
+      ]
+    },
+    "CONTEUDO": {
+      "palavra": "CONTEUDO",
+      "assuntos": [
+        "calendário editorial",
+        "roteiro",
+        "copywriting",
+        "IA criativa",
+        "produção",
+        "marketing orgânico"
+      ],
+      "guias": [],
+      "posts_relevantes": [
+        "pergunta-do-cliente-vira-post",
+        "2026-11-09-a-disputa-pela-atencao",
+        "feed-generico-sai-do-molde"
+      ]
+    },
+    "PRESENCA": {
+      "palavra": "PRESENCA",
+      "assuntos": [
+        "Google Perfil da Empresa",
+        "reputação",
+        "SEO local",
+        "avaliações",
+        "prova social"
+      ],
+      "guias": [],
+      "posts_relevantes": [
+        "perfil-google-parado",
+        "prova-nao-e-elogio",
+        "2026-11-09-cliente-feliz-sem-estrela"
+      ]
+    },
+    "TRAFEGO": {
+      "palavra": "TRAFEGO",
+      "assuntos": [
+        "Meta Ads",
+        "Google Ads",
+        "criativos",
+        "oferta",
+        "CAC",
+        "campanhas"
+      ],
+      "guias": [],
+      "posts_relevantes": [
+        "trafego-pago-oferta-ruim",
+        "2026-11-09-trafego-pago-mudou"
+      ]
+    }
+  }
+}
