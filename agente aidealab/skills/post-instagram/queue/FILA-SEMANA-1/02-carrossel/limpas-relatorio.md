@@ -62,3 +62,9 @@
 | Dia48-views-que-nao-vendem | 1 | Supercalifragilisticexpialidocious.png | 0.97 | halftone |
 | Dia48-views-que-nao-vendem | 2 | surrealism_digital_art_ethereal_lighting_4dc0_39ca0481d4caa3e1efa5fd11fe965630.png | 0.88 | led+cloth_letras |
 | Dia48-views-que-nao-vendem | 8 | dark_surrealism_visual_art_dreamscape_73110f10a50c28fbdf9a77b7cc819a79.png | 0.59 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 1 | minimalist_sci_fi_portrait_neon_lighting_aura_2aa412ff9b26fb695254024155dc04dc.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 2 | soul_avant_garde_photography_editorial_men_solo_20261015_856fc1de9e0f2155bf80c84594c8ce14.jpg | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 8 | dark_futurism_surreal_lighting_3d_art_3df0de58d650a1e602fa8bb5b7956a34.png | 0.62 | — (abaixo do limiar, sem foto limpa) |
+| Dia70-posta-todo-dia-ninguem-chama | 1 | retro_analog_film_dark_aesthetic_portrait_d3194ffd5c1190b1b53ec550e0ce4fd1.png | 0.65 | — (abaixo do limiar, sem foto limpa) |
+| Dia70-posta-todo-dia-ninguem-chama | 2 | download (26).png | 0.99 | led+cloth_letras |
+| Dia70-posta-todo-dia-ninguem-chama | 7 | Futuristic_Figure_Portrait_88f25c7584d9e43c8b2843d0108ffe0e.png | 0.96 | halftone+cloth_letras |

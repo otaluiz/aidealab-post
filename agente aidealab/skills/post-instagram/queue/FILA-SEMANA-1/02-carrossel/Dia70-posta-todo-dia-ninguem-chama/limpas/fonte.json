@@ -1,0 +1,12 @@
+{
+  "slide-02": {
+    "banco": "download (26).png",
+    "semelhanca": 0.995,
+    "filtro": "led+cloth_letras"
+  },
+  "slide-07": {
+    "banco": "Futuristic_Figure_Portrait_88f25c7584d9e43c8b2843d0108ffe0e.png",
+    "semelhanca": 0.959,
+    "filtro": "halftone+cloth_letras"
+  }
+}
