@@ -1,0 +1,172 @@
+{
+ "id": "2026-11-google-anuncio-na-resposta-da-ia",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "wel"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ANÚNCIO",
+    "NA IA?"
+   ],
+   "emocao": {
+    "texto": "o google vai [misturar] os dois.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     394,
+     333,
+     663,
+     658
+    ],
+    "caixa": [
+     186,
+     343,
+     807,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 130,
+    "alinhar": "centro",
+    "largura": 560
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O GOOGLE VAI",
+    "MOSTRAR ANÚNCIO"
+   ],
+   "emocao": {
+    "texto": "dentro da resposta da [IA].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [
+     [
+      374,
+      933,
+      541,
+      1100
+     ]
+    ],
+    "cabeca": [
+     202,
+     187,
+     892,
+     343
+    ],
+    "caixa": [
+     176,
+     193,
+     933,
+     851
+    ]
+   },
+   "bloco": {
+    "y": 600,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE O GOOGLE",
+    "{DISSE}"
+   ],
+   "lista": [
+    "Anúncios no Modo IA chegam ao Brasil",
+    "Previsão: ainda em 2026",
+    "Sem data confirmada",
+    "Aparecem junto da resposta da IA"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A IA LÊ O QUE",
+    "VOCÊ PUBLICA"
+   ],
+   "emocao": {
+    "texto": "perfil, site e {avaliações}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE FAZER",
+    "{AGORA}"
+   ],
+   "lista": [
+    "Perfil da Empresa com horário e endereço certos",
+    "Serviços e preços escritos no site",
+    "Peça avaliação a quem já comprou",
+    "Responda o WhatsApp rápido"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "ARRUME A BASE",
+    "ANTES DE"
+   ],
+   "emocao": {
+    "texto": "pagar por {clique}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "SEU NEGÓCIO",
+    "APARECE NA IA?"
+   ],
+   "cta": {
+    "acao": "Comenta GOOGLE",
+    "texto": "a aidealab te mostra o checklist"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      325,
+      263,
+      717,
+      655
+     ]
+    ],
+    "cabeca": [
+     349,
+     139,
+     707,
+     445
+    ],
+    "caixa": [
+     117,
+     151,
+     950,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 700,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

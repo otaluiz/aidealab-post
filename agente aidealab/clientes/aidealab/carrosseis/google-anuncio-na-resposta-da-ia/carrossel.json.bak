@@ -1,0 +1,25 @@
+{
+ "id": "2026-11-google-anuncio-na-resposta-da-ia",
+ "meta": {"serie": "IA NO BALCÃO", "data": "2026/11", "personagem": "wel"},
+ "slides": [
+  {"template": "T1", "display": ["ANÚNCIO", "NA IA?"],
+   "emocao": {"texto": "o google vai [misturar] os dois.", "posicao": "depois"},
+   "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["O GOOGLE VAI", "MOSTRAR ANÚNCIO"],
+   "emocao": {"texto": "dentro da resposta da [IA].", "posicao": "depois"},
+   "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["O QUE O GOOGLE", "{DISSE}"],
+   "lista": ["Anúncios no Modo IA chegam ao Brasil", "Previsão: ainda em 2026", "Sem data confirmada", "Aparecem junto da resposta da IA"],
+   "textura": "grain"},
+  {"template": "T2", "display": ["A IA LÊ O QUE", "VOCÊ {PUBLICA}"],
+   "emocao": {"texto": "perfil, site e [avaliações].", "posicao": "depois"}},
+  {"template": "T3", "display": ["O QUE FAZER", "{AGORA}"],
+   "lista": ["Perfil da Empresa com horário e endereço certos", "Serviços e preços escritos no site", "Peça avaliação a quem já comprou", "Responda o WhatsApp rápido"],
+   "textura": "led"},
+  {"template": "T2c", "display": ["ARRUME A BASE", "ANTES DE"],
+   "emocao": {"texto": "pagar por {clique}.", "posicao": "depois"}, "textura": "led"},
+  {"template": "T4", "display": ["SEU NEGÓCIO", "APARECE NA IA?"],
+   "cta": {"acao": "Comenta GOOGLE", "texto": "a aidealab te mostra o checklist"},
+   "imagem": "cta_orig.png"}
+ ]
+}

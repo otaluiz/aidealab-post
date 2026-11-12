@@ -1,0 +1,88 @@
+{
+  "carousel_id": "2026-11-google-anuncio-na-resposta-da-ia",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-12",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "ANÚNCIO NA IA? o google vai misturar os dois.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ANÚNCIO NA IA? o google vai misturar os dois.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O GOOGLE VAI MOSTRAR ANÚNCIO dentro da resposta da IA.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O GOOGLE DISSE Anúncios no Modo IA chegam ao Brasil Previsão: ainda em 2026 Sem data confirmada Aparecem junto da resposta da IA",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA LÊ O QUE VOCÊ PUBLICA perfil, site e avaliações.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE FAZER AGORA Perfil da Empresa com horário e endereço certos Serviços e preços escritos no site Peça avaliação a quem já comprou Responda o WhatsApp rápido",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "ARRUME A BASE ANTES DE pagar por clique.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "SEU NEGÓCIO APARECE NA IA? Comenta GOOGLE a aidealab te mostra o checklist",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "O Google vai mostrar anúncios dentro das respostas da IA na busca. Segundo o blog do Google Brasil (28/10), o Modo IA recebe anúncios no Brasil ainda em 2026, sem data confirmada.\n\nPara o pequeno negócio, o primeiro passo não é pagar anúncio. É deixar o Perfil da Empresa com horário e endereço certos, escrever serviços e preços no site, pedir avaliação a quem já comprou e responder o WhatsApp rápido. Isso ajuda tanto a busca de hoje quanto a de amanhã.\n\nSeu negócio aparece quando o cliente pergunta para a IA? Comenta GOOGLE que a aidealab te mostra o checklist.\n\nFonte: Blog do Google Brasil, 28/10/2026 (blog.google/intl/pt-br/produtos/estamos-expandindo-os-anuncios-no-modo-ia-para-novos-mercados/).\n\n#iaparanegocios #pequenosnegocios #googlemeunegocio #marketinglocal #aidealab",
+  "hashtags": [
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#googlemeunegocio",
+    "#marketinglocal",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://blog.google/intl/pt-br/produtos/estamos-expandindo-os-anuncios-no-modo-ia-para-novos-mercados/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
