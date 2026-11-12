@@ -8,6 +8,7 @@ cria `04-Carrosseis/<slug>/` e envia os PNGs, o metadata.json e o legenda.md. Se
 """
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -30,6 +31,14 @@ def achar(svc, caminho):
     for nome in caminho.split("/"):
         atual = filhos(svc, atual).get(nome) or sys.exit(f"pasta não encontrada no Drive: {caminho} ({nome})")
     return atual
+
+
+def pasta_motion(svc):
+    """Pasta "NN - motion" de Clientes/aidealab (hoje 08 - motion). Acha pelo nome sem o número, para renumerar não quebrar."""
+    for nome, pid in filhos(svc, achar(svc, "Clientes/aidealab")).items():
+        if re.fullmatch(r"\d+\s*-\s*motion", nome.strip(), re.I):
+            return pid
+    sys.exit("pasta 'NN - motion' não encontrada em Clientes/aidealab no Drive")
 
 
 def sincronizar(svc, pasta, arquivos):

@@ -130,5 +130,5 @@ gerado pelo `motion_doc/empacotar_reel.py` (PC). Mover para a FILA é a aprovaç
 
 `sync_fila_cloud.py` leva o item para `queue/FILA-SEMANA-*/03-reels/Dia<N>-<slug>/`, guarda no repo só o metadata, com o id do
 vídeo no Drive e a capa no Supabase. Na hora de postar, o `publish_next.py` baixa o original do Drive e envia direto ao Instagram (upload resumable). `publish_next.py` alterna reel e carrossel (`formato` em `_ultimo-tipo.json`); sem item do
-tipo da vez, publica o outro. Depois de postado, a pasta vai para `Clientes/aidealab/09 - motion` e a capa sai do Storage.
+tipo da vez, publica o outro. Depois de postado, a pasta vai para `Clientes/aidealab/08 - motion` e a capa sai do Storage.
 Teste da alternância: `python scripts/test_intercalar.py`.

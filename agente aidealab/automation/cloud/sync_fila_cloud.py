@@ -7,7 +7,7 @@ Roda no GitHub Actions (entregar.yml), sem depender do Drive sincronizado no Win
      até MAX_PENDENTES pendentes (o publish_next intercala personagem e banco pelo campo "personagem").
   3. pasta de 06/FILA com "tipo": "reel" entra como FILA-SEMANA-1/03-reels/Dia<N>-<slug>: só o metadata vai para o
      repo, com o id do vídeo no Drive (o publish_next baixa o original na hora de postar) e a URL da capa no Supabase.
-     Depois de postado, a pasta vai para 09 - motion e a capa sai do Supabase.
+     Depois de postado, a pasta vai para 08 - motion e a capa sai do Supabase.
 Uso: sync_fila_cloud.py [--dry-run]
 """
 import io
@@ -24,7 +24,7 @@ sys.path.insert(0, str(AQUI))
 sys.path.insert(0, str(AQUI.parent))
 from drive_helper import get_service  # noqa: E402
 from googleapiclient.http import MediaIoBaseDownload, MediaIoBaseUpload  # noqa: E402
-from upload_carrosseis import achar, filhos  # noqa: E402
+from upload_carrosseis import achar, filhos, pasta_motion  # noqa: E402
 import sync_fila_drive as local  # noqa: E402  (reaproveita fila, ledger, regras e textura)
 
 DRY = "--dry-run" in sys.argv
@@ -104,7 +104,7 @@ def main():
     seis = achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar")
     subs = filhos(svc, seis)
     fila_id, postados_id = subs["FILA"], subs["POSTADOS"]
-    motion_id = filhos(svc, achar(svc, "Clientes/aidealab"))["09 - motion"]
+    motion_id = pasta_motion(svc)
     ledger = local.ler(local.LEDGER) if local.LEDGER.exists() else {"ultimo_dia": 0, "carousel_ids": []}
     arquivados = set(ledger["carousel_ids"])
 
@@ -124,7 +124,7 @@ def main():
         if meta:
             dm.update(postado=True, postado_em=meta.get("postado_em"), post_id=meta.get("post_id"), status="postado")
         destino = motion_id if dm.get("tipo") == "reel" else postados_id
-        print(f"POSTADO  {nome} -> {'09 - motion' if destino == motion_id else 'POSTADOS'}")
+        print(f"POSTADO  {nome} -> {'08 - motion' if destino == motion_id else 'POSTADOS'}")
         if DRY:
             return
         if meta:

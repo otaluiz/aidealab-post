@@ -1,7 +1,7 @@
-name: aidealab - motion -> drive (09 - motion)
+name: aidealab - motion -> drive (08 - motion)
 
 # A sessão de motion do Claude na nuvem dá push em `motion-entrega` com motion-entrega/<Nome>/*.mp4|*.wav.
-# Este job sobe tudo para Clientes/aidealab/09 - motion e apaga a branch (os vídeos não entram na main).
+# Este job sobe tudo para Clientes/aidealab/08 - motion e apaga a branch (os vídeos não entram na main).
 on:
   push:
     branches: [motion-entrega]
