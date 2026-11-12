@@ -1,0 +1,35 @@
+{
+  "carousel_id": "reel-edicao-que-engana-o-cerebro",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 11,
+  "tema": "Há cem anos o cinema engana o seu cérebro",
+  "pilar": "educacional",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 62.6,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Faz mais de cem anos que o cinema engana o seu cérebro com uma tesoura.\n\nO rosto do ator era sempre igual, e o público elogiou a atuação. Quem atuou foi o corte. Para Walter Murch, editor de Apocalypse Now, a emoção vale 51% de um corte, e a continuidade perfeita só 4%.\n\nO vídeo da sua empresa faz sentir alguma coisa ou passa batido?\n\nComenta VÍDEO que a gente te chama.",
+  "hashtags": [
+    "#edicaodevideo",
+    "#videomarketing",
+    "#pequenosnegocios",
+    "#reels",
+    "#aidealab"
+  ],
+  "fontes": [
+    "https://en.wikipedia.org/wiki/Kuleshov_effect",
+    "https://en.wikipedia.org/wiki/In_the_Blink_of_an_Eye_(Murch_book)",
+    "https://en.wikipedia.org/wiki/Georges_M%C3%A9li%C3%A8s"
+  ],
+  "fonte_tendencia": null,
+  "video_drive_id": "1YyVHGgE8q6y2RdGWXz_EzD0WEGyhNvkX",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-edicao-que-engana-o-cerebro/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-edicao-que-engana-o-cerebro"
+}
