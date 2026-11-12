@@ -99,6 +99,9 @@ def render_do_repo(alvo, meta, png):
     print(f"         vídeos do render do repo ({png.parent.name})")
 
 
+MAX_REELS_PENDENTES = 15  # reels têm limite próprio (só o metadata vai para o repo)
+
+
 def main():
     svc = get_service()
     seis = achar(svc, "Clientes/aidealab/06-Aprovados-para-Postar")
@@ -175,7 +178,7 @@ def main():
     for nome, pid, fs, meta in novos:
         if meta.get("tipo") == "reel":
             motivo = reel_invalido(fs, meta)
-            if motivo or pendentes_reels >= local.MAX_PENDENTES:
+            if motivo or pendentes_reels >= MAX_REELS_PENDENTES:
                 print(f"PULA     {nome}: {motivo or 'limite de reels pendentes'}")
                 continue
             alvo = local.DESTINO.parent / "03-reels" / f"Dia{prox}-{local.slug(nome)}"
