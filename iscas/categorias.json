@@ -17,8 +17,8 @@
         {
           "id": "aidealab-atendimento-2026-01",
           "titulo": "Do lead ao cliente — Sistema de atendimento e follow-up no WhatsApp",
-          "arquivo": "AIDEALAB_Playbook_Atendimento_WhatsApp_PILOTO.pdf",
-          "status": "piloto_aguardando_aprovacao",
+          "arquivo": "AIDEALAB_Playbook_Atendimento_WhatsApp.pdf",
+          "status": "aprovado",
           "versao": "1.0",
           "temas_cobertos": [
             "triagem",
@@ -30,7 +30,9 @@
             "guardrails de IA",
             "LGPD",
             "métricas"
-          ]
+          ],
+          "drive_file_id": "1MJ1-BlBBUWvmBYa8qwl47WZnmwMG0iu2",
+          "link": "https://drive.google.com/file/d/1MJ1-BlBBUWvmBYa8qwl47WZnmwMG0iu2/view"
         }
       ],
       "posts_relevantes": [
@@ -40,6 +42,9 @@
         "whatsapp-ganhou-ia",
         "feed-cheio-dm-vazia",
         "2026-11-09-sistemas-pix-whatsapp"
+      ],
+      "aliases": [
+        "RETOMA"
       ]
     },
     "SITES": {
