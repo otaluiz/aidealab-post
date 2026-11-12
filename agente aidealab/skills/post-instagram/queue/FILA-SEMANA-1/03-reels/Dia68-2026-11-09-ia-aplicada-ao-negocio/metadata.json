@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-ia-aplicada-ao-negocio",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 12,
+  "tema": "IA aplicada ao que o seu negócio já sabe",
+  "pilar": "oferta",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 49.2,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Seu negócio gera dados. E depois?\n\nInformação demais, direção de menos. A IA organiza o que o seu negócio já sabe, deixa as rotinas no automático e transforma dados em decisão, com as pessoas nos momentos que importam.\n\nComenta IA e a gente te mostra por onde começar.",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#pequenosnegocios",
+    "#automacao",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "1c7_IgSwh40XZxbdzdExbgb2b5_UFj0ja",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-ia-aplicada-ao-negocio/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-ia-aplicada-ao-negocio"
+}

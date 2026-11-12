@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-a-disputa-pela-atencao",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-09",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 13,
+  "tema": "A maior disputa do mercado é pela atenção",
+  "pilar": "oferta",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 81.0,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "A maior disputa do mercado não acontece pelo preço. Acontece pela atenção.\n\nSua marca tem poucos segundos para ser percebida. A aidealab cria estratégia, conteúdo, motion design, tráfego pago, sites e automação com IA para ela ser vista, entendida e lembrada.\n\nComenta ATENÇÃO que a gente te chama.",
+  "hashtags": [
+    "#marketingdigital",
+    "#branding",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "1z43mzMwL96ci42OFFAGoNio-qIhfKlvE",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-09-a-disputa-pela-atencao/capa.jpg",
+  "pasta_storage": "reels/2026-11-09-a-disputa-pela-atencao"
+}
