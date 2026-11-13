@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-13T04:05:58+00:00",
+  "atualizado_em": "2026-11-13T04:07:58+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -211,6 +211,12 @@
         "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5SODd4eERvNVNFbEVsLVZKYndNY0k4MVlta0h2VFFSeXZCOW40bVhYZE5DVjljREY2SUR3dFJaWktOTVBsSGthZkVxU0x4OWRzRWdLYTFNbnY5UUJyQUliTklaTG1lemlwdVpIdkw5UF9MVzZh?oc=5"
       },
       {
+        "titulo": "Gemini chega ao Apple CarPlay com conversas por voz - MaisTecnologia",
+        "fonte": "MaisTecnologia",
+        "data": "Thu, 12 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQUTZUakFFamc1dW5KX0hHWmxqR3AzVkdIZTlMVFlzSnc1dTVwa3BYLUk4S3BrWDBqb1pIc2FTSGpQQllRckluMG1qU3Y3Q1JVblRzSTdMUFFyYjBwNmhaNFR1dEl4LU9vMjJtc0lWanhINVpTcVZwcEVMSlJlOFhmeVdsVkM3WVN6dXJZ?oc=5"
+      },
+      {
         "titulo": "Recursos do Gemini Intelligence chegam a celulares Motorola com novidades - Canaltech",
         "fonte": "Canaltech",
         "data": "Wed, 11 Nov 2026",
@@ -221,12 +227,6 @@
         "fonte": "Times Brasil | CNBC",
         "data": "Thu, 12 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVktIY3gxWWtqM1RiVWZCOGRPcXdCV0pTVjRPRDhlaDZjdXJ1YVBLVmVKUmFnTS1MWmNuRzctb3kzWGJGWmdYV2xBZFB2Z3diZlREQmJidkhEVTREZlRYUDNZeC1iaVc0QWZINjU4c2swS3JhODFobC1lcVNOY0VPM0dtcnNOUU5sOEFUc1hXY2pGMW9PZVZENHh0aW5FRUlMeHlXcDJ0WHhYS3FNTUM5WnUxcmFZcUhkVzZIa1UwS2Q3ZVA4cDhYcGlXQVdnZTg?oc=5"
-      },
-      {
-        "titulo": "Gemini chega ao Apple CarPlay com conversas por voz - MaisTecnologia",
-        "fonte": "MaisTecnologia",
-        "data": "Thu, 12 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQUTZUakFFamc1dW5KX0hHWmxqR3AzVkdIZTlMVFlzSnc1dTVwa3BYLUk4S3BrWDBqb1pIc2FTSGpQQllRckluMG1qU3Y3Q1JVblRzSTdMUFFyYjBwNmhaNFR1dEl4LU9vMjJtc0lWanhINVpTcVZwcEVMSlJlOFhmeVdsVkM3WVN6dXJZ?oc=5"
       }
     ],
     "Meta IA anúncios empresas": [
@@ -272,13 +272,13 @@
   "google_trends_br": [
     "enzo fittipaldi",
     "ps5 pro",
+    "ausar thompson",
     "nova variante covid",
     "ruby rose",
     "erling haaland",
     "the body netflix",
     "ryan gosling",
     "jade picon",
-    "aj dybantsa",
-    "alex sarr"
+    "aj dybantsa"
   ]
 }
