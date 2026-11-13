@@ -1,0 +1,27 @@
+name: DM - corrigir metadados dos Reels nas duas contas
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/dm-sync-reels-metadata.yml"
+      - "agente aidealab/automation/cloud/sync_reels_dm_metadata.py"
+      - "iscas/reels-2026-11-map.json"
+permissions:
+  contents: read
+concurrency: dm-metadata-sync
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar Google Drive SDK
+        run: pip install -q "google-api-python-client>=2.100,<3" "google-auth>=2.25,<3"
+      - name: Corrigir dm.link antigo em metadados do Drive sem alterar publicações
+        env:
+          GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
+          GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
+          GOOGLE_DRIVE_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_REFRESH_TOKEN }}
+        run: python "agente aidealab/automation/cloud/sync_reels_dm_metadata.py" --apply
