@@ -1,0 +1,173 @@
+{
+ "id": "2026-11-cliente-que-nao-paga",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "luizota"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "FIADO",
+    "ESQUECIDO?"
+   ],
+   "emocao": {
+    "texto": "e cobrar toda vez é [você].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      564,
+      676,
+      848,
+      960
+     ]
+    ],
+    "cabeca": [
+     596,
+     630,
+     805,
+     821
+    ],
+    "caixa": [
+     433,
+     638,
+     1017,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE",
+    "ESQUECEU."
+   ],
+   "emocao": {
+    "texto": "e você tem vergonha de [lembrar].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     335,
+     0,
+     872,
+     260
+    ],
+    "caixa": [
+     355,
+     0,
+     856,
+     1137
+    ]
+   },
+   "bloco": {
+    "y": 400,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A COBRANÇA",
+    "{CUSTA}"
+   ],
+   "lista": [
+    "Tempo atrás de quem deve",
+    "Mensagem chata de mandar",
+    "Caixa curto no fim do mês",
+    "Cliente bom tratado como devedor"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "LEMBRAR",
+    "NÃO É COBRAR."
+   ],
+   "emocao": {
+    "texto": "um {lembrete} educado resolve.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO A IA",
+    "{LEMBRA}"
+   ],
+   "lista": [
+    "Você define o prazo de cada cliente",
+    "Ela escreve a mensagem no seu tom",
+    "Avisa antes, no dia e depois do vencimento",
+    "Você revisa o texto antes de enviar"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A IA LEMBRA.",
+    "VOCÊ CONFERE O"
+   ],
+   "emocao": {
+    "texto": "{pagamento}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUEM DEVE",
+    "SEMPRE SOME?"
+   ],
+   "cta": {
+    "acao": "Comenta AUTOMACAO",
+    "texto": "a aidealab te mostra o caminho"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      315,
+      507,
+      468,
+      660
+     ]
+    ],
+    "cabeca": [
+     309,
+     468,
+     771,
+     697
+    ],
+    "caixa": [
+     243,
+     477,
+     773,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 800,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

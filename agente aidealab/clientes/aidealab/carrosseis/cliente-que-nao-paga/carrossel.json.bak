@@ -1,0 +1,97 @@
+{
+ "id": "2026-11-cliente-que-nao-paga",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "luizota"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "FIADO",
+    "ESQUECIDO?"
+   ],
+   "emocao": {
+    "texto": "e cobrar toda vez é [você].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE",
+    "ESQUECEU."
+   ],
+   "emocao": {
+    "texto": "e você tem vergonha de [lembrar].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A COBRANÇA",
+    "{CUSTA}"
+   ],
+   "lista": [
+    "Tempo atrás de quem deve",
+    "Mensagem chata de mandar",
+    "Caixa curto no fim do mês",
+    "Cliente bom tratado como devedor"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "LEMBRAR",
+    "NÃO É COBRAR."
+   ],
+   "emocao": {
+    "texto": "um {lembrete} educado resolve.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO A IA",
+    "{LEMBRA}"
+   ],
+   "lista": [
+    "Você define o prazo de cada cliente",
+    "Ela escreve a mensagem no seu tom",
+    "Avisa antes, no dia e depois do vencimento",
+    "Você revisa o texto antes de enviar"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A IA LEMBRA.",
+    "VOCÊ CONFERE O"
+   ],
+   "emocao": {
+    "texto": "{pagamento}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUEM DEVE",
+    "SEMPRE SOME?"
+   ],
+   "cta": {
+    "acao": "Comenta AUTOMACAO",
+    "texto": "a aidealab te mostra o caminho"
+   },
+   "imagem": "cta_orig.png"
+  }
+ ]
+}

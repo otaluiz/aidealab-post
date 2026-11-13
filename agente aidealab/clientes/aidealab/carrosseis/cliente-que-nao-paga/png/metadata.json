@@ -1,0 +1,88 @@
+{
+  "carousel_id": "2026-11-cliente-que-nao-paga",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-13",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "FIADO ESQUECIDO? e cobrar toda vez é você.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "FIADO ESQUECIDO? e cobrar toda vez é você.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE ESQUECEU. e você tem vergonha de lembrar.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A COBRANÇA CUSTA Tempo atrás de quem deve Mensagem chata de mandar Caixa curto no fim do mês Cliente bom tratado como devedor",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "LEMBRAR NÃO É COBRAR. um lembrete educado resolve.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO A IA LEMBRA Você define o prazo de cada cliente Ela escreve a mensagem no seu tom Avisa antes, no dia e depois do vencimento Você revisa o texto antes de enviar",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA LEMBRA. VOCÊ CONFERE O pagamento.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUEM DEVE SEMPRE SOME? Comenta AUTOMACAO a aidealab te mostra o caminho",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Cliente que atrasa o pagamento quase nunca é mau pagador. Na maioria das vezes, esqueceu. E você, para não constranger, deixa passar.\n\nDá para resolver com um lembrete educado, no tom da sua marca. Você define o prazo de cada cliente, a IA escreve a mensagem e avisa antes, no dia e depois do vencimento. Você revisa o texto e confere o pagamento. Ela não decide nada por você: só lembra.\n\nVocê cobra sozinho hoje? Comenta AUTOMACAO que a aidealab te mostra o caminho.\n\n#iaparanegocios #pequenosnegocios #automacao #whatsappbusiness #aidealab",
+  "hashtags": [
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#automacao",
+    "#whatsappbusiness",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": null,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
