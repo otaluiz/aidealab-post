@@ -1,7 +1,7 @@
 {
   "versao_schema": 1,
   "perfil": "@idea_lab7",
-  "politica": "Uma biblioteca por categoria; reutilizar e versionar antes de gerar novo PDF.",
+  "politica": "Biblioteca por categoria e por post: guias pesquisados e aprovados; reutilizar mesmo PDF nos dois perfis. Otalogia deve referenciar os mesmos arquivos da pasta aidealab, sem cópia.",
   "categorias": {
     "ATENDIMENTO": {
       "palavra": "ATENDIMENTO",
@@ -31,6 +31,24 @@
             "LGPD",
             "métricas"
           ]
+        },
+        {
+          "id": "reels-2026-11-zap",
+          "titulo": "Guia premium: ZAP",
+          "arquivo": "AIDEALAB_DM_ZAP_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-sistemas-pix-whatsapp"
+          ],
+          "temas_cobertos": [
+            "Pix Automático",
+            "WhatsApp",
+            "cobranças"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
         }
       ],
       "posts_relevantes": [
@@ -39,10 +57,12 @@
         "follow-up-ninguem-faz",
         "whatsapp-ganhou-ia",
         "feed-cheio-dm-vazia",
-        "2026-11-09-sistemas-pix-whatsapp"
+        "2026-11-09-sistemas-pix-whatsapp",
+        "reel-sistemas-pix-whatsapp"
       ],
       "aliases": [
-        "RETOMA"
+        "RETOMA",
+        "ZAP"
       ]
     },
     "SITES": {
@@ -55,10 +75,33 @@
         "SEO técnico",
         "performance"
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "reels-2026-11-site",
+          "titulo": "Guia premium: SITE",
+          "arquivo": "AIDEALAB_DM_SITE_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-sites-que-mudaram-tudo"
+          ],
+          "temas_cobertos": [
+            "UX",
+            "conversão",
+            "Core Web Vitals"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
       "posts_relevantes": [
         "2026-11-09-sites-que-mudaram-tudo",
-        "porta-de-entrada-do-site"
+        "porta-de-entrada-do-site",
+        "reel-sites-que-mudaram-tudo"
+      ],
+      "aliases": [
+        "SITE"
       ]
     },
     "AUTOMACAO": {
@@ -71,11 +114,56 @@
         "processos",
         "guardrails"
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "reels-2026-11-aplicada",
+          "titulo": "Guia premium: APLICADA",
+          "arquivo": "AIDEALAB_DM_APLICADA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-ia-aplicada-ao-negocio"
+          ],
+          "temas_cobertos": [
+            "governança IA",
+            "fontes",
+            "testes",
+            "processos"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        },
+        {
+          "id": "reels-2026-11-sistema",
+          "titulo": "Guia premium: SISTEMA",
+          "arquivo": "AIDEALAB_DM_SISTEMA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-tres-sistemas-erros-minusculos"
+          ],
+          "temas_cobertos": [
+            "riscos",
+            "sistemas",
+            "alertas",
+            "validação"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
       "posts_relevantes": [
         "agente-de-ia-aidealab",
         "automacao-com-criterio",
-        "2026-11-09-ia-aplicada-ao-negocio"
+        "2026-11-09-ia-aplicada-ao-negocio",
+        "reel-ia-aplicada-ao-negocio",
+        "reel-tres-sistemas-erros-minusculos"
+      ],
+      "aliases": [
+        "APLICADA",
+        "SISTEMA"
       ]
     },
     "CONTEUDO": {
@@ -88,11 +176,59 @@
         "produção",
         "marketing orgânico"
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "reels-2026-11-atencao",
+          "titulo": "Guia premium: ATENCAO",
+          "arquivo": "AIDEALAB_DM_ATENCAO_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-a-disputa-pela-atencao"
+          ],
+          "temas_cobertos": [
+            "mensagem",
+            "posicionamento",
+            "atenção",
+            "CTA"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        },
+        {
+          "id": "reels-2026-11-copo_coruja",
+          "titulo": "Guia premium: COPO_CORUJA",
+          "arquivo": "AIDEALAB_DM_COPO_CORUJA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-stanley-copo-no-incendio",
+            "reel-duolingo-coruja-atropelada"
+          ],
+          "temas_cobertos": [
+            "storytelling",
+            "viralização",
+            "marca",
+            "comunidade"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
       "posts_relevantes": [
         "pergunta-do-cliente-vira-post",
         "2026-11-09-a-disputa-pela-atencao",
-        "feed-generico-sai-do-molde"
+        "feed-generico-sai-do-molde",
+        "reel-a-disputa-pela-atencao",
+        "reel-stanley-copo-no-incendio",
+        "reel-duolingo-coruja-atropelada"
+      ],
+      "aliases": [
+        "ATENCAO",
+        "COPO",
+        "CORUJA"
       ]
     },
     "PRESENCA": {
@@ -104,11 +240,55 @@
         "avaliações",
         "prova social"
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "reels-2026-11-estrela",
+          "titulo": "Guia premium: ESTRELA",
+          "arquivo": "AIDEALAB_DM_ESTRELA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-cliente-feliz-sem-estrela"
+          ],
+          "temas_cobertos": [
+            "avaliações",
+            "Google Perfil da Empresa",
+            "reputação"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        },
+        {
+          "id": "reels-2026-11-busca",
+          "titulo": "Guia premium: BUSCA",
+          "arquivo": "AIDEALAB_DM_BUSCA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-busca-mudou-instagram-google"
+          ],
+          "temas_cobertos": [
+            "SEO",
+            "busca",
+            "descoberta",
+            "conteúdo"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
       "posts_relevantes": [
         "perfil-google-parado",
         "prova-nao-e-elogio",
-        "2026-11-09-cliente-feliz-sem-estrela"
+        "2026-11-09-cliente-feliz-sem-estrela",
+        "reel-cliente-feliz-sem-estrela",
+        "reel-busca-mudou-instagram-google"
+      ],
+      "aliases": [
+        "ESTRELA",
+        "BUSCA"
       ]
     },
     "TRAFEGO": {
@@ -121,10 +301,102 @@
         "CAC",
         "campanhas"
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "reels-2026-11-oferta",
+          "titulo": "Guia premium: OFERTA",
+          "arquivo": "AIDEALAB_DM_OFERTA_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-trafego-pago-mudou"
+          ],
+          "temas_cobertos": [
+            "anúncios",
+            "oferta",
+            "CAC"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
       "posts_relevantes": [
         "trafego-pago-oferta-ruim",
-        "2026-11-09-trafego-pago-mudou"
+        "2026-11-09-trafego-pago-mudou",
+        "reel-trafego-pago-mudou"
+      ],
+      "aliases": [
+        "OFERTA"
+      ]
+    },
+    "EDICAO": {
+      "palavra": "EDICAO",
+      "assuntos": [
+        "edição",
+        "motion design",
+        "storytelling visual"
+      ],
+      "guias": [
+        {
+          "id": "reels-2026-11-video",
+          "titulo": "Guia premium: VIDEO",
+          "arquivo": "AIDEALAB_DM_VIDEO_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-edicao-que-engana-o-cerebro"
+          ],
+          "temas_cobertos": [
+            "edição",
+            "emoção",
+            "storytelling",
+            "cortes"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
+      "posts_relevantes": [
+        "reel-edicao-que-engana-o-cerebro"
+      ],
+      "aliases": [
+        "VIDEO"
+      ]
+    },
+    "VALIDACAO": {
+      "palavra": "VALIDACAO",
+      "assuntos": [
+        "MVP",
+        "validação de demanda",
+        "experimentação comercial"
+      ],
+      "guias": [
+        {
+          "id": "reels-2026-11-teste",
+          "titulo": "Guia premium: TESTE",
+          "arquivo": "AIDEALAB_DM_TESTE_GUIA_PREMIUM.pdf",
+          "status": "aprovado",
+          "versao": "1.0",
+          "reels": [
+            "reel-liquid-death-agua-em-lata"
+          ],
+          "temas_cobertos": [
+            "testes de demanda",
+            "MVP",
+            "experimentos"
+          ],
+          "compartilhado_com": [
+            "otalogia"
+          ]
+        }
+      ],
+      "posts_relevantes": [
+        "reel-liquid-death-agua-em-lata"
+      ],
+      "aliases": [
+        "TESTE"
       ]
     }
   }
