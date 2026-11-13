@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-13T04:10:03+00:00",
+  "atualizado_em": "2026-11-13T04:45:02+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
@@ -11,10 +11,10 @@
   },
   "conta_28d": {
     "reach": 409,
-    "profile_views": 38,
+    "profile_views": 39,
     "website_clicks": 0,
     "follows_and_unfollows": null,
-    "accounts_engaged": 27
+    "accounts_engaged": 28
   },
   "posts": [
     {
@@ -23,17 +23,17 @@
       "gancho": "O cliente pediu orçamento, sumiu, e ninguém voltou a falar com ele. Quase sempre não foi desinteresse: foi falta de lembrete.",
       "link": "https://www.instagram.com/p/DfpEfJbij1e/",
       "likes": 4,
-      "comments": 0,
+      "comments": 1,
       "insights": {
         "reach": 28,
         "saved": 0,
         "shares": 0,
-        "views": 54,
-        "total_interactions": 4,
+        "views": 57,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 14.29
+      "score": 21.43
     },
     {
       "data": "2026-11-11",
@@ -58,12 +58,12 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 43,
+        "reach": 44,
         "saved": 0,
         "shares": 1,
         "total_interactions": 6
       },
-      "score": 18.6
+      "score": 18.18
     },
     {
       "data": "2026-11-09",
@@ -782,8 +782,8 @@
       "data": "2026-11-10",
       "tipo": "REELS",
       "gancho": "A maior disputa do mercado não é pelo preço. É pela atenção. 🎯",
-      "score": 18.6,
-      "alcance": 43
+      "score": 18.18,
+      "alcance": 44
     },
     {
       "data": "2026-10-16",
