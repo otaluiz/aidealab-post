@@ -1,0 +1,155 @@
+{
+ "id": "2026-11-antes-da-ia-automatize-o-basico",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ANTES DA IA,",
+    "ARRUME O BÁSICO"
+   ],
+   "emocao": {
+    "texto": "respostas [prontas] antes.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     159,
+     597,
+     919,
+     757
+    ],
+    "caixa": [
+     188,
+     603,
+     892,
+     1277
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE PERGUNTA",
+    "O MESMO TODO DIA"
+   ],
+   "emocao": {
+    "texto": "e você [digita] de novo.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     0,
+     1111,
+     402,
+     1188
+    ],
+    "caixa": [
+     0,
+     1114,
+     387,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "4 RESPOSTAS",
+    "{PRONTAS}"
+   ],
+   "lista": [
+    "Horário e endereço",
+    "Preço e formas de pagamento",
+    "Prazo de entrega e frete",
+    "Mensagem fora do horário"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "SALVE NO",
+    "WHATSAPP BUSINESS"
+   ],
+   "emocao": {
+    "texto": "respostas rápidas: uma barra e {pronto}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "SÓ DEPOIS",
+    "VEM A {IA}"
+   ],
+   "lista": [
+    "Veja a dúvida que mais se repete",
+    "Peça à IA uma versão melhor",
+    "Você confere e envia",
+    "Ajuste o texto uma vez por mês"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "COM A BASE ARRUMADA"
+   ],
+   "emocao": {
+    "texto": "a IA {ajuda} de verdade.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUAL RESPOSTA",
+    "VOCÊ MAIS REPETE?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te explica por onde começar"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     216,
+     565,
+     1013,
+     719
+    ],
+    "caixa": [
+     85,
+     571,
+     984,
+     1219
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  }
+ ]
+}

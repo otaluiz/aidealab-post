@@ -1,0 +1,89 @@
+{
+  "carousel_id": "2026-11-antes-da-ia-automatize-o-basico",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-14",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "ANTES DA IA, ARRUME O BÁSICO respostas prontas antes.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ANTES DA IA, ARRUME O BÁSICO respostas prontas antes.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE PERGUNTA O MESMO TODO DIA e você digita de novo.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "4 RESPOSTAS PRONTAS Horário e endereço Preço e formas de pagamento Prazo de entrega e frete Mensagem fora do horário",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "SALVE NO WHATSAPP BUSINESS respostas rápidas: uma barra e pronto.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "SÓ DEPOIS VEM A IA Veja a dúvida que mais se repete Peça à IA uma versão melhor Você confere e envia Ajuste o texto uma vez por mês",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "COM A BASE ARRUMADA a IA ajuda de verdade.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUAL RESPOSTA VOCÊ MAIS REPETE? Comenta ATENDIMENTO a aidealab te explica por onde começar",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Antes de pensar em IA, arrume as respostas que você digita todo dia no WhatsApp.\n\nHorário e endereço, preço e formas de pagamento, prazo de entrega e mensagem fora do horário: no WhatsApp Business dá pra salvar cada uma como resposta rápida e chamar com uma barra. Depois, com a base pronta, a IA ajuda a melhorar o texto. Você confere e envia.\n\nQual resposta você mais repete hoje?\n\nComenta ATENDIMENTO que a aidealab te explica por onde começar.\n\n#whatsappbusiness #pequenosnegocios #iaparanegocios #atendimento #aidealab",
+  "hashtags": [
+    "#whatsappbusiness",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#atendimento",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://www.meioemensagem.com.br/midia/brasileiros-preferem-whatsapp-para-acompanhar-black-friday",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
