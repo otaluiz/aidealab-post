@@ -1,0 +1,88 @@
+{
+  "carousel_id": "2026-11-semana-de-conteudo-em-1-hora",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-15",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "SEM TEMPO PRA POSTAR? a ia monta a semana.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEM TEMPO PRA POSTAR? a ia monta a semana.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "VOCÊ ABRE O INSTAGRAM E não sabe o que postar.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "ONDE O TEMPO SOME Pensar no que falar Escrever a legenda do zero Lembrar de postar na hora Montar tudo de novo na semana seguinte",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA ORGANIZA A SEMANA. você reescreve a primeira frase.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A AIDEALAB ENTREGA Calendário da semana com temas do seu negócio Rascunho de legenda para cada post Ideias tiradas das perguntas dos seus clientes Revisão final sempre com você",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "POST COM A SUA VOZ, NÃO COM A voz de robô.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER A SEMANA PRONTA? Comenta CONTEUDO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Você abre o Instagram e não sabe o que postar? O tempo some em pensar no assunto, escrever a legenda do zero e montar tudo de novo na semana seguinte.\n\nA IA organiza a semana: sugere temas ligados ao seu negócio, escreve o rascunho de cada legenda e deixa o calendário pronto. Você reescreve a primeira frase para ficar com a sua voz e revisa antes de publicar.\n\nA aidealab monta esse processo com você: calendário, rascunhos e ideias tiradas das perguntas dos seus clientes, sempre com revisão final sua.\n\nQual parte de postar mais te toma tempo hoje? Comenta CONTEUDO que a aidealab te responde.\n\n#iaparanegocios #pequenosnegocios #marketinglocal #conteudo #aidealab",
+  "hashtags": [
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#marketinglocal",
+    "#conteudo",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "pilar": "oferta",
+  "fonte_tendencia": null,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

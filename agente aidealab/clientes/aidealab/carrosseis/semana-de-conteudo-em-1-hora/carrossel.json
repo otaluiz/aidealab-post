@@ -1,0 +1,175 @@
+{
+ "id": "2026-11-semana-de-conteudo-em-1-hora",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "wel"
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "SEM TEMPO",
+    "PRA POSTAR?"
+   ],
+   "emocao": {
+    "texto": "a ia monta a [semana].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      152,
+      495,
+      483,
+      826
+     ]
+    ],
+    "cabeca": [
+     153,
+     396,
+     493,
+     642
+    ],
+    "caixa": [
+     43,
+     406,
+     931,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 140,
+    "alinhar": "esquerda",
+    "largura": 720
+   },
+   "recorte": "capa_recorte.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "VOCÊ ABRE O",
+    "INSTAGRAM E"
+   ],
+   "emocao": {
+    "texto": "não sabe o que [postar].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     252,
+     0,
+     823,
+     298
+    ],
+    "caixa": [
+     267,
+     5,
+     810,
+     1286
+    ]
+   },
+   "bloco": {
+    "y": 400,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "ONDE O TEMPO",
+    "{SOME}"
+   ],
+   "lista": [
+    "Pensar no que falar",
+    "Escrever a legenda do zero",
+    "Lembrar de postar na hora",
+    "Montar tudo de novo na semana seguinte"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A IA ORGANIZA",
+    "A SEMANA."
+   ],
+   "emocao": {
+    "texto": "você reescreve a {primeira} frase.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A AIDEALAB",
+    "{ENTREGA}"
+   ],
+   "lista": [
+    "Calendário da semana com temas do seu negócio",
+    "Rascunho de legenda para cada post",
+    "Ideias tiradas das perguntas dos seus clientes",
+    "Revisão final sempre com você"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "POST COM A SUA",
+    "VOZ, NÃO COM A"
+   ],
+   "emocao": {
+    "texto": "voz de {robô}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER A SEMANA",
+    "PRONTA?"
+   ],
+   "cta": {
+    "acao": "Comenta CONTEUDO",
+    "texto": "a aidealab te responde"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      271,
+      409,
+      640,
+      778
+     ]
+    ],
+    "cabeca": [
+     329,
+     353,
+     601,
+     609
+    ],
+    "caixa": [
+     226,
+     363,
+     923,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "recorte": "cta_recorte.png"
+  }
+ ]
+}

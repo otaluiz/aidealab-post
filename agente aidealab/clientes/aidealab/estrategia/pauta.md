@@ -33,7 +33,7 @@ passo a passo, sem hype.
 - [x] WhatsApp Business com IA: 5 coisas para arrumar antes de ligar (whatsapp-ganhou-ia)
 - [ ] Mito ou verdade: 5 frases sobre IA no pequeno negócio
 - [ ] O Google agora responde por você: seu negócio aparece?
-- [ ] A semana de conteúdo em 1 hora com IA (você reescreve a 1ª frase)
+- [x] A semana de conteúdo em 1 hora com IA (você reescreve a 1ª frase) (semana-de-conteudo-em-1-hora)
 - [ ] Para quem é a aidealab (manifesto, para fixar)
 - [ ] Catálogo do WhatsApp que vende sozinho
 - [ ] Avaliação no Google: como pedir sem constranger
