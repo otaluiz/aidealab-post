@@ -1,39 +1,54 @@
 {
-  "atualizado_em": "2026-11-15T11:25:56+00:00",
+  "atualizado_em": "2026-11-15T17:20:00+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 429,
     "follows_count": 224,
-    "media_count": 59,
+    "media_count": 60,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 386,
-    "profile_views": 40,
+    "reach": 415,
+    "profile_views": 41,
     "website_clicks": 0,
     "follows_and_unfollows": null,
-    "accounts_engaged": 22
+    "accounts_engaged": 26
   },
   "posts": [
+    {
+      "data": "2026-11-15",
+      "tipo": "REELS",
+      "gancho": "Três mudanças no tráfego pago que quase ninguém percebeu.",
+      "link": "https://www.instagram.com/reel/DfwuNGyjQLe/",
+      "likes": 3,
+      "comments": 0,
+      "insights": {
+        "reach": 31,
+        "saved": 1,
+        "shares": 0,
+        "total_interactions": 4
+      },
+      "score": 16.13
+    },
     {
       "data": "2026-11-14",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Antes de entrar, o cliente procura no Google. E o que ele encontra? Foto antiga, horário errado, avaliação sem resposta.",
       "link": "https://www.instagram.com/p/DfuF-kYkrQv/",
-      "likes": 6,
-      "comments": 1,
+      "likes": 7,
+      "comments": 2,
       "insights": {
-        "reach": 22,
+        "reach": 24,
         "saved": 0,
         "shares": 0,
-        "views": 39,
-        "total_interactions": 8,
+        "views": 46,
+        "total_interactions": 10,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 36.36
+      "score": 45.83
     },
     {
       "data": "2026-11-13",
@@ -703,24 +718,6 @@
         "profile_visits": 1
       },
       "score": 42.86
-    },
-    {
-      "data": "2026-10-05",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Awwwards, Mobbin, One Page Love: quando você trava (e sabe que trava), esses três tiram o branco criativo.",
-      "link": "https://www.instagram.com/p/DeHardIlV0j/",
-      "likes": 5,
-      "comments": 0,
-      "insights": {
-        "reach": 24,
-        "saved": 0,
-        "shares": 0,
-        "views": 46,
-        "total_interactions": 8,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 20.83
     }
   ],
   "top5": [
@@ -762,13 +759,6 @@
   ],
   "piores5": [
     {
-      "data": "2026-11-12",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "O cliente pediu orçamento, sumiu, e ninguém voltou a falar com ele. Quase sempre não foi desinteresse: foi falta de lembrete.",
-      "score": 25.81,
-      "alcance": 31
-    },
-    {
       "data": "2026-11-13",
       "tipo": "REELS",
       "gancho": "Um carro pegou fogo e o copo da Stanley sobrou inteiro, ainda com gelo.",
@@ -781,6 +771,13 @@
       "gancho": "A maior disputa do mercado não é pelo preço. É pela atenção. 🎯",
       "score": 18.18,
       "alcance": 44
+    },
+    {
+      "data": "2026-11-15",
+      "tipo": "REELS",
+      "gancho": "Três mudanças no tráfego pago que quase ninguém percebeu.",
+      "score": 16.13,
+      "alcance": 31
     },
     {
       "data": "2026-10-16",
