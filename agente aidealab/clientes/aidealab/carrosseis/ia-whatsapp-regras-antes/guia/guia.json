@@ -1,0 +1,55 @@
+{
+ "titulo": "Regras para a IA do WhatsApp responder pelo seu negócio",
+ "subtitulo": "Um roteiro para definir o que a IA pode dizer, o que passa para um humano e como medir, antes do pico de mensagens.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Preencha cada página com a realidade do seu negócio e só depois ligue qualquer resposta automática. Os modelos são frameworks editoriais da aidealab, não regras da Meta.",
+ "paginas": [
+  {
+   "titulo": "Separe o que é FAQ do que é decisão comercial",
+   "texto": "Horário, endereço e forma de pagamento são perguntas de FAQ: a resposta é sempre a mesma e pode sair automática.\n\nDesconto, prazo, troca e preço especial são decisões comerciais: dependem de margem, estoque e do cliente. Se a IA responder isso sem regra, ela inventa.",
+   "itens": ["FAQ: horário, endereço, formas de pagamento, como pedir orçamento", "Decisão: desconto, prazo, exceção de preço, troca e devolução", "Regra de ouro: na dúvida, a IA passa para um humano"],
+   "dica": "Liste as 10 perguntas que mais chegam no seu WhatsApp e marque cada uma como FAQ ou decisão."
+  },
+  {
+   "titulo": "Escreva os limites antes de ligar a IA",
+   "texto": "Registre por escrito o que a IA nunca promete sozinha. Esse documento vira a instrução da ferramenta e o padrão de revisão da equipe.",
+   "itens": ["Menor preço que você aceita e quem pode aprovar exceção", "Prazos: só os que você já confirmou com a operação", "Troca e devolução: só o texto da sua política", "Assuntos que vão direto para um humano: reclamação, pagamento, saúde, jurídico"],
+   "dica": "Exemplo ilustrativo: 'Posso informar o preço da tabela. Descontos eu encaminho para a equipe.'"
+  },
+  {
+   "titulo": "Quando chamar um humano",
+   "texto": "Defina gatilhos claros para a conversa sair da IA. Cliente pediu atendente, repetiu a pergunta duas vezes ou citou problema de cobrança: a IA avisa que vai passar a conversa e para de responder.",
+   "itens": ["Pedido explícito por atendente", "Mesma pergunta repetida", "Palavras de reclamação ou cobrança", "Fora do horário: informar quando a equipe responde"]
+  },
+  {
+   "titulo": "Primeira resposta e perfil comercial",
+   "texto": "A primeira resposta identifica a empresa, confirma o interesse e informa o expediente, sem despejar perguntas. O perfil do WhatsApp Business (horário, endereço, site) e as respostas rápidas reduzem o trabalho repetido.",
+   "recursos": [
+    {"nome": "WhatsApp Help Center: perfil comercial", "url": "https://faq.whatsapp.com/577829787429875/?locale=pt_BR", "descricao": "Como preencher horário, categoria e contatos."},
+    {"nome": "WhatsApp Help Center: respostas rápidas", "url": "https://faq.whatsapp.com/1791149784551042/?cms_platform=android&locale=pt_BR", "descricao": "Atalhos editáveis para mensagens frequentes."}
+   ]
+  },
+  {
+   "titulo": "Dados dos clientes e limites da plataforma",
+   "texto": "Peça só o dado necessário para atender e avise quando uma conversa for registrada. As regras de janela de 24 horas e de modelos aprovados valem para a plataforma/API; o app gratuito tem regras próprias. Confira a política atual antes de automatizar retornos.",
+   "recursos": [
+    {"nome": "WhatsApp Business: Política de Negócios", "url": "https://business.whatsapp.com/policy/preview?lang=pt_BR", "descricao": "Janela de serviço e mensagens iniciadas pela empresa."},
+    {"nome": "ANPD: guia para agentes de pequeno porte", "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte", "descricao": "Segurança da informação proporcional ao porte. Não é parecer jurídico."}
+   ]
+  },
+  {
+   "titulo": "Plano de 7 dias e como medir",
+   "texto": "Dia 1: liste as perguntas. Dia 2: separe FAQ e decisão. Dia 3: escreva os limites. Dia 4: escreva os gatilhos de humano. Dia 5: revise o perfil. Dia 6: teste com a equipe fingindo ser cliente. Dia 7: ligue e leia as conversas.",
+   "itens": ["Tempo até a primeira resposta útil", "Conversas passadas para humano", "Respostas corrigidas pela equipe", "Reclamações sobre o atendimento automático"],
+   "dica": "Leia as primeiras 20 conversas inteiras. É ali que aparecem as regras que faltaram."
+  }
+ ],
+ "fontes": [
+  {"titulo": "WhatsApp Help Center: perfil comercial", "url": "https://faq.whatsapp.com/577829787429875/?locale=pt_BR"},
+  {"titulo": "WhatsApp Help Center: respostas rápidas", "url": "https://faq.whatsapp.com/1791149784551042/?cms_platform=android&locale=pt_BR"},
+  {"titulo": "WhatsApp Business: Política de Negócios", "url": "https://business.whatsapp.com/policy/preview?lang=pt_BR"},
+  {"titulo": "ANPD: guia para agentes de tratamento de pequeno porte", "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte"},
+  {"titulo": "Canaltech: WhatsApp Business ganha agente de IA", "url": "https://canaltech.com.br/apps/whatsapp-business-ganha-agente-de-ia-para-responder-mensagens-de-clientes/"}
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, verificado em 16/11/2026 a partir das fontes acima. Modelos e plano de 7 dias são frameworks próprios, não regras da Meta. Aprovação humana pendente antes de qualquer distribuição."
+}

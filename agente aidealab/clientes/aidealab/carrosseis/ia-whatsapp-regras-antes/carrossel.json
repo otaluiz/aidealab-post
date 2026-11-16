@@ -1,0 +1,177 @@
+{
+ "id": "2026-11-ia-whatsapp-regras-antes",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "A IA VAI",
+    "RESPONDER."
+   ],
+   "emocao": {
+    "texto": "com que [regra]?",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      317,
+      371,
+      745,
+      794
+     ],
+     [
+      110,
+      770,
+      462,
+      1122
+     ]
+    ],
+    "cabeca": [
+     361,
+     295,
+     647,
+     512
+    ],
+    "caixa": [
+     169,
+     304,
+     891,
+     1216
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 720
+   },
+   "recorte": "capa_recorte.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE PERGUNTA",
+    "TEM DESCONTO?"
+   ],
+   "emocao": {
+    "texto": "e a IA inventa uma [resposta].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     236,
+     265,
+     753,
+     393
+    ],
+    "caixa": [
+     207,
+     270,
+     772,
+     808
+    ]
+   },
+   "bloco": {
+    "y": 820,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "recorte": "slide2_led_recorte.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA NÃO",
+    "{PODE} PROMETER"
+   ],
+   "lista": [
+    "Desconto que você não aprovou",
+    "Prazo de entrega sem conferir",
+    "Preço fora da tabela",
+    "Troca ou devolução fora da regra"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "ESCREVA AS REGRAS",
+    "ANTES DA"
+   ],
+   "emocao": {
+    "texto": "{Black Friday}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE VAI NA",
+    "{REGRA}"
+   ],
+   "lista": [
+    "Menor preço que você aceita",
+    "Horário de atendimento",
+    "Quando chamar um humano",
+    "O que ela nunca responde sozinha"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A IA RESPONDE RÁPIDO.",
+    "QUEM DEFINE O"
+   ],
+   "emocao": {
+    "texto": "limite é {você}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER AS REGRAS",
+    "PRONTAS?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te responde"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     334,
+     273,
+     851,
+     548
+    ],
+    "caixa": [
+     13,
+     284,
+     1048,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "centro",
+    "largura": 936
+   },
+   "recorte": "cta_recorte.png"
+  }
+ ]
+}

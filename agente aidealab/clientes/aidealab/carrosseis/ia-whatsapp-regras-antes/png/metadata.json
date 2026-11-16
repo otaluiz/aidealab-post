@@ -1,0 +1,98 @@
+{
+  "carousel_id": "2026-11-ia-whatsapp-regras-antes",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-16",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "A IA VAI RESPONDER. com que regra?",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "A IA VAI RESPONDER. com que regra?",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE PERGUNTA TEM DESCONTO? e a IA inventa uma resposta.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A IA NÃO PODE PROMETER Desconto que você não aprovou Prazo de entrega sem conferir Preço fora da tabela Troca ou devolução fora da regra",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ESCREVA AS REGRAS ANTES DA Black Friday.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE VAI NA REGRA Menor preço que você aceita Horário de atendimento Quando chamar um humano O que ela nunca responde sozinha",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA RESPONDE RÁPIDO. QUEM DEFINE O limite é você.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER AS REGRAS PRONTAS? Comenta ATENDIMENTO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "O cliente pergunta \"tem desconto?\" e a IA do WhatsApp responde na hora. O problema é quando ela responde sem regra: promete desconto que você não aprovou, prazo que você não confirmou ou troca fora da sua política.\n\nAntes da Black Friday (27/11), escreva o que a IA pode e não pode dizer: o menor preço que você aceita, o horário de atendimento, quando chamar um humano e o que ela nunca responde sozinha.\n\nA IA responde rápido. Quem define o limite é você. A Meta tem liberado um agente de IA dentro do WhatsApp Business no Brasil, de forma gradual: confira as condições no seu aplicativo antes de ligar.\n\nFonte: Canaltech, \"WhatsApp Business ganha agente de IA para responder mensagens de clientes\".\n\nQuer as regras prontas? Comenta ATENDIMENTO que a aidealab te responde.\n\n#pequenosnegocios #whatsappbusiness #iaparanegocios #blackfriday\n",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#iaparanegocios",
+    "#blackfriday"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Regras para a IA do WhatsApp responder pelo seu negócio",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "34c87cab0afc30f136b50ca479c84528eae1cc88fd2b34f3cc896a8691103d03",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://canaltech.com.br/apps/whatsapp-business-ganha-agente-de-ia-para-responder-mensagens-de-clientes/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
