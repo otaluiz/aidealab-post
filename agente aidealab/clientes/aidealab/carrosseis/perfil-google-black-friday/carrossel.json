@@ -1,0 +1,153 @@
+{
+ "id": "2026-11-perfil-google-black-friday",
+ "meta": {
+  "serie": "PRESENÇA LOCAL",
+  "data": "2026/11",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "SEU GOOGLE",
+    "ESTÁ PRONTO?"
+   ],
+   "emocao": {
+    "texto": "a black [friday] chega dia 27.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     322,
+     565,
+     624,
+     676
+    ],
+    "caixa": [
+     325,
+     570,
+     623,
+     1035
+    ]
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE PESQUISA",
+    "ANTES DE IR"
+   ],
+   "emocao": {
+    "texto": "e perfil parado [perde] a visita.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png",
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "4 ITENS DO",
+    "PERFIL {HOJE}"
+   ],
+   "lista": [
+    "Horário especial para o dia da promoção",
+    "Foto nova da vitrine ou do produto",
+    "Oferta com data de início e fim",
+    "Resposta nas avaliações recentes"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "HORÁRIO ERRADO",
+    "É CLIENTE NA"
+   ],
+   "emocao": {
+    "texto": "porta {fechada}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O PASSO A PASSO",
+    "{SEM} COMPLICAR"
+   ],
+   "lista": [
+    "Abra o perfil no mapa e na busca",
+    "Edite o horário e marque o horário especial",
+    "Publique a oferta com data de término",
+    "Suba uma foto tirada esta semana"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "PERFIL EM DIA",
+    "É A VITRINE"
+   ],
+   "emocao": {
+    "texto": "aberta o {tempo} todo.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER SEU PERFIL",
+    "PRONTO?"
+   ],
+   "cta": {
+    "acao": "Comenta PRESENCA",
+    "texto": "a aidealab te mostra por onde começar"
+   },
+   "imagem": "cta_orig.png",
+   "bloco": {
+    "y": 900,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "sujeito": {
+    "rostos": [
+     [
+      306,
+      37,
+      925,
+      656
+     ]
+    ],
+    "cabeca": [
+     211,
+     667,
+     845,
+     760
+    ],
+    "caixa": [
+     205,
+     671,
+     868,
+     1064
+    ]
+   }
+  }
+ ]
+}

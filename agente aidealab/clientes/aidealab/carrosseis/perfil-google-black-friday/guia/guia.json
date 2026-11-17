@@ -1,0 +1,84 @@
+{
+ "titulo": "Perfil da Empresa no Google: checklist de Black Friday",
+ "subtitulo": "O que revisar no seu perfil antes da data para o cliente achar horário certo, foto atual e oferta clara.",
+ "categoria": "PRESENCA",
+ "como_usar": "Faça uma página por dia. Os passos são boas práticas editoriais da aidealab; confira os nomes dos menus na Central de Ajuda do Google, que muda com frequência.",
+ "paginas": [
+  {
+   "titulo": "Por que o perfil importa na semana da Black Friday",
+   "texto": "Antes de ir à loja, muita gente pesquisa o nome do negócio ou a categoria no Google e no Maps. O que aparece ali (horário, fotos, avaliações, ofertas) ajuda a decidir se vale ir.\n\nO Google informa que Maps e Pesquisa avisam quando o horário de uma empresa muda em datas de feriado. Quem não define horário especial deixa o cliente com uma informação possivelmente errada.",
+   "itens": [
+    "Horário: o dado que mais gera frustração quando está errado",
+    "Fotos: mostram fachada, ambiente e equipe",
+    "Ofertas: aparecem perto do topo do perfil",
+    "Avaliações: prova social visível para todos"
+   ],
+   "dica": "Abra seu perfil no celular, como cliente, e anote o que está desatualizado."
+  },
+  {
+   "titulo": "Item 1: horário especial",
+   "texto": "No Perfil da Empresa, o horário comum pode ser complementado com horários especiais para dias com funcionamento diferente, como feriados ou eventos. Defina o horário da Black Friday e dos dias seguintes se for estender o atendimento.\n\nPara fechamentos longos, o Google orienta usar a marcação de temporariamente fechado; para períodos curtos, use o horário especial.",
+   "itens": [
+    "Liste os dias de 25/11 a 30/11 e o horário de cada um",
+    "Confirme horário do WhatsApp e da loja física separadamente",
+    "Revise de novo depois da data para voltar ao normal"
+   ],
+   "dica": "Só quem tem o perfil verificado consegue editar horário."
+  },
+  {
+   "titulo": "Item 2: foto atual",
+   "texto": "O Google recomenda fotos da parte externa, para o cliente reconhecer o local ao chegar, da parte interna e da equipe. Uma foto recente da vitrine montada para a Black Friday mostra que o negócio está ativo.",
+   "itens": [
+    "Fachada de dia e à noite, se abre à noite",
+    "Vitrine ou produto em destaque da promoção",
+    "Foto real, sem texto e sem moldura"
+   ],
+   "dica": "Tire a foto no celular, com luz natural, e suba uma por semana."
+  },
+  {
+   "titulo": "Item 3: oferta com data",
+   "texto": "Ofertas são um tipo de publicação do perfil e pedem título, datas de início e término. Escreva o que é, para quem vale e até quando, sem prometer o que o estoque não sustenta.",
+   "itens": [
+    "Título curto: produto ou categoria em oferta",
+    "Data de início e fim reais",
+    "Condição clara: dinheiro, Pix ou cartão",
+    "Link para WhatsApp ou página, se tiver"
+   ],
+   "dica": "Combine a data de término com a que você divulga no Instagram."
+  },
+  {
+   "titulo": "Item 4: avaliações respondidas",
+   "texto": "Responder avaliações mostra que há alguém do outro lado. Agradeça as boas com algo específico e responda as ruins com calma, oferecendo resolver por um canal direto.",
+   "itens": [
+    "Responda todas as avaliações dos últimos 30 dias",
+    "Não discuta publicamente: ofereça contato direto",
+    "Peça avaliação a quem comprou, depois da entrega"
+   ],
+   "dica": "Reserve 10 minutos por dia na semana da Black Friday."
+  },
+  {
+   "titulo": "Plano de 5 dias e pós-data",
+   "texto": "Dia 1: horário especial. Dia 2: fotos. Dia 3: oferta publicada. Dia 4: avaliações respondidas. Dia 5: teste como cliente no celular.\n\nDepois da Black Friday, volte ao horário normal, encerre a oferta e peça avaliação a quem comprou. Este é um roteiro editorial, sem garantia de resultado de vendas.",
+   "itens": [
+    "Dia 1 a 5 conforme acima",
+    "Pós-data: horário normal, oferta encerrada",
+    "Anote o que funcionou para o Natal"
+   ],
+   "dica": "Quer ajuda para montar a rotina? Fale com a aidealab."
+  }
+ ],
+ "fontes": [
+  {
+   "titulo": "Google for Developers: locais e horário especial (Perfil da Empresa)",
+   "url": "https://developers.google.com/my-business/content/locations?hl=pt-br"
+  },
+  {
+   "titulo": "Central de Ajuda do Perfil da Empresa no Google",
+   "url": "https://support.google.com/business?hl=pt-BR"
+  },
+  {
+   "titulo": "Google Brasil: novas ferramentas Gemini para negócios",
+   "url": "https://blog.google/intl/pt-br/produtos/economize-tempo-e-impulsione-seu-negocio-com-as-novas-ferramentas-do-gemini/"
+  }
+ ]
+}

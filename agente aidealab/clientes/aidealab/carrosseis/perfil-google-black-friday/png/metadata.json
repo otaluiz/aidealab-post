@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-perfil-google-black-friday",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-17",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PRESENÇA LOCAL",
+  "tema": "SEU GOOGLE ESTÁ PRONTO? a black friday chega dia 27.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEU GOOGLE ESTÁ PRONTO? a black friday chega dia 27.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE PESQUISA ANTES DE IR e perfil parado perde a visita.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "4 ITENS DO PERFIL HOJE Horário especial para o dia da promoção Foto nova da vitrine ou do produto Oferta com data de início e fim Resposta nas avaliações recentes",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "HORÁRIO ERRADO É CLIENTE NA porta fechada.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O PASSO A PASSO SEM COMPLICAR Abra o perfil no mapa e na busca Edite o horário e marque o horário especial Publique a oferta com data de término Suba uma foto tirada esta semana",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PERFIL EM DIA É A VITRINE aberta o tempo todo.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER SEU PERFIL PRONTO? Comenta PRESENCA a aidealab te mostra por onde começar",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Faltam dias para a Black Friday (27/11) e o cliente pesquisa antes de ir à loja. Se o seu perfil no Google está com horário velho, foto antiga e sem oferta, ele pode escolher o vizinho.\n\nRevise 4 itens: horário especial da Black Friday, uma foto nova da vitrine ou do produto, uma oferta com data de início e fim e as respostas às avaliações recentes.\n\nPerfil em dia é a vitrine que fica aberta o tempo todo. O Google avisa os clientes quando o horário muda em feriados e datas especiais, e você pode definir o horário especial no próprio perfil.\n\nFonte: Google for Developers, documentação do Perfil da Empresa (horário especial).\n\nQuer o passo a passo? Comenta PRESENCA que a aidealab te mostra por onde começar.\n\n#googleperfildaempresa #pequenosnegocios #blackfriday #seolocal",
+  "hashtags": [
+    "#googleperfildaempresa",
+    "#pequenosnegocios",
+    "#blackfriday",
+    "#seolocal"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Perfil da Empresa no Google: checklist de Black Friday",
+    "categoria": "PRESENCA",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "edf225edfda03ffd6d263e438efa67e9fae5be7850658cd684444686fc056d5f",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://blog.google/intl/pt-br/produtos/economize-tempo-e-impulsione-seu-negocio-com-as-novas-ferramentas-do-gemini/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
