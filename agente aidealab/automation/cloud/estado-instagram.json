@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-11-18T11:31:53+00:00",
+  "atualizado_em": "2026-11-18T18:57:58+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
-    "followers_count": 431,
+    "followers_count": 430,
     "follows_count": 225,
-    "media_count": 62,
+    "media_count": 63,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -17,6 +17,24 @@
     "accounts_engaged": 28
   },
   "posts": [
+    {
+      "data": "2026-11-18",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "O cliente pergunta quanto custa, se serve pro negócio dele, em quanto tempo dá resultado. Toda semana, nas mesmas conversas. E quase ninguém",
+      "link": "https://www.instagram.com/p/Df4kEw2kinf/",
+      "likes": 4,
+      "comments": 0,
+      "insights": {
+        "reach": 10,
+        "saved": 0,
+        "shares": 0,
+        "views": 27,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 40.0
+    },
     {
       "data": "2026-11-17",
       "tipo": "REELS",
@@ -106,15 +124,15 @@
       "likes": 6,
       "comments": 1,
       "insights": {
-        "reach": 32,
+        "reach": 33,
         "saved": 0,
         "shares": 0,
-        "views": 78,
+        "views": 81,
         "total_interactions": 7,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 25.0
+      "score": 24.24
     },
     {
       "data": "2026-11-11",
@@ -172,15 +190,15 @@
       "likes": 14,
       "comments": 0,
       "insights": {
-        "reach": 47,
+        "reach": 48,
         "saved": 0,
         "shares": 0,
-        "views": 115,
+        "views": 117,
         "total_interactions": 16,
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 29.79
+      "score": 29.17
     },
     {
       "data": "2026-11-07",
@@ -697,24 +715,6 @@
         "profile_visits": 1
       },
       "score": 25.0
-    },
-    {
-      "data": "2026-10-08",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Marketing sem estratégia é só barulho caro.",
-      "link": "https://www.instagram.com/p/DeOz2bCE6Dj/",
-      "likes": 6,
-      "comments": 0,
-      "insights": {
-        "reach": 15,
-        "saved": 0,
-        "shares": 0,
-        "views": 33,
-        "total_interactions": 6,
-        "follows": 0,
-        "profile_visits": 3
-      },
-      "score": 40.0
     }
   ],
   "top5": [
@@ -722,8 +722,8 @@
       "data": "2026-11-08",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "O WhatsApp Business agora tem IA que responde cliente. Só que ela responde com o que você ensinou.",
-      "score": 29.79,
-      "alcance": 47
+      "score": 29.17,
+      "alcance": 48
     },
     {
       "data": "2026-10-21",
@@ -750,8 +750,8 @@
       "data": "2026-11-12",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "O cliente pediu orçamento, sumiu, e ninguém voltou a falar com ele. Quase sempre não foi desinteresse: foi falta de lembrete.",
-      "score": 25.0,
-      "alcance": 32
+      "score": 24.24,
+      "alcance": 33
     }
   ],
   "piores5": [
