@@ -1,0 +1,104 @@
+{
+ "titulo": "Quanto desconto sua margem aguenta: a conta antes da Black Friday",
+ "subtitulo": "Um roteiro para calcular margem, definir o desconto máximo e anunciar a promoção sem risco de prejuízo ou de maquiagem de preço.",
+ "categoria": "TRAFEGO",
+ "como_usar": "Faça as contas com os números reais de um produto por vez. Os valores de exemplo são ilustrativos e servem só para mostrar o cálculo.",
+ "paginas": [
+  {
+   "titulo": "Margem e markup não são a mesma coisa",
+   "texto": "Margem é o lucro como percentual do preço de venda. Markup é o multiplicador aplicado sobre o custo. Somar 50% ao custo dá um markup de 50%, mas uma margem de apenas 33%.\n\nConfundir os dois é a origem de muita promoção que perde dinheiro.",
+   "itens": [
+    "Margem = (preço − custo) ÷ preço",
+    "Markup = (preço − custo) ÷ custo",
+    "Preço para uma margem desejada = custo ÷ (1 − margem)"
+   ],
+   "dica": "Exemplo ilustrativo: custo R$ 60 e margem de 40% pedem preço de R$ 100."
+  },
+  {
+   "titulo": "Some todos os custos do produto",
+   "texto": "O custo que importa vai além da nota do fornecedor. Entram tudo o que sai do caixa por causa daquela venda.",
+   "itens": [
+    "Custo de compra ou de produção",
+    "Taxa da maquininha, do Pix ou do marketplace",
+    "Frete pago por você e embalagem",
+    "Imposto sobre a venda, conforme seu regime",
+    "Comissão de vendedor ou de parceiro"
+   ],
+   "dica": "Pergunte ao seu contador qual percentual de imposto aplicar por produto."
+  },
+  {
+   "titulo": "Calcule o desconto máximo",
+   "texto": "O desconto máximo sem prejuízo, antes de qualquer meta de lucro, é o lucro unitário dividido pelo preço. Se você quer manter uma margem mínima, calcule primeiro o menor preço aceitável e depois o desconto que leva até ele.",
+   "itens": [
+    "Desconto máximo sem prejuízo = (preço − custo total) ÷ preço",
+    "Preço mínimo = custo total ÷ (1 − margem mínima)",
+    "Desconto máximo com margem mínima = 1 − (preço mínimo ÷ preço atual)",
+    "Descontos em sequência se multiplicam: 10% e depois 20% dão 28%, não 30%"
+   ],
+   "dica": "Exemplo ilustrativo: custo R$ 60, preço R$ 100 e margem mínima de 25% dão preço mínimo de R$ 80, ou seja, no máximo 20% de desconto."
+  },
+  {
+   "titulo": "O que o desconto faz com o lucro",
+   "texto": "Exemplo ilustrativo: custo total de R$ 60 e preço de R$ 100 deixam R$ 40 de lucro por unidade. Com 20% de desconto, o preço vai para R$ 80 e o lucro cai para R$ 20.\n\nUm desconto de 20% cortou o lucro pela metade. Para ganhar o mesmo valor, você precisa vender o dobro das unidades.",
+   "itens": [
+    "Lucro sem desconto: R$ 40 por unidade",
+    "Lucro com 20% de desconto: R$ 20 por unidade",
+    "Volume necessário para empatar o lucro: 2 vezes"
+   ],
+   "dica": "Antes da campanha, pergunte se o seu estoque, o seu atendimento e o seu caixa aguentam vender o dobro."
+  },
+  {
+   "titulo": "Alternativas ao desconto direto",
+   "texto": "Quando a margem é curta, dá para atrair o cliente sem cortar o preço de tudo.",
+   "itens": [
+    "Combo: dois produtos com um preço único, puxando o item de maior margem",
+    "Brinde de baixo custo na compra acima de um valor",
+    "Desconto só para o produto de giro lento ou encalhado",
+    "Frete grátis acima de um valor mínimo",
+    "Desconto para quem já é cliente, por mensagem direta"
+   ],
+   "dica": "Teste a conta de cada alternativa do mesmo jeito: preço final menos todos os custos."
+  },
+  {
+   "titulo": "Não faça maquiagem de preço",
+   "texto": "Elevar o preço pouco antes da promoção para depois anunciar um desconto maior é tratado pelos órgãos de defesa do consumidor como publicidade enganosa (art. 37 do CDC). O Procon-RJ recomenda que o fornecedor guarde o registro dos preços praticados antes da promoção.",
+   "itens": [
+    "Guarde prints ou registros do preço de outubro e de novembro",
+    "Informe preço original, preço promocional e percentual de desconto",
+    "Informe condições, prazos e a quantidade disponível em estoque",
+    "Não compense o desconto com aumento do frete"
+   ],
+   "dica": "Este roteiro não substitui orientação jurídica: confirme as regras vigentes com o Procon da sua cidade ou com um advogado."
+  },
+  {
+   "titulo": "Checklist antes de publicar a oferta",
+   "texto": "Passe por estes itens para cada produto da campanha.",
+   "itens": [
+    "Custo total calculado, com taxas e frete",
+    "Margem atual e margem mínima definidas",
+    "Desconto máximo calculado e registrado",
+    "Preço anterior guardado como prova",
+    "Estoque conferido para o volume esperado",
+    "Equipe sabe o que pode prometer no atendimento"
+   ]
+  }
+ ],
+ "fontes": [
+  {
+   "titulo": "Sebrae: Saiba como fazer seu preço de venda",
+   "url": "https://sebrae.com.br/Sebrae/Portal Sebrae/Arquivos/ebook_sebrae_saiba_como_fazer_seu_preco_de_venda.pdf"
+  },
+  {
+   "titulo": "Procon-RJ: recomendação para a Black Friday",
+   "url": "https://www.rj.gov.br/procon/sites/default/files/arquivos_pagina/recomendacaoprocon.pdf"
+  },
+  {
+   "titulo": "Agência Gov: Black Friday, como identificar descontos enganosos",
+   "url": "https://agenciagov.ebc.com.br/noticias/202411/black-friday-saiba-como-identificar-descontos-enganosos"
+  },
+  {
+   "titulo": "Idec: Black Friday, conheça seus direitos",
+   "url": "https://idec.org.br/dicas-e-direitos/black-friday-conheca-seus-direitos-na-hora-da-compra"
+  }
+ ]
+}

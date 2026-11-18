@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-margem-antes-do-desconto",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-18",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "DESCONTO SEM CONTA? vira prejuízo.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "DESCONTO SEM CONTA? vira prejuízo.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "VENDEU MUITO E SOBROU POUCO o desconto comeu a margem.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "A CONTA ANTES DO DESCONTO Custo do produto Taxa da maquininha e frete Margem que sobra hoje Desconto que a margem aguenta",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "20% DE DESCONTO CORTAM O LUCRO pela metade.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "A CONTA DE UM EXEMPLO Custo R$ 60, preço R$ 100: lucro R$ 40 Com 20% off o preço vai a R$ 80 Lucro novo: R$ 20 por venda Para o mesmo lucro, venda o dobro",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "NÃO SUBA O PREÇO ANTES DO DESCONTO isso é maquiagem.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER A CONTA PRONTA? Comenta OFERTA a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Black Friday em 27/11 e a pergunta mais cara do varejo pequeno é \"quanto de desconto eu posso dar?\". Sem a conta, o desconto vira venda sem lucro.\n\nExemplo ilustrativo: produto com custo de R$ 60 e preço de R$ 100 deixa R$ 40 de lucro por venda. Com 20% de desconto o preço cai para R$ 80 e o lucro vai para R$ 20: metade. Para ganhar o mesmo, você precisa vender o dobro.\n\nAntes de postar a oferta: some custo do produto, taxa da maquininha e frete, veja a margem que sobra e defina o desconto que ela aguenta. E não suba o preço antes da promoção: o Procon trata a \"maquiagem de preço\" como publicidade enganosa. Guarde o registro do preço anterior.\n\nFonte: Procon-RJ, recomendação sobre Black Friday (art. 37 do CDC); Sebrae, \"Saiba como fazer seu preço de venda\".\n\nQuer a conta pronta? Comenta OFERTA que a aidealab te responde.\n\n#pequenosnegocios #blackfriday #precificacao #margemdelucro #vendas",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#blackfriday",
+    "#precificacao",
+    "#margemdelucro",
+    "#vendas"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Quanto desconto sua margem aguenta: a conta antes da Black Friday",
+    "categoria": "TRAFEGO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 10,
+    "fonte_sha256": "4232af1484b7a2fcbf7fc27eadc26be5abfa1ce7fa3c152e008e3d07bc5d0ac2",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://mercadoeconsumo.com.br/06/11/2026/noticias/black-friday-como-o-comercio-de-bairro-pode-acessar-ofertas-da-industria-e-competir-em-preco/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
