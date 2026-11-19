@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-19T19:05:50+00:00",
+  "atualizado_em": "2026-11-19T21:45:56+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
@@ -22,15 +22,15 @@
       "tipo": "REELS",
       "gancho": "Os sistemas que fazem o seu negócio vender já mudaram.",
       "link": "https://www.instagram.com/reel/Df7IODhlTtw/",
-      "likes": 2,
+      "likes": 3,
       "comments": 0,
       "insights": {
         "reach": 7,
         "saved": 0,
         "shares": 0,
-        "total_interactions": 2
+        "total_interactions": 3
       },
-      "score": 28.57
+      "score": 42.86
     },
     {
       "data": "2026-11-18",
@@ -43,7 +43,7 @@
         "reach": 13,
         "saved": 0,
         "shares": 0,
-        "views": 36,
+        "views": 38,
         "total_interactions": 7,
         "follows": 0,
         "profile_visits": 0
@@ -58,12 +58,12 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 110,
+        "reach": 114,
         "saved": 0,
         "shares": 1,
         "total_interactions": 8
       },
-      "score": 7.27
+      "score": 7.02
     },
     {
       "data": "2026-11-16",
@@ -73,15 +73,15 @@
       "likes": 2,
       "comments": 0,
       "insights": {
-        "reach": 10,
+        "reach": 11,
         "saved": 0,
         "shares": 0,
-        "views": 27,
+        "views": 29,
         "total_interactions": 2,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 20.0
+      "score": 18.18
     },
     {
       "data": "2026-11-15",
@@ -91,12 +91,12 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 39,
+        "reach": 40,
         "saved": 1,
         "shares": 0,
         "total_interactions": 6
       },
-      "score": 17.95
+      "score": 17.5
     },
     {
       "data": "2026-11-14",
@@ -106,15 +106,15 @@
       "likes": 8,
       "comments": 2,
       "insights": {
-        "reach": 31,
+        "reach": 32,
         "saved": 0,
         "shares": 0,
-        "views": 60,
+        "views": 61,
         "total_interactions": 11,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 38.71
+      "score": 37.5
     },
     {
       "data": "2026-11-13",
@@ -719,8 +719,8 @@
       "data": "2026-11-14",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Antes de entrar, o cliente procura no Google. E o que ele encontra? Foto antiga, horário errado, avaliação sem resposta.",
-      "score": 38.71,
-      "alcance": 31
+      "score": 37.5,
+      "alcance": 32
     },
     {
       "data": "2026-11-08",
@@ -763,8 +763,8 @@
       "data": "2026-11-15",
       "tipo": "REELS",
       "gancho": "Três mudanças no tráfego pago que quase ninguém percebeu.",
-      "score": 17.95,
-      "alcance": 39
+      "score": 17.5,
+      "alcance": 40
     },
     {
       "data": "2026-10-16",
@@ -777,8 +777,8 @@
       "data": "2026-11-17",
       "tipo": "REELS",
       "gancho": "O Duolingo anunciou a morte do próprio mascote. Sem anúncio pago.",
-      "score": 7.27,
-      "alcance": 110
+      "score": 7.02,
+      "alcance": 114
     },
     {
       "data": "2026-10-31",
