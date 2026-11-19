@@ -1,0 +1,21 @@
+{
+ "titulo": "Regras do agente de IA no WhatsApp: o que escrever antes de ligar",
+ "subtitulo": "Um roteiro para o pequeno negócio decidir o que a IA pode responder sozinha, o que nunca pode decidir e quando chamar uma pessoa.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Preencha uma página por vez com os dados reais do seu negócio. Os modelos são frameworks editoriais da aidealab: adapte ao seu produto e à sua voz.",
+ "fontes": [
+  {"titulo": "Forbes Brasil: WhatsApp Business lança IA agêntica para PMEs", "url": "https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/"},
+  {"titulo": "Uai: atendimento pelo WhatsApp com IA chega à rotina das pequenas empresas", "url": "https://www.uai.com.br/?p=189218"},
+  {"titulo": "WhatsApp Business: Política de Negócios", "url": "https://business.whatsapp.com/policy/preview?lang=pt_BR"}
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026 nas fontes acima. As regras e modelos são frameworks próprios, não regras da Meta. Confira no app as condições e a disponibilidade do agente de IA na sua conta.",
+ "paginas": [
+  {"titulo": "Por que escrever regras antes de ligar", "texto": "O agente responde com base no que você deixou escrito. Onde não há regra, ele completa sozinho, e é aí que nasce a promessa de preço ou prazo que você não pode cumprir.", "itens": ["Resposta rápida não vale nada se estiver errada", "O cliente acredita no que a IA disse em nome da loja", "Regra escrita é o que separa ajuda de improviso"], "dica": "Comece pelas perguntas que você responde todo dia, não pelas raras."},
+  {"titulo": "Regra 1: horário", "texto": "Diga com clareza quando uma pessoa volta a atender.", "itens": ["Modelo: 'Recebi sua mensagem. Nosso time responde a partir das 8h.'", "Nunca prometa 'já já' fora do horário", "Deixe o horário igual ao do Perfil do Google"], "dica": "Mesmo horário em todo lugar evita reclamação."},
+  {"titulo": "Regra 2: preço", "texto": "A IA só fala preço que está na tabela. Desconto, condição especial e frete combinado ficam com uma pessoa.", "itens": ["Cole a tabela atualizada nas informações do agente", "Escreva: 'Desconto só com o atendente'", "Revise a tabela sempre que mudar preço"], "dica": "Preço desatualizado na IA é o erro mais caro."},
+  {"titulo": "Regra 3: prazo", "texto": "Prazo de entrega, de orçamento ou de retorno: só o que você controla.", "itens": ["Use faixas ('de 2 a 4 dias úteis'), não datas exatas", "Prazo de terceiros (transportadora) vai com 'estimado'", "Pedido urgente: chame uma pessoa"], "dica": "Melhor prometer menos e entregar antes."},
+  {"titulo": "Regra 4: quando chamar uma pessoa", "texto": "Liste as situações em que a IA para e passa a conversa.", "itens": ["Reclamação ou cliente irritado", "Pedido acima de um valor que você define", "Troca, devolução e cobrança", "Qualquer pergunta que não esteja nas suas respostas"], "dica": "Avise o cliente: 'Vou chamar alguém do time para te ajudar.'"},
+  {"titulo": "As 10 perguntas que mais chegam", "texto": "Abra as últimas conversas e anote as perguntas que se repetem. Responda cada uma como você responderia.", "itens": ["Tem disponível?", "Quanto custa?", "Qual o prazo?", "Onde fica / entrega na minha região?", "Formas de pagamento"], "dica": "Use as suas palavras: é isso que mantém o tom da loja."},
+  {"titulo": "Teste antes de deixar sozinho", "texto": "Simule 3 conversas reais e veja se a resposta seria a sua.", "itens": ["Uma pergunta simples (horário)", "Uma de preço com pedido de desconto", "Uma reclamação"], "dica": "Errou? Ajuste a regra, não só a resposta."}
+ ]
+}
