@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-hashtag-palavra-chave",
+ "meta": {"serie": "INSTAGRAM", "data": "2026/11", "personagem": "wel", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["HASHTAG NÃO", "TE ACHA MAIS."], "emocao": {"texto": "palavra-chave [acha].", "posicao": "antes"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["O INSTAGRAM LÊ", "O QUE VOCÊ ESCREVE"], "emocao": {"texto": "e mostra pra quem [procura].", "posicao": "depois"}, "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["ONDE COLOCAR", "A {PALAVRA}"], "lista": ["No nome do perfil, não só no @", "Na primeira linha da bio", "Nos primeiros 125 caracteres da legenda", "No texto alternativo da imagem"]},
+  {"template": "T2", "display": ["REPOST PERDE", "ALCANCE"], "emocao": {"texto": "o original ganha o {crédito}.", "posicao": "depois"}},
+  {"template": "T3", "display": ["COMO {ESCOLHER}"], "lista": ["A palavra que o cliente digita, não a técnica", "Serviço + cidade: \"bolo de pote Cuiabá\"", "A mesma palavra em todo lugar", "Teste por 2 semanas e compare"]},
+  {"template": "T2c", "display": ["ESCREVA PRO", "CLIENTE"], "emocao": {"texto": "não pra {máquina}.", "posicao": "depois"}},
+  {"template": "T4", "display": ["QUER A LISTA?"], "cta": {"acao": "Comenta PALAVRA", "texto": "a aidealab te manda no direct"}, "imagem": "cta_orig.png"}
+ ]
+}

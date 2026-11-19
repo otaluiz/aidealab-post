@@ -71,3 +71,7 @@ no metadata vem um sem personagem (imagem de banco/cena), e vice-versa. Por isso
 de `personagem` = `luizota`, `wel` ou `ambos` no `png/metadata.json`, e todo carrossel de banco deixa o campo vazio.
 O campo vai em `meta.personagem` do `carrossel.json` antes do render: o hook ganha a textura cloth no slide inteiro
 (`textura_personagem` do `tema.json`) e o `metadata.py` copia o campo para o `png/metadata.json`.
+
+## Tema vice-sunset (GTA), regra do cliente em 19/11/2026
+Título (display) atrás da cabeça ou acima dela. Frase manuscrita, botão do CTA e linha de apoio podem ficar NA FRENTE
+na altura dos ombros. Nunca texto sobre o rosto. Recorte com `compor.py --alfa-duro` (ilustração com contorno de tinta).

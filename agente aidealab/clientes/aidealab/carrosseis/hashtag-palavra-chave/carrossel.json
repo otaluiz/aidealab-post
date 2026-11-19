@@ -1,0 +1,179 @@
+{
+ "id": "2026-11-hashtag-palavra-chave",
+ "meta": {
+  "serie": "INSTAGRAM",
+  "data": "2026/11",
+  "personagem": "wel",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "HASHTAG NÃO",
+    "TE ACHA MAIS."
+   ],
+   "emocao": {
+    "texto": "palavra-chave [acha].",
+    "posicao": "antes"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      332,
+      627,
+      678,
+      944
+     ]
+    ],
+    "cabeca": [
+     361,
+     595,
+     654,
+     794
+    ],
+    "caixa": [
+     124,
+     603,
+     955,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O INSTAGRAM LÊ",
+    "O QUE VOCÊ ESCREVE"
+   ],
+   "emocao": {
+    "texto": "e mostra pra quem [procura].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      301,
+      647,
+      690,
+      999
+     ]
+    ],
+    "cabeca": [
+     337,
+     590,
+     640,
+     790
+    ],
+    "caixa": [
+     119,
+     598,
+     935,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "ONDE COLOCAR",
+    "A {PALAVRA}"
+   ],
+   "lista": [
+    "No nome do perfil, não só no @",
+    "Na primeira linha da bio",
+    "Nos primeiros 125 caracteres da legenda",
+    "No texto alternativo da imagem"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "REPOST PERDE",
+    "ALCANCE"
+   ],
+   "emocao": {
+    "texto": "o original ganha o {crédito}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO {ESCOLHER}"
+   ],
+   "lista": [
+    "A palavra que o cliente digita, não a técnica",
+    "Serviço + cidade: \"bolo de pote Cuiabá\"",
+    "A mesma palavra em todo lugar",
+    "Teste por 2 semanas e compare"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "ESCREVA PRO",
+    "CLIENTE"
+   ],
+   "emocao": {
+    "texto": "não pra {máquina}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER A LISTA?"
+   ],
+   "cta": {
+    "acao": "Comenta PALAVRA",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     379,
+     478,
+     673,
+     804
+    ],
+    "caixa": [
+     68,
+     487,
+     1023,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 180,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}

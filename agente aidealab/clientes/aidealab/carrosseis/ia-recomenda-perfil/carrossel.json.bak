@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-ia-recomenda-perfil",
+ "meta": {"serie": "GOOGLE", "data": "2026/11", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["PERGUNTARAM PRA IA", "O MELHOR DA CIDADE."], "emocao": {"texto": "você [apareceu]?", "posicao": "antes"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["A IA LÊ SEU", "PERFIL DO GOOGLE"], "emocao": {"texto": "e cita quem está [completo].", "posicao": "depois"}, "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["OS {4} CAMPOS"], "lista": ["Categoria certa (a principal decide)", "Horário atualizado, inclusive feriado", "Fotos recentes do lugar e do produto", "Avaliações respondidas, boas e ruins"]},
+  {"template": "T2", "display": ["PERFIL PELA METADE", "NÃO É CITADO"], "emocao": {"texto": "quem não {informa} some.", "posicao": "depois"}},
+  {"template": "T3", "display": ["ESTA {SEMANA}"], "lista": ["Confira a categoria principal", "Suba 5 fotos novas", "Responda as 3 últimas avaliações", "Publique o horário de fim de ano"]},
+  {"template": "T2c", "display": ["A IA RECOMENDA", "QUEM SE MOSTRA"], "emocao": {"texto": "comece pelo {perfil}.", "posicao": "depois"}},
+  {"template": "T4", "display": ["QUER O CHECKLIST?"], "cta": {"acao": "Comenta PERFIL", "texto": "a aidealab te manda no direct"}, "imagem": "cta_orig.png"}
+ ]
+}
