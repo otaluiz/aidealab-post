@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-mensagem-de-recompra",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-19",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "QUEM COMPROU SUMIU? ninguém lembrou dele.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "QUEM COMPROU SUMIU? ninguém lembrou dele.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "COMPROU UMA VEZ E A CONVERSA PAROU sem mensagem, ele não volta.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "A MENSAGEM EM 4 PARTES Chame pelo nome e cite o que comprou Pergunte como foi o produto Ofereça algo útil, não só desconto Deixe um jeito fácil de sair da lista",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "NÃO MANDE PARA TODO MUNDO só para quem autorizou.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "QUANDO ENVIAR No dia: agradeça a compra Dias depois: pergunte como foi Quando o produto acaba: lembre a reposição Em dezembro: volte com um motivo",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "SEM MOTIVO É INSISTÊNCIA com motivo, é cuidado.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER A MENSAGEM PRONTA? Comenta ATENDIMENTO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Black Friday vendeu, e depois? Quem comprou em novembro é quem mais tende a comprar de novo, mas só volta se alguém lembrar dele.\n\nMande uma mensagem curta, só para quem já comprou e aceita receber: chame pelo nome, cite o que levou, pergunte como foi e ofereça algo útil. Em dezembro, volte com um motivo claro, como reposição ou novidade. E deixe fácil sair da lista: quem pede para sair, você respeita.\n\nVocê escreve o modelo uma vez, a IA ajuda a adaptar para cada cliente e você confere antes de enviar.\n\nFonte: Mercado Pago, \"Pós-venda no comércio: como manter contato para garantir a recompra\"; Zenvia, \"Black Friday no comércio: mensagens de acompanhamento pós-venda\"; LGPD (Lei 13.709/2018, art. 7º e 18).\n\nQuer a mensagem pronta? Comenta ATENDIMENTO que a aidealab te responde.\n\n#pequenosnegocios #whatsappbusiness #posvenda #blackfriday #aidealab\n",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#posvenda",
+    "#blackfriday",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Mensagem de recompra: como fazer quem comprou voltar a comprar",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 12,
+    "fonte_sha256": "bd3df82d09511566edd341321342937ab8f8507f09c45eaa637dff99ad4eaaf9",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://www.seudinheiro.com/2026/seu-negocio/black-friday-e-natal-como-fazer-o-cliente-voltar-a-comprar-depois-das-festas/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

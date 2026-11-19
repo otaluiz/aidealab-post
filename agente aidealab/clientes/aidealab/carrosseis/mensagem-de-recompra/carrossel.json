@@ -1,0 +1,169 @@
+{
+ "id": "2026-11-mensagem-de-recompra",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "QUEM COMPROU",
+    "SUMIU?"
+   ],
+   "emocao": {
+    "texto": "ninguém [lembrou] dele.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      465,
+      469,
+      685,
+      689
+     ]
+    ],
+    "cabeca": [
+     394,
+     423,
+     647,
+     662
+    ],
+    "caixa": [
+     322,
+     432,
+     864,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 215,
+    "alinhar": "centro",
+    "largura": 936
+   },
+   "recorte": "capa_recorte.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "COMPROU UMA VEZ",
+    "E A CONVERSA PAROU"
+   ],
+   "emocao": {
+    "texto": "sem mensagem, ele não [volta].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     300,
+     150,
+     527,
+     305
+    ],
+    "caixa": [
+     222,
+     156,
+     616,
+     809
+    ]
+   },
+   "bloco": {
+    "y": 800,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "A MENSAGEM EM",
+    "{4} PARTES"
+   ],
+   "lista": [
+    "Chame pelo nome e cite o que comprou",
+    "Pergunte como foi o produto",
+    "Ofereça algo útil, não só desconto",
+    "Deixe um jeito fácil de sair da lista"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "NÃO MANDE PARA",
+    "TODO MUNDO"
+   ],
+   "emocao": {
+    "texto": "só para quem {autorizou}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "QUANDO",
+    "{ENVIAR}"
+   ],
+   "lista": [
+    "No dia: agradeça a compra",
+    "Dias depois: pergunte como foi",
+    "Quando o produto acaba: lembre a reposição",
+    "Em dezembro: volte com um motivo"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "SEM MOTIVO",
+    "É INSISTÊNCIA"
+   ],
+   "emocao": {
+    "texto": "com motivo, é {cuidado}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER A MENSAGEM",
+    "PRONTA?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te responde"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     346,
+     367,
+     595,
+     685
+    ],
+    "caixa": [
+     179,
+     377,
+     940,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "centro",
+    "largura": 936
+   }
+  }
+ ]
+}

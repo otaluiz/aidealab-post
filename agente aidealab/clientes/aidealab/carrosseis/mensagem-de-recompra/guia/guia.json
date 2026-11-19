@@ -1,0 +1,130 @@
+{
+ "titulo": "Mensagem de recompra: como fazer quem comprou voltar a comprar",
+ "subtitulo": "Um roteiro para organizar a lista de clientes, escolher o momento certo e escrever mensagens de pós-venda que não viram spam.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Faça uma página por vez, com os dados reais da sua loja. Os modelos de mensagem e o calendário são frameworks editoriais da aidealab: adapte ao seu produto e à sua voz.",
+ "fontes": [
+  {
+   "titulo": "Mercado Pago: pós-venda no comércio e contato para garantir a recompra",
+   "url": "https://www.mercadopago.com.br/blog/pos-venda-comercio-contato-recompra"
+  },
+  {
+   "titulo": "Zenvia: Black Friday no comércio e mensagens de acompanhamento pós-venda",
+   "url": "https://zenvia.com/blog/black-friday-no-comercio/"
+  },
+  {
+   "titulo": "Planalto: Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+   "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+  },
+  {
+   "titulo": "WhatsApp Business: Política de Negócios",
+   "url": "https://business.whatsapp.com/policy/preview?lang=pt_BR"
+  },
+  {
+   "titulo": "Central do Varejo: como estruturar vendas e pós-venda no WhatsApp",
+   "url": "https://centraldovarejo.com.br/como-estruturar-vendas-e-pos-venda-no-whatsapp/"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026 nas fontes acima. Os modelos, o calendário e o plano de 7 dias são frameworks próprios, não regras da Meta nem da lei. Limites de envio e regras de cobrança do WhatsApp mudam: confira na documentação oficial. Aprovação humana pendente antes de qualquer distribuição.",
+ "paginas": [
+  {
+   "titulo": "Por que a recompra começa depois da venda",
+   "texto": "Na Black Friday o cliente compra pela oferta. Se ninguém fala com ele depois, a relação termina no caixa e a próxima compra vai para quem aparecer primeiro.\n\nSegundo o Mercado Pago, o pós-venda eficaz não é insistência: é entregar valor no momento certo, e cada contato precisa ter um motivo claro para existir.",
+   "itens": [
+    "Venda feita: o cliente já confia em você o bastante para ter comprado",
+    "Sem contato depois: ele esquece quem vendeu",
+    "Com contato útil: você é o primeiro lembrado na próxima necessidade"
+   ],
+   "dica": "Pergunte a si mesmo antes de cada envio: qual é o motivo desta mensagem para o cliente, não para mim?"
+  },
+  {
+   "titulo": "Monte a lista de quem comprou",
+   "texto": "Sem lista não há recompra. Reúna em uma planilha simples tudo o que você já sabe, só do que o cliente forneceu ao comprar.",
+   "itens": [
+    "Nome e WhatsApp",
+    "Data da compra e o que levou",
+    "Se aceitou receber mensagens (sim ou não)",
+    "Quanto tempo o produto costuma durar",
+    "Observações: tamanho, sabor, modelo preferido"
+   ],
+   "dica": "Coleta de dados deve ter um motivo e ficar limitada ao necessário. Anote só o que você de fato vai usar."
+  },
+  {
+   "titulo": "Peça autorização e respeite a saída",
+   "texto": "Mensagem promocional exige cuidado com a LGPD. A lei trata o consentimento como uma das bases para usar dados pessoais e garante ao titular o direito de pedir a revogação (arts. 7º e 18). Para a plataforma, o WhatsApp também espera que a empresa tenha permissão de quem recebe.\n\nNa prática: avise no atendimento que você pode mandar novidades e ofertas, e registre o sim.",
+   "itens": [
+    "Pergunte no balcão ou no pós-compra: \"Posso te avisar quando chegar novidade?\"",
+    "Registre a resposta na planilha",
+    "Em toda mensagem de oferta, ofereça a saída: \"Se não quiser mais receber, responda SAIR\"",
+    "Quem pediu para sair sai da lista no mesmo dia"
+   ],
+   "dica": "Dúvida jurídica sobre a base legal do seu caso? Consulte um advogado ou o seu contador. Este guia não é parecer jurídico."
+  },
+  {
+   "titulo": "Separe os clientes em três grupos",
+   "texto": "Mensagem igual para todos soa como propaganda. Três grupos simples já mudam o texto.",
+   "itens": [
+    "Compraram na Black Friday pela primeira vez: precisam de agradecimento e de confiança",
+    "Já eram clientes e voltaram: merecem reconhecimento, não oferta genérica",
+    "Perguntaram e não compraram: precisam de resposta à dúvida, não de pressão"
+   ],
+   "dica": "A Central do Varejo recomenda segmentar por interesse, histórico e frequência de compra. Comece com três grupos, não com trinta."
+  },
+  {
+   "titulo": "Quatro momentos para falar com o cliente",
+   "texto": "Cada contato precisa de um motivo. Este calendário é um ponto de partida, não uma regra.",
+   "itens": [
+    "No dia da compra ou da entrega: agradecimento curto",
+    "Alguns dias depois: pergunta sobre como foi o produto",
+    "Perto do fim do produto: lembrete de reposição, se ele acaba",
+    "Em dezembro: novidade, estoque novo ou data especial, com um motivo claro"
+   ],
+   "dica": "Para produtos que não acabam (um móvel, por exemplo), troque a reposição por um complemento que combine com o que ele levou."
+  },
+  {
+   "titulo": "A mensagem em quatro partes",
+   "texto": "Texto curto, de pessoa para pessoa. Cada parte tem um trabalho.",
+   "itens": [
+    "Nome e contexto: \"Oi, Ana, aqui é da loja X. Você levou o produto Y no mês passado.\"",
+    "Pergunta: \"Como foi? Chegou tudo certo?\"",
+    "Algo útil: uma dica de uso, um complemento ou uma condição, sem obrigar",
+    "Saída fácil: \"Se não quiser mais receber, é só responder SAIR.\""
+   ],
+   "dica": "Escreva no tom em que você falaria no balcão. Evite frases de propaganda e mais de uma pergunta por mensagem."
+  },
+  {
+   "titulo": "Modelos para adaptar",
+   "texto": "Troque os trechos entre colchetes. Leia em voz alta antes de enviar: se soar estranho, reescreva.",
+   "itens": [
+    "Agradecimento: \"Oi, [nome]! Obrigado pela compra de [produto]. Qualquer dúvida, é só responder aqui.\"",
+    "Acompanhamento: \"Oi, [nome], tudo bem com o [produto]? Se algo não saiu como esperado, me conta que eu resolvo.\"",
+    "Reposição: \"Oi, [nome], o [produto] costuma durar cerca de [prazo informado pelo fabricante]. Quer que eu separe um para você?\"",
+    "Dezembro: \"Oi, [nome], chegou [novidade] que combina com o que você levou. Quer ver?\""
+   ],
+   "dica": "A IA pode ajudar a adaptar o modelo para cada cliente, mas você confere cada mensagem antes de enviar."
+  },
+  {
+   "titulo": "Como enviar sem virar spam",
+   "texto": "No aplicativo gratuito, a lista de transmissão só chega a quem tem o seu número salvo nos contatos, e há limite de destinatários por lista. Na API oficial, mensagens de marketing usam modelos aprovados e têm custo, e a plataforma avalia reclamações e bloqueios. Os números mudam: confira a documentação oficial antes de planejar.",
+   "itens": [
+    "Mande só para quem autorizou",
+    "Evite enviar a mesma mensagem toda semana",
+    "Não insista com quem não respondeu",
+    "Se muita gente bloqueia ou denuncia, pare e revise o texto e a lista",
+    "Responda rápido a quem responde: a conversa é o objetivo"
+   ],
+   "dica": "Se você usa a API oficial, a cobrança por mensagem vale para ela e não para o aplicativo Business gratuito. Confirme as condições vigentes."
+  },
+  {
+   "titulo": "Plano de 7 dias e o que medir",
+   "texto": "Dia 1: liste quem comprou na Black Friday. Dia 2: marque quem autorizou contato. Dia 3: separe os três grupos. Dia 4: escreva as mensagens. Dia 5: peça para uma pessoa de confiança ler. Dia 6: envie o agradecimento. Dia 7: leia as respostas e ajuste.",
+   "itens": [
+    "Quantas pessoas responderam",
+    "Quantas pediram para sair",
+    "Quantas voltaram a comprar em até 30 dias",
+    "Qual mensagem gerou mais respostas úteis"
+   ],
+   "dica": "Meça sempre contra o seu próprio histórico. Não compare com números de outros negócios."
+  }
+ ]
+}
