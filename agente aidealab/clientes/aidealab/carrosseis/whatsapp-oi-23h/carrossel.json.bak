@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-whatsapp-oi-23h",
+ "meta": {"serie": "IA NO BALCÃO", "data": "2026/11", "personagem": "luizota", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["O CLIENTE MANDOU", "\"OI\" ÀS 23H."], "emocao": {"texto": "quem [respondeu]?", "posicao": "depois"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["A IA JÁ PODE", "RESPONDER"], "emocao": {"texto": "mas com que [regra]?", "posicao": "depois"}, "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["AS {4} REGRAS"], "lista": ["Horário: diga quando um humano volta", "Preço: só o que está na tabela", "Prazo: nunca prometa o que você não controla", "Humano: chame alguém em reclamação ou pedido grande"]},
+  {"template": "T2", "display": ["SEM REGRA,", "ELA IMPROVISA"], "emocao": {"texto": "e improviso vira {problema}.", "posicao": "depois"}},
+  {"template": "T3", "display": ["ANTES DE {LIGAR}"], "lista": ["Liste as 10 perguntas que mais chegam", "Responda cada uma como você responderia", "Marque o que a IA nunca pode decidir", "Teste com 3 conversas reais"]},
+  {"template": "T2c", "display": ["A IA RESPONDE,", "VOCÊ DECIDE"], "emocao": {"texto": "o tom continua {seu}.", "posicao": "depois"}},
+  {"template": "T4", "display": ["QUER O MODELO", "DAS REGRAS?"], "cta": {"acao": "Comenta REGRAS", "texto": "a aidealab te manda no direct"}, "imagem": "cta_orig.png"}
+ ]
+}

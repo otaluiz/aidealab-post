@@ -242,6 +242,8 @@ def main():
     ap.add_argument("json", nargs="+", help="um ou mais carrossel.json (compartilham --led e --sem-recorte)")
     ap.add_argument("--led", default="")
     ap.add_argument("--sem-recorte", action="store_true")
+    ap.add_argument("--alfa-duro", action="store_true",
+                    help="binariza o alfa do rembg (ilustração com contorno de tinta: a borda semitransparente vira dura)")
     a = ap.parse_args()
     for j in a.json:
         print(f"== {j}")
@@ -289,6 +291,10 @@ def compor(jp, a):
             rgba = remove(limpa, session=_sessao[0])
             cache.parent.mkdir(exist_ok=True)
             rgba.save(cache)
+        if a.alfa_duro:
+            r_, g_, b_, al = rgba.split()
+            al = al.point(lambda v: 255 if v > 127 else 0).filter(ImageFilter.MaxFilter(3)).filter(ImageFilter.MinFilter(3))
+            rgba = Image.merge("RGBA", (r_, g_, b_, al))
         m_ruim, met = avaliar(rgba, area_max=0.85)
         mask = mascara(rgba)
         recorte = False
