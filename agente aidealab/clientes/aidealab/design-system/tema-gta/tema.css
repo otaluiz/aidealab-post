@@ -47,3 +47,5 @@
 .slide.t1 .display, .slide.t1b .display, .slide.t3 .display, .slide.t4 .display { text-shadow: 0 0 14px rgba(255, 46, 136, .35); }
 /* legibilidade sobre o céu rosa: contorno ink nas linhas sobre foto */
 .slide.t1 .emocao, .slide.t1b .emocao, .slide.t4 .emocao, .slide.com-foto .emocao, .slide.com-foto .display { text-shadow: 0 3px 0 #1A0B2E, 0 0 18px rgba(26, 11, 46, .85); }
+/* Anton só tem peso 400: o 900 do motor virava negrito sintético e as letras se colavam. */
+.dl { font-weight: 400; letter-spacing: .015em; line-height: .98; }
