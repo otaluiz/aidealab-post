@@ -184,6 +184,9 @@ def main():
     pasta = Path(sys.argv[1]).resolve()
     meta_path = pasta / "metadata.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8-sig"))
+    if meta.get("familia_cor") == "vice-sunset":
+        # tema vice-sunset: motion neon a partir das artes aprovadas (este template refaria o texto nas cores antigas)
+        sys.exit(subprocess.run([sys.executable, str(AQUI / "neon.py"), *sys.argv[1:]]).returncode)
     with tempfile.TemporaryDirectory(prefix="motion-") as tmp:
         proj = Path(tmp)
         shutil.copytree(AQUI / "fonts", proj / "fonts")
