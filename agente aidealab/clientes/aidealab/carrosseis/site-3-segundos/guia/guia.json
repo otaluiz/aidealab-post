@@ -1,0 +1,80 @@
+{
+ "titulo": "Teste do site em 1 minuto: velocidade, clareza e contato",
+ "subtitulo": "Um checklist para saber se o seu site ajuda ou atrapalha a venda, feito no celular, em 4G.",
+ "categoria": "SITES",
+ "como_usar": "Faça o teste com o celular no 4G, fora do Wi-Fi. Anote o resultado de cada página. Os critérios são boas práticas reunidas pela aidealab.",
+ "fontes": [
+  {
+   "titulo": "Baguete: trate o seu site como um produto",
+   "url": "https://www.baguete.com.br/noticias/trate-o-seu-site-como-um-produto"
+  },
+  {
+   "titulo": "DreamHost: guia de 2026 para SEO em sites de pequenas empresas",
+   "url": "https://www.dreamhost.com/blog/pt/o-guia-de-2026-para-seo-em-sites-de-pequenas-empresas-inclui-estrategias-de-ia-pt/"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026. Os critérios são boas práticas; números de abandono citados por fornecedores não foram usados por falta de fonte original.",
+ "paginas": [
+  {
+   "titulo": "Por que velocidade vende",
+   "texto": "No celular, o cliente decide em segundos se fica. Site lento perde visita, perde posição na busca e tem menos chance de ser citado pela IA.",
+   "itens": [
+    "Velocidade é critério de busca",
+    "Clareza decide se ele entende o que você vende",
+    "Contato fácil decide se ele chama"
+   ],
+   "dica": "Teste sempre no celular, que é onde o cliente está."
+  },
+  {
+   "titulo": "Teste 1: velocidade",
+   "texto": "Abra o site no 4G e conte os segundos até aparecer o conteúdo principal.",
+   "itens": [
+    "Até 3 segundos: bom",
+    "De 3 a 5: precisa melhorar",
+    "Mais de 5: está perdendo cliente"
+   ],
+   "dica": "Imagem grande demais é a causa mais comum."
+  },
+  {
+   "titulo": "Teste 2: uma página por serviço",
+   "texto": "Cada serviço com a própria página ajuda a busca e o cliente.",
+   "itens": [
+    "Nome do serviço no título",
+    "Cidade ou região atendida",
+    "Foto real do trabalho"
+   ],
+   "dica": "Página genérica 'Serviços' com tudo junto atrapalha."
+  },
+  {
+   "titulo": "Teste 3: a dúvida principal no topo",
+   "texto": "Sem rolar a tela, o cliente precisa entender o que você faz e para quem.",
+   "itens": [
+    "O que você vende",
+    "Para quem e onde",
+    "Faixa de preço ou como pedir orçamento"
+   ],
+   "dica": "Leia o topo como se fosse a primeira vez."
+  },
+  {
+   "titulo": "Teste 4: botão de contato",
+   "texto": "O botão de WhatsApp precisa estar sempre à vista e funcionar.",
+   "itens": [
+    "Toque e veja se abre o WhatsApp certo",
+    "Mensagem inicial já preenchida",
+    "Visível em todas as páginas"
+   ],
+   "dica": "Botão escondido no rodapé é venda perdida."
+  },
+  {
+   "titulo": "Plano de melhoria",
+   "texto": "Corrija o que falhou, na ordem que mais pesa.",
+   "itens": [
+    "Comprimir imagens",
+    "Criar a página do serviço que mais vende",
+    "Reescrever o topo",
+    "Fixar o botão de WhatsApp"
+   ],
+   "dica": "Refaça o teste depois de cada mudança."
+  }
+ ]
+}
