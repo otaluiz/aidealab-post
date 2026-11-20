@@ -11,7 +11,7 @@ npx -y hyperframes@0.8.181 browser ensure  # Chrome Headless Shell do render (mo
 python -c "from rembg import new_session; new_session('u2net'); new_session('u2net_human_seg')"
 # fontes do tema aidealab instaladas localmente (render não depende do Google Fonts carregar a tempo)
 mkdir -p ~/.fonts && R=https://raw.githubusercontent.com/google/fonts/main
-for f in "ofl/inter/Inter%5Bopsz,wght%5D.ttf" "ofl/manrope/Manrope%5Bwght%5D.ttf" "apache/yellowtail/Yellowtail-Regular.ttf" "ofl/firacode/FiraCode%5Bwght%5D.ttf"; do
+for f in "ofl/inter/Inter%5Bopsz,wght%5D.ttf" "ofl/manrope/Manrope%5Bwght%5D.ttf" "apache/yellowtail/Yellowtail-Regular.ttf" "ofl/firacode/FiraCode%5Bwght%5D.ttf" "ofl/anton/Anton-Regular.ttf"; do
   n="$(basename "$f")"; [ -f ~/.fonts/"$n" ] || curl -sSfL -o ~/.fonts/"$n" "$R/$f"
 done
 fc-cache -f

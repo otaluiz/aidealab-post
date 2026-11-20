@@ -1,0 +1,85 @@
+{
+  "carousel_id": "2026-11-site-3-segundos",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-20",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "SITES",
+  "tema": "SEU SITE DEMORA 3 SEGUNDOS? o cliente já foi.",
+  "familia_cor": "vice-sunset",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEU SITE DEMORA 3 SEGUNDOS? o cliente já foi."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "SITE LENTO SOME DA BUSCA e da resposta da IA."
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE O SITE PRECISA TER Carregar rápido no celular Uma página para cada serviço A dúvida principal respondida no topo Botão de WhatsApp sempre à vista"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "BONITO E LENTO NÃO VENDE rápido e claro vende."
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "TESTE HOJE Abra o site no 4G do celular Conte quantos segundos até aparecer Veja se o preço ou o serviço está claro Toque no botão de contato"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O SITE É SEU VENDEDOR não deixe ele dormir."
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O TESTE? Comenta SITE a aidealab te manda no direct"
+    }
+  ],
+  "legenda": "Seu site demora 3 segundos? O cliente já foi.\n\nVelocidade conta para aparecer na busca e, agora, também para ser citado nas respostas da IA. Site bonito e lento não vende. Rápido e claro vende.\n\nO que o site precisa ter: carregar rápido no celular, uma página para cada serviço, a dúvida principal respondida no topo e o botão de WhatsApp sempre à vista.\n\nFaça o teste hoje: abra o seu site no 4G do celular, conte os segundos até aparecer, veja se o serviço e o preço estão claros e toque no botão de contato.\n\nFonte: Baguete, \"Trate o seu site como um produto\"; DreamHost, guia de SEO para pequenas empresas em 2026.\n\nQuer o teste completo? Comenta SITE que a aidealab te manda no direct.\n\n#sitesprofissionais #seo #marketingdigital #pequenosnegocios #aidealab",
+  "hashtags": [
+    "#sitesprofissionais",
+    "#seo",
+    "#marketingdigital",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Teste do site em 1 minuto: velocidade, clareza e contato",
+    "categoria": "SITES",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "131dbf9ed01b18660208b595434826486ef78116db3b3d3d24927d39bf44aa3d",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  }
+}

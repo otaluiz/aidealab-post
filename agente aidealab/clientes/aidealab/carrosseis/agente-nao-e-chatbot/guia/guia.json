@@ -1,0 +1,80 @@
+{
+ "titulo": "Agente de IA no pequeno negócio: 3 tarefas para delegar hoje",
+ "subtitulo": "A diferença entre chatbot e agente, as tarefas que mais valem a pena delegar e o passo a passo antes de soltar a IA sozinha.",
+ "categoria": "AUTOMACAO",
+ "como_usar": "Escolha uma tarefa por vez e preencha o passo a passo com o seu jeito de fazer. Os modelos são frameworks editoriais da aidealab: adapte à sua ferramenta.",
+ "fontes": [
+  {
+   "titulo": "Kantar: 10 tendências de marketing para 2026",
+   "url": "https://www.kantar.com/brazil/inspiration/marcas/10-tendencias-de-marketing-para-2026"
+  },
+  {
+   "titulo": "Forbes Brasil: WhatsApp Business lança IA agêntica para PMEs",
+   "url": "https://forbes.com.br/forbes-tech/2026/02/whatsapp-business-lanca-ia-agentica-para-pmes/"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026. As tarefas e o passo a passo são frameworks próprios; a ferramenta usada para o agente fica a critério do negócio.",
+ "paginas": [
+  {
+   "titulo": "Chatbot responde, agente resolve",
+   "texto": "O chatbot espera a pergunta e responde. O agente recebe uma tarefa e executa os passos até o fim, avisando você quando precisa de decisão.",
+   "itens": [
+    "Chatbot: 'Qual o horário?' → responde",
+    "Agente: 'Cobre quem vence amanhã' → envia, registra e avisa",
+    "O que muda é a tarefa, não a conversa"
+   ],
+   "dica": "Se você faz toda semana do mesmo jeito, dá para delegar."
+  },
+  {
+   "titulo": "Tarefa 1: follow-up de orçamento",
+   "texto": "Orçamento enviado e sem resposta em 2 dias recebe uma mensagem curta e educada.",
+   "itens": [
+    "Modelo: 'Oi, [nome]! Conseguiu ver o orçamento? Posso ajustar algo?'",
+    "No máximo 2 lembretes",
+    "Resposta positiva: passa para você"
+   ],
+   "dica": "Follow-up simples recupera venda que estava esquecida."
+  },
+  {
+   "titulo": "Tarefa 2: lembrete de cobrança",
+   "texto": "Um dia antes do vencimento, lembrete gentil com o link ou a chave de pagamento.",
+   "itens": [
+    "Modelo: 'Oi, [nome]! Lembrando que vence amanhã. Segue o link.'",
+    "Nunca tom de ameaça",
+    "Atraso: avisa você para decidir"
+   ],
+   "dica": "Lembrete antes do vencimento evita a conversa difícil depois."
+  },
+  {
+   "titulo": "Tarefa 3: resumo do dia",
+   "texto": "No fim do dia, o agente junta pedidos, dúvidas sem resposta e pendências numa mensagem só.",
+   "itens": [
+    "Pedidos novos e valores",
+    "Clientes esperando resposta",
+    "O que ficou para amanhã"
+   ],
+   "dica": "Cinco minutos lendo o resumo valem uma hora de caça no celular."
+  },
+  {
+   "titulo": "Antes de delegar",
+   "texto": "Escreva o que você já faz, em passos curtos.",
+   "itens": [
+    "O passo a passo da tarefa",
+    "O que ele pode enviar sem perguntar",
+    "Quando ele deve te avisar",
+    "Quem revisa na primeira semana"
+   ],
+   "dica": "Comece com uma tarefa e só depois adicione outra."
+  },
+  {
+   "titulo": "O agente faz, você confere",
+   "texto": "Na primeira semana, revise tudo. Ajuste o passo que errou, não só a mensagem.",
+   "itens": [
+    "Leia as mensagens enviadas",
+    "Anote o que soou estranho",
+    "Mude a instrução e teste de novo"
+   ],
+   "dica": "Delegar bem é ganhar a tarde de volta sem perder o controle."
+  }
+ ]
+}
