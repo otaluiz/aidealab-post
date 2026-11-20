@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-agente-nao-e-chatbot",
+ "meta": {"serie": "AUTOMAÇÃO", "data": "2026/11", "personagem": "luizota", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["AGENTE DE IA", "NÃO É CHATBOT."], "emocao": {"texto": "ele [trabalha] por você.", "posicao": "antes"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["CHATBOT RESPONDE.", "AGENTE RESOLVE."], "emocao": {"texto": "a diferença é a [tarefa].", "posicao": "depois"}, "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["{3} TAREFAS PRA", "ENTREGAR HOJE"], "lista": ["Follow-up de orçamento que ninguém respondeu", "Lembrete de cobrança antes do vencimento", "Resumo do dia: pedidos, dúvidas e pendências"]},
+  {"template": "T2", "display": ["TAREFA REPETIDA", "É SINAL"], "emocao": {"texto": "se você faz toda semana, {delegue}.", "posicao": "depois"}},
+  {"template": "T3", "display": ["ANTES DE {DELEGAR}"], "lista": ["Escreva o passo a passo que você já segue", "Defina o que ele pode enviar sozinho", "Diga quando ele deve te avisar", "Revise o resultado na primeira semana"]},
+  {"template": "T2c", "display": ["O AGENTE FAZ,", "VOCÊ CONFERE"], "emocao": {"texto": "e ganha a {tarde} de volta.", "posicao": "depois"}},
+  {"template": "T4", "display": ["QUER O ROTEIRO?"], "cta": {"acao": "Comenta AGENTE", "texto": "a aidealab te manda no direct"}, "imagem": "cta_orig.png"}
+ ]
+}

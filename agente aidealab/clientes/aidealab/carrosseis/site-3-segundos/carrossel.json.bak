@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-site-3-segundos",
+ "meta": {"serie": "SITES", "data": "2026/11", "personagem": "wel", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["SEU SITE DEMORA", "3 SEGUNDOS?"], "emocao": {"texto": "o cliente já [foi].", "posicao": "antes"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["SITE LENTO", "SOME DA BUSCA"], "emocao": {"texto": "e da resposta da [IA].", "posicao": "depois"}, "imagem": "slide2_orig.png"},
+  {"template": "T3", "display": ["O QUE O SITE", "PRECISA {TER}"], "lista": ["Carregar rápido no celular", "Uma página para cada serviço", "A dúvida principal respondida no topo", "Botão de WhatsApp sempre à vista"]},
+  {"template": "T2", "display": ["BONITO E LENTO", "NÃO VENDE"], "emocao": {"texto": "rápido e claro {vende}.", "posicao": "depois"}},
+  {"template": "T3", "display": ["TESTE {HOJE}"], "lista": ["Abra o site no 4G do celular", "Conte quantos segundos até aparecer", "Veja se o preço ou o serviço está claro", "Toque no botão de contato"]},
+  {"template": "T2c", "display": ["O SITE É", "SEU VENDEDOR"], "emocao": {"texto": "não deixe ele {dormir}.", "posicao": "depois"}},
+  {"template": "T4", "display": ["QUER O TESTE?"], "cta": {"acao": "Comenta SITE", "texto": "a aidealab te manda no direct"}, "imagem": "cta_orig.png"}
+ ]
+}
