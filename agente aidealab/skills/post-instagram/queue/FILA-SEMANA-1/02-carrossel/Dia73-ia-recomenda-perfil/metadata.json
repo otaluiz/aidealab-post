@@ -1,0 +1,98 @@
+{
+  "carousel_id": "2026-11-ia-recomenda-perfil",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-20",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "GOOGLE",
+  "tema": "PERGUNTARAM PRA IA O MELHOR DA CIDADE. você apareceu?",
+  "familia_cor": "vice-sunset",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "PERGUNTARAM PRA IA O MELHOR DA CIDADE. você apareceu?",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "A IA LÊ SEU PERFIL DO GOOGLE e cita quem está completo.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "OS 4 CAMPOS Categoria certa (a principal decide) Horário atualizado, inclusive feriado Fotos recentes do lugar e do produto Avaliações respondidas, boas e ruins",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PERFIL PELA METADE NÃO É CITADO quem não informa some.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "ESTA SEMANA Confira a categoria principal Suba 5 fotos novas Responda as 3 últimas avaliações Publique o horário de fim de ano",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA RECOMENDA QUEM SE MOSTRA comece pelo perfil.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O CHECKLIST? Comenta PERFIL a aidealab te manda no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Perguntaram pra IA o melhor da cidade. Você apareceu?\n\nCada vez mais gente pergunta para a IA em vez de pesquisar no Google. E a IA lê o seu Perfil da Empresa para responder. Perfil pela metade não é citado.\n\nOs 4 campos que mais pesam: categoria certa, horário atualizado (inclusive feriado), fotos recentes e avaliações respondidas. Esta semana: confira a categoria principal, suba 5 fotos novas, responda as 3 últimas avaliações e publique o horário de fim de ano.\n\nA IA recomenda quem se mostra. Comece pelo perfil.\n\nFonte: Google, novas ferramentas do Gemini conectadas ao Perfil da Empresa; Meio & Mensagem / RD Station, tendências 2026 (do SEO ao GEO).\n\nQuer o checklist? Comenta PERFIL que a aidealab te manda no direct.\n\n#perfildaempresa #googlemeunegocio #marketinglocal #pequenosnegocios #aidealab",
+  "hashtags": [
+    "#perfildaempresa",
+    "#googlemeunegocio",
+    "#marketinglocal",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Perfil da Empresa no Google: checklist para a IA te recomendar",
+    "categoria": "GOOGLE",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "2600f140188ca2ede7f56d56bf3e40a8f6627b541e626106a3394200374bb0f8",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
