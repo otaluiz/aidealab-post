@@ -1,0 +1,80 @@
+{
+ "titulo": "Perfil da Empresa no Google: checklist para a IA te recomendar",
+ "subtitulo": "Os campos que a IA e o Google leem para indicar um negócio local, e o que fazer em uma semana.",
+ "categoria": "GOOGLE",
+ "como_usar": "Abra o seu Perfil da Empresa e marque cada item. Os modelos são frameworks editoriais da aidealab: adapte ao seu negócio.",
+ "fontes": [
+  {
+   "titulo": "Google: novas ferramentas do Gemini e o Perfil da Empresa",
+   "url": "https://blog.google/intl/pt-br/produtos/economize-tempo-e-impulsione-seu-negocio-com-as-novas-ferramentas-do-gemini/"
+  },
+  {
+   "titulo": "Meio & Mensagem: tendências que devem moldar marketing e vendas em 2026",
+   "url": "https://www.meioemensagem.com.br/marketing/tendencias-que-devem-moldar-marketing-e-vendas-em-2026"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026. Nenhuma ferramenta divulga como escolhe quem citar; o checklist reúne boas práticas do próprio Google para perfis completos.",
+ "paginas": [
+  {
+   "titulo": "Por que o perfil decide",
+   "texto": "Quando alguém pergunta a uma IA ou ao Google pelo melhor da cidade, as respostas se apoiam em informação pública e organizada. O Perfil da Empresa é a fonte mais direta sobre o seu negócio.",
+   "itens": [
+    "Perfil incompleto passa despercebido",
+    "Informação desatualizada afasta o cliente",
+    "Avaliação sem resposta parece abandono"
+   ],
+   "dica": "Trate o perfil como uma vitrine que trabalha 24h."
+  },
+  {
+   "titulo": "Campo 1: categoria",
+   "texto": "A categoria principal diz ao Google o que você é.",
+   "itens": [
+    "Escolha a mais específica possível",
+    "Adicione categorias secundárias reais",
+    "Revise se mudou o foco do negócio"
+   ],
+   "dica": "Veja a categoria dos 3 concorrentes que mais aparecem."
+  },
+  {
+   "titulo": "Campo 2: horário",
+   "texto": "Horário errado gera visita frustrada e avaliação ruim.",
+   "itens": [
+    "Horário normal conferido",
+    "Horário especial de feriado e fim de ano",
+    "Mesmo horário no Instagram e no WhatsApp"
+   ],
+   "dica": "Agende um lembrete antes de cada feriado."
+  },
+  {
+   "titulo": "Campo 3: fotos",
+   "texto": "Fotos recentes mostram que o negócio está ativo.",
+   "itens": [
+    "Fachada para o cliente reconhecer o lugar",
+    "Produto ou serviço em uso",
+    "Equipe e ambiente"
+   ],
+   "dica": "Suba fotos novas pelo menos uma vez por mês."
+  },
+  {
+   "titulo": "Campo 4: avaliações",
+   "texto": "Responder avaliações mostra cuidado e dá contexto para quem lê.",
+   "itens": [
+    "Agradeça as positivas citando o serviço",
+    "Responda as negativas com calma e solução",
+    "Peça avaliação logo depois de um bom atendimento"
+   ],
+   "dica": "O Gemini pode sugerir a resposta: revise antes de publicar."
+  },
+  {
+   "titulo": "Plano desta semana",
+   "texto": "Quatro tarefas que cabem em uma hora.",
+   "itens": [
+    "Conferir a categoria principal",
+    "Subir 5 fotos novas",
+    "Responder as 3 últimas avaliações",
+    "Publicar o horário de fim de ano"
+   ],
+   "dica": "Marque na agenda e faça de uma vez."
+  }
+ ]
+}

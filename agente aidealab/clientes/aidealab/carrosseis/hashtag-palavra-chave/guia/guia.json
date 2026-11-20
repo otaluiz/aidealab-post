@@ -1,0 +1,89 @@
+{
+ "titulo": "Palavra-chave no Instagram: onde colocar para o cliente te achar",
+ "subtitulo": "Um roteiro para escolher a palavra certa, colocar nos 4 lugares que o Instagram lê e medir em 2 semanas.",
+ "categoria": "INSTAGRAM",
+ "como_usar": "Preencha uma página por vez com o seu perfil aberto ao lado. Os modelos são frameworks editoriais da aidealab: adapte ao seu negócio.",
+ "fontes": [
+  {
+   "titulo": "Tecnoblog: Instagram muda algoritmo e acaba com a farra da cópia de conteúdo",
+   "url": "https://tecnoblog.net/noticias/instagram-muda-algoritmo-e-acaba-a-com-farra-da-copia-de-conteudo/"
+  },
+  {
+   "titulo": "Hypebeast: Instagram 'Seu algoritmo' no feed principal",
+   "url": "https://hypebeast.com/pt/2026/6/instagram-your-algorithm-puts-main-feed-controls-first"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 19/11/2026. O peso exato de cada campo na busca não é divulgado pelo Instagram; as recomendações são boas práticas, não regras oficiais.",
+ "paginas": [
+  {
+   "titulo": "Por que a palavra-chave importa agora",
+   "texto": "O Instagram mostra posts para quem procura um assunto e deixa o usuário escolher tópicos do feed. Quem escreve com clareza sobre o que faz entra nessas buscas.",
+   "itens": [
+    "Hashtag sozinha diz pouco sobre o que você vende",
+    "Texto claro ajuda o Instagram a entender o seu nicho",
+    "Repost de conteúdo alheio perdeu força"
+   ],
+   "dica": "Pense em como o cliente pediria o seu serviço em voz alta."
+  },
+  {
+   "titulo": "Escolha a palavra",
+   "texto": "Liste 5 jeitos de o cliente pedir o que você vende e fique com o mais simples.",
+   "itens": [
+    "Serviço + cidade: 'manicure em Cuiabá'",
+    "Evite termo técnico que só você usa",
+    "Uma palavra principal e duas variações"
+   ],
+   "dica": "Pergunte para 3 clientes como eles te procurariam."
+  },
+  {
+   "titulo": "Lugar 1: nome do perfil",
+   "texto": "O campo 'nome' (não o @) aparece na busca.",
+   "itens": [
+    "Modelo: 'Ana | Manicure em Cuiabá'",
+    "Cabe até 30 caracteres",
+    "Não repita só o @"
+   ],
+   "dica": "Troque o nome no máximo 2 vezes em 14 dias."
+  },
+  {
+   "titulo": "Lugar 2 e 3: bio e legenda",
+   "texto": "Na bio, a palavra na primeira linha. Na legenda, nos primeiros 125 caracteres.",
+   "itens": [
+    "Bio: o que você faz + para quem + onde",
+    "Legenda: gancho com a palavra logo no início",
+    "Escreva frases completas, não listas de palavras"
+   ],
+   "dica": "Leia em voz alta: se soar robótico, reescreva."
+  },
+  {
+   "titulo": "Lugar 4: texto alternativo",
+   "texto": "Em 'Configurações avançadas' do post, descreva a imagem com a palavra quando fizer sentido.",
+   "itens": [
+    "Descreva o que aparece na foto",
+    "Inclua o serviço e a cidade",
+    "Também ajuda quem usa leitor de tela"
+   ],
+   "dica": "Uma frase curta basta."
+  },
+  {
+   "titulo": "Conteúdo original",
+   "texto": "Repostar o post de outra conta rende menos. Prefira fazer a sua versão.",
+   "itens": [
+    "Grave o seu jeito de explicar o mesmo assunto",
+    "Mostre o seu cliente, o seu produto, o seu bairro",
+    "Se for repostar, dê crédito e acrescente algo seu"
+   ],
+   "dica": "Seu bastidor é conteúdo que ninguém copia."
+  },
+  {
+   "titulo": "Meça em 2 semanas",
+   "texto": "Compare as visitas ao perfil e as contas alcançadas antes e depois.",
+   "itens": [
+    "Anote os números de hoje",
+    "Mantenha a mesma palavra por 14 dias",
+    "Ajuste se não mudar nada"
+   ],
+   "dica": "Mude uma coisa por vez para saber o que funcionou."
+  }
+ ]
+}
