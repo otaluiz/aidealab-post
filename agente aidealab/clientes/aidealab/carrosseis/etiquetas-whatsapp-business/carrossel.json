@@ -1,0 +1,145 @@
+{
+ "id": "2026-11-etiquetas-whatsapp-business",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "SEU WHATSAPP",
+    "ESTÁ UMA"
+   ],
+   "emocao": {
+    "texto": "{bagunça}?",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     434,
+     438,
+     644,
+     619
+    ],
+    "caixa": [
+     442,
+     445,
+     639,
+     1209
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "CLIENTE NOVO,",
+    "ORÇAMENTO, PAGO,"
+   ],
+   "emocao": {
+    "texto": "tudo na mesma {lista}.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     617,
+     130,
+     1031,
+     438
+    ],
+    "caixa": [
+     0,
+     142,
+     1016,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 560
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "4 ETIQUETAS",
+    "{BASTAM}"
+   ],
+   "lista": [
+    "Novo cliente: chegou e ninguém respondeu",
+    "Orçamento: esperando a sua resposta",
+    "Aguardando cliente: a bola está com ele",
+    "Concluído: pago e entregue"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "TODO DIA,",
+    "ABRA A ETIQUETA"
+   ],
+   "emocao": {
+    "texto": "{orçamento} primeiro.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE A IA",
+    "{AJUDA}"
+   ],
+   "lista": [
+    "Sugere a etiqueta pelo que o cliente pediu",
+    "Resume a conversa antes de você responder",
+    "Lembra quem está parado há 2 dias",
+    "Você confere e decide o próximo passo"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A ORDEM DO",
+    "ATENDIMENTO"
+   ],
+   "emocao": {
+    "texto": "é {sua}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O PASSO",
+    "A PASSO?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "bloco": {
+    "y": 280,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

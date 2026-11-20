@@ -1,0 +1,68 @@
+{
+ "titulo": "Etiquetas no WhatsApp Business: organize o atendimento em 4 passos",
+ "subtitulo": "Um método simples para saber quem espera resposta, sem depender da memória.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Siga a ordem das páginas. Em uma tarde você monta as etiquetas e define a rotina diária. Os nomes e os prazos são sugestões editoriais da aidealab, não regras do WhatsApp.",
+ "paginas": [
+  {
+   "titulo": "Por que a lista vira bagunça",
+   "texto": "Quando todo cliente cai na mesma lista, o que está urgente se mistura com o que já foi resolvido. A conversa que precisava de resposta hoje fica escondida abaixo de outras.\n\nA etiqueta resolve uma coisa só: mostrar em que ponto cada conversa está.",
+   "dica": "Antes de criar qualquer etiqueta, conte quantas conversas abertas você tem e em quantas você é quem deve a próxima resposta."
+  },
+  {
+   "titulo": "As 4 etiquetas de partida",
+   "itens": [
+    "Novo cliente: chegou e ainda não recebeu resposta sua.",
+    "Orçamento: pediu preço ou proposta e espera você.",
+    "Aguardando cliente: você respondeu; a próxima ação é dele.",
+    "Concluído: pago, entregue ou encerrado."
+   ],
+   "texto": "Comece pequeno. Quatro etiquetas cobrem a maioria dos pequenos negócios. Adicione outras só quando uma conversa não couber em nenhuma delas.",
+   "dica": "Os nomes são sugestão. Use palavras que você entende em um segundo, olhando para a tela do celular."
+  },
+  {
+   "titulo": "Como criar e aplicar",
+   "texto": "No aplicativo WhatsApp Business, as etiquetas ficam nas ferramentas do negócio. O caminho exato dos menus muda conforme o aparelho e a versão, então confira na documentação oficial.\n\nDepois de criar as quatro, aplique em todas as conversas abertas hoje. Leva poucos minutos e dá a primeira visão real do seu atendimento.",
+   "recursos": [
+    {"nome": "Central de Ajuda do WhatsApp: sobre o WhatsApp Business", "url": "https://faq.whatsapp.com/641572844337957/", "descricao": "Recursos do aplicativo para negócios, incluindo listas e organização de conversas."}
+   ]
+  },
+  {
+   "titulo": "A rotina de 10 minutos",
+   "itens": [
+    "Abra a etiqueta Orçamento e responda quem espera.",
+    "Abra Novo cliente e dê a primeira resposta.",
+    "Olhe Aguardando cliente: quem está parado há alguns dias recebe um retorno curto.",
+    "Mude a etiqueta de cada conversa que avançou."
+   ],
+   "texto": "A ordem importa: quem pediu preço está mais perto da decisão.",
+   "dica": "Defina o seu próprio prazo para retornar a quem está parado e escreva-o em um lugar visível."
+  },
+  {
+   "titulo": "Onde a IA ajuda e onde não",
+   "texto": "Uma ferramenta de IA pode sugerir a etiqueta a partir do que o cliente escreveu e resumir uma conversa longa antes de você responder.\n\nA decisão de preço, prazo e exceção continua com você. Confira cada sugestão, principalmente no começo, até confiar no padrão.",
+   "dica": "Não cole dados sensíveis de clientes em ferramentas sem entender como elas tratam esses dados. Consulte o guia da ANPD para pequenos negócios."
+  },
+  {
+   "titulo": "Como saber se funcionou",
+   "texto": "Depois de uma semana, compare com a contagem inicial: quantas conversas ficaram sem resposta sua? Quantos orçamentos esperaram mais do que você considera aceitável?\n\nNão há número universal de melhora. O que importa é a sua base de comparação e a sua rotina.",
+   "itens": [
+    "Conversas sem resposta sua ao fim do dia.",
+    "Orçamentos esperando há mais tempo do que o seu limite.",
+    "Conversas sem etiqueta."
+   ]
+  },
+  {
+   "titulo": "Próximos passos",
+   "texto": "Com as etiquetas funcionando, vale padronizar as respostas mais frequentes e a mensagem de ausência. A aidealab ajuda a montar esse sistema para o seu negócio.",
+   "recursos": [
+    {"nome": "Sebrae: Venda mais com o WhatsApp", "url": "https://meuatendimento.sebrae.com.br/sites/PortalSebrae/ufs/ba/artigos/venda-mais-com-o-whatsapp-estrategias-para-empresas-em-expansao%2C36ea1c09edf78910VgnVCM1000001b00320aRCRD", "descricao": "Orientações práticas de atendimento, mensagens, etiquetas e follow-up."}
+   ]
+  }
+ ],
+ "fontes": [
+  {"titulo": "WhatsApp Help Center: Sobre o WhatsApp Business", "url": "https://faq.whatsapp.com/641572844337957/"},
+  {"titulo": "Sebrae: Venda mais com o WhatsApp", "url": "https://meuatendimento.sebrae.com.br/sites/PortalSebrae/ufs/ba/artigos/venda-mais-com-o-whatsapp-estrategias-para-empresas-em-expansao%2C36ea1c09edf78910VgnVCM1000001b00320aRCRD"},
+  {"titulo": "ANPD: Guia de segurança da informação para agentes de pequeno porte", "url": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte"}
+ ]
+}

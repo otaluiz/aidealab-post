@@ -1,0 +1,100 @@
+{
+  "carousel_id": "2026-11-etiquetas-whatsapp-business",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-20",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "SEU WHATSAPP ESTÁ UMA bagunça?",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "SEU WHATSAPP ESTÁ UMA bagunça?",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "CLIENTE NOVO, ORÇAMENTO, PAGO, tudo na mesma lista.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "4 ETIQUETAS BASTAM Novo cliente: chegou e ninguém respondeu Orçamento: esperando a sua resposta Aguardando cliente: a bola está com ele Concluído: pago e entregue",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "TODO DIA, ABRA A ETIQUETA orçamento primeiro.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE A IA AJUDA Sugere a etiqueta pelo que o cliente pediu Resume a conversa antes de você responder Lembra quem está parado há 2 dias Você confere e decide o próximo passo",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A ORDEM DO ATENDIMENTO é sua.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O PASSO A PASSO? Comenta ATENDIMENTO a aidealab te manda no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Seu WhatsApp está uma bagunça? Quatro etiquetas resolvem.\n\nCliente novo, orçamento, pagamento e entrega na mesma lista fazem você esquecer quem espera resposta. O WhatsApp Business tem etiquetas para separar isso, e elas funcionam com ou sem IA.\n\nComece com 4: Novo cliente, Orçamento, Aguardando cliente e Concluído. Todo dia, abra primeiro a etiqueta Orçamento. Se usar IA, deixe que ela sugira a etiqueta e resuma a conversa, mas confira antes de agir.\n\nFonte: Central de Ajuda do WhatsApp Business e Sebrae, \"Venda mais com o WhatsApp\".\n\nQuer o passo a passo para montar? Comenta ATENDIMENTO que a aidealab te manda no direct.\n\n#whatsappbusiness #atendimentoaocliente #pequenosnegocios #iaparanegocios #aidealab",
+  "hashtags": [
+    "#whatsappbusiness",
+    "#atendimentoaocliente",
+    "#pequenosnegocios",
+    "#iaparanegocios",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Etiquetas no WhatsApp Business: organize o atendimento em 4 passos",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 10,
+    "fonte_sha256": "a1d5e288fa890c2384f1ee667c2758eecff9d22c7379b7c13ac8ff215199db40",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": null,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
