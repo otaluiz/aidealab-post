@@ -86,3 +86,15 @@
 | Dia73-ia-recomenda-perfil | 1 | dark_futurism_surreal_lighting_3d_art_a1e0b34ccdf10bbd10b06fcaa0ed56a7.png | 0.52 | — (abaixo do limiar, sem foto limpa) |
 | Dia73-ia-recomenda-perfil | 2 | grainy_analog_film_atmospheric_surreal_lighti_301f8b1bcd89296d57e432519c345fd5.png | 0.57 | — (abaixo do limiar, sem foto limpa) |
 | Dia73-ia-recomenda-perfil | 7 | surrealist_conceptual_photography_dark_mood_665f39d4e25f2948f63ae0f49b743ee1.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 1 | minimalist_sci_fi_portrait_neon_lighting_aura_2aa412ff9b26fb695254024155dc04dc.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 2 | soul_avant_garde_photography_editorial_men_solo_20261015_856fc1de9e0f2155bf80c84594c8ce14.jpg | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 8 | dark_futurism_surreal_lighting_3d_art_3df0de58d650a1e602fa8bb5b7956a34.png | 0.62 | — (abaixo do limiar, sem foto limpa) |
+| Dia72-hashtag-palavra-chave | 1 | cinematic_astral_projections_surreal_digital_58a2701e81fdcfe5af93648a453cb4ed.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia72-hashtag-palavra-chave | 2 | futuristic_chrome_organic_sculpture_aesthetic_68d28f7219d5bd3cc140e0c266ba4bbf.png | 0.44 | — (abaixo do limiar, sem foto limpa) |
+| Dia72-hashtag-palavra-chave | 7 | surrealism_digital_art_ethereal_lighting_0ea94008a8941f8352f6b8fe05bf9fe7.png | 0.54 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 1 | dark_futurism_surreal_lighting_3d_art_a1e0b34ccdf10bbd10b06fcaa0ed56a7.png | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 2 | grainy_analog_film_atmospheric_surreal_lighti_301f8b1bcd89296d57e432519c345fd5.png | 0.57 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 7 | surrealist_conceptual_photography_dark_mood_665f39d4e25f2948f63ae0f49b743ee1.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia74-agente-nao-e-chatbot | 1 | soul_minimalist_editorial_photography_men_single_p_20261019_9e1202b0cbcdfc300c6938bd796be256.jpg | 0.30 | — (abaixo do limiar, sem foto limpa) |
+| Dia74-agente-nao-e-chatbot | 2 | retro_analog_film_dark_aesthetic_portrait_86417200000ada0a2215f1a7cbb2ee93.png | 0.46 | — (abaixo do limiar, sem foto limpa) |
+| Dia74-agente-nao-e-chatbot | 7 | (17) Home _ X.png | 0.35 | — (abaixo do limiar, sem foto limpa) |

@@ -1,0 +1,98 @@
+{
+  "carousel_id": "2026-11-agente-nao-e-chatbot",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-20",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "AUTOMAÇÃO",
+  "tema": "AGENTE DE IA NÃO É CHATBOT. ele trabalha por você.",
+  "familia_cor": "vice-sunset",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "AGENTE DE IA NÃO É CHATBOT. ele trabalha por você.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "CHATBOT RESPONDE. AGENTE RESOLVE. a diferença é a tarefa.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "3 TAREFAS PRA ENTREGAR HOJE Follow-up de orçamento que ninguém respondeu Lembrete de cobrança antes do vencimento Resumo do dia: pedidos, dúvidas e pendências",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "TAREFA REPETIDA É SINAL se você faz toda semana, delegue.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "ANTES DE DELEGAR Escreva o passo a passo que você já segue Defina o que ele pode enviar sozinho Diga quando ele deve te avisar Revise o resultado na primeira semana",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O AGENTE FAZ, VOCÊ CONFERE e ganha a tarde de volta.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O ROTEIRO? Comenta AGENTE a aidealab te manda no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Agente de IA não é chatbot. Ele trabalha por você.\n\nO chatbot responde pergunta. O agente resolve tarefa: segue um passo a passo, manda a mensagem certa na hora certa e te avisa quando precisa de você. Agentes de IA estão no topo das tendências de marketing para 2026, mas o ganho real está nas tarefas pequenas que se repetem toda semana.\n\nTrês para entregar hoje: o follow-up do orçamento que ninguém respondeu, o lembrete de cobrança antes do vencimento e o resumo do dia com pedidos, dúvidas e pendências.\n\nAntes de delegar, escreva o passo a passo que você já segue, defina o que ele pode enviar sozinho e quando deve te avisar. Na primeira semana, revise tudo.\n\nFonte: Kantar, 10 tendências de marketing para 2026 (\"agentes de IA em escala\").\n\nQuer o roteiro? Comenta AGENTE que a aidealab te manda no direct.\n\n#agentesdeia #automacao #iaparanegocios #pequenosnegocios #aidealab",
+  "hashtags": [
+    "#agentesdeia",
+    "#automacao",
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Agente de IA no pequeno negócio: 3 tarefas para delegar hoje",
+    "categoria": "AUTOMACAO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "a14394c2245d5217f28ec9f0f4c5c176156e546b76d32662a7c627b248e934e4",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181",
+    "estilo": "neon"
+  }
+}
