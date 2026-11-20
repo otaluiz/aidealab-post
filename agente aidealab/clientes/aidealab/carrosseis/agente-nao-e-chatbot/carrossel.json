@@ -1,0 +1,170 @@
+{
+ "id": "2026-11-agente-nao-e-chatbot",
+ "meta": {
+  "serie": "AUTOMAÇÃO",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "AGENTE DE IA",
+    "NÃO É CHATBOT."
+   ],
+   "emocao": {
+    "texto": "ele [trabalha] por você.",
+    "posicao": "antes"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     376,
+     635,
+     640,
+     891
+    ],
+    "caixa": [
+     237,
+     643,
+     798,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "CHATBOT RESPONDE.",
+    "AGENTE RESOLVE."
+   ],
+   "emocao": {
+    "texto": "a diferença é a [tarefa].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     401,
+     633,
+     627,
+     855
+    ],
+    "caixa": [
+     299,
+     641,
+     795,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "{3} TAREFAS PRA",
+    "ENTREGAR HOJE"
+   ],
+   "lista": [
+    "Follow-up de orçamento que ninguém respondeu",
+    "Lembrete de cobrança antes do vencimento",
+    "Resumo do dia: pedidos, dúvidas e pendências"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "TAREFA REPETIDA",
+    "É SINAL"
+   ],
+   "emocao": {
+    "texto": "se você faz toda semana, {delegue}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "ANTES DE {DELEGAR}"
+   ],
+   "lista": [
+    "Escreva o passo a passo que você já segue",
+    "Defina o que ele pode enviar sozinho",
+    "Diga quando ele deve te avisar",
+    "Revise o resultado na primeira semana"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "O AGENTE FAZ,",
+    "VOCÊ CONFERE"
+   ],
+   "emocao": {
+    "texto": "e ganha a {tarde} de volta.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O ROTEIRO?"
+   ],
+   "cta": {
+    "acao": "Comenta AGENTE",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      376,
+      596,
+      672,
+      870
+     ]
+    ],
+    "cabeca": [
+     406,
+     576,
+     612,
+     779
+    ],
+    "caixa": [
+     231,
+     584,
+     786,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 180,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "id": "2026-11-site-3-segundos",
+ "meta": {
+  "serie": "SITES",
+  "data": "2026/11",
+  "personagem": "wel",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "SEU SITE DEMORA",
+    "3 SEGUNDOS?"
+   ],
+   "emocao": {
+    "texto": "o cliente já [foi].",
+    "posicao": "antes"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      324,
+      610,
+      659,
+      915
+     ]
+    ],
+    "cabeca": [
+     356,
+     582,
+     642,
+     784
+    ],
+    "caixa": [
+     120,
+     590,
+     964,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "SITE LENTO",
+    "SOME DA BUSCA"
+   ],
+   "emocao": {
+    "texto": "e da resposta da [IA].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_orig.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      327,
+      515,
+      718,
+      867
+     ]
+    ],
+    "cabeca": [
+     365,
+     455,
+     707,
+     687
+    ],
+    "caixa": [
+     101,
+     464,
+     1050,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE O SITE",
+    "PRECISA {TER}"
+   ],
+   "lista": [
+    "Carregar rápido no celular",
+    "Uma página para cada serviço",
+    "A dúvida principal respondida no topo",
+    "Botão de WhatsApp sempre à vista"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "BONITO E LENTO",
+    "NÃO VENDE"
+   ],
+   "emocao": {
+    "texto": "rápido e claro {vende}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "TESTE {HOJE}"
+   ],
+   "lista": [
+    "Abra o site no 4G do celular",
+    "Conte quantos segundos até aparecer",
+    "Veja se o preço ou o serviço está claro",
+    "Toque no botão de contato"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "O SITE É",
+    "SEU VENDEDOR"
+   ],
+   "emocao": {
+    "texto": "não deixe ele {dormir}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O TESTE?"
+   ],
+   "cta": {
+    "acao": "Comenta SITE",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      316,
+      623,
+      682,
+      967
+     ]
+    ],
+    "cabeca": [
+     353,
+     572,
+     641,
+     776
+    ],
+    "caixa": [
+     51,
+     580,
+     904,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 180,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   }
+  }
+ ]
+}
