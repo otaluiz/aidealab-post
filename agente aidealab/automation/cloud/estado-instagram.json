@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-21T02:07:33+00:00",
+  "atualizado_em": "2026-11-21T03:09:25+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
@@ -223,7 +223,7 @@
       "likes": 14,
       "comments": 0,
       "insights": {
-        "reach": 48,
+        "reach": 49,
         "saved": 0,
         "shares": 0,
         "views": 118,
@@ -231,7 +231,7 @@
         "follows": 0,
         "profile_visits": 1
       },
-      "score": 29.17
+      "score": 28.57
     },
     {
       "data": "2026-11-07",
@@ -723,18 +723,18 @@
       "alcance": 32
     },
     {
-      "data": "2026-11-08",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "O WhatsApp Business agora tem IA que responde cliente. Só que ela responde com o que você ensinou.",
-      "score": 29.17,
-      "alcance": 48
-    },
-    {
       "data": "2026-10-21",
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Seu WhatsApp virou caos. O cliente manda oi e o pedido some no meio da conversa.",
       "score": 29.03,
       "alcance": 31
+    },
+    {
+      "data": "2026-11-08",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "O WhatsApp Business agora tem IA que responde cliente. Só que ela responde com o que você ensinou.",
+      "score": 28.57,
+      "alcance": 49
     },
     {
       "data": "2026-10-15",
