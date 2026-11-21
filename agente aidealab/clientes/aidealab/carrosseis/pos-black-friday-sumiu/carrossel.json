@@ -1,0 +1,169 @@
+{
+ "id": "2026-11-pos-black-friday-sumiu",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "wel",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "PERGUNTOU",
+    "E SUMIU?"
+   ],
+   "emocao": {
+    "texto": "a venda ainda [está] na conversa.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      349,
+      446,
+      726,
+      823
+     ]
+    ],
+    "cabeca": [
+     397,
+     408,
+     663,
+     650
+    ],
+    "caixa": [
+     19,
+     417,
+     1008,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 165,
+    "alinhar": "centro",
+    "largura": 720
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "PEDIU PREÇO",
+    "E NÃO VOLTOU"
+   ],
+   "emocao": {
+    "texto": "não é {não}. É conversa parada.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     480,
+     652,
+     598,
+     688
+    ],
+    "caixa": [
+     485,
+     654,
+     594,
+     806
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "POR QUE ELA",
+    "{NÃO} COMPROU"
+   ],
+   "lista": [
+    "Achou o preço alto",
+    "Ficou com uma dúvida",
+    "Não era o momento",
+    "Esqueceu de responder"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "UMA MENSAGEM",
+    "PARA CADA MOTIVO"
+   ],
+   "emocao": {
+    "texto": "a mesma para todos é {insistência}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O ROTEIRO",
+    "EM {3} TOQUES"
+   ],
+   "lista": [
+    "Dia 1 a 2: ajude com a dúvida",
+    "Dia 5: traga uma informação nova",
+    "Dia 10: deixe a porta aberta",
+    "Sem resposta: pare"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "RESPEITE",
+    "O NÃO"
+   ],
+   "emocao": {
+    "texto": "quem pede para parar, você {para}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "MODELOS PRONTOS?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te responde"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     284,
+     286,
+     615,
+     680
+    ],
+    "caixa": [
+     159,
+     297,
+     1079,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

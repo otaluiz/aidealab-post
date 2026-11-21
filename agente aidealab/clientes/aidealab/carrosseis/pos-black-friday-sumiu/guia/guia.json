@@ -1,0 +1,123 @@
+{
+ "titulo": "Quem perguntou e não comprou: o roteiro de follow-up depois da Black Friday",
+ "subtitulo": "Como retomar a conversa com quem pediu preço, sumiu e não fechou, sem insistência e dentro das regras do WhatsApp e da LGPD.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Faça uma página por vez com as conversas reais do seu WhatsApp Business. Os modelos e o calendário são frameworks editoriais da aidealab: adapte ao seu produto e à sua voz.",
+ "fontes": [
+  {
+   "titulo": "Mercado Pago: pós-venda no comércio e contato para garantir a recompra",
+   "url": "https://www.mercadopago.com.br/blog/pos-venda-comercio-contato-recompra"
+  },
+  {
+   "titulo": "Zenvia: Black Friday no comércio e mensagens de acompanhamento",
+   "url": "https://zenvia.com/blog/black-friday-no-comercio/"
+  },
+  {
+   "titulo": "Planalto: Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+   "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+  },
+  {
+   "titulo": "WhatsApp Business: Política de Negócios",
+   "url": "https://business.whatsapp.com/policy/preview?lang=pt_BR"
+  },
+  {
+   "titulo": "Central do Varejo: como estruturar vendas e pós-venda no WhatsApp",
+   "url": "https://centraldovarejo.com.br/como-estruturar-vendas-e-pos-venda-no-whatsapp/"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, 21/11/2026. Modelos, prazos e o plano de 7 dias são frameworks próprios, não regras da Meta nem da lei. Regras e limites do WhatsApp mudam: confira na documentação oficial. Aprovação humana pendente antes de qualquer distribuição.",
+ "paginas": [
+  {
+   "titulo": "Quem perguntou e sumiu ainda é um contato quente",
+   "texto": "Na Black Friday muita gente pergunta preço, prazo ou disponibilidade e não responde mais. Isso não significa que desistiu: pode ter se distraído, comparado opções ou esperado o pagamento.\n\nO que separa essa pessoa de uma venda costuma ser uma resposta que não veio, ou uma pergunta que ficou sem retorno. A conversa já existe; falta retomá-la com um motivo.",
+   "itens": [
+    "Pediu preço e sumiu: ainda não decidiu",
+    "Pediu prazo: pode ter dúvida de entrega",
+    "Disse 'vou ver': está comparando",
+    "Parou de responder: pode ter esquecido"
+   ],
+   "dica": "Abra o WhatsApp Business e filtre as conversas dos últimos 10 dias em que o último a falar foi você."
+  },
+  {
+   "titulo": "Faça a lista antes de escrever",
+   "texto": "Sem lista, o follow-up vira mensagem em massa. Anote cada conversa pendente em uma planilha simples, usando só o que o cliente informou na conversa.",
+   "itens": [
+    "Nome e o que perguntou",
+    "Data da última mensagem",
+    "Quem falou por último",
+    "Qual era a dúvida (preço, prazo, tamanho, forma de pagamento)",
+    "Se já houve compra antes"
+   ],
+   "dica": "Anote apenas o que você vai usar. Quanto menos dado pessoal guardado, menor o risco."
+  },
+  {
+   "titulo": "Entenda por que a pessoa não comprou",
+   "texto": "A mensagem muda conforme o motivo. Releia a conversa e classifique em uma destas quatro situações antes de escrever.",
+   "itens": [
+    "Preço: ela comparou e achou caro",
+    "Dúvida: faltou uma informação (prazo, tamanho, garantia)",
+    "Momento: queria, mas não era a hora",
+    "Silêncio: nunca respondeu a sua última mensagem"
+   ],
+   "dica": "Se a conversa não deixa claro, trate como dúvida e pergunte."
+  },
+  {
+   "titulo": "Quatro modelos de mensagem",
+   "texto": "Um por situação. Todos são curtos, citam o assunto da conversa, não pressionam e deixam a pessoa livre para dizer não.",
+   "itens": [
+    "Preço: Oi, [nome]! Você perguntou do [produto] na Black Friday. Posso te mostrar uma forma de pagamento que caiba melhor?",
+    "Dúvida: Oi, [nome]! Ficou alguma dúvida sobre o [produto]? Posso te ajudar com [prazo ou tamanho].",
+    "Momento: Oi, [nome]! Sem pressa. Se ainda fizer sentido o [produto], me avisa que separo para você.",
+    "Silêncio: Oi, [nome]! Só confirmando se chegou a minha resposta sobre o [produto]."
+   ],
+   "dica": "Troque os colchetes por dados reais. Nunca invente escassez ou prazo que não existe."
+  },
+  {
+   "titulo": "Peça licença e respeite o não",
+   "texto": "Mensagem promocional exige cuidado com a LGPD. A lei trata o consentimento como uma das bases para usar dados pessoais e garante ao titular o direito de pedir a revogação (arts. 7º e 18). A Política de Negócios do WhatsApp também espera que a empresa tenha permissão de quem recebe.\n\nQuando a própria pessoa iniciou a conversa, retomar o assunto que ela perguntou é coerente com o pedido. Ofertas de outros produtos pedem permissão.",
+   "itens": [
+    "Retome só o assunto que ela perguntou",
+    "Ofereça uma saída clara: se não quiser mais mensagens, é só avisar",
+    "Se ela pedir para parar, registre e pare",
+    "Não adicione ninguém em lista de transmissão sem pedir"
+   ],
+   "dica": "Confirme as condições vigentes na documentação oficial do WhatsApp Business."
+  },
+  {
+   "titulo": "Quando e quantas vezes escrever",
+   "texto": "Este é um calendário-base da aidealab, não uma regra da plataforma. A ideia é espaçar os contatos e parar cedo.",
+   "itens": [
+    "Dia 1 a 2 depois da pergunta: 1ª mensagem, ajuda com a dúvida",
+    "Dia 5: 2ª mensagem, com informação nova (prazo, condição, alternativa)",
+    "Dia 10: última mensagem, deixando a porta aberta",
+    "Sem resposta depois da terceira: encerre e marque como frio"
+   ],
+   "dica": "Tenha uma informação nova a cada contato. Repetir a mesma mensagem é insistência."
+  },
+  {
+   "titulo": "Onde a IA ajuda e onde não",
+   "texto": "A IA pode ajudar a ler as conversas pendentes, sugerir a classificação e rascunhar a mensagem com o nome e o produto. Quem decide enviar, e quem responde quando a pessoa volta, é você.\n\nNão deixe a IA prometer desconto, prazo ou estoque. Esses dados são seus.",
+   "itens": [
+    "IA: resumir a conversa e sugerir o motivo",
+    "IA: rascunhar a mensagem no seu tom",
+    "Você: conferir, ajustar e enviar",
+    "Você: responder preço, prazo e condição"
+   ],
+   "dica": "Antes de enviar o primeiro lote, mande para você mesmo e leia como cliente."
+  },
+  {
+   "titulo": "Plano de 7 dias",
+   "texto": "Uma tarefa por dia, com 15 a 20 minutos.",
+   "itens": [
+    "Dia 1: filtrar as conversas pendentes",
+    "Dia 2: montar a lista e classificar o motivo",
+    "Dia 3: ajustar os 4 modelos ao seu produto",
+    "Dia 4: enviar a 1ª mensagem aos mais recentes",
+    "Dia 5: responder quem voltou",
+    "Dia 6: enviar a 2ª mensagem, com informação nova",
+    "Dia 7: contar quantas conversas foram retomadas e ajustar"
+   ],
+   "dica": "Meça só o que você vai usar: conversas retomadas e vendas fechadas dessas conversas."
+  }
+ ]
+}

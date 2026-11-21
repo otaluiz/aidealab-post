@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-pos-black-friday-sumiu",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-21",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "PERGUNTOU E SUMIU? a venda ainda está na conversa.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "PERGUNTOU E SUMIU? a venda ainda está na conversa.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "PEDIU PREÇO E NÃO VOLTOU não é não. É conversa parada.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "POR QUE ELA NÃO COMPROU Achou o preço alto Ficou com uma dúvida Não era o momento Esqueceu de responder",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA MENSAGEM PARA CADA MOTIVO a mesma para todos é insistência.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O ROTEIRO EM 3 TOQUES Dia 1 a 2: ajude com a dúvida Dia 5: traga uma informação nova Dia 10: deixe a porta aberta Sem resposta: pare",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "RESPEITE O NÃO quem pede para parar, você para.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "MODELOS PRONTOS? Comenta ATENDIMENTO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Black Friday passou e tem conversa parada no seu WhatsApp: gente que perguntou preço e não voltou.\n\nEssa pessoa ainda pode comprar. Releia a conversa e descubra o motivo: preço, dúvida, momento ou esquecimento. Escreva uma mensagem curta para cada um, sem a mesma frase para todos. Primeiro toque em 1 ou 2 dias, o segundo com informação nova por volta do dia 5, o último no dia 10. Sem resposta, pare. E quem pedir para sair, você respeita.\n\nA IA ajuda a ler as conversas e rascunhar a mensagem; preço, prazo e envio ficam com você.\n\nQuantas conversas paradas você tem hoje no WhatsApp Business?\n\nFonte: Mercado Pago, \"Pós-venda no comércio: como manter contato para garantir a recompra\"; Zenvia, \"Black Friday no comércio\"; LGPD (Lei 13.709/2018, art. 7º e 18).\n\nQuer os modelos prontos? Comenta ATENDIMENTO que a aidealab te responde.\n\n#pequenosnegocios #whatsappbusiness #posvenda #blackfriday #aidealab",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#posvenda",
+    "#blackfriday",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Quem perguntou e não comprou: o roteiro de follow-up depois da Black Friday",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 11,
+    "fonte_sha256": "26ce4746465cad38651bcba58064e509b1babc491829064b6f534707049df94d",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": "https://mercadoeconsumo.com.br/06/11/2026/noticias/black-friday-como-o-comercio-de-bairro-pode-acessar-ofertas-da-industria-e-competir-em-preco/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}
