@@ -1,0 +1,94 @@
+{
+ "slug": "prompt-cenario",
+ "ordem": 0,
+ "tema": "tema",
+ "tags": [
+  "#inteligenciaartificial",
+  "#marketingdigital",
+  "#socialmedia",
+  "#conteudodigital",
+  "#aidealab"
+ ],
+ "capa": {
+  "display": [
+   "O CENÁRIO",
+   "FAZ A FOTO."
+  ],
+  "emocao": "3 prompts pra [copiar]."
+ },
+ "fotos": [
+  {
+   "id": "c6a30279",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261119_211753_c6a30279-a259-4212-8447-f6bfef802303.png",
+   "prompt": "<<<65730766-9399-4986-9ce8-42813729df44>>> in the exact same illustration style as the reference image: hand-painted video-game loading-screen art, bold ink outlines, cel-shaded, magenta/orange/teal neon palette. He sits at a café terrace on an ocean drive at night with an open laptop on the table in front of him, the laptop screen facing him (we see the back of the lid), neon glow on his face, the figure in the lower half, head at vertical middle. Mouth closed, not smiling. No text, no letters, no logos, no glasses, no hat, no jewelry."
+  },
+  {
+   "id": "dfe0068e",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261008_172836_dfe0068e-e375-4365-b02c-a686c2e72b9c.png",
+   "prompt": "A low-angle wide shot captures a young Latino/Hispanic man, estimated in his mid-20s, sitting on the sharp corner of a concrete structure. He wears a dark, classic business suit with a spread-collar white dress shirt and a black tie, blending formal attire with casual, chunky white sneakers and white socks. The concrete block he sits on is raw and weathered, showing typical construction textures and slight discolorations. He looks directly at the camera, hands clasped in front of him, descending slightly forward for a sense of intentional presence. The sky dominates the upper frame, filled with soft, rolling clouds creating a blue-and-white gradient backdrop. Natural daylight creates a balanced illumination with gentle shadows, leaving the color palette neutral and reserved, with the cool gray of the concrete and sky harmonizing with his dark suit, offset by the white of his socks and shoes. The extreme low-angle creates a sense of monumentality and height, compressing the figure against the sky while the deep depth of field keeps both the subject and the environment crisp. The image feels editorial and modern, likely shot on a high-resolution digital camera with minimal visible grain or distortion. The overall mood is bold, assertive, and slightly surreal due to the elevated, isolated position of the subject.\nHEX VALUES: [\"#a4abba\", \"#b1b7c3\", \"#969fb0\", \"#c0c5d0\", \"#868fa2\", \"#6a6967\", \"#d2d5dd\", \"#565555\", \"#787775\", \"#4e4d4e\", \"#5e5d5c\", \"#14151c\", \"#040409\"]"
+  },
+  {
+   "id": "2df66f00",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261008_173238_2df66f00-44bd-46ab-b548-3a597e90fdf5.png",
+   "prompt": "Editorial fashion photograph: a young man with short dark textured hair walks toward the camera through a very narrow corridor between two tall smooth white walls that open to a deep blue sky with soft clouds, looking down at the smartphone in his hand, eyes visible, focused and serious, mouth closed, not smiling. Plain navy suit, plain white t-shirt, dark shoes. Figure in the lower half of the frame, tall walls and sky above him. Deep navy and cyan color grading, crisp sunlight. No text, no letters, no logos, no sunglasses, no eyewear, no hat, no jewelry"
+  },
+  {
+   "id": "78876823",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261008_172838_78876823-99e5-4a79-86ea-f01d2541e5e8.png",
+   "prompt": "A low-angle full-body shot features a Latino / Hispanic adult man walking confidently down a tapering, light-blue architectural corridor beneath a vivid blue sky with wispy clouds. He is dressed in a sharp, light grey pinstriped suit over a crisp white dress shirt, paired with brown leather shoes. His hands are relaxed by his sides, and he wears dark sunglasses that shield his eyes and add a touch of modern sophistication. The corridor’s surfaces have a matte, textured finish, catching the midday sunlight to cast soft highlights and subtle shadows, creating a dramatic geometric frame that leads the viewer’s gaze upward toward the sky. The dominating colors are cool cyan-blue, pale grey, and a rich sky blue, offset by the warmth of his shoes and skin. The composition uses converging lines and extreme perspective, elongating the subject with a sense of grandeur and clarity. Captured by a digital camera with a wide-angle lens, there is mild barrel distortion and deep focus throughout the image, yielding crisp detail on both the man and the surrounding architecture. The mood conveys confidence, power, and modern professionalism with a slightly surreal, aspirational quality.\nHEX VALUES: [\"#345880\", \"#93a3b0\", \"#889aa8\", \"#a0afbb\", \"#7e909f\", \"#b0bcc5\", \"#dbe0e4\", \"#748596\", \"#66798d\", \"#c3cdd4\", \"#586b7d\", \"#416489\", \"#ebedee\"]"
+  }
+ ],
+ "pares": [
+  {
+   "titulo": "{VIDEOGAME}",
+   "lista": [
+    "Foto de referência + arte de tela de jogo",
+    "Café de calçadão à noite, notebook",
+    "Tela virada pra ele, brilho neon",
+    "Feche com: sem texto, sem logo"
+   ],
+   "guia": "O prompt no estilo arte de videogame. Anexe sua foto e, se tiver, uma imagem nesse estilo como referência.",
+   "dica": "Sempre feche com: no text, no letters, no logos.",
+   "nome": "videogame, no café"
+  },
+  {
+   "display": [
+    "NO TOPO DO",
+    "CONCRETO"
+   ],
+   "emocao": "e o céu {inteiro}.",
+   "titulo": "{DO CONCRETO}",
+   "nome": "no topo do concreto",
+   "lista": [
+    "Plano aberto de baixo pra cima",
+    "Sentado na quina de um bloco de concreto",
+    "Terno escuro com tênis branco",
+    "Céu com nuvens ocupando o alto"
+   ],
+   "guia": "De baixo pra cima, o céu vira o cenário.",
+   "dica": "\"Small figure in the lower third\" deixa o alto livre pro título."
+  },
+  {
+   "display": [
+    "UM CORREDOR",
+    "BRANCO"
+   ],
+   "emocao": "e o céu no {fim}.",
+   "titulo": "{DO CORREDOR}",
+   "nome": "o corredor branco",
+   "lista": [
+    "Corredor estreito entre paredes brancas",
+    "Andando na direção da câmera",
+    "Céu azul com nuvens no alto",
+    "Luz de sol bem nítida"
+   ],
+   "guia": "Linhas que convergem levam o olho direto pra pessoa.",
+   "dica": "Peça \"crisp sunlight\" pra sombra ficar desenhada."
+  }
+ ],
+ "guia_titulo": "3 prompts de foto com cenário",
+ "guia_sub": "Um no estilo videogame e dois de arquitetura, prontos pra colar com a sua foto.",
+ "legenda": "O cenário faz a foto. Essas 3 saíram de prompts, sem sair de casa.\n\nUma no estilo videogame, uma num muro de concreto com sombra longa, uma num corredor branco com céu no fim. Em todas, a pessoa é pequena e o cenário é grande, e o alto da foto fica livre pro título do post.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta {PALAVRA} que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+ "blocos": {},
+ "sujeitos": {}
+}

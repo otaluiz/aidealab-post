@@ -20,20 +20,20 @@
     "posicao": "depois"
    },
    "imagem": "capa_orig.png",
-   "bloco": {
-    "y": 190,
-    "alinhar": "centro",
-    "largura": 936,
-    "manual": true
-   },
-   "recorte": "capa_recorte.png",
    "sujeito": {
-    "rostos": [],
+    "rostos": [
+     [
+      385,
+      645,
+      610,
+      858
+     ]
+    ],
     "cabeca": [
-     385,
+     408,
      637,
-     610,
-     858
+     574,
+     825
     ],
     "caixa": [
      148,
@@ -41,12 +41,17 @@
      854,
      1439
     ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
    }
   },
   {
    "template": "T3",
    "display": [
-    "O PROMPT",
+    "PROMPT 1",
     "{DA CAPA}"
    ],
    "lista": [
@@ -68,16 +73,8 @@
     "posicao": "depois"
    },
    "imagem": "slide3_orig.png",
-   "bloco": {
-    "y": 190,
-    "alinhar": "esquerda",
-    "largura": 936,
-    "manual": true
-   },
-   "recorte": "slide3_recorte.png",
    "sujeito": {
-    "rostos": [],
-    "rostos_sujeito": [
+    "rostos": [
      [
       347,
       630,
@@ -97,12 +94,17 @@
      954,
      1439
     ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
    }
   },
   {
    "template": "T3",
    "display": [
-    "A CENA",
+    "PROMPT 2",
     "{DO TELHADO}"
    ],
    "lista": [
@@ -124,10 +126,8 @@
     "posicao": "depois"
    },
    "imagem": "slide5_orig.png",
-   "recorte": "slide5_recorte.png",
    "sujeito": {
-    "rostos": [],
-    "rostos_sujeito": [
+    "rostos": [
      [
       324,
       610,
@@ -149,7 +149,7 @@
     ]
    },
    "bloco": {
-    "y": 190,
+    "y": 200,
     "alinhar": "esquerda",
     "largura": 936
    }
@@ -157,7 +157,7 @@
   {
    "template": "T3",
    "display": [
-    "O TRUQUE",
+    "PROMPT 3",
     "{DO FUNDO}"
    ],
    "lista": [
@@ -175,7 +175,7 @@
     "3 PROMPTS?"
    ],
    "cta": {
-    "acao": "Comenta NEON",
+    "acao": "Comenta PROMPT",
     "texto": "a aidealab te manda no direct"
    },
    "imagem": "cta_orig.png",
