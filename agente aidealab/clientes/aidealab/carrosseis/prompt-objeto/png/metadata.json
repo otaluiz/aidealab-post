@@ -1,0 +1,85 @@
+{
+  "carousel_id": "2026-11-prompt-objeto",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-21",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PROMPTS",
+  "tema": "UM OBJETO CONTA O ASSUNTO. sem legenda.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T3-T2-T3-T2-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "UM OBJETO CONTA O ASSUNTO. sem legenda."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "PROMPT 1 VIDEOGAME Foto de referência + arte de tela de jogo Vitrine com 9 quadros brilhando Quadros em branco, sem nada escrito Braços cruzados, céu de fim de tarde"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "UMA ESTRELA DE PAPEL fala de avaliação."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 2 DA ESTRELA Retrato do peito pra cima Estrela de papel laranja, em branco Fundo escuro, luz laranja de lado Grão de filme, sem texto, sem logo"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "CARTAS EM BRANCO fala de escolha."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 3 DAS CARTAS Leque de cartas brancas, como mágico Sobrancelha erguida, meio sorriso Fundo azul-escuro, luz laranja Cabeça a 40% do quadro"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER OS 3 PROMPTS? Comenta OBJETO a aidealab te manda no direct"
+    }
+  ],
+  "legenda": "Um objeto na mão conta o assunto do post antes de qualquer legenda.\n\nQuadros numa vitrine no estilo videogame, uma estrela de papel e um leque de cartas. Tudo em branco, sem letra nenhuma, pra IA não inventar texto torto. Troque pelo objeto do seu negócio e mantenha o resto do prompt.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta OBJETO que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#marketingdigital",
+    "#socialmedia",
+    "#conteudodigital",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "3 prompts de foto com objeto",
+    "categoria": "PROMPTS",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 7,
+    "fonte_sha256": "cd80d6a42f406ca20e9f71ed5c5e160c924086c1df4dad1ca9f70cf21c4f121e",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  }
+}

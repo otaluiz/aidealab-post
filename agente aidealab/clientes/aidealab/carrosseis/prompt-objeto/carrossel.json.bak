@@ -1,0 +1,101 @@
+{
+  "id": "2026-11-prompt-objeto",
+  "meta": {
+    "serie": "PROMPTS",
+    "data": "2026/11",
+    "personagem": "luizota",
+    "guia": {
+      "fonte": "guia/guia.json"
+    }
+  },
+  "slides": [
+    {
+      "template": "T1",
+      "display": [
+        "UM OBJETO",
+        "CONTA O ASSUNTO."
+      ],
+      "emocao": {
+        "texto": "sem [legenda].",
+        "posicao": "depois"
+      },
+      "imagem": "capa_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 1",
+        "{VIDEOGAME}"
+      ],
+      "lista": [
+        "Foto de referência + arte de tela de jogo",
+        "Vitrine com 9 quadros brilhando",
+        "Quadros em branco, sem nada escrito",
+        "Braços cruzados, céu de fim de tarde"
+      ],
+      "imagem": null
+    },
+    {
+      "template": "T2",
+      "display": [
+        "UMA ESTRELA",
+        "DE PAPEL"
+      ],
+      "emocao": {
+        "texto": "fala de {avaliação}.",
+        "posicao": "depois"
+      },
+      "imagem": "slide3_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 2",
+        "{DA ESTRELA}"
+      ],
+      "lista": [
+        "Retrato do peito pra cima",
+        "Estrela de papel laranja, em branco",
+        "Fundo escuro, luz laranja de lado",
+        "Grão de filme, sem texto, sem logo"
+      ]
+    },
+    {
+      "template": "T2",
+      "display": [
+        "CARTAS",
+        "EM BRANCO"
+      ],
+      "emocao": {
+        "texto": "fala de {escolha}.",
+        "posicao": "depois"
+      },
+      "imagem": "slide5_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 3",
+        "{DAS CARTAS}"
+      ],
+      "lista": [
+        "Leque de cartas brancas, como mágico",
+        "Sobrancelha erguida, meio sorriso",
+        "Fundo azul-escuro, luz laranja",
+        "Cabeça a 40% do quadro"
+      ]
+    },
+    {
+      "template": "T4",
+      "display": [
+        "QUER OS",
+        "3 PROMPTS?"
+      ],
+      "cta": {
+        "acao": "Comenta OBJETO",
+        "texto": "a aidealab te manda no direct"
+      },
+      "imagem": "cta_orig.png"
+    }
+  ]
+}

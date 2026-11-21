@@ -1,0 +1,204 @@
+{
+ "id": "2026-11-prompt-salto",
+ "meta": {
+  "serie": "PROMPTS",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "FOTO PARADA",
+    "NINGUÉM PARA."
+   ],
+   "emocao": {
+    "texto": "3 prompts com [movimento].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      389,
+      654,
+      622,
+      866
+     ]
+    ],
+    "cabeca": [
+     418,
+     639,
+     588,
+     827
+    ],
+    "caixa": [
+     0,
+     646,
+     725,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "PROMPT 1",
+    "{VIDEOGAME}"
+   ],
+   "lista": [
+    "Foto de referência + arte de tela de jogo",
+    "Na moto, no calçadão ao pôr do sol",
+    "Olhando direto pra câmera",
+    "Câmera baixa, céu enorme em cima"
+   ],
+   "imagem": null
+  },
+  {
+   "template": "T2",
+   "display": [
+    "NO AR,",
+    "CONTRA O CÉU"
+   ],
+   "emocao": {
+    "texto": "sem {cenário}.",
+    "posicao": "depois"
+   },
+   "imagem": "slide3_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      436,
+      655,
+      581,
+      800
+     ]
+    ],
+    "cabeca": [
+     123,
+     614,
+     808,
+     770
+    ],
+    "caixa": [
+     149,
+     620,
+     880,
+     1276
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "PROMPT 2",
+    "{DO SALTO}"
+   ],
+   "lista": [
+    "Câmera rente à grama, de baixo",
+    "Pulando com os joelhos dobrados",
+    "Braços abertos, céu azul limpo",
+    "Figura pequena, muito céu em cima"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "NO MEIO",
+    "DO PASSO"
+   ],
+   "emocao": {
+    "texto": "o casaco {voa}.",
+    "posicao": "depois"
+   },
+   "imagem": "slide5_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     356,
+     360,
+     705,
+     595
+    ],
+    "caixa": [
+     131,
+     369,
+     810,
+     1360
+    ]
+   },
+   "bloco": {
+    "y": 800,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "PROMPT 3",
+    "{DO PULO}"
+   ],
+   "lista": [
+    "Corpo inteiro, no meio do passo",
+    "Sobretudo abrindo com o movimento",
+    "Fundo azul-marinho, luz ciano",
+    "Olhar firme pra câmera"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER OS",
+    "3 PROMPTS?"
+   ],
+   "cta": {
+    "acao": "Comenta SALTO",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "rostos": [
+     [
+      356,
+      426,
+      714,
+      784
+     ]
+    ],
+    "cabeca": [
+     59,
+     306,
+     1031,
+     572
+    ],
+    "caixa": [
+     93,
+     316,
+     995,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 900,
+    "alinhar": "direita",
+    "largura": 560
+   }
+  }
+ ]
+}

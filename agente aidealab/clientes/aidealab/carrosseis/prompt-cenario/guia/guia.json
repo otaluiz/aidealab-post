@@ -1,0 +1,49 @@
+{
+  "marca": "aidealab",
+  "titulo": "3 prompts de foto com cenário",
+  "subtitulo": "Um no estilo videogame e dois de arquitetura, prontos pra colar com a sua foto.",
+  "categoria": "PROMPTS",
+  "como_usar": "Cole um prompt por vez, com a foto anexada, e só depois ajuste.",
+  "fontes": [
+    {
+      "titulo": "OpenAI: guia de geração de imagens (GPT Image)",
+      "url": "https://platform.openai.com/docs/guides/image-generation"
+    },
+    {
+      "titulo": "Higgsfield: geração de imagem com personagem de referência",
+      "url": "https://higgsfield.ai"
+    }
+  ],
+  "nota_fontes": "Material editorial aidealab, prompts usados nas imagens do carrossel (novembro de 2026). Resultados variam por modelo.",
+  "paginas": [
+    {
+      "titulo": "Prompt 1: videogame, no café",
+      "texto": "O prompt no estilo arte de videogame. Anexe sua foto e, se tiver, uma imagem nesse estilo como referência.",
+      "codigo": "[sua foto de referência] in the exact same illustration style as the reference image: hand-painted video-game loading-screen art, bold ink outlines, cel-shaded, magenta/orange/teal neon palette. He sits at a café terrace on an ocean drive at night with an open laptop on the table in front of him, the laptop screen facing him (we see the back of the lid), neon glow on his face, the figure in the lower half, head at vertical middle. Mouth closed, not smiling. No text, no letters, no logos, no glasses, no hat, no jewelry.",
+      "dica": "Sempre feche com: no text, no letters, no logos."
+    },
+    {
+      "titulo": "Prompt 2: no topo do concreto",
+      "texto": "De baixo pra cima, o céu vira o cenário.",
+      "codigo": "A low-angle wide shot captures [sua foto de referência], sitting on the sharp corner of a concrete structure. He wears a dark, classic business suit with a spread-collar white dress shirt and a black tie, blending formal attire with casual, chunky white sneakers and white socks. The concrete block he sits on is raw and weathered, showing typical construction textures and slight discolorations. He looks directly at the camera, hands clasped in front of him, descending slightly forward for a sense of intentional presence. The sky dominates the upper frame, filled with soft, rolling clouds creating a blue-and-white gradient backdrop. Natural daylight creates a balanced illumination with gentle shadows, leaving the color palette neutral and reserved, with the cool gray of the concrete and sky harmonizing with his dark suit, offset by the white of his socks and shoes. The extreme low-angle creates a sense of monumentality and height, compressing the figure against the sky while the deep depth of field keeps both the subject and the environment crisp. The image feels editorial and modern, likely shot on a high-resolution digital camera with minimal visible grain or distortion. The overall mood is bold, assertive, and slightly surreal due to the elevated, isolated position of the subject.\nHEX VALUES: [\"#a4abba\", \"#b1b7c3\", \"#969fb0\", \"#c0c5d0\", \"#868fa2\", \"#6a6967\", \"#d2d5dd\", \"#565555\", \"#787775\", \"#4e4d4e\", \"#5e5d5c\", \"#14151c\", \"#040409\"]",
+      "dica": "\"Small figure in the lower third\" deixa o alto livre pro título."
+    },
+    {
+      "titulo": "Prompt 3: o corredor branco",
+      "texto": "Linhas que convergem levam o olho direto pra pessoa.",
+      "codigo": "Editorial fashion photograph: [sua foto de referência] walks toward the camera through a very narrow corridor between two tall smooth white walls that open to a deep blue sky with soft clouds, looking down at the smartphone in his hand, eyes visible, focused and serious, mouth closed, not smiling. Plain navy suit, plain white t-shirt, dark shoes. Figure in the lower half of the frame, tall walls and sky above him. Deep navy and cyan color grading, crisp sunlight. No text, no letters, no logos, no sunglasses, no eyewear, no hat, no jewelry",
+      "dica": "Peça \"crisp sunlight\" pra sombra ficar desenhada."
+    },
+    {
+      "titulo": "Como usar os prompts",
+      "texto": "Funciona em qualquer gerador que aceite foto de referência (GPT Image no ChatGPT, Higgsfield, Nano Banana).",
+      "itens": [
+        "Anexe uma foto sua, de frente, com boa luz",
+        "Cole o prompt e troque [sua foto de referência] pela foto anexada",
+        "Formato 3:4 e qualidade alta",
+        "Mude uma coisa por vez: pose, roupa ou objeto"
+      ],
+      "dica": "Se for uma mulher, troque he/his por she/her."
+    }
+  ]
+}
