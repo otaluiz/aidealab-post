@@ -1,0 +1,212 @@
+{
+ "id": "2026-11-prompt-neon",
+ "meta": {
+  "serie": "PROMPTS",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ESSA FOTO SAIU",
+    "DE UM PROMPT."
+   ],
+   "emocao": {
+    "texto": "copia o [nosso].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "bloco": {
+    "y": 190,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   },
+   "recorte": "capa_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     385,
+     637,
+     610,
+     858
+    ],
+    "caixa": [
+     148,
+     644,
+     854,
+     1439
+    ]
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O PROMPT",
+    "{DA CAPA}"
+   ],
+   "lista": [
+    "Foto de referência + arte de tela de jogo pintada à mão",
+    "Contorno grosso de tinta, cel-shading",
+    "Pôr do sol neon magenta, laranja e teal",
+    "Pessoa embaixo, céu livre em cima"
+   ],
+   "imagem": null
+  },
+  {
+   "template": "T2",
+   "display": [
+    "OUTRA PESSOA,",
+    "MESMO PROMPT"
+   ],
+   "emocao": {
+    "texto": "o {estilo} continua.",
+    "posicao": "depois"
+   },
+   "imagem": "slide3_orig.png",
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936,
+    "manual": true
+   },
+   "recorte": "slide3_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      347,
+      630,
+      675,
+      939
+     ]
+    ],
+    "cabeca": [
+     363,
+     595,
+     654,
+     794
+    ],
+    "caixa": [
+     121,
+     603,
+     954,
+     1439
+    ]
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "A CENA",
+    "{DO TELHADO}"
+   ],
+   "lista": [
+    "Troque só a foto de referência",
+    "Na beira de um telhado, braços cruzados",
+    "Câmera bem baixa, cara de herói",
+    "Céu vazio em cima pro seu título"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O OBJETO",
+    "CONTA A HISTÓRIA"
+   ],
+   "emocao": {
+    "texto": "sem uma {letra}.",
+    "posicao": "depois"
+   },
+   "imagem": "slide5_orig.png",
+   "recorte": "slide5_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      324,
+      610,
+      659,
+      915
+     ]
+    ],
+    "cabeca": [
+     356,
+     582,
+     642,
+     784
+    ],
+    "caixa": [
+     120,
+     590,
+     964,
+     1439
+    ]
+   },
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O TRUQUE",
+    "{DO FUNDO}"
+   ],
+   "lista": [
+    "Peça o objeto \"em branco\"",
+    "Uma janela de site travada no ar",
+    "Barra de carregamento parada",
+    "Feche com: sem texto, sem logo"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER OS",
+    "3 PROMPTS?"
+   ],
+   "cta": {
+    "acao": "Comenta NEON",
+    "texto": "a aidealab te manda no direct"
+   },
+   "imagem": "cta_orig.png",
+   "bloco": {
+    "y": 180,
+    "alinhar": "centro",
+    "largura": 936,
+    "manual": true
+   },
+   "sujeito": {
+    "rostos": [
+     [
+      379,
+      540,
+      673,
+      804
+     ]
+    ],
+    "cabeca": [
+     402,
+     478,
+     655,
+     704
+    ],
+    "caixa": [
+     68,
+     487,
+     1023,
+     1439
+    ]
+   }
+  }
+ ]
+}

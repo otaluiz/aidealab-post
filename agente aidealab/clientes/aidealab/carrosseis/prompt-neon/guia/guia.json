@@ -1,0 +1,49 @@
+{
+  "marca": "aidealab",
+  "titulo": "3 prompts pra virar arte de videogame",
+  "subtitulo": "Os prompts das imagens do carrossel, prontos pra usar com a foto da sua marca ou da sua equipe.",
+  "categoria": "PROMPTS",
+  "como_usar": "Cole um prompt por vez, com a foto anexada, e mantenha a linha de estilo igual em toda a campanha.",
+  "fontes": [
+    {
+      "titulo": "OpenAI: guia de geração de imagens (GPT Image)",
+      "url": "https://platform.openai.com/docs/guides/image-generation"
+    },
+    {
+      "titulo": "Higgsfield: geração de imagem com personagem de referência",
+      "url": "https://higgsfield.ai"
+    }
+  ],
+  "nota_fontes": "Material editorial aidealab, prompts usados nas imagens do carrossel (novembro de 2026). Resultados variam por modelo.",
+  "paginas": [
+    {
+      "titulo": "Prompt 1: a capa (conversível)",
+      "texto": "O prompt base. Ele define o estilo que os outros copiam.",
+      "codigo": "[sua foto de referência] as a hand-painted video-game loading-screen illustration, bold ink outlines, cel-shaded, saturated neon sunset over a Miami-style coastal city, palm trees, magenta, orange and teal palette, he leans on the hood of a vintage convertible holding a smartphone, confident editorial pose, low camera angle, the figure in the lower half of the frame, his head at the vertical middle of the picture, a large empty sunset sky fills the upper half, mouth closed, not smiling, serious determined look. No text, no letters, no logos, no glasses, no hat, no jewelry.",
+      "dica": "Guarde a imagem que sair: ela vira a referência de estilo da campanha."
+    },
+    {
+      "titulo": "Prompt 2: o telhado",
+      "texto": "Outra pessoa, mesmo prompt: só a foto de referência muda.",
+      "codigo": "[sua foto de referência] as a hand-painted video-game loading-screen illustration, bold ink outlines, cel-shaded, saturated neon sunset over a Miami-style coastal city, palm trees, magenta, orange and teal palette, he stands on a rooftop edge with arms crossed, extreme low angle, the figure in the lower half of the frame, his head at the vertical middle of the picture, a large empty sunset sky fills the upper half, mouth closed, not smiling, intense look. No text, no letters, no logos, no glasses, no hat, no jewelry.",
+      "dica": "Uma linha de estilo fixa deixa a equipe toda com a mesma cara no feed."
+    },
+    {
+      "titulo": "Prompt 3: a janela travada",
+      "texto": "O objeto conta a história sem texto. Peça sempre o objeto \"blank\".",
+      "codigo": "[sua foto de referência] in the exact same illustration style as the reference image: hand-painted video-game loading-screen art, bold ink outlines, cel-shaded, magenta/orange/teal neon sunset palette. He stands with arms crossed in front of a giant glowing blank browser window frame floating over the bay at sunset, its progress bar stuck, extreme low angle, the figure in the lower half, head at vertical middle, large empty sky above. Mouth closed, not smiling, impatient look. No text, no letters, no logos, no glasses, no hat, no jewelry.",
+      "dica": "Sempre feche com: no text, no letters, no logos."
+    },
+    {
+      "titulo": "Como usar os prompts",
+      "texto": "Funciona em qualquer gerador que aceite foto de referência (GPT Image no ChatGPT, Higgsfield, Nano Banana).",
+      "itens": [
+        "Anexe uma foto sua, de frente, com boa luz",
+        "Cole o prompt e troque [sua foto de referência] pela foto anexada",
+        "Nos prompts 2 e 3, anexe também a imagem do prompt 1 como referência de estilo",
+        "Formato 3:4 e qualidade alta"
+      ],
+      "dica": "Se a mulher for a protagonista, troque he/his por she/her."
+    }
+  ]
+}
