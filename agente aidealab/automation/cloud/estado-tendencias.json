@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-21T04:19:09+00:00",
+  "atualizado_em": "2026-11-21T04:50:55+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
@@ -13,12 +13,6 @@
         "fonte": "Pequenas Empresas & Grandes Negócios",
         "data": "Thu, 19 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOS2VsREM0TlhSVG1IZnlGbnFUMk9HUmJSQ3N2emhkb3h0X2ZiS3lHM1FtVXVjSThzWlMtUDJUMTd2b3NTZHYtWVl1QTQ3S0FfVlhaVjhXeG56TkFpSUdRWk1ZM082cFFJTDhIbGV5RGdqaXdPNU4zbUt4WVZlN05HWmdCcU9iZ1kyT1hkV2tLQmoxczNzbW9oY3R5ZkJILXVZekNCSE1NcVRXbWxUMXNKekRnODlFNTdkYmFaZjdkR19vVnFXbFFYRTVzTS0zNkcwSjhNenN3SnJXaDlVQlFjS3E4WnJtRWNFUlA2Z241U2lGRmtBZnh4ZTBQV2zSAYsCQVVfeXFMUG8xWE9YVUoyZEluUEtFY25LRS1teGhGM2pxS2JQSy1KNHZjZjNKN24yM0c5YnFoOW9RTVpTUk9wTHZzRjZVVzlvTGdyS1ZuVUU5a0taLVBCSG0tYXA5ZXdiRERGR3ZVRWQ4MmszYVNLWnpYa2dST0Nwam1HR25vdGxBeU1JZDR5c0tSNDlKV1JCTEx4RHk5ZFBBR2Jpem1ubDllX0c4X3o1ZG9LZHV5YnNLSnMwNnFBSFVSY01JTXBpUWNGeUxMVU5QeUh0ZUJaNjFFcUlYTkxISF9DdnlPYjJVSlFMc0hrUUpXVWJLcldScUwzWmx3Rl96UUd5UW14R2hSR3RELWFmOTI4?oc=5"
-      },
-      {
-        "titulo": "Omie lança inteligência artificial no ERP para simplificar a gestão de pequenas empresas - Omie",
-        "fonte": "Omie",
-        "data": "Thu, 19 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNjlxUE16aS1UVXhVVXg5aV9TUURidUxXWk1HYkY1aG5xTFlNS1lOQTlyRmtIYVBNYjNJNnhUOTNvX3JndHVaWm40Yk9adGV1U1dpa09mZUZVZlU2bUhpaXM2dHVNLWc2OURvT0ZJc0xuYXZMcVNZbTY2LWR3dFBSQ3JleF9VRjdDaFhsRXpOTzNMeDlaTGQwTndpTDJnMDgwOFZzSGhrenRSWEFBckk2d3owbFh1Zmczam91MDRCMA?oc=5"
       },
       {
         "titulo": "Da eficiência operacional à fronteira tecnológica - FIESC",
@@ -37,6 +31,12 @@
         "fonte": "Forbes Brasil",
         "data": "Fri, 20 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObzlFdlJfamppX3dEaW1QNW5xdXZLZmhJdTkyMHR4S2tfRDFGWW1QajN6YkVQbWZNTkxqb1V5NGhlMnNkLXhMTkkzYWpWMWhfNDBkeWpPMGVVc29HYmtPMWNQYlZiV3pNN1YxbXFvd2d4WXZpNDJRZ0pjWE1GdC1XOXdRczZaWUxXaFBBY3JqQmRfS1JWcEFIMTd0QU5oeExKR3JmZHFFYlk1QXQw?oc=5"
+      },
+      {
+        "titulo": "Omie lança agentes de IA integrados ao ERP para automatizar rotinas de PMEs - Portal ERP",
+        "fonte": "Portal ERP",
+        "data": "Thu, 19 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUnl3d2pRbml2WDhacXQzMjNOenVSdkF6bzUxSGZVdG1QTDlJdVVqZE1iVGJjdzY4ejh5dDFXVUZ2NDM2djBXbUVFY3U0TzdfY21iTmE2Vm4wY1F1bEJWWHNtNWVLVDV4SFVYeUNIZFB2LURNclJDb3hfVUxKci1GX3p2bzBpNGFfWkNYSHNYMEhsb0UtbGluNVJKRm1zNkFnaWJqQ2djWUo5d3M5?oc=5"
       }
     ],
     "WhatsApp Business IA": [
@@ -270,15 +270,15 @@
   },
   "erros": [],
   "google_trends_br": [
+    "beata",
+    "peru terremoto hoje",
+    "tijuana x atlante",
+    "bitcoin hoje",
     "blade",
     "denver nuggets",
     "kim kardashian",
     "deportivo cali",
     "texas",
-    "orlando magic",
-    "resumo novela quem ama cuida",
-    "nuggets x rockets",
-    "leonardo dicaprio",
-    "detroit pistons"
+    "orlando magic"
   ]
 }
