@@ -4,6 +4,6 @@ Uma no estilo videogame, uma num muro de concreto com sombra longa, uma num corr
 
 Na aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.
 
-Comenta CENARIO que a aidealab te manda no direct o PDF com os 3 prompts completos.
+Comenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.
 
 #inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab

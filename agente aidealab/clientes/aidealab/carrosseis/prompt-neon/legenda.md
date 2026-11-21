@@ -6,6 +6,6 @@ O truque do fundo: peça objetos "em branco" e feche o prompt com "sem texto, se
 
 Serve pra campanha, capa de carrossel e apresentação da equipe.
 
-Comenta NEON que a aidealab te manda no direct o PDF com os 3 prompts completos.
+Comenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.
 
 #inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab

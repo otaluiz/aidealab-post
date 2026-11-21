@@ -53,10 +53,10 @@
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "QUER OS 3 PROMPTS? Comenta CENARIO a aidealab te manda no direct"
+      "texto": "QUER OS 3 PROMPTS? Comenta PROMPT a aidealab te manda no direct"
     }
   ],
-  "legenda": "O cenário faz a foto. Essas 3 saíram de prompts, sem sair de casa.\n\nUma no estilo videogame, uma num muro de concreto com sombra longa, uma num corredor branco com céu no fim. Em todas, a pessoa é pequena e o cenário é grande, e o alto da foto fica livre pro título do post.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta CENARIO que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "legenda": "O cenário faz a foto. Essas 3 saíram de prompts, sem sair de casa.\n\nUma no estilo videogame, uma num muro de concreto com sombra longa, uma num corredor branco com céu no fim. Em todas, a pessoa é pequena e o cenário é grande, e o alto da foto fica livre pro título do post.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
   "hashtags": [
     "#inteligenciaartificial",
     "#marketingdigital",
@@ -74,11 +74,11 @@
   "material_pdf": {
     "arquivo": "guia.pdf",
     "titulo": "3 prompts de foto com cenário",
-    "categoria": "PROMPTS",
+    "categoria": "PROMPT",
     "marca": "aidealab",
     "template": "aidealab-azul-laranja-v1",
     "paginas": 7,
-    "fonte_sha256": "28890183e602fbb2f88073ff378ca4975717414269d36d1165764f471baa18a7",
+    "fonte_sha256": "ed2286063fd9bb8fd37e26fb6761886c8814070b0df24f906002be82c529615c",
     "status": "rascunho",
     "revisao_visual": "pendente"
   }

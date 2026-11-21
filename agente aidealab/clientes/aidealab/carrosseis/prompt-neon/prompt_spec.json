@@ -1,0 +1,100 @@
+{
+ "slug": "prompt-neon",
+ "ordem": 0,
+ "tema": "tema-gta",
+ "tags": [
+  "#inteligenciaartificial",
+  "#marketingdigital",
+  "#socialmedia",
+  "#conteudodigital",
+  "#aidealab"
+ ],
+ "capa": {
+  "display": [
+   "ESSA FOTO SAIU",
+   "DE UM PROMPT."
+  ],
+  "emocao": "copia o [nosso]."
+ },
+ "fotos": [
+  {
+   "id": "0c1d4f10",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261119_142928_0c1d4f10-8256-4b2a-b961-4d15398b4b46.png",
+   "prompt": "<<<x>>> as a hand-painted video-game loading-screen illustration, bold ink outlines, cel-shaded, saturated neon sunset over a Miami-style coastal city, palm trees, magenta, orange and teal palette, he leans on the hood of a vintage convertible holding a smartphone, confident editorial pose, low camera angle, the figure in the lower half of the frame, his head at the vertical middle of the picture, a large empty sunset sky fills the upper half, mouth closed, not smiling, serious determined look. No text, no letters, no logos, no glasses, no hat, no jewelry."
+  },
+  {
+   "id": "e04620b2",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261119_214013_55b07f45-9e00-468b-87f6-ea49ddb107ea.png",
+   "prompt": "<<<x>>> as a hand-painted video-game loading-screen illustration, bold ink outlines, cel-shaded, saturated neon sunset over a Miami-style coastal city, palm trees, magenta, orange and teal palette, he stands on a rooftop edge with arms crossed, extreme low angle, the figure in the lower half of the frame, his head at the vertical middle of the picture, a large empty sunset sky fills the upper half, mouth closed, not smiling, intense look. No text, no letters, no logos, no glasses, no hat, no jewelry."
+  },
+  {
+   "id": "60e94975",
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3HjQfefFKc80uBRIq0tanTSM6Qk/hf_20261119_175508_60e94975-7873-42ea-bac4-2008c6f8d39c.png",
+   "prompt": "<<<65730766-9399-4986-9ce8-42813729df44>>> in the exact same illustration style as the reference image: hand-painted video-game loading-screen art, bold ink outlines, cel-shaded, magenta/orange/teal neon sunset palette. He stands with arms crossed in front of a giant glowing blank browser window frame floating over the bay at sunset, its progress bar stuck, extreme low angle, the figure in the lower half, head at vertical middle, large empty sky above. Mouth closed, not smiling, impatient look. No text, no letters, no logos, no glasses, no hat, no jewelry."
+  },
+  {
+   "id": "b52b02a4",
+   "url": "",
+   "prompt": ""
+  }
+ ],
+ "pares": [
+  {
+   "titulo": "{DA CAPA}",
+   "lista": [
+    "Foto de referência + arte de tela de jogo pintada à mão",
+    "Contorno grosso de tinta, cel-shading",
+    "Pôr do sol neon magenta, laranja e teal",
+    "Pessoa embaixo, céu livre em cima"
+   ],
+   "nome": "a capa (conversível)",
+   "guia": "O prompt base. Ele define o estilo que os outros copiam.",
+   "dica": "Guarde a imagem que sair: ela vira a referência de estilo da campanha."
+  },
+  {
+   "display": [
+    "OUTRA PESSOA,",
+    "MESMO PROMPT"
+   ],
+   "emocao": "o {estilo} continua.",
+   "titulo": "{DO TELHADO}",
+   "lista": [
+    "Troque só a foto de referência",
+    "Na beira de um telhado, braços cruzados",
+    "Câmera bem baixa, cara de herói",
+    "Céu vazio em cima pro seu título"
+   ],
+   "nome": "o telhado",
+   "guia": "Outra pessoa, mesmo prompt: só a foto de referência muda.",
+   "dica": "Uma linha de estilo fixa deixa a equipe toda com a mesma cara no feed."
+  },
+  {
+   "display": [
+    "O OBJETO",
+    "CONTA A HISTÓRIA"
+   ],
+   "emocao": "sem uma {letra}.",
+   "titulo": "{DO FUNDO}",
+   "lista": [
+    "Peça o objeto \"em branco\"",
+    "Uma janela de site travada no ar",
+    "Barra de carregamento parada",
+    "Feche com: sem texto, sem logo"
+   ],
+   "nome": "a janela travada",
+   "guia": "O objeto conta a história sem texto. Peça sempre o objeto \"blank\".",
+   "dica": "Sempre feche com: no text, no letters, no logos."
+  }
+ ],
+ "guia_titulo": "3 prompts pra virar arte de videogame",
+ "guia_sub": "Os prompts das imagens do carrossel, prontos pra usar com a foto da sua marca ou da sua equipe.",
+ "legenda": "Essas fotos saíram de um prompt. Mesmo prompt, pessoas diferentes.\n\nA gente usou uma foto de referência e pediu arte de tela de jogo pintada à mão: contorno grosso, pôr do sol neon, pessoa embaixo e céu livre em cima pro título. Pra outra pessoa da equipe, só trocamos a foto. O estilo fica, e o feed da marca ganha uma cara só.\n\nO truque do fundo: peça objetos \"em branco\" e feche o prompt com \"sem texto, sem logo\". A história fica na cena, não em letras tortas.\n\nServe pra campanha, capa de carrossel e apresentação da equipe.\n\nComenta {PALAVRA} que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab\n",
+ "blocos": {
+  "6": {
+   "y": 180,
+   "alinhar": "centro",
+   "largura": 936,
+   "manual": true
+  }
+ }
+}

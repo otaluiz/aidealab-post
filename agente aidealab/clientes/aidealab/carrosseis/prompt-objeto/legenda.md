@@ -4,6 +4,6 @@ Quadros numa vitrine no estilo videogame, uma estrela de papel e um leque de car
 
 Na aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.
 
-Comenta OBJETO que a aidealab te manda no direct o PDF com os 3 prompts completos.
+Comenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.
 
 #inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab

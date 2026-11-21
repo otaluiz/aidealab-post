@@ -23,7 +23,7 @@
       "ordem": 2,
       "arquivo": "slide-02.png",
       "papel": "tensao",
-      "texto": "O PROMPT DA CAPA Foto de referência + arte de tela de jogo pintada à mão Contorno grosso de tinta, cel-shading Pôr do sol neon magenta, laranja e teal Pessoa embaixo, céu livre em cima"
+      "texto": "PROMPT 1 DA CAPA Foto de referência + arte de tela de jogo pintada à mão Contorno grosso de tinta, cel-shading Pôr do sol neon magenta, laranja e teal Pessoa embaixo, céu livre em cima"
     },
     {
       "ordem": 3,
@@ -35,7 +35,7 @@
       "ordem": 4,
       "arquivo": "slide-04.png",
       "papel": "desenvolvimento",
-      "texto": "A CENA DO TELHADO Troque só a foto de referência Na beira de um telhado, braços cruzados Câmera bem baixa, cara de herói Céu vazio em cima pro seu título"
+      "texto": "PROMPT 2 DO TELHADO Troque só a foto de referência Na beira de um telhado, braços cruzados Câmera bem baixa, cara de herói Céu vazio em cima pro seu título"
     },
     {
       "ordem": 5,
@@ -47,16 +47,16 @@
       "ordem": 6,
       "arquivo": "slide-06.png",
       "papel": "desenvolvimento",
-      "texto": "O TRUQUE DO FUNDO Peça o objeto \"em branco\" Uma janela de site travada no ar Barra de carregamento parada Feche com: sem texto, sem logo"
+      "texto": "PROMPT 3 DO FUNDO Peça o objeto \"em branco\" Uma janela de site travada no ar Barra de carregamento parada Feche com: sem texto, sem logo"
     },
     {
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "QUER OS 3 PROMPTS? Comenta NEON a aidealab te manda no direct"
+      "texto": "QUER OS 3 PROMPTS? Comenta PROMPT a aidealab te manda no direct"
     }
   ],
-  "legenda": "Essas fotos saíram de um prompt. Mesmo prompt, pessoas diferentes.\n\nA gente usou uma foto de referência e pediu arte de tela de jogo pintada à mão: contorno grosso, pôr do sol neon, pessoa embaixo e céu livre em cima pro título. Pra outra pessoa da equipe, só trocamos a foto. O estilo fica, e o feed da marca ganha uma cara só.\n\nO truque do fundo: peça objetos \"em branco\" e feche o prompt com \"sem texto, sem logo\". A história fica na cena, não em letras tortas.\n\nServe pra campanha, capa de carrossel e apresentação da equipe.\n\nComenta NEON que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "legenda": "Essas fotos saíram de um prompt. Mesmo prompt, pessoas diferentes.\n\nA gente usou uma foto de referência e pediu arte de tela de jogo pintada à mão: contorno grosso, pôr do sol neon, pessoa embaixo e céu livre em cima pro título. Pra outra pessoa da equipe, só trocamos a foto. O estilo fica, e o feed da marca ganha uma cara só.\n\nO truque do fundo: peça objetos \"em branco\" e feche o prompt com \"sem texto, sem logo\". A história fica na cena, não em letras tortas.\n\nServe pra campanha, capa de carrossel e apresentação da equipe.\n\nComenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
   "hashtags": [
     "#inteligenciaartificial",
     "#marketingdigital",
@@ -74,11 +74,11 @@
   "material_pdf": {
     "arquivo": "guia.pdf",
     "titulo": "3 prompts pra virar arte de videogame",
-    "categoria": "PROMPTS",
+    "categoria": "PROMPT",
     "marca": "aidealab",
     "template": "aidealab-azul-laranja-v1",
     "paginas": 7,
-    "fonte_sha256": "d4f8306af78a05fc7fde1fb0b2d9f66a3477a9cbe3acc5883497009ccbfb1f63",
+    "fonte_sha256": "514d064442745fe1742c1253679891507c8fc05c5cad4728256b4557c2302a1a",
     "status": "rascunho",
     "revisao_visual": "pendente"
   }

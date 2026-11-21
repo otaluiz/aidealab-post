@@ -53,10 +53,10 @@
       "ordem": 7,
       "arquivo": "slide-07.png",
       "papel": "cta",
-      "texto": "QUER OS 3 PROMPTS? Comenta OBJETO a aidealab te manda no direct"
+      "texto": "QUER OS 3 PROMPTS? Comenta PROMPT a aidealab te manda no direct"
     }
   ],
-  "legenda": "Um objeto na mão conta o assunto do post antes de qualquer legenda.\n\nQuadros numa vitrine no estilo videogame, uma estrela de papel e um leque de cartas. Tudo em branco, sem letra nenhuma, pra IA não inventar texto torto. Troque pelo objeto do seu negócio e mantenha o resto do prompt.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta OBJETO que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "legenda": "Um objeto na mão conta o assunto do post antes de qualquer legenda.\n\nQuadros numa vitrine no estilo videogame, uma estrela de papel e um leque de cartas. Tudo em branco, sem letra nenhuma, pra IA não inventar texto torto. Troque pelo objeto do seu negócio e mantenha o resto do prompt.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
   "hashtags": [
     "#inteligenciaartificial",
     "#marketingdigital",
@@ -74,11 +74,11 @@
   "material_pdf": {
     "arquivo": "guia.pdf",
     "titulo": "3 prompts de foto com objeto",
-    "categoria": "PROMPTS",
+    "categoria": "PROMPT",
     "marca": "aidealab",
     "template": "aidealab-azul-laranja-v1",
     "paginas": 7,
-    "fonte_sha256": "cd80d6a42f406ca20e9f71ed5c5e160c924086c1df4dad1ca9f70cf21c4f121e",
+    "fonte_sha256": "5961d005f06c6bd2e6b3eea47a733e0baf27ed1c601b7ca76f14a7e7646eed08",
     "status": "rascunho",
     "revisao_visual": "pendente"
   }
