@@ -1,0 +1,101 @@
+{
+  "id": "2026-11-prompt-cenario",
+  "meta": {
+    "serie": "PROMPTS",
+    "data": "2026/11",
+    "personagem": "luizota",
+    "guia": {
+      "fonte": "guia/guia.json"
+    }
+  },
+  "slides": [
+    {
+      "template": "T1",
+      "display": [
+        "O CENÁRIO",
+        "FAZ A FOTO."
+      ],
+      "emocao": {
+        "texto": "3 prompts pra [copiar].",
+        "posicao": "depois"
+      },
+      "imagem": "capa_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 1",
+        "{VIDEOGAME}"
+      ],
+      "lista": [
+        "Foto de referência + arte de tela de jogo",
+        "Café de calçadão à noite, notebook",
+        "Tela virada pra ele, brilho neon",
+        "Feche com: sem texto, sem logo"
+      ],
+      "imagem": null
+    },
+    {
+      "template": "T2",
+      "display": [
+        "NO TOPO DO",
+        "CONCRETO"
+      ],
+      "emocao": {
+        "texto": "e o céu {inteiro}.",
+        "posicao": "depois"
+      },
+      "imagem": "slide3_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 2",
+        "{DO CONCRETO}"
+      ],
+      "lista": [
+        "Plano aberto de baixo pra cima",
+        "Sentado na quina de um bloco de concreto",
+        "Terno escuro com tênis branco",
+        "Céu com nuvens ocupando o alto"
+      ]
+    },
+    {
+      "template": "T2",
+      "display": [
+        "UM CORREDOR",
+        "BRANCO"
+      ],
+      "emocao": {
+        "texto": "e o céu no {fim}.",
+        "posicao": "depois"
+      },
+      "imagem": "slide5_orig.png"
+    },
+    {
+      "template": "T3",
+      "display": [
+        "PROMPT 3",
+        "{DO CORREDOR}"
+      ],
+      "lista": [
+        "Corredor estreito entre paredes brancas",
+        "Andando na direção da câmera",
+        "Céu azul com nuvens no alto",
+        "Luz de sol bem nítida"
+      ]
+    },
+    {
+      "template": "T4",
+      "display": [
+        "QUER OS",
+        "3 PROMPTS?"
+      ],
+      "cta": {
+        "acao": "Comenta CENARIO",
+        "texto": "a aidealab te manda no direct"
+      },
+      "imagem": "cta_orig.png"
+    }
+  ]
+}
