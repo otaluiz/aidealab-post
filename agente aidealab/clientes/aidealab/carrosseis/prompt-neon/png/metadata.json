@@ -1,0 +1,85 @@
+{
+  "carousel_id": "2026-11-prompt-neon",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-21",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PROMPTS",
+  "tema": "ESSA FOTO SAIU DE UM PROMPT. copia o nosso.",
+  "familia_cor": "vice-sunset",
+  "template": "T1-T3-T2-T3-T2-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ESSA FOTO SAIU DE UM PROMPT. copia o nosso."
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O PROMPT DA CAPA Foto de referência + arte de tela de jogo pintada à mão Contorno grosso de tinta, cel-shading Pôr do sol neon magenta, laranja e teal Pessoa embaixo, céu livre em cima"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "OUTRA PESSOA, MESMO PROMPT o estilo continua."
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A CENA DO TELHADO Troque só a foto de referência Na beira de um telhado, braços cruzados Câmera bem baixa, cara de herói Céu vazio em cima pro seu título"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O OBJETO CONTA A HISTÓRIA sem uma letra."
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "O TRUQUE DO FUNDO Peça o objeto \"em branco\" Uma janela de site travada no ar Barra de carregamento parada Feche com: sem texto, sem logo"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER OS 3 PROMPTS? Comenta NEON a aidealab te manda no direct"
+    }
+  ],
+  "legenda": "Essas fotos saíram de um prompt. Mesmo prompt, pessoas diferentes.\n\nA gente usou uma foto de referência e pediu arte de tela de jogo pintada à mão: contorno grosso, pôr do sol neon, pessoa embaixo e céu livre em cima pro título. Pra outra pessoa da equipe, só trocamos a foto. O estilo fica, e o feed da marca ganha uma cara só.\n\nO truque do fundo: peça objetos \"em branco\" e feche o prompt com \"sem texto, sem logo\". A história fica na cena, não em letras tortas.\n\nServe pra campanha, capa de carrossel e apresentação da equipe.\n\nComenta NEON que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#marketingdigital",
+    "#socialmedia",
+    "#conteudodigital",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "3 prompts pra virar arte de videogame",
+    "categoria": "PROMPTS",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 7,
+    "fonte_sha256": "d4f8306af78a05fc7fde1fb0b2d9f66a3477a9cbe3acc5883497009ccbfb1f63",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  }
+}
