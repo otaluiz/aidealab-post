@@ -1,0 +1,196 @@
+{
+ "id": "editar-story-15-minutos",
+ "meta": {
+  "serie": "SAIU HOJE",
+  "data": "2026/11",
+  "personagem": "luizota",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "ERROU O PREÇO",
+    "NO STORY?"
+   ],
+   "emocao": {
+    "texto": "agora dá pra [editar].",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "cabeca": [
+     465,
+     425,
+     630,
+     665
+    ],
+    "rostos": [
+     [
+      470,
+      490,
+      625,
+      660
+     ]
+    ],
+    "rostos_manual": [
+     [
+      470,
+      490,
+      625,
+      660
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": [
+     465,
+     425,
+     630,
+     665
+    ]
+   },
+   "bloco": {
+    "y": 226,
+    "alinhar": "direita",
+    "largura": 936,
+    "manual": true
+   },
+   "recorte": "capa_recorte.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "VOCÊ TEM",
+    "15 MINUTOS"
+   ],
+   "emocao": {
+    "texto": "pra [corrigir].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "recorte": "slide2_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     543,
+     543,
+     844,
+     747
+    ],
+    "caixa": [
+     553,
+     551,
+     834,
+     1408
+    ]
+   },
+   "bloco": {
+    "y": 170,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE DÁ",
+    "PRA {MUDAR}"
+   ],
+   "lista": [
+    "O texto do Story",
+    "A música",
+    "As figurinhas",
+    "Os desenhos"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "A FOTO OU O VÍDEO",
+    "NÃO TROCA."
+   ],
+   "emocao": {
+    "texto": "só o que está [por cima].",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "COMO EDITAR",
+    "EM {4} PASSOS"
+   ],
+   "lista": [
+    "Abra o Story recém-publicado",
+    "Toque nos três pontos",
+    "Escolha Editar story",
+    "Ajuste e salve"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "CONFIRA O PREÇO",
+    "ANTES DE"
+   ],
+   "emocao": {
+    "texto": "{postar}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "SEU STORY",
+    "SEM ERRO?"
+   ],
+   "cta": {
+    "acao": "Comenta CONTEUDO",
+    "texto": "a aidealab te mostra"
+   },
+   "imagem": "cta_orig.png",
+   "sujeito": {
+    "cabeca": [
+     455,
+     520,
+     645,
+     840
+    ],
+    "rostos": [
+     [
+      455,
+      600,
+      645,
+      830
+     ]
+    ],
+    "rostos_manual": [
+     [
+      455,
+      600,
+      645,
+      830
+     ]
+    ],
+    "rostos_so_manual": true,
+    "cabeca_manual": [
+     455,
+     520,
+     645,
+     840
+    ]
+   },
+   "recorte": "cta_recorte.png",
+   "bloco": {
+    "y": 300,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}

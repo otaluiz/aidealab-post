@@ -1,0 +1,99 @@
+{
+  "carousel_id": "editar-story-15-minutos",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-22",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "SAIU HOJE",
+  "tema": "ERROU O PREÇO NO STORY? agora dá pra editar.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ERROU O PREÇO NO STORY? agora dá pra editar.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "VOCÊ TEM 15 MINUTOS pra corrigir.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE DÁ PRA MUDAR O texto do Story A música As figurinhas Os desenhos",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "A FOTO OU O VÍDEO NÃO TROCA. só o que está por cima.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "COMO EDITAR EM 4 PASSOS Abra o Story recém-publicado Toque nos três pontos Escolha Editar story Ajuste e salve",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "CONFIRA O PREÇO ANTES DE postar.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "SEU STORY SEM ERRO? Comenta CONTEUDO a aidealab te mostra",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Errou o preço, o horário ou uma palavra no Story? O Instagram começou a liberar a edição do Story já publicado.\n\nSegundo a Canaltech, dá para mudar texto, música, figurinhas e desenhos nos primeiros 15 minutos depois de postar. A foto ou o vídeo de base não troca. Abra o Story, toque nos três pontos e escolha \"Editar story\". A liberação é gradual, então o recurso pode ainda não ter chegado na sua conta.\n\nPara quem divulga promoção e preço no Story, isso poupa apagar e postar de novo. Mesmo assim, confira o preço antes de postar: 15 minutos é pouco tempo com o cliente já olhando.\n\nVocê já postou um Story com informação errada? Conta aqui.\n\nFonte: Canaltech, \"Instagram agora permite editar Stories depois de publicar; veja como\" (18/11/2026).\n\nQuer um jeito simples de planejar o conteúdo da semana? Comenta CONTEUDO que a aidealab te responde.\n\n#instagramparanegocios #pequenosnegocios #marketinglocal #storiesinstagram #aidealab",
+  "hashtags": [
+    "#instagramparanegocios",
+    "#pequenosnegocios",
+    "#marketinglocal",
+    "#storiesinstagram",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Stories sem erro: checklist para o pequeno negócio",
+    "categoria": "CONTEUDO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "04f301a14769d55db800ddd596006d659f1927728cae13106f0440a70ce98c9a",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  },
+  "pilar": "tendência",
+  "fonte_tendencia": "https://canaltech.com.br/apps/instagram-agora-permite-editar-stories-depois-de-publicar-veja-como/"
+}
