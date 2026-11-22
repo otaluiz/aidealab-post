@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-5-sites-ui-ilegais-gta",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-19",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 1,
+  "tema": "5 sites de UI que parecem ilegais de tão bons (hook GTA)",
+  "pilar": "educacional",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 48.4,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "5 sites de componentes que parecem ilegais de tão bons: React Bits, 21st.dev, Magic UI, Aceternity UI e Skiper UI.\n\nCopia, cola e o seu site já sai com cara de caro.\n\nComenta SITE que eu te mando a lista completa.",
+  "hashtags": [
+    "#webdesign",
+    "#uidesign",
+    "#react",
+    "#frontend",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "12WV6Pxrthgtz7WaMlqldfh03quyjXBmQ",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-19-5-sites-ui-ilegais-gta/capa.jpg",
+  "pasta_storage": "reels/2026-11-19-5-sites-ui-ilegais-gta"
+}

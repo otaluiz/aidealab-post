@@ -1,0 +1,31 @@
+{
+  "carousel_id": "reel-editado-por-ia-claude-code",
+  "tipo": "reel",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-20",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 2,
+  "tema": "Reel editado inteiramente por IA (Claude Code como editor auxiliar, hook GTA)",
+  "pilar": "educacional",
+  "personagem": "",
+  "formato": "1080x1920",
+  "duracao_s": 62.5,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Esse reels foi editado inteiramente por IA.\n\nColoquei o Claude Code pra fazer a parte chata da edição: cortes, legendas, color, efeitos, keyframes. Sobrou tempo pra parte criativa, que é a que importa.\n\nA IA não substitui editor bom. Ela tira o trabalho repetitivo do caminho.\n\nVocê deixaria uma IA editar os seus vídeos? Comenta aí.",
+  "hashtags": [
+    "#edicaodevideo",
+    "#inteligenciaartificial",
+    "#claudecode",
+    "#reels",
+    "#aidealab"
+  ],
+  "fontes": [],
+  "fonte_tendencia": null,
+  "video_drive_id": "13GvIhd-qSs3l9z4rQLzKD6T2ozOxrdka",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-20-editado-por-ia-claude-code/capa.jpg",
+  "pasta_storage": "reels/2026-11-20-editado-por-ia-claude-code"
+}
