@@ -1,0 +1,97 @@
+{
+  "carousel_id": "2026-11-prompt-cenario",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-21",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PROMPTS",
+  "tema": "O CENÁRIO FAZ A FOTO. 3 prompts pra copiar.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T3-T2-T3-T2-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "O CENÁRIO FAZ A FOTO. 3 prompts pra copiar.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "PROMPT 1 VIDEOGAME Foto de referência + arte de tela de jogo Café de calçadão à noite, notebook Tela virada pra ele, brilho neon Feche com: sem texto, sem logo",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "NO TOPO DO CONCRETO e o céu inteiro.",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 2 DO CONCRETO Plano aberto de baixo pra cima Sentado na quina de um bloco de concreto Terno escuro com tênis branco Céu com nuvens ocupando o alto",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "UM CORREDOR BRANCO e o céu no fim.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 3 DO CORREDOR Corredor estreito entre paredes brancas Andando na direção da câmera Céu azul com nuvens no alto Luz de sol bem nítida",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER OS 3 PROMPTS? Comenta PROMPT a aidealab te manda no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "O cenário faz a foto. Essas 3 saíram de prompts, sem sair de casa.\n\nUma no estilo videogame, uma num muro de concreto com sombra longa, uma num corredor branco com céu no fim. Em todas, a pessoa é pequena e o cenário é grande, e o alto da foto fica livre pro título do post.\n\nNa aidealab a gente usa essa lógica pra campanha e foto de equipe sem marcar ensaio.\n\nComenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#marketingdigital",
+    "#socialmedia",
+    "#conteudodigital",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "3 prompts de foto com cenário",
+    "categoria": "PROMPT",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 7,
+    "fonte_sha256": "ed2286063fd9bb8fd37e26fb6761886c8814070b0df24f906002be82c529615c",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

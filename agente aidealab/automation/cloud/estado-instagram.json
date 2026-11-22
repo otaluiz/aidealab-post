@@ -1,11 +1,11 @@
 {
-  "atualizado_em": "2026-11-22T11:27:53+00:00",
+  "atualizado_em": "2026-11-22T18:34:47+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 430,
     "follows_count": 226,
-    "media_count": 66,
+    "media_count": 67,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
@@ -17,6 +17,24 @@
     "accounts_engaged": 31
   },
   "posts": [
+    {
+      "data": "2026-11-22",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Aqui a IA trabalha muito, mas nunca decide sozinha.",
+      "link": "https://www.instagram.com/p/DgC0GB2F4z5/",
+      "likes": 1,
+      "comments": 0,
+      "insights": {
+        "reach": 11,
+        "saved": 0,
+        "shares": 0,
+        "views": 17,
+        "total_interactions": 1,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 9.09
+    },
     {
       "data": "2026-11-21",
       "tipo": "REELS",
@@ -691,24 +709,6 @@
         "profile_visits": 0
       },
       "score": 25.0
-    },
-    {
-      "data": "2026-10-12",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Antes de comprar, ele some. E você chama isso de funil.",
-      "link": "https://www.instagram.com/p/DeZLAc1lnrz/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 14,
-        "saved": 0,
-        "shares": 0,
-        "views": 33,
-        "total_interactions": 4,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 28.57
     }
   ],
   "top5": [
