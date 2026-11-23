@@ -1,0 +1,31 @@
+{
+  "id": "aidealab-reel-ia-e-alavanca",
+  "carousel_id": "reel-ia-e-alavanca",
+  "cliente": "aidealab",
+  "handle": "@idea_lab7",
+  "tipo": "reel",
+  "tema": "IA é alavanca",
+  "data_criacao": "2026-11-22",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": null,
+  "formato": "1080x1920",
+  "duracao_s": 53.22,
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "IA é alavanca. No seu negócio, o ponto de apoio pode ser uma tarefa que rouba tempo toda semana: responder as mesmas perguntas ou organizar os pedidos.\n\nPor onde você começaria?",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#automacao",
+    "#aidealab"
+  ],
+  "fonte_tendencia": null,
+  "origem": "aidealab - IA é alavanca.mp4",
+  "agendado_para": null,
+  "fuso": "America/Cuiaba",
+  "video_drive_id": "1H1T6i1FOb6J2er6by-b2ASZ6PcXo_BE3",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/2026-11-22-ia-e-alavanca/capa.jpg",
+  "pasta_storage": "reels/2026-11-22-ia-e-alavanca"
+}

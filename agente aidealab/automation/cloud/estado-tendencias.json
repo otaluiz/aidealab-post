@@ -1,197 +1,215 @@
 {
-  "atualizado_em": "2026-11-23T01:47:47+00:00",
+  "atualizado_em": "2026-11-23T22:09:46+00:00",
   "noticias": {
     "inteligência artificial pequenas empresas": [
       {
-        "titulo": "IA reduz distância tecnológica entre pequenas e grandes empresas - Portal Serra Dourada News",
-        "fonte": "Portal Serra Dourada News",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPaWQ5QkpSQjhtT20zaWw5NWYtRURyZmpmYWQ3VlE2SVFaaVc2bGhCYXF1VkduQ1UwTUhNNnZweHV5RUpUd3I0YU9fTmFrX2taTjhGVFk2YkR6aGlIb0toYWFCdEQ0dTlCcUZOME80NG1mSlhDSzNyVUhCOVU5SFNCR1NncDkyTDhPUzItUjVlaTNETVNhM2ZZZnRWN1RnXzBWai1Ra2RHM3A?oc=5"
+        "titulo": "Adoção de agentes de IA por PMEs brasileiras é desigual - Valor Econômico",
+        "fonte": "Valor Econômico",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYm45UElJNHlwUkxVZFdZM3ZFMkluVy1MeGVHY1BBVlA5RkFaZkVTeTlwZld6cWV2eXpGdmNZdW5DY0pWSVQ2blczNUFEMlJUTXpPU3NQYnJlRi1SclFHNmdVTG5jUkx1eGtOdWlBQXFBb1VubjhkeDUyVTFVTzdWOU16ZGtZLTg1THBxdjdUbmxQOVZjeXctWDJmbkxoZlBhN0FqeFRzOWxZLThjM005b1dUY2V0ekNyYzR2SHJfc1BmTHRWMXE3Z3pCNDdlSFXSAc8BQVVfeXFMT2JuOVBJSTR5cFJMVWRXWTN2RTJJblctTHhlR2NQQVZQOUZBWmZFU3k5cGZXenFldnl6RnZjWXVuQ2NKVklUNm5XMzVBRDJSVE16T1NzUGJyZUYtUnJRRzZnVUxuY1JMdXhrTnVpQUFxQW9Vbm44ZHg1MlUxVU83VjlNemRrWS04NUxwcXY3VG5sUDlWY3l3LVgyZm5MaGZQYTdBanhUczlsWS04YzNNOW9XVGNldHpDcmM0dkhyX3NQZkx0VjFxN2d6QjQ3ZUhV?oc=5"
       },
       {
-        "titulo": "De que forma a inteligência artificial redefine o papel dos gestores nas empresas - Exame",
-        "fonte": "Exame",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZFJXSW8zd2U0eWRxY000Z1pvQkEwOGtmNWVEWkhlZlBnQUtkZER6QVA0V1ZJRmVqMDBxcnZOVUlmbURBVEQ4UkdtSFJ6bFdnMTBtSC1qTFc2R1BLak01OW9SZ2ZiYkxMbjcxa0NpejcwcmhST3R2bnpPQkV4NjJRVWk4Y20xZ0FmcjdxcTdtS21XMGdDNTVxbnlkQVRDRWlyWUdrTmlZUk5YWmhCbFRDdWQxNGluVjg5bTMzbVMwT2wxdw?oc=5"
+        "titulo": "Como a IA está transformando a gestão dos pequenos negócios - Contadores.cnt.br",
+        "fonte": "Contadores.cnt.br",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPUUI5WVFndDRPRFpKYmFzODZKdXBrSDBxajVIalQ4d3I1YXl6YXNUVzd1czNka01jZkJqVzhXQXFteFFyZUJNNU9xQ0haU0c4OHZuaUs2MXJJWEJyNWwtZ05jYUlHcVpzZFVTQ2Fxb2tWM2QxamFYWEVSaTF3d1hnM3B0N3hseUptSEoyLUVqd0xuUzkwUlRzUzg2dmFzUGp0QlZhSzNvWEpDN3M0d2txQ3V5R2ZUZjY5VHRkM0gxSQ?oc=5"
       },
       {
-        "titulo": "Kraft Heinz usa IA para mapear tendências de consumo e reage rápido ao mercado, diz CFO - sentidohorario.com.br",
-        "fonte": "sentidohorario.com.br",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTExkZUw3eXNqTktxbnRDWnpXTFcxQzQ1TWNvUEVJOUpROG5CQkE1dVNBNmhTVlZZV2JIWkxpcXdSX3J4LTBnVGV4eUVwblItdHlJMlFrdmtkMlpyNVNZc3RUREw2QzY1UEJITGxsX1psVU5PcDhmLTZTSGFTRU03X0c4Y29IeFRMdmhRbmUzVlIxbWx0RmNmb21kbEU0QXdLWTZmS1RLeDRLY1ZPQk1BSHE3TnlBR1NV?oc=5"
+        "titulo": "Omie lança curso de IA aplicada aos negócios para ajudar pequenas empresas a adotar a tecnologia com segurança - Omie",
+        "fonte": "Omie",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBpYjVmeERHMGhkeGhha3lCWmo1V05HR3ptSndtcU1zVmk0ejI4T1JMcTRrWkM1SW1jMFJKV0ZzU2xTVWhsODVHSm56T3kxdzQ0MGFXY2JMNmpBaE5jRE9jQU5XWEMzWHNPdTRfQVJR?oc=5"
       },
       {
-        "titulo": "Sebrae-SP abre 6.820 vagas para ALI Produtividade - www.guairanews.com",
-        "fonte": "www.guairanews.com",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVU1PUGRXM3VTNTQxNGRCZ2ozaEdqd0VGTFpOeGVpOFA2V09TamxDSDhLZDM4ZGhINHdYZDdXZ0paREhoOHcydTd4NkxMYmpQTTJUczB2d3pheVhONEQ0OE45TzRhc3NiQkw4SGpLMUhJVVZpdDNFdnRkci1CT0JKend0YjdEN0I5NEE?oc=5"
+        "titulo": "Apoiar pequenas e médias empresas em Phu Tho na aplicação de IA na produção e nos negócios. - Vietnam.vn",
+        "fonte": "Vietnam.vn",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTUxPOV92UHV2clo3MFlGTlVWbEszRl82RDNMcTJodGZZR0J3dEFSQ2F1dHo4bmNESU96dHVKYTNYZENhWU14d1R6czR3OXhyVi1HU3lpeE5IdTR1eThTRnlScWs4Zk50MmlxR3B6NDgzRDlodm8zN2lkNW5jdGtSYWd4OXo2SnVKQmtzVUtMQXJYcG40N3o5ME1sTE1SMTdCTXVsUVNIN1lSQQ?oc=5"
       },
       {
-        "titulo": "OAB-RJ restringe atuação de empresas de inteligência artificial jurídica e atinge modelo da startup Enter - Diário do Rio",
-        "fonte": "Diário do Rio",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNdHFZV2FKNXJ1N0ExaDhXUzdHXzhhWUxWUWRWZmpUbDlKR2VyTGVFNHc3LWdqZkxWV1dIZlU2Qmg4OFRhU3JjengxU3Jza3A2djJhbEJDQ1E5ZXJsZnNWZzh0MFhXUE9IRW1aeXFzMVhJTDlkVmxacl9FZDhjbHdqbk5XTll4ZXNDdV9pa2E2TDlMSW8zSEo5LWFjQVJGR2pzZDFKQ0VuWmFvdUNEUFRKT1NLd0dwWnNNTEs1SkkzbVVkT1VIU2MxejhFRkI2STc0WlhNWDRhNkV2czhQanI5Q2VDQXBLWUEyTzRPZ1ZuUlVmZw?oc=5"
+        "titulo": "IAPMEI lança em Braga roadshow sobre inteligência artificial para PME - Jornal Económico",
+        "fonte": "Jornal Económico",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOHpDWW5NSUhxbzRHZWVkZlFDcTJ2TDhDVm55WEUtYzNYWEhqLTZwYWlRbEpzeG91QVRPV082RHZGZHZQZzB6cnlKN0pjbUFBVHNWNGtGYmltYmNKRThQQ19Pb0pvZXlFQy05U29mcE1HOGszcDI2aHNvSm0ta0lmdmtaZVd1aWU1a3BMNnpVV3l6UTRXaWlIQnBLVC0tMXVLQzU5dXdnUzR2V1JYSmNnWQ?oc=5"
       },
       {
-        "titulo": "Macaé Empreendedora amplia conexões, capacitação e negócios a partir do dia 17 - G1",
-        "fonte": "G1",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxOZGUxTk0zanY0b1JWV0ZqR0lnNUF3Mll6UGlGTWUySVcydmhIdHBOQ0VTQ2cyWkZEMTkydkR5YVB5SXc5OWpKbkVYNExzbkNrNWtHUko2c3Y2eHZpT0R5VFlzZUhhTmhVQThDOGloMW4xQzlCX3ROUERZRFh4MkwwQTl2X1BBbkVRVzd2dzZmT0dVOURZeXlraVJINFhtcm15c256VEx6N0tmWnZBeHc2N3pTVzB5ZDZvazZwc3V2eVdFOXl4bDB2dEFNdTNBUFQ1aUNKZmpWT0x2YXpoMmxOX3h1cGU2dHVKbDlwUTI2d2FhSlMzUDVkUnR2TGlkallWYmFvSWRmVUctc0dCSV91VE1Gc3UtYzBESWs1RHR3R1VCYVZSa01pT1gydjZ6bXFpbkc3TzZuSGlVcUF1UV9VTkViaUhNVXZIZmRVVXFlc3AtRU5LX2d5TnNUNlhKeDl1RXfSAeICQVVfeXFMTmRlMU5NM2p2NG9SVldGakdJZzVBdzJZelBpRk1lMklXMnZoSHRwTkNFU0NnMlpGRDE5MnZEeWFQeUl3OTlqSm5FWDRMc25DazVrR1JKNnN2Nnh2aU9EeVRZc2VIYU5oVUE4QzhpaDFuMUM5Ql90TlBEWURYeDJMMEE5dl9QQW5FUVc3dnc2Zk9HVTlEWXl5a2lSSDRYbXJteXNuelRMejdLZlp2QXh3Njd6U1cweWQ2b2s2cHN1dnlXRTl5eGwwdnRBTXUzQVBUNWlDSmZqVk9MdmF6aDJsTl94dXBlNnR1Smw5cFEyNndhYUpTM1A1ZFJ0dkxpZGpZVmJhb0lkZlVHLXNHQklfdVRNRnN1LWMwRElrNUR0d0dVQmFWUmtNaU9YMnY2em1xaW5HN082bkhpVXFBdVFfVU5FYmlITVV2SGZkVVVxZXNwLUVOS19neU5zVDZYSng5dUV3?oc=5"
+        "titulo": "Mercados em crescimento em 2027: conheça os setores que oferecem oportunidades de negócios - Jornal Contábil",
+        "fonte": "Jornal Contábil",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVG1ISW9hV2s2X0trazNxUkZXejlxcXo5MjRGWmxYaGpsZldyTTRRVTN2dVdZSGcwbmRWMFdWcFpMeDdCbFJ1QTBxX1RJMFA5NFFTT1NEcGFsZ2RKclp6WmFDcTFoRmMtemlJa0N6cndTdWZXZEx3R2N5eUt3NUV0Qlp2UE9JU01xcnlEMUJnYmYwR3Ztdmd0SDNrQkwzMEFFVzJydTFPU1VCcGpMMGRCeE91MFAzR3Iwa0F1aGQ0UktUX0tpazRB0gHMAUFVX3lxTE9udEJ4MnpYdHFSTzBPRHBMaE1sN0RQclQyMDV6dTFoNDZWSHd4V0N1MDJGenJwa2xpbWpCWXRfbDhsQUJ1Z3cyRTFndG1Ea2h4WFdrTTZBdXZ2a0hyaGU2ZVh4aF93VWtubDVHcEIzQjVHbmRRU3lxY0lhSUllWWxiVVlFNnE5d2lfVXJ2SjBaamN3SVRrdlNKdnhOTUxyd0liNGZfUF80SFVNR21GU3JYeUQwTHJxa1BaVlJqV2pNX29hWUFfV3d6eFAyeQ?oc=5"
       }
     ],
     "WhatsApp Business IA": [
       {
-        "titulo": "Cientista-chefe da OpenAI defende limites para o desenvolvimento de IA no setor - InfoMoney",
-        "fonte": "InfoMoney",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPamtKX3pIak5ZYTluWkdPcWJRY01IcHlEcmpWeDEwOEFJb2ozLVdXTDZaV2FFV1RFSW16Uk96ZzFMVmpRdW0wU1lBQWthREVJRTFnZFB6aVhnYXN2MzFQNHpNa2NFc3lVUE1uT0V2d3lGTmxDVUlRUEFwQ1M5Qk5zZ2l0cTNvOW5YWmxlSEpqME9qTVp1RHlEdExTXzh4YldfUW5XMFR3RnQ1VURVZEpzRU02bHg1QTByTWfSAb8BQVVfeXFMTm1xYzlNUEg3ZWJTZFZmUk5KQjZCTWlNTTg1dURGVTVwN3VWWWZqbWM3VmtHRWRraVB3MFNJeWlhendKLV9YN0EtSE1YeEExTVVFeUp5V0ZuZlptM0paOVp4R3J1WGFYNEd5dWpLdkdvUHVmdHhsVl9SRzVDZzVvcHZoWFg1emMyTWU5ZWwxM1ducGZsNnNvSHJ1c0JjMnZKeVA5MmtsWnF4S3F1c0J5UFJ5d3JtZTB5amZTS19md3M?oc=5"
-      },
-      {
-        "titulo": "IA do KaBuM! vende R$ 2 milhões pelo WhatsApp em dois meses - Exame",
+        "titulo": "Orçamento de IA nas grandes empresas deve passar de 28% para 45% até 2028, aponta IDC - Exame",
         "fonte": "Exame",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB0TUo3RHlqSVNZeklCRmRQSFkwazBIeWdoTTVPZGsySUpIX3RlenhTNlhrTFhLYlB6QXRIOVViZG80dG5Wa3RWdmRDaGlGeEdDUGhheW5NQ19VLVBZMkZqeHZ5MA?oc=5"
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTzJVU0k3bTRUSG1vU2VQUl9JZjQ0ck5UdU5xLWdBYm4xVDVnMjhnU2gtTmhoWktPMHUySVdVcVBRaFZGaWhLd1F6SVNzMEU3S0wxalVhLUFvYi1TdWM4UUd4VzRpSk83aDJhQWM0U0dBV2UzeEx5TVlnWEVnMTQwcHNfeDRkWS1tR0pvczl0NURyZDhfM1FCZWZIQm1jbHVWTDNhUjczOHgwd2VVN0NqeVNDaTUtbjlkN1lrSmpFXzNFX3M?oc=5"
       },
       {
-        "titulo": "Surge um novo canal comercial, operado de ponta a ponta por IA - Canaltech",
-        "fonte": "Canaltech",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRTlnV3pQMVU5cFNkZ3NMZzZCMG9LaEVRSzIwNlJOZWRPbm1mNUs1Y3h1Yk1LeEl2a01Xbk5Da0RNNUlmc0NvYnVFR1JxbGtPYUdwZDlMc0E5VnJwYkVkYkFnTU5rZEpYNXQxcmJmXzRqdFFTaDY0NmRCeXVpRWU5RnZldE42M0hwQnVpQk1YZDlMNG9XUEN1ZndwYw?oc=5"
+        "titulo": "Tempo de resposta no WhatsApp pesa nas vendas de fim de ano - Terra",
+        "fonte": "Terra",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQcnFUUGZNYXFvWEZ2RFEyR05xZnlVdWZBN0ROclpVajFRUWtXQ3dYbXhhck5KSTJuQ3FxcEhsdTFBYmJmMWE1Y0RNZVRpWVNUN19uU0ZDdklRLWhhZDhseGU3ZWp2aXdZa2FFZ3gwYko1bjlJQnRxTmpkaUpFRjdNaklQcE5FWmxnbkdJZ2w2Y0dLdEVndm5uRVh0MVZPeVV3TFBpWEtiNXIzQVRwRW1MRFlnN3pNQ2lqQUhNZkV5MUVVOVBJdmQxcEpjang3TXVBRFBkYzZn?oc=5"
       },
       {
-        "titulo": "Uso de IA nas escolas pressiona formação de professores - Paraíba Business",
-        "fonte": "Paraíba Business",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQcE1GZXBlcGFlMy0yMi1KMFdNNjlPVHdDXzBPbXdlcGJMU3l0eFltLUxvZ1plTWw1U0NpMXA4cGkybGlmZl9INlFIeFF1aWZTV2EtMjVpVlpsMzZDNC1WaTVsVU50TUlIeENvU2cwSlk3SWJad1V0U3dUN0ZtVmtVSllFSTduN2xoWkg2RUtHNzk?oc=5"
+        "titulo": "Empresa é condenada após funcionária ser fiscalizada até quando ia ao banheiro - Diário de Justiça",
+        "fonte": "Diário de Justiça",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVmVHSno1QVVhemp1Z0loYXhQcFZqekdrQjJIZl9OUFJtV1NhbDBDbWZVM25kSEtqcXBZdlRTWDdlYjRuRHlZM0g0aDRQbl8wMG1TYm9aTTVIT2lSeGVwWG1DeUwwTTdfMjhDLTlOS3RXVzR2dHZuc29tb0x3N0pXYmx2LWVQcm1jWmRFVTVEd0E2Nm1PSGpCMEtpYmQ1OEhoYllkRUlnTzBQTW1IMmtTTDB0XzYtTGJBMWc?oc=5"
       },
       {
-        "titulo": "Google revela o Duplex, a voz que faz ligações para empresas pelo Gemini - Pasquale Pillitteri",
-        "fonte": "Pasquale Pillitteri",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSE9ZQjcyTnlOSGdpcWUyUUlXT3F6NWYyX19YQWd5N1gwYXh5TWU4LWQ5THlCbDhMRjYwTHZGZmEwUWs5cXB3UWNnZzhOcUZ0eDVwMTM4cEpfc056T1BVOXRNY1dxa1pIRHBwZEdUTkwwUHpBTTQ3ZXg5SnpJMUpnMzJLMUg?oc=5"
+        "titulo": "“IA não é ferramenta, é operação”, diz CEO da Magnotech - IT Forum - IT Forum",
+        "fonte": "IT Forum",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE54ZFNUUmpXWmI2cHJPSkZXb2ZoR01UNkN4WE1sS2M2cXRQaHJ6cDNQbDBDTmRreDNQOWdFNGVidVhuVndMWEQxS2MxMEVkRWRCSkdYX2pSaTRCcDNZakF3N0FaWld1NDJydHcxUjVZU08tUnJ2SXBBdzc4SWZBd9IBgwFBVV95cUxOWDhGMzl3LU91bTZncjlYTVhWc3B4aUxXdEh0WXJLOFFkaWQtSWNIb1FOMU9tLWtNdFpPU3ZfYmRwbm1Mc0RuRktMWWFOV0RSR2d0elhvTWVjNFhSUWgtVWdiZHdBb2U4STB6aDJ2MHJ5emYyYzBaaUdDdkNoRWw3RTZtUQ?oc=5"
       },
       {
-        "titulo": "Empresas criam novos cargos para acompanhar avanço da IA - Mundo RH",
-        "fonte": "Mundo RH",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUnZXZFItUVZhWmczWkhFYkYxSndYa2IydjV4aUNuLU9mYzZjWnJqM2xjZzYwOVRqN2U2ZEtjNUJxRzZpMkFGZnpyam1WTDAwc1F6RVNBamV4R1RickEta0ozWEQtWG1XeXN2Y3pza2dpSmxFUHQ1bDk3eEVtTGUyeC0zQlYzRG_SAYwBQVVfeXFMTUtxY3IzejAwLXNsMzh2TW90VGVWU1h2RkZGa1NlSXhvYi1TeDVHU0pLWVhSSmp0Z2lqSmVjdXk5c3FoLVBsbHE4UFQ5SmtIQ1dCd2pGYWp1QkxMMVMtY2QyYW4yNW50Z0U5bEpZamVFdzU3bXl2cTBQc1lfSXBtdDBXdVNUd2dySmcyalE?oc=5"
+        "titulo": "95% das empresas brasileiras querem adotar IA agêntica, mas só 27% têm governança madura - Exame",
+        "fonte": "Exame",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmVQeWJacVdhdE9BSExTMHNIS3BTR3h3MkpZX3Yzb2JZX2hqYUVPRWhMUEZuMThlb1BxbWRCVFVFMk90TE5NcVd1WmF0M05QT0lyOTFyOTVVWUNVcC0zZENJLXJLNTdfemhWWm4weTlCNFNnV0hpOUZRQVY3dElRY1N4ckx2ZWhBSm5KVlBudFowSG11X3FNcDFJRVNBd3pLM1phN1RrdF92ZjZ3MU9USnNlbExkQ1NtRC1fSmlCaXNaRGhZaE5F?oc=5"
+      },
+      {
+        "titulo": "Engenharia é caminho para segurança da IA, diz presidente da AWS - Valor Econômico",
+        "fonte": "Valor Econômico",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMDJwYm1YNnJ2Q2hsYXhfeUF1RnpTMC1RaUdETWRBQUhHQ09kM2tmSU1ERmlmdmZqaWVZU0lTb2l6MVkzVklyTnhmS2JxdXYwTnA2dzhJMzVpNm1iVTZhN0lkb3A5UkVWUnp4TG1HTjlhYlNBWmN1ZkVORHhqWTJfelRuVjhqQkJhOENfcjg3VTRxbVRuVVRMQVhmeFJ5YV8zOUF6TFJSdnp1V1lqSUNEUVRENTI5ZkRQRFhJUmxR0gHMAUFVX3lxTE5wZ3Y5TzVoOFNsSmFva1l5cEdENkZiZnlTcVlmZDJlMjJzSVlhSjVndHh3dV9XNWNvOG0wRTFrb2VVS2xNLWhxVmw5bktzcTR2dVFoZnlrWHVNTlltdm9RV1ZtaFRsSDZNR3VCMVprc3NpR3FFak1DUGVhT1h2LU9ENllkSXVRaTRBbFU1aU9IUkdXZ0YycG50cWdFWEttbmpEVGN5amlHREktcXFDaHVwbkZ0M09DMWFJWC1MaDlnMks5a2Z2VTBZbDU2MQ?oc=5"
       }
     ],
     "Instagram novidade recurso": [
       {
-        "titulo": "Seus vídeos podem ser copiados ou alterados por IA? Veja como se proteger - Times Brasil | CNBC",
-        "fonte": "Times Brasil | CNBC",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOQUx0amFDUFZrQkEwUzhMN0lIMmRwemxwSFR6RkZINmM1c0tEeE1WMjAtVkpsc2Q0TXpiQWtoN0tRdUlkdEtaVW8tS01vTlZLZ2lXcXNpN0lKNmVadlptSUN0Q3pkbUllRHBEOVNIYldHX2hSOElsRjFOV1pzb1V1OTRjTzN1d0x3ZnNQUHFvN0ExTmNENmhJclRXdy1JZFk4N0pseDdkMWs0QQ?oc=5"
-      },
-      {
-        "titulo": "Instagram Stories Viewer - Defensoria Pública do Rio de Janeiro",
-        "fonte": "Defensoria Pública do Rio de Janeiro",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9OVURHeG4xZUZRdFA3VUtnTHQyTzRtaTdqaU5fazNMdnhiUVE4MWpnSVFPbmNuYzM1VkVpZGdXcDc4ZEZkTElGRVJvOFlwNDNYaGsyc1NKaGx0cm5OVnlyb1lWTUNMVjYtNEx6VmNMNlhpYVE5anc?oc=5"
-      },
-      {
-        "titulo": "A Secretaria de Turismo lançou oficialmente no Espaço Wedding do Festuris – Feira Internacional de Turismo de Gramado o e-book Casamentos em Gramado, material estratégico desenvolvido para impulsionar o turismo de romance e de celebrações na Se - Instagram",
+        "titulo": "A briga judicial entre Larissa Manoela e a sua antiga gravadora, a Deck, chegou ao fim. A artista processava a empresa devido a um contrato vitalício assinado por seus pais. Segundo a colunista @fabiaoliveira_, do @metropoles, nesta segunda-feira (23), a - Instagram",
         "fonte": "Instagram",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB2VnFJb2pjSmJpcGhKbm05ZWdaMkprLTNZMjJoNmJBNFlyVnBGMDlRSEhpS3VjZG0zZEhQOUE3dk0wdlRTTzJHZXBiU2FBQUY1MEE?oc=5"
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ILXptdVZUVU9yT2F4VlZJYndRQ3hUU2xyUldIVl9wLTlSbkFpSHZRd2s3SDNibFdkOUtzelMwNS0tVVRXcjZpRnFyY0RPTXc3eFE?oc=5"
       },
       {
-        "titulo": "Hospam recebe 42 computadores e 16 impressoras adquiridos com emenda de Luciano Duque - Nill Junior",
-        "fonte": "Nill Junior",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSTMtMU50dFE5N3g5TmV5bEh2M05KektGMWxReUlVZnRNNmVtWEMyOHg4SjFGRW55T29DdEFyWUVqMGhqeElUcjVLMW9RRk5BaTI1YkJrVDk0TUQ5RTdPd1duQUpSSjVyTnduNktBRmlJTEZBaXFxWndYZGNkdTdub19oQ2FfSV9mUWdZQ2ZKdFNmRm16eFJWdHVlNVBSLVE0SU9XMk9TeFR3dnNPSFVKcV9R?oc=5"
+        "titulo": "Prefeitura de Milagres adquire novo caminhão compactador com recursos próprios e reforça limpeza pública - Governo Municipal de Milagres",
+        "fonte": "Governo Municipal de Milagres",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcGNzeU5leXc2bElkS052dWUtX2ltMmJVcUF6VDBKaW9zMHdNZ3pYenFjaGpDNDZ4UWljcmhmSmw2UFdDbFdUZVA0eDVqa2JlMkEzTU96UEFqUk9jeUpLNzFXQmhuUzhDNUxSN25kSGxkNE9Yc3BsX0NUenBTZVJHWkZPMU1iZFlLUmJHWDhDWEpJTGdlbXlITXhR?oc=5"
       },
       {
-        "titulo": "Desenvolvimento regional, cultura e cidadania contam com novos recursos - Isso É Notícia",
-        "fonte": "Isso É Notícia",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTld0aDFWaVBYejNOVzRXdWF2dS1aSlFfZHc5ZXZqbXl6RWxpb1h3LWtrWGJITXV4dTc1dV9nZGlvZHp0eE9XQmY0d0hocFhSYkl2UUNvQWFFZThTaXlMTGJya0MzOGRKU3NhazZhcjY4dkNZYXNIVi1SUEo2eWplN21qd3Mxb3NIZWpyaW42VU9RWi1nMTJyb1NLRVdhU3hLTlJMQk42QmhaSnNpLUI3VDl3TmsxZnpsV0F1Q3NpUUVoM09O?oc=5"
+        "titulo": "Padrasto é condenado por tortura-castigo contra a enteada de quatro anos - Poder Judiciário do Estado do Rio de Janeiro",
+        "fonte": "Poder Judiciário do Estado do Rio de Janeiro",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNGFqeko5cG5MYUdKdW5zVzFWMm5LRmF1NDFqeEFIZEZBcVR0cXpLV0Qxb1VuTHVLQUlWSVlBZUhDWE80RkV0dlVPTFpXVVZ1MDdJZmhCbVN2eHY2bHdoWkZRNkJvNGhSV3UwVWVnZzFqUEFpVDdWaXZ5eVVZdFlLOEl0dWJ2OEN0V29NMXp3cmN0VUJiLU9BcVpqOTU0ZU9NLUlFemRlVQ?oc=5"
       },
       {
-        "titulo": "A Prefeitura de Esmeraldas divulgou o resultado preliminar dos editais do segundo ciclo da Política Nacional Aldir Blanc de Fomento à Cultura (PNAB). As listas apresentam os agentes culturais classificados e desclassificados nos chamamentos públicos nº - Instagram",
+        "titulo": "O Governo de SP apresentou, nesta segunda-feira (23), em Mogi das Cruzes, as condições de acesso a uma linha de crédito emergencial de R$ 2 milhões destinada a agricultores prejudicados pelas fortes chuvas e pela queda de granizo registradas na regi - Instagram",
         "fonte": "Instagram",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YRnd4bDR1cTBNRDRpUUpDMFFpdkNsakxBYVdQNHNsNXQzeFlGODN2YUE0MUxBUEtJMWNlcF8yTzBXeTBUUzhRU0lRcWFaTnNnWHc?oc=5"
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxd0oyTU5qUEJOTURlaFZZel9BNGU4SlMtVGpqRXRlcHdZM0JZRENfeW82RXBnUElYV2VlLWNaSHJONDRfSWRrU0FKUk82a0pJY1E?oc=5"
+      },
+      {
+        "titulo": "UFPE recebe R$ 812 mil em equipamentos para recompor laboratórios atingidos por incêndio - JC",
+        "fonte": "JC",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcWFDcHFqSUtZQ3pHeDBzZnk0bEhwbU5SYURvQ0x6ZXpaRWF5U3k3Zlhiei1SclhWekdYcGpWYzU2dDlCSkIzYVJOdXdIUE9YVzV0eC1reHVDcXFvc1Y2LU9LVDBCbGQ5YmdPcDY3RG50TTQyNUR6aVVhQ3JfNFQ3c1BMVTVrNEhMNFB6UUIyUUtVdmNmWVp5ZFhmYzIxclZBUS13ZUpoWkEydWVIaDVHQnpCYTRGRXZ1MU9MTzY0X0hoUmFWVHVqdXFkWC14amdFc0VJTjJIUUxsNXdWckNYYkkxZ1I?oc=5"
+      },
+      {
+        "titulo": "Após chuvas, Porto Murtinho busca recursos federais para recuperação - Capital News",
+        "fonte": "Capital News",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdGdQWXU4ZktSeE1kbEROTlBIWFo1bmRXdDQ0aHNGc01tN1huU2VxWVFaekhIWmJqajdCYW9DWmVLUTk3Ukd3TDJMbHJzc21OLVRzRUkzOFI5N19lY0pqVmYwUmJQZlNPSFVRMXlCcmlHMHZhYU1zZkt5VzMwTEtiNkNVUllxY2V6WUpUWmZXOURfMXdVXy1pcnhSUXN5NHlTb3BvSmVVZ3J4eE5Cbk1DUURNZXRTX3pLbnBaZ2hGQjlKc3htLU9LZXpxSEpvY1k?oc=5"
       }
     ],
     "Google Perfil da Empresa OR \"Modo IA\" Google": [
       {
-        "titulo": "Google amplia verificação de devs Android - CISO Advisor",
-        "fonte": "CISO Advisor",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB2N05ldHVieVJXMS05XzhJNWtYR19aQV9PLU5LZTFmWU5QYUlVdV92ai1CMlRlUGdEVTFoRlBQRmxjSkwtSkhMVWt3cFBiYTBOaW1QNG52bHUxX2FRS1JKNHFmWm1raTVIazBIZ2FCR05NWUNFNmhJcnZSclI5Zw?oc=5"
+        "titulo": "Modo IA: Busca do Google agora sabe o que está no seu Drive e na sua Carteira - TudoCelular.com",
+        "fonte": "TudoCelular.com",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUjRGcVNqdTBDbGxSRERFQWptRVFfMy1sd0pLcHNHd3l4SXJmMkY4cGV5Z3E4dWRTMndwOEJ4UnVHelowWEFGdzAxN2dqV2tteVBxTW5BcXUtdFRkU0ZxcjktbkVtQlhyUF9XeVVWbjNDaGIzNlFpbzVaMm05bHM2T1dBS3JwNkZTd0dmZWZxOExMUGpEZkdQeDRYcVRqVmIzMjdydEppYw?oc=5"
       },
       {
-        "titulo": "Google revela o Duplex, a voz que faz ligações para empresas pelo Gemini - Pasquale Pillitteri",
-        "fonte": "Pasquale Pillitteri",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSE9ZQjcyTnlOSGdpcWUyUUlXT3F6NWYyX19YQWd5N1gwYXh5TWU4LWQ5THlCbDhMRjYwTHZGZmEwUWs5cXB3UWNnZzhOcUZ0eDVwMTM4cEpfc056T1BVOXRNY1dxa1pIRHBwZEdUTkwwUHpBTTQ3ZXg5SnpJMUpnMzJLMUg?oc=5"
+        "titulo": "Na decisão antes do clique, o papel do Google na jornada do usuário - Expressão Rondônia",
+        "fonte": "Expressão Rondônia",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQnlTOC1HZ0NnaDNGcVY3TDlKXy1pWFkxcVBFVDdDcVpKd1hoQXhDbUxFc1pEa0cxWE16WUkwUU9WV0RKcWgtZTQwZFJtVTdzMWI3RFp5MHRlZDR4Q3pUaVJSMjltTDE4UEI1emhRSWJZUlYxMW5XNUlCbElSdUFGRlVyT0luQVkzRFUtaGhzT0FwdmFqQ1Q0YWRKc1IydTdmcVE?oc=5"
       },
       {
-        "titulo": "Belém realiza 'Semana da Mulher Empreendedora' com oficinas e serviços gratuitos, veja como participar - G1",
-        "fonte": "G1",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOa2hMMVc0M2Eyb21QSXcxZmdtOWw0SW5xdHBaMm4tRmg3UEl1LWh6SV9nT3hCVXZkSE53Zl9vbTBfcTMwb0lTZVphdFRPSENZNDNKenFiMm5iTkVwRDQ5ZC1va0ZtTmZ0XzUta093aVNLVHVKR2tLT21XX3lmX2dTQ045cHg5MjhwWmVWaXY4U1Y5cVRsdHQxMS1BOGpzM0ppOHNCM1FXSFc1T28tZkZWSjB6OEg5R04yWEU3emxKWi1USGxiUEVOR0lWVEtadXlXQTd6NWdfQkV2ZEhTNHNaSm1kU1Z5VG9mcllrdUJ4ajV5OXhYelZJ0gH3AUFVX3lxTE5raEwxVzQzYTJvbVBJdzFmZ205bDRJbnF0cFoybi1GaDdQSXUtaHpJX2dPeEJVdmRITndmX29tMF9xMzBvSVNlWmF0VE9IQ1k0M0p6cWIybmJORXBENDlkLW9rRm1OZnRfNS1rT3dpU0tUdUpHa0tPbVdfeWZfZ1NDTjlweDkyOHBaZVZpdjhTVjlxVGx0dDExLUE4anMzSmk4c0IzUVdIVzVPby1mRlZKMHo4SDlHTjJYRTd6bEpaLVRIbGJQRU5HSVZUS1p1eVdBN3o1Z19CRXZkSFM0c1pKbWRTVnlUb2ZyWWt1QnhqNXk5eFh6Vkk?oc=5"
+        "titulo": "Google amplia IA personalizada a Drive e Wallet - ativovirtual.com.br",
+        "fonte": "ativovirtual.com.br",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdTVDZmZtdW5vVXc2WDhST1ZtMGwwTGhuYzFfWkVzOG9sa3k5bWY2NjByUDNmb0pIc1o1b2NfdTEzZzRvYjFKYy01cXYzVnozdDVXcm9NdjdBZWs2SkRQQ0ZhaXRPc1l5aHVqM0EyX1N5RjZhRmZ3QlpsYTdVa2JwVFkwQXFCQTNGMXlORlFWcUpGRElWZFNKZ2dn?oc=5"
       },
       {
-        "titulo": "Google lança ‘tópicos temporários’ para conversas anônimas no Modo IA da busca - Estadão",
-        "fonte": "Estadão",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdVMtbER6Z3A4eV9RNFh3VldNQ1k4aWNwMzZaMm43R1B4Z3VCREIzYnMxSktRZm5YWVdjU1ZvUEs5aWVXV1VydzQzUmQzb3R3QUVnOXBfR0swYmpuYkt3SFRzRHU5U3pOMHBFV0dLX3RpRXo5NFl0Tmp4bWhTZnBaQ21wS1VoaG5QeVk4VWFLQ2hNMERzT2xENHRrX2QxRmkxcTBHTmdqeXZBOTdzSC1xb2tpRW5DcVhSa0NsMWM0X1ZBUE01YVNfNzFaX0R4czVFMWZYdQ?oc=5"
+        "titulo": "Google desfaz parte de mapa criado para palestinos na Cisjordânia - UOL",
+        "fonte": "UOL",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNX0F3b3k1bVhNcm9RUG5BQUpJZzJwQmRZTDV2eXBjUlZTVjNZWnFybTdvZ05MU2kyeVFRMDZ0WmVmbEdWY0hLWjZuclZ2dFV1MVNrZlZrTzVpYkFFWGVtdnhrUk1YeS1sWng5cy1kMElGUGlwOEpyaFNVb2t3SXpLSXQ5SjdDX0RSa3JhRnJhSGJTR0JBXzV0NTRJci05VUdEVFhkZjRjalJSVDFpN3JqOHE2Sm83LXFyaHpzMlJwQm5DWTQy?oc=5"
       },
       {
-        "titulo": "Google tem IA que transforma anotações e documentos em sites interativos; saiba como funciona - Times Brasil | CNBC",
-        "fonte": "Times Brasil | CNBC",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPUm12RWVaemNmM2lvOGw5WWp6MXZQc0NlVUhtOUZHRXVPLUMwbm5PQWlsd2d1UmZYT2kyNW9OQnc1MFRiYnlacFZRQWhXSVR6MGMyWXhLSTdOWDRQRzJ0bmdOcHhuV214SDFiYWo1RmZIa29hTjM4bnhnUkZJcVFNUG80algwd2dQSjNzc2I2bVZJWC03eVduLWJRZVNiQ3JVel9FWi1lSVduU1FrUEFKMEkxd29aQUM3Q1M5Z1RSUWVFSVhsWjlTTmlxb1l6Y3l5ckRPSGw4aFBWVmpZVXcxOTQ4aUgyMHB5bVREaG5SeWlVOG5X?oc=5"
+        "titulo": "Fortuna de Jensen Huang aumenta em US$ 36,6 bilhões após retorno à Nvidia - Metrópoles",
+        "fonte": "Metrópoles",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPOXhsT0N3SnZ6X2d3U05VMS1EZEJDU1I2MGZMZVRwRFYzeXFvb3B3RnpxbS0tXzFlczVWMFpHYXBsLVk5aVp5aW5fOEhSQXBvVGZ0LXRvb1lhX0JLUWo4MlY3QlBZaV90MXdKX0h5TFg2YUdHVzdnUTJRN29ERzBadTlDSFJ3NU44QUdWZnZ5YXEwV3hEekltZXNlR05na3EwS1VKYk5B?oc=5"
       },
       {
-        "titulo": "Tribunal Do Crime Portal Zacarias - Defensoria Pública do Rio de Janeiro",
-        "fonte": "Defensoria Pública do Rio de Janeiro",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5jNVlDM2VkYUp6b2Z3NUd4Q0ZwbWdQWWNFdVRFYmNpSk9lUk9fU3pVUXVkM2t4bDFzb3JxcjFwRHk0Vm10Y2xqQ0JMa0VYX0lBQkI1WkFlQ1JVbFhDLUMwMVllazFSb3EtX1M0YWtoaXU5X0ZJdWhVU2x0QUI?oc=5"
+        "titulo": "Stock Nvidia - Stock NVDA - Resultados, Dividendos, Cotação e Indicadores - Investidor10",
+        "fonte": "Investidor10",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE44QTc0LVBWQTlZaDB5UHFxaF9MMjR3OW12OEJZM04wdkNMZVR5QWNGd1lxSFR1Q3FUVndiNnpIT1NUUmpUQmc2N3htYldfQ3B0akE?oc=5"
       }
     ],
     "marketing digital pequenos negócios": [
       {
-        "titulo": "Marketing supera finanças: 42,7% dos empreendedores querem aprender propaganda - Espaço do Povo",
-        "fonte": "Espaço do Povo",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVDIxWXp0QUJkczd6OUpHWVYycHlBWXNaQ2F6bzEwVTRBejZ0b0cxQnJJX3NMUkRLenZOQ1ZBclVsMWEyTzZidFlYa2NiT1RYY2tDeGxiMTFzMDdWYVlHTWNQd2tkQzIzcVRFOEhzLVZfZUtZaS1JNVppY2xzbTBmSQ?oc=5"
+        "titulo": "Black Friday e Natal: Sebrae orienta pequenos negócios para aproveitar as vendas de fim de ano - Agência Sebrae de Notícias",
+        "fonte": "Agência Sebrae de Notícias",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeV9nUVNyYzgzTmRDQjkzQnc5ZC1pWS1IOVJPSFBidUdJem0xY1F3RmdjS2hyU3lHbEJ6QTd4c3RScy1jSzRvUWR2ckpFNXgxSXFNVGpHekpTU1c2bEpsbW9TQ0NVcG1icC1xSGdTakNTOXktVnRaWk04TWRWMzByM1ZsT2hQaUlPaEZDQmVJZS1XUXJNakU3dGp2MlhlUjZ4MDNmNDZZVWc2MmtXWWxtUHh2Mm1lVW9scXRKNmRDRW1LRU85dHlKbkZ2OFJQZmowbUZEVVZXR0l4T3hROUt6QjJ3?oc=5"
       },
       {
-        "titulo": "5 cuidados para proteger empresas de golpes digitais - Portal Contabeis",
-        "fonte": "Portal Contabeis",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNzlXYWFSQ2ZENDdPU0VBd3RUY1JXY2U5aDE4WWwyc0J0eUFXNE1od0I1MHktaXgtWHBtVDMzRDh6cy0ybWRkWHcySzJoSXBXeHBackVvaERuUWYxWmFxUXlQMTkxazFFSUFYSTJfMzZZQUxDZFlTRDRIekxMczNmMThLcTNzZEJBcDY4RDlRdlZidkVQb2tXOUJPUTY0UQ?oc=5"
+        "titulo": "Mercados em crescimento em 2027: conheça os setores que oferecem oportunidades de negócios - Jornal Contábil",
+        "fonte": "Jornal Contábil",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVG1ISW9hV2s2X0trazNxUkZXejlxcXo5MjRGWmxYaGpsZldyTTRRVTN2dVdZSGcwbmRWMFdWcFpMeDdCbFJ1QTBxX1RJMFA5NFFTT1NEcGFsZ2RKclp6WmFDcTFoRmMtemlJa0N6cndTdWZXZEx3R2N5eUt3NUV0Qlp2UE9JU01xcnlEMUJnYmYwR3Ztdmd0SDNrQkwzMEFFVzJydTFPU1VCcGpMMGRCeE91MFAzR3Iwa0F1aGQ0UktUX0tpazRB0gHMAUFVX3lxTE9udEJ4MnpYdHFSTzBPRHBMaE1sN0RQclQyMDV6dTFoNDZWSHd4V0N1MDJGenJwa2xpbWpCWXRfbDhsQUJ1Z3cyRTFndG1Ea2h4WFdrTTZBdXZ2a0hyaGU2ZVh4aF93VWtubDVHcEIzQjVHbmRRU3lxY0lhSUllWWxiVVlFNnE5d2lfVXJ2SjBaamN3SVRrdlNKdnhOTUxyd0liNGZfUF80SFVNR21GU3JYeUQwTHJxa1BaVlJqV2pNX29hWUFfV3d6eFAyeQ?oc=5"
       },
       {
-        "titulo": "Marketing Contínuo e IA ganham espaço nas estratégias das empresas - Repórter Diário",
-        "fonte": "Repórter Diário",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdUE0Z093ZTdIYlVQUDA5eDV4RkFlS0pVYXBMUWFiZ01hX3d5WnVteTlNZVNBdER6MGdwY25zeFJMZ3pWbkU0WHc4am5Fb2tnTWJ6MWJVYkFVdU9ta0p4YXlkMXJfQl91blA2TnNzUnZ1ZUhVbWdaUVNacTZwZktOSVpUZjhMd3pUU2hZQ2xBSFNwTXpiVndCRmVqY1g5SFFINkhwcDlTMWhTNjdXaHp4UXJ3b09kTVhY?oc=5"
+        "titulo": "Como a IA está transformando a gestão dos pequenos negócios - Contadores.cnt.br",
+        "fonte": "Contadores.cnt.br",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPUUI5WVFndDRPRFpKYmFzODZKdXBrSDBxajVIalQ4d3I1YXl6YXNUVzd1czNka01jZkJqVzhXQXFteFFyZUJNNU9xQ0haU0c4OHZuaUs2MXJJWEJyNWwtZ05jYUlHcVpzZFVTQ2Fxb2tWM2QxamFYWEVSaTF3d1hnM3B0N3hseUptSEoyLUVqd0xuUzkwUlRzUzg2dmFzUGp0QlZhSzNvWEpDN3M0d2txQ3V5R2ZUZjY5VHRkM0gxSQ?oc=5"
       },
       {
-        "titulo": "Belém realiza 'Semana da Mulher Empreendedora' com oficinas e serviços gratuitos, veja como participar - G1",
-        "fonte": "G1",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOa2hMMVc0M2Eyb21QSXcxZmdtOWw0SW5xdHBaMm4tRmg3UEl1LWh6SV9nT3hCVXZkSE53Zl9vbTBfcTMwb0lTZVphdFRPSENZNDNKenFiMm5iTkVwRDQ5ZC1va0ZtTmZ0XzUta093aVNLVHVKR2tLT21XX3lmX2dTQ045cHg5MjhwWmVWaXY4U1Y5cVRsdHQxMS1BOGpzM0ppOHNCM1FXSFc1T28tZkZWSjB6OEg5R04yWEU3emxKWi1USGxiUEVOR0lWVEtadXlXQTd6NWdfQkV2ZEhTNHNaSm1kU1Z5VG9mcllrdUJ4ajV5OXhYelZJ0gH3AUFVX3lxTE5raEwxVzQzYTJvbVBJdzFmZ205bDRJbnF0cFoybi1GaDdQSXUtaHpJX2dPeEJVdmRITndmX29tMF9xMzBvSVNlWmF0VE9IQ1k0M0p6cWIybmJORXBENDlkLW9rRm1OZnRfNS1rT3dpU0tUdUpHa0tPbVdfeWZfZ1NDTjlweDkyOHBaZVZpdjhTVjlxVGx0dDExLUE4anMzSmk4c0IzUVdIVzVPby1mRlZKMHo4SDlHTjJYRTd6bEpaLVRIbGJQRU5HSVZUS1p1eVdBN3o1Z19CRXZkSFM0c1pKbWRTVnlUb2ZyWWt1QnhqNXk5eFh6Vkk?oc=5"
+        "titulo": "Adoção de agentes de IA por PMEs brasileiras é desigual - Valor Econômico",
+        "fonte": "Valor Econômico",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYm45UElJNHlwUkxVZFdZM3ZFMkluVy1MeGVHY1BBVlA5RkFaZkVTeTlwZld6cWV2eXpGdmNZdW5DY0pWSVQ2blczNUFEMlJUTXpPU3NQYnJlRi1SclFHNmdVTG5jUkx1eGtOdWlBQXFBb1VubjhkeDUyVTFVTzdWOU16ZGtZLTg1THBxdjdUbmxQOVZjeXctWDJmbkxoZlBhN0FqeFRzOWxZLThjM005b1dUY2V0ekNyYzR2SHJfc1BmTHRWMXE3Z3pCNDdlSFXSAc8BQVVfeXFMT2JuOVBJSTR5cFJMVWRXWTN2RTJJblctTHhlR2NQQVZQOUZBWmZFU3k5cGZXenFldnl6RnZjWXVuQ2NKVklUNm5XMzVBRDJSVE16T1NzUGJyZUYtUnJRRzZnVUxuY1JMdXhrTnVpQUFxQW9Vbm44ZHg1MlUxVU83VjlNemRrWS04NUxwcXY3VG5sUDlWY3l3LVgyZm5MaGZQYTdBanhUczlsWS04YzNNOW9XVGNldHpDcmM0dkhyX3NQZkx0VjFxN2d6QjQ3ZUhV?oc=5"
       },
       {
-        "titulo": "Rio Grande do Norte abre 56 mil pequenos negócios em um ano e fecha 33,8 mil, aponta Sebrae-RN - Agora RN",
-        "fonte": "Agora RN",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE04YUZnTVRTcXNOXzVHMXNLRnRyS1B6MTFkeWVuYUZtcXB2Uy10VDJHTnpkNXoyVkI0eUpaZWJHcFF4dWFmR2JjT2pLUUNCaHFid0lpaHNJc2kxMERwT3BPUWdpR09KUHV3UTB0QVkzT09rQ3VIYUUyMzNn?oc=5"
+        "titulo": "BELÉM REALIZA SEMANA DA MULHER EMPREENDEDORA COM OFICINAS E SERVIÇOS GRATUITOS - RedePará",
+        "fonte": "RedePará",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObXE4R2FhMTYzMkhtZlVkTEtzT3pjWUtHdFc4ZG90bnRIMkxORFdSaXhWYWg0d052bjJ2MVRCVzFBTm4xTUtTdUNNQkZHVi1YRUJiTG5GNWNXYlY4Sk5McW5yUFA1c0pyLUtCMmFzS1A5Rm5XdDh6cU90anZxTmdZRnhFRFRHYVNyd1NGSHVHeURNQnY3QW5QbHpWYWNDTzc0cGxLeUxWR0oxekJLSG9SR29nbTVrUTBp?oc=5"
       },
       {
-        "titulo": "Quer vender mais? Empreendedores terão dois dias de capacitação gratuita para impulsionar vendas e conquistar clientes - Mirian Gasparin",
-        "fonte": "Mirian Gasparin",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdlNaaEVuc2xvZ3dlS1FwRk44c2JYWHRqRDRtZllzREg4NHZIYnlCWGVhcVZRUjdZbDRvTEZ5SjRLdHRfek5HaUFCZlZxeHZFZFR0WjJiQnpJckUxR1d1TGxURDBlSWIyWW1HMHdlRjFCYk1fX0N4YWpmUlYwWWlEM0g4VmJNZDhYTzAycmNvMUJkXzdpS003aERwUUVzWnc5b0hsWjR3cWZRaHBlQ1ZDc2hOdm1oV2NrMlFIN2Q2YU92ZUJ2bUd3VTMyMHh1Y1BFVnRQNlNxQWZEVU5oOExOTUZyMmZRS3pPMW5KUQ?oc=5"
+        "titulo": "Pix da empresa e Pix pessoal: misturar as contas traz problemas com a Receita? - Jornal Contábil",
+        "fonte": "Jornal Contábil",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVHBNRTVvbnhzbF9DM3Z0YTJkSEpNVHRwcnpxbHM0dmQ5VFc5VDBFZ1VRN3VJTUh3SjU4Z1NjMFZLV1NuR0NEdnVfR2RFdkxIN2lOOFRfbVVGUmVibnpBaDNiallwblI0QUZlTGFwTXJhMEtJNUpCNHdZMkFQSm1yWGNFdmdzRTVJdEsxaU5QalRMQ2JDcFNudWdKUk5RaXUwMTZZMENyQXNxLWxRY0dYMTYxVjdvQTJLTlNz0gG7AUFVX3lxTFBUcE1FNW9ueHNsX0MzdnRhMmRISk1UdHByenFsczR2ZDlUVzlUMEVnVVE3dUlNSHdKNThnU2MwVktXU25HQ0R2dV9HZEV2TEg3aU44VF9tVUZSZWJuekFoM2JqWXBuUjRBRmVMYXBNcmEwS0k1SkI0d1kyQVBKbXJYY0V2Z3NFNUl0SzFpTlBqVExDYkNwU251Z0pSTlFpdTAxNlkwQ3JBc3EtbFFjR1gxNjFWN29BMktOU3M?oc=5"
       }
     ],
     "ChatGPT OR Gemini OR Claude novidade": [
+      {
+        "titulo": "Google lança Gemini 4 Neon, novo modelo de IA para tarefas complexas - Fast Company Brasil",
+        "fonte": "Fast Company Brasil",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdEc1dzFlWW1KR0Y0ZHVqM3FtQ3N2T0xiWkZZaGhmYmdyT3E5WjEtNS1tcFlma1lhV1NYVnR1em00UWpPV2ZCQVJHeDBQRG44bUN3R3YtV0RtTl9fNkV6YWx3MjBlU0FiQmFnRm1sRDVRWGVQSTgxb0tURGFMVXIxYWE3aC1XWFdQTmJPellfTGxVZw?oc=5"
+      },
+      {
+        "titulo": "Google amplia compatibilidade do Gemini em celulares Android com apenas 2 GB de memória RAM - Times Brasil | CNBC",
+        "fonte": "Times Brasil | CNBC",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOSDZURWxlckdTTXdGOXg3bElRLUw5RWFtOWdrZ0lWM2ota1FZMl82a1BoemU1S0JpbzdhUnJTYUE4aG9lWlhZemhVb1NLZHJld091bVpTQi1oT21mMDUzTUpPTHpXRks5YWdBVUVNUHpnN2ZfTmpYQ0E3TWxKOENsUDgwMzNFVEdLWGhEbC1VRzIzY0t0ME9RNHN2MVpSeTBhbXVjSHhnUi12M0dxem9oaFVkV2JHMU5aTWtJWTdianVaNHNzV05fbnQza3c5WGJTckIwSi1qNTNSZ0NGLXYtWE1aV1JHRHVXRjRadjBQOWV4ZWRValE?oc=5"
+      },
+      {
+        "titulo": "Gemini para Android ganha criação de GIFs e nova interface na câmera - TudoCelular.com",
+        "fonte": "TudoCelular.com",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdWp2amQwUHhTLTBPWkhOSEp5UVQtb2ktVGpYdmx6Z0RvcTZrRmNGY0RWcWhHMldhYzZKVVZPYlVNV29Ea3BiY0RtQU1CWEVacW1VdGE0enZmNWNqVVViUzRTTzhBZEplYzFUNnJHUjBvNFhEdnFZRVpmY0h1LTVJWFA0T090SzRuaDJoX0pHUFBqVi1wcUJfNHFFeHIxOTA?oc=5"
+      },
       {
         "titulo": "Gemini agora cria e edita PDFs, documentos e planilhas diretamente no chat - Google Discovery",
         "fonte": "Google Discovery",
@@ -199,86 +217,68 @@
         "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU1Q2dlZGbzh4ODdpUFZSX0dmR2dlempDZHJhYzJKN3BrNTl0bHE5UzlZM2Z5a29vOF9TTVZtUDNVUHdNSFNwM1VtTnItMlNxcmQ3UEVVUXlfZlQ1RGgwc0VHeFNQNWF4WUNWdFQ3NU5YelVOOURnUzBxaTJKZVJqbkhIZTl0MUlHS1ZnMXFEQ1hXWHQ3TmFoZ2lsUzhRLWFKTlkyYjVoOEc0YW11X2R6cA?oc=5"
       },
       {
+        "titulo": "Google promete mais velocidade para tarefas complexas com o Gemini 4 Neon. Como funciona e o que muda? - Tek Notícias",
+        "fonte": "Tek Notícias",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTmc5R1Z6bGZTZHNRR0xWbWNuSVlOVERfdHoxcUxYMkxtSnBsWnFMZm12Vm0wME1TRERFbHdyNHUxdk4yNnpTSzgyMGF5VE5YNGNQZUx4c2VfZXJVaFdsWDB3ZXg5TWdBOWxSMzQxcjJHWEFJa1k3dnpWY0x1eTZmOVpFQjlqX0I2VU91cmpKaW0tZTJtVzh6d3BTYnMzWWg2R195TWhOMWRWN0FhTjB3LVNjaVhFMHlRYk9VeXA4N0VKZVdPT3duUldMeEducDN5UUZhMGxjU1B0RnBVM1ViVks2MGVuUQ?oc=5"
+      },
+      {
         "titulo": "“Pior modelo da OpenAI”: novo ChatGPT recebe críticas de desenvolvedores - Portal do Bitcoin",
         "fonte": "Portal do Bitcoin",
         "data": "Sun, 22 Nov 2026",
         "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdV9lWU9LbkhMQUlRQ3l6bTlsWjdrUEVjUVVpZkI5LUhhR0RlamxwWGxIV2JCMWdNLVRaTFQ1YnhXRGhDUVE5VUg3ZUZUd2dmU1Z3czJSNERKaExUZFVsTjJJMEM4Sk52R0pSTFVpdTVQdVRlUERudUhwamUzQ2djRkxEV19EcUsyY2dteXhPdUs2V2w3X1Z4aHktSURDM3VDR2RiS1JOcjLSAa4BQVVfeXFMUDV1RDVYVmxLTWN4Uk9UVm0tQTJ0VWNDS2pZSXctai1GRG96Qzd1elhsbDQzWFkxY3RIYzY5NjBjLVVyVzFZSzZyc1pCSVdmQ3lYNkpudUg5c2pnU2xsQjBNR1lKbGVYMElyYjlRaFhSTk1qVDN1UHJfV0ctcEdJamx1dEF6M19HNm1iSGxkQ0Y5T3kyNUM1eFNsaU1KbmEzS2RPV3YtczNjWEpqRU5R?oc=5"
-      },
-      {
-        "titulo": "O Google lança novo recurso gratuito para usuários do Gemini. - Vietnam.vn",
-        "fonte": "Vietnam.vn",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRHdTMzJqWDNqVE9tNXhXbjJ4VzdQZ054NFBzUnp6NkJwNkxzQTZaekREcTdzRTBaZ2tUYlRWRWNHMXB5UDVOWjJzNFd0NE5KYWlJb1JQQ2hLZ0hYTy1xOU5LV3JCMWwyN1FQb2paZTR4U1I1UzVXWlJuaWN2ZjRMeUs1RjRTNkNCNHc?oc=5"
-      },
-      {
-        "titulo": "Gemini já cria GIFs a partir de texto, fotos e vídeos - MaisTecnologia",
-        "fonte": "MaisTecnologia",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQndhVFY5LTRubTM2MFc5RnpHMkdXNmFUY09ibThTdHYyUzc2VGtMQU94QkhmUjhUczJzSnN6TlQ2QU85MG1ZdDR3TlhYbkcya0VBYXNRRDNKb1Z6ZDAteHFQSVphTXdzSWo1Vmw0dWhwQTlnaFk2QmRrOFRnTWZtRkJhT2RnZEN1eks1WA?oc=5"
-      },
-      {
-        "titulo": "Gemini agora pode controlar seu Mac e executar tarefas sozinho - Google Discovery",
-        "fonte": "Google Discovery",
-        "data": "Mon, 23 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTlFuaW5IRFlNalpTMjFkY1prRXJ4TkRFd21tOHduemJzdGJtS1lHODV0V0kwUzdsQjZWYkFZUDB3YUx6cFJhOU52aG81c1VJdU1ZSXdHLUZyVkJtVXo5eDJHLVQwYjI2SW81ZkFadnc1R0ZNZVRjZTlKZ3dUemhBVHEzZmNoaG9jWUhnMHpvcW15aGhITWZTUGFCcUZaOURCUVE?oc=5"
-      },
-      {
-        "titulo": "A aplicação ChatGPT para Mac não funciona? Como resolver (2026) - Fello AI",
-        "fonte": "Fello AI",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1wNHhTbFNIb0t1TUR5UnBLTmVQMjlRR0owaUlHX0dVZjU3d1NvbEZRX1ExdkhlOW9qajNTSDRIRF9qS0J5S1lRb1hQT0FfMXhNeGlheHJCQ2JFbGZkUWF5dHpBMkdKVG54d1FNYTRJZkdyTVE?oc=5"
       }
     ],
     "Meta IA anúncios empresas": [
       {
-        "titulo": "Agente de IA da Meta sob escrutínio por misturar conversas e expor dados privados - CartaCapital",
-        "fonte": "CartaCapital",
-        "data": "Sun, 22 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxObjFtVVQ4VnVSb0ZBbUl2TEdxRW9VZmpBQWV5VEd2UmJvMURiNTUzYjVMamNYeVNoc3JjLWVTdC1DY3VacU5TYmtQZWRSR2w5TE1XUUZtek5LWUE4SjRzeTRzejlnSV8xTVdNeFZxNVJJcU1SdE1pZkxVb0RiYnR6ZkN1Sl9PT25KUTRZMXJ3TTNvMHNnWUYzOGd3aDNIR09Vd3NXZUVMQ2psVTNVdEhXSmdseWdtaGQ3dXZCSWdsdXQ?oc=5"
+        "titulo": "Meta suspende novos termos de anúncio e mantém regras atuais para criativos com IA - Mundo do Marketing",
+        "fonte": "Mundo do Marketing",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOHJqc3l5Z0dHRi1pd3VubDRfRWNfV3NnLXBjOVZndnYwUTBkQ2xXS1RjTDllYlVJTU1OLVJvbElzeDNlcml4cm5rekNSbGF1Q040a3dHZHZsend3d01wQXZ6TzFoVXVka1JIMDI1LUJFNi00X2JmWnVjZ1YxbFhLWEtzYWNhZHUwaXc5cmprSmRBN2o2NEdFUy1kc0xZbGlwdmh5QmhYZFBKTHktWlFsSmtUNjg?oc=5"
       },
       {
-        "titulo": "Tamagotchis de IA: o que são os dispositivos produzidos pela Meta e OpenAI? - Portal Diário do RN",
-        "fonte": "Portal Diário do RN",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSm9IS0thdXhuc0ZBXzlvMmVodDJRTjdScHpRaFpVdGdWSG5mLVlCLUNLWm9NUjM5dTd1bWNfcUU2YVRjRjlnOGNSZk01S2hHVWZEcmhCX0d4MUhKRFNqX3N0ekdoeHA5U0dWZzhaSTNxd191RlZSY25pWkxLRmVaaDE5NVVlMVM0QXpuLW1OblNyaVhuZWNROUVkSGh5anFPT0E?oc=5"
+        "titulo": "Por que Expedia e Booking podem superar desafio da IA da Meta e valorizar suas ações - Valor Econômico",
+        "fonte": "Valor Econômico",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaXlVWldUSXprR3RpcnhqUEpXRWhrRV9JMHZsR3NIaEYxUG1JY0FWNEphWGZqdmZoS2g2bEU4bjhqM2ZiVjlMdUdCUHNWRXJmME9jdXFTM3Q2YzZ6dE1TVmRHQTg3ZWV4bnBaNFhNcVpIeFpmZjVKQU1Lc2gxeUZwdXhmN0h6X0RuWE9GNnhvYUR6NnNYLWJMZUxiOXU0Y0ZKZEc3emFYQ1pTN2U3STQ5dGE1NVdVNk1JZ1VJVUkzOHN1TTIzalNZVDV6cXFfRGplRlZMcVR4b9IB5gFBVV95cUxPc18yYzhadUk3Zm5YUzNMRk1TeXphZENsRXdWWVktNzZqbkNzVkNkempHNEJKODNmQ1lYSS1YSlloQXVocTRvanB2N2kyeDViaGw1SjhsQWdiLTVLb2FEX3pQZVdMTmFmNFZBQzdMSEhVUnphbkl3dmw0b215ay1tY21hUV84XzhxUlU1WXdpQ1FfMExRSU1uVEhxaHJ2MFlQaUdqSWFBVXd0MUVlaS1pcUp2WEpJU0FyNk1WM2NYbktWbDMyLVVqbmhKUUpWUmFwTmlJcjBJRndBdUJDVWdoRE93UHlaZw?oc=5"
       },
       {
-        "titulo": "Comercial de Natal da Coca-Cola deixa a IA de lado - Live MKT News",
-        "fonte": "Live MKT News",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBvbkhjRDJIMm80b0JobUZ2YWRuN3pJVlpFRlRKS01MbXpiRERacUhXcXhxMGRCb0FkUEhsdXlqNUdpQ3RxZWZiUjZpUjg3OXBTR21YYnI0dkxjT1VQVlNEbDdWdGV6MnJKczdkWURYY1F3clZBbG1jQ29tTG4?oc=5"
+        "titulo": "Muse AI got nosy and started making things up, Meta insiders say - Malwarebytes",
+        "fonte": "Malwarebytes",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPOTM5dXRoRDZFSVZycU83YVczOWJoYkNkRG8wM0JnUHRqcGw0V2ltNFduMmhQbTZoSlpEbUFORktLWnB1UnpCTlZGZXlONmVVZXV0SFhzQXJ2OUFzVkdvb0ZTelFzeDFlbEpGbjNPLVpncmlZTDhPdU92ZUV2TmxIRmlyODNDanNRaTNJWUx1RE5ybW5nNmJXdVVYbmxLVzF4NTJzMk9RNXcxSERuT0QtMW1YdDc?oc=5"
       },
       {
-        "titulo": "Vulnerabilidade no WhatsApp para Android, um anúncio revela o seu IP - Pasquale Pillitteri",
-        "fonte": "Pasquale Pillitteri",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYjFHRUdqeWRkSF81M1Jrc015SVVmSDlCV0taWS1yeWg3QlMyQmdBSXFkQmU3ZE1Lb1NiSklpS0psLUR3Ymx1bTBtb21PcHYtTW5pQ0g5OGdpSjZkRGJPZXN6SEN5VkliUXhSZkwybVp6VHFGVHJ1VUpuczdKY0poSDRpS3hIZkVVX2VzWUhlVlNfNkxyVHRKVk5R?oc=5"
+        "titulo": "Adoção de agentes de IA por PMEs brasileiras é desigual - REDE BRASIL DE TELEVISÃO",
+        "fonte": "REDE BRASIL DE TELEVISÃO",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPM1BrX3NydWhPQVNzbk5ZNGt6T05qSVM4NVRzWUNiNkFtZUFSczY5RmRFRzZoODlNN0VGcmN1U210TXA3QzRNaWxGdG9HQWtRVDNvZTBnS0lfeHdzX3dfZUxpMEZVTnA3OTVsZ1dTZFB5YUxySjlkUVoza3psSlRtMXVYREhSN01PN0M2SlRmM1A0S3BCblQ2Qg?oc=5"
       },
       {
-        "titulo": "A Google sabe que os seus óculos inteligentes têm um problema de privacidade. Eis como a empresa está a tentar resolvê-lo - CNN Portugal",
-        "fonte": "CNN Portugal",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOUVNtWTlJNTFPSUtidV9QUXQtVnhkQnQ5d3kyakVjc3NSWGhnUnhfOTBnYjM2ZF9qVUZTLWItWVpzRHNRbFBrTVl1a2RHRzBfNkR6LTFETjdqdzM2OF9hM2NkZ0Q5aUJOOFFKSF9fYkI0bExaVGpGTVBBbmR5Tm0wcGc5WjdVajYyTG1HQTdnc2dSNHFNOW5EM0RqRWhqVWNnQ3BYTGJZOFlGcmlzNkJ6dEFYT1Z2aWRWMmpqWjFSU3JPd1Zla1lwZkRIaV9RZEVlTTJrRS1MQ3NYMHVaelR0THN4RGZzMWVBY1NvOURpU0hFSlFrLUNPT08zXzM3WkxHX2VTT0lCb1VCZ2hFZmFTb0tJRWctaFBLZDFuTGo5bjR2ak8tMVFrUU1vYjdlZVJOeHc?oc=5"
+        "titulo": "Chefe de IA da Meta alerta que humanidade pode perder o controle sobre uma “superinteligência artificial” - Hardware.com.br",
+        "fonte": "Hardware.com.br",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONnBzQWhmT2JJTVR2cF9BSUdBWGRhYkJIb3FqZnV0SnlfajBUUkh4dFRqTHE1S2hxNjhlZDBqM1RaSEpkWUJnTnpQb2N3WlFKajhRWmlKcVhtaEJRVlZ2MFBROEVhVkZNa1RJVHlEU094ZHJJSVlUZ2Q1NUpDX2gtSGhWNjBVVHNiWjV0QjVuRXhBRUNYQlo2dGxKU1N0VURIMFNwdmFUSVR1ZHFDd2NaMENwMVhKUTJYbEF6Qmh0b3loOXYxS0VV?oc=5"
       },
       {
-        "titulo": "If the AI Trade Blows Up, Meta’s Saving Grace Is That Its Social Media Business Still “Generates a Ton of Cash” - TIKR.com",
-        "fonte": "TIKR.com",
-        "data": "Sat, 21 Nov 2026",
-        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPLS1vREVmbl9jbzBVVWtZQ09STXhoTTRZZ0Zsa1h3aEVDNXZYTGVDcGYtblZIbHE4NUZxZGxKMG5JYWIyZE5ZNjRMT19YV09ha2J3QnRMbTBFa0htRDI2UDZoQVRtT015dTVZdjJMc3ZGS28xYUQ1TGJLc3ZCRWZJYy1xem1PQ2VjRzZjV09MZ2tGYzF2cVRESV9sZ3JCSFBJN2FSQVhtZ2JZUE9aRTl0ZkQyVURSOWRmT1RBdlNmaDhMejVyalktc3Q1X2w0VTNPZU53?oc=5"
+        "titulo": "‘Tamagotchi’ da Meta custará US$ 300 e terá 5G gratuito, afirma site - Estadão",
+        "fonte": "Estadão",
+        "data": "Mon, 23 Nov 2026",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMFhUZnYwUXA5MUVqSkRPNXM0c2RSQ01haS1lNnVmNmpHYVdlSnRvdkVESWdaV015WGp0Q3NUcTlNNGpXRG9Ra19vU1RhOG45Wjk5MXppemhWemxWSVN2MEV6VFZ2WU9RbVJuSjQyWTllcU9rUWlnM1kwVnNZVnphc3VfT0pydzhrZC10YzZhUzFHVWpWTWNQa05XaEFWcEJlcy1TelphX1FhQXo3aTc4LWNrUWtkVkV3elHSAb8BQVVfeXFMTzVsT3lEaU9sZ0QwVmdkblJNNy1BZ0xsQl9JeU5COXk5a0VCTW14UlB6aC04bWRzV3VwaDY1S0YyTjdvNGlIZ0ctUFMxMkFwNHlpRXlpU0Z4X1FsNW9uR1M0YjNnZFEyMzJWTTRNQ18xTzFENG0xU19VTC1iYUZTYlI3c2VXMEJLTmNtSE5zaWFua0VTX3hNdWpyamF6NXJ2VDVHNHNHbUpfbzA5eWZvdUpQZWZZSW84Ql9tZlpRODA?oc=5"
       }
     ]
   },
   "erros": [],
   "google_trends_br": [
-    "bulgari",
-    "wall street",
-    "papa francisco",
-    "querétaro x necaxa",
-    "jogos vorazes em chamas",
-    "ctg rancho da saudade",
-    "cristiano zanin",
-    "vampeta",
-    "huracan",
-    "warriors x celtics"
+    "classificações de a.c. monza x fiorentina",
+    "miss brasil",
+    "jogos de hoje na tv",
+    "faetec",
+    "supremo tribunal federal",
+    "cyberpunk 2",
+    "lua hoje",
+    "manoel soares",
+    "casamento",
+    "porto murtinho"
   ]
 }
