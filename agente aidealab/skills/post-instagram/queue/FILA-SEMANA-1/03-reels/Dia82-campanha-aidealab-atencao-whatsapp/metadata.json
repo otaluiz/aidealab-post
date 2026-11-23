@@ -1,0 +1,44 @@
+{
+  "id": "aidealab-campanha-aidealab-atencao-whatsapp",
+  "carousel_id": "aidealab-campanha-aidealab-atencao-whatsapp",
+  "cliente": "aidealab",
+  "handle": "@idea_lab7",
+  "tipo": "reel",
+  "data_criacao": "2026-11-22",
+  "tema": "Campanha Aidealab: da atenção à conversa",
+  "formato": "1080x1920",
+  "duracao_s": 74.606009,
+  "legenda": "Chamar atenção é só o começo. O que acontece depois?\n\nNa Aidealab, criamos vídeos, sites, campanhas e sistemas com IA para transformar atenção em conversas com clientes.\n\nQuer aplicar isso no seu negócio? Chama a gente no WhatsApp pelo botão “Bora trocar uma ideia” em aidealab.com.br.",
+  "hashtags": [
+    "#aidealab",
+    "#marketingdigital",
+    "#edicaodevideo"
+  ],
+  "ordem_fila": -1,
+  "status": "aprovado",
+  "status_publicacao": "na_fila",
+  "publicacao_habilitada": true,
+  "data_sugerida": null,
+  "agendado_para": null,
+  "fuso": "America/Cuiaba",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "bloqueios": [],
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "origem": {
+    "arquivo": "campanha.mp4",
+    "sha256": "a69b41bc4f4d3e498245b8756b47304a3f6f43b5e3d8ffa8ca9d608f4ce3ff21"
+  },
+  "fonte_tendencia": null,
+  "campanha": {
+    "objetivo": "engajamento",
+    "destino": "whatsapp",
+    "url_destino": "https://wa.me/5565993273216",
+    "cta": "Enviar mensagem pelo WhatsApp"
+  },
+  "video_drive_id": "1rul70MdxvC2VdxeTxpzSTFbH_tPmzf_L",
+  "capa_url": "https://jrfjjpxjkpvuvvycyryj.supabase.co/storage/v1/object/public/ig-publish/reels/campanha-aidealab-atencao-whatsapp/capa.jpg",
+  "pasta_storage": "reels/campanha-aidealab-atencao-whatsapp"
+}
