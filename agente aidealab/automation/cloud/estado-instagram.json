@@ -1,22 +1,40 @@
 {
-  "atualizado_em": "2026-11-23T22:09:33+00:00",
+  "atualizado_em": "2026-11-24T21:25:10+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 430,
-    "follows_count": 226,
-    "media_count": 68,
+    "follows_count": 225,
+    "media_count": 69,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 535,
-    "profile_views": 37,
+    "reach": 537,
+    "profile_views": 39,
     "website_clicks": 0,
     "follows_and_unfollows": null,
     "accounts_engaged": 32
   },
   "posts": [
+    {
+      "data": "2026-11-24",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Hashtag não te acha mais. Palavra-chave acha.",
+      "link": "https://www.instagram.com/p/DgINhdADbyC/",
+      "likes": 5,
+      "comments": 0,
+      "insights": {
+        "reach": 16,
+        "saved": 0,
+        "shares": 0,
+        "views": 37,
+        "total_interactions": 5,
+        "follows": 0,
+        "profile_visits": 0
+      },
+      "score": 31.25
+    },
     {
       "data": "2026-11-23",
       "tipo": "REELS",
@@ -25,12 +43,12 @@
       "likes": 3,
       "comments": 0,
       "insights": {
-        "reach": 13,
+        "reach": 18,
         "saved": 0,
         "shares": 0,
-        "total_interactions": 5
+        "total_interactions": 6
       },
-      "score": 23.08
+      "score": 16.67
     },
     {
       "data": "2026-11-22",
@@ -40,30 +58,30 @@
       "likes": 4,
       "comments": 0,
       "insights": {
-        "reach": 23,
+        "reach": 31,
         "saved": 0,
         "shares": 0,
-        "views": 45,
-        "total_interactions": 4,
+        "views": 59,
+        "total_interactions": 5,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 17.39
+      "score": 12.9
     },
     {
       "data": "2026-11-21",
       "tipo": "REELS",
       "gancho": "Água em lata, com uma caveira e o nome Morte Líquida. Parecia uma ideia ruim.",
       "link": "https://www.instagram.com/reel/DgAPLVvnVgg/",
-      "likes": 2,
+      "likes": 3,
       "comments": 2,
       "insights": {
-        "reach": 120,
+        "reach": 125,
         "saved": 1,
         "shares": 0,
-        "total_interactions": 6
+        "total_interactions": 7
       },
-      "score": 6.67
+      "score": 7.2
     },
     {
       "data": "2026-11-20",
@@ -73,15 +91,15 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 19,
+        "reach": 20,
         "saved": 0,
         "shares": 0,
-        "views": 49,
+        "views": 54,
         "total_interactions": 6,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 31.58
+      "score": 30.0
     },
     {
       "data": "2026-11-19",
@@ -94,7 +112,7 @@
         "reach": 11,
         "saved": 0,
         "shares": 0,
-        "total_interactions": 3
+        "total_interactions": 4
       },
       "score": 27.27
     },
@@ -106,15 +124,15 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 16,
+        "reach": 17,
         "saved": 0,
         "shares": 0,
-        "views": 45,
+        "views": 48,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 37.5
+      "score": 35.29
     },
     {
       "data": "2026-11-17",
@@ -124,12 +142,12 @@
       "likes": 5,
       "comments": 0,
       "insights": {
-        "reach": 115,
+        "reach": 116,
         "saved": 0,
         "shares": 1,
         "total_interactions": 8
       },
-      "score": 6.96
+      "score": 6.9
     },
     {
       "data": "2026-11-16",
@@ -688,24 +706,6 @@
         "profile_visits": 0
       },
       "score": 27.03
-    },
-    {
-      "data": "2026-10-14",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Um monte de peça solta não vira marca. Vira ruído.",
-      "link": "https://www.instagram.com/p/DeenrsLoMn8/",
-      "likes": 4,
-      "comments": 0,
-      "insights": {
-        "reach": 18,
-        "saved": 0,
-        "shares": 0,
-        "views": 40,
-        "total_interactions": 4,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 22.22
     }
   ],
   "top5": [
@@ -747,11 +747,11 @@
   ],
   "piores5": [
     {
-      "data": "2026-11-15",
-      "tipo": "REELS",
-      "gancho": "Três mudanças no tráfego pago que quase ninguém percebeu.",
-      "score": 17.07,
-      "alcance": 41
+      "data": "2026-11-22",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "Aqui a IA trabalha muito, mas nunca decide sozinha.",
+      "score": 12.9,
+      "alcance": 31
     },
     {
       "data": "2026-10-16",
@@ -761,18 +761,18 @@
       "alcance": 33
     },
     {
-      "data": "2026-11-17",
-      "tipo": "REELS",
-      "gancho": "O Duolingo anunciou a morte do próprio mascote. Sem anúncio pago.",
-      "score": 6.96,
-      "alcance": 115
-    },
-    {
       "data": "2026-11-21",
       "tipo": "REELS",
       "gancho": "Água em lata, com uma caveira e o nome Morte Líquida. Parecia uma ideia ruim.",
-      "score": 6.67,
-      "alcance": 120
+      "score": 7.2,
+      "alcance": 125
+    },
+    {
+      "data": "2026-11-17",
+      "tipo": "REELS",
+      "gancho": "O Duolingo anunciou a morte do próprio mascote. Sem anúncio pago.",
+      "score": 6.9,
+      "alcance": 116
     },
     {
       "data": "2026-10-31",
