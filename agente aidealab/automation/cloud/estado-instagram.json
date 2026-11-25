@@ -1,22 +1,37 @@
 {
-  "atualizado_em": "2026-11-25T16:32:10+00:00",
+  "atualizado_em": "2026-11-25T20:02:22+00:00",
   "perfil": {
     "id": "17841472134319553",
     "biography": "✨ Marketing & Soluções com IA\n🚀 Mais vendas, menos esforço\n🤖 Sites | Tráfego Pago | CRM | IA | Vídeos | Gestão de mídia\n📩 Consultoria Gratuita👇",
     "followers_count": 430,
     "follows_count": 225,
-    "media_count": 69,
+    "media_count": 70,
     "name": "AIdea Lab 🤖",
     "username": "idea_lab7"
   },
   "conta_28d": {
-    "reach": 495,
+    "reach": 497,
     "profile_views": 36,
     "website_clicks": 0,
     "follows_and_unfollows": null,
     "accounts_engaged": 32
   },
   "posts": [
+    {
+      "data": "2026-11-25",
+      "tipo": "REELS",
+      "gancho": "Três sistemas gigantes. Três erros minúsculos.",
+      "link": "https://www.instagram.com/reel/DgK9w2JhSEx/",
+      "likes": 1,
+      "comments": 0,
+      "insights": {
+        "reach": 6,
+        "saved": 0,
+        "shares": 0,
+        "total_interactions": 3
+      },
+      "score": 16.67
+    },
     {
       "data": "2026-11-24",
       "tipo": "CAROUSEL_ALBUM",
@@ -25,15 +40,15 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 20,
+        "reach": 22,
         "saved": 0,
         "shares": 0,
-        "views": 46,
+        "views": 48,
         "total_interactions": 6,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 30.0
+      "score": 27.27
     },
     {
       "data": "2026-11-23",
@@ -55,33 +70,33 @@
       "tipo": "CAROUSEL_ALBUM",
       "gancho": "Aqui a IA trabalha muito, mas nunca decide sozinha.",
       "link": "https://www.instagram.com/p/DgC0GB2F4z5/",
-      "likes": 5,
+      "likes": 6,
       "comments": 0,
       "insights": {
         "reach": 34,
         "saved": 0,
         "shares": 0,
-        "views": 62,
-        "total_interactions": 6,
+        "views": 66,
+        "total_interactions": 7,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 14.71
+      "score": 17.65
     },
     {
       "data": "2026-11-21",
       "tipo": "REELS",
       "gancho": "Água em lata, com uma caveira e o nome Morte Líquida. Parecia uma ideia ruim.",
       "link": "https://www.instagram.com/reel/DgAPLVvnVgg/",
-      "likes": 3,
+      "likes": 4,
       "comments": 2,
       "insights": {
         "reach": 127,
         "saved": 1,
         "shares": 0,
-        "total_interactions": 7
+        "total_interactions": 8
       },
-      "score": 7.09
+      "score": 7.87
     },
     {
       "data": "2026-11-20",
@@ -109,12 +124,12 @@
       "likes": 3,
       "comments": 0,
       "insights": {
-        "reach": 12,
+        "reach": 13,
         "saved": 0,
         "shares": 0,
         "total_interactions": 4
       },
-      "score": 25.0
+      "score": 23.08
     },
     {
       "data": "2026-11-18",
@@ -124,15 +139,15 @@
       "likes": 6,
       "comments": 0,
       "insights": {
-        "reach": 17,
+        "reach": 18,
         "saved": 0,
         "shares": 0,
-        "views": 48,
+        "views": 49,
         "total_interactions": 8,
         "follows": 0,
         "profile_visits": 0
       },
-      "score": 35.29
+      "score": 33.33
     },
     {
       "data": "2026-11-17",
@@ -688,24 +703,6 @@
         "profile_visits": 0
       },
       "score": 12.12
-    },
-    {
-      "data": "2026-10-15",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "link": "https://www.instagram.com/p/DehJkt6FyzX/",
-      "likes": 10,
-      "comments": 0,
-      "insights": {
-        "reach": 37,
-        "saved": 0,
-        "shares": 0,
-        "views": 79,
-        "total_interactions": 11,
-        "follows": 0,
-        "profile_visits": 0
-      },
-      "score": 27.03
     }
   ],
   "top5": [
@@ -731,27 +728,27 @@
       "alcance": 49
     },
     {
-      "data": "2026-10-15",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Cliente satisfeito vai embora feliz e não avalia. Quem teve problema avalia na hora.",
-      "score": 27.03,
-      "alcance": 37
-    },
-    {
       "data": "2026-11-11",
       "tipo": "REELS",
       "gancho": "🎬 E se a inteligência artificial fosse mais uma ferramenta na evolução do cinema?",
       "score": 26.32,
       "alcance": 38
+    },
+    {
+      "data": "2026-11-12",
+      "tipo": "CAROUSEL_ALBUM",
+      "gancho": "O cliente pediu orçamento, sumiu, e ninguém voltou a falar com ele. Quase sempre não foi desinteresse: foi falta de lembrete.",
+      "score": 24.24,
+      "alcance": 33
     }
   ],
   "piores5": [
     {
-      "data": "2026-11-22",
-      "tipo": "CAROUSEL_ALBUM",
-      "gancho": "Aqui a IA trabalha muito, mas nunca decide sozinha.",
-      "score": 14.71,
-      "alcance": 34
+      "data": "2026-11-15",
+      "tipo": "REELS",
+      "gancho": "Três mudanças no tráfego pago que quase ninguém percebeu.",
+      "score": 17.07,
+      "alcance": 41
     },
     {
       "data": "2026-10-16",
@@ -764,7 +761,7 @@
       "data": "2026-11-21",
       "tipo": "REELS",
       "gancho": "Água em lata, com uma caveira e o nome Morte Líquida. Parecia uma ideia ruim.",
-      "score": 7.09,
+      "score": 7.87,
       "alcance": 127
     },
     {
