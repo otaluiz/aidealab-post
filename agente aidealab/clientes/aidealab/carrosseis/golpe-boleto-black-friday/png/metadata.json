@@ -1,0 +1,100 @@
+{
+  "carousel_id": "2026-11-golpe-boleto-black-friday",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-26",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": null,
+  "tema": "BOLETO FALSO COM O SEU NOME. avise o cliente.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "BOLETO FALSO COM O SEU NOME. avise o cliente.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "O CLIENTE PAGA E NÃO RECEBE. e quem ele procura é a loja.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "AS 4 REGRAS Pix só pela chave oficial da loja Boleto só do sistema, nunca reenviado no zap Desconto extra fora do checkout é golpe WhatsApp com confirmação em duas etapas",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PRINT DO COMPROVANTE NÃO É PAGAMENTO libere o pedido só após confirmar no banco.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "AVISE O CLIENTE HOJE Fixe no status a chave Pix oficial Mande 1 aviso: só cobramos por este número Peça para conferir nome e CNPJ do recebedor Deixe uma resposta pronta para quem pedir boleto",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "CLIENTE CAIU? PIX TEM PRAZO. o banco abre o MED em até 80 dias.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O AVISO PRONTO? Comenta ATENDIMENTO a aidealab te chama no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Boleto falso com o nome da sua loja: avise seu cliente hoje.\n\nNa Black Friday, golpistas usam o nome de lojas reais para mandar boleto alterado e chave Pix com \"desconto extra\". Quem paga costuma procurar a loja de verdade.\n\nSegundo a Asaas, o caminho mais seguro é gerar o Pix só no checkout, conferir nome e CNPJ do recebedor, não reenviar boleto pelo WhatsApp e só liberar o pedido depois de confirmar o pagamento no banco. Comprovante em print não vale como prova.\n\nSe o cliente cair: no Pix, o banco pode abrir o MED em até 80 dias, sem garantia de recuperação. Boleto não tem mecanismo equivalente.\n\nVocê já avisou seus clientes como a sua loja cobra?\n\nFonte: Asaas, \"Como evitar golpes na Black Friday\" (blog.asaas.com/golpes-na-black-friday).\n\nQuer o aviso pronto? Comenta ATENDIMENTO que a aidealab te chama no direct.\n\n#pequenosnegocios #whatsappbusiness #blackfriday #marketinglocal #aidealab",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#blackfriday",
+    "#marketinglocal",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "",
+  "textura_foto": {
+    "hook": "halftone"
+  },
+  "textura_slide": {
+    "cta": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Black Friday sem golpe: guia de cobrança segura para a sua loja",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 10,
+    "fonte_sha256": "e3f44c511de89f17b04259a324a224cf53f93a69e7de7aad4fbead37dbb85f84",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "tendência",
+  "fonte_tendencia": "https://blog.asaas.com/golpes-na-black-friday/",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

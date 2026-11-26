@@ -1,0 +1,98 @@
+{
+ "titulo": "Black Friday sem golpe: guia de cobrança segura para a sua loja",
+ "subtitulo": "Como proteger o seu cliente de boleto e Pix falsos com o nome do seu negócio, e o que fazer se alguém cair.",
+ "categoria": "ATENDIMENTO",
+ "como_usar": "Leia uma vez, adapte as mensagens ao seu negócio e deixe as respostas prontas no WhatsApp Business. Os modelos são frameworks editoriais da aidealab.",
+ "fontes": [
+  {
+   "titulo": "Asaas: como evitar golpes na Black Friday",
+   "url": "https://blog.asaas.com/golpes-na-black-friday/"
+  },
+  {
+   "titulo": "InfinitePay: golpes mais comuns na Black Friday",
+   "url": "https://www.infinitepay.io/newsroom/os-golpes-mais-comuns-na-black-friday---saiba-como-se-proteger"
+  },
+  {
+   "titulo": "Serasa Experian: fraudes da Black Friday no e-commerce",
+   "url": "https://www.serasaexperian.com.br/conteudos/7-piores-fraudes-da-black-friday-comercio-eletronico/"
+  }
+ ],
+ "nota_fontes": "Rascunho editorial aidealab, pesquisado em 26/11/2026 a partir de conteúdo de fornecedores de pagamento (Asaas, InfinitePay). Recuperação de valores não é garantida; confirme prazos e procedimentos com o seu banco.",
+ "paginas": [
+  {
+   "titulo": "Como o golpe usa a sua marca",
+   "texto": "Na Black Friday, golpistas copiam lojas conhecidas: perfis falsos, links parecidos e cobranças enviadas por chat. O cliente que cai costuma procurar a loja de verdade para reclamar.",
+   "itens": [
+    "Boleto alterado que desvia o dinheiro",
+    "Chave Pix enviada no chat com \"desconto extra\"",
+    "Falso atendimento avisando de pedido com erro",
+    "Perfil ou número falso com a foto da sua loja"
+   ],
+   "dica": "Quem perde dinheiro culpa a marca que viu, mesmo que o golpe seja de terceiros."
+  },
+  {
+   "titulo": "Regra 1: Pix só pelo caminho oficial",
+   "texto": "Combine com a equipe um único jeito de receber.",
+   "itens": [
+    "Gere o Pix só no checkout ou no sistema da loja",
+    "Oriente o cliente a conferir nome e CNPJ do recebedor no app do banco antes de confirmar",
+    "Nunca ofereça desconto para pagar fora do checkout",
+    "Evite chave Pix de CPF ou celular pessoal para vendas"
+   ],
+   "dica": "Se o cliente pedir um Pix \"por fora\", a resposta padrão é: só recebemos pelo link oficial."
+  },
+  {
+   "titulo": "Regra 2: boleto só do sistema",
+   "texto": "Boleto reenviado por aplicativo de mensagem é o ponto mais fraco.",
+   "itens": [
+    "Emita o boleto só na plataforma da loja",
+    "Oriente o cliente a conferir beneficiário, CNPJ e valor",
+    "Não reenvie boleto pelo WhatsApp; mande o link de segunda via do sistema"
+   ],
+   "dica": "Boleto pago errado é difícil de recuperar. Prevenir custa menos."
+  },
+  {
+   "titulo": "Regra 3: confirme antes de liberar",
+   "texto": "Comprovante em imagem pode ser falsificado.",
+   "itens": [
+    "Confirme cada cobrança no painel do banco ou da plataforma",
+    "Não aceite print como prova de pagamento",
+    "Use notificação automática de status, se o seu sistema oferecer"
+   ],
+   "dica": "Liberar o pedido só depois da confirmação protege o seu caixa e o seu estoque."
+  },
+  {
+   "titulo": "Regra 4: proteja o seu WhatsApp",
+   "texto": "Se roubarem o seu número, o golpe parte de você.",
+   "itens": [
+    "Ative a confirmação em duas etapas no WhatsApp",
+    "Nunca passe o código de verificação por mensagem",
+    "Use o WhatsApp Business com perfil verificado quando disponível",
+    "Revise os aparelhos conectados"
+   ],
+   "dica": "Faça isso hoje. Leva poucos minutos."
+  },
+  {
+   "titulo": "Aviso pronto para o cliente",
+   "texto": "Um aviso curto, fixado no status e na bio, reduz o risco. Modelo para adaptar:",
+   "itens": [
+    "Só cobramos pelo link oficial ou por este número",
+    "Não enviamos boleto nem chave Pix por mensagem solta",
+    "Antes de pagar, confira nome e CNPJ do recebedor",
+    "Na dúvida, chame a gente neste canal antes de pagar"
+   ],
+   "dica": "Salve como resposta rápida no WhatsApp Business."
+  },
+  {
+   "titulo": "Se o cliente caiu",
+   "texto": "Aja rápido e registre tudo.",
+   "itens": [
+    "Pix: o cliente pede ao banco a abertura do MED (Mecanismo Especial de Devolução), em até 80 dias da transação; a recuperação não é garantida",
+    "Cartão: contestação da compra junto à emissora",
+    "Boleto: não há mecanismo equivalente; registre boletim de ocorrência o quanto antes",
+    "Guarde conversas, comprovantes e links"
+   ],
+   "dica": "Responda o cliente com cuidado e explique o que a loja faz para evitar novos casos."
+  }
+ ]
+}

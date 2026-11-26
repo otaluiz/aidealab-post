@@ -1,0 +1,157 @@
+{
+ "id": "2026-11-golpe-boleto-black-friday",
+ "meta": {
+  "serie": "BLACK FRIDAY",
+  "data": "2026/11",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "BOLETO FALSO",
+    "COM O SEU NOME."
+   ],
+   "emocao": {
+    "texto": "avise o [cliente].",
+    "posicao": "antes"
+   },
+   "imagem": "capa_orig.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     410,
+     1034,
+     696,
+     1086
+    ],
+    "caixa": [
+     389,
+     1036,
+     688,
+     1258
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T2",
+   "display": [
+    "O CLIENTE PAGA",
+    "E NÃO RECEBE."
+   ],
+   "emocao": {
+    "texto": "e quem ele procura é a [loja].",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     306,
+     529,
+     559,
+     644
+    ],
+    "caixa": [
+     188,
+     534,
+     909,
+     1016
+    ]
+   },
+   "bloco": {
+    "y": 200,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "AS {4} REGRAS"
+   ],
+   "lista": [
+    "Pix só pela chave oficial da loja",
+    "Boleto só do sistema, nunca reenviado no zap",
+    "Desconto extra fora do checkout é golpe",
+    "WhatsApp com confirmação em duas etapas"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "PRINT DO COMPROVANTE",
+    "NÃO É PAGAMENTO"
+   ],
+   "emocao": {
+    "texto": "libere o pedido só após confirmar no [banco].",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "AVISE O CLIENTE {HOJE}"
+   ],
+   "lista": [
+    "Fixe no status a chave Pix oficial",
+    "Mande 1 aviso: só cobramos por este número",
+    "Peça para conferir nome e CNPJ do recebedor",
+    "Deixe uma resposta pronta para quem pedir boleto"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "CLIENTE CAIU?",
+    "PIX TEM PRAZO."
+   ],
+   "emocao": {
+    "texto": "o banco abre o MED em até {80 dias}.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O AVISO PRONTO?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te chama no direct"
+   },
+   "imagem": "cta_orig.png",
+   "recorte": "cta_recorte.png",
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     284,
+     121,
+     643,
+     235
+    ],
+    "caixa": [
+     290,
+     126,
+     820,
+     605
+    ]
+   },
+   "bloco": {
+    "y": 610,
+    "alinhar": "esquerda",
+    "largura": 936
+   }
+  }
+ ]
+}
