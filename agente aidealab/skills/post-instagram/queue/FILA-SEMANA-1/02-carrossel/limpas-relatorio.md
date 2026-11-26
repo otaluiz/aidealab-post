@@ -128,3 +128,18 @@
 | Dia84-prompt-luz | 1 | Ethereal_celestial_aesthetic_holographicglitt_957bcbb94c5f7020e0cc42be9b307df7.png | 0.28 | — (abaixo do limiar, sem foto limpa) |
 | Dia84-prompt-luz | 2 | Lua_Wallpaper_0e4a544d04ae3abb32641cfe3fce67a4.png | 0.49 | — (abaixo do limiar, sem foto limpa) |
 | Dia84-prompt-luz | 7 | Lua_Wallpaper_cf7c2666511e29c0c27538051d9c7a32.png | 0.65 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 1 | minimalist_sci_fi_portrait_neon_lighting_aura_2aa412ff9b26fb695254024155dc04dc.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 2 | dreamcore_surrealism_moody_atmospheric_lighti_4abc098d77b68eca2d921bee6e37f051.png | 0.55 | — (abaixo do limiar, sem foto limpa) |
+| Dia45-espera-o-momento-perfeito | 8 | dark_futurism_surreal_lighting_3d_art_3df0de58d650a1e602fa8bb5b7956a34.png | 0.62 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 1 | dark_futurism_surreal_lighting_3d_art_a1e0b34ccdf10bbd10b06fcaa0ed56a7.png | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 2 | dreamcore_surrealism_moody_atmospheric_lighti_070b9e9ad5b347958423bb30aec68f75.png | 0.59 | — (abaixo do limiar, sem foto limpa) |
+| Dia73-ia-recomenda-perfil | 7 | surrealist_conceptual_photography_dark_mood_665f39d4e25f2948f63ae0f49b743ee1.png | 0.39 | — (abaixo do limiar, sem foto limpa) |
+| Dia81-prompt-cenario | 1 | lone_astronaut_canyon_alien_planet_aesthetic_02e6329b4ef5f96d9a6639447db84323.png | 0.35 | — (abaixo do limiar, sem foto limpa) |
+| Dia81-prompt-cenario | 2 | Lua_Wallpaper_0e4a544d04ae3abb32641cfe3fce67a4.png | 0.47 | — (abaixo do limiar, sem foto limpa) |
+| Dia81-prompt-cenario | 7 | there is a feeling_quieter than happiness_that arrives_when you are_exactly_where you are supposed to be_this feels right_not loud right_not celebration right_just_right_the way a key_feels right_in the right lock_.png | 0.63 | — (abaixo do limiar, sem foto limpa) |
+| Dia84-prompt-luz | 1 | Ethereal_celestial_aesthetic_holographicglitt_957bcbb94c5f7020e0cc42be9b307df7.png | 0.28 | — (abaixo do limiar, sem foto limpa) |
+| Dia84-prompt-luz | 2 | Lua_Wallpaper_0e4a544d04ae3abb32641cfe3fce67a4.png | 0.49 | — (abaixo do limiar, sem foto limpa) |
+| Dia84-prompt-luz | 7 | Lua_Wallpaper_cf7c2666511e29c0c27538051d9c7a32.png | 0.65 | — (abaixo do limiar, sem foto limpa) |
+| Dia85-prompt-neon | 1 | minimalist_sci_fi_portrait_neon_lighting_aura_e5ccf7fac4a9cf96a23e82fad728038e.png | 0.52 | — (abaixo do limiar, sem foto limpa) |
+| Dia85-prompt-neon | 2 | surrealist_conceptual_photography_dark_mood_665f39d4e25f2948f63ae0f49b743ee1.png | 0.46 | — (abaixo do limiar, sem foto limpa) |
+| Dia85-prompt-neon | 7 | Lua_Wallpaper_0e4a544d04ae3abb32641cfe3fce67a4.png | 0.55 | — (abaixo do limiar, sem foto limpa) |

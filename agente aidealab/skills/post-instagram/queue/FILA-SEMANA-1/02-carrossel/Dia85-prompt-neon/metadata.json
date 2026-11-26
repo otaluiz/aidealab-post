@@ -1,0 +1,98 @@
+{
+  "carousel_id": "2026-11-prompt-neon",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-21",
+  "status": "aprovado",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "PROMPTS",
+  "tema": "ESSA FOTO SAIU DE UM PROMPT. copia o nosso.",
+  "familia_cor": "vice-sunset",
+  "template": "T1-T3-T2-T3-T2-T3-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "ESSA FOTO SAIU DE UM PROMPT. copia o nosso.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "PROMPT 1 DA CAPA Foto de referência + arte de tela de jogo pintada à mão Contorno grosso de tinta, cel-shading Pôr do sol neon magenta, laranja e teal Pessoa embaixo, céu livre em cima",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "OUTRA PESSOA, MESMO PROMPT o estilo continua.",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 2 DO TELHADO Troque só a foto de referência Na beira de um telhado, braços cruzados Câmera bem baixa, cara de herói Céu vazio em cima pro seu título",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O OBJETO CONTA A HISTÓRIA sem uma letra.",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "PROMPT 3 DO FUNDO Peça o objeto \"em branco\" Uma janela de site travada no ar Barra de carregamento parada Feche com: sem texto, sem logo",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER OS 3 PROMPTS? Comenta PROMPT a aidealab te manda no direct",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Essas fotos saíram de um prompt. Mesmo prompt, pessoas diferentes.\n\nA gente usou uma foto de referência e pediu arte de tela de jogo pintada à mão: contorno grosso, pôr do sol neon, pessoa embaixo e céu livre em cima pro título. Pra outra pessoa da equipe, só trocamos a foto. O estilo fica, e o feed da marca ganha uma cara só.\n\nO truque do fundo: peça objetos \"em branco\" e feche o prompt com \"sem texto, sem logo\". A história fica na cena, não em letras tortas.\n\nServe pra campanha, capa de carrossel e apresentação da equipe.\n\nComenta PROMPT que a aidealab te manda no direct o PDF com os 3 prompts completos.\n\n#inteligenciaartificial #marketingdigital #socialmedia #conteudodigital #aidealab",
+  "hashtags": [
+    "#inteligenciaartificial",
+    "#marketingdigital",
+    "#socialmedia",
+    "#conteudodigital",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "3 prompts pra virar arte de videogame",
+    "categoria": "PROMPT",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 7,
+    "fonte_sha256": "514d064442745fe1742c1253679891507c8fc05c5cad4728256b4557c2302a1a",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181",
+    "estilo": "neon"
+  }
+}
