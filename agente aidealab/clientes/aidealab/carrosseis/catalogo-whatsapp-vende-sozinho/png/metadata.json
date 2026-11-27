@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-catalogo-whatsapp-vende-sozinho",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-27",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "IA NO BALCÃO",
+  "tema": "CATÁLOGO PARADO NÃO VENDE. o cliente quer ver antes.",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "CATÁLOGO PARADO NÃO VENDE. o cliente quer ver antes.",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "PEDE FOTO E PREÇO. e você manda um por um.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "O QUE CADA PRODUTO LEVA Foto clara, de perto Nome que o cliente busca Preço ou \"a partir de\" Descrição em uma linha",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "AGRUPE EM COLEÇÕES quem escolhe sozinho pergunta menos.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O CATÁLOGO NA CONVERSA Envie o item direto no chat Envie a coleção inteira Troque a foto que não vende Revise o preço toda semana",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA RASCUNHA VOCÊ CONFIRMA preço e estoque são seus.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O PASSO A PASSO? Comenta ATENDIMENTO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "Catálogo parado no WhatsApp Business não vende: o cliente vê foto torta, nome de código e preço desatualizado, e some.\n\nCada produto precisa de foto clara, nome que o cliente busca, preço ou \"a partir de\" e uma linha de descrição. Depois agrupe em coleções por intenção (presentes, mais pedidos) e mande o item ou a coleção direto na conversa, em vez de digitar tudo de novo. A IA rascunha nome e descrição; preço e estoque você confirma.\n\nReserve 15 minutos por semana para tirar o que acabou e trocar a foto fraca.\n\nQual produto seu o cliente mais pergunta e ainda não está no catálogo?\n\nFonte: Canaltech, \"Como criar um catálogo de produtos atrativo no WhatsApp Business\"; Tecnoblog, \"Como criar coleções de produtos no WhatsApp Business\".\n\nQuer o passo a passo completo? Comenta ATENDIMENTO que a aidealab te responde.\n\n#pequenosnegocios #whatsappbusiness #iaparanegocios #marketinglocal #aidealab",
+  "hashtags": [
+    "#pequenosnegocios",
+    "#whatsappbusiness",
+    "#iaparanegocios",
+    "#marketinglocal",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "wel",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "Catálogo do WhatsApp Business: como montar uma vitrine que atende por você",
+    "categoria": "ATENDIMENTO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 11,
+    "fonte_sha256": "a9c1280435562b2e7571e515d4b2dff23eee08b26b84d7d3851abcb4210dcd7e",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "educacional",
+  "fonte_tendencia": null,
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

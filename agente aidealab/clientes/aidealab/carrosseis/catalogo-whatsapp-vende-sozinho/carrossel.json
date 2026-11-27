@@ -1,0 +1,179 @@
+{
+ "id": "2026-11-catalogo-whatsapp-vende-sozinho",
+ "meta": {
+  "serie": "IA NO BALCÃO",
+  "data": "2026/11",
+  "personagem": "wel",
+  "guia": {
+   "fonte": "guia/guia.json"
+  }
+ },
+ "slides": [
+  {
+   "template": "T1",
+   "display": [
+    "CATÁLOGO PARADO",
+    "NÃO VENDE."
+   ],
+   "emocao": {
+    "texto": "o cliente quer [ver] antes.",
+    "posicao": "depois"
+   },
+   "imagem": "capa_orig.png",
+   "bloco": {
+    "y": 150,
+    "alinhar": "centro",
+    "largura": 1020,
+    "manual": true
+   },
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      338,
+      420,
+      585,
+      667
+     ]
+    ],
+    "cabeca": [
+     357,
+     361,
+     570,
+     555
+    ],
+    "caixa": [
+     253,
+     369,
+     919,
+     1186
+    ]
+   },
+   "recorte": "capa_recorte.png"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "PEDE FOTO",
+    "E PREÇO."
+   ],
+   "emocao": {
+    "texto": "e você manda {um por um}.",
+    "posicao": "depois"
+   },
+   "imagem": "slide2_led.png",
+   "bloco": {
+    "y": 190,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "sujeito": {
+    "rostos": [],
+    "cabeca": [
+     494,
+     287,
+     891,
+     487
+    ],
+    "caixa": [
+     92,
+     295,
+     984,
+     1137
+    ]
+   },
+   "recorte": "slide2_recorte.png"
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O QUE CADA",
+    "{PRODUTO} LEVA"
+   ],
+   "lista": [
+    "Foto clara, de perto",
+    "Nome que o cliente busca",
+    "Preço ou \"a partir de\"",
+    "Descrição em uma linha"
+   ],
+   "textura": "grain"
+  },
+  {
+   "template": "T2",
+   "display": [
+    "AGRUPE EM",
+    "COLEÇÕES"
+   ],
+   "emocao": {
+    "texto": "quem escolhe sozinho {pergunta menos}.",
+    "posicao": "depois"
+   }
+  },
+  {
+   "template": "T3",
+   "display": [
+    "O CATÁLOGO",
+    "{NA CONVERSA}"
+   ],
+   "lista": [
+    "Envie o item direto no chat",
+    "Envie a coleção inteira",
+    "Troque a foto que não vende",
+    "Revise o preço toda semana"
+   ],
+   "textura": "led"
+  },
+  {
+   "template": "T2c",
+   "display": [
+    "A IA RASCUNHA",
+    "VOCÊ {CONFIRMA}"
+   ],
+   "emocao": {
+    "texto": "preço e estoque são seus.",
+    "posicao": "depois"
+   },
+   "textura": "led"
+  },
+  {
+   "template": "T4",
+   "display": [
+    "QUER O PASSO A PASSO?"
+   ],
+   "cta": {
+    "acao": "Comenta ATENDIMENTO",
+    "texto": "a aidealab te responde"
+   },
+   "imagem": "cta_orig.png",
+   "bloco": {
+    "y": 150,
+    "alinhar": "esquerda",
+    "largura": 936
+   },
+   "sujeito": {
+    "rostos": [],
+    "rostos_sujeito": [
+     [
+      415,
+      420,
+      640,
+      665
+     ]
+    ],
+    "cabeca": [
+     380,
+     243,
+     650,
+     668
+    ],
+    "caixa": [
+     109,
+     243,
+     960,
+     1439
+    ]
+   },
+   "recorte": "cta_recorte.png"
+  }
+ ]
+}

@@ -35,7 +35,7 @@ passo a passo, sem hype.
 - [ ] O Google agora responde por você: seu negócio aparece?
 - [x] A semana de conteúdo em 1 hora com IA (você reescreve a 1ª frase) (semana-de-conteudo-em-1-hora)
 - [ ] Para quem é a aidealab (manifesto, para fixar)
-- [ ] Catálogo do WhatsApp que vende sozinho
+- [x] Catálogo do WhatsApp que vende sozinho (catalogo-whatsapp-vende-sozinho)
 - [ ] Avaliação no Google: como pedir sem constranger
 - [ ] Resposta pronta x resposta com IA: quando usar cada uma
 - [ ] Legenda que aparece na busca do Instagram (palavra-chave na 1ª linha)

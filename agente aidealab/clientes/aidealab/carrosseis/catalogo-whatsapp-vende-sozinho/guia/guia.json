@@ -1,0 +1,111 @@
+{
+ "titulo": "Catálogo do WhatsApp Business: como montar uma vitrine que atende por você",
+ "subtitulo": "Cadastro, fotos, coleções e rotina semanal para pequeno negócio, com o que a IA pode e não pode fazer.",
+ "categoria": "ATENDIMENTO",
+ "paginas": [
+  {
+   "titulo": "Catálogo é a vitrine que fica aberta o dia todo",
+   "texto": "Muita gente decide o que quer antes de falar com a loja. Quando o cliente pergunta \"tem em que cor?\" ou \"quanto custa?\", ele já está interessado, e cada pergunta repetida é tempo seu gasto.\n\nO catálogo do WhatsApp Business reúne produtos ou serviços com foto, nome e, se você quiser, preço, descrição e link. Segundo o Canaltech, o título e uma imagem são o mínimo para cadastrar um item; o resto é opcional, mas é o que convence.",
+   "itens": [
+    "Menos perguntas repetidas no atendimento",
+    "Cliente vê as opções sem esperar resposta",
+    "Você envia um item ou uma coleção direto na conversa"
+   ],
+   "dica": "Antes de começar, liste os 10 itens que mais saem. Comece por eles."
+  },
+  {
+   "titulo": "Como cadastrar um item",
+   "texto": "No app WhatsApp Business, o caminho costuma ser Configurações, Ferramentas comerciais (ou Ferramentas), Catálogo e adicionar item. O nome do menu varia conforme a versão do aplicativo.",
+   "itens": [
+    "Foto do produto (pode adicionar mais de uma)",
+    "Nome do produto",
+    "Preço, se quiser mostrar",
+    "Descrição curta",
+    "Link do produto ou do site, se tiver"
+   ],
+   "dica": "Confira na sua versão do app: os menus mudam. A ajuda oficial do WhatsApp Business é a fonte final."
+  },
+  {
+   "titulo": "Foto que vende",
+   "texto": "A foto é o que o cliente olha primeiro. Fotografe de perto, com luz natural e fundo limpo. Mostre o produto inteiro e, se fizer diferença, um detalhe.",
+   "itens": [
+    "Luz natural, perto da janela",
+    "Fundo liso e sem bagunça",
+    "Produto inteiro no quadro",
+    "Mesmo padrão de foto em todos os itens"
+   ],
+   "dica": "Troque primeiro a foto dos itens que o cliente mais pergunta."
+  },
+  {
+   "titulo": "Nome e descrição que o cliente entende",
+   "texto": "Use o nome que o cliente fala, não o código interno. \"Camiseta preta tamanho M\" ajuda mais que uma referência de estoque. Na descrição, uma ou duas linhas: material, tamanho, prazo habitual, o que está incluso.\n\nSe o preço varia, escreva \"a partir de\" ou deixe o preço para a conversa. Não coloque o que você não consegue manter.",
+   "itens": [
+    "Nome simples, do jeito que o cliente pergunta",
+    "Descrição em uma ou duas linhas",
+    "Só informação que você consegue cumprir"
+   ],
+   "dica": "Releia como se fosse o cliente: ficou alguma dúvida? Então a dúvida vai virar mensagem."
+  },
+  {
+   "titulo": "Coleções: organize por intenção",
+   "texto": "Coleções agrupam produtos no catálogo. Segundo o Tecnoblog, a função existe no WhatsApp Business para Android e iPhone: cria-se a coleção, dá-se um nome e marcam-se os itens.\n\nAgrupe pelo que o cliente procura, não pelo seu estoque: \"Presentes\", \"Mais pedidos\", \"Até um valor\" ou por tipo de serviço.",
+   "itens": [
+    "Crie 3 a 5 coleções, não 20",
+    "Nomeie pelo que o cliente procura",
+    "Coloque os mais pedidos na primeira",
+    "Atualize quando um item acabar"
+   ],
+   "dica": "Uma coleção de \"Mais pedidos\" é a mais fácil de mandar quando o cliente chega perdido."
+  },
+  {
+   "titulo": "Mande o catálogo na conversa",
+   "texto": "Segundo o WhatsApp Business, itens e coleções podem ser enviados pelo chat. Em vez de digitar preço e mandar foto, mande o item. O cliente vê tudo no mesmo lugar e você ganha tempo.\n\nCombine com mensagens rápidas: uma saudação curta e o envio da coleção certa.",
+   "itens": [
+    "Cliente perguntou de um produto: envie o item",
+    "Cliente chegou sem saber o que quer: envie a coleção",
+    "Depois do envio, pergunte o que chamou atenção"
+   ],
+   "dica": "Registre quais itens os clientes mais pedem para decidir o que melhorar primeiro."
+  },
+  {
+   "titulo": "Onde a IA ajuda e onde não",
+   "texto": "A IA pode rascunhar nomes e descrições a partir do que você escreveu, padronizar o tom e sugerir como agrupar coleções. Preço, estoque, prazo e promessa de entrega continuam com você: erro nesses pontos vira reclamação.\n\nSe você usar dados de clientes para qualquer automação, respeite a LGPD (Lei 13.709/2018): use só o necessário e respeite quem pedir para sair.",
+   "itens": [
+    "IA: rascunho de descrição e organização",
+    "Você: preço, estoque, prazo, entrega",
+    "Sempre releia antes de publicar"
+   ],
+   "dica": "Peça à IA três versões da descrição e escolha a que parece com a sua voz."
+  },
+  {
+   "titulo": "Rotina semanal de 15 minutos",
+   "texto": "Catálogo parado perde força. Reserve um horário fixo na semana para manter a vitrine em dia.",
+   "itens": [
+    "Remover ou marcar item que acabou",
+    "Revisar preços",
+    "Trocar foto fraca",
+    "Revisar a coleção Mais pedidos",
+    "Anotar o que o cliente perguntou e não achou"
+   ],
+   "dica": "Ponha o lembrete na agenda: catálogo é rotina, não projeto."
+  }
+ ],
+ "fontes": [
+  {
+   "titulo": "Canaltech: como criar um catálogo de produtos atrativo no WhatsApp Business",
+   "url": "https://canaltech.com.br/apps/como-criar-um-catalogo-de-produtos-atrativo-no-whatsapp-business/"
+  },
+  {
+   "titulo": "Tecnoblog: como criar coleções de produtos no WhatsApp Business",
+   "url": "https://tecnoblog.net/responde/como-criar-colecoes-de-produtos-no-whatsapp-business/"
+  },
+  {
+   "titulo": "WhatsApp Business: recursos do catálogo",
+   "url": "https://whatsappbusiness.com/pt-br/resources/resource-library/whatsapp-business-app-resources-whatsapp-business-catalog/"
+  },
+  {
+   "titulo": "Planalto: Lei Geral de Proteção de Dados (Lei 13.709/2018)",
+   "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+  }
+ ]
+}
