@@ -1,0 +1,27 @@
+{
+  "id": "aidealab-criativo-nova-perspectiva",
+  "cliente": "aidealab",
+  "handle": "@idea_lab7",
+  "tipo": "imagem",
+  "data_criacao": "2026-11-27",
+  "tema": "Criativo: seu insta precisa de uma nova perspectiva",
+  "formato": "1080x1440",
+  "arquivo": "Dia2-criativo-nova-perspectiva.png",
+  "legenda": "Seu insta precisa de uma nova perspectiva.\n\nNa Aidealab, criamos vídeos, sites, campanhas e sistemas com IA para o seu negócio aparecer e ser chamado.\n\nQuer conhecer a nossa visão? Chama a gente no WhatsApp pelo botão “Bora trocar uma ideia” em aidealab.com.br.",
+  "hashtags": [
+    "#aidealab",
+    "#marketingdigital",
+    "#instagram"
+  ],
+  "personagem": true,
+  "ordem_fila": 0,
+  "status": "aprovado",
+  "status_publicacao": "na_fila",
+  "publicacao_habilitada": true,
+  "fuso": "America/Cuiaba",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "bloqueios": [],
+  "fonte_tendencia": null
+}
