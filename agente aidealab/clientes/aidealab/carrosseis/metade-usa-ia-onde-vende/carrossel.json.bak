@@ -1,0 +1,13 @@
+{
+ "id": "2026-11-metade-usa-ia-onde-vende",
+ "meta": {"serie": "SAIU HOJE", "data": "2026/11", "personagem": "luizota", "guia": {"fonte": "guia/guia.json"}},
+ "slides": [
+  {"template": "T1", "display": ["METADE JÁ", "USA IA."], "emocao": {"texto": "e você usa onde [vende]?", "posicao": "depois"}, "imagem": "capa_orig.png"},
+  {"template": "T2", "display": ["A IA FICA", "NO {ANÚNCIO}"], "emocao": {"texto": "e a venda fica [esperando].", "posicao": "depois"}, "imagem": "slide2_led.png"},
+  {"template": "T3", "display": ["ONDE A IA", "{AJUDA} A VENDER"], "lista": ["Responde dúvida fora do horário", "Lembra o orçamento parado", "Resume a conversa longa", "Separa quem quer comprar"], "textura": "grain"},
+  {"template": "T2", "display": ["ANTES DE", "LIGAR, {MEÇA}"], "emocao": {"texto": "quanto tempo a tarefa leva hoje.", "posicao": "depois"}},
+  {"template": "T3", "display": ["O TESTE DE", "{4 PASSOS}"], "lista": ["Escolha 1 tarefa repetida", "Anote o tempo que ela leva", "Deixe a IA rascunhar", "Compare e revise"], "textura": "led"},
+  {"template": "T2c", "display": ["A IA RASCUNHA,", "VOCÊ {CONFERE}"], "emocao": {"texto": "preço e promessa são seus.", "posicao": "depois"}, "textura": "led"},
+  {"template": "T4", "display": ["QUER O TESTE", "COMPLETO?"], "cta": {"acao": "Comenta AUTOMACAO", "texto": "a aidealab te responde"}, "imagem": "cta_orig.png"}
+ ]
+}

@@ -1,0 +1,99 @@
+{
+  "carousel_id": "2026-11-metade-usa-ia-onde-vende",
+  "cliente": "aidealab",
+  "data_criacao": "2026-11-28",
+  "status": "rascunho",
+  "postado": false,
+  "postado_em": null,
+  "post_id": null,
+  "ordem_fila": 0,
+  "serie": "SAIU HOJE",
+  "tema": "METADE USA IA. e você usa onde vende?",
+  "familia_cor": "navy-ciano",
+  "template": "T1-T2-T3-T2-T3-T2c-T4",
+  "formato": "1080x1440",
+  "slides": [
+    {
+      "ordem": 1,
+      "arquivo": "slide-01.png",
+      "papel": "hook",
+      "texto": "METADE USA IA. e você usa onde vende?",
+      "video": "slide-01.mp4"
+    },
+    {
+      "ordem": 2,
+      "arquivo": "slide-02.png",
+      "papel": "tensao",
+      "texto": "A IA FICA NO ANÚNCIO e a venda fica esperando.",
+      "video": "slide-02.mp4"
+    },
+    {
+      "ordem": 3,
+      "arquivo": "slide-03.png",
+      "papel": "desenvolvimento",
+      "texto": "ONDE A IA AJUDA A VENDER Responde dúvida fora do horário Lembra o orçamento parado Resume a conversa longa Separa quem quer comprar",
+      "video": "slide-03.mp4"
+    },
+    {
+      "ordem": 4,
+      "arquivo": "slide-04.png",
+      "papel": "desenvolvimento",
+      "texto": "ANTES DE LIGAR, MEÇA quanto tempo a tarefa leva hoje.",
+      "video": "slide-04.mp4"
+    },
+    {
+      "ordem": 5,
+      "arquivo": "slide-05.png",
+      "papel": "desenvolvimento",
+      "texto": "O TESTE DE 4 PASSOS Escolha 1 tarefa repetida Anote o tempo que ela leva Deixe a IA rascunhar Compare e revise",
+      "video": "slide-05.mp4"
+    },
+    {
+      "ordem": 6,
+      "arquivo": "slide-06.png",
+      "papel": "desenvolvimento",
+      "texto": "A IA RASCUNHA, VOCÊ CONFERE preço e promessa são seus.",
+      "video": "slide-06.mp4"
+    },
+    {
+      "ordem": 7,
+      "arquivo": "slide-07.png",
+      "papel": "cta",
+      "texto": "QUER O TESTE COMPLETO? Comenta AUTOMACAO a aidealab te responde",
+      "video": "slide-07.mp4"
+    }
+  ],
+  "legenda": "",
+  "hashtags": [
+    "#iaparanegocios",
+    "#pequenosnegocios",
+    "#marketinglocal",
+    "#automacao",
+    "#aidealab"
+  ],
+  "handle": "@idea_lab7",
+  "personagem": "luizota",
+  "textura_foto": {},
+  "textura_slide": {
+    "cta": "cloth_letras",
+    "hook": "cloth_letras"
+  },
+  "material_pdf": {
+    "arquivo": "guia.pdf",
+    "titulo": "IA no pequeno negócio: como sair do anúncio e colocar a IA onde a venda acontece",
+    "categoria": "AUTOMACAO",
+    "marca": "aidealab",
+    "template": "aidealab-azul-laranja-v1",
+    "paginas": 9,
+    "fonte_sha256": "901a8484f99d0fc7079fde3ca83a28cbf19e513205f11b94a0d8aeaaeec30d79",
+    "status": "rascunho",
+    "revisao_visual": "pendente"
+  },
+  "pilar": "tendência",
+  "fonte_tendencia": "https://inovasimples.com.br/materia/sebrae-52-por-cento-pequenos-negocios-usam-ia",
+  "formato_motion": {
+    "fps": 30,
+    "segundos_por_slide": 6,
+    "motor": "hyperframes@0.8.181"
+  }
+}

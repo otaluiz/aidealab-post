@@ -1,0 +1,75 @@
+{
+ "titulo": "IA no pequeno negócio: como sair do anúncio e colocar a IA onde a venda acontece",
+ "subtitulo": "Um teste de 4 passos para escolher uma tarefa, medir antes, deixar a IA rascunhar e conferir o resultado.",
+ "categoria": "AUTOMACAO",
+ "paginas": [
+  {
+   "titulo": "O que a pesquisa mostra",
+   "texto": "Segundo a pesquisa Transformação Digital nos Pequenos Negócios 2026, do Sebrae com o Meta Instituto de Pesquisa, 52% dos 7.182 donos de pequenos negócios ouvidos usaram alguma ferramenta de IA nas duas semanas anteriores à entrevista.\n\nO uso, porém, se concentra em marketing: segundo a 13ª edição do Pulso dos Pequenos Negócios, também do Sebrae, 59% das micro e pequenas empresas apontam marketing e divulgação como principal finalidade da IA.",
+   "itens": [
+    "52% usaram IA nas duas semanas anteriores à pesquisa",
+    "59% citam marketing e divulgação como principal uso",
+    "Entre quem usa IA em marketing, 74% citam criação de imagens e vídeos"
+   ],
+   "dica": "Usar IA não é o mesmo que ter resultado. A pergunta útil é: em qual etapa da venda ela está trabalhando?"
+  },
+  {
+   "titulo": "O alerta dos especialistas",
+   "texto": "Em artigo de 18/11/2026 sobre os dados do Sebrae, o economista Rica Mello afirma que a IA precisa resolver um problema concreto de gestão. Produzir propostas mais rápido não basta se a empresa não acompanha a conversão em vendas.\n\nTradução para o dia a dia: criar mais posts ou mais anúncios só ajuda se o cliente que chega é atendido, recebe o orçamento e é lembrado depois.",
+   "itens": [
+    "Diagnosticar antes de adotar a ferramenta",
+    "Olhar o processo inteiro, não só uma etapa",
+    "Comparar com a situação anterior",
+    "Definir quem confere o que a IA entrega"
+   ],
+   "dica": "Se a IA gera mais contatos e ninguém responde a tempo, o gargalo mudou de lugar."
+  },
+  {
+   "titulo": "Onde a IA ajuda a vender",
+   "texto": "Depois que o cliente chegou, há tarefas repetidas em que a IA pode rascunhar e você aprova. Escolha uma delas para começar.",
+   "itens": [
+    "Responder dúvidas comuns fora do horário, com regras que você escreveu",
+    "Lembrar o cliente do orçamento que ficou parado",
+    "Resumir uma conversa longa antes de você retomar",
+    "Separar quem pediu preço de quem só perguntou"
+   ],
+   "dica": "Comece por uma tarefa que você repete todo dia e que não exige decisão sua."
+  },
+  {
+   "titulo": "Passo 1 e 2: escolha e meça",
+   "texto": "Escolha uma única tarefa repetida. Antes de ligar qualquer ferramenta, anote quanto tempo ela consome hoje e qual resultado você quer mudar: responder mais rápido, esquecer menos orçamentos, gastar menos tempo.\n\nSem esse número de partida, não há como saber depois se a IA ajudou.",
+   "itens": [
+    "Uma tarefa, não cinco",
+    "Tempo gasto por semana, estimado por você",
+    "Resultado que você quer mudar, em uma frase"
+   ],
+   "dica": "Anote em papel ou no bloco de notas. Cinco minutos bastam."
+  },
+  {
+   "titulo": "Passo 3: deixe a IA rascunhar",
+   "texto": "Dê à IA o contexto que ela não tem: seus preços de referência, prazos, tom de voz e o que ela não deve prometer. Peça um rascunho, não uma resposta final.\n\nPreço, estoque, prazo e qualquer promessa continuam sendo decisão sua.",
+   "itens": [
+    "Informe o que você vende e como fala com o cliente",
+    "Liste o que a IA nunca deve prometer",
+    "Peça rascunho e revise antes de enviar",
+    "Defina o momento de chamar uma pessoa"
+   ],
+   "dica": "Não envie dados sensíveis de clientes a uma ferramenta sem checar a política de privacidade dela."
+  },
+  {
+   "titulo": "Passo 4: compare e confira",
+   "texto": "Depois de uma ou duas semanas, compare com o ponto de partida: o tempo caiu? Menos orçamentos ficaram parados? Considere também o retrabalho de revisão, que entra na conta.\n\nSe melhorou, mantenha e escolha a próxima tarefa. Se não, ajuste as instruções ou troque a tarefa.",
+   "itens": [
+    "Tempo antes e depois",
+    "Quantos orçamentos receberam retorno",
+    "Quanto tempo você gastou revisando",
+    "Quem confere o resultado, para não depender de uma pessoa só"
+   ],
+   "dica": "Mudança que ninguém confere vira erro repetido em escala."
+  }
+ ],
+ "fontes": [
+  {"titulo": "Sebrae: 52% dos pequenos negócios já usam IA (Inova Simples)", "url": "https://inovasimples.com.br/materia/sebrae-52-por-cento-pequenos-negocios-usam-ia"},
+  {"titulo": "PMEs usam IA para marketing, mas especialistas alertam: falta foco em vendas e gestão (BRA 1)", "url": "https://www.bra1.com.br/economia/id-728147/pmes_usam_ia_para_marketing__mas_especialistas_alertam__falta_foco_em_vendas_e_gestao"}
+ ]
+}
